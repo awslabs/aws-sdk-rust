@@ -334,7 +334,7 @@ pub enum SdkError<E, R = operation::Response> {
     DispatchFailure(DispatchFailure),
 
     /// A response was received but it was not parseable according the the protocol (for example
-    /// the server hung up while the body was being read)
+    /// the server hung up without sending a complete response)
     ResponseError(ResponseError<R>),
 
     /// An error response was received from the service
