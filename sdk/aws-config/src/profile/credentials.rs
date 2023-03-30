@@ -470,6 +470,7 @@ mod test {
                     "./test-data/profile-provider/",
                     stringify!($name)
                 ))
+                .await
                 .unwrap()
                 .execute(|conf| async move { Builder::default().configure(&conf).build() })
                 .await

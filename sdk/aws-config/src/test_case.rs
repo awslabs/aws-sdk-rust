@@ -65,11 +65,10 @@ impl From<aws_credential_types::Credentials> for Credentials {
 /// - an  `http-traffic.json` file containing an http traffic log from [`dvr`](aws_smithy_client::dvr)
 /// - a `test-case.json` file defining the expected output of the test
 pub(crate) struct TestEnvironment {
-    env: Env,
-    fs: Fs,
-    network_traffic: NetworkTraffic,
     metadata: Metadata,
     base_dir: PathBuf,
+    connector: ReplayingConnection,
+    provider_config: ProviderConfig,
 }
 
 /// Connector which expects no traffic
@@ -131,7 +130,7 @@ pub(crate) struct Metadata {
 }
 
 impl TestEnvironment {
-    pub(crate) fn from_dir(dir: impl AsRef<Path>) -> Result<TestEnvironment, Box<dyn Error>> {
+    pub(crate) async fn from_dir(dir: impl AsRef<Path>) -> Result<TestEnvironment, Box<dyn Error>> {
         let dir = dir.as_ref();
         let env = std::fs::read_to_string(dir.join("env.json"))
             .map_err(|e| format!("failed to load env: {}", e))?;
@@ -147,27 +146,32 @@ impl TestEnvironment {
             &std::fs::read_to_string(dir.join("test-case.json"))
                 .map_err(|e| format!("failed to load test case: {}", e))?,
         )?;
+        let connector = ReplayingConnection::new(network_traffic.events().clone());
+        let provider_config = ProviderConfig::empty()
+            .with_fs(fs.clone())
+            .with_env(env.clone())
+            .with_http_connector(DynConnector::new(connector.clone()))
+            .with_sleep(TokioSleep::new())
+            .load_default_region()
+            .await;
         Ok(TestEnvironment {
             base_dir: dir.into(),
-            env,
-            fs,
-            network_traffic,
             metadata,
+            connector,
+            provider_config,
         })
     }
 
-    pub(crate) async fn provider_config(&self) -> (ReplayingConnection, ProviderConfig) {
-        let connector = ReplayingConnection::new(self.network_traffic.events().clone());
-        (
-            connector.clone(),
-            ProviderConfig::empty()
-                .with_fs(self.fs.clone())
-                .with_env(self.env.clone())
-                .with_http_connector(DynConnector::new(connector.clone()))
-                .with_sleep(TokioSleep::new())
-                .load_default_region()
-                .await,
-        )
+    pub(crate) fn with_provider_config<F>(mut self, provider_config_builder: F) -> Self
+    where
+        F: Fn(ProviderConfig) -> ProviderConfig,
+    {
+        self.provider_config = provider_config_builder(self.provider_config.clone());
+        self
+    }
+
+    pub(crate) fn provider_config(&self) -> &ProviderConfig {
+        &self.provider_config
     }
 
     #[allow(unused)]
@@ -182,10 +186,13 @@ impl TestEnvironment {
         P: ProvideCredentials,
     {
         // swap out the connector generated from `http-traffic.json` for a real connector:
-        let (_test_connector, config) = self.provider_config().await;
-        let live_connector = default_connector(&Default::default(), config.sleep()).unwrap();
+        let live_connector =
+            default_connector(&Default::default(), self.provider_config.sleep()).unwrap();
         let live_connector = RecordingConnection::new(live_connector);
-        let config = config.with_http_connector(DynConnector::new(live_connector.clone()));
+        let config = self
+            .provider_config
+            .clone()
+            .with_http_connector(DynConnector::new(live_connector.clone()));
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
         std::fs::write(
@@ -206,9 +213,11 @@ impl TestEnvironment {
         F: Future<Output = P>,
         P: ProvideCredentials,
     {
-        let (connector, config) = self.provider_config().await;
-        let recording_connector = RecordingConnection::new(connector);
-        let config = config.with_http_connector(DynConnector::new(recording_connector.clone()));
+        let recording_connector = RecordingConnection::new(self.connector.clone());
+        let config = self
+            .provider_config
+            .clone()
+            .with_http_connector(DynConnector::new(recording_connector.clone()));
         let provider = make_provider(config).await;
         let result = provider.provide_credentials().await;
         std::fs::write(
@@ -229,14 +238,15 @@ impl TestEnvironment {
         F: Future<Output = P>,
         P: ProvideCredentials,
     {
-        let (connector, conf) = self.provider_config().await;
-        let provider = make_provider(conf).await;
+        let provider = make_provider(self.provider_config.clone()).await;
         let result = provider.provide_credentials().await;
         tokio::time::pause();
         self.log_info();
         self.check_results(result);
         // todo: validate bodies
-        match connector
+        match self
+            .connector
+            .clone()
             .validate(
                 &["CONTENT-TYPE", "x-aws-ec2-metadata-token"],
                 |_expected, _actual| Ok(()),
