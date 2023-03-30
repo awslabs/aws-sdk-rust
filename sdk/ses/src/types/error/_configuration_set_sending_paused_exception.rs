@@ -57,7 +57,7 @@ impl ConfigurationSetSendingPausedException {
 pub struct ConfigurationSetSendingPausedExceptionBuilder {
     pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConfigurationSetSendingPausedExceptionBuilder {
     /// <p>The name of the configuration set for which email sending is disabled.</p>
@@ -85,7 +85,7 @@ impl ConfigurationSetSendingPausedExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

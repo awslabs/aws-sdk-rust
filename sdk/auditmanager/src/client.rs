@@ -202,7 +202,7 @@ mod create_control;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 /// 
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_auditmanager::Error> {
 /// # let client: aws_sdk_auditmanager::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

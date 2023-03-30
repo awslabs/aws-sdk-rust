@@ -72,7 +72,7 @@ pub struct InvalidNetworkSettingsBuilder {
     pub(crate) invalid_subnet_id: std::option::Option<std::string::String>,
     pub(crate) invalid_security_group_id: std::option::Option<std::string::String>,
     pub(crate) invalid_route_table_id: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidNetworkSettingsBuilder {
     /// <p>Error message explaining what's wrong with network settings.</p>
@@ -118,7 +118,7 @@ impl InvalidNetworkSettingsBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

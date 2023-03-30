@@ -56,7 +56,7 @@ impl MethodNotAllowedException {
 pub struct MethodNotAllowedExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) request_id: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl MethodNotAllowedExceptionBuilder {
     /// <p>The message that's returned from the API.</p>
@@ -84,7 +84,7 @@ impl MethodNotAllowedExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

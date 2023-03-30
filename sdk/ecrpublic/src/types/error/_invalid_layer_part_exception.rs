@@ -80,7 +80,7 @@ pub struct InvalidLayerPartExceptionBuilder {
     pub(crate) upload_id: std::option::Option<std::string::String>,
     pub(crate) last_valid_byte_received: std::option::Option<i64>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidLayerPartExceptionBuilder {
     /// <p>The Amazon Web Services account ID that's associated with the layer part.</p>
@@ -135,7 +135,7 @@ impl InvalidLayerPartExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

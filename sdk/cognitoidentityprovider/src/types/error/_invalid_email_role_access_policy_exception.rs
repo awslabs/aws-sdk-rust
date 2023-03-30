@@ -46,7 +46,7 @@ impl InvalidEmailRoleAccessPolicyException {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InvalidEmailRoleAccessPolicyExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidEmailRoleAccessPolicyExceptionBuilder {
     /// <p>The message returned when you have an unverified email address or the identity policy isn't set on an email address that Amazon Cognito can access.</p>
@@ -65,7 +65,7 @@ impl InvalidEmailRoleAccessPolicyExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

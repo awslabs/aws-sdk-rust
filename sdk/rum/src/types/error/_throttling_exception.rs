@@ -76,7 +76,7 @@ pub struct ThrottlingExceptionBuilder {
     pub(crate) service_code: std::option::Option<std::string::String>,
     pub(crate) quota_code: std::option::Option<std::string::String>,
     pub(crate) retry_after_seconds: std::option::Option<i32>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -122,7 +122,7 @@ impl ThrottlingExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

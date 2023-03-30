@@ -14,15 +14,15 @@ impl GetAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_access_point_name(self.name.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_access_point_name(self.name.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
                                     Err(e) => (Err(e), None)
                                 };
         let mut request = {
-            fn uri_base(_input: &crate::operation::get_access_point::GetAccessPointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::get_access_point::GetAccessPointInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.name;
                 let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
                 let name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
@@ -119,7 +119,7 @@ impl aws_smithy_http::result::CreateUnhandledError for GetAccessPointError {
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -153,10 +153,10 @@ impl aws_http::request_id::RequestId for crate::operation::get_access_point::Get
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for GetAccessPointError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -182,7 +182,7 @@ impl GetAccessPointError {
     }
 }
 impl std::error::Error for GetAccessPointError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::Unhandled(_inner) => {
                 Some(_inner)

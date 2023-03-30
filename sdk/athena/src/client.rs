@@ -200,7 +200,7 @@ mod create_work_group;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 /// 
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_athena::Error> {
 /// # let client: aws_sdk_athena::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

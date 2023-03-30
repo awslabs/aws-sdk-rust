@@ -72,7 +72,7 @@ pub struct ModelErrorBuilder {
     pub(crate) original_status_code: std::option::Option<i32>,
     pub(crate) original_message: std::option::Option<std::string::String>,
     pub(crate) log_stream_arn: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ModelErrorBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -118,7 +118,7 @@ impl ModelErrorBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

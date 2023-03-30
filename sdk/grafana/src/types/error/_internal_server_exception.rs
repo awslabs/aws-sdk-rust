@@ -60,7 +60,7 @@ impl InternalServerException {
 pub struct InternalServerExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) retry_after_seconds: std::option::Option<i32>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InternalServerExceptionBuilder {
     /// <p>A description of the error.</p>
@@ -88,7 +88,7 @@ impl InternalServerExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

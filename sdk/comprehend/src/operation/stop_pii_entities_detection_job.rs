@@ -18,7 +18,7 @@ impl StopPiiEntitiesDetectionJobInput {
                                     Err(e) => (Err(e), None)
                                 };
         let mut request = {
-            fn uri_base(_input: &crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -122,7 +122,7 @@ impl aws_smithy_http::result::CreateUnhandledError for StopPiiEntitiesDetectionJ
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -174,10 +174,10 @@ impl aws_http::request_id::RequestId for crate::operation::stop_pii_entities_det
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for StopPiiEntitiesDetectionJobError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -218,7 +218,7 @@ impl StopPiiEntitiesDetectionJobError {
     }
 }
 impl std::error::Error for StopPiiEntitiesDetectionJobError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InternalServerException(_inner) =>
             Some(_inner)

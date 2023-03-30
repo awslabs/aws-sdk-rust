@@ -56,7 +56,7 @@ impl SourceBackupUnavailable {
 pub struct SourceBackupUnavailableBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) backup_id: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl SourceBackupUnavailableBuilder {
     /// <p>A detailed error message.</p>
@@ -84,7 +84,7 @@ impl SourceBackupUnavailableBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

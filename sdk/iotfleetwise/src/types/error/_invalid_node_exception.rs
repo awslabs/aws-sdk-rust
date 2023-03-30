@@ -64,7 +64,7 @@ pub struct InvalidNodeExceptionBuilder {
     pub(crate) invalid_nodes: std::option::Option<std::vec::Vec<crate::types::Node>>,
     pub(crate) reason: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidNodeExceptionBuilder {
     /// Appends an item to `invalid_nodes`.
@@ -107,7 +107,7 @@ impl InvalidNodeExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

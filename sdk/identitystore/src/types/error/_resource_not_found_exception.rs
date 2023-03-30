@@ -72,7 +72,7 @@ pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) request_id: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
     /// <p>An enum object indicating the type of resource in the identity store service. Valid values include USER, GROUP, and IDENTITY_STORE.</p>
@@ -118,7 +118,7 @@ impl ResourceNotFoundExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

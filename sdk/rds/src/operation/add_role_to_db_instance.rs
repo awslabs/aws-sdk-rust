@@ -18,7 +18,7 @@ impl AddRoleToDbInstanceInput {
                                     Err(e) => (Err(e), None)
                                 };
         let mut request = {
-            fn uri_base(_input: &crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -119,7 +119,7 @@ impl aws_smithy_http::result::CreateUnhandledError for AddRoleToDBInstanceError 
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -177,10 +177,10 @@ impl aws_http::request_id::RequestId for crate::operation::add_role_to_db_instan
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for AddRoleToDBInstanceError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -226,7 +226,7 @@ impl AddRoleToDBInstanceError {
     }
 }
 impl std::error::Error for AddRoleToDBInstanceError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::DbInstanceNotFoundFault(_inner) =>
             Some(_inner)

@@ -210,7 +210,7 @@ mod create_solution_version;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 /// 
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_personalize::Error> {
 /// # let client: aws_sdk_personalize::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

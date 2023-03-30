@@ -18,7 +18,7 @@ impl InvokeEndpointAsyncInput {
                                     Err(e) => (Err(e), None)
                                 };
         let mut request = {
-            fn uri_base(_input: &crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.endpoint_name;
                 let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("endpoint_name", "cannot be empty or unset"))?;
                 let endpoint_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
@@ -120,7 +120,7 @@ impl aws_smithy_http::result::CreateUnhandledError for InvokeEndpointAsyncError 
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -172,10 +172,10 @@ impl aws_http::request_id::RequestId for crate::operation::invoke_endpoint_async
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for InvokeEndpointAsyncError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -216,7 +216,7 @@ impl InvokeEndpointAsyncError {
     }
 }
 impl std::error::Error for InvokeEndpointAsyncError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InternalFailure(_inner) =>
             Some(_inner)

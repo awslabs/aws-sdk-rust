@@ -76,7 +76,7 @@ pub struct InvalidRequestExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) reason: std::option::Option<crate::types::InvalidRequestReason>,
     pub(crate) detail: std::option::Option<crate::types::InvalidRequestDetail>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidRequestExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -125,7 +125,7 @@ impl InvalidRequestExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

@@ -18,7 +18,7 @@ impl ListReportDefinitionsInput {
                                     Err(e) => (Err(e), None)
                                 };
         let mut request = {
-            fn uri_base(_input: &crate::operation::list_report_definitions::ListReportDefinitionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::list_report_definitions::ListReportDefinitionsInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/reportDefinition").expect("formatting should succeed");
                 Ok(())
             }
@@ -130,7 +130,7 @@ impl aws_smithy_http::result::CreateUnhandledError for ListReportDefinitionsErro
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -188,10 +188,10 @@ impl aws_http::request_id::RequestId for crate::operation::list_report_definitio
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for ListReportDefinitionsError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -237,7 +237,7 @@ impl ListReportDefinitionsError {
     }
 }
 impl std::error::Error for ListReportDefinitionsError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) =>
             Some(_inner)

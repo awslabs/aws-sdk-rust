@@ -55,7 +55,7 @@ impl NotFoundException {
 pub struct NotFoundExceptionBuilder {
     pub(crate) code: std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl NotFoundExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,7 +83,7 @@ impl NotFoundExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }

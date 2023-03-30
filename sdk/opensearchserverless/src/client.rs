@@ -196,7 +196,7 @@ mod create_vpc_endpoint;
 /// by calling the `customize()` method on the builder returned from a client
 /// operation call. For example, this can be used to add an additional HTTP header:
 /// 
-/// ```no_run
+/// ```ignore
 /// # async fn wrapper() -> Result<(), aws_sdk_opensearchserverless::Error> {
 /// # let client: aws_sdk_opensearchserverless::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};

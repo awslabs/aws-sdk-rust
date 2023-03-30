@@ -21,7 +21,7 @@ impl DetectStackSetDriftInput {
                                 self.operation_id = Some(_config.make_token.make_idempotency_token());
                             }
         let mut request = {
-            fn uri_base(_input: &crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -120,7 +120,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DetectStackSetDriftError 
     
                     fn create_unhandled_error(
                         source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: Option<aws_smithy_types::error::ErrorMetadata>
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
                     ) -> Self
                      {
         Self::Unhandled({
@@ -172,10 +172,10 @@ impl aws_http::request_id::RequestId for crate::operation::detect_stack_set_drif
                             }
                         }
 impl aws_smithy_types::retry::ProvideErrorKind for DetectStackSetDriftError {
-    fn code(&self) -> Option<&str> {
+    fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
         None
     }
 }
@@ -216,7 +216,7 @@ impl DetectStackSetDriftError {
     }
 }
 impl std::error::Error for DetectStackSetDriftError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InvalidOperationException(_inner) =>
             Some(_inner)

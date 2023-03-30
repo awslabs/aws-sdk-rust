@@ -56,7 +56,7 @@ impl InvalidS3ConfigurationException {
 pub struct InvalidS3ConfigurationExceptionBuilder {
     pub(crate) bucket: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
-    meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidS3ConfigurationExceptionBuilder {
     /// <p>Indicated that the S3 Bucket was not found.</p>
@@ -84,7 +84,7 @@ impl InvalidS3ConfigurationExceptionBuilder {
                                             }
     
                                             /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
                                                 self.meta = meta;
                                                 self
                                             }
