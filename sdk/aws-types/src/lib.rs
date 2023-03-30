@@ -16,9 +16,6 @@
 
 pub mod app_name;
 pub mod build_metadata;
-#[deprecated(since = "0.9.0", note = "renamed to sdk_config")]
-pub mod config;
-pub mod endpoint;
 #[doc(hidden)]
 pub mod os_shim_internal;
 pub mod region;

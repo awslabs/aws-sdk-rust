@@ -20,7 +20,6 @@ use aws_smithy_types::timeout::TimeoutConfig;
 
 use crate::app_name::AppName;
 use crate::docs_for;
-use crate::endpoint::ResolveAwsEndpoint;
 use crate::region::Region;
 
 #[doc(hidden)]
@@ -51,7 +50,6 @@ pub struct SdkConfig {
     credentials_cache: Option<CredentialsCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
-    endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
@@ -72,7 +70,6 @@ pub struct Builder {
     credentials_cache: Option<CredentialsCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     region: Option<Region>,
-    endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
     sleep_impl: Option<Arc<dyn AsyncSleep>>,
@@ -117,31 +114,6 @@ impl Builder {
         self
     }
 
-    /// Set the endpoint resolver to use when making requests
-    ///
-    /// This method is deprecated. Use [`Self::endpoint_url`] instead.
-    ///
-    /// # Examples
-    /// ```
-    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-    /// use std::sync::Arc;
-    /// use aws_types::SdkConfig;
-    /// use aws_smithy_http::endpoint::Endpoint;
-    /// let config = SdkConfig::builder().endpoint_resolver(
-    ///     Endpoint::immutable("http://localhost:8080")?
-    /// ).build();
-    /// # Ok(())
-    /// # }
-    /// ```
-    #[deprecated(note = "use `endpoint_url` instead")]
-    pub fn endpoint_resolver(
-        mut self,
-        endpoint_resolver: impl ResolveAwsEndpoint + 'static,
-    ) -> Self {
-        self.set_endpoint_resolver(Some(Arc::new(endpoint_resolver)));
-        self
-    }
-
     /// Set the endpoint url to use when making requests.
     /// # Examples
     /// ```
@@ -156,29 +128,6 @@ impl Builder {
     /// Set the endpoint url to use when making requests.
     pub fn set_endpoint_url(&mut self, endpoint_url: Option<String>) -> &mut Self {
         self.endpoint_url = endpoint_url;
-        self
-    }
-
-    /// Set the endpoint resolver to use when making requests
-    ///
-    /// # Examples
-    /// ```
-    /// use std::sync::Arc;
-    /// use aws_types::SdkConfig;
-    /// use aws_types::endpoint::ResolveAwsEndpoint;
-    /// fn endpoint_resolver_override() -> Option<Arc<dyn ResolveAwsEndpoint>> {
-    ///     // ...
-    ///     # None
-    /// }
-    /// let mut config = SdkConfig::builder();
-    /// config.set_endpoint_resolver(endpoint_resolver_override());
-    /// config.build();
-    /// ```
-    pub fn set_endpoint_resolver(
-        &mut self,
-        endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
-    ) -> &mut Self {
-        self.endpoint_resolver = endpoint_resolver;
         self
     }
 
@@ -557,7 +506,6 @@ impl Builder {
             credentials_cache: self.credentials_cache,
             credentials_provider: self.credentials_provider,
             region: self.region,
-            endpoint_resolver: self.endpoint_resolver,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl,
@@ -573,11 +521,6 @@ impl SdkConfig {
     /// Configured region
     pub fn region(&self) -> Option<&Region> {
         self.region.as_ref()
-    }
-
-    /// Configured endpoint resolver
-    pub fn endpoint_resolver(&self) -> Option<Arc<dyn ResolveAwsEndpoint>> {
-        self.endpoint_resolver.clone()
     }
 
     /// Configured endpoint URL

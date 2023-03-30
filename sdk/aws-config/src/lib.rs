@@ -159,7 +159,6 @@ mod loader {
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
     use aws_types::docs_for;
-    use aws_types::endpoint::ResolveAwsEndpoint;
     use aws_types::SdkConfig;
 
     use crate::connector::default_connector;
@@ -181,7 +180,6 @@ mod loader {
         app_name: Option<AppName>,
         credentials_cache: Option<CredentialsCache>,
         credentials_provider: Option<SharedCredentialsProvider>,
-        endpoint_resolver: Option<Arc<dyn ResolveAwsEndpoint>>,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
@@ -342,36 +340,6 @@ mod loader {
             credentials_provider: impl ProvideCredentials + 'static,
         ) -> Self {
             self.credentials_provider = Some(SharedCredentialsProvider::new(credentials_provider));
-            self
-        }
-
-        /// Override the endpoint resolver used for **all** AWS Services
-        ///
-        /// This method is deprecated. Use [`Self::endpoint_url`] instead.
-        ///
-        /// This method will override the endpoint resolver used for **all** AWS services. This mainly
-        /// exists to set a static endpoint for tools like `LocalStack`. For live traffic, AWS services
-        /// require the service-specific endpoint resolver they load by default.
-        ///
-        /// # Examples
-        ///
-        /// Use a static endpoint for all services
-        /// ```no_run
-        /// # async fn create_config() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-        /// use aws_config::endpoint::Endpoint;
-        ///
-        /// let sdk_config = aws_config::from_env()
-        ///     .endpoint_resolver(Endpoint::immutable("http://localhost:1234")?)
-        ///     .load()
-        ///     .await;
-        /// # Ok(())
-        /// # }
-        #[deprecated(note = "use `.endpoint_url(...)` instead")]
-        pub fn endpoint_resolver(
-            mut self,
-            endpoint_resolver: impl ResolveAwsEndpoint + 'static,
-        ) -> Self {
-            self.endpoint_resolver = Some(Arc::new(endpoint_resolver));
             self
         }
 
@@ -600,8 +568,6 @@ mod loader {
                 SharedCredentialsProvider::new(builder.build().await)
             };
 
-            let endpoint_resolver = self.endpoint_resolver;
-
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
@@ -610,7 +576,6 @@ mod loader {
                 .credentials_provider(credentials_provider)
                 .http_connector(http_connector);
 
-            builder.set_endpoint_resolver(endpoint_resolver);
             builder.set_app_name(app_name);
             builder.set_sleep_impl(sleep_impl);
             builder.set_endpoint_url(self.endpoint_url);
