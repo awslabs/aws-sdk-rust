@@ -30,7 +30,7 @@ path = "../aws-smithy-types"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 features = ["sync"]
 
 [dev-dependencies]
@@ -44,5 +44,5 @@ features = ["rt-tokio"]
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 features = ["full", "test-util", "rt"]

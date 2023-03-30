@@ -39,7 +39,7 @@ path = "../aws-smithy-types"
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 optional = true
 
 [dependencies.tokio-util]
@@ -63,5 +63,5 @@ version = "0.14.25"
 features = ["stream"]
 
 [dev-dependencies.tokio]
-version = "1.8.4"
+version = "1.23.1"
 features = ["macros", "rt", "rt-multi-thread", "fs", "io-util"]
