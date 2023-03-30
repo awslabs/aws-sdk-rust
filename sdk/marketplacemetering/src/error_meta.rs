@@ -38,15 +38,8 @@ pub enum Error {
     /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p> 
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -76,23 +69,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchMeterUsageErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchMeterUsageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::BatchMeterUsageError> for Error {
     fn from(err: crate::error::BatchMeterUsageError) -> Self {
-        match err.kind {
-            crate::error::BatchMeterUsageErrorKind::DisabledApiException(inner) => Error::DisabledApiException(inner),
-            crate::error::BatchMeterUsageErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::BatchMeterUsageErrorKind::InvalidCustomerIdentifierException(inner) => Error::InvalidCustomerIdentifierException(inner),
-            crate::error::BatchMeterUsageErrorKind::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
-            crate::error::BatchMeterUsageErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::BatchMeterUsageErrorKind::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
-            crate::error::BatchMeterUsageErrorKind::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
-            crate::error::BatchMeterUsageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::BatchMeterUsageErrorKind::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
-            crate::error::BatchMeterUsageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchMeterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::error::BatchMeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => Error::InvalidCustomerIdentifierException(inner),
+            crate::error::BatchMeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::error::BatchMeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::BatchMeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
+            crate::error::BatchMeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::error::BatchMeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchMeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::error::BatchMeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -100,24 +98,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::MeterUsageError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::MeterUsageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::MeterUsageError> for Error {
     fn from(err: crate::error::MeterUsageError) -> Self {
-        match err.kind {
-            crate::error::MeterUsageErrorKind::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
-            crate::error::MeterUsageErrorKind::DuplicateRequestException(inner) => Error::DuplicateRequestException(inner),
-            crate::error::MeterUsageErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::MeterUsageErrorKind::InvalidEndpointRegionException(inner) => Error::InvalidEndpointRegionException(inner),
-            crate::error::MeterUsageErrorKind::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
-            crate::error::MeterUsageErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::MeterUsageErrorKind::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
-            crate::error::MeterUsageErrorKind::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
-            crate::error::MeterUsageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::MeterUsageErrorKind::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
-            crate::error::MeterUsageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::MeterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
+            crate::error::MeterUsageError::DuplicateRequestException(inner) => Error::DuplicateRequestException(inner),
+            crate::error::MeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::MeterUsageError::InvalidEndpointRegionException(inner) => Error::InvalidEndpointRegionException(inner),
+            crate::error::MeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::error::MeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::MeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
+            crate::error::MeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::error::MeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::MeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::error::MeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -125,22 +128,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterUsageError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterUsageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RegisterUsageError> for Error {
     fn from(err: crate::error::RegisterUsageError) -> Self {
-        match err.kind {
-            crate::error::RegisterUsageErrorKind::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
-            crate::error::RegisterUsageErrorKind::DisabledApiException(inner) => Error::DisabledApiException(inner),
-            crate::error::RegisterUsageErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::RegisterUsageErrorKind::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
-            crate::error::RegisterUsageErrorKind::InvalidPublicKeyVersionException(inner) => Error::InvalidPublicKeyVersionException(inner),
-            crate::error::RegisterUsageErrorKind::InvalidRegionException(inner) => Error::InvalidRegionException(inner),
-            crate::error::RegisterUsageErrorKind::PlatformNotSupportedException(inner) => Error::PlatformNotSupportedException(inner),
-            crate::error::RegisterUsageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::RegisterUsageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RegisterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
+            crate::error::RegisterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::error::RegisterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::RegisterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::error::RegisterUsageError::InvalidPublicKeyVersionException(inner) => Error::InvalidPublicKeyVersionException(inner),
+            crate::error::RegisterUsageError::InvalidRegionException(inner) => Error::InvalidRegionException(inner),
+            crate::error::RegisterUsageError::PlatformNotSupportedException(inner) => Error::PlatformNotSupportedException(inner),
+            crate::error::RegisterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::RegisterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -148,21 +156,50 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResolveCustomerErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResolveCustomerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ResolveCustomerError> for Error {
     fn from(err: crate::error::ResolveCustomerError) -> Self {
-        match err.kind {
-            crate::error::ResolveCustomerErrorKind::DisabledApiException(inner) => Error::DisabledApiException(inner),
-            crate::error::ResolveCustomerErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
-            crate::error::ResolveCustomerErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ResolveCustomerErrorKind::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
-            crate::error::ResolveCustomerErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ResolveCustomerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ResolveCustomerError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::error::ResolveCustomerError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::error::ResolveCustomerError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ResolveCustomerError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::error::ResolveCustomerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ResolveCustomerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::CustomerNotEntitledException(e) => e.request_id(),
+            Self::DisabledApiException(e) => e.request_id(),
+            Self::DuplicateRequestException(e) => e.request_id(),
+            Self::ExpiredTokenException(e) => e.request_id(),
+            Self::InternalServiceErrorException(e) => e.request_id(),
+            Self::InvalidCustomerIdentifierException(e) => e.request_id(),
+            Self::InvalidEndpointRegionException(e) => e.request_id(),
+            Self::InvalidProductCodeException(e) => e.request_id(),
+            Self::InvalidPublicKeyVersionException(e) => e.request_id(),
+            Self::InvalidRegionException(e) => e.request_id(),
+            Self::InvalidTagException(e) => e.request_id(),
+            Self::InvalidTokenException(e) => e.request_id(),
+            Self::InvalidUsageAllocationsException(e) => e.request_id(),
+            Self::InvalidUsageDimensionException(e) => e.request_id(),
+            Self::PlatformNotSupportedException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::TimestampOutOfBoundsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutUsersOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutUsersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutUsersOutput`](crate::output::PutUsersOutput).
 pub mod put_users_output {
     
@@ -11,11 +17,22 @@ pub mod put_users_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutUsersOutput`](crate::output::PutUsersOutput).
         pub fn build(self) -> crate::output::PutUsersOutput {
             crate::output::PutUsersOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl PutUsersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutItemsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutItemsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutItemsOutput`](crate::output::PutItemsOutput).
 pub mod put_items_output {
     
@@ -41,11 +64,22 @@ pub mod put_items_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutItemsOutput`](crate::output::PutItemsOutput).
         pub fn build(self) -> crate::output::PutItemsOutput {
             crate::output::PutItemsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl PutItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutEventsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput).
 pub mod put_events_output {
     
@@ -71,11 +111,22 @@ pub mod put_events_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutEventsOutput`](crate::output::PutEventsOutput).
         pub fn build(self) -> crate::output::PutEventsOutput {
             crate::output::PutEventsOutput {
+                _request_id: self._request_id,
             }
         }
     }

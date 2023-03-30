@@ -22,6 +22,7 @@ impl AssociateTrackerConsumer {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer {
                 type Output = std::result::Result<crate::output::AssociateTrackerConsumerOutput, crate::error::AssociateTrackerConsumerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_tracker_consumer_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDeleteDevicePositionHistory {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositionHistory {
                 type Output = std::result::Result<crate::output::BatchDeleteDevicePositionHistoryOutput, crate::error::BatchDeleteDevicePositionHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_device_position_history_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchDeleteGeofence {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
                 type Output = std::result::Result<crate::output::BatchDeleteGeofenceOutput, crate::error::BatchDeleteGeofenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_geofence_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchEvaluateGeofences {
 impl aws_smithy_http::response::ParseStrictResponse for BatchEvaluateGeofences {
                 type Output = std::result::Result<crate::output::BatchEvaluateGeofencesOutput, crate::error::BatchEvaluateGeofencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_evaluate_geofences_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl BatchGetDevicePosition {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetDevicePosition {
                 type Output = std::result::Result<crate::output::BatchGetDevicePositionOutput, crate::error::BatchGetDevicePositionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_device_position_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl BatchPutGeofence {
 impl aws_smithy_http::response::ParseStrictResponse for BatchPutGeofence {
                 type Output = std::result::Result<crate::output::BatchPutGeofenceOutput, crate::error::BatchPutGeofenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_put_geofence_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl BatchUpdateDevicePosition {
 impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDevicePosition {
                 type Output = std::result::Result<crate::output::BatchUpdateDevicePositionOutput, crate::error::BatchUpdateDevicePositionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_update_device_position_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CalculateRoute {
 impl aws_smithy_http::response::ParseStrictResponse for CalculateRoute {
                 type Output = std::result::Result<crate::output::CalculateRouteOutput, crate::error::CalculateRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_calculate_route_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CalculateRouteMatrix {
 impl aws_smithy_http::response::ParseStrictResponse for CalculateRouteMatrix {
                 type Output = std::result::Result<crate::output::CalculateRouteMatrixOutput, crate::error::CalculateRouteMatrixError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_calculate_route_matrix_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateGeofenceCollection {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGeofenceCollection {
                 type Output = std::result::Result<crate::output::CreateGeofenceCollectionOutput, crate::error::CreateGeofenceCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_geofence_collection_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateMap {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMap {
                 type Output = std::result::Result<crate::output::CreateMapOutput, crate::error::CreateMapError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_map_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreatePlaceIndex {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePlaceIndex {
                 type Output = std::result::Result<crate::output::CreatePlaceIndexOutput, crate::error::CreatePlaceIndexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_place_index_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreateRouteCalculator {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
                 type Output = std::result::Result<crate::output::CreateRouteCalculatorOutput, crate::error::CreateRouteCalculatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_route_calculator_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl CreateTracker {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTracker {
                 type Output = std::result::Result<crate::output::CreateTrackerOutput, crate::error::CreateTrackerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_tracker_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteGeofenceCollection {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection {
                 type Output = std::result::Result<crate::output::DeleteGeofenceCollectionOutput, crate::error::DeleteGeofenceCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_geofence_collection_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteMap {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMap {
                 type Output = std::result::Result<crate::output::DeleteMapOutput, crate::error::DeleteMapError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_map_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeletePlaceIndex {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
                 type Output = std::result::Result<crate::output::DeletePlaceIndexOutput, crate::error::DeletePlaceIndexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_place_index_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeleteRouteCalculator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteCalculator {
                 type Output = std::result::Result<crate::output::DeleteRouteCalculatorOutput, crate::error::DeleteRouteCalculatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_route_calculator_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteTracker {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTracker {
                 type Output = std::result::Result<crate::output::DeleteTrackerOutput, crate::error::DeleteTrackerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_tracker_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeGeofenceCollection {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeGeofenceCollection {
                 type Output = std::result::Result<crate::output::DescribeGeofenceCollectionOutput, crate::error::DescribeGeofenceCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_geofence_collection_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeMap {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMap {
                 type Output = std::result::Result<crate::output::DescribeMapOutput, crate::error::DescribeMapError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_map_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribePlaceIndex {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePlaceIndex {
                 type Output = std::result::Result<crate::output::DescribePlaceIndexOutput, crate::error::DescribePlaceIndexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_place_index_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeRouteCalculator {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteCalculator {
                 type Output = std::result::Result<crate::output::DescribeRouteCalculatorOutput, crate::error::DescribeRouteCalculatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_route_calculator_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeTracker {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTracker {
                 type Output = std::result::Result<crate::output::DescribeTrackerOutput, crate::error::DescribeTrackerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_tracker_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DisassociateTrackerConsumer {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrackerConsumer {
                 type Output = std::result::Result<crate::output::DisassociateTrackerConsumerOutput, crate::error::DisassociateTrackerConsumerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_tracker_consumer_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetDevicePosition {
 impl aws_smithy_http::response::ParseStrictResponse for GetDevicePosition {
                 type Output = std::result::Result<crate::output::GetDevicePositionOutput, crate::error::GetDevicePositionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_device_position_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl GetDevicePositionHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetDevicePositionHistory {
                 type Output = std::result::Result<crate::output::GetDevicePositionHistoryOutput, crate::error::GetDevicePositionHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_device_position_history_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl GetGeofence {
 impl aws_smithy_http::response::ParseStrictResponse for GetGeofence {
                 type Output = std::result::Result<crate::output::GetGeofenceOutput, crate::error::GetGeofenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_geofence_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl GetMapGlyphs {
 impl aws_smithy_http::response::ParseStrictResponse for GetMapGlyphs {
                 type Output = std::result::Result<crate::output::GetMapGlyphsOutput, crate::error::GetMapGlyphsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_map_glyphs_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl GetMapSprites {
 impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
                 type Output = std::result::Result<crate::output::GetMapSpritesOutput, crate::error::GetMapSpritesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_map_sprites_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl GetMapStyleDescriptor {
 impl aws_smithy_http::response::ParseStrictResponse for GetMapStyleDescriptor {
                 type Output = std::result::Result<crate::output::GetMapStyleDescriptorOutput, crate::error::GetMapStyleDescriptorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_map_style_descriptor_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl GetMapTile {
 impl aws_smithy_http::response::ParseStrictResponse for GetMapTile {
                 type Output = std::result::Result<crate::output::GetMapTileOutput, crate::error::GetMapTileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_map_tile_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl GetPlace {
 impl aws_smithy_http::response::ParseStrictResponse for GetPlace {
                 type Output = std::result::Result<crate::output::GetPlaceOutput, crate::error::GetPlaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_place_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListDevicePositions {
 impl aws_smithy_http::response::ParseStrictResponse for ListDevicePositions {
                 type Output = std::result::Result<crate::output::ListDevicePositionsOutput, crate::error::ListDevicePositionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_device_positions_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListGeofenceCollections {
 impl aws_smithy_http::response::ParseStrictResponse for ListGeofenceCollections {
                 type Output = std::result::Result<crate::output::ListGeofenceCollectionsOutput, crate::error::ListGeofenceCollectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_geofence_collections_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListGeofences {
 impl aws_smithy_http::response::ParseStrictResponse for ListGeofences {
                 type Output = std::result::Result<crate::output::ListGeofencesOutput, crate::error::ListGeofencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_geofences_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListMaps {
 impl aws_smithy_http::response::ParseStrictResponse for ListMaps {
                 type Output = std::result::Result<crate::output::ListMapsOutput, crate::error::ListMapsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_maps_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListPlaceIndexes {
 impl aws_smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
                 type Output = std::result::Result<crate::output::ListPlaceIndexesOutput, crate::error::ListPlaceIndexesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_place_indexes_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListRouteCalculators {
 impl aws_smithy_http::response::ParseStrictResponse for ListRouteCalculators {
                 type Output = std::result::Result<crate::output::ListRouteCalculatorsOutput, crate::error::ListRouteCalculatorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_route_calculators_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListTrackerConsumers {
 impl aws_smithy_http::response::ParseStrictResponse for ListTrackerConsumers {
                 type Output = std::result::Result<crate::output::ListTrackerConsumersOutput, crate::error::ListTrackerConsumersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tracker_consumers_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl ListTrackers {
 impl aws_smithy_http::response::ParseStrictResponse for ListTrackers {
                 type Output = std::result::Result<crate::output::ListTrackersOutput, crate::error::ListTrackersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_trackers_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl PutGeofence {
 impl aws_smithy_http::response::ParseStrictResponse for PutGeofence {
                 type Output = std::result::Result<crate::output::PutGeofenceOutput, crate::error::PutGeofenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_geofence_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl SearchPlaceIndexForPosition {
 impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosition {
                 type Output = std::result::Result<crate::output::SearchPlaceIndexForPositionOutput, crate::error::SearchPlaceIndexForPositionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_place_index_for_position_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl SearchPlaceIndexForSuggestions {
 impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSuggestions {
                 type Output = std::result::Result<crate::output::SearchPlaceIndexForSuggestionsOutput, crate::error::SearchPlaceIndexForSuggestionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_place_index_for_suggestions_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl SearchPlaceIndexForText {
 impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForText {
                 type Output = std::result::Result<crate::output::SearchPlaceIndexForTextOutput, crate::error::SearchPlaceIndexForTextError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_place_index_for_text_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl UpdateGeofenceCollection {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection {
                 type Output = std::result::Result<crate::output::UpdateGeofenceCollectionOutput, crate::error::UpdateGeofenceCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_geofence_collection_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl UpdateMap {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateMap {
                 type Output = std::result::Result<crate::output::UpdateMapOutput, crate::error::UpdateMapError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_map_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl UpdatePlaceIndex {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePlaceIndex {
                 type Output = std::result::Result<crate::output::UpdatePlaceIndexOutput, crate::error::UpdatePlaceIndexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_place_index_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl UpdateRouteCalculator {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRouteCalculator {
                 type Output = std::result::Result<crate::output::UpdateRouteCalculatorOutput, crate::error::UpdateRouteCalculatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_route_calculator_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl UpdateTracker {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateTracker {
                 type Output = std::result::Result<crate::output::UpdateTrackerOutput, crate::error::UpdateTrackerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_tracker_error(response)
                      } else {

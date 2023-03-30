@@ -36,6 +36,7 @@ pub struct UpdateRevisionOutput  {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -83,6 +84,11 @@ impl UpdateRevisionOutput {
         self.revoked_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
 pub mod update_revision_output {
     
@@ -101,6 +107,7 @@ pub mod update_revision_output {
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -202,6 +209,15 @@ pub mod update_revision_output {
         pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.revoked_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
         pub fn build(self) -> crate::output::UpdateRevisionOutput {
             crate::output::UpdateRevisionOutput {
@@ -229,6 +245,7 @@ pub mod update_revision_output {
                 ,
                 revoked_at: self.revoked_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -264,6 +281,7 @@ pub struct UpdateEventActionOutput  {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -291,6 +309,11 @@ impl UpdateEventActionOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEventActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
 pub mod update_event_action_output {
     
@@ -304,6 +327,7 @@ pub mod update_event_action_output {
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -360,6 +384,15 @@ pub mod update_event_action_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
         pub fn build(self) -> crate::output::UpdateEventActionOutput {
             crate::output::UpdateEventActionOutput {
@@ -375,6 +408,7 @@ pub mod update_event_action_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -422,6 +456,7 @@ pub struct UpdateDataSetOutput  {
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -465,6 +500,11 @@ impl UpdateDataSetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateDataSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
 pub mod update_data_set_output {
     
@@ -482,6 +522,7 @@ pub mod update_data_set_output {
         pub(crate) origin_details: std::option::Option<crate::model::OriginDetails>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -574,6 +615,15 @@ pub mod update_data_set_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
         pub fn build(self) -> crate::output::UpdateDataSetOutput {
             crate::output::UpdateDataSetOutput {
@@ -597,6 +647,7 @@ pub mod update_data_set_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -644,6 +695,7 @@ pub struct UpdateAssetOutput  {
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateAssetOutput {
     /// <p>The ARN for the asset.</p>
@@ -687,6 +739,11 @@ impl UpdateAssetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
 pub mod update_asset_output {
     
@@ -704,6 +761,7 @@ pub mod update_asset_output {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the asset.</p>
@@ -796,6 +854,15 @@ pub mod update_asset_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
         pub fn build(self) -> crate::output::UpdateAssetOutput {
             crate::output::UpdateAssetOutput {
@@ -819,6 +886,7 @@ pub mod update_asset_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -836,7 +904,13 @@ impl UpdateAssetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -844,11 +918,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -866,7 +951,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -874,11 +965,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -896,7 +998,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StartJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartJobOutput`](crate::output::StartJobOutput).
 pub mod start_job_output {
     
@@ -904,11 +1012,22 @@ pub mod start_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartJobOutput`](crate::output::StartJobOutput).
         pub fn build(self) -> crate::output::StartJobOutput {
             crate::output::StartJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -932,6 +1051,7 @@ pub struct SendApiAssetOutput  {
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
     #[doc(hidden)]
     pub response_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl SendApiAssetOutput {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
@@ -943,6 +1063,11 @@ impl SendApiAssetOutput {
         self.response_headers.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SendApiAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
 pub mod send_api_asset_output {
     
@@ -952,6 +1077,7 @@ pub mod send_api_asset_output {
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
         pub(crate) response_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The response body from the underlying API tracked by the API asset.</p>
@@ -978,6 +1104,15 @@ pub mod send_api_asset_output {
         pub fn set_response_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.response_headers = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
         pub fn build(self) -> crate::output::SendApiAssetOutput {
             crate::output::SendApiAssetOutput {
@@ -985,6 +1120,7 @@ pub mod send_api_asset_output {
                 ,
                 response_headers: self.response_headers
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1035,6 +1171,7 @@ pub struct RevokeRevisionOutput  {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl RevokeRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -1082,6 +1219,11 @@ impl RevokeRevisionOutput {
         self.revoked_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RevokeRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
 pub mod revoke_revision_output {
     
@@ -1100,6 +1242,7 @@ pub mod revoke_revision_output {
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -1201,6 +1344,15 @@ pub mod revoke_revision_output {
         pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.revoked_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
         pub fn build(self) -> crate::output::RevokeRevisionOutput {
             crate::output::RevokeRevisionOutput {
@@ -1228,6 +1380,7 @@ pub mod revoke_revision_output {
                 ,
                 revoked_at: self.revoked_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1248,6 +1401,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>A label that consists of a customer-defined key and an optional value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A label that consists of a customer-defined key and an optional value.</p>
@@ -1255,6 +1409,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1263,6 +1422,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1280,11 +1440,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1308,6 +1478,7 @@ pub struct ListRevisionAssetsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRevisionAssetsOutput {
     /// <p>The asset objects listed by the request.</p>
@@ -1319,6 +1490,11 @@ impl ListRevisionAssetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRevisionAssetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
 pub mod list_revision_assets_output {
     
@@ -1328,6 +1504,7 @@ pub mod list_revision_assets_output {
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `assets`.
@@ -1354,6 +1531,15 @@ pub mod list_revision_assets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
         pub fn build(self) -> crate::output::ListRevisionAssetsOutput {
             crate::output::ListRevisionAssetsOutput {
@@ -1361,6 +1547,7 @@ pub mod list_revision_assets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1384,6 +1571,7 @@ pub struct ListJobsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p>The jobs listed by the request.</p>
@@ -1395,6 +1583,11 @@ impl ListJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
     
@@ -1404,6 +1597,7 @@ pub mod list_jobs_output {
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `jobs`.
@@ -1430,6 +1624,15 @@ pub mod list_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
@@ -1437,6 +1640,7 @@ pub mod list_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1460,6 +1664,7 @@ pub struct ListEventActionsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEventActionsOutput {
     /// <p>The event action objects listed by the request.</p>
@@ -1471,6 +1676,11 @@ impl ListEventActionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEventActionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
 pub mod list_event_actions_output {
     
@@ -1480,6 +1690,7 @@ pub mod list_event_actions_output {
     pub struct Builder {
         pub(crate) event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_actions`.
@@ -1506,6 +1717,15 @@ pub mod list_event_actions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
         pub fn build(self) -> crate::output::ListEventActionsOutput {
             crate::output::ListEventActionsOutput {
@@ -1513,6 +1733,7 @@ pub mod list_event_actions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1536,6 +1757,7 @@ pub struct ListDataSetsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
@@ -1547,6 +1769,11 @@ impl ListDataSetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDataSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
 pub mod list_data_sets_output {
     
@@ -1556,6 +1783,7 @@ pub mod list_data_sets_output {
     pub struct Builder {
         pub(crate) data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `data_sets`.
@@ -1582,6 +1810,15 @@ pub mod list_data_sets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
         pub fn build(self) -> crate::output::ListDataSetsOutput {
             crate::output::ListDataSetsOutput {
@@ -1589,6 +1826,7 @@ pub mod list_data_sets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1612,6 +1850,7 @@ pub struct ListDataSetRevisionsOutput  {
     /// <p>The asset objects listed by the request.</p>
     #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>,
+    _request_id: Option<String>,
 }
 impl ListDataSetRevisionsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1623,6 +1862,11 @@ impl ListDataSetRevisionsOutput {
         self.revisions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDataSetRevisionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
 pub mod list_data_set_revisions_output {
     
@@ -1632,6 +1876,7 @@ pub mod list_data_set_revisions_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1658,6 +1903,15 @@ pub mod list_data_set_revisions_output {
         pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>) -> Self {
             self.revisions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
         pub fn build(self) -> crate::output::ListDataSetRevisionsOutput {
             crate::output::ListDataSetRevisionsOutput {
@@ -1665,6 +1919,7 @@ pub mod list_data_set_revisions_output {
                 ,
                 revisions: self.revisions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1718,6 +1973,7 @@ pub struct GetRevisionOutput  {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -1769,6 +2025,11 @@ impl GetRevisionOutput {
         self.revoked_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRevisionOutput`](crate::output::GetRevisionOutput).
 pub mod get_revision_output {
     
@@ -1788,6 +2049,7 @@ pub mod get_revision_output {
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -1904,6 +2166,15 @@ pub mod get_revision_output {
         pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.revoked_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput).
         pub fn build(self) -> crate::output::GetRevisionOutput {
             crate::output::GetRevisionOutput {
@@ -1933,6 +2204,7 @@ pub mod get_revision_output {
                 ,
                 revoked_at: self.revoked_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1974,6 +2246,7 @@ pub struct GetJobOutput  {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetJobOutput {
     /// <p>The ARN for the job.</p>
@@ -2009,6 +2282,11 @@ impl GetJobOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
 pub mod get_job_output {
     
@@ -2024,6 +2302,7 @@ pub mod get_job_output {
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the job.</p>
@@ -2104,6 +2383,15 @@ pub mod get_job_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
             crate::output::GetJobOutput {
@@ -2123,6 +2411,7 @@ pub mod get_job_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2158,6 +2447,7 @@ pub struct GetEventActionOutput  {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -2185,6 +2475,11 @@ impl GetEventActionOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEventActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEventActionOutput`](crate::output::GetEventActionOutput).
 pub mod get_event_action_output {
     
@@ -2198,6 +2493,7 @@ pub mod get_event_action_output {
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -2254,6 +2550,15 @@ pub mod get_event_action_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEventActionOutput`](crate::output::GetEventActionOutput).
         pub fn build(self) -> crate::output::GetEventActionOutput {
             crate::output::GetEventActionOutput {
@@ -2269,6 +2574,7 @@ pub mod get_event_action_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2319,6 +2625,7 @@ pub struct GetDataSetOutput  {
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -2366,6 +2673,11 @@ impl GetDataSetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetDataSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDataSetOutput`](crate::output::GetDataSetOutput).
 pub mod get_data_set_output {
     
@@ -2384,6 +2696,7 @@ pub mod get_data_set_output {
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -2491,6 +2804,15 @@ pub mod get_data_set_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDataSetOutput`](crate::output::GetDataSetOutput).
         pub fn build(self) -> crate::output::GetDataSetOutput {
             crate::output::GetDataSetOutput {
@@ -2516,6 +2838,7 @@ pub mod get_data_set_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2563,6 +2886,7 @@ pub struct GetAssetOutput  {
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetAssetOutput {
     /// <p>The ARN for the asset.</p>
@@ -2606,6 +2930,11 @@ impl GetAssetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAssetOutput`](crate::output::GetAssetOutput).
 pub mod get_asset_output {
     
@@ -2623,6 +2952,7 @@ pub mod get_asset_output {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the asset.</p>
@@ -2715,6 +3045,15 @@ pub mod get_asset_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAssetOutput`](crate::output::GetAssetOutput).
         pub fn build(self) -> crate::output::GetAssetOutput {
             crate::output::GetAssetOutput {
@@ -2738,6 +3077,7 @@ pub mod get_asset_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2755,7 +3095,13 @@ impl GetAssetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRevisionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
 pub mod delete_revision_output {
     
@@ -2763,11 +3109,22 @@ pub mod delete_revision_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
         pub fn build(self) -> crate::output::DeleteRevisionOutput {
             crate::output::DeleteRevisionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2785,7 +3142,13 @@ impl DeleteRevisionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventActionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEventActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
 pub mod delete_event_action_output {
     
@@ -2793,11 +3156,22 @@ pub mod delete_event_action_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
         pub fn build(self) -> crate::output::DeleteEventActionOutput {
             crate::output::DeleteEventActionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2815,7 +3189,13 @@ impl DeleteEventActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataSetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDataSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
 pub mod delete_data_set_output {
     
@@ -2823,11 +3203,22 @@ pub mod delete_data_set_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
         pub fn build(self) -> crate::output::DeleteDataSetOutput {
             crate::output::DeleteDataSetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2845,7 +3236,13 @@ impl DeleteDataSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
     
@@ -2853,11 +3250,22 @@ pub mod delete_asset_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
         pub fn build(self) -> crate::output::DeleteAssetOutput {
             crate::output::DeleteAssetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2911,6 +3319,7 @@ pub struct CreateRevisionOutput  {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateRevisionOutput {
     /// <p>The ARN for the revision.</p>
@@ -2962,6 +3371,11 @@ impl CreateRevisionOutput {
         self.revoked_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
 pub mod create_revision_output {
     
@@ -2981,6 +3395,7 @@ pub mod create_revision_output {
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
         pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the revision.</p>
@@ -3097,6 +3512,15 @@ pub mod create_revision_output {
         pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.revoked_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
         pub fn build(self) -> crate::output::CreateRevisionOutput {
             crate::output::CreateRevisionOutput {
@@ -3126,6 +3550,7 @@ pub mod create_revision_output {
                 ,
                 revoked_at: self.revoked_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3167,6 +3592,7 @@ pub struct CreateJobOutput  {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateJobOutput {
     /// <p>The ARN for the job.</p>
@@ -3202,6 +3628,11 @@ impl CreateJobOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
     
@@ -3217,6 +3648,7 @@ pub mod create_job_output {
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the job.</p>
@@ -3297,6 +3729,15 @@ pub mod create_job_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
@@ -3316,6 +3757,7 @@ pub mod create_job_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3351,6 +3793,7 @@ pub struct CreateEventActionOutput  {
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
@@ -3378,6 +3821,11 @@ impl CreateEventActionOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEventActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
 pub mod create_event_action_output {
     
@@ -3391,6 +3839,7 @@ pub mod create_event_action_output {
         pub(crate) event: std::option::Option<crate::model::Event>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>What occurs after a certain event.</p>
@@ -3447,6 +3896,15 @@ pub mod create_event_action_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
         pub fn build(self) -> crate::output::CreateEventActionOutput {
             crate::output::CreateEventActionOutput {
@@ -3462,6 +3920,7 @@ pub mod create_event_action_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3512,6 +3971,7 @@ pub struct CreateDataSetOutput  {
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateDataSetOutput {
     /// <p>The ARN for the data set.</p>
@@ -3559,6 +4019,11 @@ impl CreateDataSetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDataSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
 pub mod create_data_set_output {
     
@@ -3577,6 +4042,7 @@ pub mod create_data_set_output {
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the data set.</p>
@@ -3684,6 +4150,15 @@ pub mod create_data_set_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
         pub fn build(self) -> crate::output::CreateDataSetOutput {
             crate::output::CreateDataSetOutput {
@@ -3709,6 +4184,7 @@ pub mod create_data_set_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3726,7 +4202,13 @@ impl CreateDataSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CancelJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
     
@@ -3734,11 +4216,22 @@ pub mod cancel_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
             crate::output::CancelJobOutput {
+                _request_id: self._request_id,
             }
         }
     }

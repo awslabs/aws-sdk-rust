@@ -22,6 +22,7 @@ impl AddAttachmentsToSet {
 impl aws_smithy_http::response::ParseStrictResponse for AddAttachmentsToSet {
                 type Output = std::result::Result<crate::output::AddAttachmentsToSetOutput, crate::error::AddAttachmentsToSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_attachments_to_set_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddCommunicationToCase {
 impl aws_smithy_http::response::ParseStrictResponse for AddCommunicationToCase {
                 type Output = std::result::Result<crate::output::AddCommunicationToCaseOutput, crate::error::AddCommunicationToCaseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_communication_to_case_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateCase {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
                 type Output = std::result::Result<crate::output::CreateCaseOutput, crate::error::CreateCaseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_case_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeAttachment {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAttachment {
                 type Output = std::result::Result<crate::output::DescribeAttachmentOutput, crate::error::DescribeAttachmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_attachment_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeCases {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCases {
                 type Output = std::result::Result<crate::output::DescribeCasesOutput, crate::error::DescribeCasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_cases_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeCommunications {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCommunications {
                 type Output = std::result::Result<crate::output::DescribeCommunicationsOutput, crate::error::DescribeCommunicationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_communications_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeServices {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
                 type Output = std::result::Result<crate::output::DescribeServicesOutput, crate::error::DescribeServicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_services_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeSeverityLevels {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSeverityLevels {
                 type Output = std::result::Result<crate::output::DescribeSeverityLevelsOutput, crate::error::DescribeSeverityLevelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_severity_levels_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatuses {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckRefreshStatuses {
                 type Output = std::result::Result<crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput, crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_trusted_advisor_check_refresh_statuses_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeTrustedAdvisorCheckResult {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckResult {
                 type Output = std::result::Result<crate::output::DescribeTrustedAdvisorCheckResultOutput, crate::error::DescribeTrustedAdvisorCheckResultError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_trusted_advisor_check_result_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeTrustedAdvisorChecks {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorChecks {
                 type Output = std::result::Result<crate::output::DescribeTrustedAdvisorChecksOutput, crate::error::DescribeTrustedAdvisorChecksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_trusted_advisor_checks_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeTrustedAdvisorCheckSummaries {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCheckSummaries {
                 type Output = std::result::Result<crate::output::DescribeTrustedAdvisorCheckSummariesOutput, crate::error::DescribeTrustedAdvisorCheckSummariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_trusted_advisor_check_summaries_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl RefreshTrustedAdvisorCheck {
 impl aws_smithy_http::response::ParseStrictResponse for RefreshTrustedAdvisorCheck {
                 type Output = std::result::Result<crate::output::RefreshTrustedAdvisorCheckOutput, crate::error::RefreshTrustedAdvisorCheckError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_refresh_trusted_advisor_check_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ResolveCase {
 impl aws_smithy_http::response::ParseStrictResponse for ResolveCase {
                 type Output = std::result::Result<crate::output::ResolveCaseOutput, crate::error::ResolveCaseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resolve_case_error(response)
                      } else {

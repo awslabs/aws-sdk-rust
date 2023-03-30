@@ -28,15 +28,8 @@ pub enum Error {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55,18 +48,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReportCreat
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeReportCreationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeReportCreationError> for Error {
     fn from(err: crate::error::DescribeReportCreationError) -> Self {
-        match err.kind {
-            crate::error::DescribeReportCreationErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::error::DescribeReportCreationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DescribeReportCreationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DescribeReportCreationErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::DescribeReportCreationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeReportCreationError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::DescribeReportCreationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeReportCreationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DescribeReportCreationError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::DescribeReportCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -74,18 +72,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComplianceSummar
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetComplianceSummaryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetComplianceSummaryError> for Error {
     fn from(err: crate::error::GetComplianceSummaryError) -> Self {
-        match err.kind {
-            crate::error::GetComplianceSummaryErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::error::GetComplianceSummaryErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::GetComplianceSummaryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetComplianceSummaryErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::GetComplianceSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetComplianceSummaryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::GetComplianceSummaryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetComplianceSummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetComplianceSummaryError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::GetComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -93,18 +96,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcesError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetResourcesError> for Error {
     fn from(err: crate::error::GetResourcesError) -> Self {
-        match err.kind {
-            crate::error::GetResourcesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::GetResourcesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResourcesErrorKind::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
-            crate::error::GetResourcesErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::GetResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetResourcesError::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
+            crate::error::GetResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::GetResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -112,18 +120,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTagKeysError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTagKeysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetTagKeysError> for Error {
     fn from(err: crate::error::GetTagKeysError) -> Self {
-        match err.kind {
-            crate::error::GetTagKeysErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::GetTagKeysErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetTagKeysErrorKind::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
-            crate::error::GetTagKeysErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::GetTagKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetTagKeysError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetTagKeysError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetTagKeysError::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
+            crate::error::GetTagKeysError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::GetTagKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -131,18 +144,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTagValuesError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTagValuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetTagValuesError> for Error {
     fn from(err: crate::error::GetTagValuesError) -> Self {
-        match err.kind {
-            crate::error::GetTagValuesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::GetTagValuesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetTagValuesErrorKind::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
-            crate::error::GetTagValuesErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::GetTagValuesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetTagValuesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetTagValuesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetTagValuesError::PaginationTokenExpiredException(inner) => Error::PaginationTokenExpiredException(inner),
+            crate::error::GetTagValuesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::GetTagValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -150,19 +168,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartReportCreation
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartReportCreationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartReportCreationError> for Error {
     fn from(err: crate::error::StartReportCreationError) -> Self {
-        match err.kind {
-            crate::error::StartReportCreationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::StartReportCreationErrorKind::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
-            crate::error::StartReportCreationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::StartReportCreationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartReportCreationErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::StartReportCreationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartReportCreationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::StartReportCreationError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::error::StartReportCreationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StartReportCreationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartReportCreationError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::StartReportCreationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -170,17 +193,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourcesError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourcesError> for Error {
     fn from(err: crate::error::TagResourcesError) -> Self {
-        match err.kind {
-            crate::error::TagResourcesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::TagResourcesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::TagResourcesErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::TagResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::TagResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::TagResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::TagResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -188,19 +216,37 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourcesError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourcesError> for Error {
     fn from(err: crate::error::UntagResourcesError) -> Self {
-        match err.kind {
-            crate::error::UntagResourcesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::UntagResourcesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UntagResourcesErrorKind::ThrottledException(inner) => Error::ThrottledException(inner),
-            crate::error::UntagResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UntagResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::UntagResourcesError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::error::UntagResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConstraintViolationException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::PaginationTokenExpiredException(e) => e.request_id(),
+            Self::ThrottledException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

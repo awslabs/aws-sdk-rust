@@ -22,6 +22,7 @@ impl BulkPublish {
 impl aws_smithy_http::response::ParseStrictResponse for BulkPublish {
                 type Output = std::result::Result<crate::output::BulkPublishOutput, crate::error::BulkPublishError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_bulk_publish_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteDataset {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
                 type Output = std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_dataset_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeDataset {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
                 type Output = std::result::Result<crate::output::DescribeDatasetOutput, crate::error::DescribeDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_dataset_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeIdentityPoolUsage {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityPoolUsage {
                 type Output = std::result::Result<crate::output::DescribeIdentityPoolUsageOutput, crate::error::DescribeIdentityPoolUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_identity_pool_usage_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeIdentityUsage {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityUsage {
                 type Output = std::result::Result<crate::output::DescribeIdentityUsageOutput, crate::error::DescribeIdentityUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_identity_usage_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetBulkPublishDetails {
 impl aws_smithy_http::response::ParseStrictResponse for GetBulkPublishDetails {
                 type Output = std::result::Result<crate::output::GetBulkPublishDetailsOutput, crate::error::GetBulkPublishDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_bulk_publish_details_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetCognitoEvents {
 impl aws_smithy_http::response::ParseStrictResponse for GetCognitoEvents {
                 type Output = std::result::Result<crate::output::GetCognitoEventsOutput, crate::error::GetCognitoEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cognito_events_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetIdentityPoolConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolConfiguration {
                 type Output = std::result::Result<crate::output::GetIdentityPoolConfigurationOutput, crate::error::GetIdentityPoolConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_identity_pool_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListDatasets {
 impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
                 type Output = std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_datasets_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListIdentityPoolUsage {
 impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPoolUsage {
                 type Output = std::result::Result<crate::output::ListIdentityPoolUsageOutput, crate::error::ListIdentityPoolUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_identity_pool_usage_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListRecords {
 impl aws_smithy_http::response::ParseStrictResponse for ListRecords {
                 type Output = std::result::Result<crate::output::ListRecordsOutput, crate::error::ListRecordsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_records_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl RegisterDevice {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterDevice {
                 type Output = std::result::Result<crate::output::RegisterDeviceOutput, crate::error::RegisterDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_device_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl SetCognitoEvents {
 impl aws_smithy_http::response::ParseStrictResponse for SetCognitoEvents {
                 type Output = std::result::Result<crate::output::SetCognitoEventsOutput, crate::error::SetCognitoEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_cognito_events_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl SetIdentityPoolConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolConfiguration {
                 type Output = std::result::Result<crate::output::SetIdentityPoolConfigurationOutput, crate::error::SetIdentityPoolConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_identity_pool_configuration_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl SubscribeToDataset {
 impl aws_smithy_http::response::ParseStrictResponse for SubscribeToDataset {
                 type Output = std::result::Result<crate::output::SubscribeToDatasetOutput, crate::error::SubscribeToDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_subscribe_to_dataset_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl UnsubscribeFromDataset {
 impl aws_smithy_http::response::ParseStrictResponse for UnsubscribeFromDataset {
                 type Output = std::result::Result<crate::output::UnsubscribeFromDatasetOutput, crate::error::UnsubscribeFromDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_unsubscribe_from_dataset_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UpdateRecords {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRecords {
                 type Output = std::result::Result<crate::output::UpdateRecordsOutput, crate::error::UpdateRecordsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_records_error(response)
                      } else {

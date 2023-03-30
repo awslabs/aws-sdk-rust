@@ -22,6 +22,7 @@ impl AddProfilePermission {
 impl aws_smithy_http::response::ParseStrictResponse for AddProfilePermission {
                 type Output = std::result::Result<crate::output::AddProfilePermissionOutput, crate::error::AddProfilePermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_profile_permission_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CancelSigningProfile {
 impl aws_smithy_http::response::ParseStrictResponse for CancelSigningProfile {
                 type Output = std::result::Result<crate::output::CancelSigningProfileOutput, crate::error::CancelSigningProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_signing_profile_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeSigningJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSigningJob {
                 type Output = std::result::Result<crate::output::DescribeSigningJobOutput, crate::error::DescribeSigningJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_signing_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetSigningPlatform {
 impl aws_smithy_http::response::ParseStrictResponse for GetSigningPlatform {
                 type Output = std::result::Result<crate::output::GetSigningPlatformOutput, crate::error::GetSigningPlatformError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_signing_platform_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetSigningProfile {
 impl aws_smithy_http::response::ParseStrictResponse for GetSigningProfile {
                 type Output = std::result::Result<crate::output::GetSigningProfileOutput, crate::error::GetSigningProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_signing_profile_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListProfilePermissions {
 impl aws_smithy_http::response::ParseStrictResponse for ListProfilePermissions {
                 type Output = std::result::Result<crate::output::ListProfilePermissionsOutput, crate::error::ListProfilePermissionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_profile_permissions_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListSigningJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListSigningJobs {
                 type Output = std::result::Result<crate::output::ListSigningJobsOutput, crate::error::ListSigningJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_signing_jobs_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListSigningPlatforms {
 impl aws_smithy_http::response::ParseStrictResponse for ListSigningPlatforms {
                 type Output = std::result::Result<crate::output::ListSigningPlatformsOutput, crate::error::ListSigningPlatformsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_signing_platforms_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListSigningProfiles {
 impl aws_smithy_http::response::ParseStrictResponse for ListSigningProfiles {
                 type Output = std::result::Result<crate::output::ListSigningProfilesOutput, crate::error::ListSigningProfilesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_signing_profiles_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl PutSigningProfile {
 impl aws_smithy_http::response::ParseStrictResponse for PutSigningProfile {
                 type Output = std::result::Result<crate::output::PutSigningProfileOutput, crate::error::PutSigningProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_signing_profile_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl RemoveProfilePermission {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveProfilePermission {
                 type Output = std::result::Result<crate::output::RemoveProfilePermissionOutput, crate::error::RemoveProfilePermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_profile_permission_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl RevokeSignature {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeSignature {
                 type Output = std::result::Result<crate::output::RevokeSignatureOutput, crate::error::RevokeSignatureError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_revoke_signature_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl RevokeSigningProfile {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeSigningProfile {
                 type Output = std::result::Result<crate::output::RevokeSigningProfileOutput, crate::error::RevokeSigningProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_revoke_signing_profile_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl StartSigningJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartSigningJob {
                 type Output = std::result::Result<crate::output::StartSigningJobOutput, crate::error::StartSigningJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_signing_job_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

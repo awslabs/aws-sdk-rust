@@ -7,6 +7,7 @@ pub struct UpdateResourceOutput  {
     /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+    _request_id: Option<String>,
 }
 impl UpdateResourceOutput {
     /// <p>Represents the current status of the resource update request.</p> 
@@ -15,6 +16,11 @@ impl UpdateResourceOutput {
         self.progress_event.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
 pub mod update_resource_output {
     
@@ -23,6 +29,7 @@ pub mod update_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the current status of the resource update request.</p> 
@@ -36,11 +43,21 @@ pub mod update_resource_output {
         pub fn set_progress_event(mut self, input: std::option::Option<crate::model::ProgressEvent>) -> Self {
             self.progress_event = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
         pub fn build(self) -> crate::output::UpdateResourceOutput {
             crate::output::UpdateResourceOutput {
                 progress_event: self.progress_event
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -67,6 +84,7 @@ pub struct ListResourcesOutput  {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourcesOutput {
     /// <p>The name of the resource type.</p>
@@ -82,6 +100,11 @@ impl ListResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
     
@@ -92,6 +115,7 @@ pub mod list_resources_output {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) resource_descriptions: std::option::Option<std::vec::Vec<crate::model::ResourceDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the resource type.</p>
@@ -127,6 +151,15 @@ pub mod list_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
@@ -136,6 +169,7 @@ pub mod list_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +193,7 @@ pub struct ListResourceRequestsOutput  {
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourceRequestsOutput {
     /// <p>The requests that match the specified filter criteria.</p>
@@ -170,6 +205,11 @@ impl ListResourceRequestsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourceRequestsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
 pub mod list_resource_requests_output {
     
@@ -179,6 +219,7 @@ pub mod list_resource_requests_output {
     pub struct Builder {
         pub(crate) resource_request_status_summaries: std::option::Option<std::vec::Vec<crate::model::ProgressEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_request_status_summaries`.
@@ -205,6 +246,15 @@ pub mod list_resource_requests_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
         pub fn build(self) -> crate::output::ListResourceRequestsOutput {
             crate::output::ListResourceRequestsOutput {
@@ -212,6 +262,7 @@ pub mod list_resource_requests_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -232,6 +283,7 @@ pub struct GetResourceRequestStatusOutput  {
     /// <p>Represents the current status of the resource operation request.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+    _request_id: Option<String>,
 }
 impl GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
@@ -239,6 +291,11 @@ impl GetResourceRequestStatusOutput {
         self.progress_event.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceRequestStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
 pub mod get_resource_request_status_output {
     
@@ -247,6 +304,7 @@ pub mod get_resource_request_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the current status of the resource operation request.</p>
@@ -258,11 +316,21 @@ pub mod get_resource_request_status_output {
         pub fn set_progress_event(mut self, input: std::option::Option<crate::model::ProgressEvent>) -> Self {
             self.progress_event = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
         pub fn build(self) -> crate::output::GetResourceRequestStatusOutput {
             crate::output::GetResourceRequestStatusOutput {
                 progress_event: self.progress_event
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -286,6 +354,7 @@ pub struct GetResourceOutput  {
     /// <p>Represents information about a provisioned resource.</p>
     #[doc(hidden)]
     pub resource_description: std::option::Option<crate::model::ResourceDescription>,
+    _request_id: Option<String>,
 }
 impl GetResourceOutput {
     /// <p>The name of the resource type.</p>
@@ -297,6 +366,11 @@ impl GetResourceOutput {
         self.resource_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourceOutput`](crate::output::GetResourceOutput).
 pub mod get_resource_output {
     
@@ -306,6 +380,7 @@ pub mod get_resource_output {
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) resource_description: std::option::Option<crate::model::ResourceDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the resource type.</p>
@@ -326,6 +401,15 @@ pub mod get_resource_output {
         pub fn set_resource_description(mut self, input: std::option::Option<crate::model::ResourceDescription>) -> Self {
             self.resource_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourceOutput`](crate::output::GetResourceOutput).
         pub fn build(self) -> crate::output::GetResourceOutput {
             crate::output::GetResourceOutput {
@@ -333,6 +417,7 @@ pub mod get_resource_output {
                 ,
                 resource_description: self.resource_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,6 +439,7 @@ pub struct DeleteResourceOutput  {
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+    _request_id: Option<String>,
 }
 impl DeleteResourceOutput {
     /// <p>Represents the current status of the resource deletion request.</p> 
@@ -362,6 +448,11 @@ impl DeleteResourceOutput {
         self.progress_event.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
     
@@ -370,6 +461,7 @@ pub mod delete_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the current status of the resource deletion request.</p> 
@@ -383,11 +475,21 @@ pub mod delete_resource_output {
         pub fn set_progress_event(mut self, input: std::option::Option<crate::model::ProgressEvent>) -> Self {
             self.progress_event = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
         pub fn build(self) -> crate::output::DeleteResourceOutput {
             crate::output::DeleteResourceOutput {
                 progress_event: self.progress_event
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,6 +511,7 @@ pub struct CreateResourceOutput  {
     /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+    _request_id: Option<String>,
 }
 impl CreateResourceOutput {
     /// <p>Represents the current status of the resource creation request.</p> 
@@ -417,6 +520,11 @@ impl CreateResourceOutput {
         self.progress_event.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
 pub mod create_resource_output {
     
@@ -425,6 +533,7 @@ pub mod create_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the current status of the resource creation request.</p> 
@@ -438,11 +547,21 @@ pub mod create_resource_output {
         pub fn set_progress_event(mut self, input: std::option::Option<crate::model::ProgressEvent>) -> Self {
             self.progress_event = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResourceOutput`](crate::output::CreateResourceOutput).
         pub fn build(self) -> crate::output::CreateResourceOutput {
             crate::output::CreateResourceOutput {
                 progress_event: self.progress_event
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -463,6 +582,7 @@ pub struct CancelResourceRequestOutput  {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
+    _request_id: Option<String>,
 }
 impl CancelResourceRequestOutput {
     /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
@@ -470,6 +590,11 @@ impl CancelResourceRequestOutput {
         self.progress_event.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CancelResourceRequestOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
 pub mod cancel_resource_request_output {
     
@@ -478,6 +603,7 @@ pub mod cancel_resource_request_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
@@ -489,11 +615,21 @@ pub mod cancel_resource_request_output {
         pub fn set_progress_event(mut self, input: std::option::Option<crate::model::ProgressEvent>) -> Self {
             self.progress_event = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
         pub fn build(self) -> crate::output::CancelResourceRequestOutput {
             crate::output::CancelResourceRequestOutput {
                 progress_event: self.progress_event
                 ,
+                _request_id: self._request_id,
             }
         }
     }

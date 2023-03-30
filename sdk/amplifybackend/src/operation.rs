@@ -22,6 +22,7 @@ impl CloneBackend {
 impl aws_smithy_http::response::ParseStrictResponse for CloneBackend {
                 type Output = std::result::Result<crate::output::CloneBackendOutput, crate::error::CloneBackendError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_clone_backend_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateBackend {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackend {
                 type Output = std::result::Result<crate::output::CreateBackendOutput, crate::error::CreateBackendError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backend_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateBackendAPI {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAPI {
                 type Output = std::result::Result<crate::output::CreateBackendApiOutput, crate::error::CreateBackendAPIError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backend_api_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateBackendAuth {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAuth {
                 type Output = std::result::Result<crate::output::CreateBackendAuthOutput, crate::error::CreateBackendAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backend_auth_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateBackendConfig {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackendConfig {
                 type Output = std::result::Result<crate::output::CreateBackendConfigOutput, crate::error::CreateBackendConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backend_config_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateBackendStorage {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackendStorage {
                 type Output = std::result::Result<crate::output::CreateBackendStorageOutput, crate::error::CreateBackendStorageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backend_storage_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateToken {
 impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
                 type Output = std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_token_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteBackend {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackend {
                 type Output = std::result::Result<crate::output::DeleteBackendOutput, crate::error::DeleteBackendError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_backend_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteBackendAPI {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAPI {
                 type Output = std::result::Result<crate::output::DeleteBackendApiOutput, crate::error::DeleteBackendAPIError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_backend_api_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteBackendAuth {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAuth {
                 type Output = std::result::Result<crate::output::DeleteBackendAuthOutput, crate::error::DeleteBackendAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_backend_auth_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteBackendStorage {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendStorage {
                 type Output = std::result::Result<crate::output::DeleteBackendStorageOutput, crate::error::DeleteBackendStorageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_backend_storage_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteToken {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
                 type Output = std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_token_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GenerateBackendAPIModels {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateBackendAPIModels {
                 type Output = std::result::Result<crate::output::GenerateBackendApiModelsOutput, crate::error::GenerateBackendAPIModelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_backend_api_models_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetBackend {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackend {
                 type Output = std::result::Result<crate::output::GetBackendOutput, crate::error::GetBackendError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetBackendAPI {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPI {
                 type Output = std::result::Result<crate::output::GetBackendApiOutput, crate::error::GetBackendAPIError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_api_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetBackendAPIModels {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPIModels {
                 type Output = std::result::Result<crate::output::GetBackendApiModelsOutput, crate::error::GetBackendAPIModelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_api_models_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetBackendAuth {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackendAuth {
                 type Output = std::result::Result<crate::output::GetBackendAuthOutput, crate::error::GetBackendAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_auth_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetBackendJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackendJob {
                 type Output = std::result::Result<crate::output::GetBackendJobOutput, crate::error::GetBackendJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_job_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetBackendStorage {
 impl aws_smithy_http::response::ParseStrictResponse for GetBackendStorage {
                 type Output = std::result::Result<crate::output::GetBackendStorageOutput, crate::error::GetBackendStorageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_backend_storage_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetToken {
 impl aws_smithy_http::response::ParseStrictResponse for GetToken {
                 type Output = std::result::Result<crate::output::GetTokenOutput, crate::error::GetTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_token_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ImportBackendAuth {
 impl aws_smithy_http::response::ParseStrictResponse for ImportBackendAuth {
                 type Output = std::result::Result<crate::output::ImportBackendAuthOutput, crate::error::ImportBackendAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_backend_auth_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ImportBackendStorage {
 impl aws_smithy_http::response::ParseStrictResponse for ImportBackendStorage {
                 type Output = std::result::Result<crate::output::ImportBackendStorageOutput, crate::error::ImportBackendStorageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_backend_storage_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListBackendJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListBackendJobs {
                 type Output = std::result::Result<crate::output::ListBackendJobsOutput, crate::error::ListBackendJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_backend_jobs_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListS3Buckets {
 impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
                 type Output = std::result::Result<crate::output::ListS3BucketsOutput, crate::error::ListS3BucketsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_s3_buckets_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl RemoveAllBackends {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveAllBackends {
                 type Output = std::result::Result<crate::output::RemoveAllBackendsOutput, crate::error::RemoveAllBackendsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_all_backends_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl RemoveBackendConfig {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveBackendConfig {
                 type Output = std::result::Result<crate::output::RemoveBackendConfigOutput, crate::error::RemoveBackendConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_backend_config_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateBackendAPI {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAPI {
                 type Output = std::result::Result<crate::output::UpdateBackendApiOutput, crate::error::UpdateBackendAPIError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_backend_api_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UpdateBackendAuth {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAuth {
                 type Output = std::result::Result<crate::output::UpdateBackendAuthOutput, crate::error::UpdateBackendAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_backend_auth_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateBackendConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendConfig {
                 type Output = std::result::Result<crate::output::UpdateBackendConfigOutput, crate::error::UpdateBackendConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_backend_config_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateBackendJob {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendJob {
                 type Output = std::result::Result<crate::output::UpdateBackendJobOutput, crate::error::UpdateBackendJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_backend_job_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UpdateBackendStorage {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendStorage {
                 type Output = std::result::Result<crate::output::UpdateBackendStorageOutput, crate::error::UpdateBackendStorageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_backend_storage_error(response)
                      } else {

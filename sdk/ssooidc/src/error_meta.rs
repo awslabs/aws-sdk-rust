@@ -27,15 +27,8 @@ pub enum Error {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -60,25 +53,30 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateTokenError> for Error {
     fn from(err: crate::error::CreateTokenError) -> Self {
-        match err.kind {
-            crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateTokenErrorKind::AuthorizationPendingException(inner) => Error::AuthorizationPendingException(inner),
-            crate::error::CreateTokenErrorKind::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
-            crate::error::CreateTokenErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateTokenErrorKind::InvalidClientException(inner) => Error::InvalidClientException(inner),
-            crate::error::CreateTokenErrorKind::InvalidGrantException(inner) => Error::InvalidGrantException(inner),
-            crate::error::CreateTokenErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreateTokenErrorKind::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
-            crate::error::CreateTokenErrorKind::SlowDownException(inner) => Error::SlowDownException(inner),
-            crate::error::CreateTokenErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateTokenErrorKind::UnsupportedGrantTypeException(inner) => Error::UnsupportedGrantTypeException(inner),
-            crate::error::CreateTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateTokenError::AuthorizationPendingException(inner) => Error::AuthorizationPendingException(inner),
+            crate::error::CreateTokenError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::error::CreateTokenError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateTokenError::InvalidClientException(inner) => Error::InvalidClientException(inner),
+            crate::error::CreateTokenError::InvalidGrantException(inner) => Error::InvalidGrantException(inner),
+            crate::error::CreateTokenError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateTokenError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
+            crate::error::CreateTokenError::SlowDownException(inner) => Error::SlowDownException(inner),
+            crate::error::CreateTokenError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateTokenError::UnsupportedGrantTypeException(inner) => Error::UnsupportedGrantTypeException(inner),
+            crate::error::CreateTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -86,18 +84,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterClientError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterClientError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RegisterClientError> for Error {
     fn from(err: crate::error::RegisterClientError) -> Self {
-        match err.kind {
-            crate::error::RegisterClientErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::RegisterClientErrorKind::InvalidClientMetadataException(inner) => Error::InvalidClientMetadataException(inner),
-            crate::error::RegisterClientErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::RegisterClientErrorKind::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
-            crate::error::RegisterClientErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RegisterClientError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::RegisterClientError::InvalidClientMetadataException(inner) => Error::InvalidClientMetadataException(inner),
+            crate::error::RegisterClientError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::RegisterClientError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
+            crate::error::RegisterClientError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -105,21 +108,45 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDeviceAuthoriz
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartDeviceAuthorizationError> for Error {
     fn from(err: crate::error::StartDeviceAuthorizationError) -> Self {
-        match err.kind {
-            crate::error::StartDeviceAuthorizationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartDeviceAuthorizationErrorKind::InvalidClientException(inner) => Error::InvalidClientException(inner),
-            crate::error::StartDeviceAuthorizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::StartDeviceAuthorizationErrorKind::SlowDownException(inner) => Error::SlowDownException(inner),
-            crate::error::StartDeviceAuthorizationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::error::StartDeviceAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartDeviceAuthorizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StartDeviceAuthorizationError::InvalidClientException(inner) => Error::InvalidClientException(inner),
+            crate::error::StartDeviceAuthorizationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartDeviceAuthorizationError::SlowDownException(inner) => Error::SlowDownException(inner),
+            crate::error::StartDeviceAuthorizationError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::StartDeviceAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::AuthorizationPendingException(e) => e.request_id(),
+            Self::ExpiredTokenException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidClientException(e) => e.request_id(),
+            Self::InvalidClientMetadataException(e) => e.request_id(),
+            Self::InvalidGrantException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::InvalidScopeException(e) => e.request_id(),
+            Self::SlowDownException(e) => e.request_id(),
+            Self::UnauthorizedClientException(e) => e.request_id(),
+            Self::UnsupportedGrantTypeException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

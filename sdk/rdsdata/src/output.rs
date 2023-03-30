@@ -7,6 +7,7 @@ pub struct RollbackTransactionOutput  {
     /// <p>The status of the rollback operation.</p>
     #[doc(hidden)]
     pub transaction_status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RollbackTransactionOutput {
     /// <p>The status of the rollback operation.</p>
@@ -14,6 +15,11 @@ impl RollbackTransactionOutput {
         self.transaction_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RollbackTransactionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
 pub mod rollback_transaction_output {
     
@@ -22,6 +28,7 @@ pub mod rollback_transaction_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the rollback operation.</p>
@@ -33,11 +40,21 @@ pub mod rollback_transaction_output {
         pub fn set_transaction_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transaction_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
         pub fn build(self) -> crate::output::RollbackTransactionOutput {
             crate::output::RollbackTransactionOutput {
                 transaction_status: self.transaction_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -73,6 +90,7 @@ pub struct ExecuteStatementOutput  {
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     #[doc(hidden)]
     pub formatted_records: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExecuteStatementOutput {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
@@ -99,6 +117,11 @@ impl ExecuteStatementOutput {
         self.formatted_records.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteStatementOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
     
@@ -111,6 +134,7 @@ pub mod execute_statement_output {
         pub(crate) number_of_records_updated: std::option::Option<i64>,
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
         pub(crate) formatted_records: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -182,6 +206,15 @@ pub mod execute_statement_output {
         pub fn set_formatted_records(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.formatted_records = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
@@ -196,6 +229,7 @@ pub mod execute_statement_output {
                 ,
                 formatted_records: self.formatted_records
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -216,6 +250,7 @@ pub struct ExecuteSqlOutput  {
     /// <p>The results of the SQL statement or statements.</p>
     #[doc(hidden)]
     pub sql_statement_results: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
+    _request_id: Option<String>,
 }
 impl ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
@@ -223,6 +258,11 @@ impl ExecuteSqlOutput {
         self.sql_statement_results.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteSqlOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
 pub mod execute_sql_output {
     
@@ -231,6 +271,7 @@ pub mod execute_sql_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_statement_results: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sql_statement_results`.
@@ -248,11 +289,21 @@ pub mod execute_sql_output {
         pub fn set_sql_statement_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>) -> Self {
             self.sql_statement_results = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
         pub fn build(self) -> crate::output::ExecuteSqlOutput {
             crate::output::ExecuteSqlOutput {
                 sql_statement_results: self.sql_statement_results
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -273,6 +324,7 @@ pub struct CommitTransactionOutput  {
     /// <p>The status of the commit operation.</p>
     #[doc(hidden)]
     pub transaction_status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CommitTransactionOutput {
     /// <p>The status of the commit operation.</p>
@@ -280,6 +332,11 @@ impl CommitTransactionOutput {
         self.transaction_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CommitTransactionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
 pub mod commit_transaction_output {
     
@@ -288,6 +345,7 @@ pub mod commit_transaction_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the commit operation.</p>
@@ -299,11 +357,21 @@ pub mod commit_transaction_output {
         pub fn set_transaction_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transaction_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
         pub fn build(self) -> crate::output::CommitTransactionOutput {
             crate::output::CommitTransactionOutput {
                 transaction_status: self.transaction_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -324,6 +392,7 @@ pub struct BeginTransactionOutput  {
     /// <p>The transaction ID of the transaction started by the call.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl BeginTransactionOutput {
     /// <p>The transaction ID of the transaction started by the call.</p>
@@ -331,6 +400,11 @@ impl BeginTransactionOutput {
         self.transaction_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BeginTransactionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
 pub mod begin_transaction_output {
     
@@ -339,6 +413,7 @@ pub mod begin_transaction_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The transaction ID of the transaction started by the call.</p>
@@ -350,11 +425,21 @@ pub mod begin_transaction_output {
         pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transaction_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
         pub fn build(self) -> crate::output::BeginTransactionOutput {
             crate::output::BeginTransactionOutput {
                 transaction_id: self.transaction_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -375,6 +460,7 @@ pub struct BatchExecuteStatementOutput  {
     /// <p>The execution results of each batch entry.</p>
     #[doc(hidden)]
     pub update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
+    _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
@@ -382,6 +468,11 @@ impl BatchExecuteStatementOutput {
         self.update_results.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
     
@@ -390,6 +481,7 @@ pub mod batch_execute_statement_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `update_results`.
@@ -407,11 +499,21 @@ pub mod batch_execute_statement_output {
         pub fn set_update_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>) -> Self {
             self.update_results = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
                 update_results: self.update_results
                 ,
+                _request_id: self._request_id,
             }
         }
     }

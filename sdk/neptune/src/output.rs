@@ -7,6 +7,7 @@ pub struct StopDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl StopDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -15,6 +16,11 @@ impl StopDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
 pub mod stop_db_cluster_output {
     
@@ -23,6 +29,7 @@ pub mod stop_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -36,11 +43,21 @@ pub mod stop_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
         pub fn build(self) -> crate::output::StopDbClusterOutput {
             crate::output::StopDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -62,6 +79,7 @@ pub struct StartDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl StartDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -70,6 +88,11 @@ impl StartDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
 pub mod start_db_cluster_output {
     
@@ -78,6 +101,7 @@ pub mod start_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -91,11 +115,21 @@ pub mod start_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
         pub fn build(self) -> crate::output::StartDbClusterOutput {
             crate::output::StartDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,6 +151,7 @@ pub struct RestoreDbClusterToPointInTimeOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -125,6 +160,11 @@ impl RestoreDbClusterToPointInTimeOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreDbClusterToPointInTimeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
 pub mod restore_db_cluster_to_point_in_time_output {
     
@@ -133,6 +173,7 @@ pub mod restore_db_cluster_to_point_in_time_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -146,11 +187,21 @@ pub mod restore_db_cluster_to_point_in_time_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterToPointInTimeOutput {
             crate::output::RestoreDbClusterToPointInTimeOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -172,6 +223,7 @@ pub struct RestoreDbClusterFromSnapshotOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -180,6 +232,11 @@ impl RestoreDbClusterFromSnapshotOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreDbClusterFromSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
 pub mod restore_db_cluster_from_snapshot_output {
     
@@ -188,6 +245,7 @@ pub mod restore_db_cluster_from_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -201,11 +259,21 @@ pub mod restore_db_cluster_from_snapshot_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterFromSnapshotOutput {
             crate::output::RestoreDbClusterFromSnapshotOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -226,6 +294,7 @@ pub struct ResetDbParameterGroupOutput  {
     /// <p>Provides the name of the DB parameter group.</p>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ResetDbParameterGroupOutput {
     /// <p>Provides the name of the DB parameter group.</p>
@@ -233,6 +302,11 @@ impl ResetDbParameterGroupOutput {
         self.db_parameter_group_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ResetDbParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
 pub mod reset_db_parameter_group_output {
     
@@ -241,6 +315,7 @@ pub mod reset_db_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the name of the DB parameter group.</p>
@@ -252,11 +327,21 @@ pub mod reset_db_parameter_group_output {
         pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_parameter_group_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbParameterGroupOutput {
             crate::output::ResetDbParameterGroupOutput {
                 db_parameter_group_name: self.db_parameter_group_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -285,6 +370,7 @@ pub struct ResetDbClusterParameterGroupOutput  {
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ResetDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p> 
@@ -300,6 +386,11 @@ impl ResetDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ResetDbClusterParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
 pub mod reset_db_cluster_parameter_group_output {
     
@@ -308,6 +399,7 @@ pub mod reset_db_cluster_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the DB cluster parameter group.</p> 
@@ -335,11 +427,21 @@ pub mod reset_db_cluster_parameter_group_output {
         pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbClusterParameterGroupOutput {
             crate::output::ResetDbClusterParameterGroupOutput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -357,7 +459,13 @@ impl ResetDbClusterParameterGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
     
@@ -365,11 +473,22 @@ pub mod remove_tags_from_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -390,6 +509,7 @@ pub struct RemoveSourceIdentifierFromSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+    _request_id: Option<String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -397,6 +517,11 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
         self.event_subscription.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveSourceIdentifierFromSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
 pub mod remove_source_identifier_from_subscription_output {
     
@@ -405,6 +530,7 @@ pub mod remove_source_identifier_from_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -416,11 +542,21 @@ pub mod remove_source_identifier_from_subscription_output {
         pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
             self.event_subscription = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
         pub fn build(self) -> crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
             crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
                 event_subscription: self.event_subscription
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -438,7 +574,13 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveRoleFromDbClusterOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveRoleFromDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
 pub mod remove_role_from_db_cluster_output {
     
@@ -446,11 +588,22 @@ pub mod remove_role_from_db_cluster_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
         pub fn build(self) -> crate::output::RemoveRoleFromDbClusterOutput {
             crate::output::RemoveRoleFromDbClusterOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -472,6 +625,7 @@ pub struct RemoveFromGlobalClusterOutput  {
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    _request_id: Option<String>,
 }
 impl RemoveFromGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -480,6 +634,11 @@ impl RemoveFromGlobalClusterOutput {
         self.global_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveFromGlobalClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
 pub mod remove_from_global_cluster_output {
     
@@ -488,6 +647,7 @@ pub mod remove_from_global_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -501,11 +661,21 @@ pub mod remove_from_global_cluster_output {
         pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
             self.global_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
         pub fn build(self) -> crate::output::RemoveFromGlobalClusterOutput {
             crate::output::RemoveFromGlobalClusterOutput {
                 global_cluster: self.global_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -527,6 +697,7 @@ pub struct RebootDbInstanceOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+    _request_id: Option<String>,
 }
 impl RebootDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -535,6 +706,11 @@ impl RebootDbInstanceOutput {
         self.db_instance.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RebootDbInstanceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
 pub mod reboot_db_instance_output {
     
@@ -543,6 +719,7 @@ pub mod reboot_db_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -556,11 +733,21 @@ pub mod reboot_db_instance_output {
         pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
             self.db_instance = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
         pub fn build(self) -> crate::output::RebootDbInstanceOutput {
             crate::output::RebootDbInstanceOutput {
                 db_instance: self.db_instance
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -582,6 +769,7 @@ pub struct PromoteReadReplicaDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl PromoteReadReplicaDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -590,6 +778,11 @@ impl PromoteReadReplicaDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PromoteReadReplicaDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
 pub mod promote_read_replica_db_cluster_output {
     
@@ -598,6 +791,7 @@ pub mod promote_read_replica_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -611,11 +805,21 @@ pub mod promote_read_replica_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
         pub fn build(self) -> crate::output::PromoteReadReplicaDbClusterOutput {
             crate::output::PromoteReadReplicaDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -637,6 +841,7 @@ pub struct ModifyGlobalClusterOutput  {
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    _request_id: Option<String>,
 }
 impl ModifyGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -645,6 +850,11 @@ impl ModifyGlobalClusterOutput {
         self.global_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyGlobalClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
 pub mod modify_global_cluster_output {
     
@@ -653,6 +863,7 @@ pub mod modify_global_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -666,11 +877,21 @@ pub mod modify_global_cluster_output {
         pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
             self.global_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
         pub fn build(self) -> crate::output::ModifyGlobalClusterOutput {
             crate::output::ModifyGlobalClusterOutput {
                 global_cluster: self.global_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -691,6 +912,7 @@ pub struct ModifyEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+    _request_id: Option<String>,
 }
 impl ModifyEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -698,6 +920,11 @@ impl ModifyEventSubscriptionOutput {
         self.event_subscription.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyEventSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
     
@@ -706,6 +933,7 @@ pub mod modify_event_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -717,11 +945,21 @@ pub mod modify_event_subscription_output {
         pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
             self.event_subscription = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
         pub fn build(self) -> crate::output::ModifyEventSubscriptionOutput {
             crate::output::ModifyEventSubscriptionOutput {
                 event_subscription: self.event_subscription
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -743,6 +981,7 @@ pub struct ModifyDbSubnetGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+    _request_id: Option<String>,
 }
 impl ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
@@ -751,6 +990,11 @@ impl ModifyDbSubnetGroupOutput {
         self.db_subnet_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
 pub mod modify_db_subnet_group_output {
     
@@ -759,6 +1003,7 @@ pub mod modify_db_subnet_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
@@ -772,11 +1017,21 @@ pub mod modify_db_subnet_group_output {
         pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
             self.db_subnet_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbSubnetGroupOutput {
             crate::output::ModifyDbSubnetGroupOutput {
                 db_subnet_group: self.db_subnet_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -797,6 +1052,7 @@ pub struct ModifyDbParameterGroupOutput  {
     /// <p>Provides the name of the DB parameter group.</p>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyDbParameterGroupOutput {
     /// <p>Provides the name of the DB parameter group.</p>
@@ -804,6 +1060,11 @@ impl ModifyDbParameterGroupOutput {
         self.db_parameter_group_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
 pub mod modify_db_parameter_group_output {
     
@@ -812,6 +1073,7 @@ pub mod modify_db_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the name of the DB parameter group.</p>
@@ -823,11 +1085,21 @@ pub mod modify_db_parameter_group_output {
         pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_parameter_group_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbParameterGroupOutput {
             crate::output::ModifyDbParameterGroupOutput {
                 db_parameter_group_name: self.db_parameter_group_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -849,6 +1121,7 @@ pub struct ModifyDbInstanceOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+    _request_id: Option<String>,
 }
 impl ModifyDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -857,6 +1130,11 @@ impl ModifyDbInstanceOutput {
         self.db_instance.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbInstanceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
 pub mod modify_db_instance_output {
     
@@ -865,6 +1143,7 @@ pub mod modify_db_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -878,11 +1157,21 @@ pub mod modify_db_instance_output {
         pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
             self.db_instance = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
         pub fn build(self) -> crate::output::ModifyDbInstanceOutput {
             crate::output::ModifyDbInstanceOutput {
                 db_instance: self.db_instance
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -904,6 +1193,7 @@ pub struct ModifyDbClusterSnapshotAttributeOutput  {
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    _request_id: Option<String>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
@@ -912,6 +1202,11 @@ impl ModifyDbClusterSnapshotAttributeOutput {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
 pub mod modify_db_cluster_snapshot_attribute_output {
     
@@ -920,6 +1215,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
@@ -933,11 +1229,21 @@ pub mod modify_db_cluster_snapshot_attribute_output {
         pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
             self.db_cluster_snapshot_attributes_result = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterSnapshotAttributeOutput {
             crate::output::ModifyDbClusterSnapshotAttributeOutput {
                 db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -966,6 +1272,7 @@ pub struct ModifyDbClusterParameterGroupOutput  {
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p> 
@@ -981,6 +1288,11 @@ impl ModifyDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
 pub mod modify_db_cluster_parameter_group_output {
     
@@ -989,6 +1301,7 @@ pub mod modify_db_cluster_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the DB cluster parameter group.</p> 
@@ -1016,11 +1329,21 @@ pub mod modify_db_cluster_parameter_group_output {
         pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterParameterGroupOutput {
             crate::output::ModifyDbClusterParameterGroupOutput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1075,6 +1398,7 @@ pub struct ModifyDbClusterEndpointOutput  {
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -1118,6 +1442,11 @@ impl ModifyDbClusterEndpointOutput {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbClusterEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
 pub mod modify_db_cluster_endpoint_output {
     
@@ -1135,6 +1464,7 @@ pub mod modify_db_cluster_endpoint_output {
         pub(crate) static_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -1239,6 +1569,15 @@ pub mod modify_db_cluster_endpoint_output {
         pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_cluster_endpoint_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterEndpointOutput {
             crate::output::ModifyDbClusterEndpointOutput {
@@ -1262,6 +1601,7 @@ pub mod modify_db_cluster_endpoint_output {
                 ,
                 db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1283,6 +1623,7 @@ pub struct ModifyDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl ModifyDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -1291,6 +1632,11 @@ impl ModifyDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
 pub mod modify_db_cluster_output {
     
@@ -1299,6 +1645,7 @@ pub mod modify_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -1312,11 +1659,21 @@ pub mod modify_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterOutput {
             crate::output::ModifyDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1337,6 +1694,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>List of tags returned by the ListTagsForResource operation.</p>
@@ -1344,6 +1702,11 @@ impl ListTagsForResourceOutput {
         self.tag_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1352,6 +1715,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_list`.
@@ -1369,11 +1733,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tag_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tag_list: self.tag_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1395,6 +1769,7 @@ pub struct FailoverGlobalClusterOutput  {
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    _request_id: Option<String>,
 }
 impl FailoverGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -1403,6 +1778,11 @@ impl FailoverGlobalClusterOutput {
         self.global_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for FailoverGlobalClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
 pub mod failover_global_cluster_output {
     
@@ -1411,6 +1791,7 @@ pub mod failover_global_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -1424,11 +1805,21 @@ pub mod failover_global_cluster_output {
         pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
             self.global_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
         pub fn build(self) -> crate::output::FailoverGlobalClusterOutput {
             crate::output::FailoverGlobalClusterOutput {
                 global_cluster: self.global_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1450,6 +1841,7 @@ pub struct FailoverDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl FailoverDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -1458,6 +1850,11 @@ impl FailoverDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for FailoverDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
 pub mod failover_db_cluster_output {
     
@@ -1466,6 +1863,7 @@ pub mod failover_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -1479,11 +1877,21 @@ pub mod failover_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
         pub fn build(self) -> crate::output::FailoverDbClusterOutput {
             crate::output::FailoverDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1504,6 +1912,7 @@ pub struct DescribeValidDbInstanceModificationsOutput  {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
     #[doc(hidden)]
     pub valid_db_instance_modifications_message: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
+    _request_id: Option<String>,
 }
 impl DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
@@ -1511,6 +1920,11 @@ impl DescribeValidDbInstanceModificationsOutput {
         self.valid_db_instance_modifications_message.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeValidDbInstanceModificationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
 pub mod describe_valid_db_instance_modifications_output {
     
@@ -1519,6 +1933,7 @@ pub mod describe_valid_db_instance_modifications_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) valid_db_instance_modifications_message: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
@@ -1530,11 +1945,21 @@ pub mod describe_valid_db_instance_modifications_output {
         pub fn set_valid_db_instance_modifications_message(mut self, input: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>) -> Self {
             self.valid_db_instance_modifications_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
         pub fn build(self) -> crate::output::DescribeValidDbInstanceModificationsOutput {
             crate::output::DescribeValidDbInstanceModificationsOutput {
                 valid_db_instance_modifications_message: self.valid_db_instance_modifications_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1558,6 +1983,7 @@ pub struct DescribePendingMaintenanceActionsOutput  {
     /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
@@ -1569,6 +1995,11 @@ impl DescribePendingMaintenanceActionsOutput {
         self.marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePendingMaintenanceActionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
     
@@ -1578,6 +2009,7 @@ pub mod describe_pending_maintenance_actions_output {
     pub struct Builder {
         pub(crate) pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
         pub(crate) marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pending_maintenance_actions`.
@@ -1604,6 +2036,15 @@ pub mod describe_pending_maintenance_actions_output {
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
         pub fn build(self) -> crate::output::DescribePendingMaintenanceActionsOutput {
             crate::output::DescribePendingMaintenanceActionsOutput {
@@ -1611,6 +2052,7 @@ pub mod describe_pending_maintenance_actions_output {
                 ,
                 marker: self.marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1634,6 +2076,7 @@ pub struct DescribeOrderableDbInstanceOptionsOutput  {
     /// <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
@@ -1645,6 +2088,11 @@ impl DescribeOrderableDbInstanceOptionsOutput {
         self.marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeOrderableDbInstanceOptionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
 pub mod describe_orderable_db_instance_options_output {
     
@@ -1654,6 +2102,7 @@ pub mod describe_orderable_db_instance_options_output {
     pub struct Builder {
         pub(crate) orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
         pub(crate) marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `orderable_db_instance_options`.
@@ -1680,6 +2129,15 @@ pub mod describe_orderable_db_instance_options_output {
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
         pub fn build(self) -> crate::output::DescribeOrderableDbInstanceOptionsOutput {
             crate::output::DescribeOrderableDbInstanceOptionsOutput {
@@ -1687,6 +2145,7 @@ pub mod describe_orderable_db_instance_options_output {
                 ,
                 marker: self.marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1710,6 +2169,7 @@ pub struct DescribeGlobalClustersOutput  {
     /// <p>The list of global clusters and instances returned by this request.</p>
     #[doc(hidden)]
     pub global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+    _request_id: Option<String>,
 }
 impl DescribeGlobalClustersOutput {
     /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
@@ -1721,6 +2181,11 @@ impl DescribeGlobalClustersOutput {
         self.global_clusters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeGlobalClustersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
 pub mod describe_global_clusters_output {
     
@@ -1730,6 +2195,7 @@ pub mod describe_global_clusters_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
@@ -1756,6 +2222,15 @@ pub mod describe_global_clusters_output {
         pub fn set_global_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>) -> Self {
             self.global_clusters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
         pub fn build(self) -> crate::output::DescribeGlobalClustersOutput {
             crate::output::DescribeGlobalClustersOutput {
@@ -1763,6 +2238,7 @@ pub mod describe_global_clusters_output {
                 ,
                 global_clusters: self.global_clusters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1786,6 +2262,7 @@ pub struct DescribeEventSubscriptionsOutput  {
     /// <p>A list of EventSubscriptions data types.</p>
     #[doc(hidden)]
     pub event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventSubscriptionsOutput {
     /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1797,6 +2274,11 @@ impl DescribeEventSubscriptionsOutput {
         self.event_subscriptions_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventSubscriptionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
     
@@ -1806,6 +2288,7 @@ pub mod describe_event_subscriptions_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -1832,6 +2315,15 @@ pub mod describe_event_subscriptions_output {
         pub fn set_event_subscriptions_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>) -> Self {
             self.event_subscriptions_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeEventSubscriptionsOutput {
             crate::output::DescribeEventSubscriptionsOutput {
@@ -1839,6 +2331,7 @@ pub mod describe_event_subscriptions_output {
                 ,
                 event_subscriptions_list: self.event_subscriptions_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1862,6 +2355,7 @@ pub struct DescribeEventsOutput  {
     /// <p> A list of <code>Event</code> instances.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventsOutput {
     /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -1873,6 +2367,11 @@ impl DescribeEventsOutput {
         self.events.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
     
@@ -1882,6 +2381,7 @@ pub mod describe_events_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -1908,6 +2408,15 @@ pub mod describe_events_output {
         pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
             self.events = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
@@ -1915,6 +2424,7 @@ pub mod describe_events_output {
                 ,
                 events: self.events
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1935,6 +2445,7 @@ pub struct DescribeEventCategoriesOutput  {
     /// <p>A list of EventCategoriesMap data types.</p>
     #[doc(hidden)]
     pub event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of EventCategoriesMap data types.</p>
@@ -1942,6 +2453,11 @@ impl DescribeEventCategoriesOutput {
         self.event_categories_map_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
     
@@ -1950,6 +2466,7 @@ pub mod describe_event_categories_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_categories_map_list`.
@@ -1967,11 +2484,21 @@ pub mod describe_event_categories_output {
         pub fn set_event_categories_map_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>) -> Self {
             self.event_categories_map_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
         pub fn build(self) -> crate::output::DescribeEventCategoriesOutput {
             crate::output::DescribeEventCategoriesOutput {
                 event_categories_map_list: self.event_categories_map_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1992,6 +2519,7 @@ pub struct DescribeEngineDefaultParametersOutput  {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
+    _request_id: Option<String>,
 }
 impl DescribeEngineDefaultParametersOutput {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
@@ -1999,6 +2527,11 @@ impl DescribeEngineDefaultParametersOutput {
         self.engine_defaults.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEngineDefaultParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
     
@@ -2007,6 +2540,7 @@ pub mod describe_engine_default_parameters_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
@@ -2018,11 +2552,21 @@ pub mod describe_engine_default_parameters_output {
         pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
             self.engine_defaults = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultParametersOutput {
             crate::output::DescribeEngineDefaultParametersOutput {
                 engine_defaults: self.engine_defaults
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2043,6 +2587,7 @@ pub struct DescribeEngineDefaultClusterParametersOutput  {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
+    _request_id: Option<String>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
@@ -2050,6 +2595,11 @@ impl DescribeEngineDefaultClusterParametersOutput {
         self.engine_defaults.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEngineDefaultClusterParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
 pub mod describe_engine_default_cluster_parameters_output {
     
@@ -2058,6 +2608,7 @@ pub mod describe_engine_default_cluster_parameters_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
@@ -2069,11 +2620,21 @@ pub mod describe_engine_default_cluster_parameters_output {
         pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
             self.engine_defaults = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultClusterParametersOutput {
             crate::output::DescribeEngineDefaultClusterParametersOutput {
                 engine_defaults: self.engine_defaults
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2097,6 +2658,7 @@ pub struct DescribeDbSubnetGroupsOutput  {
     /// <p> A list of <code>DBSubnetGroup</code> instances.</p>
     #[doc(hidden)]
     pub db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2108,6 +2670,11 @@ impl DescribeDbSubnetGroupsOutput {
         self.db_subnet_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbSubnetGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
 pub mod describe_db_subnet_groups_output {
     
@@ -2117,6 +2684,7 @@ pub mod describe_db_subnet_groups_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2143,6 +2711,15 @@ pub mod describe_db_subnet_groups_output {
         pub fn set_db_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>) -> Self {
             self.db_subnet_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbSubnetGroupsOutput {
             crate::output::DescribeDbSubnetGroupsOutput {
@@ -2150,6 +2727,7 @@ pub mod describe_db_subnet_groups_output {
                 ,
                 db_subnet_groups: self.db_subnet_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2173,6 +2751,7 @@ pub struct DescribeDbParametersOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
@@ -2184,6 +2763,11 @@ impl DescribeDbParametersOutput {
         self.marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
 pub mod describe_db_parameters_output {
     
@@ -2193,6 +2777,7 @@ pub mod describe_db_parameters_output {
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         pub(crate) marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `parameters`.
@@ -2219,6 +2804,15 @@ pub mod describe_db_parameters_output {
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbParametersOutput {
             crate::output::DescribeDbParametersOutput {
@@ -2226,6 +2820,7 @@ pub mod describe_db_parameters_output {
                 ,
                 marker: self.marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2249,6 +2844,7 @@ pub struct DescribeDbParameterGroupsOutput  {
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
     #[doc(hidden)]
     pub db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2260,6 +2856,11 @@ impl DescribeDbParameterGroupsOutput {
         self.db_parameter_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbParameterGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
 pub mod describe_db_parameter_groups_output {
     
@@ -2269,6 +2870,7 @@ pub mod describe_db_parameter_groups_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2295,6 +2897,15 @@ pub mod describe_db_parameter_groups_output {
         pub fn set_db_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>) -> Self {
             self.db_parameter_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbParameterGroupsOutput {
             crate::output::DescribeDbParameterGroupsOutput {
@@ -2302,6 +2913,7 @@ pub mod describe_db_parameter_groups_output {
                 ,
                 db_parameter_groups: self.db_parameter_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2325,6 +2937,7 @@ pub struct DescribeDbInstancesOutput  {
     /// <p> A list of <code>DBInstance</code> instances.</p>
     #[doc(hidden)]
     pub db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbInstancesOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -2336,6 +2949,11 @@ impl DescribeDbInstancesOutput {
         self.db_instances.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbInstancesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
 pub mod describe_db_instances_output {
     
@@ -2345,6 +2963,7 @@ pub mod describe_db_instances_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -2371,6 +2990,15 @@ pub mod describe_db_instances_output {
         pub fn set_db_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>) -> Self {
             self.db_instances = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
         pub fn build(self) -> crate::output::DescribeDbInstancesOutput {
             crate::output::DescribeDbInstancesOutput {
@@ -2378,6 +3006,7 @@ pub mod describe_db_instances_output {
                 ,
                 db_instances: self.db_instances
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2401,6 +3030,7 @@ pub struct DescribeDbEngineVersionsOutput  {
     /// <p> A list of <code>DBEngineVersion</code> elements.</p>
     #[doc(hidden)]
     pub db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbEngineVersionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2412,6 +3042,11 @@ impl DescribeDbEngineVersionsOutput {
         self.db_engine_versions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
 pub mod describe_db_engine_versions_output {
     
@@ -2421,6 +3056,7 @@ pub mod describe_db_engine_versions_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2447,6 +3083,15 @@ pub mod describe_db_engine_versions_output {
         pub fn set_db_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>) -> Self {
             self.db_engine_versions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
         pub fn build(self) -> crate::output::DescribeDbEngineVersionsOutput {
             crate::output::DescribeDbEngineVersionsOutput {
@@ -2454,6 +3099,7 @@ pub mod describe_db_engine_versions_output {
                 ,
                 db_engine_versions: self.db_engine_versions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2477,6 +3123,7 @@ pub struct DescribeDbClusterSnapshotsOutput  {
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     #[doc(hidden)]
     pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2488,6 +3135,11 @@ impl DescribeDbClusterSnapshotsOutput {
         self.db_cluster_snapshots.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
 pub mod describe_db_cluster_snapshots_output {
     
@@ -2497,6 +3149,7 @@ pub mod describe_db_cluster_snapshots_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2523,6 +3176,15 @@ pub mod describe_db_cluster_snapshots_output {
         pub fn set_db_cluster_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>) -> Self {
             self.db_cluster_snapshots = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotsOutput {
             crate::output::DescribeDbClusterSnapshotsOutput {
@@ -2530,6 +3192,7 @@ pub mod describe_db_cluster_snapshots_output {
                 ,
                 db_cluster_snapshots: self.db_cluster_snapshots
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2551,6 +3214,7 @@ pub struct DescribeDbClusterSnapshotAttributesOutput  {
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
@@ -2559,6 +3223,11 @@ impl DescribeDbClusterSnapshotAttributesOutput {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClusterSnapshotAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
 pub mod describe_db_cluster_snapshot_attributes_output {
     
@@ -2567,6 +3236,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
@@ -2580,11 +3250,21 @@ pub mod describe_db_cluster_snapshot_attributes_output {
         pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
             self.db_cluster_snapshot_attributes_result = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotAttributesOutput {
             crate::output::DescribeDbClusterSnapshotAttributesOutput {
                 db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2608,6 +3288,7 @@ pub struct DescribeDbClustersOutput  {
     /// <p>Contains a list of DB clusters for the user.</p>
     #[doc(hidden)]
     pub db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClustersOutput {
     /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
@@ -2619,6 +3300,11 @@ impl DescribeDbClustersOutput {
         self.db_clusters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClustersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
 pub mod describe_db_clusters_output {
     
@@ -2628,6 +3314,7 @@ pub mod describe_db_clusters_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
@@ -2654,6 +3341,15 @@ pub mod describe_db_clusters_output {
         pub fn set_db_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbCluster>>) -> Self {
             self.db_clusters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
         pub fn build(self) -> crate::output::DescribeDbClustersOutput {
             crate::output::DescribeDbClustersOutput {
@@ -2661,6 +3357,7 @@ pub mod describe_db_clusters_output {
                 ,
                 db_clusters: self.db_clusters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2684,6 +3381,7 @@ pub struct DescribeDbClusterParametersOutput  {
     /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
@@ -2695,6 +3393,11 @@ impl DescribeDbClusterParametersOutput {
         self.marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
 pub mod describe_db_cluster_parameters_output {
     
@@ -2704,6 +3407,7 @@ pub mod describe_db_cluster_parameters_output {
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         pub(crate) marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `parameters`.
@@ -2730,6 +3434,15 @@ pub mod describe_db_cluster_parameters_output {
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParametersOutput {
             crate::output::DescribeDbClusterParametersOutput {
@@ -2737,6 +3450,7 @@ pub mod describe_db_cluster_parameters_output {
                 ,
                 marker: self.marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2760,6 +3474,7 @@ pub struct DescribeDbClusterParameterGroupsOutput  {
     /// <p>A list of DB cluster parameter groups.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2771,6 +3486,11 @@ impl DescribeDbClusterParameterGroupsOutput {
         self.db_cluster_parameter_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClusterParameterGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
 pub mod describe_db_cluster_parameter_groups_output {
     
@@ -2780,6 +3500,7 @@ pub mod describe_db_cluster_parameter_groups_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -2806,6 +3527,15 @@ pub mod describe_db_cluster_parameter_groups_output {
         pub fn set_db_cluster_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>) -> Self {
             self.db_cluster_parameter_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParameterGroupsOutput {
             crate::output::DescribeDbClusterParameterGroupsOutput {
@@ -2813,6 +3543,7 @@ pub mod describe_db_cluster_parameter_groups_output {
                 ,
                 db_cluster_parameter_groups: self.db_cluster_parameter_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2836,6 +3567,7 @@ pub struct DescribeDbClusterEndpointsOutput  {
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     #[doc(hidden)]
     pub db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
+    _request_id: Option<String>,
 }
 impl DescribeDbClusterEndpointsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2847,6 +3579,11 @@ impl DescribeDbClusterEndpointsOutput {
         self.db_cluster_endpoints.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDbClusterEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
 pub mod describe_db_cluster_endpoints_output {
     
@@ -2856,6 +3593,7 @@ pub mod describe_db_cluster_endpoints_output {
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
@@ -2882,6 +3620,15 @@ pub mod describe_db_cluster_endpoints_output {
         pub fn set_db_cluster_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>) -> Self {
             self.db_cluster_endpoints = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterEndpointsOutput {
             crate::output::DescribeDbClusterEndpointsOutput {
@@ -2889,6 +3636,7 @@ pub mod describe_db_cluster_endpoints_output {
                 ,
                 db_cluster_endpoints: self.db_cluster_endpoints
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2910,6 +3658,7 @@ pub struct DeleteGlobalClusterOutput  {
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    _request_id: Option<String>,
 }
 impl DeleteGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -2918,6 +3667,11 @@ impl DeleteGlobalClusterOutput {
         self.global_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteGlobalClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
 pub mod delete_global_cluster_output {
     
@@ -2926,6 +3680,7 @@ pub mod delete_global_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -2939,11 +3694,21 @@ pub mod delete_global_cluster_output {
         pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
             self.global_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
         pub fn build(self) -> crate::output::DeleteGlobalClusterOutput {
             crate::output::DeleteGlobalClusterOutput {
                 global_cluster: self.global_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2964,6 +3729,7 @@ pub struct DeleteEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+    _request_id: Option<String>,
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -2971,6 +3737,11 @@ impl DeleteEventSubscriptionOutput {
         self.event_subscription.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
     
@@ -2979,6 +3750,7 @@ pub mod delete_event_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -2990,11 +3762,21 @@ pub mod delete_event_subscription_output {
         pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
             self.event_subscription = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteEventSubscriptionOutput {
             crate::output::DeleteEventSubscriptionOutput {
                 event_subscription: self.event_subscription
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3012,7 +3794,13 @@ impl DeleteEventSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDbSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
 pub mod delete_db_subnet_group_output {
     
@@ -3020,11 +3808,22 @@ pub mod delete_db_subnet_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbSubnetGroupOutput {
             crate::output::DeleteDbSubnetGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3042,7 +3841,13 @@ impl DeleteDbSubnetGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbParameterGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDbParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
 pub mod delete_db_parameter_group_output {
     
@@ -3050,11 +3855,22 @@ pub mod delete_db_parameter_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbParameterGroupOutput {
             crate::output::DeleteDbParameterGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3076,6 +3892,7 @@ pub struct DeleteDbInstanceOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+    _request_id: Option<String>,
 }
 impl DeleteDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -3084,6 +3901,11 @@ impl DeleteDbInstanceOutput {
         self.db_instance.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDbInstanceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
 pub mod delete_db_instance_output {
     
@@ -3092,6 +3914,7 @@ pub mod delete_db_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -3105,11 +3928,21 @@ pub mod delete_db_instance_output {
         pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
             self.db_instance = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
         pub fn build(self) -> crate::output::DeleteDbInstanceOutput {
             crate::output::DeleteDbInstanceOutput {
                 db_instance: self.db_instance
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3131,6 +3964,7 @@ pub struct DeleteDbClusterSnapshotOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -3139,6 +3973,11 @@ impl DeleteDbClusterSnapshotOutput {
         self.db_cluster_snapshot.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDbClusterSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
 pub mod delete_db_cluster_snapshot_output {
     
@@ -3147,6 +3986,7 @@ pub mod delete_db_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -3160,11 +4000,21 @@ pub mod delete_db_cluster_snapshot_output {
         pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
             self.db_cluster_snapshot = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterSnapshotOutput {
             crate::output::DeleteDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3182,7 +4032,13 @@ impl DeleteDbClusterSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDbClusterParameterGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDbClusterParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
 pub mod delete_db_cluster_parameter_group_output {
     
@@ -3190,11 +4046,22 @@ pub mod delete_db_cluster_parameter_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterParameterGroupOutput {
             crate::output::DeleteDbClusterParameterGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3249,6 +4116,7 @@ pub struct DeleteDbClusterEndpointOutput  {
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -3292,6 +4160,11 @@ impl DeleteDbClusterEndpointOutput {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDbClusterEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
 pub mod delete_db_cluster_endpoint_output {
     
@@ -3309,6 +4182,7 @@ pub mod delete_db_cluster_endpoint_output {
         pub(crate) static_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -3413,6 +4287,15 @@ pub mod delete_db_cluster_endpoint_output {
         pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_cluster_endpoint_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterEndpointOutput {
             crate::output::DeleteDbClusterEndpointOutput {
@@ -3436,6 +4319,7 @@ pub mod delete_db_cluster_endpoint_output {
                 ,
                 db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3457,6 +4341,7 @@ pub struct DeleteDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl DeleteDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -3465,6 +4350,11 @@ impl DeleteDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
 pub mod delete_db_cluster_output {
     
@@ -3473,6 +4363,7 @@ pub mod delete_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -3486,11 +4377,21 @@ pub mod delete_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterOutput {
             crate::output::DeleteDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3512,6 +4413,7 @@ pub struct CreateGlobalClusterOutput  {
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
+    _request_id: Option<String>,
 }
 impl CreateGlobalClusterOutput {
     /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -3520,6 +4422,11 @@ impl CreateGlobalClusterOutput {
         self.global_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGlobalClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
 pub mod create_global_cluster_output {
     
@@ -3528,6 +4435,7 @@ pub mod create_global_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune global database.</p> 
@@ -3541,11 +4449,21 @@ pub mod create_global_cluster_output {
         pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
             self.global_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
         pub fn build(self) -> crate::output::CreateGlobalClusterOutput {
             crate::output::CreateGlobalClusterOutput {
                 global_cluster: self.global_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3566,6 +4484,7 @@ pub struct CreateEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+    _request_id: Option<String>,
 }
 impl CreateEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -3573,6 +4492,11 @@ impl CreateEventSubscriptionOutput {
         self.event_subscription.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEventSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
     
@@ -3581,6 +4505,7 @@ pub mod create_event_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -3592,11 +4517,21 @@ pub mod create_event_subscription_output {
         pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
             self.event_subscription = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateEventSubscriptionOutput {
             crate::output::CreateEventSubscriptionOutput {
                 event_subscription: self.event_subscription
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3618,6 +4553,7 @@ pub struct CreateDbSubnetGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+    _request_id: Option<String>,
 }
 impl CreateDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
@@ -3626,6 +4562,11 @@ impl CreateDbSubnetGroupOutput {
         self.db_subnet_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
 pub mod create_db_subnet_group_output {
     
@@ -3634,6 +4575,7 @@ pub mod create_db_subnet_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
@@ -3647,11 +4589,21 @@ pub mod create_db_subnet_group_output {
         pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
             self.db_subnet_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateDbSubnetGroupOutput {
             crate::output::CreateDbSubnetGroupOutput {
                 db_subnet_group: self.db_subnet_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3673,6 +4625,7 @@ pub struct CreateDbParameterGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
+    _request_id: Option<String>,
 }
 impl CreateDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p> 
@@ -3681,6 +4634,11 @@ impl CreateDbParameterGroupOutput {
         self.db_parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
 pub mod create_db_parameter_group_output {
     
@@ -3689,6 +4647,7 @@ pub mod create_db_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p> 
@@ -3702,11 +4661,21 @@ pub mod create_db_parameter_group_output {
         pub fn set_db_parameter_group(mut self, input: std::option::Option<crate::model::DbParameterGroup>) -> Self {
             self.db_parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbParameterGroupOutput {
             crate::output::CreateDbParameterGroupOutput {
                 db_parameter_group: self.db_parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3728,6 +4697,7 @@ pub struct CreateDbInstanceOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
+    _request_id: Option<String>,
 }
 impl CreateDbInstanceOutput {
     /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -3736,6 +4706,11 @@ impl CreateDbInstanceOutput {
         self.db_instance.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbInstanceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
 pub mod create_db_instance_output {
     
@@ -3744,6 +4719,7 @@ pub mod create_db_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB instance.</p> 
@@ -3757,11 +4733,21 @@ pub mod create_db_instance_output {
         pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
             self.db_instance = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
         pub fn build(self) -> crate::output::CreateDbInstanceOutput {
             crate::output::CreateDbInstanceOutput {
                 db_instance: self.db_instance
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3783,6 +4769,7 @@ pub struct CreateDbClusterSnapshotOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl CreateDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -3791,6 +4778,11 @@ impl CreateDbClusterSnapshotOutput {
         self.db_cluster_snapshot.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbClusterSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
 pub mod create_db_cluster_snapshot_output {
     
@@ -3799,6 +4791,7 @@ pub mod create_db_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -3812,11 +4805,21 @@ pub mod create_db_cluster_snapshot_output {
         pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
             self.db_cluster_snapshot = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDbClusterSnapshotOutput {
             crate::output::CreateDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3838,6 +4841,7 @@ pub struct CreateDbClusterParameterGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+    _request_id: Option<String>,
 }
 impl CreateDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> 
@@ -3846,6 +4850,11 @@ impl CreateDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbClusterParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
 pub mod create_db_cluster_parameter_group_output {
     
@@ -3854,6 +4863,7 @@ pub mod create_db_cluster_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> 
@@ -3867,11 +4877,21 @@ pub mod create_db_cluster_parameter_group_output {
         pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
             self.db_cluster_parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbClusterParameterGroupOutput {
             crate::output::CreateDbClusterParameterGroupOutput {
                 db_cluster_parameter_group: self.db_cluster_parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3926,6 +4946,7 @@ pub struct CreateDbClusterEndpointOutput  {
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -3969,6 +4990,11 @@ impl CreateDbClusterEndpointOutput {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbClusterEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
 pub mod create_db_cluster_endpoint_output {
     
@@ -3986,6 +5012,7 @@ pub mod create_db_cluster_endpoint_output {
         pub(crate) static_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) excluded_members: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_endpoint_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
@@ -4090,6 +5117,15 @@ pub mod create_db_cluster_endpoint_output {
         pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_cluster_endpoint_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::CreateDbClusterEndpointOutput {
             crate::output::CreateDbClusterEndpointOutput {
@@ -4113,6 +5149,7 @@ pub mod create_db_cluster_endpoint_output {
                 ,
                 db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4134,6 +5171,7 @@ pub struct CreateDbClusterOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
+    _request_id: Option<String>,
 }
 impl CreateDbClusterOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -4142,6 +5180,11 @@ impl CreateDbClusterOutput {
         self.db_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
 pub mod create_db_cluster_output {
     
@@ -4150,6 +5193,7 @@ pub mod create_db_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster.</p> 
@@ -4163,11 +5207,21 @@ pub mod create_db_cluster_output {
         pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
             self.db_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
         pub fn build(self) -> crate::output::CreateDbClusterOutput {
             crate::output::CreateDbClusterOutput {
                 db_cluster: self.db_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4189,6 +5243,7 @@ pub struct CopyDbParameterGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
+    _request_id: Option<String>,
 }
 impl CopyDbParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB parameter group.</p> 
@@ -4197,6 +5252,11 @@ impl CopyDbParameterGroupOutput {
         self.db_parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CopyDbParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
 pub mod copy_db_parameter_group_output {
     
@@ -4205,6 +5265,7 @@ pub mod copy_db_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB parameter group.</p> 
@@ -4218,11 +5279,21 @@ pub mod copy_db_parameter_group_output {
         pub fn set_db_parameter_group(mut self, input: std::option::Option<crate::model::DbParameterGroup>) -> Self {
             self.db_parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbParameterGroupOutput {
             crate::output::CopyDbParameterGroupOutput {
                 db_parameter_group: self.db_parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4244,6 +5315,7 @@ pub struct CopyDbClusterSnapshotOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl CopyDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -4252,6 +5324,11 @@ impl CopyDbClusterSnapshotOutput {
         self.db_cluster_snapshot.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CopyDbClusterSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
 pub mod copy_db_cluster_snapshot_output {
     
@@ -4260,6 +5337,7 @@ pub mod copy_db_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> 
@@ -4273,11 +5351,21 @@ pub mod copy_db_cluster_snapshot_output {
         pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
             self.db_cluster_snapshot = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CopyDbClusterSnapshotOutput {
             crate::output::CopyDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4299,6 +5387,7 @@ pub struct CopyDbClusterParameterGroupOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+    _request_id: Option<String>,
 }
 impl CopyDbClusterParameterGroupOutput {
     /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> 
@@ -4307,6 +5396,11 @@ impl CopyDbClusterParameterGroupOutput {
         self.db_cluster_parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CopyDbClusterParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
 pub mod copy_db_cluster_parameter_group_output {
     
@@ -4315,6 +5409,7 @@ pub mod copy_db_cluster_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> 
@@ -4328,11 +5423,21 @@ pub mod copy_db_cluster_parameter_group_output {
         pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
             self.db_cluster_parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbClusterParameterGroupOutput {
             crate::output::CopyDbClusterParameterGroupOutput {
                 db_cluster_parameter_group: self.db_cluster_parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4353,6 +5458,7 @@ pub struct ApplyPendingMaintenanceActionOutput  {
     /// <p>Describes the pending maintenance actions for a resource.</p>
     #[doc(hidden)]
     pub resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+    _request_id: Option<String>,
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// <p>Describes the pending maintenance actions for a resource.</p>
@@ -4360,6 +5466,11 @@ impl ApplyPendingMaintenanceActionOutput {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ApplyPendingMaintenanceActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
     
@@ -4368,6 +5479,7 @@ pub mod apply_pending_maintenance_action_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the pending maintenance actions for a resource.</p>
@@ -4379,11 +5491,21 @@ pub mod apply_pending_maintenance_action_output {
         pub fn set_resource_pending_maintenance_actions(mut self, input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>) -> Self {
             self.resource_pending_maintenance_actions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
         pub fn build(self) -> crate::output::ApplyPendingMaintenanceActionOutput {
             crate::output::ApplyPendingMaintenanceActionOutput {
                 resource_pending_maintenance_actions: self.resource_pending_maintenance_actions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4401,7 +5523,13 @@ impl ApplyPendingMaintenanceActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
     
@@ -4409,11 +5537,22 @@ pub mod add_tags_to_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -4434,6 +5573,7 @@ pub struct AddSourceIdentifierToSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
+    _request_id: Option<String>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -4441,6 +5581,11 @@ impl AddSourceIdentifierToSubscriptionOutput {
         self.event_subscription.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AddSourceIdentifierToSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
 pub mod add_source_identifier_to_subscription_output {
     
@@ -4449,6 +5594,7 @@ pub mod add_source_identifier_to_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
@@ -4460,11 +5606,21 @@ pub mod add_source_identifier_to_subscription_output {
         pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
             self.event_subscription = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
         pub fn build(self) -> crate::output::AddSourceIdentifierToSubscriptionOutput {
             crate::output::AddSourceIdentifierToSubscriptionOutput {
                 event_subscription: self.event_subscription
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4482,7 +5638,13 @@ impl AddSourceIdentifierToSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddRoleToDbClusterOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddRoleToDbClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
 pub mod add_role_to_db_cluster_output {
     
@@ -4490,11 +5652,22 @@ pub mod add_role_to_db_cluster_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
         pub fn build(self) -> crate::output::AddRoleToDbClusterOutput {
             crate::output::AddRoleToDbClusterOutput {
+                _request_id: self._request_id,
             }
         }
     }

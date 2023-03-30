@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDeviceStateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateDeviceStateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
 pub mod update_device_state_output {
     
@@ -11,11 +17,22 @@ pub mod update_device_state_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
         pub fn build(self) -> crate::output::UpdateDeviceStateOutput {
             crate::output::UpdateDeviceStateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateDeviceStateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +100,7 @@ pub struct UnclaimDeviceOutput  {
     /// <p>The device's final claim state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UnclaimDeviceOutput {
     /// <p>The device's final claim state.</p>
@@ -73,6 +108,11 @@ impl UnclaimDeviceOutput {
         self.state.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UnclaimDeviceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
 pub mod unclaim_device_output {
     
@@ -81,6 +121,7 @@ pub mod unclaim_device_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The device's final claim state.</p>
@@ -92,11 +133,21 @@ pub mod unclaim_device_output {
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
         pub fn build(self) -> crate::output::UnclaimDeviceOutput {
             crate::output::UnclaimDeviceOutput {
                 state: self.state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -114,7 +165,13 @@ impl UnclaimDeviceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -122,11 +179,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -148,6 +216,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p> </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
@@ -156,6 +225,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -164,6 +238,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -183,11 +258,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -211,6 +296,7 @@ pub struct ListDevicesOutput  {
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDevicesOutput {
     /// <p>A list of devices.</p>
@@ -222,6 +308,11 @@ impl ListDevicesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDevicesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
     
@@ -231,6 +322,7 @@ pub mod list_devices_output {
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `devices`.
@@ -257,6 +349,15 @@ pub mod list_devices_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput).
         pub fn build(self) -> crate::output::ListDevicesOutput {
             crate::output::ListDevicesOutput {
@@ -264,6 +365,7 @@ pub mod list_devices_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -287,6 +389,7 @@ pub struct ListDeviceEventsOutput  {
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDeviceEventsOutput {
     /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
@@ -298,6 +401,11 @@ impl ListDeviceEventsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDeviceEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
 pub mod list_device_events_output {
     
@@ -307,6 +415,7 @@ pub mod list_device_events_output {
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events`.
@@ -333,6 +442,15 @@ pub mod list_device_events_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
         pub fn build(self) -> crate::output::ListDeviceEventsOutput {
             crate::output::ListDeviceEventsOutput {
@@ -340,6 +458,7 @@ pub mod list_device_events_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -360,6 +479,7 @@ pub struct InvokeDeviceMethodOutput  {
     /// <p>A JSON encoded string containing the device method response.</p>
     #[doc(hidden)]
     pub device_method_response: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InvokeDeviceMethodOutput {
     /// <p>A JSON encoded string containing the device method response.</p>
@@ -367,6 +487,11 @@ impl InvokeDeviceMethodOutput {
         self.device_method_response.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InvokeDeviceMethodOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
 pub mod invoke_device_method_output {
     
@@ -375,6 +500,7 @@ pub mod invoke_device_method_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_method_response: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A JSON encoded string containing the device method response.</p>
@@ -386,11 +512,21 @@ pub mod invoke_device_method_output {
         pub fn set_device_method_response(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_method_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
         pub fn build(self) -> crate::output::InvokeDeviceMethodOutput {
             crate::output::InvokeDeviceMethodOutput {
                 device_method_response: self.device_method_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -411,6 +547,7 @@ pub struct InitiateDeviceClaimOutput  {
     /// <p>The device's final claim state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InitiateDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
@@ -418,6 +555,11 @@ impl InitiateDeviceClaimOutput {
         self.state.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InitiateDeviceClaimOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
 pub mod initiate_device_claim_output {
     
@@ -426,6 +568,7 @@ pub mod initiate_device_claim_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The device's final claim state.</p>
@@ -437,11 +580,21 @@ pub mod initiate_device_claim_output {
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
         pub fn build(self) -> crate::output::InitiateDeviceClaimOutput {
             crate::output::InitiateDeviceClaimOutput {
                 state: self.state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -462,6 +615,7 @@ pub struct GetDeviceMethodsOutput  {
     /// <p>List of available device APIs.</p>
     #[doc(hidden)]
     pub device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
+    _request_id: Option<String>,
 }
 impl GetDeviceMethodsOutput {
     /// <p>List of available device APIs.</p>
@@ -469,6 +623,11 @@ impl GetDeviceMethodsOutput {
         self.device_methods.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDeviceMethodsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
 pub mod get_device_methods_output {
     
@@ -477,6 +636,7 @@ pub mod get_device_methods_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `device_methods`.
@@ -494,11 +654,21 @@ pub mod get_device_methods_output {
         pub fn set_device_methods(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>) -> Self {
             self.device_methods = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
         pub fn build(self) -> crate::output::GetDeviceMethodsOutput {
             crate::output::GetDeviceMethodsOutput {
                 device_methods: self.device_methods
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -519,6 +689,7 @@ pub struct FinalizeDeviceClaimOutput  {
     /// <p>The device's final claim state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl FinalizeDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
@@ -526,6 +697,11 @@ impl FinalizeDeviceClaimOutput {
         self.state.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for FinalizeDeviceClaimOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
 pub mod finalize_device_claim_output {
     
@@ -534,6 +710,7 @@ pub mod finalize_device_claim_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The device's final claim state.</p>
@@ -545,11 +722,21 @@ pub mod finalize_device_claim_output {
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
         pub fn build(self) -> crate::output::FinalizeDeviceClaimOutput {
             crate::output::FinalizeDeviceClaimOutput {
                 state: self.state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -570,6 +757,7 @@ pub struct DescribeDeviceOutput  {
     /// <p>Device details.</p>
     #[doc(hidden)]
     pub device_description: std::option::Option<crate::model::DeviceDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeDeviceOutput {
     /// <p>Device details.</p>
@@ -577,6 +765,11 @@ impl DescribeDeviceOutput {
         self.device_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDeviceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
 pub mod describe_device_output {
     
@@ -585,6 +778,7 @@ pub mod describe_device_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_description: std::option::Option<crate::model::DeviceDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Device details.</p>
@@ -596,11 +790,21 @@ pub mod describe_device_output {
         pub fn set_device_description(mut self, input: std::option::Option<crate::model::DeviceDescription>) -> Self {
             self.device_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
                 device_description: self.device_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -624,6 +828,7 @@ pub struct ClaimDevicesByClaimCodeOutput  {
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     #[doc(hidden)]
     pub total: i32,
+    _request_id: Option<String>,
 }
 impl ClaimDevicesByClaimCodeOutput {
     /// <p>The claim code provided by the device manufacturer.</p>
@@ -635,6 +840,11 @@ impl ClaimDevicesByClaimCodeOutput {
         self.total
     }
 }
+impl aws_http::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
 pub mod claim_devices_by_claim_code_output {
     
@@ -644,6 +854,7 @@ pub mod claim_devices_by_claim_code_output {
     pub struct Builder {
         pub(crate) claim_code: std::option::Option<std::string::String>,
         pub(crate) total: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The claim code provided by the device manufacturer.</p>
@@ -664,6 +875,15 @@ pub mod claim_devices_by_claim_code_output {
         pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
             self.total = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
         pub fn build(self) -> crate::output::ClaimDevicesByClaimCodeOutput {
             crate::output::ClaimDevicesByClaimCodeOutput {
@@ -672,6 +892,7 @@ pub mod claim_devices_by_claim_code_output {
                 total: self.total
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }

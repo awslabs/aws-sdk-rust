@@ -21,6 +21,7 @@ pub struct StopPipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl StopPipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -48,6 +49,11 @@ impl StopPipeOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopPipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopPipeOutput`](crate::output::StopPipeOutput).
 pub mod stop_pipe_output {
     
@@ -61,6 +67,7 @@ pub mod stop_pipe_output {
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -117,6 +124,15 @@ pub mod stop_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopPipeOutput`](crate::output::StopPipeOutput).
         pub fn build(self) -> crate::output::StopPipeOutput {
             crate::output::StopPipeOutput {
@@ -132,6 +148,7 @@ pub mod stop_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -167,6 +184,7 @@ pub struct StartPipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl StartPipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -194,6 +212,11 @@ impl StartPipeOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartPipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartPipeOutput`](crate::output::StartPipeOutput).
 pub mod start_pipe_output {
     
@@ -207,6 +230,7 @@ pub mod start_pipe_output {
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -263,6 +287,15 @@ pub mod start_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartPipeOutput`](crate::output::StartPipeOutput).
         pub fn build(self) -> crate::output::StartPipeOutput {
             crate::output::StartPipeOutput {
@@ -278,6 +311,7 @@ pub mod start_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -301,6 +335,7 @@ pub struct ListPipesOutput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPipesOutput {
     /// <p>The pipes returned by the call.</p>
@@ -317,9 +352,15 @@ impl  std::fmt::Debug for ListPipesOutput  {
         let mut formatter = f.debug_struct("ListPipesOutput");
         formatter.field("pipes", &self.pipes);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListPipesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPipesOutput`](crate::output::ListPipesOutput).
 pub mod list_pipes_output {
     
@@ -329,6 +370,7 @@ pub mod list_pipes_output {
     pub struct Builder {
         pub(crate) pipes: std::option::Option<std::vec::Vec<crate::model::Pipe>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pipes`.
@@ -355,6 +397,15 @@ pub mod list_pipes_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPipesOutput`](crate::output::ListPipesOutput).
         pub fn build(self) -> crate::output::ListPipesOutput {
             crate::output::ListPipesOutput {
@@ -362,6 +413,7 @@ pub mod list_pipes_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -370,6 +422,7 @@ pub mod list_pipes_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("pipes", &self.pipes);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -405,6 +458,7 @@ pub struct CreatePipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreatePipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -432,6 +486,11 @@ impl CreatePipeOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePipeOutput`](crate::output::CreatePipeOutput).
 pub mod create_pipe_output {
     
@@ -445,6 +504,7 @@ pub mod create_pipe_output {
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -501,6 +561,15 @@ pub mod create_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePipeOutput`](crate::output::CreatePipeOutput).
         pub fn build(self) -> crate::output::CreatePipeOutput {
             crate::output::CreatePipeOutput {
@@ -516,6 +585,7 @@ pub mod create_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -551,6 +621,7 @@ pub struct DeletePipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeletePipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -578,6 +649,11 @@ impl DeletePipeOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeletePipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePipeOutput`](crate::output::DeletePipeOutput).
 pub mod delete_pipe_output {
     
@@ -591,6 +667,7 @@ pub mod delete_pipe_output {
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -647,6 +724,15 @@ pub mod delete_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePipeOutput`](crate::output::DeletePipeOutput).
         pub fn build(self) -> crate::output::DeletePipeOutput {
             crate::output::DeletePipeOutput {
@@ -662,6 +748,7 @@ pub mod delete_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -697,6 +784,7 @@ pub struct UpdatePipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdatePipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -724,6 +812,11 @@ impl UpdatePipeOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
 pub mod update_pipe_output {
     
@@ -737,6 +830,7 @@ pub mod update_pipe_output {
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -793,6 +887,15 @@ pub mod update_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
         pub fn build(self) -> crate::output::UpdatePipeOutput {
             crate::output::UpdatePipeOutput {
@@ -808,6 +911,7 @@ pub mod update_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -873,6 +977,7 @@ pub struct DescribePipeOutput  {
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribePipeOutput {
     /// <p>The ARN of the pipe.</p>
@@ -959,9 +1064,15 @@ impl  std::fmt::Debug for DescribePipeOutput  {
         formatter.field("tags", &self.tags);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DescribePipeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePipeOutput`](crate::output::DescribePipeOutput).
 pub mod describe_pipe_output {
     
@@ -985,6 +1096,7 @@ pub mod describe_pipe_output {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the pipe.</p>
@@ -1137,6 +1249,15 @@ pub mod describe_pipe_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePipeOutput`](crate::output::DescribePipeOutput).
         pub fn build(self) -> crate::output::DescribePipeOutput {
             crate::output::DescribePipeOutput {
@@ -1172,6 +1293,7 @@ pub mod describe_pipe_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1194,6 +1316,7 @@ pub mod describe_pipe_output {
             formatter.field("tags", &self.tags);
             formatter.field("creation_time", &self.creation_time);
             formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1211,7 +1334,13 @@ impl DescribePipeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -1219,11 +1348,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1241,7 +1381,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -1249,11 +1395,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1274,6 +1431,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
@@ -1281,6 +1439,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1289,6 +1452,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1306,11 +1470,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -6,6 +6,7 @@ pub struct UpdateEnvironmentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
@@ -13,6 +14,11 @@ impl UpdateEnvironmentOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEnvironmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
     
@@ -21,6 +27,7 @@ pub mod update_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
@@ -32,11 +39,21 @@ pub mod update_environment_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
         pub fn build(self) -> crate::output::UpdateEnvironmentOutput {
             crate::output::UpdateEnvironmentOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -54,7 +71,13 @@ impl UpdateEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -62,11 +85,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,7 +118,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -92,11 +132,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -114,7 +165,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishMetricsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PublishMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PublishMetricsOutput`](crate::output::PublishMetricsOutput).
 pub mod publish_metrics_output {
     
@@ -122,11 +179,22 @@ pub mod publish_metrics_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PublishMetricsOutput`](crate::output::PublishMetricsOutput).
         pub fn build(self) -> crate::output::PublishMetricsOutput {
             crate::output::PublishMetricsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -147,6 +215,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
@@ -154,6 +223,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -162,6 +236,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -179,11 +254,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -207,6 +292,7 @@ pub struct ListEnvironmentsOutput  {
     /// <p>Retrieves the next page of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
     /// <p>Returns a list of Amazon MWAA environments.</p>
@@ -218,6 +304,11 @@ impl ListEnvironmentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEnvironmentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
     
@@ -227,6 +318,7 @@ pub mod list_environments_output {
     pub struct Builder {
         pub(crate) environments: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `environments`.
@@ -253,6 +345,15 @@ pub mod list_environments_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
@@ -260,6 +361,7 @@ pub mod list_environments_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -280,6 +382,7 @@ pub struct GetEnvironmentOutput  {
     /// <p>An object containing all available details about the environment.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::model::Environment>,
+    _request_id: Option<String>,
 }
 impl GetEnvironmentOutput {
     /// <p>An object containing all available details about the environment.</p>
@@ -287,6 +390,11 @@ impl GetEnvironmentOutput {
         self.environment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEnvironmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
 pub mod get_environment_output {
     
@@ -295,6 +403,7 @@ pub mod get_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment: std::option::Option<crate::model::Environment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object containing all available details about the environment.</p>
@@ -306,11 +415,21 @@ pub mod get_environment_output {
         pub fn set_environment(mut self, input: std::option::Option<crate::model::Environment>) -> Self {
             self.environment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
         pub fn build(self) -> crate::output::GetEnvironmentOutput {
             crate::output::GetEnvironmentOutput {
                 environment: self.environment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -328,7 +447,13 @@ impl GetEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEnvironmentOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEnvironmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
     
@@ -336,11 +461,22 @@ pub mod delete_environment_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
             crate::output::DeleteEnvironmentOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -364,6 +500,7 @@ pub struct CreateWebLoginTokenOutput  {
     /// <p>The Airflow web server hostname for the environment.</p>
     #[doc(hidden)]
     pub web_server_hostname: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWebLoginTokenOutput {
     /// <p>An Airflow web server login token.</p>
@@ -380,9 +517,15 @@ impl  std::fmt::Debug for CreateWebLoginTokenOutput  {
         let mut formatter = f.debug_struct("CreateWebLoginTokenOutput");
         formatter.field("web_token", &"*** Sensitive Data Redacted ***");
         formatter.field("web_server_hostname", &self.web_server_hostname);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for CreateWebLoginTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput).
 pub mod create_web_login_token_output {
     
@@ -392,6 +535,7 @@ pub mod create_web_login_token_output {
     pub struct Builder {
         pub(crate) web_token: std::option::Option<std::string::String>,
         pub(crate) web_server_hostname: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An Airflow web server login token.</p>
@@ -412,6 +556,15 @@ pub mod create_web_login_token_output {
         pub fn set_web_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_server_hostname = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput).
         pub fn build(self) -> crate::output::CreateWebLoginTokenOutput {
             crate::output::CreateWebLoginTokenOutput {
@@ -419,6 +572,7 @@ pub mod create_web_login_token_output {
                 ,
                 web_server_hostname: self.web_server_hostname
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -427,6 +581,7 @@ pub mod create_web_login_token_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("web_token", &"*** Sensitive Data Redacted ***");
             formatter.field("web_server_hostname", &self.web_server_hostname);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -447,6 +602,7 @@ pub struct CreateEnvironmentOutput  {
     /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateEnvironmentOutput {
     /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
@@ -454,6 +610,11 @@ impl CreateEnvironmentOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEnvironmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
     
@@ -462,6 +623,7 @@ pub mod create_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
@@ -473,11 +635,21 @@ pub mod create_environment_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentOutput {
             crate::output::CreateEnvironmentOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -501,6 +673,7 @@ pub struct CreateCliTokenOutput  {
     /// <p>The Airflow web server hostname for the environment.</p>
     #[doc(hidden)]
     pub web_server_hostname: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCliTokenOutput {
     /// <p>An Airflow CLI login token.</p>
@@ -517,9 +690,15 @@ impl  std::fmt::Debug for CreateCliTokenOutput  {
         let mut formatter = f.debug_struct("CreateCliTokenOutput");
         formatter.field("cli_token", &"*** Sensitive Data Redacted ***");
         formatter.field("web_server_hostname", &self.web_server_hostname);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for CreateCliTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput).
 pub mod create_cli_token_output {
     
@@ -529,6 +708,7 @@ pub mod create_cli_token_output {
     pub struct Builder {
         pub(crate) cli_token: std::option::Option<std::string::String>,
         pub(crate) web_server_hostname: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An Airflow CLI login token.</p>
@@ -549,6 +729,15 @@ pub mod create_cli_token_output {
         pub fn set_web_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_server_hostname = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput).
         pub fn build(self) -> crate::output::CreateCliTokenOutput {
             crate::output::CreateCliTokenOutput {
@@ -556,6 +745,7 @@ pub mod create_cli_token_output {
                 ,
                 web_server_hostname: self.web_server_hostname
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -564,6 +754,7 @@ pub mod create_cli_token_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("cli_token", &"*** Sensitive Data Redacted ***");
             formatter.field("web_server_hostname", &self.web_server_hostname);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

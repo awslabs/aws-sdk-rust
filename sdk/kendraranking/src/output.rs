@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRescoreExecutionPlanOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateRescoreExecutionPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
 pub mod update_rescore_execution_plan_output {
     
@@ -11,11 +17,22 @@ pub mod update_rescore_execution_plan_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
         pub fn build(self) -> crate::output::UpdateRescoreExecutionPlanOutput {
             crate::output::UpdateRescoreExecutionPlanOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateRescoreExecutionPlanOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -71,11 +111,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -99,6 +150,7 @@ pub struct RescoreOutput  {
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
     #[doc(hidden)]
     pub result_items: std::option::Option<std::vec::Vec<crate::model::RescoreResultItem>>,
+    _request_id: Option<String>,
 }
 impl RescoreOutput {
     /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
@@ -110,6 +162,11 @@ impl RescoreOutput {
         self.result_items.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RescoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RescoreOutput`](crate::output::RescoreOutput).
 pub mod rescore_output {
     
@@ -119,6 +176,7 @@ pub mod rescore_output {
     pub struct Builder {
         pub(crate) rescore_id: std::option::Option<std::string::String>,
         pub(crate) result_items: std::option::Option<std::vec::Vec<crate::model::RescoreResultItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
@@ -145,6 +203,15 @@ pub mod rescore_output {
         pub fn set_result_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::RescoreResultItem>>) -> Self {
             self.result_items = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RescoreOutput`](crate::output::RescoreOutput).
         pub fn build(self) -> crate::output::RescoreOutput {
             crate::output::RescoreOutput {
@@ -152,6 +219,7 @@ pub mod rescore_output {
                 ,
                 result_items: self.result_items
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -172,6 +240,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags associated with the rescore execution plan.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags associated with the rescore execution plan.</p>
@@ -179,6 +248,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -187,6 +261,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -204,11 +279,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -232,6 +317,7 @@ pub struct ListRescoreExecutionPlansOutput  {
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRescoreExecutionPlansOutput {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
@@ -243,6 +329,11 @@ impl ListRescoreExecutionPlansOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRescoreExecutionPlansOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
 pub mod list_rescore_execution_plans_output {
     
@@ -252,6 +343,7 @@ pub mod list_rescore_execution_plans_output {
     pub struct Builder {
         pub(crate) summary_items: std::option::Option<std::vec::Vec<crate::model::RescoreExecutionPlanSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `summary_items`.
@@ -278,6 +370,15 @@ pub mod list_rescore_execution_plans_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
         pub fn build(self) -> crate::output::ListRescoreExecutionPlansOutput {
             crate::output::ListRescoreExecutionPlansOutput {
@@ -285,6 +386,7 @@ pub mod list_rescore_execution_plans_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -329,6 +431,7 @@ pub struct DescribeRescoreExecutionPlanOutput  {
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
@@ -368,6 +471,11 @@ impl DescribeRescoreExecutionPlanOutput {
         self.error_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRescoreExecutionPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
 pub mod describe_rescore_execution_plan_output {
     
@@ -384,6 +492,7 @@ pub mod describe_rescore_execution_plan_output {
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::RescoreExecutionPlanStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the rescore execution plan.</p>
@@ -467,6 +576,15 @@ pub mod describe_rescore_execution_plan_output {
         pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
         pub fn build(self) -> crate::output::DescribeRescoreExecutionPlanOutput {
             crate::output::DescribeRescoreExecutionPlanOutput {
@@ -488,6 +606,7 @@ pub mod describe_rescore_execution_plan_output {
                 ,
                 error_message: self.error_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -505,7 +624,13 @@ impl DescribeRescoreExecutionPlanOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRescoreExecutionPlanOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteRescoreExecutionPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
 pub mod delete_rescore_execution_plan_output {
     
@@ -513,11 +638,22 @@ pub mod delete_rescore_execution_plan_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
         pub fn build(self) -> crate::output::DeleteRescoreExecutionPlanOutput {
             crate::output::DeleteRescoreExecutionPlanOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -541,6 +677,7 @@ pub struct CreateRescoreExecutionPlanOutput  {
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
@@ -552,6 +689,11 @@ impl CreateRescoreExecutionPlanOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRescoreExecutionPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
 pub mod create_rescore_execution_plan_output {
     
@@ -561,6 +703,7 @@ pub mod create_rescore_execution_plan_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the rescore execution plan.</p>
@@ -581,6 +724,15 @@ pub mod create_rescore_execution_plan_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
         pub fn build(self) -> crate::output::CreateRescoreExecutionPlanOutput {
             crate::output::CreateRescoreExecutionPlanOutput {
@@ -588,6 +740,7 @@ pub mod create_rescore_execution_plan_output {
                 ,
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }

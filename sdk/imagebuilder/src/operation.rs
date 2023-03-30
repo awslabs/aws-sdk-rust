@@ -22,6 +22,7 @@ impl CancelImageCreation {
 impl aws_smithy_http::response::ParseStrictResponse for CancelImageCreation {
                 type Output = std::result::Result<crate::output::CancelImageCreationOutput, crate::error::CancelImageCreationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_image_creation_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateComponent {
 impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
                 type Output = std::result::Result<crate::output::CreateComponentOutput, crate::error::CreateComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_component_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateContainerRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for CreateContainerRecipe {
                 type Output = std::result::Result<crate::output::CreateContainerRecipeOutput, crate::error::CreateContainerRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_container_recipe_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateDistributionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDistributionConfiguration {
                 type Output = std::result::Result<crate::output::CreateDistributionConfigurationOutput, crate::error::CreateDistributionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_distribution_configuration_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateImage {
 impl aws_smithy_http::response::ParseStrictResponse for CreateImage {
                 type Output = std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_image_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateImagePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for CreateImagePipeline {
                 type Output = std::result::Result<crate::output::CreateImagePipelineOutput, crate::error::CreateImagePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_image_pipeline_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateImageRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for CreateImageRecipe {
                 type Output = std::result::Result<crate::output::CreateImageRecipeOutput, crate::error::CreateImageRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_image_recipe_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateInfrastructureConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateInfrastructureConfiguration {
                 type Output = std::result::Result<crate::output::CreateInfrastructureConfigurationOutput, crate::error::CreateInfrastructureConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_infrastructure_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteComponent {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
                 type Output = std::result::Result<crate::output::DeleteComponentOutput, crate::error::DeleteComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_component_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteContainerRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerRecipe {
                 type Output = std::result::Result<crate::output::DeleteContainerRecipeOutput, crate::error::DeleteContainerRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_container_recipe_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteDistributionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDistributionConfiguration {
                 type Output = std::result::Result<crate::output::DeleteDistributionConfigurationOutput, crate::error::DeleteDistributionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_distribution_configuration_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteImage {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteImage {
                 type Output = std::result::Result<crate::output::DeleteImageOutput, crate::error::DeleteImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_image_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteImagePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteImagePipeline {
                 type Output = std::result::Result<crate::output::DeleteImagePipelineOutput, crate::error::DeleteImagePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_image_pipeline_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteImageRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteImageRecipe {
                 type Output = std::result::Result<crate::output::DeleteImageRecipeOutput, crate::error::DeleteImageRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_image_recipe_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteInfrastructureConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInfrastructureConfiguration {
                 type Output = std::result::Result<crate::output::DeleteInfrastructureConfigurationOutput, crate::error::DeleteInfrastructureConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_infrastructure_configuration_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetComponent {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
                 type Output = std::result::Result<crate::output::GetComponentOutput, crate::error::GetComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_component_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetComponentPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponentPolicy {
                 type Output = std::result::Result<crate::output::GetComponentPolicyOutput, crate::error::GetComponentPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_component_policy_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetContainerRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipe {
                 type Output = std::result::Result<crate::output::GetContainerRecipeOutput, crate::error::GetContainerRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_container_recipe_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetContainerRecipePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipePolicy {
                 type Output = std::result::Result<crate::output::GetContainerRecipePolicyOutput, crate::error::GetContainerRecipePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_container_recipe_policy_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetDistributionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetDistributionConfiguration {
                 type Output = std::result::Result<crate::output::GetDistributionConfigurationOutput, crate::error::GetDistributionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_distribution_configuration_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetImage {
 impl aws_smithy_http::response::ParseStrictResponse for GetImage {
                 type Output = std::result::Result<crate::output::GetImageOutput, crate::error::GetImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_image_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetImagePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for GetImagePipeline {
                 type Output = std::result::Result<crate::output::GetImagePipelineOutput, crate::error::GetImagePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_image_pipeline_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetImagePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetImagePolicy {
                 type Output = std::result::Result<crate::output::GetImagePolicyOutput, crate::error::GetImagePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_image_policy_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetImageRecipe {
 impl aws_smithy_http::response::ParseStrictResponse for GetImageRecipe {
                 type Output = std::result::Result<crate::output::GetImageRecipeOutput, crate::error::GetImageRecipeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_image_recipe_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetImageRecipePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetImageRecipePolicy {
                 type Output = std::result::Result<crate::output::GetImageRecipePolicyOutput, crate::error::GetImageRecipePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_image_recipe_policy_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetInfrastructureConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetInfrastructureConfiguration {
                 type Output = std::result::Result<crate::output::GetInfrastructureConfigurationOutput, crate::error::GetInfrastructureConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_infrastructure_configuration_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ImportComponent {
 impl aws_smithy_http::response::ParseStrictResponse for ImportComponent {
                 type Output = std::result::Result<crate::output::ImportComponentOutput, crate::error::ImportComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_component_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ImportVmImage {
 impl aws_smithy_http::response::ParseStrictResponse for ImportVmImage {
                 type Output = std::result::Result<crate::output::ImportVmImageOutput, crate::error::ImportVmImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_vm_image_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListComponentBuildVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListComponentBuildVersions {
                 type Output = std::result::Result<crate::output::ListComponentBuildVersionsOutput, crate::error::ListComponentBuildVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_component_build_versions_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListComponents {
 impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
                 type Output = std::result::Result<crate::output::ListComponentsOutput, crate::error::ListComponentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_components_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListContainerRecipes {
 impl aws_smithy_http::response::ParseStrictResponse for ListContainerRecipes {
                 type Output = std::result::Result<crate::output::ListContainerRecipesOutput, crate::error::ListContainerRecipesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_container_recipes_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListDistributionConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListDistributionConfigurations {
                 type Output = std::result::Result<crate::output::ListDistributionConfigurationsOutput, crate::error::ListDistributionConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_distribution_configurations_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListImageBuildVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListImageBuildVersions {
                 type Output = std::result::Result<crate::output::ListImageBuildVersionsOutput, crate::error::ListImageBuildVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_image_build_versions_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListImagePackages {
 impl aws_smithy_http::response::ParseStrictResponse for ListImagePackages {
                 type Output = std::result::Result<crate::output::ListImagePackagesOutput, crate::error::ListImagePackagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_image_packages_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListImagePipelineImages {
 impl aws_smithy_http::response::ParseStrictResponse for ListImagePipelineImages {
                 type Output = std::result::Result<crate::output::ListImagePipelineImagesOutput, crate::error::ListImagePipelineImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_image_pipeline_images_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListImagePipelines {
 impl aws_smithy_http::response::ParseStrictResponse for ListImagePipelines {
                 type Output = std::result::Result<crate::output::ListImagePipelinesOutput, crate::error::ListImagePipelinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_image_pipelines_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListImageRecipes {
 impl aws_smithy_http::response::ParseStrictResponse for ListImageRecipes {
                 type Output = std::result::Result<crate::output::ListImageRecipesOutput, crate::error::ListImageRecipesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_image_recipes_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListImages {
 impl aws_smithy_http::response::ParseStrictResponse for ListImages {
                 type Output = std::result::Result<crate::output::ListImagesOutput, crate::error::ListImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_images_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListInfrastructureConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListInfrastructureConfigurations {
                 type Output = std::result::Result<crate::output::ListInfrastructureConfigurationsOutput, crate::error::ListInfrastructureConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_infrastructure_configurations_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl PutComponentPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutComponentPolicy {
                 type Output = std::result::Result<crate::output::PutComponentPolicyOutput, crate::error::PutComponentPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_component_policy_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl PutContainerRecipePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutContainerRecipePolicy {
                 type Output = std::result::Result<crate::output::PutContainerRecipePolicyOutput, crate::error::PutContainerRecipePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_container_recipe_policy_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl PutImagePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutImagePolicy {
                 type Output = std::result::Result<crate::output::PutImagePolicyOutput, crate::error::PutImagePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_policy_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl PutImageRecipePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutImageRecipePolicy {
                 type Output = std::result::Result<crate::output::PutImageRecipePolicyOutput, crate::error::PutImageRecipePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_recipe_policy_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl StartImagePipelineExecution {
 impl aws_smithy_http::response::ParseStrictResponse for StartImagePipelineExecution {
                 type Output = std::result::Result<crate::output::StartImagePipelineExecutionOutput, crate::error::StartImagePipelineExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_image_pipeline_execution_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdateDistributionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDistributionConfiguration {
                 type Output = std::result::Result<crate::output::UpdateDistributionConfigurationOutput, crate::error::UpdateDistributionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_distribution_configuration_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl UpdateImagePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateImagePipeline {
                 type Output = std::result::Result<crate::output::UpdateImagePipelineOutput, crate::error::UpdateImagePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_image_pipeline_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl UpdateInfrastructureConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInfrastructureConfiguration {
                 type Output = std::result::Result<crate::output::UpdateInfrastructureConfigurationOutput, crate::error::UpdateInfrastructureConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_infrastructure_configuration_error(response)
                      } else {

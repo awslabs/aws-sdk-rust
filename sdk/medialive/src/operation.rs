@@ -22,6 +22,7 @@ impl AcceptInputDeviceTransfer {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptInputDeviceTransfer {
                 type Output = std::result::Result<crate::output::AcceptInputDeviceTransferOutput, crate::error::AcceptInputDeviceTransferError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_input_device_transfer_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDelete {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDelete {
                 type Output = std::result::Result<crate::output::BatchDeleteOutput, crate::error::BatchDeleteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchStart {
 impl aws_smithy_http::response::ParseStrictResponse for BatchStart {
                 type Output = std::result::Result<crate::output::BatchStartOutput, crate::error::BatchStartError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_start_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchStop {
 impl aws_smithy_http::response::ParseStrictResponse for BatchStop {
                 type Output = std::result::Result<crate::output::BatchStopOutput, crate::error::BatchStopError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_stop_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl BatchUpdateSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateSchedule {
                 type Output = std::result::Result<crate::output::BatchUpdateScheduleOutput, crate::error::BatchUpdateScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_update_schedule_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CancelInputDeviceTransfer {
 impl aws_smithy_http::response::ParseStrictResponse for CancelInputDeviceTransfer {
                 type Output = std::result::Result<crate::output::CancelInputDeviceTransferOutput, crate::error::CancelInputDeviceTransferError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_input_device_transfer_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ClaimDevice {
 impl aws_smithy_http::response::ParseStrictResponse for ClaimDevice {
                 type Output = std::result::Result<crate::output::ClaimDeviceOutput, crate::error::ClaimDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_claim_device_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
                 type Output = std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateInput {
 impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
                 type Output = std::result::Result<crate::output::CreateInputOutput, crate::error::CreateInputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_input_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateInputSecurityGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateInputSecurityGroup {
                 type Output = std::result::Result<crate::output::CreateInputSecurityGroupOutput, crate::error::CreateInputSecurityGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_input_security_group_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplex {
                 type Output = std::result::Result<crate::output::CreateMultiplexOutput, crate::error::CreateMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_multiplex_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateMultiplexProgram {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplexProgram {
                 type Output = std::result::Result<crate::output::CreateMultiplexProgramOutput, crate::error::CreateMultiplexProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_multiplex_program_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreatePartnerInput {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePartnerInput {
                 type Output = std::result::Result<crate::output::CreatePartnerInputOutput, crate::error::CreatePartnerInputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_partner_input_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl CreateTags {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
                 type Output = std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_create_tags_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
                 type Output = std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_channel_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteInput {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInput {
                 type Output = std::result::Result<crate::output::DeleteInputOutput, crate::error::DeleteInputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_input_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteInputSecurityGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInputSecurityGroup {
                 type Output = std::result::Result<crate::output::DeleteInputSecurityGroupOutput, crate::error::DeleteInputSecurityGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_input_security_group_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeleteMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplex {
                 type Output = std::result::Result<crate::output::DeleteMultiplexOutput, crate::error::DeleteMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_multiplex_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteMultiplexProgram {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplexProgram {
                 type Output = std::result::Result<crate::output::DeleteMultiplexProgramOutput, crate::error::DeleteMultiplexProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_multiplex_program_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DeleteReservation {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteReservation {
                 type Output = std::result::Result<crate::output::DeleteReservationOutput, crate::error::DeleteReservationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_reservation_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DeleteSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
                 type Output = std::result::Result<crate::output::DeleteScheduleOutput, crate::error::DeleteScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_schedule_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DeleteTags {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
                 type Output = std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_tags_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
                 type Output = std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeInput {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
                 type Output = std::result::Result<crate::output::DescribeInputOutput, crate::error::DescribeInputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_input_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeInputDevice {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInputDevice {
                 type Output = std::result::Result<crate::output::DescribeInputDeviceOutput, crate::error::DescribeInputDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_input_device_error(response)
                      } else {
@@ -832,6 +857,7 @@ impl DescribeInputSecurityGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInputSecurityGroup {
                 type Output = std::result::Result<crate::output::DescribeInputSecurityGroupOutput, crate::error::DescribeInputSecurityGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_input_security_group_error(response)
                      } else {
@@ -863,6 +889,7 @@ impl DescribeMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplex {
                 type Output = std::result::Result<crate::output::DescribeMultiplexOutput, crate::error::DescribeMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_multiplex_error(response)
                      } else {
@@ -894,6 +921,7 @@ impl DescribeMultiplexProgram {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplexProgram {
                 type Output = std::result::Result<crate::output::DescribeMultiplexProgramOutput, crate::error::DescribeMultiplexProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_multiplex_program_error(response)
                      } else {
@@ -925,6 +953,7 @@ impl DescribeOffering {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOffering {
                 type Output = std::result::Result<crate::output::DescribeOfferingOutput, crate::error::DescribeOfferingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_offering_error(response)
                      } else {
@@ -956,6 +985,7 @@ impl DescribeReservation {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReservation {
                 type Output = std::result::Result<crate::output::DescribeReservationOutput, crate::error::DescribeReservationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_reservation_error(response)
                      } else {
@@ -987,6 +1017,7 @@ impl DescribeSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedule {
                 type Output = std::result::Result<crate::output::DescribeScheduleOutput, crate::error::DescribeScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_schedule_error(response)
                      } else {
@@ -1018,6 +1049,7 @@ impl ListChannels {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
                 type Output = std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_error(response)
                      } else {
@@ -1049,6 +1081,7 @@ impl ListInputDevices {
 impl aws_smithy_http::response::ParseStrictResponse for ListInputDevices {
                 type Output = std::result::Result<crate::output::ListInputDevicesOutput, crate::error::ListInputDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_input_devices_error(response)
                      } else {
@@ -1080,6 +1113,7 @@ impl ListInputDeviceTransfers {
 impl aws_smithy_http::response::ParseStrictResponse for ListInputDeviceTransfers {
                 type Output = std::result::Result<crate::output::ListInputDeviceTransfersOutput, crate::error::ListInputDeviceTransfersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_input_device_transfers_error(response)
                      } else {
@@ -1111,6 +1145,7 @@ impl ListInputs {
 impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
                 type Output = std::result::Result<crate::output::ListInputsOutput, crate::error::ListInputsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_inputs_error(response)
                      } else {
@@ -1142,6 +1177,7 @@ impl ListInputSecurityGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListInputSecurityGroups {
                 type Output = std::result::Result<crate::output::ListInputSecurityGroupsOutput, crate::error::ListInputSecurityGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_input_security_groups_error(response)
                      } else {
@@ -1173,6 +1209,7 @@ impl ListMultiplexes {
 impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexes {
                 type Output = std::result::Result<crate::output::ListMultiplexesOutput, crate::error::ListMultiplexesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_multiplexes_error(response)
                      } else {
@@ -1204,6 +1241,7 @@ impl ListMultiplexPrograms {
 impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexPrograms {
                 type Output = std::result::Result<crate::output::ListMultiplexProgramsOutput, crate::error::ListMultiplexProgramsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_multiplex_programs_error(response)
                      } else {
@@ -1235,6 +1273,7 @@ impl ListOfferings {
 impl aws_smithy_http::response::ParseStrictResponse for ListOfferings {
                 type Output = std::result::Result<crate::output::ListOfferingsOutput, crate::error::ListOfferingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_offerings_error(response)
                      } else {
@@ -1266,6 +1305,7 @@ impl ListReservations {
 impl aws_smithy_http::response::ParseStrictResponse for ListReservations {
                 type Output = std::result::Result<crate::output::ListReservationsOutput, crate::error::ListReservationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_reservations_error(response)
                      } else {
@@ -1297,6 +1337,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1328,6 +1369,7 @@ impl PurchaseOffering {
 impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
                 type Output = std::result::Result<crate::output::PurchaseOfferingOutput, crate::error::PurchaseOfferingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_purchase_offering_error(response)
                      } else {
@@ -1359,6 +1401,7 @@ impl RebootInputDevice {
 impl aws_smithy_http::response::ParseStrictResponse for RebootInputDevice {
                 type Output = std::result::Result<crate::output::RebootInputDeviceOutput, crate::error::RebootInputDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reboot_input_device_error(response)
                      } else {
@@ -1390,6 +1433,7 @@ impl RejectInputDeviceTransfer {
 impl aws_smithy_http::response::ParseStrictResponse for RejectInputDeviceTransfer {
                 type Output = std::result::Result<crate::output::RejectInputDeviceTransferOutput, crate::error::RejectInputDeviceTransferError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_input_device_transfer_error(response)
                      } else {
@@ -1421,6 +1465,7 @@ impl StartChannel {
 impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
                 type Output = std::result::Result<crate::output::StartChannelOutput, crate::error::StartChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_channel_error(response)
                      } else {
@@ -1452,6 +1497,7 @@ impl StartInputDeviceMaintenanceWindow {
 impl aws_smithy_http::response::ParseStrictResponse for StartInputDeviceMaintenanceWindow {
                 type Output = std::result::Result<crate::output::StartInputDeviceMaintenanceWindowOutput, crate::error::StartInputDeviceMaintenanceWindowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_input_device_maintenance_window_error(response)
                      } else {
@@ -1483,6 +1529,7 @@ impl StartMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for StartMultiplex {
                 type Output = std::result::Result<crate::output::StartMultiplexOutput, crate::error::StartMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_start_multiplex_error(response)
                      } else {
@@ -1514,6 +1561,7 @@ impl StopChannel {
 impl aws_smithy_http::response::ParseStrictResponse for StopChannel {
                 type Output = std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_channel_error(response)
                      } else {
@@ -1545,6 +1593,7 @@ impl StopMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for StopMultiplex {
                 type Output = std::result::Result<crate::output::StopMultiplexOutput, crate::error::StopMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_stop_multiplex_error(response)
                      } else {
@@ -1576,6 +1625,7 @@ impl TransferInputDevice {
 impl aws_smithy_http::response::ParseStrictResponse for TransferInputDevice {
                 type Output = std::result::Result<crate::output::TransferInputDeviceOutput, crate::error::TransferInputDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_transfer_input_device_error(response)
                      } else {
@@ -1607,6 +1657,7 @@ impl UpdateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
                 type Output = std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_error(response)
                      } else {
@@ -1638,6 +1689,7 @@ impl UpdateChannelClass {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelClass {
                 type Output = std::result::Result<crate::output::UpdateChannelClassOutput, crate::error::UpdateChannelClassError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_class_error(response)
                      } else {
@@ -1669,6 +1721,7 @@ impl UpdateInput {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInput {
                 type Output = std::result::Result<crate::output::UpdateInputOutput, crate::error::UpdateInputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_input_error(response)
                      } else {
@@ -1700,6 +1753,7 @@ impl UpdateInputDevice {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInputDevice {
                 type Output = std::result::Result<crate::output::UpdateInputDeviceOutput, crate::error::UpdateInputDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_input_device_error(response)
                      } else {
@@ -1731,6 +1785,7 @@ impl UpdateInputSecurityGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInputSecurityGroup {
                 type Output = std::result::Result<crate::output::UpdateInputSecurityGroupOutput, crate::error::UpdateInputSecurityGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_input_security_group_error(response)
                      } else {
@@ -1762,6 +1817,7 @@ impl UpdateMultiplex {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplex {
                 type Output = std::result::Result<crate::output::UpdateMultiplexOutput, crate::error::UpdateMultiplexError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_multiplex_error(response)
                      } else {
@@ -1793,6 +1849,7 @@ impl UpdateMultiplexProgram {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplexProgram {
                 type Output = std::result::Result<crate::output::UpdateMultiplexProgramOutput, crate::error::UpdateMultiplexProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_multiplex_program_error(response)
                      } else {
@@ -1824,6 +1881,7 @@ impl UpdateReservation {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateReservation {
                 type Output = std::result::Result<crate::output::UpdateReservationOutput, crate::error::UpdateReservationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_reservation_error(response)
                      } else {

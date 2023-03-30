@@ -22,6 +22,7 @@ impl AnalyzeDocument {
 impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
                 type Output = std::result::Result<crate::output::AnalyzeDocumentOutput, crate::error::AnalyzeDocumentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_analyze_document_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AnalyzeExpense {
 impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
                 type Output = std::result::Result<crate::output::AnalyzeExpenseOutput, crate::error::AnalyzeExpenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_analyze_expense_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AnalyzeID {
 impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
                 type Output = std::result::Result<crate::output::AnalyzeIdOutput, crate::error::AnalyzeIDError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_analyze_id_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DetectDocumentText {
 impl aws_smithy_http::response::ParseStrictResponse for DetectDocumentText {
                 type Output = std::result::Result<crate::output::DetectDocumentTextOutput, crate::error::DetectDocumentTextError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detect_document_text_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetDocumentAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
                 type Output = std::result::Result<crate::output::GetDocumentAnalysisOutput, crate::error::GetDocumentAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_document_analysis_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetDocumentTextDetection {
 impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection {
                 type Output = std::result::Result<crate::output::GetDocumentTextDetectionOutput, crate::error::GetDocumentTextDetectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_document_text_detection_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetExpenseAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
                 type Output = std::result::Result<crate::output::GetExpenseAnalysisOutput, crate::error::GetExpenseAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_expense_analysis_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetLendingAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysis {
                 type Output = std::result::Result<crate::output::GetLendingAnalysisOutput, crate::error::GetLendingAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lending_analysis_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetLendingAnalysisSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysisSummary {
                 type Output = std::result::Result<crate::output::GetLendingAnalysisSummaryOutput, crate::error::GetLendingAnalysisSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lending_analysis_summary_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl StartDocumentAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
                 type Output = std::result::Result<crate::output::StartDocumentAnalysisOutput, crate::error::StartDocumentAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_document_analysis_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl StartDocumentTextDetection {
 impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetection {
                 type Output = std::result::Result<crate::output::StartDocumentTextDetectionOutput, crate::error::StartDocumentTextDetectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_document_text_detection_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl StartExpenseAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
                 type Output = std::result::Result<crate::output::StartExpenseAnalysisOutput, crate::error::StartExpenseAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_expense_analysis_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl StartLendingAnalysis {
 impl aws_smithy_http::response::ParseStrictResponse for StartLendingAnalysis {
                 type Output = std::result::Result<crate::output::StartLendingAnalysisOutput, crate::error::StartLendingAnalysisError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_lending_analysis_error(response)
                      } else {

@@ -13,15 +13,8 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,21 +32,38 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRealtimeContact
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRealtimeContactAnalysisSegmentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListRealtimeContactAnalysisSegmentsError> for Error {
     fn from(err: crate::error::ListRealtimeContactAnalysisSegmentsError) -> Self {
-        match err.kind {
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListRealtimeContactAnalysisSegmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

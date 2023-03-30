@@ -22,6 +22,7 @@ impl AddTagsToResource {
 impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
                 type Output = std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_tags_to_resource_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateHapg {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHapg {
                 type Output = std::result::Result<crate::output::CreateHapgOutput, crate::error::CreateHapgError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_hapg_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateHsm {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHsm {
                 type Output = std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_hsm_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateLunaClient {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLunaClient {
                 type Output = std::result::Result<crate::output::CreateLunaClientOutput, crate::error::CreateLunaClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_luna_client_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteHapg {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteHapg {
                 type Output = std::result::Result<crate::output::DeleteHapgOutput, crate::error::DeleteHapgError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_hapg_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteHsm {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteHsm {
                 type Output = std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_hsm_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteLunaClient {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLunaClient {
                 type Output = std::result::Result<crate::output::DeleteLunaClientOutput, crate::error::DeleteLunaClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_luna_client_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeHapg {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeHapg {
                 type Output = std::result::Result<crate::output::DescribeHapgOutput, crate::error::DescribeHapgError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_hapg_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeHsm {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeHsm {
                 type Output = std::result::Result<crate::output::DescribeHsmOutput, crate::error::DescribeHsmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_hsm_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeLunaClient {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLunaClient {
                 type Output = std::result::Result<crate::output::DescribeLunaClientOutput, crate::error::DescribeLunaClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_luna_client_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
                 type Output = std::result::Result<crate::output::GetConfigOutput, crate::error::GetConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_config_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListAvailableZones {
 impl aws_smithy_http::response::ParseStrictResponse for ListAvailableZones {
                 type Output = std::result::Result<crate::output::ListAvailableZonesOutput, crate::error::ListAvailableZonesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_available_zones_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListHapgs {
 impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
                 type Output = std::result::Result<crate::output::ListHapgsOutput, crate::error::ListHapgsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hapgs_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListHsms {
 impl aws_smithy_http::response::ParseStrictResponse for ListHsms {
                 type Output = std::result::Result<crate::output::ListHsmsOutput, crate::error::ListHsmsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hsms_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListLunaClients {
 impl aws_smithy_http::response::ParseStrictResponse for ListLunaClients {
                 type Output = std::result::Result<crate::output::ListLunaClientsOutput, crate::error::ListLunaClientsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_luna_clients_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ModifyHapg {
 impl aws_smithy_http::response::ParseStrictResponse for ModifyHapg {
                 type Output = std::result::Result<crate::output::ModifyHapgOutput, crate::error::ModifyHapgError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_modify_hapg_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ModifyHsm {
 impl aws_smithy_http::response::ParseStrictResponse for ModifyHsm {
                 type Output = std::result::Result<crate::output::ModifyHsmOutput, crate::error::ModifyHsmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_modify_hsm_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ModifyLunaClient {
 impl aws_smithy_http::response::ParseStrictResponse for ModifyLunaClient {
                 type Output = std::result::Result<crate::output::ModifyLunaClientOutput, crate::error::ModifyLunaClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_modify_luna_client_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl RemoveTagsFromResource {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
                 type Output = std::result::Result<crate::output::RemoveTagsFromResourceOutput, crate::error::RemoveTagsFromResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_tags_from_resource_error(response)
                      } else {

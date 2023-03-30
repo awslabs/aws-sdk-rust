@@ -9,6 +9,7 @@ pub struct GetRecommendationsOutput  {
     /// <p>The ID of the recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetRecommendationsOutput {
     /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
@@ -20,6 +21,11 @@ impl GetRecommendationsOutput {
         self.recommendation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
 pub mod get_recommendations_output {
     
@@ -29,6 +35,7 @@ pub mod get_recommendations_output {
     pub struct Builder {
         pub(crate) item_list: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `item_list`.
@@ -55,6 +62,15 @@ pub mod get_recommendations_output {
         pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recommendation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
         pub fn build(self) -> crate::output::GetRecommendationsOutput {
             crate::output::GetRecommendationsOutput {
@@ -62,6 +78,7 @@ pub mod get_recommendations_output {
                 ,
                 recommendation_id: self.recommendation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -85,6 +102,7 @@ pub struct GetPersonalizedRankingOutput  {
     /// <p>The ID of the recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetPersonalizedRankingOutput {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
@@ -96,6 +114,11 @@ impl GetPersonalizedRankingOutput {
         self.recommendation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPersonalizedRankingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
 pub mod get_personalized_ranking_output {
     
@@ -105,6 +128,7 @@ pub mod get_personalized_ranking_output {
     pub struct Builder {
         pub(crate) personalized_ranking: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `personalized_ranking`.
@@ -131,6 +155,15 @@ pub mod get_personalized_ranking_output {
         pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recommendation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
         pub fn build(self) -> crate::output::GetPersonalizedRankingOutput {
             crate::output::GetPersonalizedRankingOutput {
@@ -138,6 +171,7 @@ pub mod get_personalized_ranking_output {
                 ,
                 recommendation_id: self.recommendation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

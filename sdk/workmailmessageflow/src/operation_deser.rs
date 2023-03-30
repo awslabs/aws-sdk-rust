@@ -10,13 +10,17 @@ pub fn parse_get_raw_message_content(op_response: &mut aws_smithy_http::operatio
         output = output.set_message_content(
             Some(crate::http_serde::deser_payload_get_raw_message_content_get_raw_message_content_output_message_content(response.body_mut())?)
         );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_raw_message_content_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::output::GetRawMessageContentOutput, crate::error::GetRawMessageContentError> {
-    let generic = crate::json_deser::parse_http_generic_error(response).map_err(crate::error::GetRawMessageContentError::unhandled)?;
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response).map_err(crate::error::GetRawMessageContentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
                                 None => return Err(crate::error::GetRawMessageContentError::unhandled(generic))
@@ -24,7 +28,7 @@ pub fn parse_get_raw_message_content_error(response: &http::Response<bytes::Byte
     
                             let _error_message = generic.message().map(|msg|msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::error::GetRawMessageContentError { meta: generic, kind: crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::GetRawMessageContentError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -32,6 +36,7 @@ pub fn parse_get_raw_message_content_error(response: &http::Response<bytes::Byte
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRawMessageContentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -39,14 +44,17 @@ pub fn parse_get_raw_message_content_error(response: &http::Response<bytes::Byte
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetRawMessageContentError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Bytes>) -> std::result::Result<crate::output::PutRawMessageContentOutput, crate::error::PutRawMessageContentError> {
-    let generic = crate::json_deser::parse_http_generic_error(response).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
                                 None => return Err(crate::error::PutRawMessageContentError::unhandled(generic))
@@ -54,7 +62,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
     
                             let _error_message = generic.message().map(|msg|msg.to_owned());
     Err(match error_code {
-        "InvalidContentLocation" => crate::error::PutRawMessageContentError { meta: generic, kind: crate::error::PutRawMessageContentErrorKind::InvalidContentLocation({
+        "InvalidContentLocation" => crate::error::PutRawMessageContentError::InvalidContentLocation({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -62,6 +70,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                     let mut output = crate::error::invalid_content_location::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_content_location_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -69,8 +78,8 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "MessageFrozen" => crate::error::PutRawMessageContentError { meta: generic, kind: crate::error::PutRawMessageContentErrorKind::MessageFrozen({
+        }),
+        "MessageFrozen" => crate::error::PutRawMessageContentError::MessageFrozen({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -78,6 +87,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                     let mut output = crate::error::message_frozen::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_message_frozen_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -85,8 +95,8 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "MessageRejected" => crate::error::PutRawMessageContentError { meta: generic, kind: crate::error::PutRawMessageContentErrorKind::MessageRejected({
+        }),
+        "MessageRejected" => crate::error::PutRawMessageContentError::MessageRejected({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -94,6 +104,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                     let mut output = crate::error::message_rejected::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_message_rejected_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -101,8 +112,8 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ResourceNotFoundException" => crate::error::PutRawMessageContentError { meta: generic, kind: crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException({
+        }),
+        "ResourceNotFoundException" => crate::error::PutRawMessageContentError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -110,6 +121,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -117,7 +129,7 @@ pub fn parse_put_raw_message_content_error(response: &http::Response<bytes::Byte
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::PutRawMessageContentError::generic(generic)
     })
 }
@@ -128,6 +140,7 @@ pub fn parse_put_raw_message_content_response(response: &http::Response<bytes::B
         #[allow(unused_mut)]
         let mut output = crate::output::put_raw_message_content_output::Builder::default();
         let _ = response;
+        output._set_request_id(aws_http::request_id::RequestId::request_id(response).map(str::to_string));
         output.build()
     })
 }

@@ -22,6 +22,7 @@ impl ConfigureLogs {
 impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
                 type Output = std::result::Result<crate::output::ConfigureLogsOutput, crate::error::ConfigureLogsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_configure_logs_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateAsset {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAsset {
                 type Output = std::result::Result<crate::output::CreateAssetOutput, crate::error::CreateAssetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_asset_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreatePackagingConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingConfiguration {
                 type Output = std::result::Result<crate::output::CreatePackagingConfigurationOutput, crate::error::CreatePackagingConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_packaging_configuration_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreatePackagingGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePackagingGroup {
                 type Output = std::result::Result<crate::output::CreatePackagingGroupOutput, crate::error::CreatePackagingGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_packaging_group_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteAsset {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAsset {
                 type Output = std::result::Result<crate::output::DeleteAssetOutput, crate::error::DeleteAssetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_asset_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeletePackagingConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingConfiguration {
                 type Output = std::result::Result<crate::output::DeletePackagingConfigurationOutput, crate::error::DeletePackagingConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_packaging_configuration_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeletePackagingGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePackagingGroup {
                 type Output = std::result::Result<crate::output::DeletePackagingGroupOutput, crate::error::DeletePackagingGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_packaging_group_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeAsset {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAsset {
                 type Output = std::result::Result<crate::output::DescribeAssetOutput, crate::error::DescribeAssetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_asset_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribePackagingConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingConfiguration {
                 type Output = std::result::Result<crate::output::DescribePackagingConfigurationOutput, crate::error::DescribePackagingConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_packaging_configuration_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribePackagingGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePackagingGroup {
                 type Output = std::result::Result<crate::output::DescribePackagingGroupOutput, crate::error::DescribePackagingGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_packaging_group_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListAssets {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssets {
                 type Output = std::result::Result<crate::output::ListAssetsOutput, crate::error::ListAssetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assets_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListPackagingConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListPackagingConfigurations {
                 type Output = std::result::Result<crate::output::ListPackagingConfigurationsOutput, crate::error::ListPackagingConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_packaging_configurations_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListPackagingGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListPackagingGroups {
                 type Output = std::result::Result<crate::output::ListPackagingGroupsOutput, crate::error::ListPackagingGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_packaging_groups_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UpdatePackagingGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePackagingGroup {
                 type Output = std::result::Result<crate::output::UpdatePackagingGroupOutput, crate::error::UpdatePackagingGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_packaging_group_error(response)
                      } else {

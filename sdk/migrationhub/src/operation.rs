@@ -22,6 +22,7 @@ impl AssociateCreatedArtifact {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateCreatedArtifact {
                 type Output = std::result::Result<crate::output::AssociateCreatedArtifactOutput, crate::error::AssociateCreatedArtifactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_created_artifact_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AssociateDiscoveredResource {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateDiscoveredResource {
                 type Output = std::result::Result<crate::output::AssociateDiscoveredResourceOutput, crate::error::AssociateDiscoveredResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_discovered_resource_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateProgressUpdateStream {
 impl aws_smithy_http::response::ParseStrictResponse for CreateProgressUpdateStream {
                 type Output = std::result::Result<crate::output::CreateProgressUpdateStreamOutput, crate::error::CreateProgressUpdateStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_progress_update_stream_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteProgressUpdateStream {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProgressUpdateStream {
                 type Output = std::result::Result<crate::output::DeleteProgressUpdateStreamOutput, crate::error::DeleteProgressUpdateStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_progress_update_stream_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeApplicationState {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationState {
                 type Output = std::result::Result<crate::output::DescribeApplicationStateOutput, crate::error::DescribeApplicationStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_application_state_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeMigrationTask {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMigrationTask {
                 type Output = std::result::Result<crate::output::DescribeMigrationTaskOutput, crate::error::DescribeMigrationTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_migration_task_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DisassociateCreatedArtifact {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateCreatedArtifact {
                 type Output = std::result::Result<crate::output::DisassociateCreatedArtifactOutput, crate::error::DisassociateCreatedArtifactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_created_artifact_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DisassociateDiscoveredResource {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateDiscoveredResource {
                 type Output = std::result::Result<crate::output::DisassociateDiscoveredResourceOutput, crate::error::DisassociateDiscoveredResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_discovered_resource_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ImportMigrationTask {
 impl aws_smithy_http::response::ParseStrictResponse for ImportMigrationTask {
                 type Output = std::result::Result<crate::output::ImportMigrationTaskOutput, crate::error::ImportMigrationTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_migration_task_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListApplicationStates {
 impl aws_smithy_http::response::ParseStrictResponse for ListApplicationStates {
                 type Output = std::result::Result<crate::output::ListApplicationStatesOutput, crate::error::ListApplicationStatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_application_states_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListCreatedArtifacts {
 impl aws_smithy_http::response::ParseStrictResponse for ListCreatedArtifacts {
                 type Output = std::result::Result<crate::output::ListCreatedArtifactsOutput, crate::error::ListCreatedArtifactsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_created_artifacts_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListDiscoveredResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources {
                 type Output = std::result::Result<crate::output::ListDiscoveredResourcesOutput, crate::error::ListDiscoveredResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_discovered_resources_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListMigrationTasks {
 impl aws_smithy_http::response::ParseStrictResponse for ListMigrationTasks {
                 type Output = std::result::Result<crate::output::ListMigrationTasksOutput, crate::error::ListMigrationTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_migration_tasks_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListProgressUpdateStreams {
 impl aws_smithy_http::response::ParseStrictResponse for ListProgressUpdateStreams {
                 type Output = std::result::Result<crate::output::ListProgressUpdateStreamsOutput, crate::error::ListProgressUpdateStreamsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_progress_update_streams_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl NotifyApplicationState {
 impl aws_smithy_http::response::ParseStrictResponse for NotifyApplicationState {
                 type Output = std::result::Result<crate::output::NotifyApplicationStateOutput, crate::error::NotifyApplicationStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_notify_application_state_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl NotifyMigrationTaskState {
 impl aws_smithy_http::response::ParseStrictResponse for NotifyMigrationTaskState {
                 type Output = std::result::Result<crate::output::NotifyMigrationTaskStateOutput, crate::error::NotifyMigrationTaskStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_notify_migration_task_state_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl PutResourceAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for PutResourceAttributes {
                 type Output = std::result::Result<crate::output::PutResourceAttributesOutput, crate::error::PutResourceAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_resource_attributes_error(response)
                      } else {

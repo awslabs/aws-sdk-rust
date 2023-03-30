@@ -22,6 +22,7 @@ impl CreateContainer {
 impl aws_smithy_http::response::ParseStrictResponse for CreateContainer {
                 type Output = std::result::Result<crate::output::CreateContainerOutput, crate::error::CreateContainerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_container_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteContainer {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteContainer {
                 type Output = std::result::Result<crate::output::DeleteContainerOutput, crate::error::DeleteContainerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_container_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteContainerPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerPolicy {
                 type Output = std::result::Result<crate::output::DeleteContainerPolicyOutput, crate::error::DeleteContainerPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_container_policy_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteCorsPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCorsPolicy {
                 type Output = std::result::Result<crate::output::DeleteCorsPolicyOutput, crate::error::DeleteCorsPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cors_policy_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
                 type Output = std::result::Result<crate::output::DeleteLifecyclePolicyOutput, crate::error::DeleteLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_lifecycle_policy_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteMetricPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricPolicy {
                 type Output = std::result::Result<crate::output::DeleteMetricPolicyOutput, crate::error::DeleteMetricPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_metric_policy_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeContainer {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeContainer {
                 type Output = std::result::Result<crate::output::DescribeContainerOutput, crate::error::DescribeContainerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_container_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetContainerPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetContainerPolicy {
                 type Output = std::result::Result<crate::output::GetContainerPolicyOutput, crate::error::GetContainerPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_container_policy_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetCorsPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetCorsPolicy {
                 type Output = std::result::Result<crate::output::GetCorsPolicyOutput, crate::error::GetCorsPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cors_policy_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
                 type Output = std::result::Result<crate::output::GetLifecyclePolicyOutput, crate::error::GetLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lifecycle_policy_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetMetricPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetMetricPolicy {
                 type Output = std::result::Result<crate::output::GetMetricPolicyOutput, crate::error::GetMetricPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_metric_policy_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListContainers {
 impl aws_smithy_http::response::ParseStrictResponse for ListContainers {
                 type Output = std::result::Result<crate::output::ListContainersOutput, crate::error::ListContainersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_containers_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl PutContainerPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutContainerPolicy {
                 type Output = std::result::Result<crate::output::PutContainerPolicyOutput, crate::error::PutContainerPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_container_policy_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl PutCorsPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutCorsPolicy {
                 type Output = std::result::Result<crate::output::PutCorsPolicyOutput, crate::error::PutCorsPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_cors_policy_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl PutLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
                 type Output = std::result::Result<crate::output::PutLifecyclePolicyOutput, crate::error::PutLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_lifecycle_policy_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl PutMetricPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutMetricPolicy {
                 type Output = std::result::Result<crate::output::PutMetricPolicyOutput, crate::error::PutMetricPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_metric_policy_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl StartAccessLogging {
 impl aws_smithy_http::response::ParseStrictResponse for StartAccessLogging {
                 type Output = std::result::Result<crate::output::StartAccessLoggingOutput, crate::error::StartAccessLoggingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_access_logging_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl StopAccessLogging {
 impl aws_smithy_http::response::ParseStrictResponse for StopAccessLogging {
                 type Output = std::result::Result<crate::output::StopAccessLoggingOutput, crate::error::StopAccessLoggingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_access_logging_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

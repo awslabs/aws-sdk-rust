@@ -22,6 +22,7 @@ impl DeleteRecommendationPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationPreferences {
                 type Output = std::result::Result<crate::output::DeleteRecommendationPreferencesOutput, crate::error::DeleteRecommendationPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_recommendation_preferences_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeRecommendationExportJobs {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationExportJobs {
                 type Output = std::result::Result<crate::output::DescribeRecommendationExportJobsOutput, crate::error::DescribeRecommendationExportJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_recommendation_export_jobs_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ExportAutoScalingGroupRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ExportAutoScalingGroupRecommendations {
                 type Output = std::result::Result<crate::output::ExportAutoScalingGroupRecommendationsOutput, crate::error::ExportAutoScalingGroupRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_auto_scaling_group_recommendations_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ExportEBSVolumeRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ExportEBSVolumeRecommendations {
                 type Output = std::result::Result<crate::output::ExportEbsVolumeRecommendationsOutput, crate::error::ExportEBSVolumeRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_ebs_volume_recommendations_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ExportEC2InstanceRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecommendations {
                 type Output = std::result::Result<crate::output::ExportEc2InstanceRecommendationsOutput, crate::error::ExportEC2InstanceRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_ec2_instance_recommendations_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ExportECSServiceRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ExportECSServiceRecommendations {
                 type Output = std::result::Result<crate::output::ExportEcsServiceRecommendationsOutput, crate::error::ExportECSServiceRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_ecs_service_recommendations_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ExportLambdaFunctionRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ExportLambdaFunctionRecommendations {
                 type Output = std::result::Result<crate::output::ExportLambdaFunctionRecommendationsOutput, crate::error::ExportLambdaFunctionRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_lambda_function_recommendations_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetAutoScalingGroupRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecommendations {
                 type Output = std::result::Result<crate::output::GetAutoScalingGroupRecommendationsOutput, crate::error::GetAutoScalingGroupRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_auto_scaling_group_recommendations_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetEBSVolumeRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetEBSVolumeRecommendations {
                 type Output = std::result::Result<crate::output::GetEbsVolumeRecommendationsOutput, crate::error::GetEBSVolumeRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ebs_volume_recommendations_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetEC2InstanceRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetEC2InstanceRecommendations {
                 type Output = std::result::Result<crate::output::GetEc2InstanceRecommendationsOutput, crate::error::GetEC2InstanceRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ec2_instance_recommendations_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetEC2RecommendationProjectedMetrics {
 impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProjectedMetrics {
                 type Output = std::result::Result<crate::output::GetEc2RecommendationProjectedMetricsOutput, crate::error::GetEC2RecommendationProjectedMetricsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ec2_recommendation_projected_metrics_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetECSServiceRecommendationProjectedMetrics {
 impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendationProjectedMetrics {
                 type Output = std::result::Result<crate::output::GetEcsServiceRecommendationProjectedMetricsOutput, crate::error::GetECSServiceRecommendationProjectedMetricsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ecs_service_recommendation_projected_metrics_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetECSServiceRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendations {
                 type Output = std::result::Result<crate::output::GetEcsServiceRecommendationsOutput, crate::error::GetECSServiceRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ecs_service_recommendations_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetEffectiveRecommendationPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for GetEffectiveRecommendationPreferences {
                 type Output = std::result::Result<crate::output::GetEffectiveRecommendationPreferencesOutput, crate::error::GetEffectiveRecommendationPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_effective_recommendation_preferences_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetEnrollmentStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
                 type Output = std::result::Result<crate::output::GetEnrollmentStatusOutput, crate::error::GetEnrollmentStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_enrollment_status_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetEnrollmentStatusesForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesForOrganization {
                 type Output = std::result::Result<crate::output::GetEnrollmentStatusesForOrganizationOutput, crate::error::GetEnrollmentStatusesForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_enrollment_statuses_for_organization_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetLambdaFunctionRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetLambdaFunctionRecommendations {
                 type Output = std::result::Result<crate::output::GetLambdaFunctionRecommendationsOutput, crate::error::GetLambdaFunctionRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lambda_function_recommendations_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetRecommendationPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationPreferences {
                 type Output = std::result::Result<crate::output::GetRecommendationPreferencesOutput, crate::error::GetRecommendationPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_recommendation_preferences_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetRecommendationSummaries {
 impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationSummaries {
                 type Output = std::result::Result<crate::output::GetRecommendationSummariesOutput, crate::error::GetRecommendationSummariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_recommendation_summaries_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl PutRecommendationPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationPreferences {
                 type Output = std::result::Result<crate::output::PutRecommendationPreferencesOutput, crate::error::PutRecommendationPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_recommendation_preferences_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateEnrollmentStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEnrollmentStatus {
                 type Output = std::result::Result<crate::output::UpdateEnrollmentStatusOutput, crate::error::UpdateEnrollmentStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_enrollment_status_error(response)
                      } else {

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterScalableTargetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RegisterScalableTargetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
 pub mod register_scalable_target_output {
     
@@ -11,11 +17,22 @@ pub mod register_scalable_target_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
         pub fn build(self) -> crate::output::RegisterScalableTargetOutput {
             crate::output::RegisterScalableTargetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl RegisterScalableTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScheduledActionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutScheduledActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
 pub mod put_scheduled_action_output {
     
@@ -41,11 +64,22 @@ pub mod put_scheduled_action_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
         pub fn build(self) -> crate::output::PutScheduledActionOutput {
             crate::output::PutScheduledActionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -69,6 +103,7 @@ pub struct PutScalingPolicyOutput  {
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
+    _request_id: Option<String>,
 }
 impl PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
@@ -80,6 +115,11 @@ impl PutScalingPolicyOutput {
         self.alarms.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutScalingPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
 pub mod put_scaling_policy_output {
     
@@ -89,6 +129,7 @@ pub mod put_scaling_policy_output {
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
@@ -115,6 +156,15 @@ pub mod put_scaling_policy_output {
         pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alarm>>) -> Self {
             self.alarms = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
         pub fn build(self) -> crate::output::PutScalingPolicyOutput {
             crate::output::PutScalingPolicyOutput {
@@ -122,6 +172,7 @@ pub mod put_scaling_policy_output {
                 ,
                 alarms: self.alarms
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -145,6 +196,7 @@ pub struct DescribeScheduledActionsOutput  {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
@@ -156,6 +208,11 @@ impl DescribeScheduledActionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
 pub mod describe_scheduled_actions_output {
     
@@ -165,6 +222,7 @@ pub mod describe_scheduled_actions_output {
     pub struct Builder {
         pub(crate) scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scheduled_actions`.
@@ -191,6 +249,15 @@ pub mod describe_scheduled_actions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
         pub fn build(self) -> crate::output::DescribeScheduledActionsOutput {
             crate::output::DescribeScheduledActionsOutput {
@@ -198,6 +265,7 @@ pub mod describe_scheduled_actions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -221,6 +289,7 @@ pub struct DescribeScalingPoliciesOutput  {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScalingPoliciesOutput {
     /// <p>Information about the scaling policies.</p>
@@ -232,6 +301,11 @@ impl DescribeScalingPoliciesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScalingPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
 pub mod describe_scaling_policies_output {
     
@@ -241,6 +315,7 @@ pub mod describe_scaling_policies_output {
     pub struct Builder {
         pub(crate) scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scaling_policies`.
@@ -267,6 +342,15 @@ pub mod describe_scaling_policies_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPoliciesOutput {
             crate::output::DescribeScalingPoliciesOutput {
@@ -274,6 +358,7 @@ pub mod describe_scaling_policies_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -297,6 +382,7 @@ pub struct DescribeScalingActivitiesOutput  {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScalingActivitiesOutput {
     /// <p>A list of scaling activity objects.</p>
@@ -308,6 +394,11 @@ impl DescribeScalingActivitiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScalingActivitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
 pub mod describe_scaling_activities_output {
     
@@ -317,6 +408,7 @@ pub mod describe_scaling_activities_output {
     pub struct Builder {
         pub(crate) scaling_activities: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scaling_activities`.
@@ -343,6 +435,15 @@ pub mod describe_scaling_activities_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
         pub fn build(self) -> crate::output::DescribeScalingActivitiesOutput {
             crate::output::DescribeScalingActivitiesOutput {
@@ -350,6 +451,7 @@ pub mod describe_scaling_activities_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -373,6 +475,7 @@ pub struct DescribeScalableTargetsOutput  {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
@@ -384,6 +487,11 @@ impl DescribeScalableTargetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScalableTargetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
 pub mod describe_scalable_targets_output {
     
@@ -393,6 +501,7 @@ pub mod describe_scalable_targets_output {
     pub struct Builder {
         pub(crate) scalable_targets: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scalable_targets`.
@@ -419,6 +528,15 @@ pub mod describe_scalable_targets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
         pub fn build(self) -> crate::output::DescribeScalableTargetsOutput {
             crate::output::DescribeScalableTargetsOutput {
@@ -426,6 +544,7 @@ pub mod describe_scalable_targets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -443,7 +562,13 @@ impl DescribeScalableTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterScalableTargetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeregisterScalableTargetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
 pub mod deregister_scalable_target_output {
     
@@ -451,11 +576,22 @@ pub mod deregister_scalable_target_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
         pub fn build(self) -> crate::output::DeregisterScalableTargetOutput {
             crate::output::DeregisterScalableTargetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -473,7 +609,13 @@ impl DeregisterScalableTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduledActionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteScheduledActionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
 pub mod delete_scheduled_action_output {
     
@@ -481,11 +623,22 @@ pub mod delete_scheduled_action_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
         pub fn build(self) -> crate::output::DeleteScheduledActionOutput {
             crate::output::DeleteScheduledActionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -503,7 +656,13 @@ impl DeleteScheduledActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScalingPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteScalingPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
 pub mod delete_scaling_policy_output {
     
@@ -511,11 +670,22 @@ pub mod delete_scaling_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
         pub fn build(self) -> crate::output::DeleteScalingPolicyOutput {
             crate::output::DeleteScalingPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }

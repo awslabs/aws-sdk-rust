@@ -9,6 +9,7 @@ pub struct UpdateNetworkSitePlanOutput  {
     /// <p> The network site tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateNetworkSitePlanOutput {
     /// <p>Information about the network site.</p>
@@ -25,9 +26,15 @@ impl  std::fmt::Debug for UpdateNetworkSitePlanOutput  {
         let mut formatter = f.debug_struct("UpdateNetworkSitePlanOutput");
         formatter.field("network_site", &self.network_site);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for UpdateNetworkSitePlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
 pub mod update_network_site_plan_output {
     
@@ -37,6 +44,7 @@ pub mod update_network_site_plan_output {
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -63,6 +71,15 @@ pub mod update_network_site_plan_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
         pub fn build(self) -> crate::output::UpdateNetworkSitePlanOutput {
             crate::output::UpdateNetworkSitePlanOutput {
@@ -70,6 +87,7 @@ pub mod update_network_site_plan_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -78,6 +96,7 @@ pub mod update_network_site_plan_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network_site", &self.network_site);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -101,6 +120,7 @@ pub struct UpdateNetworkSiteOutput  {
     /// <p> The network site tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
@@ -117,9 +137,15 @@ impl  std::fmt::Debug for UpdateNetworkSiteOutput  {
         let mut formatter = f.debug_struct("UpdateNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for UpdateNetworkSiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
 pub mod update_network_site_output {
     
@@ -129,6 +155,7 @@ pub mod update_network_site_output {
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -155,6 +182,15 @@ pub mod update_network_site_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
         pub fn build(self) -> crate::output::UpdateNetworkSiteOutput {
             crate::output::UpdateNetworkSiteOutput {
@@ -162,6 +198,7 @@ pub mod update_network_site_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -170,6 +207,7 @@ pub mod update_network_site_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network_site", &self.network_site);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -187,7 +225,13 @@ impl UpdateNetworkSiteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -195,11 +239,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -217,7 +272,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -225,11 +286,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -250,6 +322,7 @@ pub struct PingOutput  {
     /// <p>Information about the health of the service.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PingOutput {
     /// <p>Information about the health of the service.</p>
@@ -257,6 +330,11 @@ impl PingOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PingOutput`](crate::output::PingOutput).
 pub mod ping_output {
     
@@ -265,6 +343,7 @@ pub mod ping_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the health of the service.</p>
@@ -276,11 +355,21 @@ pub mod ping_output {
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PingOutput`](crate::output::PingOutput).
         pub fn build(self) -> crate::output::PingOutput {
             crate::output::PingOutput {
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -301,6 +390,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The resource tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The resource tags.</p>
@@ -312,9 +402,15 @@ impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -323,6 +419,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -340,11 +437,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -352,6 +459,7 @@ pub mod list_tags_for_resource_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -375,6 +483,7 @@ pub struct ListOrdersOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListOrdersOutput {
     /// <p>Information about the orders.</p>
@@ -386,6 +495,11 @@ impl ListOrdersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListOrdersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListOrdersOutput`](crate::output::ListOrdersOutput).
 pub mod list_orders_output {
     
@@ -395,6 +509,7 @@ pub mod list_orders_output {
     pub struct Builder {
         pub(crate) orders: std::option::Option<std::vec::Vec<crate::model::Order>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `orders`.
@@ -421,6 +536,15 @@ pub mod list_orders_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListOrdersOutput`](crate::output::ListOrdersOutput).
         pub fn build(self) -> crate::output::ListOrdersOutput {
             crate::output::ListOrdersOutput {
@@ -428,6 +552,7 @@ pub mod list_orders_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -451,6 +576,7 @@ pub struct ListNetworkSitesOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListNetworkSitesOutput {
     /// <p>Information about the network sites.</p>
@@ -462,6 +588,11 @@ impl ListNetworkSitesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListNetworkSitesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
 pub mod list_network_sites_output {
     
@@ -471,6 +602,7 @@ pub mod list_network_sites_output {
     pub struct Builder {
         pub(crate) network_sites: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `network_sites`.
@@ -497,6 +629,15 @@ pub mod list_network_sites_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
         pub fn build(self) -> crate::output::ListNetworkSitesOutput {
             crate::output::ListNetworkSitesOutput {
@@ -504,6 +645,7 @@ pub mod list_network_sites_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -527,6 +669,7 @@ pub struct ListNetworksOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListNetworksOutput {
     /// <p>The networks.</p>
@@ -538,6 +681,11 @@ impl ListNetworksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListNetworksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListNetworksOutput`](crate::output::ListNetworksOutput).
 pub mod list_networks_output {
     
@@ -547,6 +695,7 @@ pub mod list_networks_output {
     pub struct Builder {
         pub(crate) networks: std::option::Option<std::vec::Vec<crate::model::Network>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `networks`.
@@ -573,6 +722,15 @@ pub mod list_networks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListNetworksOutput`](crate::output::ListNetworksOutput).
         pub fn build(self) -> crate::output::ListNetworksOutput {
             crate::output::ListNetworksOutput {
@@ -580,6 +738,7 @@ pub mod list_networks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -603,6 +762,7 @@ pub struct ListNetworkResourcesOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListNetworkResourcesOutput {
     /// <p>Information about network resources.</p>
@@ -614,6 +774,11 @@ impl ListNetworkResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListNetworkResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
 pub mod list_network_resources_output {
     
@@ -623,6 +788,7 @@ pub mod list_network_resources_output {
     pub struct Builder {
         pub(crate) network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `network_resources`.
@@ -649,6 +815,15 @@ pub mod list_network_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
         pub fn build(self) -> crate::output::ListNetworkResourcesOutput {
             crate::output::ListNetworkResourcesOutput {
@@ -656,6 +831,7 @@ pub mod list_network_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -679,6 +855,7 @@ pub struct ListDeviceIdentifiersOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
@@ -690,6 +867,11 @@ impl ListDeviceIdentifiersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDeviceIdentifiersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
 pub mod list_device_identifiers_output {
     
@@ -699,6 +881,7 @@ pub mod list_device_identifiers_output {
     pub struct Builder {
         pub(crate) device_identifiers: std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `device_identifiers`.
@@ -725,6 +908,15 @@ pub mod list_device_identifiers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
         pub fn build(self) -> crate::output::ListDeviceIdentifiersOutput {
             crate::output::ListDeviceIdentifiersOutput {
@@ -732,6 +924,7 @@ pub mod list_device_identifiers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -755,6 +948,7 @@ pub struct GetOrderOutput  {
     /// <p> The order tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetOrderOutput {
     /// <p>Information about the order.</p>
@@ -771,9 +965,15 @@ impl  std::fmt::Debug for GetOrderOutput  {
         let mut formatter = f.debug_struct("GetOrderOutput");
         formatter.field("order", &self.order);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetOrderOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetOrderOutput`](crate::output::GetOrderOutput).
 pub mod get_order_output {
     
@@ -783,6 +983,7 @@ pub mod get_order_output {
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the order.</p>
@@ -809,6 +1010,15 @@ pub mod get_order_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetOrderOutput`](crate::output::GetOrderOutput).
         pub fn build(self) -> crate::output::GetOrderOutput {
             crate::output::GetOrderOutput {
@@ -816,6 +1026,7 @@ pub mod get_order_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -824,6 +1035,7 @@ pub mod get_order_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("order", &self.order);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -847,6 +1059,7 @@ pub struct GetNetworkSiteOutput  {
     /// <p> The network site tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetNetworkSiteOutput {
     /// <p>Information about the network site.</p>
@@ -863,9 +1076,15 @@ impl  std::fmt::Debug for GetNetworkSiteOutput  {
         let mut formatter = f.debug_struct("GetNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetNetworkSiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
 pub mod get_network_site_output {
     
@@ -875,6 +1094,7 @@ pub mod get_network_site_output {
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -901,6 +1121,15 @@ pub mod get_network_site_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
         pub fn build(self) -> crate::output::GetNetworkSiteOutput {
             crate::output::GetNetworkSiteOutput {
@@ -908,6 +1137,7 @@ pub mod get_network_site_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -916,6 +1146,7 @@ pub mod get_network_site_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network_site", &self.network_site);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -939,6 +1170,7 @@ pub struct GetNetworkResourceOutput  {
     /// <p> The network resource tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetNetworkResourceOutput {
     /// <p>Information about the network resource.</p>
@@ -955,9 +1187,15 @@ impl  std::fmt::Debug for GetNetworkResourceOutput  {
         let mut formatter = f.debug_struct("GetNetworkResourceOutput");
         formatter.field("network_resource", &self.network_resource);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetNetworkResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
 pub mod get_network_resource_output {
     
@@ -967,6 +1205,7 @@ pub mod get_network_resource_output {
     pub struct Builder {
         pub(crate) network_resource: std::option::Option<crate::model::NetworkResource>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network resource.</p>
@@ -993,6 +1232,15 @@ pub mod get_network_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
         pub fn build(self) -> crate::output::GetNetworkResourceOutput {
             crate::output::GetNetworkResourceOutput {
@@ -1000,6 +1248,7 @@ pub mod get_network_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1008,6 +1257,7 @@ pub mod get_network_resource_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network_resource", &self.network_resource);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1031,6 +1281,7 @@ pub struct GetNetworkOutput  {
     /// <p> The network tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetNetworkOutput {
     /// <p>Information about the network.</p>
@@ -1047,9 +1298,15 @@ impl  std::fmt::Debug for GetNetworkOutput  {
         let mut formatter = f.debug_struct("GetNetworkOutput");
         formatter.field("network", &self.network);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetNetworkOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetNetworkOutput`](crate::output::GetNetworkOutput).
 pub mod get_network_output {
     
@@ -1059,6 +1316,7 @@ pub mod get_network_output {
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network.</p>
@@ -1085,6 +1343,15 @@ pub mod get_network_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetNetworkOutput`](crate::output::GetNetworkOutput).
         pub fn build(self) -> crate::output::GetNetworkOutput {
             crate::output::GetNetworkOutput {
@@ -1092,6 +1359,7 @@ pub mod get_network_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1100,6 +1368,7 @@ pub mod get_network_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network", &self.network);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1123,6 +1392,7 @@ pub struct GetDeviceIdentifierOutput  {
     /// <p> The device identifier tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
@@ -1139,9 +1409,15 @@ impl  std::fmt::Debug for GetDeviceIdentifierOutput  {
         let mut formatter = f.debug_struct("GetDeviceIdentifierOutput");
         formatter.field("device_identifier", &self.device_identifier);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetDeviceIdentifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
 pub mod get_device_identifier_output {
     
@@ -1151,6 +1427,7 @@ pub mod get_device_identifier_output {
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the device identifier.</p>
@@ -1177,6 +1454,15 @@ pub mod get_device_identifier_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::GetDeviceIdentifierOutput {
             crate::output::GetDeviceIdentifierOutput {
@@ -1184,6 +1470,7 @@ pub mod get_device_identifier_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1192,6 +1479,7 @@ pub mod get_device_identifier_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("device_identifier", &self.device_identifier);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1212,6 +1500,7 @@ pub struct DeleteNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
+    _request_id: Option<String>,
 }
 impl DeleteNetworkSiteOutput {
     /// <p>Information about the network site.</p>
@@ -1219,6 +1508,11 @@ impl DeleteNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteNetworkSiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
 pub mod delete_network_site_output {
     
@@ -1227,6 +1521,7 @@ pub mod delete_network_site_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -1238,11 +1533,21 @@ pub mod delete_network_site_output {
         pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
             self.network_site = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
         pub fn build(self) -> crate::output::DeleteNetworkSiteOutput {
             crate::output::DeleteNetworkSiteOutput {
                 network_site: self.network_site
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1263,6 +1568,7 @@ pub struct DeleteNetworkOutput  {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
     pub network: std::option::Option<crate::model::Network>,
+    _request_id: Option<String>,
 }
 impl DeleteNetworkOutput {
     /// <p>Information about the network.</p>
@@ -1270,6 +1576,11 @@ impl DeleteNetworkOutput {
         self.network.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteNetworkOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
 pub mod delete_network_output {
     
@@ -1278,6 +1589,7 @@ pub mod delete_network_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network.</p>
@@ -1289,11 +1601,21 @@ pub mod delete_network_output {
         pub fn set_network(mut self, input: std::option::Option<crate::model::Network>) -> Self {
             self.network = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
         pub fn build(self) -> crate::output::DeleteNetworkOutput {
             crate::output::DeleteNetworkOutput {
                 network: self.network
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1314,6 +1636,7 @@ pub struct DeactivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
+    _request_id: Option<String>,
 }
 impl DeactivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
@@ -1321,6 +1644,11 @@ impl DeactivateDeviceIdentifierOutput {
         self.device_identifier.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeactivateDeviceIdentifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
 pub mod deactivate_device_identifier_output {
     
@@ -1329,6 +1657,7 @@ pub mod deactivate_device_identifier_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the device identifier.</p>
@@ -1340,11 +1669,21 @@ pub mod deactivate_device_identifier_output {
         pub fn set_device_identifier(mut self, input: std::option::Option<crate::model::DeviceIdentifier>) -> Self {
             self.device_identifier = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::DeactivateDeviceIdentifierOutput {
             crate::output::DeactivateDeviceIdentifierOutput {
                 device_identifier: self.device_identifier
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1368,6 +1707,7 @@ pub struct CreateNetworkSiteOutput  {
     /// <p> The network site tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
@@ -1384,9 +1724,15 @@ impl  std::fmt::Debug for CreateNetworkSiteOutput  {
         let mut formatter = f.debug_struct("CreateNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for CreateNetworkSiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
 pub mod create_network_site_output {
     
@@ -1396,6 +1742,7 @@ pub mod create_network_site_output {
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -1422,6 +1769,15 @@ pub mod create_network_site_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
         pub fn build(self) -> crate::output::CreateNetworkSiteOutput {
             crate::output::CreateNetworkSiteOutput {
@@ -1429,6 +1785,7 @@ pub mod create_network_site_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1437,6 +1794,7 @@ pub mod create_network_site_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network_site", &self.network_site);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1460,6 +1818,7 @@ pub struct CreateNetworkOutput  {
     /// <p> The network tags. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateNetworkOutput {
     /// <p>Information about the network.</p>
@@ -1476,9 +1835,15 @@ impl  std::fmt::Debug for CreateNetworkOutput  {
         let mut formatter = f.debug_struct("CreateNetworkOutput");
         formatter.field("network", &self.network);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for CreateNetworkOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
 pub mod create_network_output {
     
@@ -1488,6 +1853,7 @@ pub mod create_network_output {
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network.</p>
@@ -1514,6 +1880,15 @@ pub mod create_network_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
         pub fn build(self) -> crate::output::CreateNetworkOutput {
             crate::output::CreateNetworkOutput {
@@ -1521,6 +1896,7 @@ pub mod create_network_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1529,6 +1905,7 @@ pub mod create_network_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("network", &self.network);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1549,6 +1926,7 @@ pub struct ConfigureAccessPointOutput  {
     /// <p>Information about the network resource.</p>
     #[doc(hidden)]
     pub access_point: std::option::Option<crate::model::NetworkResource>,
+    _request_id: Option<String>,
 }
 impl ConfigureAccessPointOutput {
     /// <p>Information about the network resource.</p>
@@ -1556,6 +1934,11 @@ impl ConfigureAccessPointOutput {
         self.access_point.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfigureAccessPointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
 pub mod configure_access_point_output {
     
@@ -1564,6 +1947,7 @@ pub mod configure_access_point_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point: std::option::Option<crate::model::NetworkResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network resource.</p>
@@ -1575,11 +1959,21 @@ pub mod configure_access_point_output {
         pub fn set_access_point(mut self, input: std::option::Option<crate::model::NetworkResource>) -> Self {
             self.access_point = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
         pub fn build(self) -> crate::output::ConfigureAccessPointOutput {
             crate::output::ConfigureAccessPointOutput {
                 access_point: self.access_point
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1600,6 +1994,7 @@ pub struct ActivateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
+    _request_id: Option<String>,
 }
 impl ActivateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
@@ -1607,6 +2002,11 @@ impl ActivateNetworkSiteOutput {
         self.network_site.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ActivateNetworkSiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
 pub mod activate_network_site_output {
     
@@ -1615,6 +2015,7 @@ pub mod activate_network_site_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -1626,11 +2027,21 @@ pub mod activate_network_site_output {
         pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
             self.network_site = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
         pub fn build(self) -> crate::output::ActivateNetworkSiteOutput {
             crate::output::ActivateNetworkSiteOutput {
                 network_site: self.network_site
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1654,6 +2065,7 @@ pub struct ActivateDeviceIdentifierOutput  {
     /// <p> The tags on the device identifier. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ActivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
@@ -1670,9 +2082,15 @@ impl  std::fmt::Debug for ActivateDeviceIdentifierOutput  {
         let mut formatter = f.debug_struct("ActivateDeviceIdentifierOutput");
         formatter.field("device_identifier", &self.device_identifier);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ActivateDeviceIdentifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
 pub mod activate_device_identifier_output {
     
@@ -1682,6 +2100,7 @@ pub mod activate_device_identifier_output {
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the device identifier.</p>
@@ -1708,6 +2127,15 @@ pub mod activate_device_identifier_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::ActivateDeviceIdentifierOutput {
             crate::output::ActivateDeviceIdentifierOutput {
@@ -1715,6 +2143,7 @@ pub mod activate_device_identifier_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1723,6 +2152,7 @@ pub mod activate_device_identifier_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("device_identifier", &self.device_identifier);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1743,6 +2173,7 @@ pub struct AcknowledgeOrderReceiptOutput  {
     /// <p>Information about the order.</p>
     #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
+    _request_id: Option<String>,
 }
 impl AcknowledgeOrderReceiptOutput {
     /// <p>Information about the order.</p>
@@ -1750,6 +2181,11 @@ impl AcknowledgeOrderReceiptOutput {
         self.order.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AcknowledgeOrderReceiptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
 pub mod acknowledge_order_receipt_output {
     
@@ -1758,6 +2194,7 @@ pub mod acknowledge_order_receipt_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the order.</p>
@@ -1769,11 +2206,21 @@ pub mod acknowledge_order_receipt_output {
         pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
             self.order = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
         pub fn build(self) -> crate::output::AcknowledgeOrderReceiptOutput {
             crate::output::AcknowledgeOrderReceiptOutput {
                 order: self.order
                 ,
+                _request_id: self._request_id,
             }
         }
     }

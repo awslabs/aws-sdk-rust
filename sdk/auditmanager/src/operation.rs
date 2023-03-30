@@ -22,6 +22,7 @@ impl AssociateAssessmentReportEvidenceFolder {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateAssessmentReportEvidenceFolder {
                 type Output = std::result::Result<crate::output::AssociateAssessmentReportEvidenceFolderOutput, crate::error::AssociateAssessmentReportEvidenceFolderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_assessment_report_evidence_folder_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchAssociateAssessmentReportEvidence {
 impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateAssessmentReportEvidence {
                 type Output = std::result::Result<crate::output::BatchAssociateAssessmentReportEvidenceOutput, crate::error::BatchAssociateAssessmentReportEvidenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_associate_assessment_report_evidence_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchCreateDelegationByAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCreateDelegationByAssessment {
                 type Output = std::result::Result<crate::output::BatchCreateDelegationByAssessmentOutput, crate::error::BatchCreateDelegationByAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_create_delegation_by_assessment_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchDeleteDelegationByAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDelegationByAssessment {
                 type Output = std::result::Result<crate::output::BatchDeleteDelegationByAssessmentOutput, crate::error::BatchDeleteDelegationByAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_delegation_by_assessment_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl BatchDisassociateAssessmentReportEvidence {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateAssessmentReportEvidence {
                 type Output = std::result::Result<crate::output::BatchDisassociateAssessmentReportEvidenceOutput, crate::error::BatchDisassociateAssessmentReportEvidenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_disassociate_assessment_report_evidence_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl BatchImportEvidenceToAssessmentControl {
 impl aws_smithy_http::response::ParseStrictResponse for BatchImportEvidenceToAssessmentControl {
                 type Output = std::result::Result<crate::output::BatchImportEvidenceToAssessmentControlOutput, crate::error::BatchImportEvidenceToAssessmentControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_import_evidence_to_assessment_control_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAssessment {
                 type Output = std::result::Result<crate::output::CreateAssessmentOutput, crate::error::CreateAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_assessment_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateAssessmentFramework {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAssessmentFramework {
                 type Output = std::result::Result<crate::output::CreateAssessmentFrameworkOutput, crate::error::CreateAssessmentFrameworkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_assessment_framework_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateAssessmentReport {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAssessmentReport {
                 type Output = std::result::Result<crate::output::CreateAssessmentReportOutput, crate::error::CreateAssessmentReportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_assessment_report_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateControl {
 impl aws_smithy_http::response::ParseStrictResponse for CreateControl {
                 type Output = std::result::Result<crate::output::CreateControlOutput, crate::error::CreateControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_control_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessment {
                 type Output = std::result::Result<crate::output::DeleteAssessmentOutput, crate::error::DeleteAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_assessment_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteAssessmentFramework {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFramework {
                 type Output = std::result::Result<crate::output::DeleteAssessmentFrameworkOutput, crate::error::DeleteAssessmentFrameworkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_assessment_framework_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteAssessmentFrameworkShare {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFrameworkShare {
                 type Output = std::result::Result<crate::output::DeleteAssessmentFrameworkShareOutput, crate::error::DeleteAssessmentFrameworkShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_assessment_framework_share_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteAssessmentReport {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentReport {
                 type Output = std::result::Result<crate::output::DeleteAssessmentReportOutput, crate::error::DeleteAssessmentReportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_assessment_report_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteControl {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteControl {
                 type Output = std::result::Result<crate::output::DeleteControlOutput, crate::error::DeleteControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_control_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeregisterAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterAccount {
                 type Output = std::result::Result<crate::output::DeregisterAccountOutput, crate::error::DeregisterAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_account_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeregisterOrganizationAdminAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterOrganizationAdminAccount {
                 type Output = std::result::Result<crate::output::DeregisterOrganizationAdminAccountOutput, crate::error::DeregisterOrganizationAdminAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_organization_admin_account_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DisassociateAssessmentReportEvidenceFolder {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateAssessmentReportEvidenceFolder {
                 type Output = std::result::Result<crate::output::DisassociateAssessmentReportEvidenceFolderOutput, crate::error::DisassociateAssessmentReportEvidenceFolderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_assessment_report_evidence_folder_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetAccountStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccountStatus {
                 type Output = std::result::Result<crate::output::GetAccountStatusOutput, crate::error::GetAccountStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_account_status_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssessment {
                 type Output = std::result::Result<crate::output::GetAssessmentOutput, crate::error::GetAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_assessment_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetAssessmentFramework {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssessmentFramework {
                 type Output = std::result::Result<crate::output::GetAssessmentFrameworkOutput, crate::error::GetAssessmentFrameworkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_assessment_framework_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetAssessmentReportUrl {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssessmentReportUrl {
                 type Output = std::result::Result<crate::output::GetAssessmentReportUrlOutput, crate::error::GetAssessmentReportUrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_assessment_report_url_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetChangeLogs {
 impl aws_smithy_http::response::ParseStrictResponse for GetChangeLogs {
                 type Output = std::result::Result<crate::output::GetChangeLogsOutput, crate::error::GetChangeLogsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_change_logs_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetControl {
 impl aws_smithy_http::response::ParseStrictResponse for GetControl {
                 type Output = std::result::Result<crate::output::GetControlOutput, crate::error::GetControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_control_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetDelegations {
 impl aws_smithy_http::response::ParseStrictResponse for GetDelegations {
                 type Output = std::result::Result<crate::output::GetDelegationsOutput, crate::error::GetDelegationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_delegations_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetEvidence {
 impl aws_smithy_http::response::ParseStrictResponse for GetEvidence {
                 type Output = std::result::Result<crate::output::GetEvidenceOutput, crate::error::GetEvidenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_evidence_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl GetEvidenceByEvidenceFolder {
 impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceByEvidenceFolder {
                 type Output = std::result::Result<crate::output::GetEvidenceByEvidenceFolderOutput, crate::error::GetEvidenceByEvidenceFolderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_evidence_by_evidence_folder_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl GetEvidenceFolder {
 impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFolder {
                 type Output = std::result::Result<crate::output::GetEvidenceFolderOutput, crate::error::GetEvidenceFolderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_evidence_folder_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl GetEvidenceFoldersByAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFoldersByAssessment {
                 type Output = std::result::Result<crate::output::GetEvidenceFoldersByAssessmentOutput, crate::error::GetEvidenceFoldersByAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_evidence_folders_by_assessment_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl GetEvidenceFoldersByAssessmentControl {
 impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFoldersByAssessmentControl {
                 type Output = std::result::Result<crate::output::GetEvidenceFoldersByAssessmentControlOutput, crate::error::GetEvidenceFoldersByAssessmentControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_evidence_folders_by_assessment_control_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl GetInsights {
 impl aws_smithy_http::response::ParseStrictResponse for GetInsights {
                 type Output = std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_insights_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl GetInsightsByAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for GetInsightsByAssessment {
                 type Output = std::result::Result<crate::output::GetInsightsByAssessmentOutput, crate::error::GetInsightsByAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_insights_by_assessment_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl GetOrganizationAdminAccount {
 impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationAdminAccount {
                 type Output = std::result::Result<crate::output::GetOrganizationAdminAccountOutput, crate::error::GetOrganizationAdminAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_organization_admin_account_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl GetServicesInScope {
 impl aws_smithy_http::response::ParseStrictResponse for GetServicesInScope {
                 type Output = std::result::Result<crate::output::GetServicesInScopeOutput, crate::error::GetServicesInScopeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_services_in_scope_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl GetSettings {
 impl aws_smithy_http::response::ParseStrictResponse for GetSettings {
                 type Output = std::result::Result<crate::output::GetSettingsOutput, crate::error::GetSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_settings_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListAssessmentControlInsightsByControlDomain {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentControlInsightsByControlDomain {
                 type Output = std::result::Result<crate::output::ListAssessmentControlInsightsByControlDomainOutput, crate::error::ListAssessmentControlInsightsByControlDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assessment_control_insights_by_control_domain_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListAssessmentFrameworks {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworks {
                 type Output = std::result::Result<crate::output::ListAssessmentFrameworksOutput, crate::error::ListAssessmentFrameworksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assessment_frameworks_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListAssessmentFrameworkShareRequests {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworkShareRequests {
                 type Output = std::result::Result<crate::output::ListAssessmentFrameworkShareRequestsOutput, crate::error::ListAssessmentFrameworkShareRequestsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assessment_framework_share_requests_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListAssessmentReports {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentReports {
                 type Output = std::result::Result<crate::output::ListAssessmentReportsOutput, crate::error::ListAssessmentReportsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assessment_reports_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListAssessments {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssessments {
                 type Output = std::result::Result<crate::output::ListAssessmentsOutput, crate::error::ListAssessmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assessments_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListControlDomainInsights {
 impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsights {
                 type Output = std::result::Result<crate::output::ListControlDomainInsightsOutput, crate::error::ListControlDomainInsightsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_control_domain_insights_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl ListControlDomainInsightsByAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsightsByAssessment {
                 type Output = std::result::Result<crate::output::ListControlDomainInsightsByAssessmentOutput, crate::error::ListControlDomainInsightsByAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_control_domain_insights_by_assessment_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl ListControlInsightsByControlDomain {
 impl aws_smithy_http::response::ParseStrictResponse for ListControlInsightsByControlDomain {
                 type Output = std::result::Result<crate::output::ListControlInsightsByControlDomainOutput, crate::error::ListControlInsightsByControlDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_control_insights_by_control_domain_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl ListControls {
 impl aws_smithy_http::response::ParseStrictResponse for ListControls {
                 type Output = std::result::Result<crate::output::ListControlsOutput, crate::error::ListControlsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_controls_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl ListKeywordsForDataSource {
 impl aws_smithy_http::response::ParseStrictResponse for ListKeywordsForDataSource {
                 type Output = std::result::Result<crate::output::ListKeywordsForDataSourceOutput, crate::error::ListKeywordsForDataSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_keywords_for_data_source_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl ListNotifications {
 impl aws_smithy_http::response::ParseStrictResponse for ListNotifications {
                 type Output = std::result::Result<crate::output::ListNotificationsOutput, crate::error::ListNotificationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_notifications_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl RegisterAccount {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterAccount {
                 type Output = std::result::Result<crate::output::RegisterAccountOutput, crate::error::RegisterAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_account_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl RegisterOrganizationAdminAccount {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterOrganizationAdminAccount {
                 type Output = std::result::Result<crate::output::RegisterOrganizationAdminAccountOutput, crate::error::RegisterOrganizationAdminAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_organization_admin_account_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl StartAssessmentFrameworkShare {
 impl aws_smithy_http::response::ParseStrictResponse for StartAssessmentFrameworkShare {
                 type Output = std::result::Result<crate::output::StartAssessmentFrameworkShareOutput, crate::error::StartAssessmentFrameworkShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_assessment_framework_share_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl UpdateAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessment {
                 type Output = std::result::Result<crate::output::UpdateAssessmentOutput, crate::error::UpdateAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl UpdateAssessmentControl {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentControl {
                 type Output = std::result::Result<crate::output::UpdateAssessmentControlOutput, crate::error::UpdateAssessmentControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_control_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl UpdateAssessmentControlSetStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentControlSetStatus {
                 type Output = std::result::Result<crate::output::UpdateAssessmentControlSetStatusOutput, crate::error::UpdateAssessmentControlSetStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_control_set_status_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl UpdateAssessmentFramework {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFramework {
                 type Output = std::result::Result<crate::output::UpdateAssessmentFrameworkOutput, crate::error::UpdateAssessmentFrameworkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_framework_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl UpdateAssessmentFrameworkShare {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFrameworkShare {
                 type Output = std::result::Result<crate::output::UpdateAssessmentFrameworkShareOutput, crate::error::UpdateAssessmentFrameworkShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_framework_share_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl UpdateAssessmentStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentStatus {
                 type Output = std::result::Result<crate::output::UpdateAssessmentStatusOutput, crate::error::UpdateAssessmentStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_assessment_status_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl UpdateControl {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateControl {
                 type Output = std::result::Result<crate::output::UpdateControlOutput, crate::error::UpdateControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_control_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl UpdateSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSettings {
                 type Output = std::result::Result<crate::output::UpdateSettingsOutput, crate::error::UpdateSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_settings_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl ValidateAssessmentReportIntegrity {
 impl aws_smithy_http::response::ParseStrictResponse for ValidateAssessmentReportIntegrity {
                 type Output = std::result::Result<crate::output::ValidateAssessmentReportIntegrityOutput, crate::error::ValidateAssessmentReportIntegrityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_validate_assessment_report_integrity_error(response)
                      } else {

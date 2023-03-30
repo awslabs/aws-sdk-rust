@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCanaryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
 pub mod update_canary_output {
     
@@ -11,11 +17,22 @@ pub mod update_canary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
         pub fn build(self) -> crate::output::UpdateCanaryOutput {
             crate::output::UpdateCanaryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -71,11 +111,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopCanaryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopCanaryOutput`](crate::output::StopCanaryOutput).
 pub mod stop_canary_output {
     
@@ -101,11 +158,22 @@ pub mod stop_canary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopCanaryOutput`](crate::output::StopCanaryOutput).
         pub fn build(self) -> crate::output::StopCanaryOutput {
             crate::output::StopCanaryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,7 +191,13 @@ impl StopCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCanaryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StartCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartCanaryOutput`](crate::output::StartCanaryOutput).
 pub mod start_canary_output {
     
@@ -131,11 +205,22 @@ pub mod start_canary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartCanaryOutput`](crate::output::StartCanaryOutput).
         pub fn build(self) -> crate::output::StartCanaryOutput {
             crate::output::StartCanaryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -156,6 +241,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The list of tag keys and values associated with the resource that you specified.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource that you specified.</p>
@@ -163,6 +249,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -171,6 +262,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -188,11 +280,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -216,6 +318,7 @@ pub struct ListGroupsOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGroupsOutput {
     /// <p>An array of structures that each contain information about one group.</p>
@@ -227,6 +330,11 @@ impl ListGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
     
@@ -236,6 +344,7 @@ pub mod list_groups_output {
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `groups`.
@@ -262,6 +371,15 @@ pub mod list_groups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
@@ -269,6 +387,7 @@ pub mod list_groups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -292,6 +411,7 @@ pub struct ListGroupResourcesOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
@@ -303,6 +423,11 @@ impl ListGroupResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGroupResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
 pub mod list_group_resources_output {
     
@@ -312,6 +437,7 @@ pub mod list_group_resources_output {
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -338,6 +464,15 @@ pub mod list_group_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
         pub fn build(self) -> crate::output::ListGroupResourcesOutput {
             crate::output::ListGroupResourcesOutput {
@@ -345,6 +480,7 @@ pub mod list_group_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -368,6 +504,7 @@ pub struct ListAssociatedGroupsOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
@@ -379,6 +516,11 @@ impl ListAssociatedGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAssociatedGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
 pub mod list_associated_groups_output {
     
@@ -388,6 +530,7 @@ pub mod list_associated_groups_output {
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `groups`.
@@ -414,6 +557,15 @@ pub mod list_associated_groups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
         pub fn build(self) -> crate::output::ListAssociatedGroupsOutput {
             crate::output::ListAssociatedGroupsOutput {
@@ -421,6 +573,7 @@ pub mod list_associated_groups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -441,6 +594,7 @@ pub struct GetGroupOutput  {
     /// <p>A structure that contains information about the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
+    _request_id: Option<String>,
 }
 impl GetGroupOutput {
     /// <p>A structure that contains information about the group.</p>
@@ -448,6 +602,11 @@ impl GetGroupOutput {
         self.group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
     
@@ -456,6 +615,7 @@ pub mod get_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains information about the group.</p>
@@ -467,11 +627,21 @@ pub mod get_group_output {
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
             crate::output::GetGroupOutput {
                 group: self.group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -495,6 +665,7 @@ pub struct GetCanaryRunsOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCanaryRunsOutput {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
@@ -506,6 +677,11 @@ impl GetCanaryRunsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCanaryRunsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
 pub mod get_canary_runs_output {
     
@@ -515,6 +691,7 @@ pub mod get_canary_runs_output {
     pub struct Builder {
         pub(crate) canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `canary_runs`.
@@ -541,6 +718,15 @@ pub mod get_canary_runs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
         pub fn build(self) -> crate::output::GetCanaryRunsOutput {
             crate::output::GetCanaryRunsOutput {
@@ -548,6 +734,7 @@ pub mod get_canary_runs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -568,6 +755,7 @@ pub struct GetCanaryOutput  {
     /// <p>A structure that contains the full information about the canary.</p>
     #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
+    _request_id: Option<String>,
 }
 impl GetCanaryOutput {
     /// <p>A structure that contains the full information about the canary.</p>
@@ -575,6 +763,11 @@ impl GetCanaryOutput {
         self.canary.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCanaryOutput`](crate::output::GetCanaryOutput).
 pub mod get_canary_output {
     
@@ -583,6 +776,7 @@ pub mod get_canary_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains the full information about the canary.</p>
@@ -594,11 +788,21 @@ pub mod get_canary_output {
         pub fn set_canary(mut self, input: std::option::Option<crate::model::Canary>) -> Self {
             self.canary = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCanaryOutput`](crate::output::GetCanaryOutput).
         pub fn build(self) -> crate::output::GetCanaryOutput {
             crate::output::GetCanaryOutput {
                 canary: self.canary
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -616,7 +820,13 @@ impl GetCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisassociateResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
 pub mod disassociate_resource_output {
     
@@ -624,11 +834,22 @@ pub mod disassociate_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
         pub fn build(self) -> crate::output::DisassociateResourceOutput {
             crate::output::DisassociateResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -652,6 +873,7 @@ pub struct DescribeRuntimeVersionsOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeRuntimeVersionsOutput {
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
@@ -663,6 +885,11 @@ impl DescribeRuntimeVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRuntimeVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
 pub mod describe_runtime_versions_output {
     
@@ -672,6 +899,7 @@ pub mod describe_runtime_versions_output {
     pub struct Builder {
         pub(crate) runtime_versions: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `runtime_versions`.
@@ -698,6 +926,15 @@ pub mod describe_runtime_versions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
         pub fn build(self) -> crate::output::DescribeRuntimeVersionsOutput {
             crate::output::DescribeRuntimeVersionsOutput {
@@ -705,6 +942,7 @@ pub mod describe_runtime_versions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -728,6 +966,7 @@ pub struct DescribeCanariesLastRunOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
@@ -739,6 +978,11 @@ impl DescribeCanariesLastRunOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCanariesLastRunOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
 pub mod describe_canaries_last_run_output {
     
@@ -748,6 +992,7 @@ pub mod describe_canaries_last_run_output {
     pub struct Builder {
         pub(crate) canaries_last_run: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `canaries_last_run`.
@@ -774,6 +1019,15 @@ pub mod describe_canaries_last_run_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
         pub fn build(self) -> crate::output::DescribeCanariesLastRunOutput {
             crate::output::DescribeCanariesLastRunOutput {
@@ -781,6 +1035,7 @@ pub mod describe_canaries_last_run_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -804,6 +1059,7 @@ pub struct DescribeCanariesOutput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
@@ -815,6 +1071,11 @@ impl DescribeCanariesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCanariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
 pub mod describe_canaries_output {
     
@@ -824,6 +1085,7 @@ pub mod describe_canaries_output {
     pub struct Builder {
         pub(crate) canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `canaries`.
@@ -850,6 +1112,15 @@ pub mod describe_canaries_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
         pub fn build(self) -> crate::output::DescribeCanariesOutput {
             crate::output::DescribeCanariesOutput {
@@ -857,6 +1128,7 @@ pub mod describe_canaries_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -874,7 +1146,13 @@ impl DescribeCanariesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
     
@@ -882,11 +1160,22 @@ pub mod delete_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
             crate::output::DeleteGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -904,7 +1193,13 @@ impl DeleteGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCanaryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
 pub mod delete_canary_output {
     
@@ -912,11 +1207,22 @@ pub mod delete_canary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
         pub fn build(self) -> crate::output::DeleteCanaryOutput {
             crate::output::DeleteCanaryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -937,6 +1243,7 @@ pub struct CreateGroupOutput  {
     /// <p>A structure that contains information about the group that was just created.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
+    _request_id: Option<String>,
 }
 impl CreateGroupOutput {
     /// <p>A structure that contains information about the group that was just created.</p>
@@ -944,6 +1251,11 @@ impl CreateGroupOutput {
         self.group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
     
@@ -952,6 +1264,7 @@ pub mod create_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains information about the group that was just created.</p>
@@ -963,11 +1276,21 @@ pub mod create_group_output {
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
             crate::output::CreateGroupOutput {
                 group: self.group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -988,6 +1311,7 @@ pub struct CreateCanaryOutput  {
     /// <p>The full details about the canary you have created.</p>
     #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
+    _request_id: Option<String>,
 }
 impl CreateCanaryOutput {
     /// <p>The full details about the canary you have created.</p>
@@ -995,6 +1319,11 @@ impl CreateCanaryOutput {
         self.canary.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCanaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
 pub mod create_canary_output {
     
@@ -1003,6 +1332,7 @@ pub mod create_canary_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full details about the canary you have created.</p>
@@ -1014,11 +1344,21 @@ pub mod create_canary_output {
         pub fn set_canary(mut self, input: std::option::Option<crate::model::Canary>) -> Self {
             self.canary = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
         pub fn build(self) -> crate::output::CreateCanaryOutput {
             crate::output::CreateCanaryOutput {
                 canary: self.canary
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1036,7 +1376,13 @@ impl CreateCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AssociateResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
 pub mod associate_resource_output {
     
@@ -1044,11 +1390,22 @@ pub mod associate_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
         pub fn build(self) -> crate::output::AssociateResourceOutput {
             crate::output::AssociateResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }

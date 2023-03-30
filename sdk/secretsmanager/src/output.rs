@@ -9,6 +9,7 @@ pub struct ValidateResourcePolicyOutput  {
     /// <p>Validation errors if your policy didn't pass validation.</p>
     #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
+    _request_id: Option<String>,
 }
 impl ValidateResourcePolicyOutput {
     /// <p>True if your policy passes validation, otherwise false.</p>
@@ -20,6 +21,11 @@ impl ValidateResourcePolicyOutput {
         self.validation_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ValidateResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
 pub mod validate_resource_policy_output {
     
@@ -29,6 +35,7 @@ pub mod validate_resource_policy_output {
     pub struct Builder {
         pub(crate) policy_validation_passed: std::option::Option<bool>,
         pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>True if your policy passes validation, otherwise false.</p>
@@ -55,6 +62,15 @@ pub mod validate_resource_policy_output {
         pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationErrorsEntry>>) -> Self {
             self.validation_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
         pub fn build(self) -> crate::output::ValidateResourcePolicyOutput {
             crate::output::ValidateResourcePolicyOutput {
@@ -63,6 +79,7 @@ pub mod validate_resource_policy_output {
                 ,
                 validation_errors: self.validation_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -86,6 +103,7 @@ pub struct UpdateSecretVersionStageOutput  {
     /// <p>The name of the secret that was updated.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSecretVersionStageOutput {
     /// <p>The ARN of the secret that was updated.</p>
@@ -97,6 +115,11 @@ impl UpdateSecretVersionStageOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSecretVersionStageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
 pub mod update_secret_version_stage_output {
     
@@ -106,6 +129,7 @@ pub mod update_secret_version_stage_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that was updated.</p>
@@ -126,6 +150,15 @@ pub mod update_secret_version_stage_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
         pub fn build(self) -> crate::output::UpdateSecretVersionStageOutput {
             crate::output::UpdateSecretVersionStageOutput {
@@ -133,6 +166,7 @@ pub mod update_secret_version_stage_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +193,7 @@ pub struct UpdateSecretOutput  {
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
@@ -174,6 +209,11 @@ impl UpdateSecretOutput {
         self.version_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
 pub mod update_secret_output {
     
@@ -184,6 +224,7 @@ pub mod update_secret_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that was updated.</p>
@@ -213,6 +254,15 @@ pub mod update_secret_output {
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
         pub fn build(self) -> crate::output::UpdateSecretOutput {
             crate::output::UpdateSecretOutput {
@@ -222,6 +272,7 @@ pub mod update_secret_output {
                 ,
                 version_id: self.version_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -239,7 +290,13 @@ impl UpdateSecretOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -247,11 +304,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -269,7 +337,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -277,11 +351,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -302,6 +387,7 @@ pub struct StopReplicationToReplicaOutput  {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopReplicationToReplicaOutput {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
@@ -309,6 +395,11 @@ impl StopReplicationToReplicaOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopReplicationToReplicaOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
 pub mod stop_replication_to_replica_output {
     
@@ -317,6 +408,7 @@ pub mod stop_replication_to_replica_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
@@ -328,11 +420,21 @@ pub mod stop_replication_to_replica_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
         pub fn build(self) -> crate::output::StopReplicationToReplicaOutput {
             crate::output::StopReplicationToReplicaOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -359,6 +461,7 @@ pub struct RotateSecretOutput  {
     /// <p>The ID of the new version of the secret.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RotateSecretOutput {
     /// <p>The ARN of the secret.</p>
@@ -374,6 +477,11 @@ impl RotateSecretOutput {
         self.version_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RotateSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RotateSecretOutput`](crate::output::RotateSecretOutput).
 pub mod rotate_secret_output {
     
@@ -384,6 +492,7 @@ pub mod rotate_secret_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -413,6 +522,15 @@ pub mod rotate_secret_output {
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RotateSecretOutput`](crate::output::RotateSecretOutput).
         pub fn build(self) -> crate::output::RotateSecretOutput {
             crate::output::RotateSecretOutput {
@@ -422,6 +540,7 @@ pub mod rotate_secret_output {
                 ,
                 version_id: self.version_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -445,6 +564,7 @@ pub struct RestoreSecretOutput  {
     /// <p>The name of the secret that was restored.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RestoreSecretOutput {
     /// <p>The ARN of the secret that was restored.</p>
@@ -456,6 +576,11 @@ impl RestoreSecretOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
 pub mod restore_secret_output {
     
@@ -465,6 +590,7 @@ pub mod restore_secret_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that was restored.</p>
@@ -485,6 +611,15 @@ pub mod restore_secret_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
         pub fn build(self) -> crate::output::RestoreSecretOutput {
             crate::output::RestoreSecretOutput {
@@ -492,6 +627,7 @@ pub mod restore_secret_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -515,6 +651,7 @@ pub struct ReplicateSecretToRegionsOutput  {
     /// <p>The status of replication.</p>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+    _request_id: Option<String>,
 }
 impl ReplicateSecretToRegionsOutput {
     /// <p>The ARN of the primary secret.</p>
@@ -526,6 +663,11 @@ impl ReplicateSecretToRegionsOutput {
         self.replication_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ReplicateSecretToRegionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
 pub mod replicate_secret_to_regions_output {
     
@@ -535,6 +677,7 @@ pub mod replicate_secret_to_regions_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the primary secret.</p>
@@ -561,6 +704,15 @@ pub mod replicate_secret_to_regions_output {
         pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
             self.replication_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
         pub fn build(self) -> crate::output::ReplicateSecretToRegionsOutput {
             crate::output::ReplicateSecretToRegionsOutput {
@@ -568,6 +720,7 @@ pub mod replicate_secret_to_regions_output {
                 ,
                 replication_status: self.replication_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -591,6 +744,7 @@ pub struct RemoveRegionsFromReplicationOutput  {
     /// <p>The status of replicas for this secret after you remove Regions.</p>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+    _request_id: Option<String>,
 }
 impl RemoveRegionsFromReplicationOutput {
     /// <p>The ARN of the primary secret.</p>
@@ -602,6 +756,11 @@ impl RemoveRegionsFromReplicationOutput {
         self.replication_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveRegionsFromReplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
 pub mod remove_regions_from_replication_output {
     
@@ -611,6 +770,7 @@ pub mod remove_regions_from_replication_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the primary secret.</p>
@@ -637,6 +797,15 @@ pub mod remove_regions_from_replication_output {
         pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
             self.replication_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
         pub fn build(self) -> crate::output::RemoveRegionsFromReplicationOutput {
             crate::output::RemoveRegionsFromReplicationOutput {
@@ -644,6 +813,7 @@ pub mod remove_regions_from_replication_output {
                 ,
                 replication_status: self.replication_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -673,6 +843,7 @@ pub struct PutSecretValueOutput  {
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
     #[doc(hidden)]
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl PutSecretValueOutput {
     /// <p>The ARN of the secret.</p>
@@ -692,6 +863,11 @@ impl PutSecretValueOutput {
         self.version_stages.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutSecretValueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
 pub mod put_secret_value_output {
     
@@ -703,6 +879,7 @@ pub mod put_secret_value_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -747,6 +924,15 @@ pub mod put_secret_value_output {
         pub fn set_version_stages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.version_stages = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
         pub fn build(self) -> crate::output::PutSecretValueOutput {
             crate::output::PutSecretValueOutput {
@@ -758,6 +944,7 @@ pub mod put_secret_value_output {
                 ,
                 version_stages: self.version_stages
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -781,6 +968,7 @@ pub struct PutResourcePolicyOutput  {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The ARN of the secret.</p>
@@ -792,6 +980,11 @@ impl PutResourcePolicyOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
     
@@ -801,6 +994,7 @@ pub mod put_resource_policy_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -821,6 +1015,15 @@ pub mod put_resource_policy_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
@@ -828,6 +1031,7 @@ pub mod put_resource_policy_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -857,6 +1061,7 @@ pub struct ListSecretVersionIdsOutput  {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSecretVersionIdsOutput {
     /// <p>A list of the versions of the secret.</p>
@@ -876,6 +1081,11 @@ impl ListSecretVersionIdsOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSecretVersionIdsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
 pub mod list_secret_version_ids_output {
     
@@ -887,6 +1097,7 @@ pub mod list_secret_version_ids_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `versions`.
@@ -931,6 +1142,15 @@ pub mod list_secret_version_ids_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
         pub fn build(self) -> crate::output::ListSecretVersionIdsOutput {
             crate::output::ListSecretVersionIdsOutput {
@@ -942,6 +1162,7 @@ pub mod list_secret_version_ids_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -965,6 +1186,7 @@ pub struct ListSecretsOutput  {
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSecretsOutput {
     /// <p>A list of the secrets in the account.</p>
@@ -976,6 +1198,11 @@ impl ListSecretsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSecretsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSecretsOutput`](crate::output::ListSecretsOutput).
 pub mod list_secrets_output {
     
@@ -985,6 +1212,7 @@ pub mod list_secrets_output {
     pub struct Builder {
         pub(crate) secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `secret_list`.
@@ -1011,6 +1239,15 @@ pub mod list_secrets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSecretsOutput`](crate::output::ListSecretsOutput).
         pub fn build(self) -> crate::output::ListSecretsOutput {
             crate::output::ListSecretsOutput {
@@ -1018,6 +1255,7 @@ pub mod list_secrets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1058,6 +1296,7 @@ pub struct GetSecretValueOutput  {
     /// <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetSecretValueOutput {
     /// <p>The ARN of the secret.</p>
@@ -1101,9 +1340,15 @@ impl  std::fmt::Debug for GetSecretValueOutput  {
         formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
         formatter.field("version_stages", &self.version_stages);
         formatter.field("created_date", &self.created_date);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetSecretValueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
 pub mod get_secret_value_output {
     
@@ -1118,6 +1363,7 @@ pub mod get_secret_value_output {
         pub(crate) secret_string: std::option::Option<std::string::String>,
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -1193,6 +1439,15 @@ pub mod get_secret_value_output {
         pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.created_date = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
         pub fn build(self) -> crate::output::GetSecretValueOutput {
             crate::output::GetSecretValueOutput {
@@ -1210,6 +1465,7 @@ pub mod get_secret_value_output {
                 ,
                 created_date: self.created_date
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1223,6 +1479,7 @@ pub mod get_secret_value_output {
             formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
             formatter.field("version_stages", &self.version_stages);
             formatter.field("created_date", &self.created_date);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1249,6 +1506,7 @@ pub struct GetResourcePolicyOutput  {
     /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
@@ -1264,6 +1522,11 @@ impl GetResourcePolicyOutput {
         self.resource_policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
 pub mod get_resource_policy_output {
     
@@ -1274,6 +1537,7 @@ pub mod get_resource_policy_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
@@ -1303,6 +1567,15 @@ pub mod get_resource_policy_output {
         pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
         pub fn build(self) -> crate::output::GetResourcePolicyOutput {
             crate::output::GetResourcePolicyOutput {
@@ -1312,6 +1585,7 @@ pub mod get_resource_policy_output {
                 ,
                 resource_policy: self.resource_policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1332,6 +1606,7 @@ pub struct GetRandomPasswordOutput  {
     /// <p>A string with the password.</p>
     #[doc(hidden)]
     pub random_password: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetRandomPasswordOutput {
     /// <p>A string with the password.</p>
@@ -1343,9 +1618,15 @@ impl  std::fmt::Debug for GetRandomPasswordOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRandomPasswordOutput");
         formatter.field("random_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetRandomPasswordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
 pub mod get_random_password_output {
     
@@ -1354,6 +1635,7 @@ pub mod get_random_password_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) random_password: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A string with the password.</p>
@@ -1365,11 +1647,21 @@ pub mod get_random_password_output {
         pub fn set_random_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.random_password = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
         pub fn build(self) -> crate::output::GetRandomPasswordOutput {
             crate::output::GetRandomPasswordOutput {
                 random_password: self.random_password
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1377,6 +1669,7 @@ pub mod get_random_password_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("random_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1462,6 +1755,7 @@ pub struct DescribeSecretOutput  {
     /// </ul>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+    _request_id: Option<String>,
 }
 impl DescribeSecretOutput {
     /// <p>The ARN of the secret.</p>
@@ -1551,6 +1845,11 @@ impl DescribeSecretOutput {
         self.replication_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
 pub mod describe_secret_output {
     
@@ -1576,6 +1875,7 @@ pub mod describe_secret_output {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
         pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -1786,6 +2086,15 @@ pub mod describe_secret_output {
         pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
             self.replication_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
         pub fn build(self) -> crate::output::DescribeSecretOutput {
             crate::output::DescribeSecretOutput {
@@ -1825,6 +2134,7 @@ pub mod describe_secret_output {
                 ,
                 replication_status: self.replication_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1851,6 +2161,7 @@ pub struct DeleteSecretOutput  {
     /// <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
     #[doc(hidden)]
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteSecretOutput {
     /// <p>The ARN of the secret.</p>
@@ -1866,6 +2177,11 @@ impl DeleteSecretOutput {
         self.deletion_date.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
 pub mod delete_secret_output {
     
@@ -1876,6 +2192,7 @@ pub mod delete_secret_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -1905,6 +2222,15 @@ pub mod delete_secret_output {
         pub fn set_deletion_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.deletion_date = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
         pub fn build(self) -> crate::output::DeleteSecretOutput {
             crate::output::DeleteSecretOutput {
@@ -1914,6 +2240,7 @@ pub mod delete_secret_output {
                 ,
                 deletion_date: self.deletion_date
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1937,6 +2264,7 @@ pub struct DeleteResourcePolicyOutput  {
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
@@ -1948,6 +2276,11 @@ impl DeleteResourcePolicyOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
     
@@ -1957,6 +2290,7 @@ pub mod delete_resource_policy_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
@@ -1977,6 +2311,15 @@ pub mod delete_resource_policy_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {
@@ -1984,6 +2327,7 @@ pub mod delete_resource_policy_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2018,6 +2362,7 @@ pub struct CreateSecretOutput  {
     /// </ul>
     #[doc(hidden)]
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+    _request_id: Option<String>,
 }
 impl CreateSecretOutput {
     /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
@@ -2042,6 +2387,11 @@ impl CreateSecretOutput {
         self.replication_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSecretOutput`](crate::output::CreateSecretOutput).
 pub mod create_secret_output {
     
@@ -2053,6 +2403,7 @@ pub mod create_secret_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
@@ -2107,6 +2458,15 @@ pub mod create_secret_output {
         pub fn set_replication_status(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>) -> Self {
             self.replication_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSecretOutput`](crate::output::CreateSecretOutput).
         pub fn build(self) -> crate::output::CreateSecretOutput {
             crate::output::CreateSecretOutput {
@@ -2118,6 +2478,7 @@ pub mod create_secret_output {
                 ,
                 replication_status: self.replication_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2144,6 +2505,7 @@ pub struct CancelRotateSecretOutput  {
     /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelRotateSecretOutput {
     /// <p>The ARN of the secret.</p>
@@ -2159,6 +2521,11 @@ impl CancelRotateSecretOutput {
         self.version_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelRotateSecretOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
 pub mod cancel_rotate_secret_output {
     
@@ -2169,6 +2536,7 @@ pub mod cancel_rotate_secret_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the secret.</p>
@@ -2198,6 +2566,15 @@ pub mod cancel_rotate_secret_output {
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
         pub fn build(self) -> crate::output::CancelRotateSecretOutput {
             crate::output::CancelRotateSecretOutput {
@@ -2207,6 +2584,7 @@ pub mod cancel_rotate_secret_output {
                 ,
                 version_id: self.version_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

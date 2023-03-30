@@ -22,6 +22,7 @@ impl CreateCell {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCell {
                 type Output = std::result::Result<crate::output::CreateCellOutput, crate::error::CreateCellError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cell_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateCrossAccountAuthorization {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCrossAccountAuthorization {
                 type Output = std::result::Result<crate::output::CreateCrossAccountAuthorizationOutput, crate::error::CreateCrossAccountAuthorizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cross_account_authorization_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateReadinessCheck {
 impl aws_smithy_http::response::ParseStrictResponse for CreateReadinessCheck {
                 type Output = std::result::Result<crate::output::CreateReadinessCheckOutput, crate::error::CreateReadinessCheckError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_readiness_check_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateRecoveryGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRecoveryGroup {
                 type Output = std::result::Result<crate::output::CreateRecoveryGroupOutput, crate::error::CreateRecoveryGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_recovery_group_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateResourceSet {
 impl aws_smithy_http::response::ParseStrictResponse for CreateResourceSet {
                 type Output = std::result::Result<crate::output::CreateResourceSetOutput, crate::error::CreateResourceSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_resource_set_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteCell {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCell {
                 type Output = std::result::Result<crate::output::DeleteCellOutput, crate::error::DeleteCellError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_cell_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteCrossAccountAuthorization {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCrossAccountAuthorization {
                 type Output = std::result::Result<crate::output::DeleteCrossAccountAuthorizationOutput, crate::error::DeleteCrossAccountAuthorizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cross_account_authorization_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteReadinessCheck {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteReadinessCheck {
                 type Output = std::result::Result<crate::output::DeleteReadinessCheckOutput, crate::error::DeleteReadinessCheckError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_readiness_check_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteRecoveryGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryGroup {
                 type Output = std::result::Result<crate::output::DeleteRecoveryGroupOutput, crate::error::DeleteRecoveryGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_recovery_group_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteResourceSet {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceSet {
                 type Output = std::result::Result<crate::output::DeleteResourceSetOutput, crate::error::DeleteResourceSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_resource_set_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetArchitectureRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for GetArchitectureRecommendations {
                 type Output = std::result::Result<crate::output::GetArchitectureRecommendationsOutput, crate::error::GetArchitectureRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_architecture_recommendations_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetCell {
 impl aws_smithy_http::response::ParseStrictResponse for GetCell {
                 type Output = std::result::Result<crate::output::GetCellOutput, crate::error::GetCellError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cell_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetCellReadinessSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetCellReadinessSummary {
                 type Output = std::result::Result<crate::output::GetCellReadinessSummaryOutput, crate::error::GetCellReadinessSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cell_readiness_summary_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetReadinessCheck {
 impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheck {
                 type Output = std::result::Result<crate::output::GetReadinessCheckOutput, crate::error::GetReadinessCheckError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_readiness_check_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetReadinessCheckResourceStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheckResourceStatus {
                 type Output = std::result::Result<crate::output::GetReadinessCheckResourceStatusOutput, crate::error::GetReadinessCheckResourceStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_readiness_check_resource_status_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetReadinessCheckStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheckStatus {
                 type Output = std::result::Result<crate::output::GetReadinessCheckStatusOutput, crate::error::GetReadinessCheckStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_readiness_check_status_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetRecoveryGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryGroup {
                 type Output = std::result::Result<crate::output::GetRecoveryGroupOutput, crate::error::GetRecoveryGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_recovery_group_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetRecoveryGroupReadinessSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryGroupReadinessSummary {
                 type Output = std::result::Result<crate::output::GetRecoveryGroupReadinessSummaryOutput, crate::error::GetRecoveryGroupReadinessSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_recovery_group_readiness_summary_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetResourceSet {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceSet {
                 type Output = std::result::Result<crate::output::GetResourceSetOutput, crate::error::GetResourceSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_set_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListCells {
 impl aws_smithy_http::response::ParseStrictResponse for ListCells {
                 type Output = std::result::Result<crate::output::ListCellsOutput, crate::error::ListCellsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cells_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListCrossAccountAuthorizations {
 impl aws_smithy_http::response::ParseStrictResponse for ListCrossAccountAuthorizations {
                 type Output = std::result::Result<crate::output::ListCrossAccountAuthorizationsOutput, crate::error::ListCrossAccountAuthorizationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cross_account_authorizations_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListReadinessChecks {
 impl aws_smithy_http::response::ParseStrictResponse for ListReadinessChecks {
                 type Output = std::result::Result<crate::output::ListReadinessChecksOutput, crate::error::ListReadinessChecksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_readiness_checks_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListRecoveryGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryGroups {
                 type Output = std::result::Result<crate::output::ListRecoveryGroupsOutput, crate::error::ListRecoveryGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_recovery_groups_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListResourceSets {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceSets {
                 type Output = std::result::Result<crate::output::ListResourceSetsOutput, crate::error::ListResourceSetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_sets_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListRules {
 impl aws_smithy_http::response::ParseStrictResponse for ListRules {
                 type Output = std::result::Result<crate::output::ListRulesOutput, crate::error::ListRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_rules_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListTagsForResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResources {
                 type Output = std::result::Result<crate::output::ListTagsForResourcesOutput, crate::error::ListTagsForResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resources_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateCell {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCell {
                 type Output = std::result::Result<crate::output::UpdateCellOutput, crate::error::UpdateCellError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cell_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateReadinessCheck {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateReadinessCheck {
                 type Output = std::result::Result<crate::output::UpdateReadinessCheckOutput, crate::error::UpdateReadinessCheckError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_readiness_check_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UpdateRecoveryGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRecoveryGroup {
                 type Output = std::result::Result<crate::output::UpdateRecoveryGroupOutput, crate::error::UpdateRecoveryGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_recovery_group_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl UpdateResourceSet {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceSet {
                 type Output = std::result::Result<crate::output::UpdateResourceSetOutput, crate::error::UpdateResourceSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_resource_set_error(response)
                      } else {

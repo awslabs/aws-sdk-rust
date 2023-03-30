@@ -22,6 +22,7 @@ impl CreateKeyspace {
 impl aws_smithy_http::response::ParseStrictResponse for CreateKeyspace {
                 type Output = std::result::Result<crate::output::CreateKeyspaceOutput, crate::error::CreateKeyspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_keyspace_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateTable {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTable {
                 type Output = std::result::Result<crate::output::CreateTableOutput, crate::error::CreateTableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_table_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteKeyspace {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
                 type Output = std::result::Result<crate::output::DeleteKeyspaceOutput, crate::error::DeleteKeyspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_keyspace_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteTable {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTable {
                 type Output = std::result::Result<crate::output::DeleteTableOutput, crate::error::DeleteTableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_table_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetKeyspace {
 impl aws_smithy_http::response::ParseStrictResponse for GetKeyspace {
                 type Output = std::result::Result<crate::output::GetKeyspaceOutput, crate::error::GetKeyspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_keyspace_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetTable {
 impl aws_smithy_http::response::ParseStrictResponse for GetTable {
                 type Output = std::result::Result<crate::output::GetTableOutput, crate::error::GetTableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_table_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListKeyspaces {
 impl aws_smithy_http::response::ParseStrictResponse for ListKeyspaces {
                 type Output = std::result::Result<crate::output::ListKeyspacesOutput, crate::error::ListKeyspacesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_keyspaces_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListTables {
 impl aws_smithy_http::response::ParseStrictResponse for ListTables {
                 type Output = std::result::Result<crate::output::ListTablesOutput, crate::error::ListTablesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tables_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl RestoreTable {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreTable {
                 type Output = std::result::Result<crate::output::RestoreTableOutput, crate::error::RestoreTableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restore_table_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UpdateTable {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateTable {
                 type Output = std::result::Result<crate::output::UpdateTableOutput, crate::error::UpdateTableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_table_error(response)
                      } else {

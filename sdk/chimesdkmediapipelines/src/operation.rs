@@ -22,6 +22,7 @@ impl CreateMediaCapturePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeline {
                 type Output = std::result::Result<crate::output::CreateMediaCapturePipelineOutput, crate::error::CreateMediaCapturePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_media_capture_pipeline_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateMediaConcatenationPipeline {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMediaConcatenationPipeline {
                 type Output = std::result::Result<crate::output::CreateMediaConcatenationPipelineOutput, crate::error::CreateMediaConcatenationPipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_media_concatenation_pipeline_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateMediaLiveConnectorPipeline {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMediaLiveConnectorPipeline {
                 type Output = std::result::Result<crate::output::CreateMediaLiveConnectorPipelineOutput, crate::error::CreateMediaLiveConnectorPipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_media_live_connector_pipeline_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteMediaCapturePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeline {
                 type Output = std::result::Result<crate::output::DeleteMediaCapturePipelineOutput, crate::error::DeleteMediaCapturePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_media_capture_pipeline_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteMediaPipeline {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaPipeline {
                 type Output = std::result::Result<crate::output::DeleteMediaPipelineOutput, crate::error::DeleteMediaPipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_media_pipeline_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetMediaCapturePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline {
                 type Output = std::result::Result<crate::output::GetMediaCapturePipelineOutput, crate::error::GetMediaCapturePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_media_capture_pipeline_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetMediaPipeline {
 impl aws_smithy_http::response::ParseStrictResponse for GetMediaPipeline {
                 type Output = std::result::Result<crate::output::GetMediaPipelineOutput, crate::error::GetMediaPipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_media_pipeline_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListMediaCapturePipelines {
 impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipelines {
                 type Output = std::result::Result<crate::output::ListMediaCapturePipelinesOutput, crate::error::ListMediaCapturePipelinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_media_capture_pipelines_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListMediaPipelines {
 impl aws_smithy_http::response::ParseStrictResponse for ListMediaPipelines {
                 type Output = std::result::Result<crate::output::ListMediaPipelinesOutput, crate::error::ListMediaPipelinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_media_pipelines_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

@@ -26,15 +26,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -57,21 +50,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddProfilePermissio
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddProfilePermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddProfilePermissionError> for Error {
     fn from(err: crate::error::AddProfilePermissionError) -> Self {
-        match err.kind {
-            crate::error::AddProfilePermissionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AddProfilePermissionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::AddProfilePermissionErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::AddProfilePermissionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddProfilePermissionErrorKind::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::AddProfilePermissionErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AddProfilePermissionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::AddProfilePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddProfilePermissionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AddProfilePermissionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::AddProfilePermissionError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::AddProfilePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddProfilePermissionError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::error::AddProfilePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::AddProfilePermissionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::AddProfilePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -79,18 +77,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelSigningProfil
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelSigningProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CancelSigningProfileError> for Error {
     fn from(err: crate::error::CancelSigningProfileError) -> Self {
-        match err.kind {
-            crate::error::CancelSigningProfileErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CancelSigningProfileErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CancelSigningProfileErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CancelSigningProfileErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::CancelSigningProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CancelSigningProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CancelSigningProfileError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::CancelSigningProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CancelSigningProfileError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CancelSigningProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -98,18 +101,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSigningJobE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeSigningJobError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeSigningJobError> for Error {
     fn from(err: crate::error::DescribeSigningJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeSigningJobErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeSigningJobErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeSigningJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSigningJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::DescribeSigningJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeSigningJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DescribeSigningJobError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::DescribeSigningJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeSigningJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeSigningJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -117,18 +125,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSigningPlatformE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSigningPlatformError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetSigningPlatformError> for Error {
     fn from(err: crate::error::GetSigningPlatformError) -> Self {
-        match err.kind {
-            crate::error::GetSigningPlatformErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetSigningPlatformErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetSigningPlatformErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetSigningPlatformErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetSigningPlatformErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetSigningPlatformError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetSigningPlatformError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::GetSigningPlatformError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetSigningPlatformError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetSigningPlatformError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -136,18 +149,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSigningProfileEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSigningProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetSigningProfileError> for Error {
     fn from(err: crate::error::GetSigningProfileError) -> Self {
-        match err.kind {
-            crate::error::GetSigningProfileErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetSigningProfileErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetSigningProfileErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetSigningProfileErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetSigningProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetSigningProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetSigningProfileError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::GetSigningProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetSigningProfileError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetSigningProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -155,19 +173,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfilePermissi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProfilePermissionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListProfilePermissionsError> for Error {
     fn from(err: crate::error::ListProfilePermissionsError) -> Self {
-        match err.kind {
-            crate::error::ListProfilePermissionsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListProfilePermissionsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListProfilePermissionsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListProfilePermissionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListProfilePermissionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListProfilePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListProfilePermissionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListProfilePermissionsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListProfilePermissionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListProfilePermissionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListProfilePermissionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListProfilePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -175,18 +198,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSigningJobsErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSigningJobsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSigningJobsError> for Error {
     fn from(err: crate::error::ListSigningJobsError) -> Self {
-        match err.kind {
-            crate::error::ListSigningJobsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListSigningJobsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListSigningJobsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListSigningJobsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSigningJobsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSigningJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListSigningJobsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListSigningJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListSigningJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSigningJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -194,18 +222,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSigningPlatform
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSigningPlatformsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSigningPlatformsError> for Error {
     fn from(err: crate::error::ListSigningPlatformsError) -> Self {
-        match err.kind {
-            crate::error::ListSigningPlatformsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListSigningPlatformsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListSigningPlatformsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListSigningPlatformsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSigningPlatformsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSigningPlatformsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListSigningPlatformsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListSigningPlatformsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListSigningPlatformsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSigningPlatformsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -213,17 +246,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSigningProfiles
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSigningProfilesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSigningProfilesError> for Error {
     fn from(err: crate::error::ListSigningProfilesError) -> Self {
-        match err.kind {
-            crate::error::ListSigningProfilesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListSigningProfilesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListSigningProfilesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListSigningProfilesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSigningProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListSigningProfilesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListSigningProfilesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListSigningProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -231,18 +269,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListTagsForResourceErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListTagsForResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListTagsForResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -250,19 +293,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutSigningProfileEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSigningProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutSigningProfileError> for Error {
     fn from(err: crate::error::PutSigningProfileError) -> Self {
-        match err.kind {
-            crate::error::PutSigningProfileErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutSigningProfileErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::PutSigningProfileErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutSigningProfileErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::PutSigningProfileErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutSigningProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutSigningProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutSigningProfileError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::PutSigningProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::PutSigningProfileError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::PutSigningProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::PutSigningProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -270,20 +318,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveProfilePermis
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveProfilePermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RemoveProfilePermissionError> for Error {
     fn from(err: crate::error::RemoveProfilePermissionError) -> Self {
-        match err.kind {
-            crate::error::RemoveProfilePermissionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::RemoveProfilePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemoveProfilePermissionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RemoveProfilePermissionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RemoveProfilePermissionError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::RemoveProfilePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RemoveProfilePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::RemoveProfilePermissionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RemoveProfilePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -291,19 +344,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeSignatureErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RevokeSignatureError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RevokeSignatureError> for Error {
     fn from(err: crate::error::RevokeSignatureError) -> Self {
-        match err.kind {
-            crate::error::RevokeSignatureErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RevokeSignatureErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::RevokeSignatureErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RevokeSignatureErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::RevokeSignatureErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::RevokeSignatureErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RevokeSignatureError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RevokeSignatureError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::RevokeSignatureError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RevokeSignatureError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::RevokeSignatureError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RevokeSignatureError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -311,19 +369,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeSigningProfil
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RevokeSigningProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RevokeSigningProfileError> for Error {
     fn from(err: crate::error::RevokeSigningProfileError) -> Self {
-        match err.kind {
-            crate::error::RevokeSigningProfileErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RevokeSigningProfileErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::RevokeSigningProfileErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RevokeSigningProfileErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::RevokeSigningProfileErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::RevokeSigningProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RevokeSigningProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RevokeSigningProfileError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::RevokeSigningProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RevokeSigningProfileError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::RevokeSigningProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RevokeSigningProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -331,20 +394,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSigningJobErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSigningJobError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartSigningJobError> for Error {
     fn from(err: crate::error::StartSigningJobError) -> Self {
-        match err.kind {
-            crate::error::StartSigningJobErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartSigningJobErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::StartSigningJobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartSigningJobErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartSigningJobErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::StartSigningJobErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartSigningJobErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartSigningJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartSigningJobError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::StartSigningJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartSigningJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartSigningJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::StartSigningJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartSigningJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -352,18 +420,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::TagResourceErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::TagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -371,20 +444,42 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::UntagResourceErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UntagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServiceErrorException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceLimitExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

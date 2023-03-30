@@ -22,6 +22,7 @@ impl CancelCluster {
 impl aws_smithy_http::response::ParseStrictResponse for CancelCluster {
                 type Output = std::result::Result<crate::output::CancelClusterOutput, crate::error::CancelClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_cluster_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CancelJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
                 type Output = std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_job_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAddress {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAddress {
                 type Output = std::result::Result<crate::output::CreateAddressOutput, crate::error::CreateAddressError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_address_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
                 type Output = std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cluster_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
                 type Output = std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_job_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateLongTermPricing {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLongTermPricing {
                 type Output = std::result::Result<crate::output::CreateLongTermPricingOutput, crate::error::CreateLongTermPricingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_long_term_pricing_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateReturnShippingLabel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateReturnShippingLabel {
                 type Output = std::result::Result<crate::output::CreateReturnShippingLabelOutput, crate::error::CreateReturnShippingLabelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_return_shipping_label_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeAddress {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAddress {
                 type Output = std::result::Result<crate::output::DescribeAddressOutput, crate::error::DescribeAddressError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_address_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeAddresses {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAddresses {
                 type Output = std::result::Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_addresses_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeCluster {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCluster {
                 type Output = std::result::Result<crate::output::DescribeClusterOutput, crate::error::DescribeClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_cluster_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
                 type Output = std::result::Result<crate::output::DescribeJobOutput, crate::error::DescribeJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeReturnShippingLabel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReturnShippingLabel {
                 type Output = std::result::Result<crate::output::DescribeReturnShippingLabelOutput, crate::error::DescribeReturnShippingLabelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_return_shipping_label_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetJobManifest {
 impl aws_smithy_http::response::ParseStrictResponse for GetJobManifest {
                 type Output = std::result::Result<crate::output::GetJobManifestOutput, crate::error::GetJobManifestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_job_manifest_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetJobUnlockCode {
 impl aws_smithy_http::response::ParseStrictResponse for GetJobUnlockCode {
                 type Output = std::result::Result<crate::output::GetJobUnlockCodeOutput, crate::error::GetJobUnlockCodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_job_unlock_code_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetSnowballUsage {
 impl aws_smithy_http::response::ParseStrictResponse for GetSnowballUsage {
                 type Output = std::result::Result<crate::output::GetSnowballUsageOutput, crate::error::GetSnowballUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_snowball_usage_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetSoftwareUpdates {
 impl aws_smithy_http::response::ParseStrictResponse for GetSoftwareUpdates {
                 type Output = std::result::Result<crate::output::GetSoftwareUpdatesOutput, crate::error::GetSoftwareUpdatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_software_updates_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListClusterJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListClusterJobs {
                 type Output = std::result::Result<crate::output::ListClusterJobsOutput, crate::error::ListClusterJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cluster_jobs_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListClusters {
 impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
                 type Output = std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_clusters_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListCompatibleImages {
 impl aws_smithy_http::response::ParseStrictResponse for ListCompatibleImages {
                 type Output = std::result::Result<crate::output::ListCompatibleImagesOutput, crate::error::ListCompatibleImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_compatible_images_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
                 type Output = std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_jobs_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListLongTermPricing {
 impl aws_smithy_http::response::ParseStrictResponse for ListLongTermPricing {
                 type Output = std::result::Result<crate::output::ListLongTermPricingOutput, crate::error::ListLongTermPricingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_long_term_pricing_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UpdateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
                 type Output = std::result::Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cluster_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UpdateJob {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateJob {
                 type Output = std::result::Result<crate::output::UpdateJobOutput, crate::error::UpdateJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_job_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UpdateJobShipmentState {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateJobShipmentState {
                 type Output = std::result::Result<crate::output::UpdateJobShipmentStateOutput, crate::error::UpdateJobShipmentStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_job_shipment_state_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UpdateLongTermPricing {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLongTermPricing {
                 type Output = std::result::Result<crate::output::UpdateLongTermPricingOutput, crate::error::UpdateLongTermPricingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_long_term_pricing_error(response)
                      } else {

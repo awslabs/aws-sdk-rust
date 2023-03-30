@@ -71,7 +71,7 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 #[tokio::test]
 #[ignore]
 async fn test_query_strings_are_correctly_encoded() {
-    use aws_sdk_s3::error::{ListObjectsV2Error, ListObjectsV2ErrorKind};
+    use aws_sdk_s3::error::ListObjectsV2Error;
     use aws_smithy_http::result::SdkError;
 
     tracing_subscriber::fmt::init();
@@ -92,22 +92,19 @@ async fn test_query_strings_are_correctly_encoded() {
             .send()
             .await;
         if let Err(SdkError::ServiceError(context)) = res {
-            let ListObjectsV2Error { kind, .. } = context.err();
-            match kind {
-                ListObjectsV2ErrorKind::Unhandled(e)
+            match context.err() {
+                ListObjectsV2Error::Unhandled(e)
                     if e.to_string().contains("SignatureDoesNotMatch") =>
                 {
                     chars_that_break_signing.push(byte);
                 }
-                ListObjectsV2ErrorKind::Unhandled(e) if e.to_string().contains("InvalidUri") => {
+                ListObjectsV2Error::Unhandled(e) if e.to_string().contains("InvalidUri") => {
                     chars_that_break_uri_parsing.push(byte);
                 }
-                ListObjectsV2ErrorKind::Unhandled(e)
-                    if e.to_string().contains("InvalidArgument") =>
-                {
+                ListObjectsV2Error::Unhandled(e) if e.to_string().contains("InvalidArgument") => {
                     chars_that_are_invalid_arguments.push(byte);
                 }
-                ListObjectsV2ErrorKind::Unhandled(e) if e.to_string().contains("InvalidToken") => {
+                ListObjectsV2Error::Unhandled(e) if e.to_string().contains("InvalidToken") => {
                     panic!("refresh your credentials and run this test again");
                 }
                 e => todo!("unexpected error: {:?}", e),

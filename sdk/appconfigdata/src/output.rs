@@ -8,6 +8,7 @@ pub struct StartConfigurationSessionOutput  {
     /// </important>
     #[doc(hidden)]
     pub initial_configuration_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartConfigurationSessionOutput {
     /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important> 
@@ -17,6 +18,11 @@ impl StartConfigurationSessionOutput {
         self.initial_configuration_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartConfigurationSessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
 pub mod start_configuration_session_output {
     
@@ -25,6 +31,7 @@ pub mod start_configuration_session_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_configuration_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important> 
@@ -40,11 +47,21 @@ pub mod start_configuration_session_output {
         pub fn set_initial_configuration_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.initial_configuration_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
         pub fn build(self) -> crate::output::StartConfigurationSessionOutput {
             crate::output::StartConfigurationSessionOutput {
                 initial_configuration_token: self.initial_configuration_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -74,6 +91,7 @@ pub struct GetLatestConfigurationOutput  {
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutput {
     /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
@@ -100,9 +118,15 @@ impl  std::fmt::Debug for GetLatestConfigurationOutput  {
         formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetLatestConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
 pub mod get_latest_configuration_output {
     
@@ -114,6 +138,7 @@ pub mod get_latest_configuration_output {
         pub(crate) next_poll_interval_in_seconds: std::option::Option<i32>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to <code>GetLatestConfiguration.</code> </p>
@@ -152,6 +177,15 @@ pub mod get_latest_configuration_output {
         pub fn set_configuration(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
         pub fn build(self) -> crate::output::GetLatestConfigurationOutput {
             crate::output::GetLatestConfigurationOutput {
@@ -164,6 +198,7 @@ pub mod get_latest_configuration_output {
                 ,
                 configuration: self.configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -174,6 +209,7 @@ pub mod get_latest_configuration_output {
             formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
             formatter.field("content_type", &self.content_type);
             formatter.field("configuration", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

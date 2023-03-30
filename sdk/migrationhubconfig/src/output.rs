@@ -6,6 +6,7 @@ pub struct GetHomeRegionOutput  {
     /// <p>The name of the home region of the calling account.</p>
     #[doc(hidden)]
     pub home_region: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetHomeRegionOutput {
     /// <p>The name of the home region of the calling account.</p>
@@ -13,6 +14,11 @@ impl GetHomeRegionOutput {
         self.home_region.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetHomeRegionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
 pub mod get_home_region_output {
     
@@ -21,6 +27,7 @@ pub mod get_home_region_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the home region of the calling account.</p>
@@ -32,11 +39,21 @@ pub mod get_home_region_output {
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
         pub fn build(self) -> crate::output::GetHomeRegionOutput {
             crate::output::GetHomeRegionOutput {
                 home_region: self.home_region
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -60,6 +77,7 @@ pub struct DescribeHomeRegionControlsOutput  {
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
@@ -71,6 +89,11 @@ impl DescribeHomeRegionControlsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHomeRegionControlsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
 pub mod describe_home_region_controls_output {
     
@@ -80,6 +103,7 @@ pub mod describe_home_region_controls_output {
     pub struct Builder {
         pub(crate) home_region_controls: std::option::Option<std::vec::Vec<crate::model::HomeRegionControl>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `home_region_controls`.
@@ -106,6 +130,15 @@ pub mod describe_home_region_controls_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
         pub fn build(self) -> crate::output::DescribeHomeRegionControlsOutput {
             crate::output::DescribeHomeRegionControlsOutput {
@@ -113,6 +146,7 @@ pub mod describe_home_region_controls_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -133,6 +167,7 @@ pub struct CreateHomeRegionControlOutput  {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     #[doc(hidden)]
     pub home_region_control: std::option::Option<crate::model::HomeRegionControl>,
+    _request_id: Option<String>,
 }
 impl CreateHomeRegionControlOutput {
     /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
@@ -140,6 +175,11 @@ impl CreateHomeRegionControlOutput {
         self.home_region_control.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateHomeRegionControlOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
 pub mod create_home_region_control_output {
     
@@ -148,6 +188,7 @@ pub mod create_home_region_control_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region_control: std::option::Option<crate::model::HomeRegionControl>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
@@ -159,11 +200,21 @@ pub mod create_home_region_control_output {
         pub fn set_home_region_control(mut self, input: std::option::Option<crate::model::HomeRegionControl>) -> Self {
             self.home_region_control = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
         pub fn build(self) -> crate::output::CreateHomeRegionControlOutput {
             crate::output::CreateHomeRegionControlOutput {
                 home_region_control: self.home_region_control
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -22,6 +22,7 @@ impl DeleteAlternateContact {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
                 type Output = std::result::Result<crate::output::DeleteAlternateContactOutput, crate::error::DeleteAlternateContactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_alternate_contact_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetAlternateContact {
 impl aws_smithy_http::response::ParseStrictResponse for GetAlternateContact {
                 type Output = std::result::Result<crate::output::GetAlternateContactOutput, crate::error::GetAlternateContactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_alternate_contact_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetContactInformation {
 impl aws_smithy_http::response::ParseStrictResponse for GetContactInformation {
                 type Output = std::result::Result<crate::output::GetContactInformationOutput, crate::error::GetContactInformationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_contact_information_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl PutAlternateContact {
 impl aws_smithy_http::response::ParseStrictResponse for PutAlternateContact {
                 type Output = std::result::Result<crate::output::PutAlternateContactOutput, crate::error::PutAlternateContactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_alternate_contact_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl PutContactInformation {
 impl aws_smithy_http::response::ParseStrictResponse for PutContactInformation {
                 type Output = std::result::Result<crate::output::PutContactInformationOutput, crate::error::PutContactInformationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_contact_information_error(response)
                      } else {

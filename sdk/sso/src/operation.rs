@@ -22,6 +22,7 @@ impl GetRoleCredentials {
 impl aws_smithy_http::response::ParseStrictResponse for GetRoleCredentials {
                 type Output = std::result::Result<crate::output::GetRoleCredentialsOutput, crate::error::GetRoleCredentialsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_role_credentials_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl ListAccountRoles {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
                 type Output = std::result::Result<crate::output::ListAccountRolesOutput, crate::error::ListAccountRolesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_account_roles_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ListAccounts {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
                 type Output = std::result::Result<crate::output::ListAccountsOutput, crate::error::ListAccountsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_accounts_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl Logout {
 impl aws_smithy_http::response::ParseStrictResponse for Logout {
                 type Output = std::result::Result<crate::output::LogoutOutput, crate::error::LogoutError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_logout_error(response)
                      } else {

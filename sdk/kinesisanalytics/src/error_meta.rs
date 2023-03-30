@@ -27,15 +27,8 @@ pub enum Error {
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -60,19 +53,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddApplicationCloud
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddApplicationCloudWatchLoggingOptionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddApplicationCloudWatchLoggingOptionError> for Error {
     fn from(err: crate::error::AddApplicationCloudWatchLoggingOptionError) -> Self {
-        match err.kind {
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddApplicationCloudWatchLoggingOptionError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AddApplicationCloudWatchLoggingOptionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::AddApplicationCloudWatchLoggingOptionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::AddApplicationCloudWatchLoggingOptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddApplicationCloudWatchLoggingOptionError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddApplicationCloudWatchLoggingOptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -80,20 +78,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddApplicationInput
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddApplicationInputError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddApplicationInputError> for Error {
     fn from(err: crate::error::AddApplicationInputError) -> Self {
-        match err.kind {
-            crate::error::AddApplicationInputErrorKind::CodeValidationException(inner) => Error::CodeValidationException(inner),
-            crate::error::AddApplicationInputErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AddApplicationInputErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::AddApplicationInputErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::AddApplicationInputErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddApplicationInputErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::AddApplicationInputErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddApplicationInputError::CodeValidationException(inner) => Error::CodeValidationException(inner),
+            crate::error::AddApplicationInputError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AddApplicationInputError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::AddApplicationInputError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::AddApplicationInputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddApplicationInputError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddApplicationInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -101,19 +104,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddApplicationInput
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddApplicationInputProcessingConfigurationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddApplicationInputProcessingConfigurationError> for Error {
     fn from(err: crate::error::AddApplicationInputProcessingConfigurationError) -> Self {
-        match err.kind {
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::AddApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddApplicationInputProcessingConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AddApplicationInputProcessingConfigurationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::AddApplicationInputProcessingConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::AddApplicationInputProcessingConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddApplicationInputProcessingConfigurationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddApplicationInputProcessingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -121,19 +129,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddApplicationOutpu
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddApplicationOutputError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddApplicationOutputError> for Error {
     fn from(err: crate::error::AddApplicationOutputError) -> Self {
-        match err.kind {
-            crate::error::AddApplicationOutputErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AddApplicationOutputErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::AddApplicationOutputErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::AddApplicationOutputErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddApplicationOutputErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::AddApplicationOutputErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddApplicationOutputError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AddApplicationOutputError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::AddApplicationOutputError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::AddApplicationOutputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddApplicationOutputError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddApplicationOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -141,19 +154,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddApplicationRefer
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddApplicationReferenceDataSourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddApplicationReferenceDataSourceError> for Error {
     fn from(err: crate::error::AddApplicationReferenceDataSourceError) -> Self {
-        match err.kind {
-            crate::error::AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddApplicationReferenceDataSourceErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::AddApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddApplicationReferenceDataSourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AddApplicationReferenceDataSourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::AddApplicationReferenceDataSourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::AddApplicationReferenceDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddApplicationReferenceDataSourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::AddApplicationReferenceDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -161,20 +179,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateApplicationEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateApplicationError> for Error {
     fn from(err: crate::error::CreateApplicationError) -> Self {
-        match err.kind {
-            crate::error::CreateApplicationErrorKind::CodeValidationException(inner) => Error::CodeValidationException(inner),
-            crate::error::CreateApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::CreateApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::CreateApplicationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::CreateApplicationErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::error::CreateApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateApplicationError::CodeValidationException(inner) => Error::CodeValidationException(inner),
+            crate::error::CreateApplicationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateApplicationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::CreateApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::CreateApplicationError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -182,18 +205,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationError> for Error {
     fn from(err: crate::error::DeleteApplicationError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteApplicationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DeleteApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteApplicationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteApplicationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -201,19 +229,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationCl
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationCloudWatchLoggingOptionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationCloudWatchLoggingOptionError> for Error {
     fn from(err: crate::error::DeleteApplicationCloudWatchLoggingOptionError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteApplicationCloudWatchLoggingOptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -221,19 +254,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationIn
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationInputProcessingConfigurationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationInputProcessingConfigurationError> for Error {
     fn from(err: crate::error::DeleteApplicationInputProcessingConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteApplicationInputProcessingConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteApplicationInputProcessingConfigurationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteApplicationInputProcessingConfigurationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteApplicationInputProcessingConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteApplicationInputProcessingConfigurationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteApplicationInputProcessingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -241,19 +279,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationOu
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationOutputError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationOutputError> for Error {
     fn from(err: crate::error::DeleteApplicationOutputError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationOutputErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteApplicationOutputErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteApplicationOutputErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteApplicationOutputErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteApplicationOutputErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DeleteApplicationOutputErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteApplicationOutputError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteApplicationOutputError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteApplicationOutputError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteApplicationOutputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteApplicationOutputError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteApplicationOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -261,19 +304,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApplicationRe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationReferenceDataSourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationReferenceDataSourceError> for Error {
     fn from(err: crate::error::DeleteApplicationReferenceDataSourceError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DeleteApplicationReferenceDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteApplicationReferenceDataSourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteApplicationReferenceDataSourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteApplicationReferenceDataSourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::DeleteApplicationReferenceDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteApplicationReferenceDataSourceError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteApplicationReferenceDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -281,16 +329,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeApplication
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeApplicationError> for Error {
     fn from(err: crate::error::DescribeApplicationError) -> Self {
-        match err.kind {
-            crate::error::DescribeApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeApplicationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::DescribeApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeApplicationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::DescribeApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -298,18 +351,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DiscoverInputSchema
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DiscoverInputSchemaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DiscoverInputSchemaError> for Error {
     fn from(err: crate::error::DiscoverInputSchemaError) -> Self {
-        match err.kind {
-            crate::error::DiscoverInputSchemaErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException(inner) => Error::ResourceProvisionedThroughputExceededException(inner),
-            crate::error::DiscoverInputSchemaErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(inner) => Error::UnableToDetectSchemaException(inner),
-            crate::error::DiscoverInputSchemaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DiscoverInputSchemaError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DiscoverInputSchemaError::ResourceProvisionedThroughputExceededException(inner) => Error::ResourceProvisionedThroughputExceededException(inner),
+            crate::error::DiscoverInputSchemaError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DiscoverInputSchemaError::UnableToDetectSchemaException(inner) => Error::UnableToDetectSchemaException(inner),
+            crate::error::DiscoverInputSchemaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -317,14 +375,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListApplicationsErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListApplicationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListApplicationsError> for Error {
     fn from(err: crate::error::ListApplicationsError) -> Self {
-        match err.kind {
-            crate::error::ListApplicationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -332,17 +395,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::ListTagsForResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -350,19 +418,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartApplicationErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartApplicationError> for Error {
     fn from(err: crate::error::StartApplicationError) -> Self {
-        match err.kind {
-            crate::error::StartApplicationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
-            crate::error::StartApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::StartApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::StartApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartApplicationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::StartApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartApplicationError::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
+            crate::error::StartApplicationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::StartApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StartApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartApplicationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::StartApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -370,17 +443,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopApplicationErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StopApplicationError> for Error {
     fn from(err: crate::error::StopApplicationError) -> Self {
-        match err.kind {
-            crate::error::StopApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::StopApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopApplicationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::StopApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StopApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::StopApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StopApplicationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::StopApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -388,19 +466,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::TagResourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::TagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::TagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -408,19 +491,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::UntagResourceErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UntagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UntagResourceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -428,22 +516,46 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateApplicationEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateApplicationError> for Error {
     fn from(err: crate::error::UpdateApplicationError) -> Self {
-        match err.kind {
-            crate::error::UpdateApplicationErrorKind::CodeValidationException(inner) => Error::CodeValidationException(inner),
-            crate::error::UpdateApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::UpdateApplicationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::UpdateApplicationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateApplicationErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-            crate::error::UpdateApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateApplicationError::CodeValidationException(inner) => Error::CodeValidationException(inner),
+            crate::error::UpdateApplicationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdateApplicationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UpdateApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::error::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateApplicationError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::CodeValidationException(e) => e.request_id(),
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::InvalidApplicationConfigurationException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ResourceProvisionedThroughputExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnableToDetectSchemaException(e) => e.request_id(),
+            Self::UnsupportedOperationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

@@ -22,6 +22,7 @@ impl CountClosedWorkflowExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecutions {
                 type Output = std::result::Result<crate::output::CountClosedWorkflowExecutionsOutput, crate::error::CountClosedWorkflowExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_count_closed_workflow_executions_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CountOpenWorkflowExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for CountOpenWorkflowExecutions {
                 type Output = std::result::Result<crate::output::CountOpenWorkflowExecutionsOutput, crate::error::CountOpenWorkflowExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_count_open_workflow_executions_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CountPendingActivityTasks {
 impl aws_smithy_http::response::ParseStrictResponse for CountPendingActivityTasks {
                 type Output = std::result::Result<crate::output::CountPendingActivityTasksOutput, crate::error::CountPendingActivityTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_count_pending_activity_tasks_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CountPendingDecisionTasks {
 impl aws_smithy_http::response::ParseStrictResponse for CountPendingDecisionTasks {
                 type Output = std::result::Result<crate::output::CountPendingDecisionTasksOutput, crate::error::CountPendingDecisionTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_count_pending_decision_tasks_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeprecateActivityType {
 impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
                 type Output = std::result::Result<crate::output::DeprecateActivityTypeOutput, crate::error::DeprecateActivityTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprecate_activity_type_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeprecateDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DeprecateDomain {
                 type Output = std::result::Result<crate::output::DeprecateDomainOutput, crate::error::DeprecateDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprecate_domain_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeprecateWorkflowType {
 impl aws_smithy_http::response::ParseStrictResponse for DeprecateWorkflowType {
                 type Output = std::result::Result<crate::output::DeprecateWorkflowTypeOutput, crate::error::DeprecateWorkflowTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprecate_workflow_type_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeActivityType {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeActivityType {
                 type Output = std::result::Result<crate::output::DescribeActivityTypeOutput, crate::error::DescribeActivityTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_activity_type_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
                 type Output = std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_domain_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeWorkflowExecution {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowExecution {
                 type Output = std::result::Result<crate::output::DescribeWorkflowExecutionOutput, crate::error::DescribeWorkflowExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_workflow_execution_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeWorkflowType {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowType {
                 type Output = std::result::Result<crate::output::DescribeWorkflowTypeOutput, crate::error::DescribeWorkflowTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_workflow_type_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetWorkflowExecutionHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowExecutionHistory {
                 type Output = std::result::Result<crate::output::GetWorkflowExecutionHistoryOutput, crate::error::GetWorkflowExecutionHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workflow_execution_history_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListActivityTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListActivityTypes {
                 type Output = std::result::Result<crate::output::ListActivityTypesOutput, crate::error::ListActivityTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_activity_types_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListClosedWorkflowExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for ListClosedWorkflowExecutions {
                 type Output = std::result::Result<crate::output::ListClosedWorkflowExecutionsOutput, crate::error::ListClosedWorkflowExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_closed_workflow_executions_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListDomains {
 impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
                 type Output = std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_domains_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListOpenWorkflowExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutions {
                 type Output = std::result::Result<crate::output::ListOpenWorkflowExecutionsOutput, crate::error::ListOpenWorkflowExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_open_workflow_executions_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListWorkflowTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
                 type Output = std::result::Result<crate::output::ListWorkflowTypesOutput, crate::error::ListWorkflowTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workflow_types_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl PollForActivityTask {
 impl aws_smithy_http::response::ParseStrictResponse for PollForActivityTask {
                 type Output = std::result::Result<crate::output::PollForActivityTaskOutput, crate::error::PollForActivityTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_poll_for_activity_task_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl PollForDecisionTask {
 impl aws_smithy_http::response::ParseStrictResponse for PollForDecisionTask {
                 type Output = std::result::Result<crate::output::PollForDecisionTaskOutput, crate::error::PollForDecisionTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_poll_for_decision_task_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl RecordActivityTaskHeartbeat {
 impl aws_smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartbeat {
                 type Output = std::result::Result<crate::output::RecordActivityTaskHeartbeatOutput, crate::error::RecordActivityTaskHeartbeatError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_record_activity_task_heartbeat_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl RegisterActivityType {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterActivityType {
                 type Output = std::result::Result<crate::output::RegisterActivityTypeOutput, crate::error::RegisterActivityTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_activity_type_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl RegisterDomain {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
                 type Output = std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_domain_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl RegisterWorkflowType {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
                 type Output = std::result::Result<crate::output::RegisterWorkflowTypeOutput, crate::error::RegisterWorkflowTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_workflow_type_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl RequestCancelWorkflowExecution {
 impl aws_smithy_http::response::ParseStrictResponse for RequestCancelWorkflowExecution {
                 type Output = std::result::Result<crate::output::RequestCancelWorkflowExecutionOutput, crate::error::RequestCancelWorkflowExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_request_cancel_workflow_execution_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl RespondActivityTaskCanceled {
 impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCanceled {
                 type Output = std::result::Result<crate::output::RespondActivityTaskCanceledOutput, crate::error::RespondActivityTaskCanceledError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_respond_activity_task_canceled_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl RespondActivityTaskCompleted {
 impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCompleted {
                 type Output = std::result::Result<crate::output::RespondActivityTaskCompletedOutput, crate::error::RespondActivityTaskCompletedError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_respond_activity_task_completed_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl RespondActivityTaskFailed {
 impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskFailed {
                 type Output = std::result::Result<crate::output::RespondActivityTaskFailedOutput, crate::error::RespondActivityTaskFailedError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_respond_activity_task_failed_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl RespondDecisionTaskCompleted {
 impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompleted {
                 type Output = std::result::Result<crate::output::RespondDecisionTaskCompletedOutput, crate::error::RespondDecisionTaskCompletedError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_respond_decision_task_completed_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl SignalWorkflowExecution {
 impl aws_smithy_http::response::ParseStrictResponse for SignalWorkflowExecution {
                 type Output = std::result::Result<crate::output::SignalWorkflowExecutionOutput, crate::error::SignalWorkflowExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_signal_workflow_execution_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl StartWorkflowExecution {
 impl aws_smithy_http::response::ParseStrictResponse for StartWorkflowExecution {
                 type Output = std::result::Result<crate::output::StartWorkflowExecutionOutput, crate::error::StartWorkflowExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_workflow_execution_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl TerminateWorkflowExecution {
 impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkflowExecution {
                 type Output = std::result::Result<crate::output::TerminateWorkflowExecutionOutput, crate::error::TerminateWorkflowExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_terminate_workflow_execution_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl UndeprecateActivityType {
 impl aws_smithy_http::response::ParseStrictResponse for UndeprecateActivityType {
                 type Output = std::result::Result<crate::output::UndeprecateActivityTypeOutput, crate::error::UndeprecateActivityTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_undeprecate_activity_type_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UndeprecateDomain {
 impl aws_smithy_http::response::ParseStrictResponse for UndeprecateDomain {
                 type Output = std::result::Result<crate::output::UndeprecateDomainOutput, crate::error::UndeprecateDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_undeprecate_domain_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UndeprecateWorkflowType {
 impl aws_smithy_http::response::ParseStrictResponse for UndeprecateWorkflowType {
                 type Output = std::result::Result<crate::output::UndeprecateWorkflowTypeOutput, crate::error::UndeprecateWorkflowTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_undeprecate_workflow_type_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

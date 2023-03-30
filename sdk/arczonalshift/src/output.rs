@@ -32,6 +32,7 @@ pub struct StartZonalShiftOutput  {
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartZonalShiftOutput {
     /// <p>The identifier of a zonal shift.</p>
@@ -71,6 +72,11 @@ impl StartZonalShiftOutput {
         self.comment.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartZonalShiftOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
 pub mod start_zonal_shift_output {
     
@@ -85,6 +91,7 @@ pub mod start_zonal_shift_output {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ZonalShiftStatus>,
         pub(crate) comment: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of a zonal shift.</p>
@@ -166,6 +173,15 @@ pub mod start_zonal_shift_output {
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
         pub fn build(self) -> crate::output::StartZonalShiftOutput {
             crate::output::StartZonalShiftOutput {
@@ -183,6 +199,7 @@ pub mod start_zonal_shift_output {
                 ,
                 comment: self.comment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -206,6 +223,7 @@ pub struct ListZonalShiftsOutput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListZonalShiftsOutput {
     /// <p>The items in the response list.</p>
@@ -217,6 +235,11 @@ impl ListZonalShiftsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListZonalShiftsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
 pub mod list_zonal_shifts_output {
     
@@ -226,6 +249,7 @@ pub mod list_zonal_shifts_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ZonalShiftSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -252,6 +276,15 @@ pub mod list_zonal_shifts_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
         pub fn build(self) -> crate::output::ListZonalShiftsOutput {
             crate::output::ListZonalShiftsOutput {
@@ -259,6 +292,7 @@ pub mod list_zonal_shifts_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -305,6 +339,7 @@ pub struct UpdateZonalShiftOutput  {
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateZonalShiftOutput {
     /// <p>The identifier of a zonal shift.</p>
@@ -344,6 +379,11 @@ impl UpdateZonalShiftOutput {
         self.comment.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateZonalShiftOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
 pub mod update_zonal_shift_output {
     
@@ -358,6 +398,7 @@ pub mod update_zonal_shift_output {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ZonalShiftStatus>,
         pub(crate) comment: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of a zonal shift.</p>
@@ -439,6 +480,15 @@ pub mod update_zonal_shift_output {
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
         pub fn build(self) -> crate::output::UpdateZonalShiftOutput {
             crate::output::UpdateZonalShiftOutput {
@@ -456,6 +506,7 @@ pub mod update_zonal_shift_output {
                 ,
                 comment: self.comment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -502,6 +553,7 @@ pub struct CancelZonalShiftOutput  {
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelZonalShiftOutput {
     /// <p>The identifier of a zonal shift.</p>
@@ -541,6 +593,11 @@ impl CancelZonalShiftOutput {
         self.comment.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelZonalShiftOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
 pub mod cancel_zonal_shift_output {
     
@@ -555,6 +612,7 @@ pub mod cancel_zonal_shift_output {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ZonalShiftStatus>,
         pub(crate) comment: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of a zonal shift.</p>
@@ -636,6 +694,15 @@ pub mod cancel_zonal_shift_output {
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
         pub fn build(self) -> crate::output::CancelZonalShiftOutput {
             crate::output::CancelZonalShiftOutput {
@@ -653,6 +720,7 @@ pub mod cancel_zonal_shift_output {
                 ,
                 comment: self.comment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -676,6 +744,7 @@ pub struct ListManagedResourcesOutput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListManagedResourcesOutput {
     /// <p>The items in the response list.</p>
@@ -687,6 +756,11 @@ impl ListManagedResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListManagedResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
 pub mod list_managed_resources_output {
     
@@ -696,6 +770,7 @@ pub mod list_managed_resources_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -722,6 +797,15 @@ pub mod list_managed_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
         pub fn build(self) -> crate::output::ListManagedResourcesOutput {
             crate::output::ListManagedResourcesOutput {
@@ -729,6 +813,7 @@ pub mod list_managed_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -758,6 +843,7 @@ pub struct GetManagedResourceOutput  {
     /// <p>The zonal shifts that are currently active for a resource. </p>
     #[doc(hidden)]
     pub zonal_shifts: std::option::Option<std::vec::Vec<crate::model::ZonalShiftInResource>>,
+    _request_id: Option<String>,
 }
 impl GetManagedResourceOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
@@ -777,6 +863,11 @@ impl GetManagedResourceOutput {
         self.zonal_shifts.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetManagedResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
 pub mod get_managed_resource_output {
     
@@ -788,6 +879,7 @@ pub mod get_managed_resource_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) applied_weights: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
         pub(crate) zonal_shifts: std::option::Option<std::vec::Vec<crate::model::ZonalShiftInResource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
@@ -838,6 +930,15 @@ pub mod get_managed_resource_output {
         pub fn set_zonal_shifts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ZonalShiftInResource>>) -> Self {
             self.zonal_shifts = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
         pub fn build(self) -> crate::output::GetManagedResourceOutput {
             crate::output::GetManagedResourceOutput {
@@ -849,6 +950,7 @@ pub mod get_managed_resource_output {
                 ,
                 zonal_shifts: self.zonal_shifts
                 ,
+                _request_id: self._request_id,
             }
         }
     }

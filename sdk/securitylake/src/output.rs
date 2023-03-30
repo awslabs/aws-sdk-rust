@@ -6,6 +6,7 @@ pub struct UpdateSubscriptionNotificationConfigurationOutput  {
     /// <p>Returns the ARN of the queue.</p>
     #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSubscriptionNotificationConfigurationOutput {
     /// <p>Returns the ARN of the queue.</p>
@@ -13,6 +14,11 @@ impl UpdateSubscriptionNotificationConfigurationOutput {
         self.queue_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSubscriptionNotificationConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
 pub mod update_subscription_notification_configuration_output {
     
@@ -21,6 +27,7 @@ pub mod update_subscription_notification_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns the ARN of the queue.</p>
@@ -32,11 +39,21 @@ pub mod update_subscription_notification_configuration_output {
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionNotificationConfigurationOutput {
             crate::output::UpdateSubscriptionNotificationConfigurationOutput {
                 queue_arn: self.queue_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateSubscriberOutput  {
     /// <p>The account of the subscriber.</p>
     #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::SubscriberResource>,
+    _request_id: Option<String>,
 }
 impl UpdateSubscriberOutput {
     /// <p>The account of the subscriber.</p>
@@ -64,6 +82,11 @@ impl UpdateSubscriberOutput {
         self.subscriber.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
     
@@ -72,6 +95,7 @@ pub mod update_subscriber_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriber: std::option::Option<crate::model::SubscriberResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account of the subscriber.</p>
@@ -83,11 +107,21 @@ pub mod update_subscriber_output {
         pub fn set_subscriber(mut self, input: std::option::Option<crate::model::SubscriberResource>) -> Self {
             self.subscriber = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
         pub fn build(self) -> crate::output::UpdateSubscriberOutput {
             crate::output::UpdateSubscriberOutput {
                 subscriber: self.subscriber
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -105,7 +139,13 @@ impl UpdateSubscriberOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatalakeExceptionsSubscriptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateDatalakeExceptionsSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
 pub mod update_datalake_exceptions_subscription_output {
     
@@ -113,11 +153,22 @@ pub mod update_datalake_exceptions_subscription_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeExceptionsSubscriptionOutput {
             crate::output::UpdateDatalakeExceptionsSubscriptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -135,7 +186,13 @@ impl UpdateDatalakeExceptionsSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatalakeExceptionsExpiryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateDatalakeExceptionsExpiryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
 pub mod update_datalake_exceptions_expiry_output {
     
@@ -143,11 +200,22 @@ pub mod update_datalake_exceptions_expiry_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeExceptionsExpiryOutput {
             crate::output::UpdateDatalakeExceptionsExpiryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -165,7 +233,13 @@ impl UpdateDatalakeExceptionsExpiryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatalakeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateDatalakeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
 pub mod update_datalake_output {
     
@@ -173,11 +247,22 @@ pub mod update_datalake_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
         pub fn build(self) -> crate::output::UpdateDatalakeOutput {
             crate::output::UpdateDatalakeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -201,6 +286,7 @@ pub struct ListSubscribersOutput  {
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSubscribersOutput {
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
@@ -212,6 +298,11 @@ impl ListSubscribersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSubscribersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
 pub mod list_subscribers_output {
     
@@ -221,6 +312,7 @@ pub mod list_subscribers_output {
     pub struct Builder {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::SubscriberResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `subscribers`.
@@ -247,6 +339,15 @@ pub mod list_subscribers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
         pub fn build(self) -> crate::output::ListSubscribersOutput {
             crate::output::ListSubscribersOutput {
@@ -254,6 +355,7 @@ pub mod list_subscribers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -277,6 +379,7 @@ pub struct ListLogSourcesOutput  {
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLogSourcesOutput {
     /// <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
@@ -288,6 +391,11 @@ impl ListLogSourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLogSourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
 pub mod list_log_sources_output {
     
@@ -297,6 +405,7 @@ pub mod list_log_sources_output {
     pub struct Builder {
         pub(crate) region_source_types_accounts_list: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `region_source_types_accounts_list`.
@@ -323,6 +432,15 @@ pub mod list_log_sources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
         pub fn build(self) -> crate::output::ListLogSourcesOutput {
             crate::output::ListLogSourcesOutput {
@@ -330,6 +448,7 @@ pub mod list_log_sources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,6 +473,7 @@ pub struct ListDatalakeExceptionsOutput  {
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDatalakeExceptionsOutput {
     /// <p>Lists the failures that cannot be retried in the current Region.</p>
@@ -366,6 +486,11 @@ impl ListDatalakeExceptionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDatalakeExceptionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
 pub mod list_datalake_exceptions_output {
     
@@ -375,6 +500,7 @@ pub mod list_datalake_exceptions_output {
     pub struct Builder {
         pub(crate) non_retryable_failures: std::option::Option<std::vec::Vec<crate::model::FailuresResponse>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `non_retryable_failures`.
@@ -403,6 +529,15 @@ pub mod list_datalake_exceptions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
         pub fn build(self) -> crate::output::ListDatalakeExceptionsOutput {
             crate::output::ListDatalakeExceptionsOutput {
@@ -410,6 +545,7 @@ pub mod list_datalake_exceptions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -430,6 +566,7 @@ pub struct GetSubscriberOutput  {
     /// <p>The subscription information for the specified subscription ID.</p>
     #[doc(hidden)]
     pub subscriber: std::option::Option<crate::model::SubscriberResource>,
+    _request_id: Option<String>,
 }
 impl GetSubscriberOutput {
     /// <p>The subscription information for the specified subscription ID.</p>
@@ -437,6 +574,11 @@ impl GetSubscriberOutput {
         self.subscriber.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSubscriberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
 pub mod get_subscriber_output {
     
@@ -445,6 +587,7 @@ pub mod get_subscriber_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriber: std::option::Option<crate::model::SubscriberResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The subscription information for the specified subscription ID.</p>
@@ -456,11 +599,21 @@ pub mod get_subscriber_output {
         pub fn set_subscriber(mut self, input: std::option::Option<crate::model::SubscriberResource>) -> Self {
             self.subscriber = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
         pub fn build(self) -> crate::output::GetSubscriberOutput {
             crate::output::GetSubscriberOutput {
                 subscriber: self.subscriber
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -485,6 +638,7 @@ pub struct GetDatalakeStatusOutput  {
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDatalakeStatusOutput {
     /// <p>The list of enabled accounts and enabled sources.</p>
@@ -497,6 +651,11 @@ impl GetDatalakeStatusOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDatalakeStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
 pub mod get_datalake_status_output {
     
@@ -506,6 +665,7 @@ pub mod get_datalake_status_output {
     pub struct Builder {
         pub(crate) account_sources_list: std::option::Option<std::vec::Vec<crate::model::AccountSources>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_sources_list`.
@@ -534,6 +694,15 @@ pub mod get_datalake_status_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
         pub fn build(self) -> crate::output::GetDatalakeStatusOutput {
             crate::output::GetDatalakeStatusOutput {
@@ -541,6 +710,7 @@ pub mod get_datalake_status_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -561,6 +731,7 @@ pub struct GetDatalakeExceptionsSubscriptionOutput  {
     /// <p>Retrieves the exception notification subscription information.</p>
     #[doc(hidden)]
     pub protocol_and_notification_endpoint: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
+    _request_id: Option<String>,
 }
 impl GetDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the exception notification subscription information.</p>
@@ -568,6 +739,11 @@ impl GetDatalakeExceptionsSubscriptionOutput {
         self.protocol_and_notification_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetDatalakeExceptionsSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
 pub mod get_datalake_exceptions_subscription_output {
     
@@ -576,6 +752,7 @@ pub mod get_datalake_exceptions_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol_and_notification_endpoint: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Retrieves the exception notification subscription information.</p>
@@ -587,11 +764,21 @@ pub mod get_datalake_exceptions_subscription_output {
         pub fn set_protocol_and_notification_endpoint(mut self, input: std::option::Option<crate::model::ProtocolAndNotificationEndpoint>) -> Self {
             self.protocol_and_notification_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::GetDatalakeExceptionsSubscriptionOutput {
             crate::output::GetDatalakeExceptionsSubscriptionOutput {
                 protocol_and_notification_endpoint: self.protocol_and_notification_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -612,6 +799,7 @@ pub struct GetDatalakeExceptionsExpiryOutput  {
     /// <p>The expiration period and time-to-live (TTL).</p>
     #[doc(hidden)]
     pub exception_message_expiry: std::option::Option<i64>,
+    _request_id: Option<String>,
 }
 impl GetDatalakeExceptionsExpiryOutput {
     /// <p>The expiration period and time-to-live (TTL).</p>
@@ -619,6 +807,11 @@ impl GetDatalakeExceptionsExpiryOutput {
         self.exception_message_expiry
     }
 }
+impl aws_http::request_id::RequestId for GetDatalakeExceptionsExpiryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
 pub mod get_datalake_exceptions_expiry_output {
     
@@ -627,6 +820,7 @@ pub mod get_datalake_exceptions_expiry_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exception_message_expiry: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The expiration period and time-to-live (TTL).</p>
@@ -638,11 +832,21 @@ pub mod get_datalake_exceptions_expiry_output {
         pub fn set_exception_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
             self.exception_message_expiry = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
         pub fn build(self) -> crate::output::GetDatalakeExceptionsExpiryOutput {
             crate::output::GetDatalakeExceptionsExpiryOutput {
                 exception_message_expiry: self.exception_message_expiry
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -663,6 +867,7 @@ pub struct GetDatalakeAutoEnableOutput  {
     /// <p>The configuration for new accounts.</p>
     #[doc(hidden)]
     pub auto_enable_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
+    _request_id: Option<String>,
 }
 impl GetDatalakeAutoEnableOutput {
     /// <p>The configuration for new accounts.</p>
@@ -670,6 +875,11 @@ impl GetDatalakeAutoEnableOutput {
         self.auto_enable_new_accounts.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDatalakeAutoEnableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
 pub mod get_datalake_auto_enable_output {
     
@@ -678,6 +888,7 @@ pub mod get_datalake_auto_enable_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable_new_accounts: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `auto_enable_new_accounts`.
@@ -695,11 +906,21 @@ pub mod get_datalake_auto_enable_output {
         pub fn set_auto_enable_new_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>) -> Self {
             self.auto_enable_new_accounts = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::GetDatalakeAutoEnableOutput {
             crate::output::GetDatalakeAutoEnableOutput {
                 auto_enable_new_accounts: self.auto_enable_new_accounts
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -720,6 +941,7 @@ pub struct GetDatalakeOutput  {
     /// <p>Retrieves the Security Lake configuration object. </p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>,
+    _request_id: Option<String>,
 }
 impl GetDatalakeOutput {
     /// <p>Retrieves the Security Lake configuration object. </p>
@@ -727,6 +949,11 @@ impl GetDatalakeOutput {
         self.configurations.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetDatalakeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
 pub mod get_datalake_output {
     
@@ -735,6 +962,7 @@ pub mod get_datalake_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `configurations`.
@@ -752,11 +980,21 @@ pub mod get_datalake_output {
         pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>>) -> Self {
             self.configurations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
         pub fn build(self) -> crate::output::GetDatalakeOutput {
             crate::output::GetDatalakeOutput {
                 configurations: self.configurations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -774,7 +1012,13 @@ impl GetDatalakeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriptionNotificationConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteSubscriptionNotificationConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
 pub mod delete_subscription_notification_configuration_output {
     
@@ -782,11 +1026,22 @@ pub mod delete_subscription_notification_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteSubscriptionNotificationConfigurationOutput {
             crate::output::DeleteSubscriptionNotificationConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -804,7 +1059,13 @@ impl DeleteSubscriptionNotificationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSubscriberOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
     
@@ -812,11 +1073,22 @@ pub mod delete_subscriber_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
         pub fn build(self) -> crate::output::DeleteSubscriberOutput {
             crate::output::DeleteSubscriberOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -837,6 +1109,7 @@ pub struct DeleteDatalakeExceptionsSubscriptionOutput  {
     /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteDatalakeExceptionsSubscriptionOutput {
     /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
@@ -844,6 +1117,11 @@ impl DeleteDatalakeExceptionsSubscriptionOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDatalakeExceptionsSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
 pub mod delete_datalake_exceptions_subscription_output {
     
@@ -852,6 +1130,7 @@ pub mod delete_datalake_exceptions_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Retrieves the status of the delete Security Lake operation for an account. </p>
@@ -863,11 +1142,21 @@ pub mod delete_datalake_exceptions_subscription_output {
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeExceptionsSubscriptionOutput {
             crate::output::DeleteDatalakeExceptionsSubscriptionOutput {
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -885,7 +1174,13 @@ impl DeleteDatalakeExceptionsSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatalakeDelegatedAdminOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDatalakeDelegatedAdminOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
 pub mod delete_datalake_delegated_admin_output {
     
@@ -893,11 +1188,22 @@ pub mod delete_datalake_delegated_admin_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeDelegatedAdminOutput {
             crate::output::DeleteDatalakeDelegatedAdminOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -915,7 +1221,13 @@ impl DeleteDatalakeDelegatedAdminOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnableOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDatalakeAutoEnableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
 pub mod delete_datalake_auto_enable_output {
     
@@ -923,11 +1235,22 @@ pub mod delete_datalake_auto_enable_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeAutoEnableOutput {
             crate::output::DeleteDatalakeAutoEnableOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -945,7 +1268,13 @@ impl DeleteDatalakeAutoEnableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatalakeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDatalakeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
 pub mod delete_datalake_output {
     
@@ -953,11 +1282,22 @@ pub mod delete_datalake_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
         pub fn build(self) -> crate::output::DeleteDatalakeOutput {
             crate::output::DeleteDatalakeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -978,6 +1318,7 @@ pub struct DeleteCustomLogSourceOutput  {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
     #[doc(hidden)]
     pub custom_data_location: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
@@ -985,6 +1326,11 @@ impl DeleteCustomLogSourceOutput {
         self.custom_data_location.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteCustomLogSourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
 pub mod delete_custom_log_source_output {
     
@@ -993,6 +1339,7 @@ pub mod delete_custom_log_source_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_data_location: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
@@ -1004,11 +1351,21 @@ pub mod delete_custom_log_source_output {
         pub fn set_custom_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_data_location = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
         pub fn build(self) -> crate::output::DeleteCustomLogSourceOutput {
             crate::output::DeleteCustomLogSourceOutput {
                 custom_data_location: self.custom_data_location
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1032,6 +1389,7 @@ pub struct DeleteAwsLogSourceOutput  {
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DeleteAwsLogSourceOutput {
     /// <p>Deletion of the Amazon Web Services sources is in progress.</p>
@@ -1043,6 +1401,11 @@ impl DeleteAwsLogSourceOutput {
         self.failed.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAwsLogSourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
 pub mod delete_aws_log_source_output {
     
@@ -1052,6 +1415,7 @@ pub mod delete_aws_log_source_output {
     pub struct Builder {
         pub(crate) processing: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `processing`.
@@ -1084,6 +1448,15 @@ pub mod delete_aws_log_source_output {
         pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.failed = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
         pub fn build(self) -> crate::output::DeleteAwsLogSourceOutput {
             crate::output::DeleteAwsLogSourceOutput {
@@ -1091,6 +1464,7 @@ pub mod delete_aws_log_source_output {
                 ,
                 failed: self.failed
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1111,6 +1485,7 @@ pub struct CreateSubscriptionNotificationConfigurationOutput  {
     /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
     #[doc(hidden)]
     pub queue_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateSubscriptionNotificationConfigurationOutput {
     /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
@@ -1118,6 +1493,11 @@ impl CreateSubscriptionNotificationConfigurationOutput {
         self.queue_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSubscriptionNotificationConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
 pub mod create_subscription_notification_configuration_output {
     
@@ -1126,6 +1506,7 @@ pub mod create_subscription_notification_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
@@ -1137,11 +1518,21 @@ pub mod create_subscription_notification_configuration_output {
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionNotificationConfigurationOutput {
             crate::output::CreateSubscriptionNotificationConfigurationOutput {
                 queue_arn: self.queue_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1171,6 +1562,7 @@ pub struct CreateSubscriberOutput  {
     /// <p>The ARN for the Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateSubscriberOutput {
     /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
@@ -1190,6 +1582,11 @@ impl CreateSubscriberOutput {
         self.s3_bucket_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSubscriberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
     
@@ -1201,6 +1598,7 @@ pub mod create_subscriber_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) sns_arn: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
@@ -1239,6 +1637,15 @@ pub mod create_subscriber_output {
         pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
         pub fn build(self) -> crate::output::CreateSubscriberOutput {
             crate::output::CreateSubscriberOutput {
@@ -1250,6 +1657,7 @@ pub mod create_subscriber_output {
                 ,
                 s3_bucket_arn: self.s3_bucket_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1267,7 +1675,13 @@ impl CreateSubscriberOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatalakeExceptionsSubscriptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateDatalakeExceptionsSubscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
 pub mod create_datalake_exceptions_subscription_output {
     
@@ -1275,11 +1689,22 @@ pub mod create_datalake_exceptions_subscription_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateDatalakeExceptionsSubscriptionOutput {
             crate::output::CreateDatalakeExceptionsSubscriptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1297,7 +1722,13 @@ impl CreateDatalakeExceptionsSubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatalakeDelegatedAdminOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateDatalakeDelegatedAdminOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
 pub mod create_datalake_delegated_admin_output {
     
@@ -1305,11 +1736,22 @@ pub mod create_datalake_delegated_admin_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
         pub fn build(self) -> crate::output::CreateDatalakeDelegatedAdminOutput {
             crate::output::CreateDatalakeDelegatedAdminOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1327,7 +1769,13 @@ impl CreateDatalakeDelegatedAdminOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatalakeAutoEnableOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateDatalakeAutoEnableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
 pub mod create_datalake_auto_enable_output {
     
@@ -1335,11 +1783,22 @@ pub mod create_datalake_auto_enable_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
         pub fn build(self) -> crate::output::CreateDatalakeAutoEnableOutput {
             crate::output::CreateDatalakeAutoEnableOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1357,7 +1816,13 @@ impl CreateDatalakeAutoEnableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatalakeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateDatalakeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
 pub mod create_datalake_output {
     
@@ -1365,11 +1830,22 @@ pub mod create_datalake_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
         pub fn build(self) -> crate::output::CreateDatalakeOutput {
             crate::output::CreateDatalakeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1402,6 +1878,7 @@ pub struct CreateCustomLogSourceOutput  {
     /// <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
     #[doc(hidden)]
     pub log_provider_access_role_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCustomLogSourceOutput {
     /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
@@ -1425,6 +1902,11 @@ impl CreateCustomLogSourceOutput {
         self.log_provider_access_role_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomLogSourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
 pub mod create_custom_log_source_output {
     
@@ -1437,6 +1919,7 @@ pub mod create_custom_log_source_output {
         pub(crate) glue_table_name: std::option::Option<std::string::String>,
         pub(crate) glue_database_name: std::option::Option<std::string::String>,
         pub(crate) log_provider_access_role_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
@@ -1484,6 +1967,15 @@ pub mod create_custom_log_source_output {
         pub fn set_log_provider_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_provider_access_role_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
         pub fn build(self) -> crate::output::CreateCustomLogSourceOutput {
             crate::output::CreateCustomLogSourceOutput {
@@ -1497,6 +1989,7 @@ pub mod create_custom_log_source_output {
                 ,
                 log_provider_access_role_arn: self.log_provider_access_role_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1520,6 +2013,7 @@ pub struct CreateAwsLogSourceOutput  {
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     #[doc(hidden)]
     pub failed: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateAwsLogSourceOutput {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
@@ -1531,6 +2025,11 @@ impl CreateAwsLogSourceOutput {
         self.failed.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAwsLogSourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
 pub mod create_aws_log_source_output {
     
@@ -1540,6 +2039,7 @@ pub mod create_aws_log_source_output {
     pub struct Builder {
         pub(crate) processing: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `processing`.
@@ -1572,6 +2072,15 @@ pub mod create_aws_log_source_output {
         pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.failed = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
         pub fn build(self) -> crate::output::CreateAwsLogSourceOutput {
             crate::output::CreateAwsLogSourceOutput {
@@ -1579,6 +2088,7 @@ pub mod create_aws_log_source_output {
                 ,
                 failed: self.failed
                 ,
+                _request_id: self._request_id,
             }
         }
     }

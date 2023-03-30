@@ -22,6 +22,7 @@ impl AcceptEulas {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptEulas {
                 type Output = std::result::Result<crate::output::AcceptEulasOutput, crate::error::AcceptEulasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_eulas_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateLaunchProfile {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchProfile {
                 type Output = std::result::Result<crate::output::CreateLaunchProfileOutput, crate::error::CreateLaunchProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_launch_profile_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateStreamingImage {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingImage {
                 type Output = std::result::Result<crate::output::CreateStreamingImageOutput, crate::error::CreateStreamingImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_streaming_image_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateStreamingSession {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSession {
                 type Output = std::result::Result<crate::output::CreateStreamingSessionOutput, crate::error::CreateStreamingSessionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_streaming_session_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateStreamingSessionStream {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingSessionStream {
                 type Output = std::result::Result<crate::output::CreateStreamingSessionStreamOutput, crate::error::CreateStreamingSessionStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_streaming_session_stream_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateStudio {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStudio {
                 type Output = std::result::Result<crate::output::CreateStudioOutput, crate::error::CreateStudioError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_studio_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateStudioComponent {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStudioComponent {
                 type Output = std::result::Result<crate::output::CreateStudioComponentOutput, crate::error::CreateStudioComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_studio_component_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteLaunchProfile {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfile {
                 type Output = std::result::Result<crate::output::DeleteLaunchProfileOutput, crate::error::DeleteLaunchProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_launch_profile_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteLaunchProfileMember {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfileMember {
                 type Output = std::result::Result<crate::output::DeleteLaunchProfileMemberOutput, crate::error::DeleteLaunchProfileMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_launch_profile_member_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteStreamingImage {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingImage {
                 type Output = std::result::Result<crate::output::DeleteStreamingImageOutput, crate::error::DeleteStreamingImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_streaming_image_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteStreamingSession {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingSession {
                 type Output = std::result::Result<crate::output::DeleteStreamingSessionOutput, crate::error::DeleteStreamingSessionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_streaming_session_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteStudio {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStudio {
                 type Output = std::result::Result<crate::output::DeleteStudioOutput, crate::error::DeleteStudioError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_studio_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteStudioComponent {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioComponent {
                 type Output = std::result::Result<crate::output::DeleteStudioComponentOutput, crate::error::DeleteStudioComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_studio_component_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteStudioMember {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioMember {
                 type Output = std::result::Result<crate::output::DeleteStudioMemberOutput, crate::error::DeleteStudioMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_studio_member_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetEula {
 impl aws_smithy_http::response::ParseStrictResponse for GetEula {
                 type Output = std::result::Result<crate::output::GetEulaOutput, crate::error::GetEulaError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_eula_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetLaunchProfile {
 impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfile {
                 type Output = std::result::Result<crate::output::GetLaunchProfileOutput, crate::error::GetLaunchProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_launch_profile_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetLaunchProfileDetails {
 impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileDetails {
                 type Output = std::result::Result<crate::output::GetLaunchProfileDetailsOutput, crate::error::GetLaunchProfileDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_launch_profile_details_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetLaunchProfileInitialization {
 impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileInitialization {
                 type Output = std::result::Result<crate::output::GetLaunchProfileInitializationOutput, crate::error::GetLaunchProfileInitializationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_launch_profile_initialization_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetLaunchProfileMember {
 impl aws_smithy_http::response::ParseStrictResponse for GetLaunchProfileMember {
                 type Output = std::result::Result<crate::output::GetLaunchProfileMemberOutput, crate::error::GetLaunchProfileMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_launch_profile_member_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetStreamingImage {
 impl aws_smithy_http::response::ParseStrictResponse for GetStreamingImage {
                 type Output = std::result::Result<crate::output::GetStreamingImageOutput, crate::error::GetStreamingImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_streaming_image_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetStreamingSession {
 impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSession {
                 type Output = std::result::Result<crate::output::GetStreamingSessionOutput, crate::error::GetStreamingSessionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_streaming_session_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetStreamingSessionBackup {
 impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionBackup {
                 type Output = std::result::Result<crate::output::GetStreamingSessionBackupOutput, crate::error::GetStreamingSessionBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_streaming_session_backup_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetStreamingSessionStream {
 impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionStream {
                 type Output = std::result::Result<crate::output::GetStreamingSessionStreamOutput, crate::error::GetStreamingSessionStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_streaming_session_stream_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetStudio {
 impl aws_smithy_http::response::ParseStrictResponse for GetStudio {
                 type Output = std::result::Result<crate::output::GetStudioOutput, crate::error::GetStudioError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_studio_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetStudioComponent {
 impl aws_smithy_http::response::ParseStrictResponse for GetStudioComponent {
                 type Output = std::result::Result<crate::output::GetStudioComponentOutput, crate::error::GetStudioComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_studio_component_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetStudioMember {
 impl aws_smithy_http::response::ParseStrictResponse for GetStudioMember {
                 type Output = std::result::Result<crate::output::GetStudioMemberOutput, crate::error::GetStudioMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_studio_member_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListEulaAcceptances {
 impl aws_smithy_http::response::ParseStrictResponse for ListEulaAcceptances {
                 type Output = std::result::Result<crate::output::ListEulaAcceptancesOutput, crate::error::ListEulaAcceptancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_eula_acceptances_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListEulas {
 impl aws_smithy_http::response::ParseStrictResponse for ListEulas {
                 type Output = std::result::Result<crate::output::ListEulasOutput, crate::error::ListEulasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_eulas_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListLaunchProfileMembers {
 impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfileMembers {
                 type Output = std::result::Result<crate::output::ListLaunchProfileMembersOutput, crate::error::ListLaunchProfileMembersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_launch_profile_members_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListLaunchProfiles {
 impl aws_smithy_http::response::ParseStrictResponse for ListLaunchProfiles {
                 type Output = std::result::Result<crate::output::ListLaunchProfilesOutput, crate::error::ListLaunchProfilesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_launch_profiles_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListStreamingImages {
 impl aws_smithy_http::response::ParseStrictResponse for ListStreamingImages {
                 type Output = std::result::Result<crate::output::ListStreamingImagesOutput, crate::error::ListStreamingImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_streaming_images_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListStreamingSessionBackups {
 impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessionBackups {
                 type Output = std::result::Result<crate::output::ListStreamingSessionBackupsOutput, crate::error::ListStreamingSessionBackupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_streaming_session_backups_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListStreamingSessions {
 impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessions {
                 type Output = std::result::Result<crate::output::ListStreamingSessionsOutput, crate::error::ListStreamingSessionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_streaming_sessions_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListStudioComponents {
 impl aws_smithy_http::response::ParseStrictResponse for ListStudioComponents {
                 type Output = std::result::Result<crate::output::ListStudioComponentsOutput, crate::error::ListStudioComponentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_studio_components_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListStudioMembers {
 impl aws_smithy_http::response::ParseStrictResponse for ListStudioMembers {
                 type Output = std::result::Result<crate::output::ListStudioMembersOutput, crate::error::ListStudioMembersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_studio_members_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListStudios {
 impl aws_smithy_http::response::ParseStrictResponse for ListStudios {
                 type Output = std::result::Result<crate::output::ListStudiosOutput, crate::error::ListStudiosError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_studios_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl PutLaunchProfileMembers {
 impl aws_smithy_http::response::ParseStrictResponse for PutLaunchProfileMembers {
                 type Output = std::result::Result<crate::output::PutLaunchProfileMembersOutput, crate::error::PutLaunchProfileMembersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_launch_profile_members_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl PutStudioMembers {
 impl aws_smithy_http::response::ParseStrictResponse for PutStudioMembers {
                 type Output = std::result::Result<crate::output::PutStudioMembersOutput, crate::error::PutStudioMembersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_studio_members_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl StartStreamingSession {
 impl aws_smithy_http::response::ParseStrictResponse for StartStreamingSession {
                 type Output = std::result::Result<crate::output::StartStreamingSessionOutput, crate::error::StartStreamingSessionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_streaming_session_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl StartStudioSSOConfigurationRepair {
 impl aws_smithy_http::response::ParseStrictResponse for StartStudioSSOConfigurationRepair {
                 type Output = std::result::Result<crate::output::StartStudioSsoConfigurationRepairOutput, crate::error::StartStudioSSOConfigurationRepairError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_studio_sso_configuration_repair_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl StopStreamingSession {
 impl aws_smithy_http::response::ParseStrictResponse for StopStreamingSession {
                 type Output = std::result::Result<crate::output::StopStreamingSessionOutput, crate::error::StopStreamingSessionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_streaming_session_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl UpdateLaunchProfile {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfile {
                 type Output = std::result::Result<crate::output::UpdateLaunchProfileOutput, crate::error::UpdateLaunchProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_launch_profile_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl UpdateLaunchProfileMember {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfileMember {
                 type Output = std::result::Result<crate::output::UpdateLaunchProfileMemberOutput, crate::error::UpdateLaunchProfileMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_launch_profile_member_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateStreamingImage {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamingImage {
                 type Output = std::result::Result<crate::output::UpdateStreamingImageOutput, crate::error::UpdateStreamingImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_streaming_image_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdateStudio {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateStudio {
                 type Output = std::result::Result<crate::output::UpdateStudioOutput, crate::error::UpdateStudioError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_studio_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl UpdateStudioComponent {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateStudioComponent {
                 type Output = std::result::Result<crate::output::UpdateStudioComponentOutput, crate::error::UpdateStudioComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_studio_component_error(response)
                      } else {

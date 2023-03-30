@@ -22,6 +22,7 @@ impl CreateAwsLogSource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAwsLogSource {
                 type Output = std::result::Result<crate::output::CreateAwsLogSourceOutput, crate::error::CreateAwsLogSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_aws_log_source_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateCustomLogSource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLogSource {
                 type Output = std::result::Result<crate::output::CreateCustomLogSourceOutput, crate::error::CreateCustomLogSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_log_source_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateDatalake {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDatalake {
                 type Output = std::result::Result<crate::output::CreateDatalakeOutput, crate::error::CreateDatalakeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_datalake_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateDatalakeAutoEnable {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeAutoEnable {
                 type Output = std::result::Result<crate::output::CreateDatalakeAutoEnableOutput, crate::error::CreateDatalakeAutoEnableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_datalake_auto_enable_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateDatalakeDelegatedAdmin {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeDelegatedAdmin {
                 type Output = std::result::Result<crate::output::CreateDatalakeDelegatedAdminOutput, crate::error::CreateDatalakeDelegatedAdminError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_datalake_delegated_admin_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateDatalakeExceptionsSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeExceptionsSubscription {
                 type Output = std::result::Result<crate::output::CreateDatalakeExceptionsSubscriptionOutput, crate::error::CreateDatalakeExceptionsSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_datalake_exceptions_subscription_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriber {
                 type Output = std::result::Result<crate::output::CreateSubscriberOutput, crate::error::CreateSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_subscriber_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateSubscriptionNotificationConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriptionNotificationConfiguration {
                 type Output = std::result::Result<crate::output::CreateSubscriptionNotificationConfigurationOutput, crate::error::CreateSubscriptionNotificationConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_subscription_notification_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteAwsLogSource {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAwsLogSource {
                 type Output = std::result::Result<crate::output::DeleteAwsLogSourceOutput, crate::error::DeleteAwsLogSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_aws_log_source_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteCustomLogSource {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLogSource {
                 type Output = std::result::Result<crate::output::DeleteCustomLogSourceOutput, crate::error::DeleteCustomLogSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_log_source_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteDatalake {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalake {
                 type Output = std::result::Result<crate::output::DeleteDatalakeOutput, crate::error::DeleteDatalakeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_datalake_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteDatalakeAutoEnable {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeAutoEnable {
                 type Output = std::result::Result<crate::output::DeleteDatalakeAutoEnableOutput, crate::error::DeleteDatalakeAutoEnableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_datalake_auto_enable_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteDatalakeDelegatedAdmin {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeDelegatedAdmin {
                 type Output = std::result::Result<crate::output::DeleteDatalakeDelegatedAdminOutput, crate::error::DeleteDatalakeDelegatedAdminError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_datalake_delegated_admin_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteDatalakeExceptionsSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeExceptionsSubscription {
                 type Output = std::result::Result<crate::output::DeleteDatalakeExceptionsSubscriptionOutput, crate::error::DeleteDatalakeExceptionsSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_datalake_exceptions_subscription_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
                 type Output = std::result::Result<crate::output::DeleteSubscriberOutput, crate::error::DeleteSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_subscriber_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteSubscriptionNotificationConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriptionNotificationConfiguration {
                 type Output = std::result::Result<crate::output::DeleteSubscriptionNotificationConfigurationOutput, crate::error::DeleteSubscriptionNotificationConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_subscription_notification_configuration_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetDatalake {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalake {
                 type Output = std::result::Result<crate::output::GetDatalakeOutput, crate::error::GetDatalakeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_datalake_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetDatalakeAutoEnable {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeAutoEnable {
                 type Output = std::result::Result<crate::output::GetDatalakeAutoEnableOutput, crate::error::GetDatalakeAutoEnableError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_datalake_auto_enable_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetDatalakeExceptionsExpiry {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeExceptionsExpiry {
                 type Output = std::result::Result<crate::output::GetDatalakeExceptionsExpiryOutput, crate::error::GetDatalakeExceptionsExpiryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_datalake_exceptions_expiry_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetDatalakeExceptionsSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeExceptionsSubscription {
                 type Output = std::result::Result<crate::output::GetDatalakeExceptionsSubscriptionOutput, crate::error::GetDatalakeExceptionsSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_datalake_exceptions_subscription_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetDatalakeStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeStatus {
                 type Output = std::result::Result<crate::output::GetDatalakeStatusOutput, crate::error::GetDatalakeStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_datalake_status_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for GetSubscriber {
                 type Output = std::result::Result<crate::output::GetSubscriberOutput, crate::error::GetSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_subscriber_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListDatalakeExceptions {
 impl aws_smithy_http::response::ParseStrictResponse for ListDatalakeExceptions {
                 type Output = std::result::Result<crate::output::ListDatalakeExceptionsOutput, crate::error::ListDatalakeExceptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_datalake_exceptions_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListLogSources {
 impl aws_smithy_http::response::ParseStrictResponse for ListLogSources {
                 type Output = std::result::Result<crate::output::ListLogSourcesOutput, crate::error::ListLogSourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_log_sources_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListSubscribers {
 impl aws_smithy_http::response::ParseStrictResponse for ListSubscribers {
                 type Output = std::result::Result<crate::output::ListSubscribersOutput, crate::error::ListSubscribersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_subscribers_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateDatalake {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalake {
                 type Output = std::result::Result<crate::output::UpdateDatalakeOutput, crate::error::UpdateDatalakeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_datalake_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateDatalakeExceptionsExpiry {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalakeExceptionsExpiry {
                 type Output = std::result::Result<crate::output::UpdateDatalakeExceptionsExpiryOutput, crate::error::UpdateDatalakeExceptionsExpiryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_datalake_exceptions_expiry_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UpdateDatalakeExceptionsSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalakeExceptionsSubscription {
                 type Output = std::result::Result<crate::output::UpdateDatalakeExceptionsSubscriptionOutput, crate::error::UpdateDatalakeExceptionsSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_datalake_exceptions_subscription_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscriber {
                 type Output = std::result::Result<crate::output::UpdateSubscriberOutput, crate::error::UpdateSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_subscriber_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateSubscriptionNotificationConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscriptionNotificationConfiguration {
                 type Output = std::result::Result<crate::output::UpdateSubscriptionNotificationConfigurationOutput, crate::error::UpdateSubscriptionNotificationConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_subscription_notification_configuration_error(response)
                      } else {

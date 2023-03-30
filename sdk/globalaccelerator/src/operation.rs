@@ -22,6 +22,7 @@ impl AddCustomRoutingEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for AddCustomRoutingEndpoints {
                 type Output = std::result::Result<crate::output::AddCustomRoutingEndpointsOutput, crate::error::AddCustomRoutingEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_custom_routing_endpoints_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for AddEndpoints {
                 type Output = std::result::Result<crate::output::AddEndpointsOutput, crate::error::AddEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_endpoints_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AdvertiseByoipCidr {
 impl aws_smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
                 type Output = std::result::Result<crate::output::AdvertiseByoipCidrOutput, crate::error::AdvertiseByoipCidrError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_advertise_byoip_cidr_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl AllowCustomRoutingTraffic {
 impl aws_smithy_http::response::ParseStrictResponse for AllowCustomRoutingTraffic {
                 type Output = std::result::Result<crate::output::AllowCustomRoutingTrafficOutput, crate::error::AllowCustomRoutingTrafficError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_allow_custom_routing_traffic_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAccelerator {
                 type Output = std::result::Result<crate::output::CreateAcceleratorOutput, crate::error::CreateAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_accelerator_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateCustomRoutingAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingAccelerator {
                 type Output = std::result::Result<crate::output::CreateCustomRoutingAcceleratorOutput, crate::error::CreateCustomRoutingAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_routing_accelerator_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateCustomRoutingEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingEndpointGroup {
                 type Output = std::result::Result<crate::output::CreateCustomRoutingEndpointGroupOutput, crate::error::CreateCustomRoutingEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_routing_endpoint_group_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateCustomRoutingListener {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingListener {
                 type Output = std::result::Result<crate::output::CreateCustomRoutingListenerOutput, crate::error::CreateCustomRoutingListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_routing_listener_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEndpointGroup {
                 type Output = std::result::Result<crate::output::CreateEndpointGroupOutput, crate::error::CreateEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_endpoint_group_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateListener {
 impl aws_smithy_http::response::ParseStrictResponse for CreateListener {
                 type Output = std::result::Result<crate::output::CreateListenerOutput, crate::error::CreateListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_listener_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAccelerator {
                 type Output = std::result::Result<crate::output::DeleteAcceleratorOutput, crate::error::DeleteAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_accelerator_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteCustomRoutingAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingAccelerator {
                 type Output = std::result::Result<crate::output::DeleteCustomRoutingAcceleratorOutput, crate::error::DeleteCustomRoutingAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_routing_accelerator_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteCustomRoutingEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingEndpointGroup {
                 type Output = std::result::Result<crate::output::DeleteCustomRoutingEndpointGroupOutput, crate::error::DeleteCustomRoutingEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_routing_endpoint_group_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteCustomRoutingListener {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingListener {
                 type Output = std::result::Result<crate::output::DeleteCustomRoutingListenerOutput, crate::error::DeleteCustomRoutingListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_routing_listener_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpointGroup {
                 type Output = std::result::Result<crate::output::DeleteEndpointGroupOutput, crate::error::DeleteEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_endpoint_group_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteListener {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteListener {
                 type Output = std::result::Result<crate::output::DeleteListenerOutput, crate::error::DeleteListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_listener_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DenyCustomRoutingTraffic {
 impl aws_smithy_http::response::ParseStrictResponse for DenyCustomRoutingTraffic {
                 type Output = std::result::Result<crate::output::DenyCustomRoutingTrafficOutput, crate::error::DenyCustomRoutingTrafficError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deny_custom_routing_traffic_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeprovisionByoipCidr {
 impl aws_smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
                 type Output = std::result::Result<crate::output::DeprovisionByoipCidrOutput, crate::error::DeprovisionByoipCidrError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprovision_byoip_cidr_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAccelerator {
                 type Output = std::result::Result<crate::output::DescribeAcceleratorOutput, crate::error::DescribeAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_accelerator_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeAcceleratorAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorAttributes {
                 type Output = std::result::Result<crate::output::DescribeAcceleratorAttributesOutput, crate::error::DescribeAcceleratorAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_accelerator_attributes_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeCustomRoutingAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAccelerator {
                 type Output = std::result::Result<crate::output::DescribeCustomRoutingAcceleratorOutput, crate::error::DescribeCustomRoutingAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_routing_accelerator_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribeCustomRoutingAcceleratorAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAcceleratorAttributes {
                 type Output = std::result::Result<crate::output::DescribeCustomRoutingAcceleratorAttributesOutput, crate::error::DescribeCustomRoutingAcceleratorAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_routing_accelerator_attributes_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeCustomRoutingEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingEndpointGroup {
                 type Output = std::result::Result<crate::output::DescribeCustomRoutingEndpointGroupOutput, crate::error::DescribeCustomRoutingEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_routing_endpoint_group_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeCustomRoutingListener {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingListener {
                 type Output = std::result::Result<crate::output::DescribeCustomRoutingListenerOutput, crate::error::DescribeCustomRoutingListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_routing_listener_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpointGroup {
                 type Output = std::result::Result<crate::output::DescribeEndpointGroupOutput, crate::error::DescribeEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_endpoint_group_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeListener {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeListener {
                 type Output = std::result::Result<crate::output::DescribeListenerOutput, crate::error::DescribeListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_listener_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListAccelerators {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccelerators {
                 type Output = std::result::Result<crate::output::ListAcceleratorsOutput, crate::error::ListAcceleratorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_accelerators_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListByoipCidrs {
 impl aws_smithy_http::response::ParseStrictResponse for ListByoipCidrs {
                 type Output = std::result::Result<crate::output::ListByoipCidrsOutput, crate::error::ListByoipCidrsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_byoip_cidrs_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListCustomRoutingAccelerators {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingAccelerators {
                 type Output = std::result::Result<crate::output::ListCustomRoutingAcceleratorsOutput, crate::error::ListCustomRoutingAcceleratorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_routing_accelerators_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListCustomRoutingEndpointGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingEndpointGroups {
                 type Output = std::result::Result<crate::output::ListCustomRoutingEndpointGroupsOutput, crate::error::ListCustomRoutingEndpointGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_routing_endpoint_groups_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListCustomRoutingListeners {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingListeners {
                 type Output = std::result::Result<crate::output::ListCustomRoutingListenersOutput, crate::error::ListCustomRoutingListenersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_routing_listeners_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListCustomRoutingPortMappings {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMappings {
                 type Output = std::result::Result<crate::output::ListCustomRoutingPortMappingsOutput, crate::error::ListCustomRoutingPortMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_routing_port_mappings_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListCustomRoutingPortMappingsByDestination {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMappingsByDestination {
                 type Output = std::result::Result<crate::output::ListCustomRoutingPortMappingsByDestinationOutput, crate::error::ListCustomRoutingPortMappingsByDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_routing_port_mappings_by_destination_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListEndpointGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListEndpointGroups {
                 type Output = std::result::Result<crate::output::ListEndpointGroupsOutput, crate::error::ListEndpointGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_endpoint_groups_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListListeners {
 impl aws_smithy_http::response::ParseStrictResponse for ListListeners {
                 type Output = std::result::Result<crate::output::ListListenersOutput, crate::error::ListListenersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_listeners_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ProvisionByoipCidr {
 impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
                 type Output = std::result::Result<crate::output::ProvisionByoipCidrOutput, crate::error::ProvisionByoipCidrError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_provision_byoip_cidr_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl RemoveCustomRoutingEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveCustomRoutingEndpoints {
                 type Output = std::result::Result<crate::output::RemoveCustomRoutingEndpointsOutput, crate::error::RemoveCustomRoutingEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_custom_routing_endpoints_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl RemoveEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveEndpoints {
                 type Output = std::result::Result<crate::output::RemoveEndpointsOutput, crate::error::RemoveEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_endpoints_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl UpdateAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAccelerator {
                 type Output = std::result::Result<crate::output::UpdateAcceleratorOutput, crate::error::UpdateAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_accelerator_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl UpdateAcceleratorAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAcceleratorAttributes {
                 type Output = std::result::Result<crate::output::UpdateAcceleratorAttributesOutput, crate::error::UpdateAcceleratorAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_accelerator_attributes_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl UpdateCustomRoutingAccelerator {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAccelerator {
                 type Output = std::result::Result<crate::output::UpdateCustomRoutingAcceleratorOutput, crate::error::UpdateCustomRoutingAcceleratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_custom_routing_accelerator_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl UpdateCustomRoutingAcceleratorAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAcceleratorAttributes {
                 type Output = std::result::Result<crate::output::UpdateCustomRoutingAcceleratorAttributesOutput, crate::error::UpdateCustomRoutingAcceleratorAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_custom_routing_accelerator_attributes_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl UpdateCustomRoutingListener {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingListener {
                 type Output = std::result::Result<crate::output::UpdateCustomRoutingListenerOutput, crate::error::UpdateCustomRoutingListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_custom_routing_listener_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateEndpointGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointGroup {
                 type Output = std::result::Result<crate::output::UpdateEndpointGroupOutput, crate::error::UpdateEndpointGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_endpoint_group_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdateListener {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateListener {
                 type Output = std::result::Result<crate::output::UpdateListenerOutput, crate::error::UpdateListenerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_listener_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl WithdrawByoipCidr {
 impl aws_smithy_http::response::ParseStrictResponse for WithdrawByoipCidr {
                 type Output = std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_withdraw_byoip_cidr_error(response)
                      } else {

@@ -9,6 +9,7 @@ pub struct InvokeEndpointAsyncOutput  {
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InvokeEndpointAsyncOutput {
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
@@ -20,6 +21,11 @@ impl InvokeEndpointAsyncOutput {
         self.output_location.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InvokeEndpointAsyncOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
 pub mod invoke_endpoint_async_output {
     
@@ -29,6 +35,7 @@ pub mod invoke_endpoint_async_output {
     pub struct Builder {
         pub(crate) inference_id: std::option::Option<std::string::String>,
         pub(crate) output_location: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
@@ -49,6 +56,15 @@ pub mod invoke_endpoint_async_output {
         pub fn set_output_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_location = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
         pub fn build(self) -> crate::output::InvokeEndpointAsyncOutput {
             crate::output::InvokeEndpointAsyncOutput {
@@ -56,6 +72,7 @@ pub mod invoke_endpoint_async_output {
                 ,
                 output_location: self.output_location
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -89,6 +106,7 @@ pub struct InvokeEndpointOutput  {
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
     #[doc(hidden)]
     pub custom_attributes: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InvokeEndpointOutput {
     /// <p>Includes the inference provided by the model. </p> 
@@ -119,9 +137,15 @@ impl  std::fmt::Debug for InvokeEndpointOutput  {
         formatter.field("content_type", &self.content_type);
         formatter.field("invoked_production_variant", &self.invoked_production_variant);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for InvokeEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
 pub mod invoke_endpoint_output {
     
@@ -133,6 +157,7 @@ pub mod invoke_endpoint_output {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) invoked_production_variant: std::option::Option<std::string::String>,
         pub(crate) custom_attributes: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Includes the inference provided by the model. </p> 
@@ -179,6 +204,15 @@ pub mod invoke_endpoint_output {
         pub fn set_custom_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
         pub fn build(self) -> crate::output::InvokeEndpointOutput {
             crate::output::InvokeEndpointOutput {
@@ -190,6 +224,7 @@ pub mod invoke_endpoint_output {
                 ,
                 custom_attributes: self.custom_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -200,6 +235,7 @@ pub mod invoke_endpoint_output {
             formatter.field("content_type", &self.content_type);
             formatter.field("invoked_production_variant", &self.invoked_production_variant);
             formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

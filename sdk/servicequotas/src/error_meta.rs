@@ -37,15 +37,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You've exceeded the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -75,22 +68,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateServiceQuo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AssociateServiceQuotaTemplateError> for Error {
     fn from(err: crate::error::AssociateServiceQuotaTemplateError) -> Self {
-        match err.kind {
-            crate::error::AssociateServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::AssociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AssociateServiceQuotaTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::AssociateServiceQuotaTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -98,23 +96,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteServiceQuotaI
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError> for Error {
     fn from(err: crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError) -> Self {
-        match err.kind {
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -122,22 +125,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateService
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DisassociateServiceQuotaTemplateError> for Error {
     fn from(err: crate::error::DisassociateServiceQuotaTemplateError) -> Self {
-        match err.kind {
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::DisassociateServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DisassociateServiceQuotaTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DisassociateServiceQuotaTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -145,22 +153,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAssociationForSe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAssociationForServiceQuotaTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetAssociationForServiceQuotaTemplateError> for Error {
     fn from(err: crate::error::GetAssociationForServiceQuotaTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetAssociationForServiceQuotaTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetAssociationForServiceQuotaTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::ServiceQuotaTemplateNotInUseException(inner) => Error::ServiceQuotaTemplateNotInUseException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetAssociationForServiceQuotaTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -168,19 +181,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAWSDefaultServic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetAWSDefaultServiceQuotaError> for Error {
     fn from(err: crate::error::GetAWSDefaultServiceQuotaError) -> Self {
-        match err.kind {
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetAWSDefaultServiceQuotaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetAWSDefaultServiceQuotaError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetAWSDefaultServiceQuotaError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::GetAWSDefaultServiceQuotaError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::GetAWSDefaultServiceQuotaError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::GetAWSDefaultServiceQuotaError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetAWSDefaultServiceQuotaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -188,19 +206,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRequestedService
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetRequestedServiceQuotaChangeError> for Error {
     fn from(err: crate::error::GetRequestedServiceQuotaChangeError) -> Self {
-        match err.kind {
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetRequestedServiceQuotaChangeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetRequestedServiceQuotaChangeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetRequestedServiceQuotaChangeError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::GetRequestedServiceQuotaChangeError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::GetRequestedServiceQuotaChangeError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::GetRequestedServiceQuotaChangeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetRequestedServiceQuotaChangeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -208,19 +231,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetServiceQuotaError> for Error {
     fn from(err: crate::error::GetServiceQuotaError) -> Self {
-        match err.kind {
-            crate::error::GetServiceQuotaErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetServiceQuotaErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::GetServiceQuotaErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::GetServiceQuotaErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetServiceQuotaErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetServiceQuotaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetServiceQuotaError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetServiceQuotaError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::GetServiceQuotaError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::GetServiceQuotaError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::GetServiceQuotaError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetServiceQuotaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -228,23 +256,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaIncr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaIncreaseRequestFromTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetServiceQuotaIncreaseRequestFromTemplateError> for Error {
     fn from(err: crate::error::GetServiceQuotaIncreaseRequestFromTemplateError) -> Self {
-        match err.kind {
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -252,20 +285,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAWSDefaultServi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListAWSDefaultServiceQuotasError> for Error {
     fn from(err: crate::error::ListAWSDefaultServiceQuotasError) -> Self {
-        match err.kind {
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListAWSDefaultServiceQuotasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListAWSDefaultServiceQuotasError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListAWSDefaultServiceQuotasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -273,20 +311,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRequestedServic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRequestedServiceQuotaChangeHistoryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListRequestedServiceQuotaChangeHistoryError> for Error {
     fn from(err: crate::error::ListRequestedServiceQuotaChangeHistoryError) -> Self {
-        match err.kind {
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -294,20 +337,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRequestedServic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError> for Error {
     fn from(err: crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError) -> Self {
-        match err.kind {
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -315,22 +363,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListServiceQuotaInc
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListServiceQuotaIncreaseRequestsInTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListServiceQuotaIncreaseRequestsInTemplateError> for Error {
     fn from(err: crate::error::ListServiceQuotaIncreaseRequestsInTemplateError) -> Self {
-        match err.kind {
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -338,20 +391,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListServiceQuotasEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListServiceQuotasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListServiceQuotasError> for Error {
     fn from(err: crate::error::ListServiceQuotasError) -> Self {
-        match err.kind {
-            crate::error::ListServiceQuotasErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListServiceQuotasErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListServiceQuotasErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::error::ListServiceQuotasErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::ListServiceQuotasErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListServiceQuotasErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListServiceQuotasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListServiceQuotasError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListServiceQuotasError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListServiceQuotasError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListServiceQuotasError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::ListServiceQuotasError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListServiceQuotasError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListServiceQuotasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -359,19 +417,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListServicesError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListServicesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListServicesError> for Error {
     fn from(err: crate::error::ListServicesError) -> Self {
-        match err.kind {
-            crate::error::ListServicesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListServicesErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListServicesErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
-            crate::error::ListServicesErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListServicesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListServicesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListServicesError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListServicesError::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
+            crate::error::ListServicesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListServicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -379,19 +442,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTagsForResourceErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::ListTagsForResourceErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTagsForResourceError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::ListTagsForResourceError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::ListTagsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::ListTagsForResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -399,24 +467,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutServiceQuotaIncr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError> for Error {
     fn from(err: crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError) -> Self {
-        match err.kind {
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::QuotaExceededException(inner) => Error::QuotaExceededException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::QuotaExceededException(inner) => Error::QuotaExceededException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::TemplatesNotAvailableInRegionException(inner) => Error::TemplatesNotAvailableInRegionException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -424,23 +497,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RequestServiceQuota
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RequestServiceQuotaIncreaseError> for Error {
     fn from(err: crate::error::RequestServiceQuotaIncreaseError) -> Self {
-        match err.kind {
-            crate::error::RequestServiceQuotaIncreaseErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::InvalidResourceStateException(inner) => Error::InvalidResourceStateException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::QuotaExceededException(inner) => Error::QuotaExceededException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::RequestServiceQuotaIncreaseErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RequestServiceQuotaIncreaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::InvalidResourceStateException(inner) => Error::InvalidResourceStateException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::QuotaExceededException(inner) => Error::QuotaExceededException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::RequestServiceQuotaIncreaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -448,21 +526,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TagResourceErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::TagResourceErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::TagResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::TagResourceErrorKind::TagPolicyViolationException(inner) => Error::TagPolicyViolationException(inner),
-            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::TagResourceError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::TagResourceError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::TagResourceError::TagPolicyViolationException(inner) => Error::TagPolicyViolationException(inner),
+            crate::error::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -470,21 +553,50 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UntagResourceErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
-            crate::error::UntagResourceErrorKind::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
-            crate::error::UntagResourceErrorKind::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UntagResourceError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::error::UntagResourceError::NoSuchResourceException(inner) => Error::NoSuchResourceException(inner),
+            crate::error::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::error::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AwsServiceAccessNotEnabledException(e) => e.request_id(),
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::DependencyAccessDeniedException(e) => e.request_id(),
+            Self::IllegalArgumentException(e) => e.request_id(),
+            Self::InvalidPaginationTokenException(e) => e.request_id(),
+            Self::InvalidResourceStateException(e) => e.request_id(),
+            Self::NoAvailableOrganizationException(e) => e.request_id(),
+            Self::NoSuchResourceException(e) => e.request_id(),
+            Self::OrganizationNotInAllFeaturesModeException(e) => e.request_id(),
+            Self::QuotaExceededException(e) => e.request_id(),
+            Self::ResourceAlreadyExistsException(e) => e.request_id(),
+            Self::ServiceException(e) => e.request_id(),
+            Self::ServiceQuotaTemplateNotInUseException(e) => e.request_id(),
+            Self::TagPolicyViolationException(e) => e.request_id(),
+            Self::TemplatesNotAvailableInRegionException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

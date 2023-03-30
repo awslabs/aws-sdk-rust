@@ -22,6 +22,7 @@ impl CreateBudget {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBudget {
                 type Output = std::result::Result<crate::output::CreateBudgetOutput, crate::error::CreateBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_budget_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateBudgetAction {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBudgetAction {
                 type Output = std::result::Result<crate::output::CreateBudgetActionOutput, crate::error::CreateBudgetActionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_budget_action_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateNotification {
 impl aws_smithy_http::response::ParseStrictResponse for CreateNotification {
                 type Output = std::result::Result<crate::output::CreateNotificationOutput, crate::error::CreateNotificationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_notification_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriber {
                 type Output = std::result::Result<crate::output::CreateSubscriberOutput, crate::error::CreateSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_subscriber_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteBudget {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBudget {
                 type Output = std::result::Result<crate::output::DeleteBudgetOutput, crate::error::DeleteBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_budget_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteBudgetAction {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBudgetAction {
                 type Output = std::result::Result<crate::output::DeleteBudgetActionOutput, crate::error::DeleteBudgetActionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_budget_action_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteNotification {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteNotification {
                 type Output = std::result::Result<crate::output::DeleteNotificationOutput, crate::error::DeleteNotificationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_notification_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
                 type Output = std::result::Result<crate::output::DeleteSubscriberOutput, crate::error::DeleteSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_subscriber_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeBudget {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudget {
                 type Output = std::result::Result<crate::output::DescribeBudgetOutput, crate::error::DescribeBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeBudgetAction {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetAction {
                 type Output = std::result::Result<crate::output::DescribeBudgetActionOutput, crate::error::DescribeBudgetActionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_action_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeBudgetActionHistories {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionHistories {
                 type Output = std::result::Result<crate::output::DescribeBudgetActionHistoriesOutput, crate::error::DescribeBudgetActionHistoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_action_histories_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeBudgetActionsForAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsForAccount {
                 type Output = std::result::Result<crate::output::DescribeBudgetActionsForAccountOutput, crate::error::DescribeBudgetActionsForAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_actions_for_account_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeBudgetActionsForBudget {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsForBudget {
                 type Output = std::result::Result<crate::output::DescribeBudgetActionsForBudgetOutput, crate::error::DescribeBudgetActionsForBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_actions_for_budget_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeBudgetNotificationsForAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetNotificationsForAccount {
                 type Output = std::result::Result<crate::output::DescribeBudgetNotificationsForAccountOutput, crate::error::DescribeBudgetNotificationsForAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_notifications_for_account_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeBudgetPerformanceHistory {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetPerformanceHistory {
                 type Output = std::result::Result<crate::output::DescribeBudgetPerformanceHistoryOutput, crate::error::DescribeBudgetPerformanceHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budget_performance_history_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeBudgets {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgets {
                 type Output = std::result::Result<crate::output::DescribeBudgetsOutput, crate::error::DescribeBudgetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_budgets_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeNotificationsForBudget {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationsForBudget {
                 type Output = std::result::Result<crate::output::DescribeNotificationsForBudgetOutput, crate::error::DescribeNotificationsForBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_notifications_for_budget_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeSubscribersForNotification {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSubscribersForNotification {
                 type Output = std::result::Result<crate::output::DescribeSubscribersForNotificationOutput, crate::error::DescribeSubscribersForNotificationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_subscribers_for_notification_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ExecuteBudgetAction {
 impl aws_smithy_http::response::ParseStrictResponse for ExecuteBudgetAction {
                 type Output = std::result::Result<crate::output::ExecuteBudgetActionOutput, crate::error::ExecuteBudgetActionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_execute_budget_action_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UpdateBudget {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBudget {
                 type Output = std::result::Result<crate::output::UpdateBudgetOutput, crate::error::UpdateBudgetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_budget_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateBudgetAction {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBudgetAction {
                 type Output = std::result::Result<crate::output::UpdateBudgetActionOutput, crate::error::UpdateBudgetActionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_budget_action_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UpdateNotification {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateNotification {
                 type Output = std::result::Result<crate::output::UpdateNotificationOutput, crate::error::UpdateNotificationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_notification_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UpdateSubscriber {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscriber {
                 type Output = std::result::Result<crate::output::UpdateSubscriberOutput, crate::error::UpdateSubscriberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_subscriber_error(response)
                      } else {

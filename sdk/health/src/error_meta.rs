@@ -9,15 +9,8 @@ pub enum Error {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,15 +26,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAffectedAcc
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAffectedAccountsForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeAffectedAccountsForOrganizationError> for Error {
     fn from(err: crate::error::DescribeAffectedAccountsForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeAffectedAccountsForOrganizationError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeAffectedAccountsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -49,16 +47,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAffectedEnt
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAffectedEntitiesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeAffectedEntitiesError> for Error {
     fn from(err: crate::error::DescribeAffectedEntitiesError) -> Self {
-        match err.kind {
-            crate::error::DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeAffectedEntitiesErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeAffectedEntitiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeAffectedEntitiesError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeAffectedEntitiesError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeAffectedEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -66,16 +69,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAffectedEnt
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAffectedEntitiesForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeAffectedEntitiesForOrganizationError> for Error {
     fn from(err: crate::error::DescribeAffectedEntitiesForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeAffectedEntitiesForOrganizationError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeAffectedEntitiesForOrganizationError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeAffectedEntitiesForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -83,14 +91,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEntityAggre
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEntityAggregatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEntityAggregatesError> for Error {
     fn from(err: crate::error::DescribeEntityAggregatesError) -> Self {
-        match err.kind {
-            crate::error::DescribeEntityAggregatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEntityAggregatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -98,15 +111,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventAggreg
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventAggregatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventAggregatesError> for Error {
     fn from(err: crate::error::DescribeEventAggregatesError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventAggregatesErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeEventAggregatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventAggregatesError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeEventAggregatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -114,15 +132,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventDetail
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventDetailsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventDetailsError> for Error {
     fn from(err: crate::error::DescribeEventDetailsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventDetailsErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeEventDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventDetailsError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeEventDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -130,15 +153,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventDetail
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventDetailsForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventDetailsForOrganizationError> for Error {
     fn from(err: crate::error::DescribeEventDetailsForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeEventDetailsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventDetailsForOrganizationError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeEventDetailsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -146,16 +174,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventsError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventsError> for Error {
     fn from(err: crate::error::DescribeEventsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventsErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeEventsErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventsError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeEventsError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -163,16 +196,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventsForOr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventsForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventsForOrganizationError> for Error {
     fn from(err: crate::error::DescribeEventsForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeEventsForOrganizationErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeEventsForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventsForOrganizationError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeEventsForOrganizationError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeEventsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -180,16 +218,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEventTypesE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEventTypesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEventTypesError> for Error {
     fn from(err: crate::error::DescribeEventTypesError) -> Self {
-        match err.kind {
-            crate::error::DescribeEventTypesErrorKind::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
-            crate::error::DescribeEventTypesErrorKind::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
-            crate::error::DescribeEventTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEventTypesError::InvalidPaginationToken(inner) => Error::InvalidPaginationToken(inner),
+            crate::error::DescribeEventTypesError::UnsupportedLocale(inner) => Error::UnsupportedLocale(inner),
+            crate::error::DescribeEventTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -197,14 +240,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHealthServi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeHealthServiceStatusForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeHealthServiceStatusForOrganizationError> for Error {
     fn from(err: crate::error::DescribeHealthServiceStatusForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeHealthServiceStatusForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -212,15 +260,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableHealthServic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableHealthServiceAccessForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DisableHealthServiceAccessForOrganizationError> for Error {
     fn from(err: crate::error::DisableHealthServiceAccessForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DisableHealthServiceAccessForOrganizationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DisableHealthServiceAccessForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -228,17 +281,32 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableHealthService
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableHealthServiceAccessForOrganizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::EnableHealthServiceAccessForOrganizationError> for Error {
     fn from(err: crate::error::EnableHealthServiceAccessForOrganizationError) -> Self {
-        match err.kind {
-            crate::error::EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::EnableHealthServiceAccessForOrganizationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::EnableHealthServiceAccessForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::InvalidPaginationToken(e) => e.request_id(),
+            Self::UnsupportedLocale(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

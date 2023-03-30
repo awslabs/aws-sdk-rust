@@ -9,6 +9,7 @@ pub struct UpdateEnrollmentStatusOutput  {
     /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
@@ -20,6 +21,11 @@ impl UpdateEnrollmentStatusOutput {
         self.status_reason.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEnrollmentStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
 pub mod update_enrollment_status_output {
     
@@ -29,6 +35,7 @@ pub mod update_enrollment_status_output {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The enrollment status of the account.</p>
@@ -49,6 +56,15 @@ pub mod update_enrollment_status_output {
         pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_reason = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
         pub fn build(self) -> crate::output::UpdateEnrollmentStatusOutput {
             crate::output::UpdateEnrollmentStatusOutput {
@@ -56,6 +72,7 @@ pub mod update_enrollment_status_output {
                 ,
                 status_reason: self.status_reason
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -73,7 +90,13 @@ impl UpdateEnrollmentStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecommendationPreferencesOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutRecommendationPreferencesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
 pub mod put_recommendation_preferences_output {
     
@@ -81,11 +104,22 @@ pub mod put_recommendation_preferences_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::PutRecommendationPreferencesOutput {
             crate::output::PutRecommendationPreferencesOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -110,6 +144,7 @@ pub struct GetRecommendationSummariesOutput  {
     /// <p>An array of objects that summarize a recommendation.</p>
     #[doc(hidden)]
     pub recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
+    _request_id: Option<String>,
 }
 impl GetRecommendationSummariesOutput {
     /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
@@ -122,6 +157,11 @@ impl GetRecommendationSummariesOutput {
         self.recommendation_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecommendationSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
 pub mod get_recommendation_summaries_output {
     
@@ -131,6 +171,7 @@ pub mod get_recommendation_summaries_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
@@ -159,6 +200,15 @@ pub mod get_recommendation_summaries_output {
         pub fn set_recommendation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>) -> Self {
             self.recommendation_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
         pub fn build(self) -> crate::output::GetRecommendationSummariesOutput {
             crate::output::GetRecommendationSummariesOutput {
@@ -166,6 +216,7 @@ pub mod get_recommendation_summaries_output {
                 ,
                 recommendation_summaries: self.recommendation_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -190,6 +241,7 @@ pub struct GetRecommendationPreferencesOutput  {
     /// <p>An array of objects that describe recommendation preferences.</p>
     #[doc(hidden)]
     pub recommendation_preferences_details: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>,
+    _request_id: Option<String>,
 }
 impl GetRecommendationPreferencesOutput {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p> 
@@ -202,6 +254,11 @@ impl GetRecommendationPreferencesOutput {
         self.recommendation_preferences_details.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecommendationPreferencesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
 pub mod get_recommendation_preferences_output {
     
@@ -211,6 +268,7 @@ pub mod get_recommendation_preferences_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recommendation_preferences_details: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of recommendation preferences.</p> 
@@ -239,6 +297,15 @@ pub mod get_recommendation_preferences_output {
         pub fn set_recommendation_preferences_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationPreferencesDetail>>) -> Self {
             self.recommendation_preferences_details = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::GetRecommendationPreferencesOutput {
             crate::output::GetRecommendationPreferencesOutput {
@@ -246,6 +313,7 @@ pub mod get_recommendation_preferences_output {
                 ,
                 recommendation_preferences_details: self.recommendation_preferences_details
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -270,6 +338,7 @@ pub struct GetLambdaFunctionRecommendationsOutput  {
     /// <p>An array of objects that describe function recommendations.</p>
     #[doc(hidden)]
     pub lambda_function_recommendations: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>,
+    _request_id: Option<String>,
 }
 impl GetLambdaFunctionRecommendationsOutput {
     /// <p>The token to use to advance to the next page of function recommendations.</p> 
@@ -282,6 +351,11 @@ impl GetLambdaFunctionRecommendationsOutput {
         self.lambda_function_recommendations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetLambdaFunctionRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
 pub mod get_lambda_function_recommendations_output {
     
@@ -291,6 +365,7 @@ pub mod get_lambda_function_recommendations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) lambda_function_recommendations: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of function recommendations.</p> 
@@ -319,6 +394,15 @@ pub mod get_lambda_function_recommendations_output {
         pub fn set_lambda_function_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionRecommendation>>) -> Self {
             self.lambda_function_recommendations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
         pub fn build(self) -> crate::output::GetLambdaFunctionRecommendationsOutput {
             crate::output::GetLambdaFunctionRecommendationsOutput {
@@ -326,6 +410,7 @@ pub mod get_lambda_function_recommendations_output {
                 ,
                 lambda_function_recommendations: self.lambda_function_recommendations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -350,6 +435,7 @@ pub struct GetEnrollmentStatusesForOrganizationOutput  {
     /// <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
     /// <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
@@ -362,6 +448,11 @@ impl GetEnrollmentStatusesForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEnrollmentStatusesForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
 pub mod get_enrollment_statuses_for_organization_output {
     
@@ -371,6 +462,7 @@ pub mod get_enrollment_statuses_for_organization_output {
     pub struct Builder {
         pub(crate) account_enrollment_statuses: std::option::Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_enrollment_statuses`.
@@ -399,6 +491,15 @@ pub mod get_enrollment_statuses_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
         pub fn build(self) -> crate::output::GetEnrollmentStatusesForOrganizationOutput {
             crate::output::GetEnrollmentStatusesForOrganizationOutput {
@@ -406,6 +507,7 @@ pub mod get_enrollment_statuses_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -439,6 +541,7 @@ pub struct GetEnrollmentStatusOutput  {
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
     #[doc(hidden)]
     pub number_of_member_accounts_opted_in: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
@@ -463,6 +566,11 @@ impl GetEnrollmentStatusOutput {
         self.number_of_member_accounts_opted_in
     }
 }
+impl aws_http::request_id::RequestId for GetEnrollmentStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
 pub mod get_enrollment_status_output {
     
@@ -475,6 +583,7 @@ pub mod get_enrollment_status_output {
         pub(crate) member_accounts_enrolled: std::option::Option<bool>,
         pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) number_of_member_accounts_opted_in: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The enrollment status of the account.</p>
@@ -524,6 +633,15 @@ pub mod get_enrollment_status_output {
         pub fn set_number_of_member_accounts_opted_in(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_member_accounts_opted_in = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
         pub fn build(self) -> crate::output::GetEnrollmentStatusOutput {
             crate::output::GetEnrollmentStatusOutput {
@@ -538,6 +656,7 @@ pub mod get_enrollment_status_output {
                 ,
                 number_of_member_accounts_opted_in: self.number_of_member_accounts_opted_in
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -567,6 +686,7 @@ pub struct GetEffectiveRecommendationPreferencesOutput  {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
     pub external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
+    _request_id: Option<String>,
 }
 impl GetEffectiveRecommendationPreferencesOutput {
     /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p> 
@@ -584,6 +704,11 @@ impl GetEffectiveRecommendationPreferencesOutput {
         self.external_metrics_preference.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEffectiveRecommendationPreferencesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
 pub mod get_effective_recommendation_preferences_output {
     
@@ -593,6 +718,7 @@ pub mod get_effective_recommendation_preferences_output {
     pub struct Builder {
         pub(crate) enhanced_infrastructure_metrics: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         pub(crate) external_metrics_preference: std::option::Option<crate::model::ExternalMetricsPreference>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p> 
@@ -625,6 +751,15 @@ pub mod get_effective_recommendation_preferences_output {
         pub fn set_external_metrics_preference(mut self, input: std::option::Option<crate::model::ExternalMetricsPreference>) -> Self {
             self.external_metrics_preference = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::GetEffectiveRecommendationPreferencesOutput {
             crate::output::GetEffectiveRecommendationPreferencesOutput {
@@ -632,6 +767,7 @@ pub mod get_effective_recommendation_preferences_output {
                 ,
                 external_metrics_preference: self.external_metrics_preference
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -658,6 +794,7 @@ pub struct GetEcsServiceRecommendationsOutput  {
     /// <p> An array of objects that describe errors of the request. </p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationsOutput {
     /// <p> The token to advance to the next page of ECS service recommendations. </p>
@@ -673,6 +810,11 @@ impl GetEcsServiceRecommendationsOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEcsServiceRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
 pub mod get_ecs_service_recommendations_output {
     
@@ -683,6 +825,7 @@ pub mod get_ecs_service_recommendations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) ecs_service_recommendations: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendation>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The token to advance to the next page of ECS service recommendations. </p>
@@ -724,6 +867,15 @@ pub mod get_ecs_service_recommendations_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
         pub fn build(self) -> crate::output::GetEcsServiceRecommendationsOutput {
             crate::output::GetEcsServiceRecommendationsOutput {
@@ -733,6 +885,7 @@ pub mod get_ecs_service_recommendations_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -753,6 +906,7 @@ pub struct GetEcsServiceRecommendationProjectedMetricsOutput  {
     /// <p> An array of objects that describes the projected metrics. </p>
     #[doc(hidden)]
     pub recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>>,
+    _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsOutput {
     /// <p> An array of objects that describes the projected metrics. </p>
@@ -760,6 +914,11 @@ impl GetEcsServiceRecommendationProjectedMetricsOutput {
         self.recommended_option_projected_metrics.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEcsServiceRecommendationProjectedMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
 pub mod get_ecs_service_recommendation_projected_metrics_output {
     
@@ -768,6 +927,7 @@ pub mod get_ecs_service_recommendation_projected_metrics_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recommended_option_projected_metrics`.
@@ -785,11 +945,21 @@ pub mod get_ecs_service_recommendation_projected_metrics_output {
         pub fn set_recommended_option_projected_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsServiceRecommendedOptionProjectedMetric>>) -> Self {
             self.recommended_option_projected_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
         pub fn build(self) -> crate::output::GetEcsServiceRecommendationProjectedMetricsOutput {
             crate::output::GetEcsServiceRecommendationProjectedMetricsOutput {
                 recommended_option_projected_metrics: self.recommended_option_projected_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -810,6 +980,7 @@ pub struct GetEc2RecommendationProjectedMetricsOutput  {
     /// <p>An array of objects that describes projected metrics.</p>
     #[doc(hidden)]
     pub recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
+    _request_id: Option<String>,
 }
 impl GetEc2RecommendationProjectedMetricsOutput {
     /// <p>An array of objects that describes projected metrics.</p>
@@ -817,6 +988,11 @@ impl GetEc2RecommendationProjectedMetricsOutput {
         self.recommended_option_projected_metrics.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEc2RecommendationProjectedMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
 pub mod get_ec2_recommendation_projected_metrics_output {
     
@@ -825,6 +1001,7 @@ pub mod get_ec2_recommendation_projected_metrics_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_option_projected_metrics: std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recommended_option_projected_metrics`.
@@ -842,11 +1019,21 @@ pub mod get_ec2_recommendation_projected_metrics_output {
         pub fn set_recommended_option_projected_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendedOptionProjectedMetric>>) -> Self {
             self.recommended_option_projected_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
         pub fn build(self) -> crate::output::GetEc2RecommendationProjectedMetricsOutput {
             crate::output::GetEc2RecommendationProjectedMetricsOutput {
                 recommended_option_projected_metrics: self.recommended_option_projected_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -875,6 +1062,7 @@ pub struct GetEc2InstanceRecommendationsOutput  {
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    _request_id: Option<String>,
 }
 impl GetEc2InstanceRecommendationsOutput {
     /// <p>The token to use to advance to the next page of instance recommendations.</p> 
@@ -892,6 +1080,11 @@ impl GetEc2InstanceRecommendationsOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEc2InstanceRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
 pub mod get_ec2_instance_recommendations_output {
     
@@ -902,6 +1095,7 @@ pub mod get_ec2_instance_recommendations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) instance_recommendations: std::option::Option<std::vec::Vec<crate::model::InstanceRecommendation>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of instance recommendations.</p> 
@@ -947,6 +1141,15 @@ pub mod get_ec2_instance_recommendations_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
         pub fn build(self) -> crate::output::GetEc2InstanceRecommendationsOutput {
             crate::output::GetEc2InstanceRecommendationsOutput {
@@ -956,6 +1159,7 @@ pub mod get_ec2_instance_recommendations_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -984,6 +1188,7 @@ pub struct GetEbsVolumeRecommendationsOutput  {
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    _request_id: Option<String>,
 }
 impl GetEbsVolumeRecommendationsOutput {
     /// <p>The token to use to advance to the next page of volume recommendations.</p> 
@@ -1001,6 +1206,11 @@ impl GetEbsVolumeRecommendationsOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEbsVolumeRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
 pub mod get_ebs_volume_recommendations_output {
     
@@ -1011,6 +1221,7 @@ pub mod get_ebs_volume_recommendations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) volume_recommendations: std::option::Option<std::vec::Vec<crate::model::VolumeRecommendation>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of volume recommendations.</p> 
@@ -1056,6 +1267,15 @@ pub mod get_ebs_volume_recommendations_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
         pub fn build(self) -> crate::output::GetEbsVolumeRecommendationsOutput {
             crate::output::GetEbsVolumeRecommendationsOutput {
@@ -1065,6 +1285,7 @@ pub mod get_ebs_volume_recommendations_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1093,6 +1314,7 @@ pub struct GetAutoScalingGroupRecommendationsOutput  {
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    _request_id: Option<String>,
 }
 impl GetAutoScalingGroupRecommendationsOutput {
     /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p> 
@@ -1110,6 +1332,11 @@ impl GetAutoScalingGroupRecommendationsOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAutoScalingGroupRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
 pub mod get_auto_scaling_group_recommendations_output {
     
@@ -1120,6 +1347,7 @@ pub mod get_auto_scaling_group_recommendations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group_recommendations: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroupRecommendation>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p> 
@@ -1165,6 +1393,15 @@ pub mod get_auto_scaling_group_recommendations_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::GetRecommendationError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
         pub fn build(self) -> crate::output::GetAutoScalingGroupRecommendationsOutput {
             crate::output::GetAutoScalingGroupRecommendationsOutput {
@@ -1174,6 +1411,7 @@ pub mod get_auto_scaling_group_recommendations_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1198,6 +1436,7 @@ pub struct ExportLambdaFunctionRecommendationsOutput  {
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+    _request_id: Option<String>,
 }
 impl ExportLambdaFunctionRecommendationsOutput {
     /// <p>The identification number of the export job.</p> 
@@ -1210,6 +1449,11 @@ impl ExportLambdaFunctionRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportLambdaFunctionRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
 pub mod export_lambda_function_recommendations_output {
     
@@ -1219,6 +1463,7 @@ pub mod export_lambda_function_recommendations_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identification number of the export job.</p> 
@@ -1241,6 +1486,15 @@ pub mod export_lambda_function_recommendations_output {
         pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3_destination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportLambdaFunctionRecommendationsOutput {
             crate::output::ExportLambdaFunctionRecommendationsOutput {
@@ -1248,6 +1502,7 @@ pub mod export_lambda_function_recommendations_output {
                 ,
                 s3_destination: self.s3_destination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1272,6 +1527,7 @@ pub struct ExportEcsServiceRecommendationsOutput  {
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+    _request_id: Option<String>,
 }
 impl ExportEcsServiceRecommendationsOutput {
     /// <p> The identification number of the export job. </p> 
@@ -1284,6 +1540,11 @@ impl ExportEcsServiceRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportEcsServiceRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
 pub mod export_ecs_service_recommendations_output {
     
@@ -1293,6 +1554,7 @@ pub mod export_ecs_service_recommendations_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The identification number of the export job. </p> 
@@ -1315,6 +1577,15 @@ pub mod export_ecs_service_recommendations_output {
         pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3_destination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportEcsServiceRecommendationsOutput {
             crate::output::ExportEcsServiceRecommendationsOutput {
@@ -1322,6 +1593,7 @@ pub mod export_ecs_service_recommendations_output {
                 ,
                 s3_destination: self.s3_destination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1346,6 +1618,7 @@ pub struct ExportEc2InstanceRecommendationsOutput  {
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+    _request_id: Option<String>,
 }
 impl ExportEc2InstanceRecommendationsOutput {
     /// <p>The identification number of the export job.</p> 
@@ -1358,6 +1631,11 @@ impl ExportEc2InstanceRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportEc2InstanceRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
 pub mod export_ec2_instance_recommendations_output {
     
@@ -1367,6 +1645,7 @@ pub mod export_ec2_instance_recommendations_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identification number of the export job.</p> 
@@ -1389,6 +1668,15 @@ pub mod export_ec2_instance_recommendations_output {
         pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3_destination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportEc2InstanceRecommendationsOutput {
             crate::output::ExportEc2InstanceRecommendationsOutput {
@@ -1396,6 +1684,7 @@ pub mod export_ec2_instance_recommendations_output {
                 ,
                 s3_destination: self.s3_destination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1420,6 +1709,7 @@ pub struct ExportEbsVolumeRecommendationsOutput  {
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+    _request_id: Option<String>,
 }
 impl ExportEbsVolumeRecommendationsOutput {
     /// <p>The identification number of the export job.</p> 
@@ -1432,6 +1722,11 @@ impl ExportEbsVolumeRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportEbsVolumeRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
 pub mod export_ebs_volume_recommendations_output {
     
@@ -1441,6 +1736,7 @@ pub mod export_ebs_volume_recommendations_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identification number of the export job.</p> 
@@ -1463,6 +1759,15 @@ pub mod export_ebs_volume_recommendations_output {
         pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3_destination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportEbsVolumeRecommendationsOutput {
             crate::output::ExportEbsVolumeRecommendationsOutput {
@@ -1470,6 +1775,7 @@ pub mod export_ebs_volume_recommendations_output {
                 ,
                 s3_destination: self.s3_destination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1494,6 +1800,7 @@ pub struct ExportAutoScalingGroupRecommendationsOutput  {
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     #[doc(hidden)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
+    _request_id: Option<String>,
 }
 impl ExportAutoScalingGroupRecommendationsOutput {
     /// <p>The identification number of the export job.</p> 
@@ -1506,6 +1813,11 @@ impl ExportAutoScalingGroupRecommendationsOutput {
         self.s3_destination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportAutoScalingGroupRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
 pub mod export_auto_scaling_group_recommendations_output {
     
@@ -1515,6 +1827,7 @@ pub mod export_auto_scaling_group_recommendations_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identification number of the export job.</p> 
@@ -1537,6 +1850,15 @@ pub mod export_auto_scaling_group_recommendations_output {
         pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3_destination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportAutoScalingGroupRecommendationsOutput {
             crate::output::ExportAutoScalingGroupRecommendationsOutput {
@@ -1544,6 +1866,7 @@ pub mod export_auto_scaling_group_recommendations_output {
                 ,
                 s3_destination: self.s3_destination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1568,6 +1891,7 @@ pub struct DescribeRecommendationExportJobsOutput  {
     /// <p>This value is null when there are no more pages of export jobs to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeRecommendationExportJobsOutput {
     /// <p>An array of objects that describe recommendation export jobs.</p>
@@ -1580,6 +1904,11 @@ impl DescribeRecommendationExportJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRecommendationExportJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
 pub mod describe_recommendation_export_jobs_output {
     
@@ -1589,6 +1918,7 @@ pub mod describe_recommendation_export_jobs_output {
     pub struct Builder {
         pub(crate) recommendation_export_jobs: std::option::Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recommendation_export_jobs`.
@@ -1617,6 +1947,15 @@ pub mod describe_recommendation_export_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
         pub fn build(self) -> crate::output::DescribeRecommendationExportJobsOutput {
             crate::output::DescribeRecommendationExportJobsOutput {
@@ -1624,6 +1963,7 @@ pub mod describe_recommendation_export_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1641,7 +1981,13 @@ impl DescribeRecommendationExportJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteRecommendationPreferencesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
 pub mod delete_recommendation_preferences_output {
     
@@ -1649,11 +1995,22 @@ pub mod delete_recommendation_preferences_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::DeleteRecommendationPreferencesOutput {
             crate::output::DeleteRecommendationPreferencesOutput {
+                _request_id: self._request_id,
             }
         }
     }

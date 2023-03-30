@@ -33,6 +33,7 @@ pub struct StartSnapshotOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartSnapshotOutput {
     /// <p>The description of the snapshot.</p>
@@ -89,9 +90,15 @@ impl  std::fmt::Debug for StartSnapshotOutput  {
         formatter.field("tags", &self.tags);
         formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
         formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for StartSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
 pub mod start_snapshot_output {
     
@@ -109,6 +116,7 @@ pub mod start_snapshot_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) parent_snapshot_id: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the snapshot.</p>
@@ -207,6 +215,15 @@ pub mod start_snapshot_output {
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
         pub fn build(self) -> crate::output::StartSnapshotOutput {
             crate::output::StartSnapshotOutput {
@@ -230,6 +247,7 @@ pub mod start_snapshot_output {
                 ,
                 kms_key_arn: self.kms_key_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -246,6 +264,7 @@ pub mod start_snapshot_output {
             formatter.field("tags", &self.tags);
             formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
             formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -269,6 +288,7 @@ pub struct PutSnapshotBlockOutput  {
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
@@ -280,6 +300,11 @@ impl PutSnapshotBlockOutput {
         self.checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutSnapshotBlockOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
 pub mod put_snapshot_block_output {
     
@@ -289,6 +314,7 @@ pub mod put_snapshot_block_output {
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
@@ -309,6 +335,15 @@ pub mod put_snapshot_block_output {
         pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
             self.checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
         pub fn build(self) -> crate::output::PutSnapshotBlockOutput {
             crate::output::PutSnapshotBlockOutput {
@@ -316,6 +351,7 @@ pub mod put_snapshot_block_output {
                 ,
                 checksum_algorithm: self.checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -348,6 +384,7 @@ pub struct ListSnapshotBlocksOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
@@ -379,9 +416,15 @@ impl  std::fmt::Debug for ListSnapshotBlocksOutput  {
         formatter.field("volume_size", &self.volume_size);
         formatter.field("block_size", &self.block_size);
         formatter.field("next_token", &self.next_token);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListSnapshotBlocksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
 pub mod list_snapshot_blocks_output {
     
@@ -394,6 +437,7 @@ pub mod list_snapshot_blocks_output {
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) block_size: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `blocks`.
@@ -447,6 +491,15 @@ pub mod list_snapshot_blocks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
         pub fn build(self) -> crate::output::ListSnapshotBlocksOutput {
             crate::output::ListSnapshotBlocksOutput {
@@ -460,6 +513,7 @@ pub mod list_snapshot_blocks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -471,6 +525,7 @@ pub mod list_snapshot_blocks_output {
             formatter.field("volume_size", &self.volume_size);
             formatter.field("block_size", &self.block_size);
             formatter.field("next_token", &self.next_token);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -503,6 +558,7 @@ pub struct ListChangedBlocksOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
@@ -526,6 +582,11 @@ impl ListChangedBlocksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListChangedBlocksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
 pub mod list_changed_blocks_output {
     
@@ -538,6 +599,7 @@ pub mod list_changed_blocks_output {
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) block_size: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `changed_blocks`.
@@ -591,6 +653,15 @@ pub mod list_changed_blocks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
         pub fn build(self) -> crate::output::ListChangedBlocksOutput {
             crate::output::ListChangedBlocksOutput {
@@ -604,6 +675,7 @@ pub mod list_changed_blocks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -631,6 +703,7 @@ pub struct GetSnapshotBlockOutput  {
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
@@ -657,9 +730,15 @@ impl  std::fmt::Debug for GetSnapshotBlockOutput  {
         formatter.field("block_data", &"*** Sensitive Data Redacted ***");
         formatter.field("checksum", &self.checksum);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetSnapshotBlockOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
 pub mod get_snapshot_block_output {
     
@@ -671,6 +750,7 @@ pub mod get_snapshot_block_output {
         pub(crate) block_data: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The size of the data in the block.</p>
@@ -709,6 +789,15 @@ pub mod get_snapshot_block_output {
         pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
             self.checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
         pub fn build(self) -> crate::output::GetSnapshotBlockOutput {
             crate::output::GetSnapshotBlockOutput {
@@ -721,6 +810,7 @@ pub mod get_snapshot_block_output {
                 ,
                 checksum_algorithm: self.checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -731,6 +821,7 @@ pub mod get_snapshot_block_output {
             formatter.field("block_data", &"*** Sensitive Data Redacted ***");
             formatter.field("checksum", &self.checksum);
             formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -751,6 +842,7 @@ pub struct CompleteSnapshotOutput  {
     /// <p>The status of the snapshot.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
@@ -758,6 +850,11 @@ impl CompleteSnapshotOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CompleteSnapshotOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
 pub mod complete_snapshot_output {
     
@@ -766,6 +863,7 @@ pub mod complete_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the snapshot.</p>
@@ -777,11 +875,21 @@ pub mod complete_snapshot_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
         pub fn build(self) -> crate::output::CompleteSnapshotOutput {
             crate::output::CompleteSnapshotOutput {
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }

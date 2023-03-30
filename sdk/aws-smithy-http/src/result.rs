@@ -13,6 +13,8 @@
 //! `Result` wrapper types for [success](SdkSuccess) and [failure](SdkError) responses.
 
 use crate::operation;
+use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
+use aws_smithy_types::error::ErrorMetadata;
 use aws_smithy_types::retry::ErrorKind;
 use std::error::Error;
 use std::fmt;
@@ -126,8 +128,11 @@ impl<E, R> ServiceError<E, R> {
 ///
 /// This trait exists so that [`SdkError::into_service_error`] can be infallible.
 pub trait CreateUnhandledError {
-    /// Creates an unhandled error variant with the given `source`.
-    fn create_unhandled_error(source: Box<dyn Error + Send + Sync + 'static>) -> Self;
+    /// Creates an unhandled error variant with the given `source` and error metadata.
+    fn create_unhandled_error(
+        source: Box<dyn Error + Send + Sync + 'static>,
+        meta: Option<ErrorMetadata>,
+    ) -> Self;
 }
 
 /// Failed SDK Result
@@ -200,19 +205,21 @@ impl<E, R> SdkError<E, R> {
     ///
     /// ```no_run
     /// # use aws_smithy_http::result::{SdkError, CreateUnhandledError};
-    /// # #[derive(Debug)] enum GetObjectErrorKind { NoSuchKey(()), Other(()) }
-    /// # #[derive(Debug)] struct GetObjectError { kind: GetObjectErrorKind }
+    /// # #[derive(Debug)] enum GetObjectError { NoSuchKey(()), Other(()) }
     /// # impl std::fmt::Display for GetObjectError {
     /// #     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result { unimplemented!() }
     /// # }
     /// # impl std::error::Error for GetObjectError {}
     /// # impl CreateUnhandledError for GetObjectError {
-    /// #     fn create_unhandled_error(_: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self { unimplemented!() }
+    /// #     fn create_unhandled_error(
+    /// #         _: Box<dyn std::error::Error + Send + Sync + 'static>,
+    /// #         _: Option<aws_smithy_types::error::ErrorMetadata>,
+    /// #     ) -> Self { unimplemented!() }
     /// # }
     /// # fn example() -> Result<(), GetObjectError> {
-    /// # let sdk_err = SdkError::service_error(GetObjectError { kind: GetObjectErrorKind::NoSuchKey(()) }, ());
+    /// # let sdk_err = SdkError::service_error(GetObjectError::NoSuchKey(()), ());
     /// match sdk_err.into_service_error() {
-    ///     GetObjectError { kind: GetObjectErrorKind::NoSuchKey(_) } => {
+    ///     GetObjectError::NoSuchKey(_) => {
     ///         // handle NoSuchKey
     ///     }
     ///     err @ _ => return Err(err),
@@ -227,7 +234,7 @@ impl<E, R> SdkError<E, R> {
     {
         match self {
             Self::ServiceError(context) => context.source,
-            _ => E::create_unhandled_error(self.into()),
+            _ => E::create_unhandled_error(self.into(), None),
         }
     }
 
@@ -274,6 +281,21 @@ where
             ResponseError(context) => Some(context.source.as_ref()),
             DispatchFailure(context) => Some(&context.source),
             ServiceError(context) => Some(&context.source),
+        }
+    }
+}
+
+impl<E, R> ProvideErrorMetadata for SdkError<E, R>
+where
+    E: ProvideErrorMetadata,
+{
+    fn meta(&self) -> &aws_smithy_types::Error {
+        match self {
+            Self::ConstructionFailure(_) => &EMPTY_ERROR_METADATA,
+            Self::TimeoutError(_) => &EMPTY_ERROR_METADATA,
+            Self::DispatchFailure(_) => &EMPTY_ERROR_METADATA,
+            Self::ResponseError(_) => &EMPTY_ERROR_METADATA,
+            Self::ServiceError(err) => err.source.meta(),
         }
     }
 }

@@ -22,6 +22,7 @@ impl AcceptGrant {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptGrant {
                 type Output = std::result::Result<crate::output::AcceptGrantOutput, crate::error::AcceptGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_grant_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CheckInLicense {
 impl aws_smithy_http::response::ParseStrictResponse for CheckInLicense {
                 type Output = std::result::Result<crate::output::CheckInLicenseOutput, crate::error::CheckInLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_check_in_license_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CheckoutBorrowLicense {
 impl aws_smithy_http::response::ParseStrictResponse for CheckoutBorrowLicense {
                 type Output = std::result::Result<crate::output::CheckoutBorrowLicenseOutput, crate::error::CheckoutBorrowLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_checkout_borrow_license_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CheckoutLicense {
 impl aws_smithy_http::response::ParseStrictResponse for CheckoutLicense {
                 type Output = std::result::Result<crate::output::CheckoutLicenseOutput, crate::error::CheckoutLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_checkout_license_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateGrant {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
                 type Output = std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_grant_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateGrantVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGrantVersion {
                 type Output = std::result::Result<crate::output::CreateGrantVersionOutput, crate::error::CreateGrantVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_grant_version_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateLicense {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLicense {
                 type Output = std::result::Result<crate::output::CreateLicenseOutput, crate::error::CreateLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_license_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConfiguration {
                 type Output = std::result::Result<crate::output::CreateLicenseConfigurationOutput, crate::error::CreateLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_license_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateLicenseConversionTaskForResource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConversionTaskForResource {
                 type Output = std::result::Result<crate::output::CreateLicenseConversionTaskForResourceOutput, crate::error::CreateLicenseConversionTaskForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_license_conversion_task_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateLicenseManagerReportGenerator {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseManagerReportGenerator {
                 type Output = std::result::Result<crate::output::CreateLicenseManagerReportGeneratorOutput, crate::error::CreateLicenseManagerReportGeneratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_license_manager_report_generator_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateLicenseVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseVersion {
                 type Output = std::result::Result<crate::output::CreateLicenseVersionOutput, crate::error::CreateLicenseVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_license_version_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateToken {
 impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
                 type Output = std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_token_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteGrant {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGrant {
                 type Output = std::result::Result<crate::output::DeleteGrantOutput, crate::error::DeleteGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_grant_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteLicense {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLicense {
                 type Output = std::result::Result<crate::output::DeleteLicenseOutput, crate::error::DeleteLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_license_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseConfiguration {
                 type Output = std::result::Result<crate::output::DeleteLicenseConfigurationOutput, crate::error::DeleteLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_license_configuration_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteLicenseManagerReportGenerator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseManagerReportGenerator {
                 type Output = std::result::Result<crate::output::DeleteLicenseManagerReportGeneratorOutput, crate::error::DeleteLicenseManagerReportGeneratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_license_manager_report_generator_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteToken {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
                 type Output = std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_token_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ExtendLicenseConsumption {
 impl aws_smithy_http::response::ParseStrictResponse for ExtendLicenseConsumption {
                 type Output = std::result::Result<crate::output::ExtendLicenseConsumptionOutput, crate::error::ExtendLicenseConsumptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_extend_license_consumption_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetAccessToken {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccessToken {
                 type Output = std::result::Result<crate::output::GetAccessTokenOutput, crate::error::GetAccessTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_access_token_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetGrant {
 impl aws_smithy_http::response::ParseStrictResponse for GetGrant {
                 type Output = std::result::Result<crate::output::GetGrantOutput, crate::error::GetGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_grant_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetLicense {
 impl aws_smithy_http::response::ParseStrictResponse for GetLicense {
                 type Output = std::result::Result<crate::output::GetLicenseOutput, crate::error::GetLicenseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_license_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConfiguration {
                 type Output = std::result::Result<crate::output::GetLicenseConfigurationOutput, crate::error::GetLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_license_configuration_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetLicenseConversionTask {
 impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConversionTask {
                 type Output = std::result::Result<crate::output::GetLicenseConversionTaskOutput, crate::error::GetLicenseConversionTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_license_conversion_task_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetLicenseManagerReportGenerator {
 impl aws_smithy_http::response::ParseStrictResponse for GetLicenseManagerReportGenerator {
                 type Output = std::result::Result<crate::output::GetLicenseManagerReportGeneratorOutput, crate::error::GetLicenseManagerReportGeneratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_license_manager_report_generator_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetLicenseUsage {
 impl aws_smithy_http::response::ParseStrictResponse for GetLicenseUsage {
                 type Output = std::result::Result<crate::output::GetLicenseUsageOutput, crate::error::GetLicenseUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_license_usage_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetServiceSettings {
 impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
                 type Output = std::result::Result<crate::output::GetServiceSettingsOutput, crate::error::GetServiceSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_service_settings_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListAssociationsForLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssociationsForLicenseConfiguration {
                 type Output = std::result::Result<crate::output::ListAssociationsForLicenseConfigurationOutput, crate::error::ListAssociationsForLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_associations_for_license_configuration_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListDistributedGrants {
 impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
                 type Output = std::result::Result<crate::output::ListDistributedGrantsOutput, crate::error::ListDistributedGrantsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_distributed_grants_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListFailuresForLicenseConfigurationOperations {
 impl aws_smithy_http::response::ParseStrictResponse for ListFailuresForLicenseConfigurationOperations {
                 type Output = std::result::Result<crate::output::ListFailuresForLicenseConfigurationOperationsOutput, crate::error::ListFailuresForLicenseConfigurationOperationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_failures_for_license_configuration_operations_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListLicenseConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConfigurations {
                 type Output = std::result::Result<crate::output::ListLicenseConfigurationsOutput, crate::error::ListLicenseConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_license_configurations_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListLicenseConversionTasks {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConversionTasks {
                 type Output = std::result::Result<crate::output::ListLicenseConversionTasksOutput, crate::error::ListLicenseConversionTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_license_conversion_tasks_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListLicenseManagerReportGenerators {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenseManagerReportGenerators {
                 type Output = std::result::Result<crate::output::ListLicenseManagerReportGeneratorsOutput, crate::error::ListLicenseManagerReportGeneratorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_license_manager_report_generators_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListLicenses {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenses {
                 type Output = std::result::Result<crate::output::ListLicensesOutput, crate::error::ListLicensesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_licenses_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListLicenseSpecificationsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenseSpecificationsForResource {
                 type Output = std::result::Result<crate::output::ListLicenseSpecificationsForResourceOutput, crate::error::ListLicenseSpecificationsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_license_specifications_for_resource_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListLicenseVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListLicenseVersions {
                 type Output = std::result::Result<crate::output::ListLicenseVersionsOutput, crate::error::ListLicenseVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_license_versions_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListReceivedGrants {
 impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrants {
                 type Output = std::result::Result<crate::output::ListReceivedGrantsOutput, crate::error::ListReceivedGrantsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_received_grants_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListReceivedGrantsForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrantsForOrganization {
                 type Output = std::result::Result<crate::output::ListReceivedGrantsForOrganizationOutput, crate::error::ListReceivedGrantsForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_received_grants_for_organization_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListReceivedLicenses {
 impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
                 type Output = std::result::Result<crate::output::ListReceivedLicensesOutput, crate::error::ListReceivedLicensesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_received_licenses_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListReceivedLicensesForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicensesForOrganization {
                 type Output = std::result::Result<crate::output::ListReceivedLicensesForOrganizationOutput, crate::error::ListReceivedLicensesForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_received_licenses_for_organization_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListResourceInventory {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceInventory {
                 type Output = std::result::Result<crate::output::ListResourceInventoryOutput, crate::error::ListResourceInventoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_inventory_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl ListTokens {
 impl aws_smithy_http::response::ParseStrictResponse for ListTokens {
                 type Output = std::result::Result<crate::output::ListTokensOutput, crate::error::ListTokensError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tokens_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl ListUsageForLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfiguration {
                 type Output = std::result::Result<crate::output::ListUsageForLicenseConfigurationOutput, crate::error::ListUsageForLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_usage_for_license_configuration_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl RejectGrant {
 impl aws_smithy_http::response::ParseStrictResponse for RejectGrant {
                 type Output = std::result::Result<crate::output::RejectGrantOutput, crate::error::RejectGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_grant_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateLicenseConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseConfiguration {
                 type Output = std::result::Result<crate::output::UpdateLicenseConfigurationOutput, crate::error::UpdateLicenseConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_license_configuration_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdateLicenseManagerReportGenerator {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseManagerReportGenerator {
                 type Output = std::result::Result<crate::output::UpdateLicenseManagerReportGeneratorOutput, crate::error::UpdateLicenseManagerReportGeneratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_license_manager_report_generator_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl UpdateLicenseSpecificationsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseSpecificationsForResource {
                 type Output = std::result::Result<crate::output::UpdateLicenseSpecificationsForResourceOutput, crate::error::UpdateLicenseSpecificationsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_license_specifications_for_resource_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl UpdateServiceSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSettings {
                 type Output = std::result::Result<crate::output::UpdateServiceSettingsOutput, crate::error::UpdateServiceSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_service_settings_error(response)
                      } else {

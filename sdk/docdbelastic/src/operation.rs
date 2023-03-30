@@ -22,6 +22,7 @@ impl CreateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
                 type Output = std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cluster_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateClusterSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for CreateClusterSnapshot {
                 type Output = std::result::Result<crate::output::CreateClusterSnapshotOutput, crate::error::CreateClusterSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cluster_snapshot_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteCluster {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
                 type Output = std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cluster_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteClusterSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteClusterSnapshot {
                 type Output = std::result::Result<crate::output::DeleteClusterSnapshotOutput, crate::error::DeleteClusterSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cluster_snapshot_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetCluster {
 impl aws_smithy_http::response::ParseStrictResponse for GetCluster {
                 type Output = std::result::Result<crate::output::GetClusterOutput, crate::error::GetClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cluster_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetClusterSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for GetClusterSnapshot {
                 type Output = std::result::Result<crate::output::GetClusterSnapshotOutput, crate::error::GetClusterSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cluster_snapshot_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListClusters {
 impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
                 type Output = std::result::Result<crate::output::ListClustersOutput, crate::error::ListClustersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_clusters_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListClusterSnapshots {
 impl aws_smithy_http::response::ParseStrictResponse for ListClusterSnapshots {
                 type Output = std::result::Result<crate::output::ListClusterSnapshotsOutput, crate::error::ListClusterSnapshotsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cluster_snapshots_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl RestoreClusterFromSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreClusterFromSnapshot {
                 type Output = std::result::Result<crate::output::RestoreClusterFromSnapshotOutput, crate::error::RestoreClusterFromSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restore_cluster_from_snapshot_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UpdateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
                 type Output = std::result::Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cluster_error(response)
                      } else {

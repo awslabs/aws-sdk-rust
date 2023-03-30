@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateRoutingControlStatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
 pub mod update_routing_control_states_output {
     
@@ -11,11 +17,22 @@ pub mod update_routing_control_states_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
         pub fn build(self) -> crate::output::UpdateRoutingControlStatesOutput {
             crate::output::UpdateRoutingControlStatesOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateRoutingControlStatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoutingControlStateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateRoutingControlStateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
 pub mod update_routing_control_state_output {
     
@@ -41,11 +64,22 @@ pub mod update_routing_control_state_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
         pub fn build(self) -> crate::output::UpdateRoutingControlStateOutput {
             crate::output::UpdateRoutingControlStateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -69,6 +103,7 @@ pub struct ListRoutingControlsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRoutingControlsOutput {
     /// <p>The list of routing controls.</p>
@@ -80,6 +115,11 @@ impl ListRoutingControlsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRoutingControlsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
 pub mod list_routing_controls_output {
     
@@ -89,6 +129,7 @@ pub mod list_routing_controls_output {
     pub struct Builder {
         pub(crate) routing_controls: std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `routing_controls`.
@@ -115,6 +156,15 @@ pub mod list_routing_controls_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
         pub fn build(self) -> crate::output::ListRoutingControlsOutput {
             crate::output::ListRoutingControlsOutput {
@@ -122,6 +172,7 @@ pub mod list_routing_controls_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -148,6 +199,7 @@ pub struct GetRoutingControlStateOutput  {
     /// <p>The routing control name.</p>
     #[doc(hidden)]
     pub routing_control_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetRoutingControlStateOutput {
     /// <p>The Amazon Resource Name (ARN) of the response.</p>
@@ -163,6 +215,11 @@ impl GetRoutingControlStateOutput {
         self.routing_control_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRoutingControlStateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
 pub mod get_routing_control_state_output {
     
@@ -173,6 +230,7 @@ pub mod get_routing_control_state_output {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
         pub(crate) routing_control_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the response.</p>
@@ -202,6 +260,15 @@ pub mod get_routing_control_state_output {
         pub fn set_routing_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.routing_control_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
         pub fn build(self) -> crate::output::GetRoutingControlStateOutput {
             crate::output::GetRoutingControlStateOutput {
@@ -211,6 +278,7 @@ pub mod get_routing_control_state_output {
                 ,
                 routing_control_name: self.routing_control_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }

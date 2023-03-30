@@ -22,6 +22,7 @@ impl CompleteSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for CompleteSnapshot {
                 type Output = std::result::Result<crate::output::CompleteSnapshotOutput, crate::error::CompleteSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_complete_snapshot_error(response)
                      } else {
@@ -63,8 +64,9 @@ mod complete_snapshot_request_test {
                         <crate::operation::CompleteSnapshot as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::CompleteSnapshotError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -106,8 +108,9 @@ mod complete_snapshot_request_test {
                         <crate::operation::CompleteSnapshot as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::CompleteSnapshotErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::CompleteSnapshotError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -185,8 +188,9 @@ mod get_snapshot_block_request_test {
                         <crate::operation::GetSnapshotBlock as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::GetSnapshotBlockError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -228,8 +232,9 @@ mod get_snapshot_block_request_test {
                         <crate::operation::GetSnapshotBlock as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::GetSnapshotBlockErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::GetSnapshotBlockError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -262,6 +267,7 @@ impl ListChangedBlocks {
 impl aws_smithy_http::response::ParseStrictResponse for ListChangedBlocks {
                 type Output = std::result::Result<crate::output::ListChangedBlocksOutput, crate::error::ListChangedBlocksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_changed_blocks_error(response)
                      } else {
@@ -303,8 +309,9 @@ mod list_changed_blocks_request_test {
                         <crate::operation::ListChangedBlocks as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::ListChangedBlocksError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -346,8 +353,9 @@ mod list_changed_blocks_request_test {
                         <crate::operation::ListChangedBlocks as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::ListChangedBlocksErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::ListChangedBlocksError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -380,6 +388,7 @@ impl ListSnapshotBlocks {
 impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotBlocks {
                 type Output = std::result::Result<crate::output::ListSnapshotBlocksOutput, crate::error::ListSnapshotBlocksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_snapshot_blocks_error(response)
                      } else {
@@ -421,8 +430,9 @@ mod list_snapshot_blocks_request_test {
                         <crate::operation::ListSnapshotBlocks as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -464,8 +474,9 @@ mod list_snapshot_blocks_request_test {
                         <crate::operation::ListSnapshotBlocks as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::ListSnapshotBlocksErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::ListSnapshotBlocksError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -498,6 +509,7 @@ impl PutSnapshotBlock {
 impl aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
                 type Output = std::result::Result<crate::output::PutSnapshotBlockOutput, crate::error::PutSnapshotBlockError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_put_snapshot_block_error(response)
                      } else {
@@ -539,8 +551,9 @@ mod put_snapshot_block_request_test {
                         <crate::operation::PutSnapshotBlock as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::PutSnapshotBlockError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -582,8 +595,9 @@ mod put_snapshot_block_request_test {
                         <crate::operation::PutSnapshotBlock as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::PutSnapshotBlockErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::PutSnapshotBlockError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -616,6 +630,7 @@ impl StartSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
                 type Output = std::result::Result<crate::output::StartSnapshotOutput, crate::error::StartSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_start_snapshot_error(response)
                      } else {
@@ -657,8 +672,9 @@ mod start_snapshot_request_test {
                         <crate::operation::StartSnapshot as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::StartSnapshotError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
@@ -700,8 +716,9 @@ mod start_snapshot_request_test {
                         <crate::operation::StartSnapshot as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::StartSnapshotErrorKind::ValidationException(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::StartSnapshotError::ValidationException(parsed) = parsed {
+            pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         }
         else {
             panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);

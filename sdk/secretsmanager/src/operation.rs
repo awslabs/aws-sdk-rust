@@ -22,6 +22,7 @@ impl CancelRotateSecret {
 impl aws_smithy_http::response::ParseStrictResponse for CancelRotateSecret {
                 type Output = std::result::Result<crate::output::CancelRotateSecretOutput, crate::error::CancelRotateSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_rotate_secret_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateSecret {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSecret {
                 type Output = std::result::Result<crate::output::CreateSecretOutput, crate::error::CreateSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_secret_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
                 type Output = std::result::Result<crate::output::DeleteResourcePolicyOutput, crate::error::DeleteResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_policy_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteSecret {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSecret {
                 type Output = std::result::Result<crate::output::DeleteSecretOutput, crate::error::DeleteSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_secret_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeSecret {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSecret {
                 type Output = std::result::Result<crate::output::DescribeSecretOutput, crate::error::DescribeSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_secret_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetRandomPassword {
 impl aws_smithy_http::response::ParseStrictResponse for GetRandomPassword {
                 type Output = std::result::Result<crate::output::GetRandomPasswordOutput, crate::error::GetRandomPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_random_password_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
                 type Output = std::result::Result<crate::output::GetResourcePolicyOutput, crate::error::GetResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_policy_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetSecretValue {
 impl aws_smithy_http::response::ParseStrictResponse for GetSecretValue {
                 type Output = std::result::Result<crate::output::GetSecretValueOutput, crate::error::GetSecretValueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_secret_value_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListSecrets {
 impl aws_smithy_http::response::ParseStrictResponse for ListSecrets {
                 type Output = std::result::Result<crate::output::ListSecretsOutput, crate::error::ListSecretsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_secrets_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListSecretVersionIds {
 impl aws_smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
                 type Output = std::result::Result<crate::output::ListSecretVersionIdsOutput, crate::error::ListSecretVersionIdsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_secret_version_ids_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl PutResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
                 type Output = std::result::Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_resource_policy_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutSecretValue {
 impl aws_smithy_http::response::ParseStrictResponse for PutSecretValue {
                 type Output = std::result::Result<crate::output::PutSecretValueOutput, crate::error::PutSecretValueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_secret_value_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl RemoveRegionsFromReplication {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplication {
                 type Output = std::result::Result<crate::output::RemoveRegionsFromReplicationOutput, crate::error::RemoveRegionsFromReplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_regions_from_replication_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ReplicateSecretToRegions {
 impl aws_smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions {
                 type Output = std::result::Result<crate::output::ReplicateSecretToRegionsOutput, crate::error::ReplicateSecretToRegionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_replicate_secret_to_regions_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl RestoreSecret {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreSecret {
                 type Output = std::result::Result<crate::output::RestoreSecretOutput, crate::error::RestoreSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restore_secret_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl RotateSecret {
 impl aws_smithy_http::response::ParseStrictResponse for RotateSecret {
                 type Output = std::result::Result<crate::output::RotateSecretOutput, crate::error::RotateSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_rotate_secret_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl StopReplicationToReplica {
 impl aws_smithy_http::response::ParseStrictResponse for StopReplicationToReplica {
                 type Output = std::result::Result<crate::output::StopReplicationToReplicaOutput, crate::error::StopReplicationToReplicaError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_replication_to_replica_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UpdateSecret {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSecret {
                 type Output = std::result::Result<crate::output::UpdateSecretOutput, crate::error::UpdateSecretError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_secret_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateSecretVersionStage {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage {
                 type Output = std::result::Result<crate::output::UpdateSecretVersionStageOutput, crate::error::UpdateSecretVersionStageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_secret_version_stage_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ValidateResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for ValidateResourcePolicy {
                 type Output = std::result::Result<crate::output::ValidateResourcePolicyOutput, crate::error::ValidateResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_validate_resource_policy_error(response)
                      } else {

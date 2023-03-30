@@ -6,6 +6,7 @@ pub struct UpdateQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
+    _request_id: Option<String>,
 }
 impl UpdateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -13,6 +14,11 @@ impl UpdateQueueOutput {
         self.queue.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateQueueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
 pub mod update_queue_output {
     
@@ -21,6 +27,7 @@ pub mod update_queue_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -32,11 +39,21 @@ pub mod update_queue_output {
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
             self.queue = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
         pub fn build(self) -> crate::output::UpdateQueueOutput {
             crate::output::UpdateQueueOutput {
                 queue: self.queue
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
+    _request_id: Option<String>,
 }
 impl UpdatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -64,6 +82,11 @@ impl UpdatePresetOutput {
         self.preset.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePresetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
 pub mod update_preset_output {
     
@@ -72,6 +95,7 @@ pub mod update_preset_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -83,11 +107,21 @@ pub mod update_preset_output {
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
             self.preset = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
         pub fn build(self) -> crate::output::UpdatePresetOutput {
             crate::output::UpdatePresetOutput {
                 preset: self.preset
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+    _request_id: Option<String>,
 }
 impl UpdateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -115,6 +150,11 @@ impl UpdateJobTemplateOutput {
         self.job_template.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
 pub mod update_job_template_output {
     
@@ -123,6 +163,7 @@ pub mod update_job_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -134,11 +175,21 @@ pub mod update_job_template_output {
         pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
             self.job_template = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
         pub fn build(self) -> crate::output::UpdateJobTemplateOutput {
             crate::output::UpdateJobTemplateOutput {
                 job_template: self.job_template
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -156,7 +207,13 @@ impl UpdateJobTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -164,11 +221,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -186,7 +254,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -194,11 +268,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -219,6 +304,7 @@ pub struct PutPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
+    _request_id: Option<String>,
 }
 impl PutPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -226,6 +312,11 @@ impl PutPolicyOutput {
         self.policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput).
 pub mod put_policy_output {
     
@@ -234,6 +325,7 @@ pub mod put_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -245,11 +337,21 @@ pub mod put_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput).
         pub fn build(self) -> crate::output::PutPolicyOutput {
             crate::output::PutPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -270,6 +372,7 @@ pub struct ListTagsForResourceOutput  {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     #[doc(hidden)]
     pub resource_tags: std::option::Option<crate::model::ResourceTags>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
@@ -277,6 +380,11 @@ impl ListTagsForResourceOutput {
         self.resource_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -285,6 +393,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<crate::model::ResourceTags>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
@@ -296,11 +405,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_resource_tags(mut self, input: std::option::Option<crate::model::ResourceTags>) -> Self {
             self.resource_tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 resource_tags: self.resource_tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -324,6 +443,7 @@ pub struct ListQueuesOutput  {
     /// List of queues.
     #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+    _request_id: Option<String>,
 }
 impl ListQueuesOutput {
     /// Use this string to request the next batch of queues.
@@ -335,6 +455,11 @@ impl ListQueuesOutput {
         self.queues.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListQueuesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput).
 pub mod list_queues_output {
     
@@ -344,6 +469,7 @@ pub mod list_queues_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Use this string to request the next batch of queues.
@@ -370,6 +496,15 @@ pub mod list_queues_output {
         pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<crate::model::Queue>>) -> Self {
             self.queues = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::output::ListQueuesOutput).
         pub fn build(self) -> crate::output::ListQueuesOutput {
             crate::output::ListQueuesOutput {
@@ -377,6 +512,7 @@ pub mod list_queues_output {
                 ,
                 queues: self.queues
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -400,6 +536,7 @@ pub struct ListPresetsOutput  {
     /// List of presets
     #[doc(hidden)]
     pub presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
+    _request_id: Option<String>,
 }
 impl ListPresetsOutput {
     /// Use this string to request the next batch of presets.
@@ -411,6 +548,11 @@ impl ListPresetsOutput {
         self.presets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPresetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
 pub mod list_presets_output {
     
@@ -420,6 +562,7 @@ pub mod list_presets_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Use this string to request the next batch of presets.
@@ -446,6 +589,15 @@ pub mod list_presets_output {
         pub fn set_presets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Preset>>) -> Self {
             self.presets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::output::ListPresetsOutput).
         pub fn build(self) -> crate::output::ListPresetsOutput {
             crate::output::ListPresetsOutput {
@@ -453,6 +605,7 @@ pub mod list_presets_output {
                 ,
                 presets: self.presets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -476,6 +629,7 @@ pub struct ListJobTemplatesOutput  {
     /// Use this string to request the next batch of job templates.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobTemplatesOutput {
     /// List of Job templates.
@@ -487,6 +641,11 @@ impl ListJobTemplatesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobTemplatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
 pub mod list_job_templates_output {
     
@@ -496,6 +655,7 @@ pub mod list_job_templates_output {
     pub struct Builder {
         pub(crate) job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `job_templates`.
@@ -522,6 +682,15 @@ pub mod list_job_templates_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
         pub fn build(self) -> crate::output::ListJobTemplatesOutput {
             crate::output::ListJobTemplatesOutput {
@@ -529,6 +698,7 @@ pub mod list_job_templates_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -552,6 +722,7 @@ pub struct ListJobsOutput  {
     /// Use this string to request the next batch of jobs.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// List of jobs
@@ -563,6 +734,11 @@ impl ListJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
     
@@ -572,6 +748,7 @@ pub mod list_jobs_output {
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `jobs`.
@@ -598,6 +775,15 @@ pub mod list_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
@@ -605,6 +791,7 @@ pub mod list_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -625,6 +812,7 @@ pub struct GetQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
+    _request_id: Option<String>,
 }
 impl GetQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -632,6 +820,11 @@ impl GetQueueOutput {
         self.queue.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetQueueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetQueueOutput`](crate::output::GetQueueOutput).
 pub mod get_queue_output {
     
@@ -640,6 +833,7 @@ pub mod get_queue_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -651,11 +845,21 @@ pub mod get_queue_output {
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
             self.queue = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetQueueOutput`](crate::output::GetQueueOutput).
         pub fn build(self) -> crate::output::GetQueueOutput {
             crate::output::GetQueueOutput {
                 queue: self.queue
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -676,6 +880,7 @@ pub struct GetPresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
+    _request_id: Option<String>,
 }
 impl GetPresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -683,6 +888,11 @@ impl GetPresetOutput {
         self.preset.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPresetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPresetOutput`](crate::output::GetPresetOutput).
 pub mod get_preset_output {
     
@@ -691,6 +901,7 @@ pub mod get_preset_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -702,11 +913,21 @@ pub mod get_preset_output {
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
             self.preset = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPresetOutput`](crate::output::GetPresetOutput).
         pub fn build(self) -> crate::output::GetPresetOutput {
             crate::output::GetPresetOutput {
                 preset: self.preset
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -727,6 +948,7 @@ pub struct GetPolicyOutput  {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
+    _request_id: Option<String>,
 }
 impl GetPolicyOutput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -734,6 +956,11 @@ impl GetPolicyOutput {
         self.policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
     
@@ -742,6 +969,7 @@ pub mod get_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -753,11 +981,21 @@ pub mod get_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -778,6 +1016,7 @@ pub struct GetJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+    _request_id: Option<String>,
 }
 impl GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -785,6 +1024,11 @@ impl GetJobTemplateOutput {
         self.job_template.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
 pub mod get_job_template_output {
     
@@ -793,6 +1037,7 @@ pub mod get_job_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -804,11 +1049,21 @@ pub mod get_job_template_output {
         pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
             self.job_template = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
         pub fn build(self) -> crate::output::GetJobTemplateOutput {
             crate::output::GetJobTemplateOutput {
                 job_template: self.job_template
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -829,6 +1084,7 @@ pub struct GetJobOutput  {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
+    _request_id: Option<String>,
 }
 impl GetJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -836,6 +1092,11 @@ impl GetJobOutput {
         self.job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
 pub mod get_job_output {
     
@@ -844,6 +1105,7 @@ pub mod get_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -855,11 +1117,21 @@ pub mod get_job_output {
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
             self.job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
             crate::output::GetJobOutput {
                 job: self.job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -877,7 +1149,13 @@ impl GetJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisassociateCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
 pub mod disassociate_certificate_output {
     
@@ -885,11 +1163,22 @@ pub mod disassociate_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
         pub fn build(self) -> crate::output::DisassociateCertificateOutput {
             crate::output::DisassociateCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -913,6 +1202,7 @@ pub struct DescribeEndpointsOutput  {
     /// Use this string to request the next batch of endpoints.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEndpointsOutput {
     /// List of endpoints
@@ -924,6 +1214,11 @@ impl DescribeEndpointsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
 pub mod describe_endpoints_output {
     
@@ -933,6 +1228,7 @@ pub mod describe_endpoints_output {
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoints`.
@@ -959,6 +1255,15 @@ pub mod describe_endpoints_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointsOutput {
             crate::output::DescribeEndpointsOutput {
@@ -966,6 +1271,7 @@ pub mod describe_endpoints_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -983,7 +1289,13 @@ impl DescribeEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueueOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteQueueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
 pub mod delete_queue_output {
     
@@ -991,11 +1303,22 @@ pub mod delete_queue_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
         pub fn build(self) -> crate::output::DeleteQueueOutput {
             crate::output::DeleteQueueOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1013,7 +1336,13 @@ impl DeleteQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePresetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePresetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
     
@@ -1021,11 +1350,22 @@ pub mod delete_preset_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePresetOutput`](crate::output::DeletePresetOutput).
         pub fn build(self) -> crate::output::DeletePresetOutput {
             crate::output::DeletePresetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1043,7 +1383,13 @@ impl DeletePresetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
     
@@ -1051,11 +1397,22 @@ pub mod delete_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
             crate::output::DeletePolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1073,7 +1430,13 @@ impl DeletePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobTemplateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
 pub mod delete_job_template_output {
     
@@ -1081,11 +1444,22 @@ pub mod delete_job_template_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
         pub fn build(self) -> crate::output::DeleteJobTemplateOutput {
             crate::output::DeleteJobTemplateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1106,6 +1480,7 @@ pub struct CreateQueueOutput  {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     #[doc(hidden)]
     pub queue: std::option::Option<crate::model::Queue>,
+    _request_id: Option<String>,
 }
 impl CreateQueueOutput {
     /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -1113,6 +1488,11 @@ impl CreateQueueOutput {
         self.queue.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateQueueOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput).
 pub mod create_queue_output {
     
@@ -1121,6 +1501,7 @@ pub mod create_queue_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
@@ -1132,11 +1513,21 @@ pub mod create_queue_output {
         pub fn set_queue(mut self, input: std::option::Option<crate::model::Queue>) -> Self {
             self.queue = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateQueueOutput`](crate::output::CreateQueueOutput).
         pub fn build(self) -> crate::output::CreateQueueOutput {
             crate::output::CreateQueueOutput {
                 queue: self.queue
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1157,6 +1548,7 @@ pub struct CreatePresetOutput  {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     #[doc(hidden)]
     pub preset: std::option::Option<crate::model::Preset>,
+    _request_id: Option<String>,
 }
 impl CreatePresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -1164,6 +1556,11 @@ impl CreatePresetOutput {
         self.preset.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePresetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
 pub mod create_preset_output {
     
@@ -1172,6 +1569,7 @@ pub mod create_preset_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
@@ -1183,11 +1581,21 @@ pub mod create_preset_output {
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
             self.preset = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePresetOutput`](crate::output::CreatePresetOutput).
         pub fn build(self) -> crate::output::CreatePresetOutput {
             crate::output::CreatePresetOutput {
                 preset: self.preset
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1208,6 +1616,7 @@ pub struct CreateJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+    _request_id: Option<String>,
 }
 impl CreateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -1215,6 +1624,11 @@ impl CreateJobTemplateOutput {
         self.job_template.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
 pub mod create_job_template_output {
     
@@ -1223,6 +1637,7 @@ pub mod create_job_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
@@ -1234,11 +1649,21 @@ pub mod create_job_template_output {
         pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
             self.job_template = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
         pub fn build(self) -> crate::output::CreateJobTemplateOutput {
             crate::output::CreateJobTemplateOutput {
                 job_template: self.job_template
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1259,6 +1684,7 @@ pub struct CreateJobOutput  {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
+    _request_id: Option<String>,
 }
 impl CreateJobOutput {
     /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -1266,6 +1692,11 @@ impl CreateJobOutput {
         self.job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
     
@@ -1274,6 +1705,7 @@ pub mod create_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -1285,11 +1717,21 @@ pub mod create_job_output {
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
             self.job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
                 job: self.job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1307,7 +1749,13 @@ impl CreateJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CancelJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
     
@@ -1315,11 +1763,22 @@ pub mod cancel_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
             crate::output::CancelJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1337,7 +1796,13 @@ impl CancelJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AssociateCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
 pub mod associate_certificate_output {
     
@@ -1345,11 +1810,22 @@ pub mod associate_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
         pub fn build(self) -> crate::output::AssociateCertificateOutput {
             crate::output::AssociateCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }

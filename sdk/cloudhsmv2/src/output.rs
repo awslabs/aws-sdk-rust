@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +100,7 @@ pub struct RestoreBackupOutput  {
     /// <p>Information on the <code>Backup</code> object created.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
+    _request_id: Option<String>,
 }
 impl RestoreBackupOutput {
     /// <p>Information on the <code>Backup</code> object created.</p>
@@ -73,6 +108,11 @@ impl RestoreBackupOutput {
         self.backup.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreBackupOutput`](crate::output::RestoreBackupOutput).
 pub mod restore_backup_output {
     
@@ -81,6 +121,7 @@ pub mod restore_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information on the <code>Backup</code> object created.</p>
@@ -92,11 +133,21 @@ pub mod restore_backup_output {
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
             self.backup = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreBackupOutput`](crate::output::RestoreBackupOutput).
         pub fn build(self) -> crate::output::RestoreBackupOutput {
             crate::output::RestoreBackupOutput {
                 backup: self.backup
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,6 +168,7 @@ pub struct ModifyClusterOutput  {
     /// <p>Contains information about an AWS CloudHSM cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl ModifyClusterOutput {
     /// <p>Contains information about an AWS CloudHSM cluster.</p>
@@ -124,6 +176,11 @@ impl ModifyClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyClusterOutput`](crate::output::ModifyClusterOutput).
 pub mod modify_cluster_output {
     
@@ -132,6 +189,7 @@ pub mod modify_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains information about an AWS CloudHSM cluster.</p>
@@ -143,11 +201,21 @@ pub mod modify_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyClusterOutput`](crate::output::ModifyClusterOutput).
         pub fn build(self) -> crate::output::ModifyClusterOutput {
             crate::output::ModifyClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +236,7 @@ pub struct ModifyBackupAttributesOutput  {
     /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
+    _request_id: Option<String>,
 }
 impl ModifyBackupAttributesOutput {
     /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
@@ -175,6 +244,11 @@ impl ModifyBackupAttributesOutput {
         self.backup.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyBackupAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyBackupAttributesOutput`](crate::output::ModifyBackupAttributesOutput).
 pub mod modify_backup_attributes_output {
     
@@ -183,6 +257,7 @@ pub mod modify_backup_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
@@ -194,11 +269,21 @@ pub mod modify_backup_attributes_output {
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
             self.backup = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyBackupAttributesOutput`](crate::output::ModifyBackupAttributesOutput).
         pub fn build(self) -> crate::output::ModifyBackupAttributesOutput {
             crate::output::ModifyBackupAttributesOutput {
                 backup: self.backup
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -222,6 +307,7 @@ pub struct ListTagsOutput  {
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsOutput {
     /// <p>A list of tags.</p>
@@ -233,6 +319,11 @@ impl ListTagsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
     
@@ -242,6 +333,7 @@ pub mod list_tags_output {
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_list`.
@@ -268,6 +360,15 @@ pub mod list_tags_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
@@ -275,6 +376,7 @@ pub mod list_tags_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -298,6 +400,7 @@ pub struct InitializeClusterOutput  {
     /// <p>A description of the cluster's state.</p>
     #[doc(hidden)]
     pub state_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InitializeClusterOutput {
     /// <p>The cluster's state.</p>
@@ -309,6 +412,11 @@ impl InitializeClusterOutput {
         self.state_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InitializeClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InitializeClusterOutput`](crate::output::InitializeClusterOutput).
 pub mod initialize_cluster_output {
     
@@ -318,6 +426,7 @@ pub mod initialize_cluster_output {
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ClusterState>,
         pub(crate) state_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The cluster's state.</p>
@@ -338,6 +447,15 @@ pub mod initialize_cluster_output {
         pub fn set_state_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InitializeClusterOutput`](crate::output::InitializeClusterOutput).
         pub fn build(self) -> crate::output::InitializeClusterOutput {
             crate::output::InitializeClusterOutput {
@@ -345,6 +463,7 @@ pub mod initialize_cluster_output {
                 ,
                 state_message: self.state_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -368,6 +487,7 @@ pub struct DescribeClustersOutput  {
     /// <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeClustersOutput {
     /// <p>A list of clusters.</p>
@@ -379,6 +499,11 @@ impl DescribeClustersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeClustersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeClustersOutput`](crate::output::DescribeClustersOutput).
 pub mod describe_clusters_output {
     
@@ -388,6 +513,7 @@ pub mod describe_clusters_output {
     pub struct Builder {
         pub(crate) clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `clusters`.
@@ -414,6 +540,15 @@ pub mod describe_clusters_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeClustersOutput`](crate::output::DescribeClustersOutput).
         pub fn build(self) -> crate::output::DescribeClustersOutput {
             crate::output::DescribeClustersOutput {
@@ -421,6 +556,7 @@ pub mod describe_clusters_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -444,6 +580,7 @@ pub struct DescribeBackupsOutput  {
     /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBackupsOutput {
     /// <p>A list of backups.</p>
@@ -455,6 +592,11 @@ impl DescribeBackupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBackupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
 pub mod describe_backups_output {
     
@@ -464,6 +606,7 @@ pub mod describe_backups_output {
     pub struct Builder {
         pub(crate) backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `backups`.
@@ -490,6 +633,15 @@ pub mod describe_backups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
         pub fn build(self) -> crate::output::DescribeBackupsOutput {
             crate::output::DescribeBackupsOutput {
@@ -497,6 +649,7 @@ pub mod describe_backups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -517,6 +670,7 @@ pub struct DeleteHsmOutput  {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
     #[doc(hidden)]
     pub hsm_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteHsmOutput {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
@@ -524,6 +678,11 @@ impl DeleteHsmOutput {
         self.hsm_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteHsmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
 pub mod delete_hsm_output {
     
@@ -532,6 +691,7 @@ pub mod delete_hsm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier (ID) of the HSM that was deleted.</p>
@@ -543,11 +703,21 @@ pub mod delete_hsm_output {
         pub fn set_hsm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
         pub fn build(self) -> crate::output::DeleteHsmOutput {
             crate::output::DeleteHsmOutput {
                 hsm_id: self.hsm_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -568,6 +738,7 @@ pub struct DeleteClusterOutput  {
     /// <p>Information about the cluster that was deleted.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl DeleteClusterOutput {
     /// <p>Information about the cluster that was deleted.</p>
@@ -575,6 +746,11 @@ impl DeleteClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
 pub mod delete_cluster_output {
     
@@ -583,6 +759,7 @@ pub mod delete_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the cluster that was deleted.</p>
@@ -594,11 +771,21 @@ pub mod delete_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
         pub fn build(self) -> crate::output::DeleteClusterOutput {
             crate::output::DeleteClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -619,6 +806,7 @@ pub struct DeleteBackupOutput  {
     /// <p>Information on the <code>Backup</code> object deleted.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
+    _request_id: Option<String>,
 }
 impl DeleteBackupOutput {
     /// <p>Information on the <code>Backup</code> object deleted.</p>
@@ -626,6 +814,11 @@ impl DeleteBackupOutput {
         self.backup.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
     
@@ -634,6 +827,7 @@ pub mod delete_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information on the <code>Backup</code> object deleted.</p>
@@ -645,11 +839,21 @@ pub mod delete_backup_output {
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
             self.backup = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
         pub fn build(self) -> crate::output::DeleteBackupOutput {
             crate::output::DeleteBackupOutput {
                 backup: self.backup
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -670,6 +874,7 @@ pub struct CreateHsmOutput  {
     /// <p>Information about the HSM that was created.</p>
     #[doc(hidden)]
     pub hsm: std::option::Option<crate::model::Hsm>,
+    _request_id: Option<String>,
 }
 impl CreateHsmOutput {
     /// <p>Information about the HSM that was created.</p>
@@ -677,6 +882,11 @@ impl CreateHsmOutput {
         self.hsm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateHsmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateHsmOutput`](crate::output::CreateHsmOutput).
 pub mod create_hsm_output {
     
@@ -685,6 +895,7 @@ pub mod create_hsm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm: std::option::Option<crate::model::Hsm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the HSM that was created.</p>
@@ -696,11 +907,21 @@ pub mod create_hsm_output {
         pub fn set_hsm(mut self, input: std::option::Option<crate::model::Hsm>) -> Self {
             self.hsm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::output::CreateHsmOutput).
         pub fn build(self) -> crate::output::CreateHsmOutput {
             crate::output::CreateHsmOutput {
                 hsm: self.hsm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -721,6 +942,7 @@ pub struct CreateClusterOutput  {
     /// <p>Information about the cluster that was created.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl CreateClusterOutput {
     /// <p>Information about the cluster that was created.</p>
@@ -728,6 +950,11 @@ impl CreateClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
     
@@ -736,6 +963,7 @@ pub mod create_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the cluster that was created.</p>
@@ -747,11 +975,21 @@ pub mod create_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput).
         pub fn build(self) -> crate::output::CreateClusterOutput {
             crate::output::CreateClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -773,6 +1011,7 @@ pub struct CopyBackupToRegionOutput  {
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     #[doc(hidden)]
     pub destination_backup: std::option::Option<crate::model::DestinationBackup>,
+    _request_id: Option<String>,
 }
 impl CopyBackupToRegionOutput {
     /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
@@ -781,6 +1020,11 @@ impl CopyBackupToRegionOutput {
         self.destination_backup.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CopyBackupToRegionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CopyBackupToRegionOutput`](crate::output::CopyBackupToRegionOutput).
 pub mod copy_backup_to_region_output {
     
@@ -789,6 +1033,7 @@ pub mod copy_backup_to_region_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_backup: std::option::Option<crate::model::DestinationBackup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
@@ -802,11 +1047,21 @@ pub mod copy_backup_to_region_output {
         pub fn set_destination_backup(mut self, input: std::option::Option<crate::model::DestinationBackup>) -> Self {
             self.destination_backup = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CopyBackupToRegionOutput`](crate::output::CopyBackupToRegionOutput).
         pub fn build(self) -> crate::output::CopyBackupToRegionOutput {
             crate::output::CopyBackupToRegionOutput {
                 destination_backup: self.destination_backup
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -22,6 +22,7 @@ impl CreateNotificationRule {
 impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationRule {
                 type Output = std::result::Result<crate::output::CreateNotificationRuleOutput, crate::error::CreateNotificationRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_notification_rule_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteNotificationRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteNotificationRule {
                 type Output = std::result::Result<crate::output::DeleteNotificationRuleOutput, crate::error::DeleteNotificationRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_notification_rule_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteTarget {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTarget {
                 type Output = std::result::Result<crate::output::DeleteTargetOutput, crate::error::DeleteTargetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_target_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeNotificationRule {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationRule {
                 type Output = std::result::Result<crate::output::DescribeNotificationRuleOutput, crate::error::DescribeNotificationRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_notification_rule_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListEventTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListEventTypes {
                 type Output = std::result::Result<crate::output::ListEventTypesOutput, crate::error::ListEventTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_event_types_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListNotificationRules {
 impl aws_smithy_http::response::ParseStrictResponse for ListNotificationRules {
                 type Output = std::result::Result<crate::output::ListNotificationRulesOutput, crate::error::ListNotificationRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_notification_rules_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListTargets {
 impl aws_smithy_http::response::ParseStrictResponse for ListTargets {
                 type Output = std::result::Result<crate::output::ListTargetsOutput, crate::error::ListTargetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_targets_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl Subscribe {
 impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
                 type Output = std::result::Result<crate::output::SubscribeOutput, crate::error::SubscribeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_subscribe_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl Unsubscribe {
 impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
                 type Output = std::result::Result<crate::output::UnsubscribeOutput, crate::error::UnsubscribeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_unsubscribe_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UpdateNotificationRule {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationRule {
                 type Output = std::result::Result<crate::output::UpdateNotificationRuleOutput, crate::error::UpdateNotificationRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_notification_rule_error(response)
                      } else {

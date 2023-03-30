@@ -22,6 +22,7 @@ impl DescribeStream {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
                 type Output = std::result::Result<crate::output::DescribeStreamOutput, crate::error::DescribeStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_stream_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetRecords {
 impl aws_smithy_http::response::ParseStrictResponse for GetRecords {
                 type Output = std::result::Result<crate::output::GetRecordsOutput, crate::error::GetRecordsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_records_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetShardIterator {
 impl aws_smithy_http::response::ParseStrictResponse for GetShardIterator {
                 type Output = std::result::Result<crate::output::GetShardIteratorOutput, crate::error::GetShardIteratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_shard_iterator_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListStreams {
 impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
                 type Output = std::result::Result<crate::output::ListStreamsOutput, crate::error::ListStreamsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_streams_error(response)
                      } else {

@@ -22,6 +22,7 @@ impl AssociateApprovalRuleTemplateWithRepository {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateApprovalRuleTemplateWithRepository {
                 type Output = std::result::Result<crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput, crate::error::AssociateApprovalRuleTemplateWithRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_approval_rule_template_with_repository_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateApprovalRuleTemplateWithRepositories {
                 type Output = std::result::Result<crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput, crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_associate_approval_rule_template_with_repositories_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchDescribeMergeConflicts {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeMergeConflicts {
                 type Output = std::result::Result<crate::output::BatchDescribeMergeConflictsOutput, crate::error::BatchDescribeMergeConflictsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_describe_merge_conflicts_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateApprovalRuleTemplateFromRepositories {
                 type Output = std::result::Result<crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput, crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_disassociate_approval_rule_template_from_repositories_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl BatchGetCommits {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetCommits {
                 type Output = std::result::Result<crate::output::BatchGetCommitsOutput, crate::error::BatchGetCommitsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_commits_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl BatchGetRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositories {
                 type Output = std::result::Result<crate::output::BatchGetRepositoriesOutput, crate::error::BatchGetRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_repositories_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateApprovalRuleTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateApprovalRuleTemplate {
                 type Output = std::result::Result<crate::output::CreateApprovalRuleTemplateOutput, crate::error::CreateApprovalRuleTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_approval_rule_template_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateBranch {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBranch {
                 type Output = std::result::Result<crate::output::CreateBranchOutput, crate::error::CreateBranchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_branch_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateCommit {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCommit {
                 type Output = std::result::Result<crate::output::CreateCommitOutput, crate::error::CreateCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_commit_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreatePullRequest {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequest {
                 type Output = std::result::Result<crate::output::CreatePullRequestOutput, crate::error::CreatePullRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_pull_request_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreatePullRequestApprovalRule {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequestApprovalRule {
                 type Output = std::result::Result<crate::output::CreatePullRequestApprovalRuleOutput, crate::error::CreatePullRequestApprovalRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_pull_request_approval_rule_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateRepository {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
                 type Output = std::result::Result<crate::output::CreateRepositoryOutput, crate::error::CreateRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_repository_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreateUnreferencedMergeCommit {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUnreferencedMergeCommit {
                 type Output = std::result::Result<crate::output::CreateUnreferencedMergeCommitOutput, crate::error::CreateUnreferencedMergeCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_unreferenced_merge_commit_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteApprovalRuleTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteApprovalRuleTemplate {
                 type Output = std::result::Result<crate::output::DeleteApprovalRuleTemplateOutput, crate::error::DeleteApprovalRuleTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_approval_rule_template_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteBranch {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBranch {
                 type Output = std::result::Result<crate::output::DeleteBranchOutput, crate::error::DeleteBranchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_branch_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteCommentContent {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCommentContent {
                 type Output = std::result::Result<crate::output::DeleteCommentContentOutput, crate::error::DeleteCommentContentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_comment_content_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteFile {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFile {
                 type Output = std::result::Result<crate::output::DeleteFileOutput, crate::error::DeleteFileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_file_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeletePullRequestApprovalRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePullRequestApprovalRule {
                 type Output = std::result::Result<crate::output::DeletePullRequestApprovalRuleOutput, crate::error::DeletePullRequestApprovalRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_pull_request_approval_rule_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteRepository {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
                 type Output = std::result::Result<crate::output::DeleteRepositoryOutput, crate::error::DeleteRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_repository_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeMergeConflicts {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMergeConflicts {
                 type Output = std::result::Result<crate::output::DescribeMergeConflictsOutput, crate::error::DescribeMergeConflictsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_merge_conflicts_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribePullRequestEvents {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePullRequestEvents {
                 type Output = std::result::Result<crate::output::DescribePullRequestEventsOutput, crate::error::DescribePullRequestEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_pull_request_events_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DisassociateApprovalRuleTemplateFromRepository {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateApprovalRuleTemplateFromRepository {
                 type Output = std::result::Result<crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput, crate::error::DisassociateApprovalRuleTemplateFromRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_approval_rule_template_from_repository_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl EvaluatePullRequestApprovalRules {
 impl aws_smithy_http::response::ParseStrictResponse for EvaluatePullRequestApprovalRules {
                 type Output = std::result::Result<crate::output::EvaluatePullRequestApprovalRulesOutput, crate::error::EvaluatePullRequestApprovalRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_evaluate_pull_request_approval_rules_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetApprovalRuleTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetApprovalRuleTemplate {
                 type Output = std::result::Result<crate::output::GetApprovalRuleTemplateOutput, crate::error::GetApprovalRuleTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_approval_rule_template_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetBlob {
 impl aws_smithy_http::response::ParseStrictResponse for GetBlob {
                 type Output = std::result::Result<crate::output::GetBlobOutput, crate::error::GetBlobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_blob_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetBranch {
 impl aws_smithy_http::response::ParseStrictResponse for GetBranch {
                 type Output = std::result::Result<crate::output::GetBranchOutput, crate::error::GetBranchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_branch_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl GetComment {
 impl aws_smithy_http::response::ParseStrictResponse for GetComment {
                 type Output = std::result::Result<crate::output::GetCommentOutput, crate::error::GetCommentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_comment_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl GetCommentReactions {
 impl aws_smithy_http::response::ParseStrictResponse for GetCommentReactions {
                 type Output = std::result::Result<crate::output::GetCommentReactionsOutput, crate::error::GetCommentReactionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_comment_reactions_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl GetCommentsForComparedCommit {
 impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForComparedCommit {
                 type Output = std::result::Result<crate::output::GetCommentsForComparedCommitOutput, crate::error::GetCommentsForComparedCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_comments_for_compared_commit_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl GetCommentsForPullRequest {
 impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForPullRequest {
                 type Output = std::result::Result<crate::output::GetCommentsForPullRequestOutput, crate::error::GetCommentsForPullRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_comments_for_pull_request_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl GetCommit {
 impl aws_smithy_http::response::ParseStrictResponse for GetCommit {
                 type Output = std::result::Result<crate::output::GetCommitOutput, crate::error::GetCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_commit_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl GetDifferences {
 impl aws_smithy_http::response::ParseStrictResponse for GetDifferences {
                 type Output = std::result::Result<crate::output::GetDifferencesOutput, crate::error::GetDifferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_differences_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl GetFile {
 impl aws_smithy_http::response::ParseStrictResponse for GetFile {
                 type Output = std::result::Result<crate::output::GetFileOutput, crate::error::GetFileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_file_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl GetFolder {
 impl aws_smithy_http::response::ParseStrictResponse for GetFolder {
                 type Output = std::result::Result<crate::output::GetFolderOutput, crate::error::GetFolderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_folder_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl GetMergeCommit {
 impl aws_smithy_http::response::ParseStrictResponse for GetMergeCommit {
                 type Output = std::result::Result<crate::output::GetMergeCommitOutput, crate::error::GetMergeCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_merge_commit_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl GetMergeConflicts {
 impl aws_smithy_http::response::ParseStrictResponse for GetMergeConflicts {
                 type Output = std::result::Result<crate::output::GetMergeConflictsOutput, crate::error::GetMergeConflictsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_merge_conflicts_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl GetMergeOptions {
 impl aws_smithy_http::response::ParseStrictResponse for GetMergeOptions {
                 type Output = std::result::Result<crate::output::GetMergeOptionsOutput, crate::error::GetMergeOptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_merge_options_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl GetPullRequest {
 impl aws_smithy_http::response::ParseStrictResponse for GetPullRequest {
                 type Output = std::result::Result<crate::output::GetPullRequestOutput, crate::error::GetPullRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pull_request_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl GetPullRequestApprovalStates {
 impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestApprovalStates {
                 type Output = std::result::Result<crate::output::GetPullRequestApprovalStatesOutput, crate::error::GetPullRequestApprovalStatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pull_request_approval_states_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl GetPullRequestOverrideState {
 impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestOverrideState {
                 type Output = std::result::Result<crate::output::GetPullRequestOverrideStateOutput, crate::error::GetPullRequestOverrideStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pull_request_override_state_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl GetRepository {
 impl aws_smithy_http::response::ParseStrictResponse for GetRepository {
                 type Output = std::result::Result<crate::output::GetRepositoryOutput, crate::error::GetRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_repository_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl GetRepositoryTriggers {
 impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryTriggers {
                 type Output = std::result::Result<crate::output::GetRepositoryTriggersOutput, crate::error::GetRepositoryTriggersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_repository_triggers_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl ListApprovalRuleTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for ListApprovalRuleTemplates {
                 type Output = std::result::Result<crate::output::ListApprovalRuleTemplatesOutput, crate::error::ListApprovalRuleTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_approval_rule_templates_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepository {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedApprovalRuleTemplatesForRepository {
                 type Output = std::result::Result<crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput, crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_associated_approval_rule_templates_for_repository_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl ListBranches {
 impl aws_smithy_http::response::ParseStrictResponse for ListBranches {
                 type Output = std::result::Result<crate::output::ListBranchesOutput, crate::error::ListBranchesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_branches_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl ListPullRequests {
 impl aws_smithy_http::response::ParseStrictResponse for ListPullRequests {
                 type Output = std::result::Result<crate::output::ListPullRequestsOutput, crate::error::ListPullRequestsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_pull_requests_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl ListRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
                 type Output = std::result::Result<crate::output::ListRepositoriesOutput, crate::error::ListRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_repositories_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl ListRepositoriesForApprovalRuleTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesForApprovalRuleTemplate {
                 type Output = std::result::Result<crate::output::ListRepositoriesForApprovalRuleTemplateOutput, crate::error::ListRepositoriesForApprovalRuleTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_repositories_for_approval_rule_template_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl MergeBranchesByFastForward {
 impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByFastForward {
                 type Output = std::result::Result<crate::output::MergeBranchesByFastForwardOutput, crate::error::MergeBranchesByFastForwardError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_branches_by_fast_forward_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl MergeBranchesBySquash {
 impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesBySquash {
                 type Output = std::result::Result<crate::output::MergeBranchesBySquashOutput, crate::error::MergeBranchesBySquashError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_branches_by_squash_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl MergeBranchesByThreeWay {
 impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByThreeWay {
                 type Output = std::result::Result<crate::output::MergeBranchesByThreeWayOutput, crate::error::MergeBranchesByThreeWayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_branches_by_three_way_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl MergePullRequestByFastForward {
 impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByFastForward {
                 type Output = std::result::Result<crate::output::MergePullRequestByFastForwardOutput, crate::error::MergePullRequestByFastForwardError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_pull_request_by_fast_forward_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl MergePullRequestBySquash {
 impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestBySquash {
                 type Output = std::result::Result<crate::output::MergePullRequestBySquashOutput, crate::error::MergePullRequestBySquashError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_pull_request_by_squash_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl MergePullRequestByThreeWay {
 impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByThreeWay {
                 type Output = std::result::Result<crate::output::MergePullRequestByThreeWayOutput, crate::error::MergePullRequestByThreeWayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_merge_pull_request_by_three_way_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl OverridePullRequestApprovalRules {
 impl aws_smithy_http::response::ParseStrictResponse for OverridePullRequestApprovalRules {
                 type Output = std::result::Result<crate::output::OverridePullRequestApprovalRulesOutput, crate::error::OverridePullRequestApprovalRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_override_pull_request_approval_rules_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl PostCommentForComparedCommit {
 impl aws_smithy_http::response::ParseStrictResponse for PostCommentForComparedCommit {
                 type Output = std::result::Result<crate::output::PostCommentForComparedCommitOutput, crate::error::PostCommentForComparedCommitError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_post_comment_for_compared_commit_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl PostCommentForPullRequest {
 impl aws_smithy_http::response::ParseStrictResponse for PostCommentForPullRequest {
                 type Output = std::result::Result<crate::output::PostCommentForPullRequestOutput, crate::error::PostCommentForPullRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_post_comment_for_pull_request_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl PostCommentReply {
 impl aws_smithy_http::response::ParseStrictResponse for PostCommentReply {
                 type Output = std::result::Result<crate::output::PostCommentReplyOutput, crate::error::PostCommentReplyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_post_comment_reply_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl PutCommentReaction {
 impl aws_smithy_http::response::ParseStrictResponse for PutCommentReaction {
                 type Output = std::result::Result<crate::output::PutCommentReactionOutput, crate::error::PutCommentReactionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_comment_reaction_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl PutFile {
 impl aws_smithy_http::response::ParseStrictResponse for PutFile {
                 type Output = std::result::Result<crate::output::PutFileOutput, crate::error::PutFileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_file_error(response)
                      } else {
@@ -1913,6 +1974,7 @@ impl PutRepositoryTriggers {
 impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryTriggers {
                 type Output = std::result::Result<crate::output::PutRepositoryTriggersOutput, crate::error::PutRepositoryTriggersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_repository_triggers_error(response)
                      } else {
@@ -1944,6 +2006,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1975,6 +2038,7 @@ impl TestRepositoryTriggers {
 impl aws_smithy_http::response::ParseStrictResponse for TestRepositoryTriggers {
                 type Output = std::result::Result<crate::output::TestRepositoryTriggersOutput, crate::error::TestRepositoryTriggersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_test_repository_triggers_error(response)
                      } else {
@@ -2006,6 +2070,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -2037,6 +2102,7 @@ impl UpdateApprovalRuleTemplateContent {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTemplateContent {
                 type Output = std::result::Result<crate::output::UpdateApprovalRuleTemplateContentOutput, crate::error::UpdateApprovalRuleTemplateContentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_approval_rule_template_content_error(response)
                      } else {
@@ -2068,6 +2134,7 @@ impl UpdateApprovalRuleTemplateDescription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTemplateDescription {
                 type Output = std::result::Result<crate::output::UpdateApprovalRuleTemplateDescriptionOutput, crate::error::UpdateApprovalRuleTemplateDescriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_approval_rule_template_description_error(response)
                      } else {
@@ -2099,6 +2166,7 @@ impl UpdateApprovalRuleTemplateName {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTemplateName {
                 type Output = std::result::Result<crate::output::UpdateApprovalRuleTemplateNameOutput, crate::error::UpdateApprovalRuleTemplateNameError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_approval_rule_template_name_error(response)
                      } else {
@@ -2130,6 +2198,7 @@ impl UpdateComment {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateComment {
                 type Output = std::result::Result<crate::output::UpdateCommentOutput, crate::error::UpdateCommentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_comment_error(response)
                      } else {
@@ -2161,6 +2230,7 @@ impl UpdateDefaultBranch {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultBranch {
                 type Output = std::result::Result<crate::output::UpdateDefaultBranchOutput, crate::error::UpdateDefaultBranchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_default_branch_error(response)
                      } else {
@@ -2192,6 +2262,7 @@ impl UpdatePullRequestApprovalRuleContent {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprovalRuleContent {
                 type Output = std::result::Result<crate::output::UpdatePullRequestApprovalRuleContentOutput, crate::error::UpdatePullRequestApprovalRuleContentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pull_request_approval_rule_content_error(response)
                      } else {
@@ -2223,6 +2294,7 @@ impl UpdatePullRequestApprovalState {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprovalState {
                 type Output = std::result::Result<crate::output::UpdatePullRequestApprovalStateOutput, crate::error::UpdatePullRequestApprovalStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pull_request_approval_state_error(response)
                      } else {
@@ -2254,6 +2326,7 @@ impl UpdatePullRequestDescription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestDescription {
                 type Output = std::result::Result<crate::output::UpdatePullRequestDescriptionOutput, crate::error::UpdatePullRequestDescriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pull_request_description_error(response)
                      } else {
@@ -2285,6 +2358,7 @@ impl UpdatePullRequestStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestStatus {
                 type Output = std::result::Result<crate::output::UpdatePullRequestStatusOutput, crate::error::UpdatePullRequestStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pull_request_status_error(response)
                      } else {
@@ -2316,6 +2390,7 @@ impl UpdatePullRequestTitle {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestTitle {
                 type Output = std::result::Result<crate::output::UpdatePullRequestTitleOutput, crate::error::UpdatePullRequestTitleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pull_request_title_error(response)
                      } else {
@@ -2347,6 +2422,7 @@ impl UpdateRepositoryDescription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryDescription {
                 type Output = std::result::Result<crate::output::UpdateRepositoryDescriptionOutput, crate::error::UpdateRepositoryDescriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_repository_description_error(response)
                      } else {
@@ -2378,6 +2454,7 @@ impl UpdateRepositoryName {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryName {
                 type Output = std::result::Result<crate::output::UpdateRepositoryNameOutput, crate::error::UpdateRepositoryNameError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_repository_name_error(response)
                      } else {

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogoutOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for LogoutOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`LogoutOutput`](crate::output::LogoutOutput).
 pub mod logout_output {
     
@@ -11,11 +17,22 @@ pub mod logout_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`LogoutOutput`](crate::output::LogoutOutput).
         pub fn build(self) -> crate::output::LogoutOutput {
             crate::output::LogoutOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -39,6 +56,7 @@ pub struct ListAccountsOutput  {
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
     #[doc(hidden)]
     pub account_list: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
+    _request_id: Option<String>,
 }
 impl ListAccountsOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
@@ -50,6 +68,11 @@ impl ListAccountsOutput {
         self.account_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput).
 pub mod list_accounts_output {
     
@@ -59,6 +82,7 @@ pub mod list_accounts_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) account_list: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The page token client that is used to retrieve the list of accounts.</p>
@@ -85,6 +109,15 @@ pub mod list_accounts_output {
         pub fn set_account_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>) -> Self {
             self.account_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAccountsOutput`](crate::output::ListAccountsOutput).
         pub fn build(self) -> crate::output::ListAccountsOutput {
             crate::output::ListAccountsOutput {
@@ -92,6 +125,7 @@ pub mod list_accounts_output {
                 ,
                 account_list: self.account_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -115,6 +149,7 @@ pub struct ListAccountRolesOutput  {
     /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
     #[doc(hidden)]
     pub role_list: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
+    _request_id: Option<String>,
 }
 impl ListAccountRolesOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
@@ -126,6 +161,11 @@ impl ListAccountRolesOutput {
         self.role_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountRolesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
 pub mod list_account_roles_output {
     
@@ -135,6 +175,7 @@ pub mod list_account_roles_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) role_list: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The page token client that is used to retrieve the list of accounts.</p>
@@ -161,6 +202,15 @@ pub mod list_account_roles_output {
         pub fn set_role_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>) -> Self {
             self.role_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
         pub fn build(self) -> crate::output::ListAccountRolesOutput {
             crate::output::ListAccountRolesOutput {
@@ -168,6 +218,7 @@ pub mod list_account_roles_output {
                 ,
                 role_list: self.role_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -188,6 +239,7 @@ pub struct GetRoleCredentialsOutput  {
     /// <p>The credentials for the role that is assigned to the user.</p>
     #[doc(hidden)]
     pub role_credentials: std::option::Option<crate::model::RoleCredentials>,
+    _request_id: Option<String>,
 }
 impl GetRoleCredentialsOutput {
     /// <p>The credentials for the role that is assigned to the user.</p>
@@ -195,6 +247,11 @@ impl GetRoleCredentialsOutput {
         self.role_credentials.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRoleCredentialsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
 pub mod get_role_credentials_output {
     
@@ -203,6 +260,7 @@ pub mod get_role_credentials_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_credentials: std::option::Option<crate::model::RoleCredentials>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The credentials for the role that is assigned to the user.</p>
@@ -214,11 +272,21 @@ pub mod get_role_credentials_output {
         pub fn set_role_credentials(mut self, input: std::option::Option<crate::model::RoleCredentials>) -> Self {
             self.role_credentials = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
         pub fn build(self) -> crate::output::GetRoleCredentialsOutput {
             crate::output::GetRoleCredentialsOutput {
                 role_credentials: self.role_credentials
                 ,
+                _request_id: self._request_id,
             }
         }
     }

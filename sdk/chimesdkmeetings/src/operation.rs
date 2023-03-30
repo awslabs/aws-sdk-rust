@@ -22,6 +22,7 @@ impl BatchCreateAttendee {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
                 type Output = std::result::Result<crate::output::BatchCreateAttendeeOutput, crate::error::BatchCreateAttendeeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_create_attendee_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchUpdateAttendeeCapabilitiesExcept {
 impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapabilitiesExcept {
                 type Output = std::result::Result<crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput, crate::error::BatchUpdateAttendeeCapabilitiesExceptError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_update_attendee_capabilities_except_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAttendee {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAttendee {
                 type Output = std::result::Result<crate::output::CreateAttendeeOutput, crate::error::CreateAttendeeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_attendee_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateMeeting {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMeeting {
                 type Output = std::result::Result<crate::output::CreateMeetingOutput, crate::error::CreateMeetingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_meeting_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateMeetingWithAttendees {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingWithAttendees {
                 type Output = std::result::Result<crate::output::CreateMeetingWithAttendeesOutput, crate::error::CreateMeetingWithAttendeesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_meeting_with_attendees_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteAttendee {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAttendee {
                 type Output = std::result::Result<crate::output::DeleteAttendeeOutput, crate::error::DeleteAttendeeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_attendee_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteMeeting {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMeeting {
                 type Output = std::result::Result<crate::output::DeleteMeetingOutput, crate::error::DeleteMeetingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_meeting_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetAttendee {
 impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
                 type Output = std::result::Result<crate::output::GetAttendeeOutput, crate::error::GetAttendeeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_attendee_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetMeeting {
 impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
                 type Output = std::result::Result<crate::output::GetMeetingOutput, crate::error::GetMeetingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_meeting_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListAttendees {
 impl aws_smithy_http::response::ParseStrictResponse for ListAttendees {
                 type Output = std::result::Result<crate::output::ListAttendeesOutput, crate::error::ListAttendeesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_attendees_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl StartMeetingTranscription {
 impl aws_smithy_http::response::ParseStrictResponse for StartMeetingTranscription {
                 type Output = std::result::Result<crate::output::StartMeetingTranscriptionOutput, crate::error::StartMeetingTranscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_meeting_transcription_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl StopMeetingTranscription {
 impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription {
                 type Output = std::result::Result<crate::output::StopMeetingTranscriptionOutput, crate::error::StopMeetingTranscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_meeting_transcription_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl UpdateAttendeeCapabilities {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAttendeeCapabilities {
                 type Output = std::result::Result<crate::output::UpdateAttendeeCapabilitiesOutput, crate::error::UpdateAttendeeCapabilitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_attendee_capabilities_error(response)
                      } else {

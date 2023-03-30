@@ -17,6 +17,7 @@ pub struct UpdateSubnetChangeProtectionOutput  {
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
     pub subnet_change_protection: bool,
+    _request_id: Option<String>,
 }
 impl UpdateSubnetChangeProtectionOutput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -38,6 +39,11 @@ impl UpdateSubnetChangeProtectionOutput {
         self.subnet_change_protection
     }
 }
+impl aws_http::request_id::RequestId for UpdateSubnetChangeProtectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
 pub mod update_subnet_change_protection_output {
     
@@ -49,6 +55,7 @@ pub mod update_subnet_change_protection_output {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) subnet_change_protection: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -91,6 +98,15 @@ pub mod update_subnet_change_protection_output {
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.subnet_change_protection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
         pub fn build(self) -> crate::output::UpdateSubnetChangeProtectionOutput {
             crate::output::UpdateSubnetChangeProtectionOutput {
@@ -103,6 +119,7 @@ pub mod update_subnet_change_protection_output {
                 subnet_change_protection: self.subnet_change_protection
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -127,6 +144,7 @@ pub struct UpdateRuleGroupOutput  {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     #[doc(hidden)]
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -139,6 +157,11 @@ impl UpdateRuleGroupOutput {
         self.rule_group_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
     
@@ -148,6 +171,7 @@ pub mod update_rule_group_output {
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -170,6 +194,15 @@ pub mod update_rule_group_output {
         pub fn set_rule_group_response(mut self, input: std::option::Option<crate::model::RuleGroupResponse>) -> Self {
             self.rule_group_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
         pub fn build(self) -> crate::output::UpdateRuleGroupOutput {
             crate::output::UpdateRuleGroupOutput {
@@ -177,6 +210,7 @@ pub mod update_rule_group_output {
                 ,
                 rule_group_response: self.rule_group_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -203,6 +237,7 @@ pub struct UpdateLoggingConfigurationOutput  {
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl UpdateLoggingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -218,6 +253,11 @@ impl UpdateLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
 pub mod update_logging_configuration_output {
     
@@ -228,6 +268,7 @@ pub mod update_logging_configuration_output {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -257,6 +298,15 @@ pub mod update_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLoggingConfigurationOutput {
             crate::output::UpdateLoggingConfigurationOutput {
@@ -266,6 +316,7 @@ pub mod update_logging_configuration_output {
                 ,
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -297,6 +348,7 @@ pub struct UpdateFirewallPolicyChangeProtectionOutput  {
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     #[doc(hidden)]
     pub firewall_policy_change_protection: bool,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallPolicyChangeProtectionOutput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -318,6 +370,11 @@ impl UpdateFirewallPolicyChangeProtectionOutput {
         self.firewall_policy_change_protection
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallPolicyChangeProtectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
 pub mod update_firewall_policy_change_protection_output {
     
@@ -329,6 +386,7 @@ pub mod update_firewall_policy_change_protection_output {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_change_protection: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -371,6 +429,15 @@ pub mod update_firewall_policy_change_protection_output {
         pub fn set_firewall_policy_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.firewall_policy_change_protection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallPolicyChangeProtectionOutput {
             crate::output::UpdateFirewallPolicyChangeProtectionOutput {
@@ -383,6 +450,7 @@ pub mod update_firewall_policy_change_protection_output {
                 firewall_policy_change_protection: self.firewall_policy_change_protection
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -407,6 +475,7 @@ pub struct UpdateFirewallPolicyOutput  {
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     #[doc(hidden)]
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -419,6 +488,11 @@ impl UpdateFirewallPolicyOutput {
         self.firewall_policy_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
 pub mod update_firewall_policy_output {
     
@@ -428,6 +502,7 @@ pub mod update_firewall_policy_output {
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -450,6 +525,15 @@ pub mod update_firewall_policy_output {
         pub fn set_firewall_policy_response(mut self, input: std::option::Option<crate::model::FirewallPolicyResponse>) -> Self {
             self.firewall_policy_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::UpdateFirewallPolicyOutput {
             crate::output::UpdateFirewallPolicyOutput {
@@ -457,6 +541,7 @@ pub mod update_firewall_policy_output {
                 ,
                 firewall_policy_response: self.firewall_policy_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -488,6 +573,7 @@ pub struct UpdateFirewallEncryptionConfigurationOutput  {
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
     #[doc(hidden)]
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallEncryptionConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -509,6 +595,11 @@ impl UpdateFirewallEncryptionConfigurationOutput {
         self.encryption_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallEncryptionConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
 pub mod update_firewall_encryption_configuration_output {
     
@@ -520,6 +611,7 @@ pub mod update_firewall_encryption_configuration_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -562,6 +654,15 @@ pub mod update_firewall_encryption_configuration_output {
         pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::model::EncryptionConfiguration>) -> Self {
             self.encryption_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateFirewallEncryptionConfigurationOutput {
             crate::output::UpdateFirewallEncryptionConfigurationOutput {
@@ -573,6 +674,7 @@ pub mod update_firewall_encryption_configuration_output {
                 ,
                 encryption_configuration: self.encryption_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -604,6 +706,7 @@ pub struct UpdateFirewallDescriptionOutput  {
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallDescriptionOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -625,6 +728,11 @@ impl UpdateFirewallDescriptionOutput {
         self.update_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallDescriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
 pub mod update_firewall_description_output {
     
@@ -636,6 +744,7 @@ pub mod update_firewall_description_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) update_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -678,6 +787,15 @@ pub mod update_firewall_description_output {
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDescriptionOutput {
             crate::output::UpdateFirewallDescriptionOutput {
@@ -689,6 +807,7 @@ pub mod update_firewall_description_output {
                 ,
                 update_token: self.update_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -720,6 +839,7 @@ pub struct UpdateFirewallDeleteProtectionOutput  {
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallDeleteProtectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -741,6 +861,11 @@ impl UpdateFirewallDeleteProtectionOutput {
         self.update_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallDeleteProtectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
 pub mod update_firewall_delete_protection_output {
     
@@ -752,6 +877,7 @@ pub mod update_firewall_delete_protection_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) delete_protection: std::option::Option<bool>,
         pub(crate) update_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -794,6 +920,15 @@ pub mod update_firewall_delete_protection_output {
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDeleteProtectionOutput {
             crate::output::UpdateFirewallDeleteProtectionOutput {
@@ -806,6 +941,7 @@ pub mod update_firewall_delete_protection_output {
                 ,
                 update_token: self.update_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -823,7 +959,13 @@ impl UpdateFirewallDeleteProtectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -831,11 +973,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -853,7 +1006,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -861,11 +1020,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -883,7 +1053,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutResourcePolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
     
@@ -891,11 +1067,22 @@ pub mod put_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -919,6 +1106,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags that are associated with the resource. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -930,6 +1118,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -939,6 +1132,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -965,6 +1159,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -972,6 +1175,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -995,6 +1199,7 @@ pub struct ListRuleGroupsOutput  {
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
     #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
+    _request_id: Option<String>,
 }
 impl ListRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1006,6 +1211,11 @@ impl ListRuleGroupsOutput {
         self.rule_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRuleGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
     
@@ -1015,6 +1225,7 @@ pub mod list_rule_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1041,6 +1252,15 @@ pub mod list_rule_groups_output {
         pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>) -> Self {
             self.rule_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsOutput {
             crate::output::ListRuleGroupsOutput {
@@ -1048,6 +1268,7 @@ pub mod list_rule_groups_output {
                 ,
                 rule_groups: self.rule_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1071,6 +1292,7 @@ pub struct ListFirewallsOutput  {
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
     #[doc(hidden)]
     pub firewalls: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallsOutput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1082,6 +1304,11 @@ impl ListFirewallsOutput {
         self.firewalls.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
 pub mod list_firewalls_output {
     
@@ -1091,6 +1318,7 @@ pub mod list_firewalls_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewalls: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1117,6 +1345,15 @@ pub mod list_firewalls_output {
         pub fn set_firewalls(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>) -> Self {
             self.firewalls = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
         pub fn build(self) -> crate::output::ListFirewallsOutput {
             crate::output::ListFirewallsOutput {
@@ -1124,6 +1361,7 @@ pub mod list_firewalls_output {
                 ,
                 firewalls: self.firewalls
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1147,6 +1385,7 @@ pub struct ListFirewallPoliciesOutput  {
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
     #[doc(hidden)]
     pub firewall_policies: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallPoliciesOutput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1158,6 +1397,11 @@ impl ListFirewallPoliciesOutput {
         self.firewall_policies.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
 pub mod list_firewall_policies_output {
     
@@ -1167,6 +1411,7 @@ pub mod list_firewall_policies_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policies: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
@@ -1193,6 +1438,15 @@ pub mod list_firewall_policies_output {
         pub fn set_firewall_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>) -> Self {
             self.firewall_policies = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
         pub fn build(self) -> crate::output::ListFirewallPoliciesOutput {
             crate::output::ListFirewallPoliciesOutput {
@@ -1200,6 +1454,7 @@ pub mod list_firewall_policies_output {
                 ,
                 firewall_policies: self.firewall_policies
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1231,6 +1486,7 @@ pub struct DisassociateSubnetsOutput  {
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateSubnetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1252,6 +1508,11 @@ impl DisassociateSubnetsOutput {
         self.update_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateSubnetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
 pub mod disassociate_subnets_output {
     
@@ -1263,6 +1524,7 @@ pub mod disassociate_subnets_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
         pub(crate) update_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1311,6 +1573,15 @@ pub mod disassociate_subnets_output {
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
         pub fn build(self) -> crate::output::DisassociateSubnetsOutput {
             crate::output::DisassociateSubnetsOutput {
@@ -1322,6 +1593,7 @@ pub mod disassociate_subnets_output {
                 ,
                 update_token: self.update_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1365,6 +1637,7 @@ pub struct DescribeRuleGroupMetadataOutput  {
     /// <p>The last time that the rule group was changed.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeRuleGroupMetadataOutput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
@@ -1401,6 +1674,11 @@ impl DescribeRuleGroupMetadataOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRuleGroupMetadataOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
 pub mod describe_rule_group_metadata_output {
     
@@ -1415,6 +1693,7 @@ pub mod describe_rule_group_metadata_output {
         pub(crate) capacity: std::option::Option<i32>,
         pub(crate) stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p> 
@@ -1490,6 +1769,15 @@ pub mod describe_rule_group_metadata_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupMetadataOutput {
             crate::output::DescribeRuleGroupMetadataOutput {
@@ -1507,6 +1795,7 @@ pub mod describe_rule_group_metadata_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1536,6 +1825,7 @@ pub struct DescribeRuleGroupOutput  {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     #[doc(hidden)]
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+    _request_id: Option<String>,
 }
 impl DescribeRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -1554,6 +1844,11 @@ impl DescribeRuleGroupOutput {
         self.rule_group_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
 pub mod describe_rule_group_output {
     
@@ -1564,6 +1859,7 @@ pub mod describe_rule_group_output {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -1599,6 +1895,15 @@ pub mod describe_rule_group_output {
         pub fn set_rule_group_response(mut self, input: std::option::Option<crate::model::RuleGroupResponse>) -> Self {
             self.rule_group_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupOutput {
             crate::output::DescribeRuleGroupOutput {
@@ -1608,6 +1913,7 @@ pub mod describe_rule_group_output {
                 ,
                 rule_group_response: self.rule_group_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1628,6 +1934,7 @@ pub struct DescribeResourcePolicyOutput  {
     /// <p>The IAM policy for the resource. </p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeResourcePolicyOutput {
     /// <p>The IAM policy for the resource. </p>
@@ -1635,6 +1942,11 @@ impl DescribeResourcePolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
     
@@ -1643,6 +1955,7 @@ pub mod describe_resource_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The IAM policy for the resource. </p>
@@ -1654,11 +1967,21 @@ pub mod describe_resource_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1682,6 +2005,7 @@ pub struct DescribeLoggingConfigurationOutput  {
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeLoggingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1693,6 +2017,11 @@ impl DescribeLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
 pub mod describe_logging_configuration_output {
     
@@ -1702,6 +2031,7 @@ pub mod describe_logging_configuration_output {
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1722,6 +2052,15 @@ pub mod describe_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeLoggingConfigurationOutput {
             crate::output::DescribeLoggingConfigurationOutput {
@@ -1729,6 +2068,7 @@ pub mod describe_logging_configuration_output {
                 ,
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1756,6 +2096,7 @@ pub struct DescribeFirewallPolicyOutput  {
     /// <p>The policy for the specified firewall policy. </p>
     #[doc(hidden)]
     pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
+    _request_id: Option<String>,
 }
 impl DescribeFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -1772,6 +2113,11 @@ impl DescribeFirewallPolicyOutput {
         self.firewall_policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeFirewallPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
 pub mod describe_firewall_policy_output {
     
@@ -1782,6 +2128,7 @@ pub mod describe_firewall_policy_output {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -1813,6 +2160,15 @@ pub mod describe_firewall_policy_output {
         pub fn set_firewall_policy(mut self, input: std::option::Option<crate::model::FirewallPolicy>) -> Self {
             self.firewall_policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
         pub fn build(self) -> crate::output::DescribeFirewallPolicyOutput {
             crate::output::DescribeFirewallPolicyOutput {
@@ -1822,6 +2178,7 @@ pub mod describe_firewall_policy_output {
                 ,
                 firewall_policy: self.firewall_policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1850,6 +2207,7 @@ pub struct DescribeFirewallOutput  {
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     #[doc(hidden)]
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
+    _request_id: Option<String>,
 }
 impl DescribeFirewallOutput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -1867,6 +2225,11 @@ impl DescribeFirewallOutput {
         self.firewall_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeFirewallOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
 pub mod describe_firewall_output {
     
@@ -1877,6 +2240,7 @@ pub mod describe_firewall_output {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
         pub(crate) firewall_status: std::option::Option<crate::model::FirewallStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
@@ -1910,6 +2274,15 @@ pub mod describe_firewall_output {
         pub fn set_firewall_status(mut self, input: std::option::Option<crate::model::FirewallStatus>) -> Self {
             self.firewall_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
         pub fn build(self) -> crate::output::DescribeFirewallOutput {
             crate::output::DescribeFirewallOutput {
@@ -1919,6 +2292,7 @@ pub mod describe_firewall_output {
                 ,
                 firewall_status: self.firewall_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1939,6 +2313,7 @@ pub struct DeleteRuleGroupOutput  {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     #[doc(hidden)]
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteRuleGroupOutput {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
@@ -1946,6 +2321,11 @@ impl DeleteRuleGroupOutput {
         self.rule_group_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
     
@@ -1954,6 +2334,7 @@ pub mod delete_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
@@ -1965,11 +2346,21 @@ pub mod delete_rule_group_output {
         pub fn set_rule_group_response(mut self, input: std::option::Option<crate::model::RuleGroupResponse>) -> Self {
             self.rule_group_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupOutput {
             crate::output::DeleteRuleGroupOutput {
                 rule_group_response: self.rule_group_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1987,7 +2378,13 @@ impl DeleteRuleGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
     
@@ -1995,11 +2392,22 @@ pub mod delete_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2020,6 +2428,7 @@ pub struct DeleteFirewallPolicyOutput  {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     #[doc(hidden)]
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteFirewallPolicyOutput {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
@@ -2027,6 +2436,11 @@ impl DeleteFirewallPolicyOutput {
         self.firewall_policy_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFirewallPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
 pub mod delete_firewall_policy_output {
     
@@ -2035,6 +2449,7 @@ pub mod delete_firewall_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
@@ -2046,11 +2461,21 @@ pub mod delete_firewall_policy_output {
         pub fn set_firewall_policy_response(mut self, input: std::option::Option<crate::model::FirewallPolicyResponse>) -> Self {
             self.firewall_policy_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
         pub fn build(self) -> crate::output::DeleteFirewallPolicyOutput {
             crate::output::DeleteFirewallPolicyOutput {
                 firewall_policy_response: self.firewall_policy_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2075,6 +2500,7 @@ pub struct DeleteFirewallOutput  {
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     #[doc(hidden)]
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
+    _request_id: Option<String>,
 }
 impl DeleteFirewallOutput {
     /// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p> 
@@ -2087,6 +2513,11 @@ impl DeleteFirewallOutput {
         self.firewall_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFirewallOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
 pub mod delete_firewall_output {
     
@@ -2096,6 +2527,7 @@ pub mod delete_firewall_output {
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
         pub(crate) firewall_status: std::option::Option<crate::model::FirewallStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. </p> 
@@ -2118,6 +2550,15 @@ pub mod delete_firewall_output {
         pub fn set_firewall_status(mut self, input: std::option::Option<crate::model::FirewallStatus>) -> Self {
             self.firewall_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
         pub fn build(self) -> crate::output::DeleteFirewallOutput {
             crate::output::DeleteFirewallOutput {
@@ -2125,6 +2566,7 @@ pub mod delete_firewall_output {
                 ,
                 firewall_status: self.firewall_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2149,6 +2591,7 @@ pub struct CreateRuleGroupOutput  {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     #[doc(hidden)]
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+    _request_id: Option<String>,
 }
 impl CreateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -2161,6 +2604,11 @@ impl CreateRuleGroupOutput {
         self.rule_group_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
     
@@ -2170,6 +2618,7 @@ pub mod create_rule_group_output {
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p> 
@@ -2192,6 +2641,15 @@ pub mod create_rule_group_output {
         pub fn set_rule_group_response(mut self, input: std::option::Option<crate::model::RuleGroupResponse>) -> Self {
             self.rule_group_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupOutput {
             crate::output::CreateRuleGroupOutput {
@@ -2199,6 +2657,7 @@ pub mod create_rule_group_output {
                 ,
                 rule_group_response: self.rule_group_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2223,6 +2682,7 @@ pub struct CreateFirewallPolicyOutput  {
     /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     #[doc(hidden)]
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+    _request_id: Option<String>,
 }
 impl CreateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -2235,6 +2695,11 @@ impl CreateFirewallPolicyOutput {
         self.firewall_policy_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFirewallPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
 pub mod create_firewall_policy_output {
     
@@ -2244,6 +2709,7 @@ pub mod create_firewall_policy_output {
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p> 
@@ -2266,6 +2732,15 @@ pub mod create_firewall_policy_output {
         pub fn set_firewall_policy_response(mut self, input: std::option::Option<crate::model::FirewallPolicyResponse>) -> Self {
             self.firewall_policy_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::CreateFirewallPolicyOutput {
             crate::output::CreateFirewallPolicyOutput {
@@ -2273,6 +2748,7 @@ pub mod create_firewall_policy_output {
                 ,
                 firewall_policy_response: self.firewall_policy_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2296,6 +2772,7 @@ pub struct CreateFirewallOutput  {
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     #[doc(hidden)]
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
+    _request_id: Option<String>,
 }
 impl CreateFirewallOutput {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
@@ -2307,6 +2784,11 @@ impl CreateFirewallOutput {
         self.firewall_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFirewallOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
 pub mod create_firewall_output {
     
@@ -2316,6 +2798,7 @@ pub mod create_firewall_output {
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
         pub(crate) firewall_status: std::option::Option<crate::model::FirewallStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
@@ -2336,6 +2819,15 @@ pub mod create_firewall_output {
         pub fn set_firewall_status(mut self, input: std::option::Option<crate::model::FirewallStatus>) -> Self {
             self.firewall_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
         pub fn build(self) -> crate::output::CreateFirewallOutput {
             crate::output::CreateFirewallOutput {
@@ -2343,6 +2835,7 @@ pub mod create_firewall_output {
                 ,
                 firewall_status: self.firewall_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2374,6 +2867,7 @@ pub struct AssociateSubnetsOutput  {
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateSubnetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2395,6 +2889,11 @@ impl AssociateSubnetsOutput {
         self.update_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateSubnetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
 pub mod associate_subnets_output {
     
@@ -2406,6 +2905,7 @@ pub mod associate_subnets_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
         pub(crate) update_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2454,6 +2954,15 @@ pub mod associate_subnets_output {
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
         pub fn build(self) -> crate::output::AssociateSubnetsOutput {
             crate::output::AssociateSubnetsOutput {
@@ -2465,6 +2974,7 @@ pub mod associate_subnets_output {
                 ,
                 update_token: self.update_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2496,6 +3006,7 @@ pub struct AssociateFirewallPolicyOutput  {
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateFirewallPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2517,6 +3028,11 @@ impl AssociateFirewallPolicyOutput {
         self.update_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateFirewallPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
 pub mod associate_firewall_policy_output {
     
@@ -2528,6 +3044,7 @@ pub mod associate_firewall_policy_output {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
         pub(crate) update_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2570,6 +3087,15 @@ pub mod associate_firewall_policy_output {
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::AssociateFirewallPolicyOutput {
             crate::output::AssociateFirewallPolicyOutput {
@@ -2581,6 +3107,7 @@ pub mod associate_firewall_policy_output {
                 ,
                 update_token: self.update_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }

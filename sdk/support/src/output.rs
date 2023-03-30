@@ -10,6 +10,7 @@ pub struct ResolveCaseOutput  {
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
     #[doc(hidden)]
     pub final_case_status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
@@ -21,6 +22,11 @@ impl ResolveCaseOutput {
         self.final_case_status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ResolveCaseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
 pub mod resolve_case_output {
     
@@ -30,6 +36,7 @@ pub mod resolve_case_output {
     pub struct Builder {
         pub(crate) initial_case_status: std::option::Option<std::string::String>,
         pub(crate) final_case_status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
@@ -50,6 +57,15 @@ pub mod resolve_case_output {
         pub fn set_final_case_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.final_case_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
         pub fn build(self) -> crate::output::ResolveCaseOutput {
             crate::output::ResolveCaseOutput {
@@ -57,6 +73,7 @@ pub mod resolve_case_output {
                 ,
                 final_case_status: self.final_case_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -77,6 +94,7 @@ pub struct RefreshTrustedAdvisorCheckOutput  {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
+    _request_id: Option<String>,
 }
 impl RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
@@ -84,6 +102,11 @@ impl RefreshTrustedAdvisorCheckOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RefreshTrustedAdvisorCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
 pub mod refresh_trusted_advisor_check_output {
     
@@ -92,6 +115,7 @@ pub mod refresh_trusted_advisor_check_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
@@ -103,11 +127,21 @@ pub mod refresh_trusted_advisor_check_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
         pub fn build(self) -> crate::output::RefreshTrustedAdvisorCheckOutput {
             crate::output::RefreshTrustedAdvisorCheckOutput {
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -128,6 +162,7 @@ pub struct DescribeTrustedAdvisorCheckSummariesOutput  {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
+    _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
@@ -135,6 +170,11 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
         self.summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
 pub mod describe_trusted_advisor_check_summaries_output {
     
@@ -143,6 +183,7 @@ pub mod describe_trusted_advisor_check_summaries_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `summaries`.
@@ -160,11 +201,21 @@ pub mod describe_trusted_advisor_check_summaries_output {
         pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>) -> Self {
             self.summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckSummariesOutput {
             crate::output::DescribeTrustedAdvisorCheckSummariesOutput {
                 summaries: self.summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -185,6 +236,7 @@ pub struct DescribeTrustedAdvisorChecksOutput  {
     /// <p>Information about all available Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
@@ -192,6 +244,11 @@ impl DescribeTrustedAdvisorChecksOutput {
         self.checks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTrustedAdvisorChecksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
 pub mod describe_trusted_advisor_checks_output {
     
@@ -200,6 +257,7 @@ pub mod describe_trusted_advisor_checks_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `checks`.
@@ -217,11 +275,21 @@ pub mod describe_trusted_advisor_checks_output {
         pub fn set_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>) -> Self {
             self.checks = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorChecksOutput {
             crate::output::DescribeTrustedAdvisorChecksOutput {
                 checks: self.checks
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -242,6 +310,7 @@ pub struct DescribeTrustedAdvisorCheckResultOutput  {
     /// <p>The detailed results of the Trusted Advisor check.</p>
     #[doc(hidden)]
     pub result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
+    _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckResultOutput {
     /// <p>The detailed results of the Trusted Advisor check.</p>
@@ -249,6 +318,11 @@ impl DescribeTrustedAdvisorCheckResultOutput {
         self.result.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckResultOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
 pub mod describe_trusted_advisor_check_result_output {
     
@@ -257,6 +331,7 @@ pub mod describe_trusted_advisor_check_result_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The detailed results of the Trusted Advisor check.</p>
@@ -268,11 +343,21 @@ pub mod describe_trusted_advisor_check_result_output {
         pub fn set_result(mut self, input: std::option::Option<crate::model::TrustedAdvisorCheckResult>) -> Self {
             self.result = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckResultOutput {
             crate::output::DescribeTrustedAdvisorCheckResultOutput {
                 result: self.result
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -293,6 +378,7 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput  {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+    _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
@@ -300,6 +386,11 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
         self.statuses.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
 pub mod describe_trusted_advisor_check_refresh_statuses_output {
     
@@ -308,6 +399,7 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `statuses`.
@@ -325,11 +417,21 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
         pub fn set_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>) -> Self {
             self.statuses = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
             crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
                 statuses: self.statuses
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -350,6 +452,7 @@ pub struct DescribeSeverityLevelsOutput  {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
+    _request_id: Option<String>,
 }
 impl DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
@@ -357,6 +460,11 @@ impl DescribeSeverityLevelsOutput {
         self.severity_levels.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSeverityLevelsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
 pub mod describe_severity_levels_output {
     
@@ -365,6 +473,7 @@ pub mod describe_severity_levels_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `severity_levels`.
@@ -382,11 +491,21 @@ pub mod describe_severity_levels_output {
         pub fn set_severity_levels(mut self, input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>) -> Self {
             self.severity_levels = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
         pub fn build(self) -> crate::output::DescribeSeverityLevelsOutput {
             crate::output::DescribeSeverityLevelsOutput {
                 severity_levels: self.severity_levels
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -407,6 +526,7 @@ pub struct DescribeServicesOutput  {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
+    _request_id: Option<String>,
 }
 impl DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
@@ -414,6 +534,11 @@ impl DescribeServicesOutput {
         self.services.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeServicesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
     
@@ -422,6 +547,7 @@ pub mod describe_services_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `services`.
@@ -439,11 +565,21 @@ pub mod describe_services_output {
         pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::Service>>) -> Self {
             self.services = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
         pub fn build(self) -> crate::output::DescribeServicesOutput {
             crate::output::DescribeServicesOutput {
                 services: self.services
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -467,6 +603,7 @@ pub struct DescribeCommunicationsOutput  {
     /// <p>A resumption point for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
@@ -478,6 +615,11 @@ impl DescribeCommunicationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCommunicationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
 pub mod describe_communications_output {
     
@@ -487,6 +629,7 @@ pub mod describe_communications_output {
     pub struct Builder {
         pub(crate) communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `communications`.
@@ -513,6 +656,15 @@ pub mod describe_communications_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
         pub fn build(self) -> crate::output::DescribeCommunicationsOutput {
             crate::output::DescribeCommunicationsOutput {
@@ -520,6 +672,7 @@ pub mod describe_communications_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -543,6 +696,7 @@ pub struct DescribeCasesOutput  {
     /// <p>A resumption point for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
@@ -554,6 +708,11 @@ impl DescribeCasesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCasesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
 pub mod describe_cases_output {
     
@@ -563,6 +722,7 @@ pub mod describe_cases_output {
     pub struct Builder {
         pub(crate) cases: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cases`.
@@ -589,6 +749,15 @@ pub mod describe_cases_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
         pub fn build(self) -> crate::output::DescribeCasesOutput {
             crate::output::DescribeCasesOutput {
@@ -596,6 +765,7 @@ pub mod describe_cases_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -617,6 +787,7 @@ pub struct DescribeAttachmentOutput  {
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
+    _request_id: Option<String>,
 }
 impl DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p> 
@@ -625,6 +796,11 @@ impl DescribeAttachmentOutput {
         self.attachment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAttachmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
 pub mod describe_attachment_output {
     
@@ -633,6 +809,7 @@ pub mod describe_attachment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This object includes the attachment content and file name.</p> 
@@ -646,11 +823,21 @@ pub mod describe_attachment_output {
         pub fn set_attachment(mut self, input: std::option::Option<crate::model::Attachment>) -> Self {
             self.attachment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
         pub fn build(self) -> crate::output::DescribeAttachmentOutput {
             crate::output::DescribeAttachmentOutput {
                 attachment: self.attachment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -671,6 +858,7 @@ pub struct CreateCaseOutput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCaseOutput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
@@ -678,6 +866,11 @@ impl CreateCaseOutput {
         self.case_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCaseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCaseOutput`](crate::output::CreateCaseOutput).
 pub mod create_case_output {
     
@@ -686,6 +879,7 @@ pub mod create_case_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
@@ -697,11 +891,21 @@ pub mod create_case_output {
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCaseOutput`](crate::output::CreateCaseOutput).
         pub fn build(self) -> crate::output::CreateCaseOutput {
             crate::output::CreateCaseOutput {
                 case_id: self.case_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -722,6 +926,7 @@ pub struct AddCommunicationToCaseOutput  {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     #[doc(hidden)]
     pub result: bool,
+    _request_id: Option<String>,
 }
 impl AddCommunicationToCaseOutput {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
@@ -729,6 +934,11 @@ impl AddCommunicationToCaseOutput {
         self.result
     }
 }
+impl aws_http::request_id::RequestId for AddCommunicationToCaseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
 pub mod add_communication_to_case_output {
     
@@ -737,6 +947,7 @@ pub mod add_communication_to_case_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
@@ -748,12 +959,22 @@ pub mod add_communication_to_case_output {
         pub fn set_result(mut self, input: std::option::Option<bool>) -> Self {
             self.result = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
         pub fn build(self) -> crate::output::AddCommunicationToCaseOutput {
             crate::output::AddCommunicationToCaseOutput {
                 result: self.result
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -777,6 +998,7 @@ pub struct AddAttachmentsToSetOutput  {
     /// <p>The time and date when the attachment set expires.</p>
     #[doc(hidden)]
     pub expiry_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AddAttachmentsToSetOutput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
@@ -788,6 +1010,11 @@ impl AddAttachmentsToSetOutput {
         self.expiry_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddAttachmentsToSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
 pub mod add_attachments_to_set_output {
     
@@ -797,6 +1024,7 @@ pub mod add_attachments_to_set_output {
     pub struct Builder {
         pub(crate) attachment_set_id: std::option::Option<std::string::String>,
         pub(crate) expiry_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
@@ -817,6 +1045,15 @@ pub mod add_attachments_to_set_output {
         pub fn set_expiry_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiry_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
         pub fn build(self) -> crate::output::AddAttachmentsToSetOutput {
             crate::output::AddAttachmentsToSetOutput {
@@ -824,6 +1061,7 @@ pub mod add_attachments_to_set_output {
                 ,
                 expiry_time: self.expiry_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }

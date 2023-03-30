@@ -22,6 +22,7 @@ impl DeleteObject {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
                 type Output = std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_object_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeObject {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeObject {
                 type Output = std::result::Result<crate::output::DescribeObjectOutput, crate::error::DescribeObjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_object_error(response)
                      } else {
@@ -119,6 +121,7 @@ impl ListItems {
 impl aws_smithy_http::response::ParseStrictResponse for ListItems {
                 type Output = std::result::Result<crate::output::ListItemsOutput, crate::error::ListItemsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_items_error(response)
                      } else {
@@ -150,6 +153,7 @@ impl PutObject {
 impl aws_smithy_http::response::ParseStrictResponse for PutObject {
                 type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_object_error(response)
                      } else {

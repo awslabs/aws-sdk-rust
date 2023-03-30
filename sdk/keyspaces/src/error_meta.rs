@@ -15,15 +15,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The operation failed due to an invalid or malformed request.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,19 +35,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateKeyspaceError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateKeyspaceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateKeyspaceError> for Error {
     fn from(err: crate::error::CreateKeyspaceError) -> Self {
-        match err.kind {
-            crate::error::CreateKeyspaceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateKeyspaceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateKeyspaceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateKeyspaceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateKeyspaceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateKeyspaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateKeyspaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateKeyspaceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateKeyspaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateKeyspaceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateKeyspaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateKeyspaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -62,20 +60,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTableError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateTableError> for Error {
     fn from(err: crate::error::CreateTableError) -> Self {
-        match err.kind {
-            crate::error::CreateTableErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateTableErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateTableErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateTableErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateTableErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateTableErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateTableErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -83,20 +86,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKeyspaceError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteKeyspaceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteKeyspaceError> for Error {
     fn from(err: crate::error::DeleteKeyspaceError) -> Self {
-        match err.kind {
-            crate::error::DeleteKeyspaceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteKeyspaceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteKeyspaceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteKeyspaceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteKeyspaceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteKeyspaceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteKeyspaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteKeyspaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteKeyspaceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteKeyspaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteKeyspaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteKeyspaceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteKeyspaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteKeyspaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -104,20 +112,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTableError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteTableError> for Error {
     fn from(err: crate::error::DeleteTableError) -> Self {
-        match err.kind {
-            crate::error::DeleteTableErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteTableErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteTableErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteTableErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteTableErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteTableErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteTableErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -125,19 +138,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyspaceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyspaceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetKeyspaceError> for Error {
     fn from(err: crate::error::GetKeyspaceError) -> Self {
-        match err.kind {
-            crate::error::GetKeyspaceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetKeyspaceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetKeyspaceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetKeyspaceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::GetKeyspaceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetKeyspaceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetKeyspaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetKeyspaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetKeyspaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetKeyspaceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::GetKeyspaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetKeyspaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -145,19 +163,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTableError, R>> 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetTableError> for Error {
     fn from(err: crate::error::GetTableError) -> Self {
-        match err.kind {
-            crate::error::GetTableErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetTableErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetTableErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetTableErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::GetTableErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetTableErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::GetTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -165,19 +188,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListKeyspacesError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListKeyspacesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListKeyspacesError> for Error {
     fn from(err: crate::error::ListKeyspacesError) -> Self {
-        match err.kind {
-            crate::error::ListKeyspacesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListKeyspacesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListKeyspacesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListKeyspacesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListKeyspacesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListKeyspacesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListKeyspacesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListKeyspacesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListKeyspacesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListKeyspacesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListKeyspacesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListKeyspacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -185,19 +213,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTablesError> for Error {
     fn from(err: crate::error::ListTablesError) -> Self {
-        match err.kind {
-            crate::error::ListTablesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTablesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTablesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTablesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListTablesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTablesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTablesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTablesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTablesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTablesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListTablesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTablesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -205,19 +238,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -225,20 +263,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreTableError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RestoreTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RestoreTableError> for Error {
     fn from(err: crate::error::RestoreTableError) -> Self {
-        match err.kind {
-            crate::error::RestoreTableErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RestoreTableErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::RestoreTableErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::RestoreTableErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RestoreTableErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::RestoreTableErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::RestoreTableErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RestoreTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::RestoreTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RestoreTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::RestoreTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::RestoreTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::RestoreTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::RestoreTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -246,19 +289,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -266,20 +314,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UntagResourceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -287,22 +340,40 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTableError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTableError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateTableError> for Error {
     fn from(err: crate::error::UpdateTableError) -> Self {
-        match err.kind {
-            crate::error::UpdateTableErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateTableErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateTableErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateTableErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateTableErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateTableErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateTableErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

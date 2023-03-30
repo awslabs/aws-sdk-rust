@@ -46,15 +46,8 @@ pub enum Error {
     UnsupportedPlsAlphabetException(crate::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -88,16 +81,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLexiconError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLexiconError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteLexiconError> for Error {
     fn from(err: crate::error::DeleteLexiconError) -> Self {
-        match err.kind {
-            crate::error::DeleteLexiconErrorKind::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
-            crate::error::DeleteLexiconErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::DeleteLexiconErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteLexiconError::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
+            crate::error::DeleteLexiconError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteLexiconError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -105,16 +103,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVoicesError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVoicesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeVoicesError> for Error {
     fn from(err: crate::error::DescribeVoicesError) -> Self {
-        match err.kind {
-            crate::error::DescribeVoicesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeVoicesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::DescribeVoicesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeVoicesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::DescribeVoicesError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeVoicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -122,16 +125,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLexiconError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLexiconError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetLexiconError> for Error {
     fn from(err: crate::error::GetLexiconError) -> Self {
-        match err.kind {
-            crate::error::GetLexiconErrorKind::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
-            crate::error::GetLexiconErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::GetLexiconErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetLexiconError::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
+            crate::error::GetLexiconError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetLexiconError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -139,17 +147,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSpeechSynthesisT
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetSpeechSynthesisTaskError> for Error {
     fn from(err: crate::error::GetSpeechSynthesisTaskError) -> Self {
-        match err.kind {
-            crate::error::GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(inner) => Error::InvalidTaskIdException(inner),
-            crate::error::GetSpeechSynthesisTaskErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(inner) => Error::SynthesisTaskNotFoundException(inner),
-            crate::error::GetSpeechSynthesisTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetSpeechSynthesisTaskError::InvalidTaskIdException(inner) => Error::InvalidTaskIdException(inner),
+            crate::error::GetSpeechSynthesisTaskError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetSpeechSynthesisTaskError::SynthesisTaskNotFoundException(inner) => Error::SynthesisTaskNotFoundException(inner),
+            crate::error::GetSpeechSynthesisTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -157,16 +170,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLexiconsError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLexiconsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListLexiconsError> for Error {
     fn from(err: crate::error::ListLexiconsError) -> Self {
-        match err.kind {
-            crate::error::ListLexiconsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListLexiconsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::ListLexiconsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListLexiconsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListLexiconsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListLexiconsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -174,16 +192,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSpeechSynthesis
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSpeechSynthesisTasksError> for Error {
     fn from(err: crate::error::ListSpeechSynthesisTasksError) -> Self {
-        match err.kind {
-            crate::error::ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListSpeechSynthesisTasksErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::ListSpeechSynthesisTasksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSpeechSynthesisTasksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListSpeechSynthesisTasksError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListSpeechSynthesisTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -191,21 +214,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutLexiconError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutLexiconError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutLexiconError> for Error {
     fn from(err: crate::error::PutLexiconError) -> Self {
-        match err.kind {
-            crate::error::PutLexiconErrorKind::InvalidLexiconException(inner) => Error::InvalidLexiconException(inner),
-            crate::error::PutLexiconErrorKind::LexiconSizeExceededException(inner) => Error::LexiconSizeExceededException(inner),
-            crate::error::PutLexiconErrorKind::MaxLexemeLengthExceededException(inner) => Error::MaxLexemeLengthExceededException(inner),
-            crate::error::PutLexiconErrorKind::MaxLexiconsNumberExceededException(inner) => Error::MaxLexiconsNumberExceededException(inner),
-            crate::error::PutLexiconErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::PutLexiconErrorKind::UnsupportedPlsAlphabetException(inner) => Error::UnsupportedPlsAlphabetException(inner),
-            crate::error::PutLexiconErrorKind::UnsupportedPlsLanguageException(inner) => Error::UnsupportedPlsLanguageException(inner),
-            crate::error::PutLexiconErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutLexiconError::InvalidLexiconException(inner) => Error::InvalidLexiconException(inner),
+            crate::error::PutLexiconError::LexiconSizeExceededException(inner) => Error::LexiconSizeExceededException(inner),
+            crate::error::PutLexiconError::MaxLexemeLengthExceededException(inner) => Error::MaxLexemeLengthExceededException(inner),
+            crate::error::PutLexiconError::MaxLexiconsNumberExceededException(inner) => Error::MaxLexiconsNumberExceededException(inner),
+            crate::error::PutLexiconError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutLexiconError::UnsupportedPlsAlphabetException(inner) => Error::UnsupportedPlsAlphabetException(inner),
+            crate::error::PutLexiconError::UnsupportedPlsLanguageException(inner) => Error::UnsupportedPlsLanguageException(inner),
+            crate::error::PutLexiconError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -213,26 +241,31 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSpeechSynthesi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartSpeechSynthesisTaskError> for Error {
     fn from(err: crate::error::StartSpeechSynthesisTaskError) -> Self {
-        match err.kind {
-            crate::error::StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(inner) => Error::EngineNotSupportedException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(inner) => Error::InvalidS3BucketException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(inner) => Error::InvalidS3KeyException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(inner) => Error::InvalidSampleRateException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(inner) => Error::InvalidSnsTopicArnException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(inner) => Error::InvalidSsmlException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(inner) => Error::LanguageNotSupportedException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(inner) => Error::MarksNotSupportedForFormatException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
-            crate::error::StartSpeechSynthesisTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartSpeechSynthesisTaskError::EngineNotSupportedException(inner) => Error::EngineNotSupportedException(inner),
+            crate::error::StartSpeechSynthesisTaskError::InvalidS3BucketException(inner) => Error::InvalidS3BucketException(inner),
+            crate::error::StartSpeechSynthesisTaskError::InvalidS3KeyException(inner) => Error::InvalidS3KeyException(inner),
+            crate::error::StartSpeechSynthesisTaskError::InvalidSampleRateException(inner) => Error::InvalidSampleRateException(inner),
+            crate::error::StartSpeechSynthesisTaskError::InvalidSnsTopicArnException(inner) => Error::InvalidSnsTopicArnException(inner),
+            crate::error::StartSpeechSynthesisTaskError::InvalidSsmlException(inner) => Error::InvalidSsmlException(inner),
+            crate::error::StartSpeechSynthesisTaskError::LanguageNotSupportedException(inner) => Error::LanguageNotSupportedException(inner),
+            crate::error::StartSpeechSynthesisTaskError::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
+            crate::error::StartSpeechSynthesisTaskError::MarksNotSupportedForFormatException(inner) => Error::MarksNotSupportedForFormatException(inner),
+            crate::error::StartSpeechSynthesisTaskError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::StartSpeechSynthesisTaskError::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
+            crate::error::StartSpeechSynthesisTaskError::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
+            crate::error::StartSpeechSynthesisTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -240,25 +273,58 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SynthesizeSpeechErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SynthesizeSpeechError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SynthesizeSpeechError> for Error {
     fn from(err: crate::error::SynthesizeSpeechError) -> Self {
-        match err.kind {
-            crate::error::SynthesizeSpeechErrorKind::EngineNotSupportedException(inner) => Error::EngineNotSupportedException(inner),
-            crate::error::SynthesizeSpeechErrorKind::InvalidSampleRateException(inner) => Error::InvalidSampleRateException(inner),
-            crate::error::SynthesizeSpeechErrorKind::InvalidSsmlException(inner) => Error::InvalidSsmlException(inner),
-            crate::error::SynthesizeSpeechErrorKind::LanguageNotSupportedException(inner) => Error::LanguageNotSupportedException(inner),
-            crate::error::SynthesizeSpeechErrorKind::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
-            crate::error::SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(inner) => Error::MarksNotSupportedForFormatException(inner),
-            crate::error::SynthesizeSpeechErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::error::SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
-            crate::error::SynthesizeSpeechErrorKind::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
-            crate::error::SynthesizeSpeechErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SynthesizeSpeechError::EngineNotSupportedException(inner) => Error::EngineNotSupportedException(inner),
+            crate::error::SynthesizeSpeechError::InvalidSampleRateException(inner) => Error::InvalidSampleRateException(inner),
+            crate::error::SynthesizeSpeechError::InvalidSsmlException(inner) => Error::InvalidSsmlException(inner),
+            crate::error::SynthesizeSpeechError::LanguageNotSupportedException(inner) => Error::LanguageNotSupportedException(inner),
+            crate::error::SynthesizeSpeechError::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
+            crate::error::SynthesizeSpeechError::MarksNotSupportedForFormatException(inner) => Error::MarksNotSupportedForFormatException(inner),
+            crate::error::SynthesizeSpeechError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::SynthesizeSpeechError::SsmlMarksNotSupportedForTextTypeException(inner) => Error::SsmlMarksNotSupportedForTextTypeException(inner),
+            crate::error::SynthesizeSpeechError::TextLengthExceededException(inner) => Error::TextLengthExceededException(inner),
+            crate::error::SynthesizeSpeechError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::EngineNotSupportedException(e) => e.request_id(),
+            Self::InvalidLexiconException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidS3BucketException(e) => e.request_id(),
+            Self::InvalidS3KeyException(e) => e.request_id(),
+            Self::InvalidSampleRateException(e) => e.request_id(),
+            Self::InvalidSnsTopicArnException(e) => e.request_id(),
+            Self::InvalidSsmlException(e) => e.request_id(),
+            Self::InvalidTaskIdException(e) => e.request_id(),
+            Self::LanguageNotSupportedException(e) => e.request_id(),
+            Self::LexiconNotFoundException(e) => e.request_id(),
+            Self::LexiconSizeExceededException(e) => e.request_id(),
+            Self::MarksNotSupportedForFormatException(e) => e.request_id(),
+            Self::MaxLexemeLengthExceededException(e) => e.request_id(),
+            Self::MaxLexiconsNumberExceededException(e) => e.request_id(),
+            Self::ServiceFailureException(e) => e.request_id(),
+            Self::SsmlMarksNotSupportedForTextTypeException(e) => e.request_id(),
+            Self::SynthesisTaskNotFoundException(e) => e.request_id(),
+            Self::TextLengthExceededException(e) => e.request_id(),
+            Self::UnsupportedPlsAlphabetException(e) => e.request_id(),
+            Self::UnsupportedPlsLanguageException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

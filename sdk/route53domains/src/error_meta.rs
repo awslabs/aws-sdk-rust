@@ -17,15 +17,8 @@ pub enum Error {
     TldRulesViolation(crate::error::TldRulesViolation),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,18 +38,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptDomainTransfe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptDomainTransferFromAnotherAwsAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AcceptDomainTransferFromAnotherAwsAccountError> for Error {
     fn from(err: crate::error::AcceptDomainTransferFromAnotherAwsAccountError) -> Self {
-        match err.kind {
-            crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
-            crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -64,20 +62,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateDelegation
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateDelegationSignerToDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AssociateDelegationSignerToDomainError> for Error {
     fn from(err: crate::error::AssociateDelegationSignerToDomainError) -> Self {
-        match err.kind {
-            crate::error::AssociateDelegationSignerToDomainErrorKind::DnssecLimitExceeded(inner) => Error::DnssecLimitExceeded(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::AssociateDelegationSignerToDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AssociateDelegationSignerToDomainError::DnssecLimitExceeded(inner) => Error::DnssecLimitExceeded(inner),
+            crate::error::AssociateDelegationSignerToDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::AssociateDelegationSignerToDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::AssociateDelegationSignerToDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::AssociateDelegationSignerToDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::AssociateDelegationSignerToDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::AssociateDelegationSignerToDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -85,17 +88,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelDomainTransfe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelDomainTransferToAnotherAwsAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CancelDomainTransferToAnotherAwsAccountError> for Error {
     fn from(err: crate::error::CancelDomainTransferToAnotherAwsAccountError) -> Self {
-        match err.kind {
-            crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CancelDomainTransferToAnotherAwsAccountError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CancelDomainTransferToAnotherAwsAccountError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::CancelDomainTransferToAnotherAwsAccountError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::CancelDomainTransferToAnotherAwsAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -103,16 +111,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CheckDomainAvailabi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CheckDomainAvailabilityError> for Error {
     fn from(err: crate::error::CheckDomainAvailabilityError) -> Self {
-        match err.kind {
-            crate::error::CheckDomainAvailabilityErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CheckDomainAvailabilityErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::CheckDomainAvailabilityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CheckDomainAvailabilityError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CheckDomainAvailabilityError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::CheckDomainAvailabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -120,16 +133,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CheckDomainTransfer
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CheckDomainTransferabilityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CheckDomainTransferabilityError> for Error {
     fn from(err: crate::error::CheckDomainTransferabilityError) -> Self {
-        match err.kind {
-            crate::error::CheckDomainTransferabilityErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CheckDomainTransferabilityErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::CheckDomainTransferabilityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CheckDomainTransferabilityError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CheckDomainTransferabilityError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::CheckDomainTransferabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -137,18 +155,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteDomainError> for Error {
     fn from(err: crate::error::DeleteDomainError) -> Self {
-        match err.kind {
-            crate::error::DeleteDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::DeleteDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DeleteDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::DeleteDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::DeleteDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::DeleteDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::DeleteDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -156,17 +179,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTagsForDomain
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteTagsForDomainError> for Error {
     fn from(err: crate::error::DeleteTagsForDomainError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsForDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DeleteTagsForDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::DeleteTagsForDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::DeleteTagsForDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteTagsForDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteTagsForDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::DeleteTagsForDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DeleteTagsForDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -174,16 +202,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableDomainAutoRe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DisableDomainAutoRenewError> for Error {
     fn from(err: crate::error::DisableDomainAutoRenewError) -> Self {
-        match err.kind {
-            crate::error::DisableDomainAutoRenewErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DisableDomainAutoRenewErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::DisableDomainAutoRenewErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DisableDomainAutoRenewError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DisableDomainAutoRenewError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DisableDomainAutoRenewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -191,19 +224,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableDomainTransf
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableDomainTransferLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DisableDomainTransferLockError> for Error {
     fn from(err: crate::error::DisableDomainTransferLockError) -> Self {
-        match err.kind {
-            crate::error::DisableDomainTransferLockErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::DisableDomainTransferLockErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DisableDomainTransferLockErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::DisableDomainTransferLockErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::DisableDomainTransferLockErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::DisableDomainTransferLockErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DisableDomainTransferLockError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::DisableDomainTransferLockError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DisableDomainTransferLockError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::DisableDomainTransferLockError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::DisableDomainTransferLockError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DisableDomainTransferLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -211,19 +249,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateDelegat
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateDelegationSignerFromDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DisassociateDelegationSignerFromDomainError> for Error {
     fn from(err: crate::error::DisassociateDelegationSignerFromDomainError) -> Self {
-        match err.kind {
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::DisassociateDelegationSignerFromDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DisassociateDelegationSignerFromDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::DisassociateDelegationSignerFromDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DisassociateDelegationSignerFromDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::DisassociateDelegationSignerFromDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::DisassociateDelegationSignerFromDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::DisassociateDelegationSignerFromDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -231,17 +274,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableDomainAutoRen
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::EnableDomainAutoRenewError> for Error {
     fn from(err: crate::error::EnableDomainAutoRenewError) -> Self {
-        match err.kind {
-            crate::error::EnableDomainAutoRenewErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::EnableDomainAutoRenewErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::EnableDomainAutoRenewErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::EnableDomainAutoRenewErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::EnableDomainAutoRenewError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::EnableDomainAutoRenewError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::EnableDomainAutoRenewError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::EnableDomainAutoRenewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -249,19 +297,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableDomainTransfe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableDomainTransferLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::EnableDomainTransferLockError> for Error {
     fn from(err: crate::error::EnableDomainTransferLockError) -> Self {
-        match err.kind {
-            crate::error::EnableDomainTransferLockErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::EnableDomainTransferLockErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::EnableDomainTransferLockErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::EnableDomainTransferLockErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::EnableDomainTransferLockErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::EnableDomainTransferLockErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::EnableDomainTransferLockError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::EnableDomainTransferLockError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::EnableDomainTransferLockError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::EnableDomainTransferLockError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::EnableDomainTransferLockError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::EnableDomainTransferLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -269,17 +322,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContactReachabil
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContactReachabilityStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetContactReachabilityStatusError> for Error {
     fn from(err: crate::error::GetContactReachabilityStatusError) -> Self {
-        match err.kind {
-            crate::error::GetContactReachabilityStatusErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetContactReachabilityStatusErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::GetContactReachabilityStatusErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::GetContactReachabilityStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetContactReachabilityStatusError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetContactReachabilityStatusError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::GetContactReachabilityStatusError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::GetContactReachabilityStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -287,16 +345,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainDetailErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDomainDetailError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDomainDetailError> for Error {
     fn from(err: crate::error::GetDomainDetailError) -> Self {
-        match err.kind {
-            crate::error::GetDomainDetailErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetDomainDetailErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::GetDomainDetailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDomainDetailError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetDomainDetailError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::GetDomainDetailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -304,16 +367,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainSuggestion
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDomainSuggestionsError> for Error {
     fn from(err: crate::error::GetDomainSuggestionsError) -> Self {
-        match err.kind {
-            crate::error::GetDomainSuggestionsErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetDomainSuggestionsErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::GetDomainSuggestionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDomainSuggestionsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetDomainSuggestionsError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::GetDomainSuggestionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -321,15 +389,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationDetailE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOperationDetailError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetOperationDetailError> for Error {
     fn from(err: crate::error::GetOperationDetailError) -> Self {
-        match err.kind {
-            crate::error::GetOperationDetailErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetOperationDetailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetOperationDetailError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetOperationDetailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -337,15 +410,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListDomainsError> for Error {
     fn from(err: crate::error::ListDomainsError) -> Self {
-        match err.kind {
-            crate::error::ListDomainsErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListDomainsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListDomainsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -353,15 +431,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOperationsError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListOperationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListOperationsError> for Error {
     fn from(err: crate::error::ListOperationsError) -> Self {
-        match err.kind {
-            crate::error::ListOperationsErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListOperationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListOperationsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -369,16 +452,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPricesError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPricesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListPricesError> for Error {
     fn from(err: crate::error::ListPricesError) -> Self {
-        match err.kind {
-            crate::error::ListPricesErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListPricesErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::ListPricesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListPricesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListPricesError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::ListPricesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -386,17 +474,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForDomainEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForDomainError> for Error {
     fn from(err: crate::error::ListTagsForDomainError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListTagsForDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::ListTagsForDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::ListTagsForDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListTagsForDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::ListTagsForDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::ListTagsForDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -404,17 +497,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PushDomainError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PushDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PushDomainError> for Error {
     fn from(err: crate::error::PushDomainError) -> Self {
-        match err.kind {
-            crate::error::PushDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::PushDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::PushDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::PushDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PushDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::PushDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::PushDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::PushDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -422,20 +520,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterDomainError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RegisterDomainError> for Error {
     fn from(err: crate::error::RegisterDomainError) -> Self {
-        match err.kind {
-            crate::error::RegisterDomainErrorKind::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
-            crate::error::RegisterDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::RegisterDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::RegisterDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::RegisterDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::RegisterDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::RegisterDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RegisterDomainError::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
+            crate::error::RegisterDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::RegisterDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::RegisterDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::RegisterDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::RegisterDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::RegisterDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -443,17 +546,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectDomainTransfe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RejectDomainTransferFromAnotherAwsAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RejectDomainTransferFromAnotherAwsAccountError> for Error {
     fn from(err: crate::error::RejectDomainTransferFromAnotherAwsAccountError) -> Self {
-        match err.kind {
-            crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RejectDomainTransferFromAnotherAwsAccountError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::RejectDomainTransferFromAnotherAwsAccountError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::RejectDomainTransferFromAnotherAwsAccountError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::RejectDomainTransferFromAnotherAwsAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -461,19 +569,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RenewDomainError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RenewDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RenewDomainError> for Error {
     fn from(err: crate::error::RenewDomainError) -> Self {
-        match err.kind {
-            crate::error::RenewDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::RenewDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::RenewDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::RenewDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::RenewDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::RenewDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RenewDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::RenewDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::RenewDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::RenewDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::RenewDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::RenewDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -481,17 +594,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResendContactReacha
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResendContactReachabilityEmailError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ResendContactReachabilityEmailError> for Error {
     fn from(err: crate::error::ResendContactReachabilityEmailError) -> Self {
-        match err.kind {
-            crate::error::ResendContactReachabilityEmailErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ResendContactReachabilityEmailErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::ResendContactReachabilityEmailErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::ResendContactReachabilityEmailErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ResendContactReachabilityEmailError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ResendContactReachabilityEmailError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::ResendContactReachabilityEmailError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::ResendContactReachabilityEmailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -499,15 +617,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResendOperationAuth
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResendOperationAuthorizationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ResendOperationAuthorizationError> for Error {
     fn from(err: crate::error::ResendOperationAuthorizationError) -> Self {
-        match err.kind {
-            crate::error::ResendOperationAuthorizationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ResendOperationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ResendOperationAuthorizationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ResendOperationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -515,16 +638,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RetrieveDomainAuthC
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RetrieveDomainAuthCodeError> for Error {
     fn from(err: crate::error::RetrieveDomainAuthCodeError) -> Self {
-        match err.kind {
-            crate::error::RetrieveDomainAuthCodeErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::RetrieveDomainAuthCodeErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::RetrieveDomainAuthCodeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RetrieveDomainAuthCodeError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::RetrieveDomainAuthCodeError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::RetrieveDomainAuthCodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -532,20 +660,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TransferDomainError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TransferDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TransferDomainError> for Error {
     fn from(err: crate::error::TransferDomainError) -> Self {
-        match err.kind {
-            crate::error::TransferDomainErrorKind::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
-            crate::error::TransferDomainErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::TransferDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::TransferDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::TransferDomainErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::TransferDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::TransferDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TransferDomainError::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
+            crate::error::TransferDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::TransferDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::TransferDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::TransferDomainError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::TransferDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::TransferDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -553,18 +686,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TransferDomainToAno
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAwsAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TransferDomainToAnotherAwsAccountError> for Error {
     fn from(err: crate::error::TransferDomainToAnotherAwsAccountError) -> Self {
-        match err.kind {
-            crate::error::TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::TransferDomainToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TransferDomainToAnotherAwsAccountError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::TransferDomainToAnotherAwsAccountError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::TransferDomainToAnotherAwsAccountError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::TransferDomainToAnotherAwsAccountError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::TransferDomainToAnotherAwsAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -572,19 +710,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainContact
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDomainContactError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDomainContactError> for Error {
     fn from(err: crate::error::UpdateDomainContactError) -> Self {
-        match err.kind {
-            crate::error::UpdateDomainContactErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::UpdateDomainContactErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UpdateDomainContactErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::UpdateDomainContactErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::UpdateDomainContactErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::UpdateDomainContactErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDomainContactError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::UpdateDomainContactError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateDomainContactError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::UpdateDomainContactError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::UpdateDomainContactError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::UpdateDomainContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -592,19 +735,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainContact
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDomainContactPrivacyError> for Error {
     fn from(err: crate::error::UpdateDomainContactPrivacyError) -> Self {
-        match err.kind {
-            crate::error::UpdateDomainContactPrivacyErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::UpdateDomainContactPrivacyErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UpdateDomainContactPrivacyErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::UpdateDomainContactPrivacyErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::UpdateDomainContactPrivacyErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::UpdateDomainContactPrivacyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDomainContactPrivacyError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::UpdateDomainContactPrivacyError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateDomainContactPrivacyError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::UpdateDomainContactPrivacyError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::UpdateDomainContactPrivacyError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::UpdateDomainContactPrivacyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -612,19 +760,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainNameser
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDomainNameserversError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDomainNameserversError> for Error {
     fn from(err: crate::error::UpdateDomainNameserversError) -> Self {
-        match err.kind {
-            crate::error::UpdateDomainNameserversErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
-            crate::error::UpdateDomainNameserversErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UpdateDomainNameserversErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::UpdateDomainNameserversErrorKind::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
-            crate::error::UpdateDomainNameserversErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::UpdateDomainNameserversErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDomainNameserversError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::error::UpdateDomainNameserversError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateDomainNameserversError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::UpdateDomainNameserversError::TldRulesViolation(inner) => Error::TldRulesViolation(inner),
+            crate::error::UpdateDomainNameserversError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::UpdateDomainNameserversError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -632,17 +785,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTagsForDomain
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateTagsForDomainError> for Error {
     fn from(err: crate::error::UpdateTagsForDomainError) -> Self {
-        match err.kind {
-            crate::error::UpdateTagsForDomainErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UpdateTagsForDomainErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
-            crate::error::UpdateTagsForDomainErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
-            crate::error::UpdateTagsForDomainErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateTagsForDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateTagsForDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::error::UpdateTagsForDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::error::UpdateTagsForDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -650,17 +808,36 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ViewBillingError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ViewBillingError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ViewBillingError> for Error {
     fn from(err: crate::error::ViewBillingError) -> Self {
-        match err.kind {
-            crate::error::ViewBillingErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ViewBillingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ViewBillingError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ViewBillingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::DnssecLimitExceeded(e) => e.request_id(),
+            Self::DomainLimitExceeded(e) => e.request_id(),
+            Self::DuplicateRequest(e) => e.request_id(),
+            Self::InvalidInput(e) => e.request_id(),
+            Self::OperationLimitExceeded(e) => e.request_id(),
+            Self::TldRulesViolation(e) => e.request_id(),
+            Self::UnsupportedTld(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

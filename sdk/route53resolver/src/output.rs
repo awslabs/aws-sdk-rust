@@ -6,6 +6,7 @@ pub struct UpdateResolverRuleOutput  {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
+    _request_id: Option<String>,
 }
 impl UpdateResolverRuleOutput {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
@@ -13,6 +14,11 @@ impl UpdateResolverRuleOutput {
         self.resolver_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
 pub mod update_resolver_rule_output {
     
@@ -21,6 +27,7 @@ pub mod update_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
@@ -32,11 +39,21 @@ pub mod update_resolver_rule_output {
         pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
             self.resolver_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
         pub fn build(self) -> crate::output::UpdateResolverRuleOutput {
             crate::output::UpdateResolverRuleOutput {
                 resolver_rule: self.resolver_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateResolverEndpointOutput  {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl UpdateResolverEndpointOutput {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
@@ -64,6 +82,11 @@ impl UpdateResolverEndpointOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResolverEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
 pub mod update_resolver_endpoint_output {
     
@@ -72,6 +95,7 @@ pub mod update_resolver_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
@@ -83,11 +107,21 @@ pub mod update_resolver_endpoint_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
         pub fn build(self) -> crate::output::UpdateResolverEndpointOutput {
             crate::output::UpdateResolverEndpointOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateResolverDnssecConfigOutput  {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
     #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
+    _request_id: Option<String>,
 }
 impl UpdateResolverDnssecConfigOutput {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
@@ -115,6 +150,11 @@ impl UpdateResolverDnssecConfigOutput {
         self.resolver_dnssec_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResolverDnssecConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
 pub mod update_resolver_dnssec_config_output {
     
@@ -123,6 +163,7 @@ pub mod update_resolver_dnssec_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
@@ -134,11 +175,21 @@ pub mod update_resolver_dnssec_config_output {
         pub fn set_resolver_dnssec_config(mut self, input: std::option::Option<crate::model::ResolverDnssecConfig>) -> Self {
             self.resolver_dnssec_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
         pub fn build(self) -> crate::output::UpdateResolverDnssecConfigOutput {
             crate::output::UpdateResolverDnssecConfigOutput {
                 resolver_dnssec_config: self.resolver_dnssec_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +210,7 @@ pub struct UpdateResolverConfigOutput  {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+    _request_id: Option<String>,
 }
 impl UpdateResolverConfigOutput {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
@@ -166,6 +218,11 @@ impl UpdateResolverConfigOutput {
         self.resolver_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResolverConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
 pub mod update_resolver_config_output {
     
@@ -174,6 +231,7 @@ pub mod update_resolver_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An array that contains settings for the specified Resolver configuration.</p>
@@ -185,11 +243,21 @@ pub mod update_resolver_config_output {
         pub fn set_resolver_config(mut self, input: std::option::Option<crate::model::ResolverConfig>) -> Self {
             self.resolver_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
         pub fn build(self) -> crate::output::UpdateResolverConfigOutput {
             crate::output::UpdateResolverConfigOutput {
                 resolver_config: self.resolver_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,6 +278,7 @@ pub struct UpdateFirewallRuleGroupAssociationOutput  {
     /// <p>The association that you just updated. </p>
     #[doc(hidden)]
     pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
@@ -217,6 +286,11 @@ impl UpdateFirewallRuleGroupAssociationOutput {
         self.firewall_rule_group_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallRuleGroupAssociationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
 pub mod update_firewall_rule_group_association_output {
     
@@ -225,6 +299,7 @@ pub mod update_firewall_rule_group_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The association that you just updated. </p>
@@ -236,11 +311,21 @@ pub mod update_firewall_rule_group_association_output {
         pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
             self.firewall_rule_group_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
         pub fn build(self) -> crate::output::UpdateFirewallRuleGroupAssociationOutput {
             crate::output::UpdateFirewallRuleGroupAssociationOutput {
                 firewall_rule_group_association: self.firewall_rule_group_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -261,6 +346,7 @@ pub struct UpdateFirewallRuleOutput  {
     /// <p>The firewall rule that you just updated. </p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallRuleOutput {
     /// <p>The firewall rule that you just updated. </p>
@@ -268,6 +354,11 @@ impl UpdateFirewallRuleOutput {
         self.firewall_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
 pub mod update_firewall_rule_output {
     
@@ -276,6 +367,7 @@ pub mod update_firewall_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The firewall rule that you just updated. </p>
@@ -287,11 +379,21 @@ pub mod update_firewall_rule_output {
         pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
             self.firewall_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
         pub fn build(self) -> crate::output::UpdateFirewallRuleOutput {
             crate::output::UpdateFirewallRuleOutput {
                 firewall_rule: self.firewall_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -321,6 +423,7 @@ pub struct UpdateFirewallDomainsOutput  {
     /// <p>Additional information about the status of the list, if available.</p>
     #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallDomainsOutput {
     /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
@@ -340,6 +443,11 @@ impl UpdateFirewallDomainsOutput {
         self.status_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallDomainsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
 pub mod update_firewall_domains_output {
     
@@ -351,6 +459,7 @@ pub mod update_firewall_domains_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FirewallDomainListStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
@@ -389,6 +498,15 @@ pub mod update_firewall_domains_output {
         pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDomainsOutput {
             crate::output::UpdateFirewallDomainsOutput {
@@ -400,6 +518,7 @@ pub mod update_firewall_domains_output {
                 ,
                 status_message: self.status_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -420,6 +539,7 @@ pub struct UpdateFirewallConfigOutput  {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
     #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
+    _request_id: Option<String>,
 }
 impl UpdateFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
@@ -427,6 +547,11 @@ impl UpdateFirewallConfigOutput {
         self.firewall_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFirewallConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
 pub mod update_firewall_config_output {
     
@@ -435,6 +560,7 @@ pub mod update_firewall_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_config: std::option::Option<crate::model::FirewallConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
@@ -446,11 +572,21 @@ pub mod update_firewall_config_output {
         pub fn set_firewall_config(mut self, input: std::option::Option<crate::model::FirewallConfig>) -> Self {
             self.firewall_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
         pub fn build(self) -> crate::output::UpdateFirewallConfigOutput {
             crate::output::UpdateFirewallConfigOutput {
                 firewall_config: self.firewall_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -468,7 +604,13 @@ impl UpdateFirewallConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -476,11 +618,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -498,7 +651,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -506,11 +665,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -531,6 +701,7 @@ pub struct PutResolverRulePolicyOutput  {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
     #[doc(hidden)]
     pub return_value: bool,
+    _request_id: Option<String>,
 }
 impl PutResolverRulePolicyOutput {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
@@ -538,6 +709,11 @@ impl PutResolverRulePolicyOutput {
         self.return_value
     }
 }
+impl aws_http::request_id::RequestId for PutResolverRulePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
 pub mod put_resolver_rule_policy_output {
     
@@ -546,6 +722,7 @@ pub mod put_resolver_rule_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
@@ -557,12 +734,22 @@ pub mod put_resolver_rule_policy_output {
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
         pub fn build(self) -> crate::output::PutResolverRulePolicyOutput {
             crate::output::PutResolverRulePolicyOutput {
                 return_value: self.return_value
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -583,6 +770,7 @@ pub struct PutResolverQueryLogConfigPolicyOutput  {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     #[doc(hidden)]
     pub return_value: bool,
+    _request_id: Option<String>,
 }
 impl PutResolverQueryLogConfigPolicyOutput {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
@@ -590,6 +778,11 @@ impl PutResolverQueryLogConfigPolicyOutput {
         self.return_value
     }
 }
+impl aws_http::request_id::RequestId for PutResolverQueryLogConfigPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
 pub mod put_resolver_query_log_config_policy_output {
     
@@ -598,6 +791,7 @@ pub mod put_resolver_query_log_config_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
@@ -609,12 +803,22 @@ pub mod put_resolver_query_log_config_policy_output {
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
         pub fn build(self) -> crate::output::PutResolverQueryLogConfigPolicyOutput {
             crate::output::PutResolverQueryLogConfigPolicyOutput {
                 return_value: self.return_value
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -635,6 +839,7 @@ pub struct PutFirewallRuleGroupPolicyOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub return_value: bool,
+    _request_id: Option<String>,
 }
 impl PutFirewallRuleGroupPolicyOutput {
     /// <p></p>
@@ -642,6 +847,11 @@ impl PutFirewallRuleGroupPolicyOutput {
         self.return_value
     }
 }
+impl aws_http::request_id::RequestId for PutFirewallRuleGroupPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
 pub mod put_firewall_rule_group_policy_output {
     
@@ -650,6 +860,7 @@ pub mod put_firewall_rule_group_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p></p>
@@ -661,12 +872,22 @@ pub mod put_firewall_rule_group_policy_output {
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
         pub fn build(self) -> crate::output::PutFirewallRuleGroupPolicyOutput {
             crate::output::PutFirewallRuleGroupPolicyOutput {
                 return_value: self.return_value
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -690,6 +911,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
@@ -701,6 +923,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -710,6 +937,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -736,6 +964,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -743,6 +980,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -769,6 +1007,7 @@ pub struct ListResolverRulesOutput  {
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
     #[doc(hidden)]
     pub resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
+    _request_id: Option<String>,
 }
 impl ListResolverRulesOutput {
     /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -784,6 +1023,11 @@ impl ListResolverRulesOutput {
         self.resolver_rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
 pub mod list_resolver_rules_output {
     
@@ -794,6 +1038,7 @@ pub mod list_resolver_rules_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -829,6 +1074,15 @@ pub mod list_resolver_rules_output {
         pub fn set_resolver_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>) -> Self {
             self.resolver_rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
         pub fn build(self) -> crate::output::ListResolverRulesOutput {
             crate::output::ListResolverRulesOutput {
@@ -838,6 +1092,7 @@ pub mod list_resolver_rules_output {
                 ,
                 resolver_rules: self.resolver_rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -864,6 +1119,7 @@ pub struct ListResolverRuleAssociationsOutput  {
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     #[doc(hidden)]
     pub resolver_rule_associations: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
+    _request_id: Option<String>,
 }
 impl ListResolverRuleAssociationsOutput {
     /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -879,6 +1135,11 @@ impl ListResolverRuleAssociationsOutput {
         self.resolver_rule_associations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverRuleAssociationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
 pub mod list_resolver_rule_associations_output {
     
@@ -889,6 +1150,7 @@ pub mod list_resolver_rule_associations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) resolver_rule_associations: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -924,6 +1186,15 @@ pub mod list_resolver_rule_associations_output {
         pub fn set_resolver_rule_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>) -> Self {
             self.resolver_rule_associations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
         pub fn build(self) -> crate::output::ListResolverRuleAssociationsOutput {
             crate::output::ListResolverRuleAssociationsOutput {
@@ -933,6 +1204,7 @@ pub mod list_resolver_rule_associations_output {
                 ,
                 resolver_rule_associations: self.resolver_rule_associations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -962,6 +1234,7 @@ pub struct ListResolverQueryLogConfigsOutput  {
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
     pub resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
+    _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -981,6 +1254,11 @@ impl ListResolverQueryLogConfigsOutput {
         self.resolver_query_log_configs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverQueryLogConfigsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
 pub mod list_resolver_query_log_configs_output {
     
@@ -992,6 +1270,7 @@ pub mod list_resolver_query_log_configs_output {
         pub(crate) total_count: std::option::Option<i32>,
         pub(crate) total_filtered_count: std::option::Option<i32>,
         pub(crate) resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1036,6 +1315,15 @@ pub mod list_resolver_query_log_configs_output {
         pub fn set_resolver_query_log_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>) -> Self {
             self.resolver_query_log_configs = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverQueryLogConfigsOutput {
             crate::output::ListResolverQueryLogConfigsOutput {
@@ -1049,6 +1337,7 @@ pub mod list_resolver_query_log_configs_output {
                 ,
                 resolver_query_log_configs: self.resolver_query_log_configs
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1078,6 +1367,7 @@ pub struct ListResolverQueryLogConfigAssociationsOutput  {
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_associations: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
+    _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1097,6 +1387,11 @@ impl ListResolverQueryLogConfigAssociationsOutput {
         self.resolver_query_log_config_associations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverQueryLogConfigAssociationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
 pub mod list_resolver_query_log_config_associations_output {
     
@@ -1108,6 +1403,7 @@ pub mod list_resolver_query_log_config_associations_output {
         pub(crate) total_count: std::option::Option<i32>,
         pub(crate) total_filtered_count: std::option::Option<i32>,
         pub(crate) resolver_query_log_config_associations: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1152,6 +1448,15 @@ pub mod list_resolver_query_log_config_associations_output {
         pub fn set_resolver_query_log_config_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>) -> Self {
             self.resolver_query_log_config_associations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
         pub fn build(self) -> crate::output::ListResolverQueryLogConfigAssociationsOutput {
             crate::output::ListResolverQueryLogConfigAssociationsOutput {
@@ -1165,6 +1470,7 @@ pub mod list_resolver_query_log_config_associations_output {
                 ,
                 resolver_query_log_config_associations: self.resolver_query_log_config_associations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1191,6 +1497,7 @@ pub struct ListResolverEndpointsOutput  {
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     #[doc(hidden)]
     pub resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
+    _request_id: Option<String>,
 }
 impl ListResolverEndpointsOutput {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1206,6 +1513,11 @@ impl ListResolverEndpointsOutput {
         self.resolver_endpoints.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
 pub mod list_resolver_endpoints_output {
     
@@ -1216,6 +1528,7 @@ pub mod list_resolver_endpoints_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1251,6 +1564,15 @@ pub mod list_resolver_endpoints_output {
         pub fn set_resolver_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>) -> Self {
             self.resolver_endpoints = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
         pub fn build(self) -> crate::output::ListResolverEndpointsOutput {
             crate::output::ListResolverEndpointsOutput {
@@ -1260,6 +1582,7 @@ pub mod list_resolver_endpoints_output {
                 ,
                 resolver_endpoints: self.resolver_endpoints
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1286,6 +1609,7 @@ pub struct ListResolverEndpointIpAddressesOutput  {
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     #[doc(hidden)]
     pub ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
+    _request_id: Option<String>,
 }
 impl ListResolverEndpointIpAddressesOutput {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1301,6 +1625,11 @@ impl ListResolverEndpointIpAddressesOutput {
         self.ip_addresses.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
 pub mod list_resolver_endpoint_ip_addresses_output {
     
@@ -1311,6 +1640,7 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1346,6 +1676,15 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>) -> Self {
             self.ip_addresses = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
         pub fn build(self) -> crate::output::ListResolverEndpointIpAddressesOutput {
             crate::output::ListResolverEndpointIpAddressesOutput {
@@ -1355,6 +1694,7 @@ pub mod list_resolver_endpoint_ip_addresses_output {
                 ,
                 ip_addresses: self.ip_addresses
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1379,6 +1719,7 @@ pub struct ListResolverDnssecConfigsOutput  {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub resolver_dnssec_configs: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
+    _request_id: Option<String>,
 }
 impl ListResolverDnssecConfigsOutput {
     /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
@@ -1391,6 +1732,11 @@ impl ListResolverDnssecConfigsOutput {
         self.resolver_dnssec_configs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverDnssecConfigsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
 pub mod list_resolver_dnssec_configs_output {
     
@@ -1400,6 +1746,7 @@ pub mod list_resolver_dnssec_configs_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) resolver_dnssec_configs: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
@@ -1428,6 +1775,15 @@ pub mod list_resolver_dnssec_configs_output {
         pub fn set_resolver_dnssec_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>) -> Self {
             self.resolver_dnssec_configs = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverDnssecConfigsOutput {
             crate::output::ListResolverDnssecConfigsOutput {
@@ -1435,6 +1791,7 @@ pub mod list_resolver_dnssec_configs_output {
                 ,
                 resolver_dnssec_configs: self.resolver_dnssec_configs
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1459,6 +1816,7 @@ pub struct ListResolverConfigsOutput  {
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+    _request_id: Option<String>,
 }
 impl ListResolverConfigsOutput {
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
@@ -1471,6 +1829,11 @@ impl ListResolverConfigsOutput {
         self.resolver_configs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResolverConfigsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
 pub mod list_resolver_configs_output {
     
@@ -1480,6 +1843,7 @@ pub mod list_resolver_configs_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
@@ -1508,6 +1872,15 @@ pub mod list_resolver_configs_output {
         pub fn set_resolver_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>) -> Self {
             self.resolver_configs = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverConfigsOutput {
             crate::output::ListResolverConfigsOutput {
@@ -1515,6 +1888,7 @@ pub mod list_resolver_configs_output {
                 ,
                 resolver_configs: self.resolver_configs
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1539,6 +1913,7 @@ pub struct ListFirewallRulesOutput  {
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1551,6 +1926,11 @@ impl ListFirewallRulesOutput {
         self.firewall_rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
 pub mod list_firewall_rules_output {
     
@@ -1560,6 +1940,7 @@ pub mod list_firewall_rules_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1588,6 +1969,15 @@ pub mod list_firewall_rules_output {
         pub fn set_firewall_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>) -> Self {
             self.firewall_rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
         pub fn build(self) -> crate::output::ListFirewallRulesOutput {
             crate::output::ListFirewallRulesOutput {
@@ -1595,6 +1985,7 @@ pub mod list_firewall_rules_output {
                 ,
                 firewall_rules: self.firewall_rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1619,6 +2010,7 @@ pub struct ListFirewallRuleGroupsOutput  {
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub firewall_rule_groups: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1631,6 +2023,11 @@ impl ListFirewallRuleGroupsOutput {
         self.firewall_rule_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallRuleGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
 pub mod list_firewall_rule_groups_output {
     
@@ -1640,6 +2037,7 @@ pub mod list_firewall_rule_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_rule_groups: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1668,6 +2066,15 @@ pub mod list_firewall_rule_groups_output {
         pub fn set_firewall_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>) -> Self {
             self.firewall_rule_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListFirewallRuleGroupsOutput {
             crate::output::ListFirewallRuleGroupsOutput {
@@ -1675,6 +2082,7 @@ pub mod list_firewall_rule_groups_output {
                 ,
                 firewall_rule_groups: self.firewall_rule_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1699,6 +2107,7 @@ pub struct ListFirewallRuleGroupAssociationsOutput  {
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub firewall_rule_group_associations: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupAssociationsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1711,6 +2120,11 @@ impl ListFirewallRuleGroupAssociationsOutput {
         self.firewall_rule_group_associations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallRuleGroupAssociationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
 pub mod list_firewall_rule_group_associations_output {
     
@@ -1720,6 +2134,7 @@ pub mod list_firewall_rule_group_associations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_rule_group_associations: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1748,6 +2163,15 @@ pub mod list_firewall_rule_group_associations_output {
         pub fn set_firewall_rule_group_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>) -> Self {
             self.firewall_rule_group_associations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
         pub fn build(self) -> crate::output::ListFirewallRuleGroupAssociationsOutput {
             crate::output::ListFirewallRuleGroupAssociationsOutput {
@@ -1755,6 +2179,7 @@ pub mod list_firewall_rule_group_associations_output {
                 ,
                 firewall_rule_group_associations: self.firewall_rule_group_associations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1779,6 +2204,7 @@ pub struct ListFirewallDomainsOutput  {
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallDomainsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1791,6 +2217,11 @@ impl ListFirewallDomainsOutput {
         self.domains.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallDomainsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
 pub mod list_firewall_domains_output {
     
@@ -1800,6 +2231,7 @@ pub mod list_firewall_domains_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) domains: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1828,6 +2260,15 @@ pub mod list_firewall_domains_output {
         pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.domains = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
         pub fn build(self) -> crate::output::ListFirewallDomainsOutput {
             crate::output::ListFirewallDomainsOutput {
@@ -1835,6 +2276,7 @@ pub mod list_firewall_domains_output {
                 ,
                 domains: self.domains
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1859,6 +2301,7 @@ pub struct ListFirewallDomainListsOutput  {
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub firewall_domain_lists: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallDomainListsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1871,6 +2314,11 @@ impl ListFirewallDomainListsOutput {
         self.firewall_domain_lists.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallDomainListsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
 pub mod list_firewall_domain_lists_output {
     
@@ -1880,6 +2328,7 @@ pub mod list_firewall_domain_lists_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_domain_lists: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1908,6 +2357,15 @@ pub mod list_firewall_domain_lists_output {
         pub fn set_firewall_domain_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>) -> Self {
             self.firewall_domain_lists = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
         pub fn build(self) -> crate::output::ListFirewallDomainListsOutput {
             crate::output::ListFirewallDomainListsOutput {
@@ -1915,6 +2373,7 @@ pub mod list_firewall_domain_lists_output {
                 ,
                 firewall_domain_lists: self.firewall_domain_lists
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1938,6 +2397,7 @@ pub struct ListFirewallConfigsOutput  {
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
     #[doc(hidden)]
     pub firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
+    _request_id: Option<String>,
 }
 impl ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1949,6 +2409,11 @@ impl ListFirewallConfigsOutput {
         self.firewall_configs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFirewallConfigsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
 pub mod list_firewall_configs_output {
     
@@ -1958,6 +2423,7 @@ pub mod list_firewall_configs_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1984,6 +2450,15 @@ pub mod list_firewall_configs_output {
         pub fn set_firewall_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>) -> Self {
             self.firewall_configs = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
         pub fn build(self) -> crate::output::ListFirewallConfigsOutput {
             crate::output::ListFirewallConfigsOutput {
@@ -1991,6 +2466,7 @@ pub mod list_firewall_configs_output {
                 ,
                 firewall_configs: self.firewall_configs
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2020,6 +2496,7 @@ pub struct ImportFirewallDomainsOutput  {
     /// <p>Additional information about the status of the list, if available.</p>
     #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
@@ -2039,6 +2516,11 @@ impl ImportFirewallDomainsOutput {
         self.status_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportFirewallDomainsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
 pub mod import_firewall_domains_output {
     
@@ -2050,6 +2532,7 @@ pub mod import_firewall_domains_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FirewallDomainListStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
@@ -2088,6 +2571,15 @@ pub mod import_firewall_domains_output {
         pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
         pub fn build(self) -> crate::output::ImportFirewallDomainsOutput {
             crate::output::ImportFirewallDomainsOutput {
@@ -2099,6 +2591,7 @@ pub mod import_firewall_domains_output {
                 ,
                 status_message: self.status_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2119,6 +2612,7 @@ pub struct GetResolverRulePolicyOutput  {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule_policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
@@ -2126,6 +2620,11 @@ impl GetResolverRulePolicyOutput {
         self.resolver_rule_policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverRulePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
 pub mod get_resolver_rule_policy_output {
     
@@ -2134,6 +2633,7 @@ pub mod get_resolver_rule_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
@@ -2145,11 +2645,21 @@ pub mod get_resolver_rule_policy_output {
         pub fn set_resolver_rule_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resolver_rule_policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
         pub fn build(self) -> crate::output::GetResolverRulePolicyOutput {
             crate::output::GetResolverRulePolicyOutput {
                 resolver_rule_policy: self.resolver_rule_policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2170,6 +2680,7 @@ pub struct GetResolverRuleAssociationOutput  {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+    _request_id: Option<String>,
 }
 impl GetResolverRuleAssociationOutput {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
@@ -2177,6 +2688,11 @@ impl GetResolverRuleAssociationOutput {
         self.resolver_rule_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverRuleAssociationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
 pub mod get_resolver_rule_association_output {
     
@@ -2185,6 +2701,7 @@ pub mod get_resolver_rule_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
@@ -2196,11 +2713,21 @@ pub mod get_resolver_rule_association_output {
         pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
             self.resolver_rule_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
         pub fn build(self) -> crate::output::GetResolverRuleAssociationOutput {
             crate::output::GetResolverRuleAssociationOutput {
                 resolver_rule_association: self.resolver_rule_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2221,6 +2748,7 @@ pub struct GetResolverRuleOutput  {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
+    _request_id: Option<String>,
 }
 impl GetResolverRuleOutput {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
@@ -2228,6 +2756,11 @@ impl GetResolverRuleOutput {
         self.resolver_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
 pub mod get_resolver_rule_output {
     
@@ -2236,6 +2769,7 @@ pub mod get_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
@@ -2247,11 +2781,21 @@ pub mod get_resolver_rule_output {
         pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
             self.resolver_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
         pub fn build(self) -> crate::output::GetResolverRuleOutput {
             crate::output::GetResolverRuleOutput {
                 resolver_rule: self.resolver_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2272,6 +2816,7 @@ pub struct GetResolverQueryLogConfigPolicyOutput  {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
@@ -2279,6 +2824,11 @@ impl GetResolverQueryLogConfigPolicyOutput {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverQueryLogConfigPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
 pub mod get_resolver_query_log_config_policy_output {
     
@@ -2287,6 +2837,7 @@ pub mod get_resolver_query_log_config_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
@@ -2298,11 +2849,21 @@ pub mod get_resolver_query_log_config_policy_output {
         pub fn set_resolver_query_log_config_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resolver_query_log_config_policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigPolicyOutput {
             crate::output::GetResolverQueryLogConfigPolicyOutput {
                 resolver_query_log_config_policy: self.resolver_query_log_config_policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2323,6 +2884,7 @@ pub struct GetResolverQueryLogConfigAssociationOutput  {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    _request_id: Option<String>,
 }
 impl GetResolverQueryLogConfigAssociationOutput {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
@@ -2330,6 +2892,11 @@ impl GetResolverQueryLogConfigAssociationOutput {
         self.resolver_query_log_config_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverQueryLogConfigAssociationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
 pub mod get_resolver_query_log_config_association_output {
     
@@ -2338,6 +2905,7 @@ pub mod get_resolver_query_log_config_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
@@ -2349,11 +2917,21 @@ pub mod get_resolver_query_log_config_association_output {
         pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
             self.resolver_query_log_config_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigAssociationOutput {
             crate::output::GetResolverQueryLogConfigAssociationOutput {
                 resolver_query_log_config_association: self.resolver_query_log_config_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2374,6 +2952,7 @@ pub struct GetResolverQueryLogConfigOutput  {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+    _request_id: Option<String>,
 }
 impl GetResolverQueryLogConfigOutput {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
@@ -2381,6 +2960,11 @@ impl GetResolverQueryLogConfigOutput {
         self.resolver_query_log_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverQueryLogConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
 pub mod get_resolver_query_log_config_output {
     
@@ -2389,6 +2973,7 @@ pub mod get_resolver_query_log_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
@@ -2400,11 +2985,21 @@ pub mod get_resolver_query_log_config_output {
         pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
             self.resolver_query_log_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigOutput {
             crate::output::GetResolverQueryLogConfigOutput {
                 resolver_query_log_config: self.resolver_query_log_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2425,6 +3020,7 @@ pub struct GetResolverEndpointOutput  {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl GetResolverEndpointOutput {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
@@ -2432,6 +3028,11 @@ impl GetResolverEndpointOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
 pub mod get_resolver_endpoint_output {
     
@@ -2440,6 +3041,7 @@ pub mod get_resolver_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
@@ -2451,11 +3053,21 @@ pub mod get_resolver_endpoint_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
         pub fn build(self) -> crate::output::GetResolverEndpointOutput {
             crate::output::GetResolverEndpointOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2476,6 +3088,7 @@ pub struct GetResolverDnssecConfigOutput  {
     /// <p>The information about a configuration for DNSSEC validation.</p>
     #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
+    _request_id: Option<String>,
 }
 impl GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
@@ -2483,6 +3096,11 @@ impl GetResolverDnssecConfigOutput {
         self.resolver_dnssec_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverDnssecConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
 pub mod get_resolver_dnssec_config_output {
     
@@ -2491,6 +3109,7 @@ pub mod get_resolver_dnssec_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The information about a configuration for DNSSEC validation.</p>
@@ -2502,11 +3121,21 @@ pub mod get_resolver_dnssec_config_output {
         pub fn set_resolver_dnssec_config(mut self, input: std::option::Option<crate::model::ResolverDnssecConfig>) -> Self {
             self.resolver_dnssec_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
         pub fn build(self) -> crate::output::GetResolverDnssecConfigOutput {
             crate::output::GetResolverDnssecConfigOutput {
                 resolver_dnssec_config: self.resolver_dnssec_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2527,6 +3156,7 @@ pub struct GetResolverConfigOutput  {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+    _request_id: Option<String>,
 }
 impl GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
@@ -2534,6 +3164,11 @@ impl GetResolverConfigOutput {
         self.resolver_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResolverConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
 pub mod get_resolver_config_output {
     
@@ -2542,6 +3177,7 @@ pub mod get_resolver_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
@@ -2553,11 +3189,21 @@ pub mod get_resolver_config_output {
         pub fn set_resolver_config(mut self, input: std::option::Option<crate::model::ResolverConfig>) -> Self {
             self.resolver_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
         pub fn build(self) -> crate::output::GetResolverConfigOutput {
             crate::output::GetResolverConfigOutput {
                 resolver_config: self.resolver_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2578,6 +3224,7 @@ pub struct GetFirewallRuleGroupPolicyOutput  {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     #[doc(hidden)]
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupPolicyOutput {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
@@ -2585,6 +3232,11 @@ impl GetFirewallRuleGroupPolicyOutput {
         self.firewall_rule_group_policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetFirewallRuleGroupPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
 pub mod get_firewall_rule_group_policy_output {
     
@@ -2593,6 +3245,7 @@ pub mod get_firewall_rule_group_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
@@ -2604,11 +3257,21 @@ pub mod get_firewall_rule_group_policy_output {
         pub fn set_firewall_rule_group_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firewall_rule_group_policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupPolicyOutput {
             crate::output::GetFirewallRuleGroupPolicyOutput {
                 firewall_rule_group_policy: self.firewall_rule_group_policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2629,6 +3292,7 @@ pub struct GetFirewallRuleGroupAssociationOutput  {
     /// <p>The association that you requested. </p>
     #[doc(hidden)]
     pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupAssociationOutput {
     /// <p>The association that you requested. </p>
@@ -2636,6 +3300,11 @@ impl GetFirewallRuleGroupAssociationOutput {
         self.firewall_rule_group_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFirewallRuleGroupAssociationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
 pub mod get_firewall_rule_group_association_output {
     
@@ -2644,6 +3313,7 @@ pub mod get_firewall_rule_group_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The association that you requested. </p>
@@ -2655,11 +3325,21 @@ pub mod get_firewall_rule_group_association_output {
         pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
             self.firewall_rule_group_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupAssociationOutput {
             crate::output::GetFirewallRuleGroupAssociationOutput {
                 firewall_rule_group_association: self.firewall_rule_group_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2680,6 +3360,7 @@ pub struct GetFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+    _request_id: Option<String>,
 }
 impl GetFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -2687,6 +3368,11 @@ impl GetFirewallRuleGroupOutput {
         self.firewall_rule_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFirewallRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
 pub mod get_firewall_rule_group_output {
     
@@ -2695,6 +3381,7 @@ pub mod get_firewall_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -2706,11 +3393,21 @@ pub mod get_firewall_rule_group_output {
         pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
             self.firewall_rule_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupOutput {
             crate::output::GetFirewallRuleGroupOutput {
                 firewall_rule_group: self.firewall_rule_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2731,6 +3428,7 @@ pub struct GetFirewallDomainListOutput  {
     /// <p>The domain list that you requested. </p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+    _request_id: Option<String>,
 }
 impl GetFirewallDomainListOutput {
     /// <p>The domain list that you requested. </p>
@@ -2738,6 +3436,11 @@ impl GetFirewallDomainListOutput {
         self.firewall_domain_list.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFirewallDomainListOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
 pub mod get_firewall_domain_list_output {
     
@@ -2746,6 +3449,7 @@ pub mod get_firewall_domain_list_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The domain list that you requested. </p>
@@ -2757,11 +3461,21 @@ pub mod get_firewall_domain_list_output {
         pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
             self.firewall_domain_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
         pub fn build(self) -> crate::output::GetFirewallDomainListOutput {
             crate::output::GetFirewallDomainListOutput {
                 firewall_domain_list: self.firewall_domain_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2782,6 +3496,7 @@ pub struct GetFirewallConfigOutput  {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
+    _request_id: Option<String>,
 }
 impl GetFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
@@ -2789,6 +3504,11 @@ impl GetFirewallConfigOutput {
         self.firewall_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFirewallConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
 pub mod get_firewall_config_output {
     
@@ -2797,6 +3517,7 @@ pub mod get_firewall_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_config: std::option::Option<crate::model::FirewallConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
@@ -2808,11 +3529,21 @@ pub mod get_firewall_config_output {
         pub fn set_firewall_config(mut self, input: std::option::Option<crate::model::FirewallConfig>) -> Self {
             self.firewall_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
         pub fn build(self) -> crate::output::GetFirewallConfigOutput {
             crate::output::GetFirewallConfigOutput {
                 firewall_config: self.firewall_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2833,6 +3564,7 @@ pub struct DisassociateResolverRuleOutput  {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+    _request_id: Option<String>,
 }
 impl DisassociateResolverRuleOutput {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
@@ -2840,6 +3572,11 @@ impl DisassociateResolverRuleOutput {
         self.resolver_rule_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
 pub mod disassociate_resolver_rule_output {
     
@@ -2848,6 +3585,7 @@ pub mod disassociate_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
@@ -2859,11 +3597,21 @@ pub mod disassociate_resolver_rule_output {
         pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
             self.resolver_rule_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
         pub fn build(self) -> crate::output::DisassociateResolverRuleOutput {
             crate::output::DisassociateResolverRuleOutput {
                 resolver_rule_association: self.resolver_rule_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2884,6 +3632,7 @@ pub struct DisassociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    _request_id: Option<String>,
 }
 impl DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
@@ -2891,6 +3640,11 @@ impl DisassociateResolverQueryLogConfigOutput {
         self.resolver_query_log_config_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateResolverQueryLogConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
 pub mod disassociate_resolver_query_log_config_output {
     
@@ -2899,6 +3653,7 @@ pub mod disassociate_resolver_query_log_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
@@ -2910,11 +3665,21 @@ pub mod disassociate_resolver_query_log_config_output {
         pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
             self.resolver_query_log_config_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::DisassociateResolverQueryLogConfigOutput {
             crate::output::DisassociateResolverQueryLogConfigOutput {
                 resolver_query_log_config_association: self.resolver_query_log_config_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2935,6 +3700,7 @@ pub struct DisassociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl DisassociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
@@ -2942,6 +3708,11 @@ impl DisassociateResolverEndpointIpAddressOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateResolverEndpointIpAddressOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
 pub mod disassociate_resolver_endpoint_ip_address_output {
     
@@ -2950,6 +3721,7 @@ pub mod disassociate_resolver_endpoint_ip_address_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
@@ -2961,11 +3733,21 @@ pub mod disassociate_resolver_endpoint_ip_address_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
         pub fn build(self) -> crate::output::DisassociateResolverEndpointIpAddressOutput {
             crate::output::DisassociateResolverEndpointIpAddressOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2986,6 +3768,7 @@ pub struct DisassociateFirewallRuleGroupOutput  {
     /// <p>The firewall rule group association that you just removed. </p>
     #[doc(hidden)]
     pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    _request_id: Option<String>,
 }
 impl DisassociateFirewallRuleGroupOutput {
     /// <p>The firewall rule group association that you just removed. </p>
@@ -2993,6 +3776,11 @@ impl DisassociateFirewallRuleGroupOutput {
         self.firewall_rule_group_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateFirewallRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
 pub mod disassociate_firewall_rule_group_output {
     
@@ -3001,6 +3789,7 @@ pub mod disassociate_firewall_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The firewall rule group association that you just removed. </p>
@@ -3012,11 +3801,21 @@ pub mod disassociate_firewall_rule_group_output {
         pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
             self.firewall_rule_group_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::DisassociateFirewallRuleGroupOutput {
             crate::output::DisassociateFirewallRuleGroupOutput {
                 firewall_rule_group_association: self.firewall_rule_group_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3037,6 +3836,7 @@ pub struct DeleteResolverRuleOutput  {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
+    _request_id: Option<String>,
 }
 impl DeleteResolverRuleOutput {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
@@ -3044,6 +3844,11 @@ impl DeleteResolverRuleOutput {
         self.resolver_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
 pub mod delete_resolver_rule_output {
     
@@ -3052,6 +3857,7 @@ pub mod delete_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
@@ -3063,11 +3869,21 @@ pub mod delete_resolver_rule_output {
         pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
             self.resolver_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
         pub fn build(self) -> crate::output::DeleteResolverRuleOutput {
             crate::output::DeleteResolverRuleOutput {
                 resolver_rule: self.resolver_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3088,6 +3904,7 @@ pub struct DeleteResolverQueryLogConfigOutput  {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+    _request_id: Option<String>,
 }
 impl DeleteResolverQueryLogConfigOutput {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
@@ -3095,6 +3912,11 @@ impl DeleteResolverQueryLogConfigOutput {
         self.resolver_query_log_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResolverQueryLogConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
 pub mod delete_resolver_query_log_config_output {
     
@@ -3103,6 +3925,7 @@ pub mod delete_resolver_query_log_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
@@ -3114,11 +3937,21 @@ pub mod delete_resolver_query_log_config_output {
         pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
             self.resolver_query_log_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::DeleteResolverQueryLogConfigOutput {
             crate::output::DeleteResolverQueryLogConfigOutput {
                 resolver_query_log_config: self.resolver_query_log_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3139,6 +3972,7 @@ pub struct DeleteResolverEndpointOutput  {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl DeleteResolverEndpointOutput {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
@@ -3146,6 +3980,11 @@ impl DeleteResolverEndpointOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResolverEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
 pub mod delete_resolver_endpoint_output {
     
@@ -3154,6 +3993,7 @@ pub mod delete_resolver_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
@@ -3165,11 +4005,21 @@ pub mod delete_resolver_endpoint_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
         pub fn build(self) -> crate::output::DeleteResolverEndpointOutput {
             crate::output::DeleteResolverEndpointOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3190,6 +4040,7 @@ pub struct DeleteFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+    _request_id: Option<String>,
 }
 impl DeleteFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -3197,6 +4048,11 @@ impl DeleteFirewallRuleGroupOutput {
         self.firewall_rule_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFirewallRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
 pub mod delete_firewall_rule_group_output {
     
@@ -3205,6 +4061,7 @@ pub mod delete_firewall_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -3216,11 +4073,21 @@ pub mod delete_firewall_rule_group_output {
         pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
             self.firewall_rule_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteFirewallRuleGroupOutput {
             crate::output::DeleteFirewallRuleGroupOutput {
                 firewall_rule_group: self.firewall_rule_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3241,6 +4108,7 @@ pub struct DeleteFirewallRuleOutput  {
     /// <p>The specification for the firewall rule that you just deleted.</p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
+    _request_id: Option<String>,
 }
 impl DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
@@ -3248,6 +4116,11 @@ impl DeleteFirewallRuleOutput {
         self.firewall_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFirewallRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
 pub mod delete_firewall_rule_output {
     
@@ -3256,6 +4129,7 @@ pub mod delete_firewall_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The specification for the firewall rule that you just deleted.</p>
@@ -3267,11 +4141,21 @@ pub mod delete_firewall_rule_output {
         pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
             self.firewall_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
         pub fn build(self) -> crate::output::DeleteFirewallRuleOutput {
             crate::output::DeleteFirewallRuleOutput {
                 firewall_rule: self.firewall_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3292,6 +4176,7 @@ pub struct DeleteFirewallDomainListOutput  {
     /// <p>The domain list that you just deleted. </p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+    _request_id: Option<String>,
 }
 impl DeleteFirewallDomainListOutput {
     /// <p>The domain list that you just deleted. </p>
@@ -3299,6 +4184,11 @@ impl DeleteFirewallDomainListOutput {
         self.firewall_domain_list.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFirewallDomainListOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
 pub mod delete_firewall_domain_list_output {
     
@@ -3307,6 +4197,7 @@ pub mod delete_firewall_domain_list_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The domain list that you just deleted. </p>
@@ -3318,11 +4209,21 @@ pub mod delete_firewall_domain_list_output {
         pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
             self.firewall_domain_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
         pub fn build(self) -> crate::output::DeleteFirewallDomainListOutput {
             crate::output::DeleteFirewallDomainListOutput {
                 firewall_domain_list: self.firewall_domain_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3343,6 +4244,7 @@ pub struct CreateResolverRuleOutput  {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
+    _request_id: Option<String>,
 }
 impl CreateResolverRuleOutput {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
@@ -3350,6 +4252,11 @@ impl CreateResolverRuleOutput {
         self.resolver_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
 pub mod create_resolver_rule_output {
     
@@ -3358,6 +4265,7 @@ pub mod create_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule: std::option::Option<crate::model::ResolverRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
@@ -3369,11 +4277,21 @@ pub mod create_resolver_rule_output {
         pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
             self.resolver_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
         pub fn build(self) -> crate::output::CreateResolverRuleOutput {
             crate::output::CreateResolverRuleOutput {
                 resolver_rule: self.resolver_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3394,6 +4312,7 @@ pub struct CreateResolverQueryLogConfigOutput  {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+    _request_id: Option<String>,
 }
 impl CreateResolverQueryLogConfigOutput {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
@@ -3401,6 +4320,11 @@ impl CreateResolverQueryLogConfigOutput {
         self.resolver_query_log_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResolverQueryLogConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
 pub mod create_resolver_query_log_config_output {
     
@@ -3409,6 +4333,7 @@ pub mod create_resolver_query_log_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
@@ -3420,11 +4345,21 @@ pub mod create_resolver_query_log_config_output {
         pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
             self.resolver_query_log_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::CreateResolverQueryLogConfigOutput {
             crate::output::CreateResolverQueryLogConfigOutput {
                 resolver_query_log_config: self.resolver_query_log_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3445,6 +4380,7 @@ pub struct CreateResolverEndpointOutput  {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl CreateResolverEndpointOutput {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
@@ -3452,6 +4388,11 @@ impl CreateResolverEndpointOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResolverEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
 pub mod create_resolver_endpoint_output {
     
@@ -3460,6 +4401,7 @@ pub mod create_resolver_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
@@ -3471,11 +4413,21 @@ pub mod create_resolver_endpoint_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
         pub fn build(self) -> crate::output::CreateResolverEndpointOutput {
             crate::output::CreateResolverEndpointOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3496,6 +4448,7 @@ pub struct CreateFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+    _request_id: Option<String>,
 }
 impl CreateFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -3503,6 +4456,11 @@ impl CreateFirewallRuleGroupOutput {
         self.firewall_rule_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFirewallRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
 pub mod create_firewall_rule_group_output {
     
@@ -3511,6 +4469,7 @@ pub mod create_firewall_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A collection of rules used to filter DNS network traffic. </p>
@@ -3522,11 +4481,21 @@ pub mod create_firewall_rule_group_output {
         pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
             self.firewall_rule_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateFirewallRuleGroupOutput {
             crate::output::CreateFirewallRuleGroupOutput {
                 firewall_rule_group: self.firewall_rule_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3547,6 +4516,7 @@ pub struct CreateFirewallRuleOutput  {
     /// <p>The firewall rule that you just created. </p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
+    _request_id: Option<String>,
 }
 impl CreateFirewallRuleOutput {
     /// <p>The firewall rule that you just created. </p>
@@ -3554,6 +4524,11 @@ impl CreateFirewallRuleOutput {
         self.firewall_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFirewallRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
 pub mod create_firewall_rule_output {
     
@@ -3562,6 +4537,7 @@ pub mod create_firewall_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The firewall rule that you just created. </p>
@@ -3573,11 +4549,21 @@ pub mod create_firewall_rule_output {
         pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
             self.firewall_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
         pub fn build(self) -> crate::output::CreateFirewallRuleOutput {
             crate::output::CreateFirewallRuleOutput {
                 firewall_rule: self.firewall_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3598,6 +4584,7 @@ pub struct CreateFirewallDomainListOutput  {
     /// <p>The domain list that you just created.</p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+    _request_id: Option<String>,
 }
 impl CreateFirewallDomainListOutput {
     /// <p>The domain list that you just created.</p>
@@ -3605,6 +4592,11 @@ impl CreateFirewallDomainListOutput {
         self.firewall_domain_list.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFirewallDomainListOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
 pub mod create_firewall_domain_list_output {
     
@@ -3613,6 +4605,7 @@ pub mod create_firewall_domain_list_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The domain list that you just created.</p>
@@ -3624,11 +4617,21 @@ pub mod create_firewall_domain_list_output {
         pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
             self.firewall_domain_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
         pub fn build(self) -> crate::output::CreateFirewallDomainListOutput {
             crate::output::CreateFirewallDomainListOutput {
                 firewall_domain_list: self.firewall_domain_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3649,6 +4652,7 @@ pub struct AssociateResolverRuleOutput  {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+    _request_id: Option<String>,
 }
 impl AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
@@ -3656,6 +4660,11 @@ impl AssociateResolverRuleOutput {
         self.resolver_rule_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateResolverRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
 pub mod associate_resolver_rule_output {
     
@@ -3664,6 +4673,7 @@ pub mod associate_resolver_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
@@ -3675,11 +4685,21 @@ pub mod associate_resolver_rule_output {
         pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
             self.resolver_rule_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
         pub fn build(self) -> crate::output::AssociateResolverRuleOutput {
             crate::output::AssociateResolverRuleOutput {
                 resolver_rule_association: self.resolver_rule_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3700,6 +4720,7 @@ pub struct AssociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    _request_id: Option<String>,
 }
 impl AssociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
@@ -3707,6 +4728,11 @@ impl AssociateResolverQueryLogConfigOutput {
         self.resolver_query_log_config_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateResolverQueryLogConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
 pub mod associate_resolver_query_log_config_output {
     
@@ -3715,6 +4741,7 @@ pub mod associate_resolver_query_log_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
@@ -3726,11 +4753,21 @@ pub mod associate_resolver_query_log_config_output {
         pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
             self.resolver_query_log_config_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::AssociateResolverQueryLogConfigOutput {
             crate::output::AssociateResolverQueryLogConfigOutput {
                 resolver_query_log_config_association: self.resolver_query_log_config_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3751,6 +4788,7 @@ pub struct AssociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+    _request_id: Option<String>,
 }
 impl AssociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
@@ -3758,6 +4796,11 @@ impl AssociateResolverEndpointIpAddressOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateResolverEndpointIpAddressOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
 pub mod associate_resolver_endpoint_ip_address_output {
     
@@ -3766,6 +4809,7 @@ pub mod associate_resolver_endpoint_ip_address_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
@@ -3777,11 +4821,21 @@ pub mod associate_resolver_endpoint_ip_address_output {
         pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
             self.resolver_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
         pub fn build(self) -> crate::output::AssociateResolverEndpointIpAddressOutput {
             crate::output::AssociateResolverEndpointIpAddressOutput {
                 resolver_endpoint: self.resolver_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3802,6 +4856,7 @@ pub struct AssociateFirewallRuleGroupOutput  {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     #[doc(hidden)]
     pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    _request_id: Option<String>,
 }
 impl AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
@@ -3809,6 +4864,11 @@ impl AssociateFirewallRuleGroupOutput {
         self.firewall_rule_group_association.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateFirewallRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
 pub mod associate_firewall_rule_group_output {
     
@@ -3817,6 +4877,7 @@ pub mod associate_firewall_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
@@ -3828,11 +4889,21 @@ pub mod associate_firewall_rule_group_output {
         pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
             self.firewall_rule_group_association = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::AssociateFirewallRuleGroupOutput {
             crate::output::AssociateFirewallRuleGroupOutput {
                 firewall_rule_group_association: self.firewall_rule_group_association
                 ,
+                _request_id: self._request_id,
             }
         }
     }

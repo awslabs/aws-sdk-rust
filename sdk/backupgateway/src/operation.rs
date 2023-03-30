@@ -22,6 +22,7 @@ impl AssociateGatewayToServer {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateGatewayToServer {
                 type Output = std::result::Result<crate::output::AssociateGatewayToServerOutput, crate::error::AssociateGatewayToServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_gateway_to_server_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateGateway {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGateway {
                 type Output = std::result::Result<crate::output::CreateGatewayOutput, crate::error::CreateGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_gateway_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteGateway {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGateway {
                 type Output = std::result::Result<crate::output::DeleteGatewayOutput, crate::error::DeleteGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_gateway_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteHypervisor {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteHypervisor {
                 type Output = std::result::Result<crate::output::DeleteHypervisorOutput, crate::error::DeleteHypervisorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_hypervisor_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DisassociateGatewayFromServer {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromServer {
                 type Output = std::result::Result<crate::output::DisassociateGatewayFromServerOutput, crate::error::DisassociateGatewayFromServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_gateway_from_server_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetBandwidthRateLimitSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for GetBandwidthRateLimitSchedule {
                 type Output = std::result::Result<crate::output::GetBandwidthRateLimitScheduleOutput, crate::error::GetBandwidthRateLimitScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_bandwidth_rate_limit_schedule_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetGateway {
 impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
                 type Output = std::result::Result<crate::output::GetGatewayOutput, crate::error::GetGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_gateway_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetHypervisor {
 impl aws_smithy_http::response::ParseStrictResponse for GetHypervisor {
                 type Output = std::result::Result<crate::output::GetHypervisorOutput, crate::error::GetHypervisorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_hypervisor_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetHypervisorPropertyMappings {
 impl aws_smithy_http::response::ParseStrictResponse for GetHypervisorPropertyMappings {
                 type Output = std::result::Result<crate::output::GetHypervisorPropertyMappingsOutput, crate::error::GetHypervisorPropertyMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_hypervisor_property_mappings_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetVirtualMachine {
 impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
                 type Output = std::result::Result<crate::output::GetVirtualMachineOutput, crate::error::GetVirtualMachineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_virtual_machine_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ImportHypervisorConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for ImportHypervisorConfiguration {
                 type Output = std::result::Result<crate::output::ImportHypervisorConfigurationOutput, crate::error::ImportHypervisorConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_hypervisor_configuration_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListGateways {
 impl aws_smithy_http::response::ParseStrictResponse for ListGateways {
                 type Output = std::result::Result<crate::output::ListGatewaysOutput, crate::error::ListGatewaysError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_gateways_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListHypervisors {
 impl aws_smithy_http::response::ParseStrictResponse for ListHypervisors {
                 type Output = std::result::Result<crate::output::ListHypervisorsOutput, crate::error::ListHypervisorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hypervisors_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListVirtualMachines {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMachines {
                 type Output = std::result::Result<crate::output::ListVirtualMachinesOutput, crate::error::ListVirtualMachinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_machines_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl PutBandwidthRateLimitSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for PutBandwidthRateLimitSchedule {
                 type Output = std::result::Result<crate::output::PutBandwidthRateLimitScheduleOutput, crate::error::PutBandwidthRateLimitScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_bandwidth_rate_limit_schedule_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl PutHypervisorPropertyMappings {
 impl aws_smithy_http::response::ParseStrictResponse for PutHypervisorPropertyMappings {
                 type Output = std::result::Result<crate::output::PutHypervisorPropertyMappingsOutput, crate::error::PutHypervisorPropertyMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_hypervisor_property_mappings_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl PutMaintenanceStartTime {
 impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime {
                 type Output = std::result::Result<crate::output::PutMaintenanceStartTimeOutput, crate::error::PutMaintenanceStartTimeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_maintenance_start_time_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl StartVirtualMachinesMetadataSync {
 impl aws_smithy_http::response::ParseStrictResponse for StartVirtualMachinesMetadataSync {
                 type Output = std::result::Result<crate::output::StartVirtualMachinesMetadataSyncOutput, crate::error::StartVirtualMachinesMetadataSyncError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_virtual_machines_metadata_sync_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl TestHypervisorConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for TestHypervisorConfiguration {
                 type Output = std::result::Result<crate::output::TestHypervisorConfigurationOutput, crate::error::TestHypervisorConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_test_hypervisor_configuration_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UpdateGatewayInformation {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation {
                 type Output = std::result::Result<crate::output::UpdateGatewayInformationOutput, crate::error::UpdateGatewayInformationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_gateway_information_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UpdateGatewaySoftwareNow {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewaySoftwareNow {
                 type Output = std::result::Result<crate::output::UpdateGatewaySoftwareNowOutput, crate::error::UpdateGatewaySoftwareNowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_gateway_software_now_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UpdateHypervisor {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateHypervisor {
                 type Output = std::result::Result<crate::output::UpdateHypervisorOutput, crate::error::UpdateHypervisorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_hypervisor_error(response)
                      } else {

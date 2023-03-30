@@ -22,6 +22,7 @@ impl CreateSuiteDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSuiteDefinition {
                 type Output = std::result::Result<crate::output::CreateSuiteDefinitionOutput, crate::error::CreateSuiteDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_suite_definition_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteSuiteDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSuiteDefinition {
                 type Output = std::result::Result<crate::output::DeleteSuiteDefinitionOutput, crate::error::DeleteSuiteDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_suite_definition_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for GetEndpoint {
                 type Output = std::result::Result<crate::output::GetEndpointOutput, crate::error::GetEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_endpoint_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetSuiteDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for GetSuiteDefinition {
                 type Output = std::result::Result<crate::output::GetSuiteDefinitionOutput, crate::error::GetSuiteDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_suite_definition_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetSuiteRun {
 impl aws_smithy_http::response::ParseStrictResponse for GetSuiteRun {
                 type Output = std::result::Result<crate::output::GetSuiteRunOutput, crate::error::GetSuiteRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_suite_run_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetSuiteRunReport {
 impl aws_smithy_http::response::ParseStrictResponse for GetSuiteRunReport {
                 type Output = std::result::Result<crate::output::GetSuiteRunReportOutput, crate::error::GetSuiteRunReportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_suite_run_report_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListSuiteDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for ListSuiteDefinitions {
                 type Output = std::result::Result<crate::output::ListSuiteDefinitionsOutput, crate::error::ListSuiteDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_suite_definitions_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListSuiteRuns {
 impl aws_smithy_http::response::ParseStrictResponse for ListSuiteRuns {
                 type Output = std::result::Result<crate::output::ListSuiteRunsOutput, crate::error::ListSuiteRunsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_suite_runs_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl StartSuiteRun {
 impl aws_smithy_http::response::ParseStrictResponse for StartSuiteRun {
                 type Output = std::result::Result<crate::output::StartSuiteRunOutput, crate::error::StartSuiteRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_suite_run_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl StopSuiteRun {
 impl aws_smithy_http::response::ParseStrictResponse for StopSuiteRun {
                 type Output = std::result::Result<crate::output::StopSuiteRunOutput, crate::error::StopSuiteRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_suite_run_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl UpdateSuiteDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSuiteDefinition {
                 type Output = std::result::Result<crate::output::UpdateSuiteDefinitionOutput, crate::error::UpdateSuiteDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_suite_definition_error(response)
                      } else {

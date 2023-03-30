@@ -22,6 +22,7 @@ impl CreateAnomalyMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalyMonitor {
                 type Output = std::result::Result<crate::output::CreateAnomalyMonitorOutput, crate::error::CreateAnomalyMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_anomaly_monitor_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateAnomalySubscription {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalySubscription {
                 type Output = std::result::Result<crate::output::CreateAnomalySubscriptionOutput, crate::error::CreateAnomalySubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_anomaly_subscription_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateCostCategoryDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCostCategoryDefinition {
                 type Output = std::result::Result<crate::output::CreateCostCategoryDefinitionOutput, crate::error::CreateCostCategoryDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cost_category_definition_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteAnomalyMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyMonitor {
                 type Output = std::result::Result<crate::output::DeleteAnomalyMonitorOutput, crate::error::DeleteAnomalyMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_anomaly_monitor_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteAnomalySubscription {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalySubscription {
                 type Output = std::result::Result<crate::output::DeleteAnomalySubscriptionOutput, crate::error::DeleteAnomalySubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_anomaly_subscription_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteCostCategoryDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCostCategoryDefinition {
                 type Output = std::result::Result<crate::output::DeleteCostCategoryDefinitionOutput, crate::error::DeleteCostCategoryDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cost_category_definition_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeCostCategoryDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCostCategoryDefinition {
                 type Output = std::result::Result<crate::output::DescribeCostCategoryDefinitionOutput, crate::error::DescribeCostCategoryDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_cost_category_definition_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetAnomalies {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnomalies {
                 type Output = std::result::Result<crate::output::GetAnomaliesOutput, crate::error::GetAnomaliesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_anomalies_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetAnomalyMonitors {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnomalyMonitors {
                 type Output = std::result::Result<crate::output::GetAnomalyMonitorsOutput, crate::error::GetAnomalyMonitorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_anomaly_monitors_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetAnomalySubscriptions {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnomalySubscriptions {
                 type Output = std::result::Result<crate::output::GetAnomalySubscriptionsOutput, crate::error::GetAnomalySubscriptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_anomaly_subscriptions_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetCostAndUsage {
 impl aws_smithy_http::response::ParseStrictResponse for GetCostAndUsage {
                 type Output = std::result::Result<crate::output::GetCostAndUsageOutput, crate::error::GetCostAndUsageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cost_and_usage_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetCostAndUsageWithResources {
 impl aws_smithy_http::response::ParseStrictResponse for GetCostAndUsageWithResources {
                 type Output = std::result::Result<crate::output::GetCostAndUsageWithResourcesOutput, crate::error::GetCostAndUsageWithResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cost_and_usage_with_resources_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetCostCategories {
 impl aws_smithy_http::response::ParseStrictResponse for GetCostCategories {
                 type Output = std::result::Result<crate::output::GetCostCategoriesOutput, crate::error::GetCostCategoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cost_categories_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetCostForecast {
 impl aws_smithy_http::response::ParseStrictResponse for GetCostForecast {
                 type Output = std::result::Result<crate::output::GetCostForecastOutput, crate::error::GetCostForecastError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cost_forecast_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetDimensionValues {
 impl aws_smithy_http::response::ParseStrictResponse for GetDimensionValues {
                 type Output = std::result::Result<crate::output::GetDimensionValuesOutput, crate::error::GetDimensionValuesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_dimension_values_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetReservationCoverage {
 impl aws_smithy_http::response::ParseStrictResponse for GetReservationCoverage {
                 type Output = std::result::Result<crate::output::GetReservationCoverageOutput, crate::error::GetReservationCoverageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_reservation_coverage_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetReservationPurchaseRecommendation {
 impl aws_smithy_http::response::ParseStrictResponse for GetReservationPurchaseRecommendation {
                 type Output = std::result::Result<crate::output::GetReservationPurchaseRecommendationOutput, crate::error::GetReservationPurchaseRecommendationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_reservation_purchase_recommendation_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetReservationUtilization {
 impl aws_smithy_http::response::ParseStrictResponse for GetReservationUtilization {
                 type Output = std::result::Result<crate::output::GetReservationUtilizationOutput, crate::error::GetReservationUtilizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_reservation_utilization_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetRightsizingRecommendation {
 impl aws_smithy_http::response::ParseStrictResponse for GetRightsizingRecommendation {
                 type Output = std::result::Result<crate::output::GetRightsizingRecommendationOutput, crate::error::GetRightsizingRecommendationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_rightsizing_recommendation_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetSavingsPlansCoverage {
 impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansCoverage {
                 type Output = std::result::Result<crate::output::GetSavingsPlansCoverageOutput, crate::error::GetSavingsPlansCoverageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_savings_plans_coverage_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetSavingsPlansPurchaseRecommendation {
 impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansPurchaseRecommendation {
                 type Output = std::result::Result<crate::output::GetSavingsPlansPurchaseRecommendationOutput, crate::error::GetSavingsPlansPurchaseRecommendationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_savings_plans_purchase_recommendation_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetSavingsPlansUtilization {
 impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansUtilization {
                 type Output = std::result::Result<crate::output::GetSavingsPlansUtilizationOutput, crate::error::GetSavingsPlansUtilizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_savings_plans_utilization_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetSavingsPlansUtilizationDetails {
 impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansUtilizationDetails {
                 type Output = std::result::Result<crate::output::GetSavingsPlansUtilizationDetailsOutput, crate::error::GetSavingsPlansUtilizationDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_savings_plans_utilization_details_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetTags {
 impl aws_smithy_http::response::ParseStrictResponse for GetTags {
                 type Output = std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_tags_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetUsageForecast {
 impl aws_smithy_http::response::ParseStrictResponse for GetUsageForecast {
                 type Output = std::result::Result<crate::output::GetUsageForecastOutput, crate::error::GetUsageForecastError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_usage_forecast_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListCostAllocationTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListCostAllocationTags {
                 type Output = std::result::Result<crate::output::ListCostAllocationTagsOutput, crate::error::ListCostAllocationTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cost_allocation_tags_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListCostCategoryDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for ListCostCategoryDefinitions {
                 type Output = std::result::Result<crate::output::ListCostCategoryDefinitionsOutput, crate::error::ListCostCategoryDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_cost_category_definitions_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListSavingsPlansPurchaseRecommendationGeneration {
 impl aws_smithy_http::response::ParseStrictResponse for ListSavingsPlansPurchaseRecommendationGeneration {
                 type Output = std::result::Result<crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput, crate::error::ListSavingsPlansPurchaseRecommendationGenerationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_savings_plans_purchase_recommendation_generation_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ProvideAnomalyFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for ProvideAnomalyFeedback {
                 type Output = std::result::Result<crate::output::ProvideAnomalyFeedbackOutput, crate::error::ProvideAnomalyFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_provide_anomaly_feedback_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl StartSavingsPlansPurchaseRecommendationGeneration {
 impl aws_smithy_http::response::ParseStrictResponse for StartSavingsPlansPurchaseRecommendationGeneration {
                 type Output = std::result::Result<crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput, crate::error::StartSavingsPlansPurchaseRecommendationGenerationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_savings_plans_purchase_recommendation_generation_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl UpdateAnomalyMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalyMonitor {
                 type Output = std::result::Result<crate::output::UpdateAnomalyMonitorOutput, crate::error::UpdateAnomalyMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_anomaly_monitor_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UpdateAnomalySubscription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalySubscription {
                 type Output = std::result::Result<crate::output::UpdateAnomalySubscriptionOutput, crate::error::UpdateAnomalySubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_anomaly_subscription_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateCostAllocationTagsStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCostAllocationTagsStatus {
                 type Output = std::result::Result<crate::output::UpdateCostAllocationTagsStatusOutput, crate::error::UpdateCostAllocationTagsStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cost_allocation_tags_status_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateCostCategoryDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCostCategoryDefinition {
                 type Output = std::result::Result<crate::output::UpdateCostCategoryDefinitionOutput, crate::error::UpdateCostCategoryDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cost_category_definition_error(response)
                      } else {

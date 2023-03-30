@@ -22,6 +22,7 @@ impl AssociateRepository {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateRepository {
                 type Output = std::result::Result<crate::output::AssociateRepositoryOutput, crate::error::AssociateRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_repository_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateCodeReview {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCodeReview {
                 type Output = std::result::Result<crate::output::CreateCodeReviewOutput, crate::error::CreateCodeReviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_code_review_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeCodeReview {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeReview {
                 type Output = std::result::Result<crate::output::DescribeCodeReviewOutput, crate::error::DescribeCodeReviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_code_review_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeRecommendationFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationFeedback {
                 type Output = std::result::Result<crate::output::DescribeRecommendationFeedbackOutput, crate::error::DescribeRecommendationFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_recommendation_feedback_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeRepositoryAssociation {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositoryAssociation {
                 type Output = std::result::Result<crate::output::DescribeRepositoryAssociationOutput, crate::error::DescribeRepositoryAssociationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_repository_association_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DisassociateRepository {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateRepository {
                 type Output = std::result::Result<crate::output::DisassociateRepositoryOutput, crate::error::DisassociateRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_repository_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListCodeReviews {
 impl aws_smithy_http::response::ParseStrictResponse for ListCodeReviews {
                 type Output = std::result::Result<crate::output::ListCodeReviewsOutput, crate::error::ListCodeReviewsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_code_reviews_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListRecommendationFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationFeedback {
                 type Output = std::result::Result<crate::output::ListRecommendationFeedbackOutput, crate::error::ListRecommendationFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_recommendation_feedback_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ListRecommendations {
                 type Output = std::result::Result<crate::output::ListRecommendationsOutput, crate::error::ListRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_recommendations_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListRepositoryAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for ListRepositoryAssociations {
                 type Output = std::result::Result<crate::output::ListRepositoryAssociationsOutput, crate::error::ListRepositoryAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_repository_associations_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutRecommendationFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationFeedback {
                 type Output = std::result::Result<crate::output::PutRecommendationFeedbackOutput, crate::error::PutRecommendationFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_recommendation_feedback_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

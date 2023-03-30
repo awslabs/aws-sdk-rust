@@ -9,6 +9,7 @@ pub struct StartAttachmentUploadOutput  {
     /// <p>Fields to be used while uploading the attachment.</p>
     #[doc(hidden)]
     pub upload_metadata: std::option::Option<crate::model::UploadMetadata>,
+    _request_id: Option<String>,
 }
 impl StartAttachmentUploadOutput {
     /// <p>A unique identifier for the attachment.</p>
@@ -20,6 +21,11 @@ impl StartAttachmentUploadOutput {
         self.upload_metadata.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartAttachmentUploadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
 pub mod start_attachment_upload_output {
     
@@ -29,6 +35,7 @@ pub mod start_attachment_upload_output {
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
         pub(crate) upload_metadata: std::option::Option<crate::model::UploadMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the attachment.</p>
@@ -49,6 +56,15 @@ pub mod start_attachment_upload_output {
         pub fn set_upload_metadata(mut self, input: std::option::Option<crate::model::UploadMetadata>) -> Self {
             self.upload_metadata = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
         pub fn build(self) -> crate::output::StartAttachmentUploadOutput {
             crate::output::StartAttachmentUploadOutput {
@@ -56,6 +72,7 @@ pub mod start_attachment_upload_output {
                 ,
                 upload_metadata: self.upload_metadata
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -80,6 +97,7 @@ pub struct SendMessageOutput  {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SendMessageOutput {
     /// <p>The ID of the message.</p>
@@ -92,6 +110,11 @@ impl SendMessageOutput {
         self.absolute_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SendMessageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput).
 pub mod send_message_output {
     
@@ -101,6 +124,7 @@ pub mod send_message_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) absolute_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the message.</p>
@@ -123,6 +147,15 @@ pub mod send_message_output {
         pub fn set_absolute_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.absolute_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendMessageOutput`](crate::output::SendMessageOutput).
         pub fn build(self) -> crate::output::SendMessageOutput {
             crate::output::SendMessageOutput {
@@ -130,6 +163,7 @@ pub mod send_message_output {
                 ,
                 absolute_time: self.absolute_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -154,6 +188,7 @@ pub struct SendEventOutput  {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     #[doc(hidden)]
     pub absolute_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SendEventOutput {
     /// <p>The ID of the response.</p>
@@ -166,6 +201,11 @@ impl SendEventOutput {
         self.absolute_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SendEventOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendEventOutput`](crate::output::SendEventOutput).
 pub mod send_event_output {
     
@@ -175,6 +215,7 @@ pub mod send_event_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) absolute_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the response.</p>
@@ -197,6 +238,15 @@ pub mod send_event_output {
         pub fn set_absolute_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.absolute_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendEventOutput`](crate::output::SendEventOutput).
         pub fn build(self) -> crate::output::SendEventOutput {
             crate::output::SendEventOutput {
@@ -204,6 +254,7 @@ pub mod send_event_output {
                 ,
                 absolute_time: self.absolute_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -230,6 +281,7 @@ pub struct GetTranscriptOutput  {
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetTranscriptOutput {
     /// <p>The initial contact ID for the contact. </p>
@@ -245,6 +297,11 @@ impl GetTranscriptOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetTranscriptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
 pub mod get_transcript_output {
     
@@ -255,6 +312,7 @@ pub mod get_transcript_output {
         pub(crate) initial_contact_id: std::option::Option<std::string::String>,
         pub(crate) transcript: std::option::Option<std::vec::Vec<crate::model::Item>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The initial contact ID for the contact. </p>
@@ -290,6 +348,15 @@ pub mod get_transcript_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
         pub fn build(self) -> crate::output::GetTranscriptOutput {
             crate::output::GetTranscriptOutput {
@@ -299,6 +366,7 @@ pub mod get_transcript_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -322,6 +390,7 @@ pub struct GetAttachmentOutput  {
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     #[doc(hidden)]
     pub url_expiry: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAttachmentOutput {
     /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
@@ -333,6 +402,11 @@ impl GetAttachmentOutput {
         self.url_expiry.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAttachmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
 pub mod get_attachment_output {
     
@@ -342,6 +416,7 @@ pub mod get_attachment_output {
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) url_expiry: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
@@ -362,6 +437,15 @@ pub mod get_attachment_output {
         pub fn set_url_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url_expiry = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
         pub fn build(self) -> crate::output::GetAttachmentOutput {
             crate::output::GetAttachmentOutput {
@@ -369,6 +453,7 @@ pub mod get_attachment_output {
                 ,
                 url_expiry: self.url_expiry
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -386,7 +471,13 @@ impl GetAttachmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectParticipantOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisconnectParticipantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
 pub mod disconnect_participant_output {
     
@@ -394,11 +485,22 @@ pub mod disconnect_participant_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
         pub fn build(self) -> crate::output::DisconnectParticipantOutput {
             crate::output::DisconnectParticipantOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -422,6 +524,7 @@ pub struct CreateParticipantConnectionOutput  {
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     #[doc(hidden)]
     pub connection_credentials: std::option::Option<crate::model::ConnectionCredentials>,
+    _request_id: Option<String>,
 }
 impl CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
@@ -433,6 +536,11 @@ impl CreateParticipantConnectionOutput {
         self.connection_credentials.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateParticipantConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
 pub mod create_participant_connection_output {
     
@@ -442,6 +550,7 @@ pub mod create_participant_connection_output {
     pub struct Builder {
         pub(crate) websocket: std::option::Option<crate::model::Websocket>,
         pub(crate) connection_credentials: std::option::Option<crate::model::ConnectionCredentials>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Creates the participant's websocket connection.</p>
@@ -462,6 +571,15 @@ pub mod create_participant_connection_output {
         pub fn set_connection_credentials(mut self, input: std::option::Option<crate::model::ConnectionCredentials>) -> Self {
             self.connection_credentials = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
         pub fn build(self) -> crate::output::CreateParticipantConnectionOutput {
             crate::output::CreateParticipantConnectionOutput {
@@ -469,6 +587,7 @@ pub mod create_participant_connection_output {
                 ,
                 connection_credentials: self.connection_credentials
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -486,7 +605,13 @@ impl CreateParticipantConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteAttachmentUploadOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CompleteAttachmentUploadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
 pub mod complete_attachment_upload_output {
     
@@ -494,11 +619,22 @@ pub mod complete_attachment_upload_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
         pub fn build(self) -> crate::output::CompleteAttachmentUploadOutput {
             crate::output::CompleteAttachmentUploadOutput {
+                _request_id: self._request_id,
             }
         }
     }

@@ -22,6 +22,7 @@ impl AssociateUser {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateUser {
                 type Output = std::result::Result<crate::output::AssociateUserOutput, crate::error::AssociateUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_user_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeregisterIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterIdentityProvider {
                 type Output = std::result::Result<crate::output::DeregisterIdentityProviderOutput, crate::error::DeregisterIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_identity_provider_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DisassociateUser {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateUser {
                 type Output = std::result::Result<crate::output::DisassociateUserOutput, crate::error::DisassociateUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_user_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListIdentityProviders {
 impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
                 type Output = std::result::Result<crate::output::ListIdentityProvidersOutput, crate::error::ListIdentityProvidersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_identity_providers_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListInstances {
 impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
                 type Output = std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_instances_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListProductSubscriptions {
 impl aws_smithy_http::response::ParseStrictResponse for ListProductSubscriptions {
                 type Output = std::result::Result<crate::output::ListProductSubscriptionsOutput, crate::error::ListProductSubscriptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_product_subscriptions_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListUserAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for ListUserAssociations {
                 type Output = std::result::Result<crate::output::ListUserAssociationsOutput, crate::error::ListUserAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_user_associations_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl RegisterIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterIdentityProvider {
                 type Output = std::result::Result<crate::output::RegisterIdentityProviderOutput, crate::error::RegisterIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_identity_provider_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl StartProductSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for StartProductSubscription {
                 type Output = std::result::Result<crate::output::StartProductSubscriptionOutput, crate::error::StartProductSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_product_subscription_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl StopProductSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription {
                 type Output = std::result::Result<crate::output::StopProductSubscriptionOutput, crate::error::StopProductSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_product_subscription_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UpdateIdentityProviderSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProviderSettings {
                 type Output = std::result::Result<crate::output::UpdateIdentityProviderSettingsOutput, crate::error::UpdateIdentityProviderSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_identity_provider_settings_error(response)
                      } else {

@@ -22,6 +22,7 @@ impl BatchGetAggregateResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetAggregateResourceConfig {
                 type Output = std::result::Result<crate::output::BatchGetAggregateResourceConfigOutput, crate::error::BatchGetAggregateResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_aggregate_resource_config_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchGetResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetResourceConfig {
                 type Output = std::result::Result<crate::output::BatchGetResourceConfigOutput, crate::error::BatchGetResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_resource_config_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteAggregationAuthorization {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAggregationAuthorization {
                 type Output = std::result::Result<crate::output::DeleteAggregationAuthorizationOutput, crate::error::DeleteAggregationAuthorizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_aggregation_authorization_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigRule {
                 type Output = std::result::Result<crate::output::DeleteConfigRuleOutput, crate::error::DeleteConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_config_rule_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteConfigurationAggregator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationAggregator {
                 type Output = std::result::Result<crate::output::DeleteConfigurationAggregatorOutput, crate::error::DeleteConfigurationAggregatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_configuration_aggregator_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteConfigurationRecorder {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationRecorder {
                 type Output = std::result::Result<crate::output::DeleteConfigurationRecorderOutput, crate::error::DeleteConfigurationRecorderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_configuration_recorder_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteConformancePack {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConformancePack {
                 type Output = std::result::Result<crate::output::DeleteConformancePackOutput, crate::error::DeleteConformancePackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_conformance_pack_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteDeliveryChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDeliveryChannel {
                 type Output = std::result::Result<crate::output::DeleteDeliveryChannelOutput, crate::error::DeleteDeliveryChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_delivery_channel_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteEvaluationResults {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEvaluationResults {
                 type Output = std::result::Result<crate::output::DeleteEvaluationResultsOutput, crate::error::DeleteEvaluationResultsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_evaluation_results_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteOrganizationConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationConfigRule {
                 type Output = std::result::Result<crate::output::DeleteOrganizationConfigRuleOutput, crate::error::DeleteOrganizationConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_organization_config_rule_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteOrganizationConformancePack {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationConformancePack {
                 type Output = std::result::Result<crate::output::DeleteOrganizationConformancePackOutput, crate::error::DeleteOrganizationConformancePackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_organization_conformance_pack_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeletePendingAggregationRequest {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePendingAggregationRequest {
                 type Output = std::result::Result<crate::output::DeletePendingAggregationRequestOutput, crate::error::DeletePendingAggregationRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_pending_aggregation_request_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteRemediationConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRemediationConfiguration {
                 type Output = std::result::Result<crate::output::DeleteRemediationConfigurationOutput, crate::error::DeleteRemediationConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_remediation_configuration_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteRemediationExceptions {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRemediationExceptions {
                 type Output = std::result::Result<crate::output::DeleteRemediationExceptionsOutput, crate::error::DeleteRemediationExceptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_remediation_exceptions_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceConfig {
                 type Output = std::result::Result<crate::output::DeleteResourceConfigOutput, crate::error::DeleteResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_config_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteRetentionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRetentionConfiguration {
                 type Output = std::result::Result<crate::output::DeleteRetentionConfigurationOutput, crate::error::DeleteRetentionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_retention_configuration_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteStoredQuery {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStoredQuery {
                 type Output = std::result::Result<crate::output::DeleteStoredQueryOutput, crate::error::DeleteStoredQueryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_stored_query_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeliverConfigSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for DeliverConfigSnapshot {
                 type Output = std::result::Result<crate::output::DeliverConfigSnapshotOutput, crate::error::DeliverConfigSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deliver_config_snapshot_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeAggregateComplianceByConfigRules {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregateComplianceByConfigRules {
                 type Output = std::result::Result<crate::output::DescribeAggregateComplianceByConfigRulesOutput, crate::error::DescribeAggregateComplianceByConfigRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_aggregate_compliance_by_config_rules_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeAggregateComplianceByConformancePacks {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregateComplianceByConformancePacks {
                 type Output = std::result::Result<crate::output::DescribeAggregateComplianceByConformancePacksOutput, crate::error::DescribeAggregateComplianceByConformancePacksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_aggregate_compliance_by_conformance_packs_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeAggregationAuthorizations {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregationAuthorizations {
                 type Output = std::result::Result<crate::output::DescribeAggregationAuthorizationsOutput, crate::error::DescribeAggregationAuthorizationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_aggregation_authorizations_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribeComplianceByConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeComplianceByConfigRule {
                 type Output = std::result::Result<crate::output::DescribeComplianceByConfigRuleOutput, crate::error::DescribeComplianceByConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_compliance_by_config_rule_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeComplianceByResource {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeComplianceByResource {
                 type Output = std::result::Result<crate::output::DescribeComplianceByResourceOutput, crate::error::DescribeComplianceByResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_compliance_by_resource_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeConfigRuleEvaluationStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRuleEvaluationStatus {
                 type Output = std::result::Result<crate::output::DescribeConfigRuleEvaluationStatusOutput, crate::error::DescribeConfigRuleEvaluationStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_config_rule_evaluation_status_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeConfigRules {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRules {
                 type Output = std::result::Result<crate::output::DescribeConfigRulesOutput, crate::error::DescribeConfigRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_config_rules_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeConfigurationAggregators {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationAggregators {
                 type Output = std::result::Result<crate::output::DescribeConfigurationAggregatorsOutput, crate::error::DescribeConfigurationAggregatorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_aggregators_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl DescribeConfigurationAggregatorSourcesStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationAggregatorSourcesStatus {
                 type Output = std::result::Result<crate::output::DescribeConfigurationAggregatorSourcesStatusOutput, crate::error::DescribeConfigurationAggregatorSourcesStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_aggregator_sources_status_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl DescribeConfigurationRecorders {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRecorders {
                 type Output = std::result::Result<crate::output::DescribeConfigurationRecordersOutput, crate::error::DescribeConfigurationRecordersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_recorders_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl DescribeConfigurationRecorderStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRecorderStatus {
                 type Output = std::result::Result<crate::output::DescribeConfigurationRecorderStatusOutput, crate::error::DescribeConfigurationRecorderStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_recorder_status_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl DescribeConformancePackCompliance {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePackCompliance {
                 type Output = std::result::Result<crate::output::DescribeConformancePackComplianceOutput, crate::error::DescribeConformancePackComplianceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_conformance_pack_compliance_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl DescribeConformancePacks {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePacks {
                 type Output = std::result::Result<crate::output::DescribeConformancePacksOutput, crate::error::DescribeConformancePacksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_conformance_packs_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl DescribeConformancePackStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePackStatus {
                 type Output = std::result::Result<crate::output::DescribeConformancePackStatusOutput, crate::error::DescribeConformancePackStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_conformance_pack_status_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl DescribeDeliveryChannels {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryChannels {
                 type Output = std::result::Result<crate::output::DescribeDeliveryChannelsOutput, crate::error::DescribeDeliveryChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_delivery_channels_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl DescribeDeliveryChannelStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryChannelStatus {
                 type Output = std::result::Result<crate::output::DescribeDeliveryChannelStatusOutput, crate::error::DescribeDeliveryChannelStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_delivery_channel_status_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl DescribeOrganizationConfigRules {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConfigRules {
                 type Output = std::result::Result<crate::output::DescribeOrganizationConfigRulesOutput, crate::error::DescribeOrganizationConfigRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_organization_config_rules_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl DescribeOrganizationConfigRuleStatuses {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConfigRuleStatuses {
                 type Output = std::result::Result<crate::output::DescribeOrganizationConfigRuleStatusesOutput, crate::error::DescribeOrganizationConfigRuleStatusesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_organization_config_rule_statuses_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl DescribeOrganizationConformancePacks {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConformancePacks {
                 type Output = std::result::Result<crate::output::DescribeOrganizationConformancePacksOutput, crate::error::DescribeOrganizationConformancePacksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_organization_conformance_packs_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl DescribeOrganizationConformancePackStatuses {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConformancePackStatuses {
                 type Output = std::result::Result<crate::output::DescribeOrganizationConformancePackStatusesOutput, crate::error::DescribeOrganizationConformancePackStatusesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_organization_conformance_pack_statuses_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl DescribePendingAggregationRequests {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePendingAggregationRequests {
                 type Output = std::result::Result<crate::output::DescribePendingAggregationRequestsOutput, crate::error::DescribePendingAggregationRequestsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_pending_aggregation_requests_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl DescribeRemediationConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationConfigurations {
                 type Output = std::result::Result<crate::output::DescribeRemediationConfigurationsOutput, crate::error::DescribeRemediationConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_remediation_configurations_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl DescribeRemediationExceptions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationExceptions {
                 type Output = std::result::Result<crate::output::DescribeRemediationExceptionsOutput, crate::error::DescribeRemediationExceptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_remediation_exceptions_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl DescribeRemediationExecutionStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationExecutionStatus {
                 type Output = std::result::Result<crate::output::DescribeRemediationExecutionStatusOutput, crate::error::DescribeRemediationExecutionStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_remediation_execution_status_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl DescribeRetentionConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRetentionConfigurations {
                 type Output = std::result::Result<crate::output::DescribeRetentionConfigurationsOutput, crate::error::DescribeRetentionConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_retention_configurations_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl GetAggregateComplianceDetailsByConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for GetAggregateComplianceDetailsByConfigRule {
                 type Output = std::result::Result<crate::output::GetAggregateComplianceDetailsByConfigRuleOutput, crate::error::GetAggregateComplianceDetailsByConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aggregate_compliance_details_by_config_rule_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl GetAggregateConfigRuleComplianceSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetAggregateConfigRuleComplianceSummary {
                 type Output = std::result::Result<crate::output::GetAggregateConfigRuleComplianceSummaryOutput, crate::error::GetAggregateConfigRuleComplianceSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aggregate_config_rule_compliance_summary_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl GetAggregateConformancePackComplianceSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetAggregateConformancePackComplianceSummary {
                 type Output = std::result::Result<crate::output::GetAggregateConformancePackComplianceSummaryOutput, crate::error::GetAggregateConformancePackComplianceSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aggregate_conformance_pack_compliance_summary_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl GetAggregateDiscoveredResourceCounts {
 impl aws_smithy_http::response::ParseStrictResponse for GetAggregateDiscoveredResourceCounts {
                 type Output = std::result::Result<crate::output::GetAggregateDiscoveredResourceCountsOutput, crate::error::GetAggregateDiscoveredResourceCountsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aggregate_discovered_resource_counts_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl GetAggregateResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetAggregateResourceConfig {
                 type Output = std::result::Result<crate::output::GetAggregateResourceConfigOutput, crate::error::GetAggregateResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aggregate_resource_config_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl GetComplianceDetailsByConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for GetComplianceDetailsByConfigRule {
                 type Output = std::result::Result<crate::output::GetComplianceDetailsByConfigRuleOutput, crate::error::GetComplianceDetailsByConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compliance_details_by_config_rule_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl GetComplianceDetailsByResource {
 impl aws_smithy_http::response::ParseStrictResponse for GetComplianceDetailsByResource {
                 type Output = std::result::Result<crate::output::GetComplianceDetailsByResourceOutput, crate::error::GetComplianceDetailsByResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compliance_details_by_resource_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl GetComplianceSummaryByConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummaryByConfigRule {
                 type Output = std::result::Result<crate::output::GetComplianceSummaryByConfigRuleOutput, crate::error::GetComplianceSummaryByConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compliance_summary_by_config_rule_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl GetComplianceSummaryByResourceType {
 impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummaryByResourceType {
                 type Output = std::result::Result<crate::output::GetComplianceSummaryByResourceTypeOutput, crate::error::GetComplianceSummaryByResourceTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compliance_summary_by_resource_type_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl GetConformancePackComplianceDetails {
 impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackComplianceDetails {
                 type Output = std::result::Result<crate::output::GetConformancePackComplianceDetailsOutput, crate::error::GetConformancePackComplianceDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_conformance_pack_compliance_details_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl GetConformancePackComplianceSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackComplianceSummary {
                 type Output = std::result::Result<crate::output::GetConformancePackComplianceSummaryOutput, crate::error::GetConformancePackComplianceSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_conformance_pack_compliance_summary_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl GetCustomRulePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetCustomRulePolicy {
                 type Output = std::result::Result<crate::output::GetCustomRulePolicyOutput, crate::error::GetCustomRulePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_custom_rule_policy_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl GetDiscoveredResourceCounts {
 impl aws_smithy_http::response::ParseStrictResponse for GetDiscoveredResourceCounts {
                 type Output = std::result::Result<crate::output::GetDiscoveredResourceCountsOutput, crate::error::GetDiscoveredResourceCountsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_discovered_resource_counts_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl GetOrganizationConfigRuleDetailedStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationConfigRuleDetailedStatus {
                 type Output = std::result::Result<crate::output::GetOrganizationConfigRuleDetailedStatusOutput, crate::error::GetOrganizationConfigRuleDetailedStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_organization_config_rule_detailed_status_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl GetOrganizationConformancePackDetailedStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationConformancePackDetailedStatus {
                 type Output = std::result::Result<crate::output::GetOrganizationConformancePackDetailedStatusOutput, crate::error::GetOrganizationConformancePackDetailedStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_organization_conformance_pack_detailed_status_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl GetOrganizationCustomRulePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationCustomRulePolicy {
                 type Output = std::result::Result<crate::output::GetOrganizationCustomRulePolicyOutput, crate::error::GetOrganizationCustomRulePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_organization_custom_rule_policy_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl GetResourceConfigHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceConfigHistory {
                 type Output = std::result::Result<crate::output::GetResourceConfigHistoryOutput, crate::error::GetResourceConfigHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_config_history_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl GetResourceEvaluationSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceEvaluationSummary {
                 type Output = std::result::Result<crate::output::GetResourceEvaluationSummaryOutput, crate::error::GetResourceEvaluationSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_evaluation_summary_error(response)
                      } else {
@@ -1913,6 +1974,7 @@ impl GetStoredQuery {
 impl aws_smithy_http::response::ParseStrictResponse for GetStoredQuery {
                 type Output = std::result::Result<crate::output::GetStoredQueryOutput, crate::error::GetStoredQueryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_stored_query_error(response)
                      } else {
@@ -1944,6 +2006,7 @@ impl ListAggregateDiscoveredResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListAggregateDiscoveredResources {
                 type Output = std::result::Result<crate::output::ListAggregateDiscoveredResourcesOutput, crate::error::ListAggregateDiscoveredResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_aggregate_discovered_resources_error(response)
                      } else {
@@ -1975,6 +2038,7 @@ impl ListConformancePackComplianceScores {
 impl aws_smithy_http::response::ParseStrictResponse for ListConformancePackComplianceScores {
                 type Output = std::result::Result<crate::output::ListConformancePackComplianceScoresOutput, crate::error::ListConformancePackComplianceScoresError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_conformance_pack_compliance_scores_error(response)
                      } else {
@@ -2006,6 +2070,7 @@ impl ListDiscoveredResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources {
                 type Output = std::result::Result<crate::output::ListDiscoveredResourcesOutput, crate::error::ListDiscoveredResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_discovered_resources_error(response)
                      } else {
@@ -2037,6 +2102,7 @@ impl ListResourceEvaluations {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceEvaluations {
                 type Output = std::result::Result<crate::output::ListResourceEvaluationsOutput, crate::error::ListResourceEvaluationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_evaluations_error(response)
                      } else {
@@ -2068,6 +2134,7 @@ impl ListStoredQueries {
 impl aws_smithy_http::response::ParseStrictResponse for ListStoredQueries {
                 type Output = std::result::Result<crate::output::ListStoredQueriesOutput, crate::error::ListStoredQueriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_stored_queries_error(response)
                      } else {
@@ -2099,6 +2166,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -2130,6 +2198,7 @@ impl PutAggregationAuthorization {
 impl aws_smithy_http::response::ParseStrictResponse for PutAggregationAuthorization {
                 type Output = std::result::Result<crate::output::PutAggregationAuthorizationOutput, crate::error::PutAggregationAuthorizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_aggregation_authorization_error(response)
                      } else {
@@ -2161,6 +2230,7 @@ impl PutConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for PutConfigRule {
                 type Output = std::result::Result<crate::output::PutConfigRuleOutput, crate::error::PutConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_config_rule_error(response)
                      } else {
@@ -2192,6 +2262,7 @@ impl PutConfigurationAggregator {
 impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationAggregator {
                 type Output = std::result::Result<crate::output::PutConfigurationAggregatorOutput, crate::error::PutConfigurationAggregatorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_configuration_aggregator_error(response)
                      } else {
@@ -2223,6 +2294,7 @@ impl PutConfigurationRecorder {
 impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationRecorder {
                 type Output = std::result::Result<crate::output::PutConfigurationRecorderOutput, crate::error::PutConfigurationRecorderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_configuration_recorder_error(response)
                      } else {
@@ -2254,6 +2326,7 @@ impl PutConformancePack {
 impl aws_smithy_http::response::ParseStrictResponse for PutConformancePack {
                 type Output = std::result::Result<crate::output::PutConformancePackOutput, crate::error::PutConformancePackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_conformance_pack_error(response)
                      } else {
@@ -2285,6 +2358,7 @@ impl PutDeliveryChannel {
 impl aws_smithy_http::response::ParseStrictResponse for PutDeliveryChannel {
                 type Output = std::result::Result<crate::output::PutDeliveryChannelOutput, crate::error::PutDeliveryChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_delivery_channel_error(response)
                      } else {
@@ -2316,6 +2390,7 @@ impl PutEvaluations {
 impl aws_smithy_http::response::ParseStrictResponse for PutEvaluations {
                 type Output = std::result::Result<crate::output::PutEvaluationsOutput, crate::error::PutEvaluationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_evaluations_error(response)
                      } else {
@@ -2347,6 +2422,7 @@ impl PutExternalEvaluation {
 impl aws_smithy_http::response::ParseStrictResponse for PutExternalEvaluation {
                 type Output = std::result::Result<crate::output::PutExternalEvaluationOutput, crate::error::PutExternalEvaluationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_external_evaluation_error(response)
                      } else {
@@ -2378,6 +2454,7 @@ impl PutOrganizationConfigRule {
 impl aws_smithy_http::response::ParseStrictResponse for PutOrganizationConfigRule {
                 type Output = std::result::Result<crate::output::PutOrganizationConfigRuleOutput, crate::error::PutOrganizationConfigRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_organization_config_rule_error(response)
                      } else {
@@ -2409,6 +2486,7 @@ impl PutOrganizationConformancePack {
 impl aws_smithy_http::response::ParseStrictResponse for PutOrganizationConformancePack {
                 type Output = std::result::Result<crate::output::PutOrganizationConformancePackOutput, crate::error::PutOrganizationConformancePackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_organization_conformance_pack_error(response)
                      } else {
@@ -2440,6 +2518,7 @@ impl PutRemediationConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for PutRemediationConfigurations {
                 type Output = std::result::Result<crate::output::PutRemediationConfigurationsOutput, crate::error::PutRemediationConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_remediation_configurations_error(response)
                      } else {
@@ -2471,6 +2550,7 @@ impl PutRemediationExceptions {
 impl aws_smithy_http::response::ParseStrictResponse for PutRemediationExceptions {
                 type Output = std::result::Result<crate::output::PutRemediationExceptionsOutput, crate::error::PutRemediationExceptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_remediation_exceptions_error(response)
                      } else {
@@ -2502,6 +2582,7 @@ impl PutResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for PutResourceConfig {
                 type Output = std::result::Result<crate::output::PutResourceConfigOutput, crate::error::PutResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_resource_config_error(response)
                      } else {
@@ -2533,6 +2614,7 @@ impl PutRetentionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutRetentionConfiguration {
                 type Output = std::result::Result<crate::output::PutRetentionConfigurationOutput, crate::error::PutRetentionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_retention_configuration_error(response)
                      } else {
@@ -2564,6 +2646,7 @@ impl PutStoredQuery {
 impl aws_smithy_http::response::ParseStrictResponse for PutStoredQuery {
                 type Output = std::result::Result<crate::output::PutStoredQueryOutput, crate::error::PutStoredQueryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_stored_query_error(response)
                      } else {
@@ -2595,6 +2678,7 @@ impl SelectAggregateResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for SelectAggregateResourceConfig {
                 type Output = std::result::Result<crate::output::SelectAggregateResourceConfigOutput, crate::error::SelectAggregateResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_select_aggregate_resource_config_error(response)
                      } else {
@@ -2626,6 +2710,7 @@ impl SelectResourceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for SelectResourceConfig {
                 type Output = std::result::Result<crate::output::SelectResourceConfigOutput, crate::error::SelectResourceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_select_resource_config_error(response)
                      } else {
@@ -2657,6 +2742,7 @@ impl StartConfigRulesEvaluation {
 impl aws_smithy_http::response::ParseStrictResponse for StartConfigRulesEvaluation {
                 type Output = std::result::Result<crate::output::StartConfigRulesEvaluationOutput, crate::error::StartConfigRulesEvaluationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_config_rules_evaluation_error(response)
                      } else {
@@ -2688,6 +2774,7 @@ impl StartConfigurationRecorder {
 impl aws_smithy_http::response::ParseStrictResponse for StartConfigurationRecorder {
                 type Output = std::result::Result<crate::output::StartConfigurationRecorderOutput, crate::error::StartConfigurationRecorderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_configuration_recorder_error(response)
                      } else {
@@ -2719,6 +2806,7 @@ impl StartRemediationExecution {
 impl aws_smithy_http::response::ParseStrictResponse for StartRemediationExecution {
                 type Output = std::result::Result<crate::output::StartRemediationExecutionOutput, crate::error::StartRemediationExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_remediation_execution_error(response)
                      } else {
@@ -2750,6 +2838,7 @@ impl StartResourceEvaluation {
 impl aws_smithy_http::response::ParseStrictResponse for StartResourceEvaluation {
                 type Output = std::result::Result<crate::output::StartResourceEvaluationOutput, crate::error::StartResourceEvaluationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_resource_evaluation_error(response)
                      } else {
@@ -2781,6 +2870,7 @@ impl StopConfigurationRecorder {
 impl aws_smithy_http::response::ParseStrictResponse for StopConfigurationRecorder {
                 type Output = std::result::Result<crate::output::StopConfigurationRecorderOutput, crate::error::StopConfigurationRecorderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_configuration_recorder_error(response)
                      } else {
@@ -2812,6 +2902,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -2843,6 +2934,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

@@ -13,6 +13,7 @@ pub struct VerifyMacOutput  {
     /// <p>The MAC algorithm used in the verification.</p>
     #[doc(hidden)]
     pub mac_algorithm: std::option::Option<crate::model::MacAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl VerifyMacOutput {
     /// <p>The HMAC KMS key used in the verification.</p>
@@ -29,6 +30,11 @@ impl VerifyMacOutput {
         self.mac_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for VerifyMacOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`VerifyMacOutput`](crate::output::VerifyMacOutput).
 pub mod verify_mac_output {
     
@@ -39,6 +45,7 @@ pub mod verify_mac_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) mac_valid: std::option::Option<bool>,
         pub(crate) mac_algorithm: std::option::Option<crate::model::MacAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The HMAC KMS key used in the verification.</p>
@@ -70,6 +77,15 @@ pub mod verify_mac_output {
         pub fn set_mac_algorithm(mut self, input: std::option::Option<crate::model::MacAlgorithmSpec>) -> Self {
             self.mac_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`VerifyMacOutput`](crate::output::VerifyMacOutput).
         pub fn build(self) -> crate::output::VerifyMacOutput {
             crate::output::VerifyMacOutput {
@@ -80,6 +96,7 @@ pub mod verify_mac_output {
                 ,
                 mac_algorithm: self.mac_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -106,6 +123,7 @@ pub struct VerifyOutput  {
     /// <p>The signing algorithm that was used to verify the signature.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl VerifyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
@@ -121,6 +139,11 @@ impl VerifyOutput {
         self.signing_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for VerifyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`VerifyOutput`](crate::output::VerifyOutput).
 pub mod verify_output {
     
@@ -131,6 +154,7 @@ pub mod verify_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) signature_valid: std::option::Option<bool>,
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
@@ -160,6 +184,15 @@ pub mod verify_output {
         pub fn set_signing_algorithm(mut self, input: std::option::Option<crate::model::SigningAlgorithmSpec>) -> Self {
             self.signing_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`VerifyOutput`](crate::output::VerifyOutput).
         pub fn build(self) -> crate::output::VerifyOutput {
             crate::output::VerifyOutput {
@@ -170,6 +203,7 @@ pub mod verify_output {
                 ,
                 signing_algorithm: self.signing_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -187,7 +221,13 @@ impl VerifyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePrimaryRegionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdatePrimaryRegionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
 pub mod update_primary_region_output {
     
@@ -195,11 +235,22 @@ pub mod update_primary_region_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
         pub fn build(self) -> crate::output::UpdatePrimaryRegionOutput {
             crate::output::UpdatePrimaryRegionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -217,7 +268,13 @@ impl UpdatePrimaryRegionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateKeyDescriptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateKeyDescriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
 pub mod update_key_description_output {
     
@@ -225,11 +282,22 @@ pub mod update_key_description_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateKeyDescriptionOutput {
             crate::output::UpdateKeyDescriptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -247,7 +315,13 @@ impl UpdateKeyDescriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCustomKeyStoreOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateCustomKeyStoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
 pub mod update_custom_key_store_output {
     
@@ -255,11 +329,22 @@ pub mod update_custom_key_store_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::UpdateCustomKeyStoreOutput {
             crate::output::UpdateCustomKeyStoreOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -277,7 +362,13 @@ impl UpdateCustomKeyStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAliasOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateAliasOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
 pub mod update_alias_output {
     
@@ -285,11 +376,22 @@ pub mod update_alias_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
         pub fn build(self) -> crate::output::UpdateAliasOutput {
             crate::output::UpdateAliasOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -307,7 +409,13 @@ impl UpdateAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -315,11 +423,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -337,7 +456,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -345,11 +470,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -381,6 +517,7 @@ pub struct SignOutput  {
     /// <p>The signing algorithm that was used to sign the message.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl SignOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
@@ -401,6 +538,11 @@ impl SignOutput {
         self.signing_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SignOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SignOutput`](crate::output::SignOutput).
 pub mod sign_output {
     
@@ -411,6 +553,7 @@ pub mod sign_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) signature: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
@@ -450,6 +593,15 @@ pub mod sign_output {
         pub fn set_signing_algorithm(mut self, input: std::option::Option<crate::model::SigningAlgorithmSpec>) -> Self {
             self.signing_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SignOutput`](crate::output::SignOutput).
         pub fn build(self) -> crate::output::SignOutput {
             crate::output::SignOutput {
@@ -459,6 +611,7 @@ pub mod sign_output {
                 ,
                 signing_algorithm: self.signing_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -491,6 +644,7 @@ pub struct ScheduleKeyDeletionOutput  {
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     #[doc(hidden)]
     pub pending_window_in_days: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
@@ -513,6 +667,11 @@ impl ScheduleKeyDeletionOutput {
         self.pending_window_in_days
     }
 }
+impl aws_http::request_id::RequestId for ScheduleKeyDeletionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
 pub mod schedule_key_deletion_output {
     
@@ -524,6 +683,7 @@ pub mod schedule_key_deletion_output {
         pub(crate) deletion_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) key_state: std::option::Option<crate::model::KeyState>,
         pub(crate) pending_window_in_days: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
@@ -568,6 +728,15 @@ pub mod schedule_key_deletion_output {
         pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_window_in_days = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
         pub fn build(self) -> crate::output::ScheduleKeyDeletionOutput {
             crate::output::ScheduleKeyDeletionOutput {
@@ -579,6 +748,7 @@ pub mod schedule_key_deletion_output {
                 ,
                 pending_window_in_days: self.pending_window_in_days
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -596,7 +766,13 @@ impl ScheduleKeyDeletionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeGrantOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RevokeGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
 pub mod revoke_grant_output {
     
@@ -604,11 +780,22 @@ pub mod revoke_grant_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
         pub fn build(self) -> crate::output::RevokeGrantOutput {
             crate::output::RevokeGrantOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -626,7 +813,13 @@ impl RevokeGrantOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetireGrantOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RetireGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RetireGrantOutput`](crate::output::RetireGrantOutput).
 pub mod retire_grant_output {
     
@@ -634,11 +827,22 @@ pub mod retire_grant_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RetireGrantOutput`](crate::output::RetireGrantOutput).
         pub fn build(self) -> crate::output::RetireGrantOutput {
             crate::output::RetireGrantOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -665,6 +869,7 @@ pub struct ReplicateKeyOutput  {
     /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
     #[doc(hidden)]
     pub replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ReplicateKeyOutput {
     /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
@@ -680,6 +885,11 @@ impl ReplicateKeyOutput {
         self.replica_tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ReplicateKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
 pub mod replicate_key_output {
     
@@ -690,6 +900,7 @@ pub mod replicate_key_output {
         pub(crate) replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
         pub(crate) replica_policy: std::option::Option<std::string::String>,
         pub(crate) replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
@@ -725,6 +936,15 @@ pub mod replicate_key_output {
         pub fn set_replica_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.replica_tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
         pub fn build(self) -> crate::output::ReplicateKeyOutput {
             crate::output::ReplicateKeyOutput {
@@ -734,6 +954,7 @@ pub mod replicate_key_output {
                 ,
                 replica_tags: self.replica_tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -766,6 +987,7 @@ pub struct ReEncryptOutput  {
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     #[doc(hidden)]
     pub destination_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl ReEncryptOutput {
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -789,6 +1011,11 @@ impl ReEncryptOutput {
         self.destination_encryption_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ReEncryptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ReEncryptOutput`](crate::output::ReEncryptOutput).
 pub mod re_encrypt_output {
     
@@ -801,6 +1028,7 @@ pub mod re_encrypt_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) source_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         pub(crate) destination_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -848,6 +1076,15 @@ pub mod re_encrypt_output {
         pub fn set_destination_encryption_algorithm(mut self, input: std::option::Option<crate::model::EncryptionAlgorithmSpec>) -> Self {
             self.destination_encryption_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ReEncryptOutput`](crate::output::ReEncryptOutput).
         pub fn build(self) -> crate::output::ReEncryptOutput {
             crate::output::ReEncryptOutput {
@@ -861,6 +1098,7 @@ pub mod re_encrypt_output {
                 ,
                 destination_encryption_algorithm: self.destination_encryption_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -878,7 +1116,13 @@ impl ReEncryptOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutKeyPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutKeyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
 pub mod put_key_policy_output {
     
@@ -886,11 +1130,22 @@ pub mod put_key_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
         pub fn build(self) -> crate::output::PutKeyPolicyOutput {
             crate::output::PutKeyPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -917,6 +1172,7 @@ pub struct ListRetirableGrantsOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListRetirableGrantsOutput {
     /// <p>A list of grants.</p>
@@ -932,6 +1188,11 @@ impl ListRetirableGrantsOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListRetirableGrantsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
 pub mod list_retirable_grants_output {
     
@@ -942,6 +1203,7 @@ pub mod list_retirable_grants_output {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `grants`.
@@ -977,6 +1239,15 @@ pub mod list_retirable_grants_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
         pub fn build(self) -> crate::output::ListRetirableGrantsOutput {
             crate::output::ListRetirableGrantsOutput {
@@ -987,6 +1258,7 @@ pub mod list_retirable_grants_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1016,6 +1288,7 @@ pub struct ListResourceTagsOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note> 
@@ -1034,6 +1307,11 @@ impl ListResourceTagsOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListResourceTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
 pub mod list_resource_tags_output {
     
@@ -1044,6 +1322,7 @@ pub mod list_resource_tags_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -1085,6 +1364,15 @@ pub mod list_resource_tags_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
         pub fn build(self) -> crate::output::ListResourceTagsOutput {
             crate::output::ListResourceTagsOutput {
@@ -1095,6 +1383,7 @@ pub mod list_resource_tags_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1121,6 +1410,7 @@ pub struct ListKeysOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListKeysOutput {
     /// <p>A list of KMS keys.</p>
@@ -1136,6 +1426,11 @@ impl ListKeysOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListKeysOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListKeysOutput`](crate::output::ListKeysOutput).
 pub mod list_keys_output {
     
@@ -1146,6 +1441,7 @@ pub mod list_keys_output {
         pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `keys`.
@@ -1181,6 +1477,15 @@ pub mod list_keys_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListKeysOutput`](crate::output::ListKeysOutput).
         pub fn build(self) -> crate::output::ListKeysOutput {
             crate::output::ListKeysOutput {
@@ -1191,6 +1496,7 @@ pub mod list_keys_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1217,6 +1523,7 @@ pub struct ListKeyPoliciesOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListKeyPoliciesOutput {
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
@@ -1232,6 +1539,11 @@ impl ListKeyPoliciesOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListKeyPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
 pub mod list_key_policies_output {
     
@@ -1242,6 +1554,7 @@ pub mod list_key_policies_output {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `policy_names`.
@@ -1277,6 +1590,15 @@ pub mod list_key_policies_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
         pub fn build(self) -> crate::output::ListKeyPoliciesOutput {
             crate::output::ListKeyPoliciesOutput {
@@ -1287,6 +1609,7 @@ pub mod list_key_policies_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1313,6 +1636,7 @@ pub struct ListGrantsOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListGrantsOutput {
     /// <p>A list of grants.</p>
@@ -1328,6 +1652,11 @@ impl ListGrantsOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListGrantsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListGrantsOutput`](crate::output::ListGrantsOutput).
 pub mod list_grants_output {
     
@@ -1338,6 +1667,7 @@ pub mod list_grants_output {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `grants`.
@@ -1373,6 +1703,15 @@ pub mod list_grants_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListGrantsOutput`](crate::output::ListGrantsOutput).
         pub fn build(self) -> crate::output::ListGrantsOutput {
             crate::output::ListGrantsOutput {
@@ -1383,6 +1722,7 @@ pub mod list_grants_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1409,6 +1749,7 @@ pub struct ListAliasesOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl ListAliasesOutput {
     /// <p>A list of aliases.</p>
@@ -1424,6 +1765,11 @@ impl ListAliasesOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for ListAliasesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
 pub mod list_aliases_output {
     
@@ -1434,6 +1780,7 @@ pub mod list_aliases_output {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `aliases`.
@@ -1469,6 +1816,15 @@ pub mod list_aliases_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput).
         pub fn build(self) -> crate::output::ListAliasesOutput {
             crate::output::ListAliasesOutput {
@@ -1479,6 +1835,7 @@ pub mod list_aliases_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1496,7 +1853,13 @@ impl ListAliasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportKeyMaterialOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for ImportKeyMaterialOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
 pub mod import_key_material_output {
     
@@ -1504,11 +1867,22 @@ pub mod import_key_material_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
         pub fn build(self) -> crate::output::ImportKeyMaterialOutput {
             crate::output::ImportKeyMaterialOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1555,6 +1929,7 @@ pub struct GetPublicKeyOutput  {
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
     #[doc(hidden)]
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+    _request_id: Option<String>,
 }
 impl GetPublicKeyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
@@ -1594,6 +1969,11 @@ impl GetPublicKeyOutput {
         self.signing_algorithms.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPublicKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
 pub mod get_public_key_output {
     
@@ -1608,6 +1988,7 @@ pub mod get_public_key_output {
         pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
         pub(crate) encryption_algorithms: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
         pub(crate) signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
@@ -1701,6 +2082,15 @@ pub mod get_public_key_output {
         pub fn set_signing_algorithms(mut self, input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>) -> Self {
             self.signing_algorithms = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
         pub fn build(self) -> crate::output::GetPublicKeyOutput {
             crate::output::GetPublicKeyOutput {
@@ -1718,6 +2108,7 @@ pub mod get_public_key_output {
                 ,
                 signing_algorithms: self.signing_algorithms
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1747,6 +2138,7 @@ pub struct GetParametersForImportOutput  {
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
     #[doc(hidden)]
     pub parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetParametersForImportOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
@@ -1773,9 +2165,15 @@ impl  std::fmt::Debug for GetParametersForImportOutput  {
         formatter.field("import_token", &self.import_token);
         formatter.field("public_key", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters_valid_to", &self.parameters_valid_to);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetParametersForImportOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
 pub mod get_parameters_for_import_output {
     
@@ -1787,6 +2185,7 @@ pub mod get_parameters_for_import_output {
         pub(crate) import_token: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) public_key: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
@@ -1825,6 +2224,15 @@ pub mod get_parameters_for_import_output {
         pub fn set_parameters_valid_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.parameters_valid_to = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
         pub fn build(self) -> crate::output::GetParametersForImportOutput {
             crate::output::GetParametersForImportOutput {
@@ -1836,6 +2244,7 @@ pub mod get_parameters_for_import_output {
                 ,
                 parameters_valid_to: self.parameters_valid_to
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1846,6 +2255,7 @@ pub mod get_parameters_for_import_output {
             formatter.field("import_token", &self.import_token);
             formatter.field("public_key", &"*** Sensitive Data Redacted ***");
             formatter.field("parameters_valid_to", &self.parameters_valid_to);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1866,6 +2276,7 @@ pub struct GetKeyRotationStatusOutput  {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
     #[doc(hidden)]
     pub key_rotation_enabled: bool,
+    _request_id: Option<String>,
 }
 impl GetKeyRotationStatusOutput {
     /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
@@ -1873,6 +2284,11 @@ impl GetKeyRotationStatusOutput {
         self.key_rotation_enabled
     }
 }
+impl aws_http::request_id::RequestId for GetKeyRotationStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
 pub mod get_key_rotation_status_output {
     
@@ -1881,6 +2297,7 @@ pub mod get_key_rotation_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_rotation_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
@@ -1892,12 +2309,22 @@ pub mod get_key_rotation_status_output {
         pub fn set_key_rotation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.key_rotation_enabled = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
         pub fn build(self) -> crate::output::GetKeyRotationStatusOutput {
             crate::output::GetKeyRotationStatusOutput {
                 key_rotation_enabled: self.key_rotation_enabled
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1918,6 +2345,7 @@ pub struct GetKeyPolicyOutput  {
     /// <p>A key policy document in JSON format.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
@@ -1925,6 +2353,11 @@ impl GetKeyPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetKeyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
 pub mod get_key_policy_output {
     
@@ -1933,6 +2366,7 @@ pub mod get_key_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A key policy document in JSON format.</p>
@@ -1944,11 +2378,21 @@ pub mod get_key_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
         pub fn build(self) -> crate::output::GetKeyPolicyOutput {
             crate::output::GetKeyPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1969,6 +2413,7 @@ pub struct GenerateRandomOutput  {
     /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     #[doc(hidden)]
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl GenerateRandomOutput {
     /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -1980,9 +2425,15 @@ impl  std::fmt::Debug for GenerateRandomOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateRandomOutput");
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GenerateRandomOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
 pub mod generate_random_output {
     
@@ -1991,6 +2442,7 @@ pub mod generate_random_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The random byte string. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2002,11 +2454,21 @@ pub mod generate_random_output {
         pub fn set_plaintext(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.plaintext = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
         pub fn build(self) -> crate::output::GenerateRandomOutput {
             crate::output::GenerateRandomOutput {
                 plaintext: self.plaintext
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2014,6 +2476,7 @@ pub mod generate_random_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2041,6 +2504,7 @@ pub struct GenerateMacOutput  {
     /// <p>The HMAC KMS key used in the operation.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateMacOutput {
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p> 
@@ -2057,6 +2521,11 @@ impl GenerateMacOutput {
         self.key_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GenerateMacOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateMacOutput`](crate::output::GenerateMacOutput).
 pub mod generate_mac_output {
     
@@ -2067,6 +2536,7 @@ pub mod generate_mac_output {
         pub(crate) mac: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) mac_algorithm: std::option::Option<crate::model::MacAlgorithmSpec>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p> 
@@ -2098,6 +2568,15 @@ pub mod generate_mac_output {
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateMacOutput`](crate::output::GenerateMacOutput).
         pub fn build(self) -> crate::output::GenerateMacOutput {
             crate::output::GenerateMacOutput {
@@ -2107,6 +2586,7 @@ pub mod generate_mac_output {
                 ,
                 key_id: self.key_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2130,6 +2610,7 @@ pub struct GenerateDataKeyWithoutPlaintextOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateDataKeyWithoutPlaintextOutput {
     /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2141,6 +2622,11 @@ impl GenerateDataKeyWithoutPlaintextOutput {
         self.key_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GenerateDataKeyWithoutPlaintextOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
 pub mod generate_data_key_without_plaintext_output {
     
@@ -2150,6 +2636,7 @@ pub mod generate_data_key_without_plaintext_output {
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The encrypted data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2170,6 +2657,15 @@ pub mod generate_data_key_without_plaintext_output {
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyWithoutPlaintextOutput {
             crate::output::GenerateDataKeyWithoutPlaintextOutput {
@@ -2177,6 +2673,7 @@ pub mod generate_data_key_without_plaintext_output {
                 ,
                 key_id: self.key_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2206,6 +2703,7 @@ pub struct GenerateDataKeyPairWithoutPlaintextOutput  {
     /// <p>The type of data key pair that was generated.</p>
     #[doc(hidden)]
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+    _request_id: Option<String>,
 }
 impl GenerateDataKeyPairWithoutPlaintextOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2225,6 +2723,11 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
         self.key_pair_spec.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GenerateDataKeyPairWithoutPlaintextOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
 pub mod generate_data_key_pair_without_plaintext_output {
     
@@ -2236,6 +2739,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
         pub(crate) public_key: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2274,6 +2778,15 @@ pub mod generate_data_key_pair_without_plaintext_output {
         pub fn set_key_pair_spec(mut self, input: std::option::Option<crate::model::DataKeyPairSpec>) -> Self {
             self.key_pair_spec = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyPairWithoutPlaintextOutput {
             crate::output::GenerateDataKeyPairWithoutPlaintextOutput {
@@ -2285,6 +2798,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
                 ,
                 key_pair_spec: self.key_pair_spec
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2317,6 +2831,7 @@ pub struct GenerateDataKeyPairOutput  {
     /// <p>The type of data key pair that was generated.</p>
     #[doc(hidden)]
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+    _request_id: Option<String>,
 }
 impl GenerateDataKeyPairOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2348,9 +2863,15 @@ impl  std::fmt::Debug for GenerateDataKeyPairOutput  {
         formatter.field("public_key", &self.public_key);
         formatter.field("key_id", &self.key_id);
         formatter.field("key_pair_spec", &self.key_pair_spec);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GenerateDataKeyPairOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
 pub mod generate_data_key_pair_output {
     
@@ -2363,6 +2884,7 @@ pub mod generate_data_key_pair_output {
         pub(crate) public_key: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2410,6 +2932,15 @@ pub mod generate_data_key_pair_output {
         pub fn set_key_pair_spec(mut self, input: std::option::Option<crate::model::DataKeyPairSpec>) -> Self {
             self.key_pair_spec = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyPairOutput {
             crate::output::GenerateDataKeyPairOutput {
@@ -2423,6 +2954,7 @@ pub mod generate_data_key_pair_output {
                 ,
                 key_pair_spec: self.key_pair_spec
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2434,6 +2966,7 @@ pub mod generate_data_key_pair_output {
             formatter.field("public_key", &self.public_key);
             formatter.field("key_id", &self.key_id);
             formatter.field("key_pair_spec", &self.key_pair_spec);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2460,6 +2993,7 @@ pub struct GenerateDataKeyOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateDataKeyOutput {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2481,9 +3015,15 @@ impl  std::fmt::Debug for GenerateDataKeyOutput  {
         formatter.field("ciphertext_blob", &self.ciphertext_blob);
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("key_id", &self.key_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GenerateDataKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
 pub mod generate_data_key_output {
     
@@ -2494,6 +3034,7 @@ pub mod generate_data_key_output {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2523,6 +3064,15 @@ pub mod generate_data_key_output {
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyOutput {
             crate::output::GenerateDataKeyOutput {
@@ -2532,6 +3082,7 @@ pub mod generate_data_key_output {
                 ,
                 key_id: self.key_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2541,6 +3092,7 @@ pub mod generate_data_key_output {
             formatter.field("ciphertext_blob", &self.ciphertext_blob);
             formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
             formatter.field("key_id", &self.key_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2567,6 +3119,7 @@ pub struct EncryptOutput  {
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl EncryptOutput {
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2582,6 +3135,11 @@ impl EncryptOutput {
         self.encryption_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for EncryptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EncryptOutput`](crate::output::EncryptOutput).
 pub mod encrypt_output {
     
@@ -2592,6 +3150,7 @@ pub mod encrypt_output {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
@@ -2621,6 +3180,15 @@ pub mod encrypt_output {
         pub fn set_encryption_algorithm(mut self, input: std::option::Option<crate::model::EncryptionAlgorithmSpec>) -> Self {
             self.encryption_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EncryptOutput`](crate::output::EncryptOutput).
         pub fn build(self) -> crate::output::EncryptOutput {
             crate::output::EncryptOutput {
@@ -2630,6 +3198,7 @@ pub mod encrypt_output {
                 ,
                 encryption_algorithm: self.encryption_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2647,7 +3216,13 @@ impl EncryptOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyRotationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for EnableKeyRotationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
 pub mod enable_key_rotation_output {
     
@@ -2655,11 +3230,22 @@ pub mod enable_key_rotation_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
         pub fn build(self) -> crate::output::EnableKeyRotationOutput {
             crate::output::EnableKeyRotationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2677,7 +3263,13 @@ impl EnableKeyRotationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKeyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for EnableKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableKeyOutput`](crate::output::EnableKeyOutput).
 pub mod enable_key_output {
     
@@ -2685,11 +3277,22 @@ pub mod enable_key_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableKeyOutput`](crate::output::EnableKeyOutput).
         pub fn build(self) -> crate::output::EnableKeyOutput {
             crate::output::EnableKeyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2707,7 +3310,13 @@ impl EnableKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisconnectCustomKeyStoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
 pub mod disconnect_custom_key_store_output {
     
@@ -2715,11 +3324,22 @@ pub mod disconnect_custom_key_store_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::DisconnectCustomKeyStoreOutput {
             crate::output::DisconnectCustomKeyStoreOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2737,7 +3357,13 @@ impl DisconnectCustomKeyStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyRotationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisableKeyRotationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
 pub mod disable_key_rotation_output {
     
@@ -2745,11 +3371,22 @@ pub mod disable_key_rotation_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
         pub fn build(self) -> crate::output::DisableKeyRotationOutput {
             crate::output::DisableKeyRotationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2767,7 +3404,13 @@ impl DisableKeyRotationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKeyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisableKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableKeyOutput`](crate::output::DisableKeyOutput).
 pub mod disable_key_output {
     
@@ -2775,11 +3418,22 @@ pub mod disable_key_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableKeyOutput`](crate::output::DisableKeyOutput).
         pub fn build(self) -> crate::output::DisableKeyOutput {
             crate::output::DisableKeyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2800,6 +3454,7 @@ pub struct DescribeKeyOutput  {
     /// <p>Metadata associated with the key.</p>
     #[doc(hidden)]
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
+    _request_id: Option<String>,
 }
 impl DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
@@ -2807,6 +3462,11 @@ impl DescribeKeyOutput {
         self.key_metadata.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
 pub mod describe_key_output {
     
@@ -2815,6 +3475,7 @@ pub mod describe_key_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata associated with the key.</p>
@@ -2826,11 +3487,21 @@ pub mod describe_key_output {
         pub fn set_key_metadata(mut self, input: std::option::Option<crate::model::KeyMetadata>) -> Self {
             self.key_metadata = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
         pub fn build(self) -> crate::output::DescribeKeyOutput {
             crate::output::DescribeKeyOutput {
                 key_metadata: self.key_metadata
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2857,6 +3528,7 @@ pub struct DescribeCustomKeyStoresOutput  {
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl DescribeCustomKeyStoresOutput {
     /// <p>Contains metadata about each custom key store.</p>
@@ -2872,6 +3544,11 @@ impl DescribeCustomKeyStoresOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomKeyStoresOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
 pub mod describe_custom_key_stores_output {
     
@@ -2882,6 +3559,7 @@ pub mod describe_custom_key_stores_output {
         pub(crate) custom_key_stores: std::option::Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `custom_key_stores`.
@@ -2917,6 +3595,15 @@ pub mod describe_custom_key_stores_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
         pub fn build(self) -> crate::output::DescribeCustomKeyStoresOutput {
             crate::output::DescribeCustomKeyStoresOutput {
@@ -2927,6 +3614,7 @@ pub mod describe_custom_key_stores_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2944,7 +3632,13 @@ impl DescribeCustomKeyStoresOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteImportedKeyMaterialOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
 pub mod delete_imported_key_material_output {
     
@@ -2952,11 +3646,22 @@ pub mod delete_imported_key_material_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
         pub fn build(self) -> crate::output::DeleteImportedKeyMaterialOutput {
             crate::output::DeleteImportedKeyMaterialOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2974,7 +3679,13 @@ impl DeleteImportedKeyMaterialOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCustomKeyStoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
 pub mod delete_custom_key_store_output {
     
@@ -2982,11 +3693,22 @@ pub mod delete_custom_key_store_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::DeleteCustomKeyStoreOutput {
             crate::output::DeleteCustomKeyStoreOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3004,7 +3726,13 @@ impl DeleteCustomKeyStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAliasOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAliasOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
 pub mod delete_alias_output {
     
@@ -3012,11 +3740,22 @@ pub mod delete_alias_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
         pub fn build(self) -> crate::output::DeleteAliasOutput {
             crate::output::DeleteAliasOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3043,6 +3782,7 @@ pub struct DecryptOutput  {
     /// <p>The encryption algorithm that was used to decrypt the ciphertext.</p>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+    _request_id: Option<String>,
 }
 impl DecryptOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
@@ -3064,9 +3804,15 @@ impl  std::fmt::Debug for DecryptOutput  {
         formatter.field("key_id", &self.key_id);
         formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DecryptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DecryptOutput`](crate::output::DecryptOutput).
 pub mod decrypt_output {
     
@@ -3077,6 +3823,7 @@ pub mod decrypt_output {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to decrypt the ciphertext.</p>
@@ -3106,6 +3853,15 @@ pub mod decrypt_output {
         pub fn set_encryption_algorithm(mut self, input: std::option::Option<crate::model::EncryptionAlgorithmSpec>) -> Self {
             self.encryption_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DecryptOutput`](crate::output::DecryptOutput).
         pub fn build(self) -> crate::output::DecryptOutput {
             crate::output::DecryptOutput {
@@ -3115,6 +3871,7 @@ pub mod decrypt_output {
                 ,
                 encryption_algorithm: self.encryption_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3124,6 +3881,7 @@ pub mod decrypt_output {
             formatter.field("key_id", &self.key_id);
             formatter.field("plaintext", &"*** Sensitive Data Redacted ***");
             formatter.field("encryption_algorithm", &self.encryption_algorithm);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3144,6 +3902,7 @@ pub struct CreateKeyOutput  {
     /// <p>Metadata associated with the KMS key.</p>
     #[doc(hidden)]
     pub key_metadata: std::option::Option<crate::model::KeyMetadata>,
+    _request_id: Option<String>,
 }
 impl CreateKeyOutput {
     /// <p>Metadata associated with the KMS key.</p>
@@ -3151,6 +3910,11 @@ impl CreateKeyOutput {
         self.key_metadata.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateKeyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateKeyOutput`](crate::output::CreateKeyOutput).
 pub mod create_key_output {
     
@@ -3159,6 +3923,7 @@ pub mod create_key_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata associated with the KMS key.</p>
@@ -3170,11 +3935,21 @@ pub mod create_key_output {
         pub fn set_key_metadata(mut self, input: std::option::Option<crate::model::KeyMetadata>) -> Self {
             self.key_metadata = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateKeyOutput`](crate::output::CreateKeyOutput).
         pub fn build(self) -> crate::output::CreateKeyOutput {
             crate::output::CreateKeyOutput {
                 key_metadata: self.key_metadata
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3200,6 +3975,7 @@ pub struct CreateGrantOutput  {
     /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
     #[doc(hidden)]
     pub grant_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateGrantOutput {
     /// <p>The grant token.</p> 
@@ -3213,6 +3989,11 @@ impl CreateGrantOutput {
         self.grant_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput).
 pub mod create_grant_output {
     
@@ -3222,6 +4003,7 @@ pub mod create_grant_output {
     pub struct Builder {
         pub(crate) grant_token: std::option::Option<std::string::String>,
         pub(crate) grant_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The grant token.</p> 
@@ -3246,6 +4028,15 @@ pub mod create_grant_output {
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGrantOutput`](crate::output::CreateGrantOutput).
         pub fn build(self) -> crate::output::CreateGrantOutput {
             crate::output::CreateGrantOutput {
@@ -3253,6 +4044,7 @@ pub mod create_grant_output {
                 ,
                 grant_id: self.grant_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3273,6 +4065,7 @@ pub struct CreateCustomKeyStoreOutput  {
     /// <p>A unique identifier for the new custom key store.</p>
     #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCustomKeyStoreOutput {
     /// <p>A unique identifier for the new custom key store.</p>
@@ -3280,6 +4073,11 @@ impl CreateCustomKeyStoreOutput {
         self.custom_key_store_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomKeyStoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
 pub mod create_custom_key_store_output {
     
@@ -3288,6 +4086,7 @@ pub mod create_custom_key_store_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the new custom key store.</p>
@@ -3299,11 +4098,21 @@ pub mod create_custom_key_store_output {
         pub fn set_custom_key_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_key_store_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::CreateCustomKeyStoreOutput {
             crate::output::CreateCustomKeyStoreOutput {
                 custom_key_store_id: self.custom_key_store_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3321,7 +4130,13 @@ impl CreateCustomKeyStoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAliasOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateAliasOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
 pub mod create_alias_output {
     
@@ -3329,11 +4144,22 @@ pub mod create_alias_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput).
         pub fn build(self) -> crate::output::CreateAliasOutput {
             crate::output::CreateAliasOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3351,7 +4177,13 @@ impl CreateAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for ConnectCustomKeyStoreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
 pub mod connect_custom_key_store_output {
     
@@ -3359,11 +4191,22 @@ pub mod connect_custom_key_store_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::ConnectCustomKeyStoreOutput {
             crate::output::ConnectCustomKeyStoreOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3384,6 +4227,7 @@ pub struct CancelKeyDeletionOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
@@ -3391,6 +4235,11 @@ impl CancelKeyDeletionOutput {
         self.key_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelKeyDeletionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
 pub mod cancel_key_deletion_output {
     
@@ -3399,6 +4248,7 @@ pub mod cancel_key_deletion_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is canceled.</p>
@@ -3410,11 +4260,21 @@ pub mod cancel_key_deletion_output {
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
         pub fn build(self) -> crate::output::CancelKeyDeletionOutput {
             crate::output::CancelKeyDeletionOutput {
                 key_id: self.key_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -22,6 +22,7 @@ impl AssociateAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateAttributeGroup {
                 type Output = std::result::Result<crate::output::AssociateAttributeGroupOutput, crate::error::AssociateAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_attribute_group_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AssociateResource {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateResource {
                 type Output = std::result::Result<crate::output::AssociateResourceOutput, crate::error::AssociateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_resource_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateApplication {
 impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
                 type Output = std::result::Result<crate::output::CreateApplicationOutput, crate::error::CreateApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_application_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAttributeGroup {
                 type Output = std::result::Result<crate::output::CreateAttributeGroupOutput, crate::error::CreateAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_attribute_group_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
                 type Output = std::result::Result<crate::output::DeleteApplicationOutput, crate::error::DeleteApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_application_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAttributeGroup {
                 type Output = std::result::Result<crate::output::DeleteAttributeGroupOutput, crate::error::DeleteAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_attribute_group_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DisassociateAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateAttributeGroup {
                 type Output = std::result::Result<crate::output::DisassociateAttributeGroupOutput, crate::error::DisassociateAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_attribute_group_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DisassociateResource {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateResource {
                 type Output = std::result::Result<crate::output::DisassociateResourceOutput, crate::error::DisassociateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_resource_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetApplication {
 impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
                 type Output = std::result::Result<crate::output::GetApplicationOutput, crate::error::GetApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_application_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetAssociatedResource {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedResource {
                 type Output = std::result::Result<crate::output::GetAssociatedResourceOutput, crate::error::GetAssociatedResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_associated_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetAttributeGroup {
                 type Output = std::result::Result<crate::output::GetAttributeGroupOutput, crate::error::GetAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_attribute_group_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetConfiguration {
                 type Output = std::result::Result<crate::output::GetConfigurationOutput, crate::error::GetConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_configuration_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListApplications {
 impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
                 type Output = std::result::Result<crate::output::ListApplicationsOutput, crate::error::ListApplicationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_applications_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListAssociatedAttributeGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedAttributeGroups {
                 type Output = std::result::Result<crate::output::ListAssociatedAttributeGroupsOutput, crate::error::ListAssociatedAttributeGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_associated_attribute_groups_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListAssociatedResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedResources {
                 type Output = std::result::Result<crate::output::ListAssociatedResourcesOutput, crate::error::ListAssociatedResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_associated_resources_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListAttributeGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroups {
                 type Output = std::result::Result<crate::output::ListAttributeGroupsOutput, crate::error::ListAttributeGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_attribute_groups_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListAttributeGroupsForApplication {
 impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroupsForApplication {
                 type Output = std::result::Result<crate::output::ListAttributeGroupsForApplicationOutput, crate::error::ListAttributeGroupsForApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_attribute_groups_for_application_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl PutConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutConfiguration {
                 type Output = std::result::Result<crate::output::PutConfigurationOutput, crate::error::PutConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_configuration_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl SyncResource {
 impl aws_smithy_http::response::ParseStrictResponse for SyncResource {
                 type Output = std::result::Result<crate::output::SyncResourceOutput, crate::error::SyncResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_sync_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UpdateApplication {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApplication {
                 type Output = std::result::Result<crate::output::UpdateApplicationOutput, crate::error::UpdateApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_application_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UpdateAttributeGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAttributeGroup {
                 type Output = std::result::Result<crate::output::UpdateAttributeGroupOutput, crate::error::UpdateAttributeGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_attribute_group_error(response)
                      } else {

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -75,6 +109,7 @@ pub struct StartJobRunOutput  {
     /// <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartJobRunOutput {
     /// <p>This output displays the started job run ID.</p>
@@ -94,6 +129,11 @@ impl StartJobRunOutput {
         self.virtual_cluster_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartJobRunOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartJobRunOutput`](crate::output::StartJobRunOutput).
 pub mod start_job_run_output {
     
@@ -105,6 +145,7 @@ pub mod start_job_run_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output displays the started job run ID.</p>
@@ -143,6 +184,15 @@ pub mod start_job_run_output {
         pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_cluster_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartJobRunOutput`](crate::output::StartJobRunOutput).
         pub fn build(self) -> crate::output::StartJobRunOutput {
             crate::output::StartJobRunOutput {
@@ -154,6 +204,7 @@ pub mod start_job_run_output {
                 ,
                 virtual_cluster_id: self.virtual_cluster_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -177,6 +228,7 @@ pub struct ListVirtualClustersOutput  {
     /// <p>This output displays the token for the next set of virtual clusters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualClustersOutput {
     /// <p>This output lists the specified virtual clusters.</p>
@@ -188,6 +240,11 @@ impl ListVirtualClustersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVirtualClustersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
 pub mod list_virtual_clusters_output {
     
@@ -197,6 +254,7 @@ pub mod list_virtual_clusters_output {
     pub struct Builder {
         pub(crate) virtual_clusters: std::option::Option<std::vec::Vec<crate::model::VirtualCluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_clusters`.
@@ -223,6 +281,15 @@ pub mod list_virtual_clusters_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput).
         pub fn build(self) -> crate::output::ListVirtualClustersOutput {
             crate::output::ListVirtualClustersOutput {
@@ -230,6 +297,7 @@ pub mod list_virtual_clusters_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -250,6 +318,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags assigned to resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags assigned to resources.</p>
@@ -257,6 +326,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -265,6 +339,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -282,11 +357,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -310,6 +395,7 @@ pub struct ListManagedEndpointsOutput  {
     /// <p> The token for the next set of endpoints to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListManagedEndpointsOutput {
     /// <p>The managed endpoints to be listed.</p>
@@ -321,6 +407,11 @@ impl ListManagedEndpointsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListManagedEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
 pub mod list_managed_endpoints_output {
     
@@ -330,6 +421,7 @@ pub mod list_managed_endpoints_output {
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoints`.
@@ -356,6 +448,15 @@ pub mod list_managed_endpoints_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput).
         pub fn build(self) -> crate::output::ListManagedEndpointsOutput {
             crate::output::ListManagedEndpointsOutput {
@@ -363,6 +464,7 @@ pub mod list_managed_endpoints_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -386,6 +488,7 @@ pub struct ListJobTemplatesOutput  {
     /// <p> This output displays the token for the next set of job templates.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
@@ -397,6 +500,11 @@ impl ListJobTemplatesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobTemplatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
 pub mod list_job_templates_output {
     
@@ -406,6 +514,7 @@ pub mod list_job_templates_output {
     pub struct Builder {
         pub(crate) templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `templates`.
@@ -432,6 +541,15 @@ pub mod list_job_templates_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
         pub fn build(self) -> crate::output::ListJobTemplatesOutput {
             crate::output::ListJobTemplatesOutput {
@@ -439,6 +557,7 @@ pub mod list_job_templates_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -462,6 +581,7 @@ pub struct ListJobRunsOutput  {
     /// <p>This output displays the token for the next set of job runs.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobRunsOutput {
     /// <p>This output lists information about the specified job runs.</p>
@@ -473,6 +593,11 @@ impl ListJobRunsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobRunsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
 pub mod list_job_runs_output {
     
@@ -482,6 +607,7 @@ pub mod list_job_runs_output {
     pub struct Builder {
         pub(crate) job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `job_runs`.
@@ -508,6 +634,15 @@ pub mod list_job_runs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
         pub fn build(self) -> crate::output::ListJobRunsOutput {
             crate::output::ListJobRunsOutput {
@@ -515,6 +650,7 @@ pub mod list_job_runs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -535,6 +671,7 @@ pub struct DescribeVirtualClusterOutput  {
     /// <p>This output displays information about the specified virtual cluster.</p>
     #[doc(hidden)]
     pub virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualClusterOutput {
     /// <p>This output displays information about the specified virtual cluster.</p>
@@ -542,6 +679,11 @@ impl DescribeVirtualClusterOutput {
         self.virtual_cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeVirtualClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
 pub mod describe_virtual_cluster_output {
     
@@ -550,6 +692,7 @@ pub mod describe_virtual_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_cluster: std::option::Option<crate::model::VirtualCluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output displays information about the specified virtual cluster.</p>
@@ -561,11 +704,21 @@ pub mod describe_virtual_cluster_output {
         pub fn set_virtual_cluster(mut self, input: std::option::Option<crate::model::VirtualCluster>) -> Self {
             self.virtual_cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput).
         pub fn build(self) -> crate::output::DescribeVirtualClusterOutput {
             crate::output::DescribeVirtualClusterOutput {
                 virtual_cluster: self.virtual_cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -586,6 +739,7 @@ pub struct DescribeManagedEndpointOutput  {
     /// <p>This output displays information about a managed endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::Endpoint>,
+    _request_id: Option<String>,
 }
 impl DescribeManagedEndpointOutput {
     /// <p>This output displays information about a managed endpoint.</p>
@@ -593,6 +747,11 @@ impl DescribeManagedEndpointOutput {
         self.endpoint.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeManagedEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
 pub mod describe_managed_endpoint_output {
     
@@ -601,6 +760,7 @@ pub mod describe_managed_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output displays information about a managed endpoint.</p>
@@ -612,11 +772,21 @@ pub mod describe_managed_endpoint_output {
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput).
         pub fn build(self) -> crate::output::DescribeManagedEndpointOutput {
             crate::output::DescribeManagedEndpointOutput {
                 endpoint: self.endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -637,6 +807,7 @@ pub struct DescribeJobTemplateOutput  {
     /// <p>This output displays information about the specified job template.</p>
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::model::JobTemplate>,
+    _request_id: Option<String>,
 }
 impl DescribeJobTemplateOutput {
     /// <p>This output displays information about the specified job template.</p>
@@ -644,6 +815,11 @@ impl DescribeJobTemplateOutput {
         self.job_template.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
 pub mod describe_job_template_output {
     
@@ -652,6 +828,7 @@ pub mod describe_job_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output displays information about the specified job template.</p>
@@ -663,11 +840,21 @@ pub mod describe_job_template_output {
         pub fn set_job_template(mut self, input: std::option::Option<crate::model::JobTemplate>) -> Self {
             self.job_template = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeJobTemplateOutput`](crate::output::DescribeJobTemplateOutput).
         pub fn build(self) -> crate::output::DescribeJobTemplateOutput {
             crate::output::DescribeJobTemplateOutput {
                 job_template: self.job_template
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -688,6 +875,7 @@ pub struct DescribeJobRunOutput  {
     /// <p>The output displays information about a job run.</p>
     #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
+    _request_id: Option<String>,
 }
 impl DescribeJobRunOutput {
     /// <p>The output displays information about a job run.</p>
@@ -695,6 +883,11 @@ impl DescribeJobRunOutput {
         self.job_run.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeJobRunOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
 pub mod describe_job_run_output {
     
@@ -703,6 +896,7 @@ pub mod describe_job_run_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_run: std::option::Option<crate::model::JobRun>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output displays information about a job run.</p>
@@ -714,11 +908,21 @@ pub mod describe_job_run_output {
         pub fn set_job_run(mut self, input: std::option::Option<crate::model::JobRun>) -> Self {
             self.job_run = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput).
         pub fn build(self) -> crate::output::DescribeJobRunOutput {
             crate::output::DescribeJobRunOutput {
                 job_run: self.job_run
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -739,6 +943,7 @@ pub struct DeleteVirtualClusterOutput  {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
@@ -746,6 +951,11 @@ impl DeleteVirtualClusterOutput {
         self.id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVirtualClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
 pub mod delete_virtual_cluster_output {
     
@@ -754,6 +964,7 @@ pub mod delete_virtual_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
@@ -765,11 +976,21 @@ pub mod delete_virtual_cluster_output {
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput).
         pub fn build(self) -> crate::output::DeleteVirtualClusterOutput {
             crate::output::DeleteVirtualClusterOutput {
                 id: self.id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -793,6 +1014,7 @@ pub struct DeleteManagedEndpointOutput  {
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteManagedEndpointOutput {
     /// <p>The output displays the ID of the managed endpoint.</p>
@@ -804,6 +1026,11 @@ impl DeleteManagedEndpointOutput {
         self.virtual_cluster_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteManagedEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
 pub mod delete_managed_endpoint_output {
     
@@ -813,6 +1040,7 @@ pub mod delete_managed_endpoint_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output displays the ID of the managed endpoint.</p>
@@ -833,6 +1061,15 @@ pub mod delete_managed_endpoint_output {
         pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_cluster_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput).
         pub fn build(self) -> crate::output::DeleteManagedEndpointOutput {
             crate::output::DeleteManagedEndpointOutput {
@@ -840,6 +1077,7 @@ pub mod delete_managed_endpoint_output {
                 ,
                 virtual_cluster_id: self.virtual_cluster_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -860,6 +1098,7 @@ pub struct DeleteJobTemplateOutput  {
     /// <p>This output contains the ID of the job template that was deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteJobTemplateOutput {
     /// <p>This output contains the ID of the job template that was deleted.</p>
@@ -867,6 +1106,11 @@ impl DeleteJobTemplateOutput {
         self.id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
 pub mod delete_job_template_output {
     
@@ -875,6 +1119,7 @@ pub mod delete_job_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output contains the ID of the job template that was deleted.</p>
@@ -886,11 +1131,21 @@ pub mod delete_job_template_output {
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
         pub fn build(self) -> crate::output::DeleteJobTemplateOutput {
             crate::output::DeleteJobTemplateOutput {
                 id: self.id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -917,6 +1172,7 @@ pub struct CreateVirtualClusterOutput  {
     /// <p>This output contains the ARN of virtual cluster.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateVirtualClusterOutput {
     /// <p>This output contains the virtual cluster ID.</p>
@@ -932,6 +1188,11 @@ impl CreateVirtualClusterOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVirtualClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
 pub mod create_virtual_cluster_output {
     
@@ -942,6 +1203,7 @@ pub mod create_virtual_cluster_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output contains the virtual cluster ID.</p>
@@ -971,6 +1233,15 @@ pub mod create_virtual_cluster_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput).
         pub fn build(self) -> crate::output::CreateVirtualClusterOutput {
             crate::output::CreateVirtualClusterOutput {
@@ -980,6 +1251,7 @@ pub mod create_virtual_cluster_output {
                 ,
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1009,6 +1281,7 @@ pub struct CreateManagedEndpointOutput  {
     /// <p>The output contains the ID of the virtual cluster.</p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateManagedEndpointOutput {
     /// <p>The output contains the ID of the managed endpoint.</p>
@@ -1028,6 +1301,11 @@ impl CreateManagedEndpointOutput {
         self.virtual_cluster_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateManagedEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
 pub mod create_managed_endpoint_output {
     
@@ -1039,6 +1317,7 @@ pub mod create_managed_endpoint_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output contains the ID of the managed endpoint.</p>
@@ -1077,6 +1356,15 @@ pub mod create_managed_endpoint_output {
         pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_cluster_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput).
         pub fn build(self) -> crate::output::CreateManagedEndpointOutput {
             crate::output::CreateManagedEndpointOutput {
@@ -1088,6 +1376,7 @@ pub mod create_managed_endpoint_output {
                 ,
                 virtual_cluster_id: self.virtual_cluster_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1117,6 +1406,7 @@ pub struct CreateJobTemplateOutput  {
     /// <p>This output displays the date and time when the job template was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateJobTemplateOutput {
     /// <p>This output display the created job template ID.</p>
@@ -1136,6 +1426,11 @@ impl CreateJobTemplateOutput {
         self.created_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateJobTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
 pub mod create_job_template_output {
     
@@ -1147,6 +1442,7 @@ pub mod create_job_template_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This output display the created job template ID.</p>
@@ -1185,6 +1481,15 @@ pub mod create_job_template_output {
         pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.created_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
         pub fn build(self) -> crate::output::CreateJobTemplateOutput {
             crate::output::CreateJobTemplateOutput {
@@ -1196,6 +1501,7 @@ pub mod create_job_template_output {
                 ,
                 created_at: self.created_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1219,6 +1525,7 @@ pub struct CancelJobRunOutput  {
     /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelJobRunOutput {
     /// <p>The output contains the ID of the cancelled job run.</p>
@@ -1230,6 +1537,11 @@ impl CancelJobRunOutput {
         self.virtual_cluster_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelJobRunOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
 pub mod cancel_job_run_output {
     
@@ -1239,6 +1551,7 @@ pub mod cancel_job_run_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) virtual_cluster_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output contains the ID of the cancelled job run.</p>
@@ -1259,6 +1572,15 @@ pub mod cancel_job_run_output {
         pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_cluster_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
         pub fn build(self) -> crate::output::CancelJobRunOutput {
             crate::output::CancelJobRunOutput {
@@ -1266,6 +1588,7 @@ pub mod cancel_job_run_output {
                 ,
                 virtual_cluster_id: self.virtual_cluster_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

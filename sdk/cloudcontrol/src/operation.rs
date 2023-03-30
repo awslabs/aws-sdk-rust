@@ -22,6 +22,7 @@ impl CancelResourceRequest {
 impl aws_smithy_http::response::ParseStrictResponse for CancelResourceRequest {
                 type Output = std::result::Result<crate::output::CancelResourceRequestOutput, crate::error::CancelResourceRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_resource_request_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateResource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateResource {
                 type Output = std::result::Result<crate::output::CreateResourceOutput, crate::error::CreateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_resource_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteResource {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResource {
                 type Output = std::result::Result<crate::output::DeleteResourceOutput, crate::error::DeleteResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetResource {
 impl aws_smithy_http::response::ParseStrictResponse for GetResource {
                 type Output = std::result::Result<crate::output::GetResourceOutput, crate::error::GetResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetResourceRequestStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceRequestStatus {
                 type Output = std::result::Result<crate::output::GetResourceRequestStatusOutput, crate::error::GetResourceRequestStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_request_status_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListResourceRequests {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceRequests {
                 type Output = std::result::Result<crate::output::ListResourceRequestsOutput, crate::error::ListResourceRequestsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_requests_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListResources {
                 type Output = std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resources_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl UpdateResource {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateResource {
                 type Output = std::result::Result<crate::output::UpdateResourceOutput, crate::error::UpdateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_resource_error(response)
                      } else {

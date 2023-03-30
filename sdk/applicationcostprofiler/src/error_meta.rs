@@ -13,15 +13,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints for the API.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,18 +32,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinit
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteReportDefinitionError> for Error {
     fn from(err: crate::error::DeleteReportDefinitionError) -> Self {
-        match err.kind {
-            crate::error::DeleteReportDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteReportDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteReportDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteReportDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteReportDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteReportDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteReportDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteReportDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -58,18 +56,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetReportDefinition
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetReportDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetReportDefinitionError> for Error {
     fn from(err: crate::error::GetReportDefinitionError) -> Self {
-        match err.kind {
-            crate::error::GetReportDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetReportDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetReportDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetReportDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetReportDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetReportDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetReportDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetReportDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::GetReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -77,18 +80,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportApplicationUs
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportApplicationUsageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ImportApplicationUsageError> for Error {
     fn from(err: crate::error::ImportApplicationUsageError) -> Self {
-        match err.kind {
-            crate::error::ImportApplicationUsageErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ImportApplicationUsageErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ImportApplicationUsageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ImportApplicationUsageErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ImportApplicationUsageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ImportApplicationUsageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ImportApplicationUsageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ImportApplicationUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ImportApplicationUsageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ImportApplicationUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -96,18 +104,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListReportDefinitio
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListReportDefinitionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListReportDefinitionsError> for Error {
     fn from(err: crate::error::ListReportDefinitionsError) -> Self {
-        match err.kind {
-            crate::error::ListReportDefinitionsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListReportDefinitionsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListReportDefinitionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListReportDefinitionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListReportDefinitionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListReportDefinitionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListReportDefinitionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListReportDefinitionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListReportDefinitionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListReportDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -115,19 +128,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutReportDefinition
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutReportDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutReportDefinitionError> for Error {
     fn from(err: crate::error::PutReportDefinitionError) -> Self {
-        match err.kind {
-            crate::error::PutReportDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutReportDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutReportDefinitionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::PutReportDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutReportDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutReportDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutReportDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutReportDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::PutReportDefinitionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::PutReportDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::PutReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::PutReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -135,20 +153,37 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateReportDefinit
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateReportDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateReportDefinitionError> for Error {
     fn from(err: crate::error::UpdateReportDefinitionError) -> Self {
-        match err.kind {
-            crate::error::UpdateReportDefinitionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateReportDefinitionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateReportDefinitionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateReportDefinitionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateReportDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateReportDefinitionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateReportDefinitionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateReportDefinitionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

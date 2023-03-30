@@ -22,6 +22,7 @@ impl AssociateLenses {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateLenses {
                 type Output = std::result::Result<crate::output::AssociateLensesOutput, crate::error::AssociateLensesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_lenses_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateLensShare {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLensShare {
                 type Output = std::result::Result<crate::output::CreateLensShareOutput, crate::error::CreateLensShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_lens_share_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateLensVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLensVersion {
                 type Output = std::result::Result<crate::output::CreateLensVersionOutput, crate::error::CreateLensVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_lens_version_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateMilestone {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMilestone {
                 type Output = std::result::Result<crate::output::CreateMilestoneOutput, crate::error::CreateMilestoneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_milestone_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateWorkload {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkload {
                 type Output = std::result::Result<crate::output::CreateWorkloadOutput, crate::error::CreateWorkloadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workload_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateWorkloadShare {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
                 type Output = std::result::Result<crate::output::CreateWorkloadShareOutput, crate::error::CreateWorkloadShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workload_share_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteLens {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLens {
                 type Output = std::result::Result<crate::output::DeleteLensOutput, crate::error::DeleteLensError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_lens_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteLensShare {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLensShare {
                 type Output = std::result::Result<crate::output::DeleteLensShareOutput, crate::error::DeleteLensShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_lens_share_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteWorkload {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkload {
                 type Output = std::result::Result<crate::output::DeleteWorkloadOutput, crate::error::DeleteWorkloadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_workload_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteWorkloadShare {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkloadShare {
                 type Output = std::result::Result<crate::output::DeleteWorkloadShareOutput, crate::error::DeleteWorkloadShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_workload_share_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DisassociateLenses {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateLenses {
                 type Output = std::result::Result<crate::output::DisassociateLensesOutput, crate::error::DisassociateLensesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_lenses_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ExportLens {
 impl aws_smithy_http::response::ParseStrictResponse for ExportLens {
                 type Output = std::result::Result<crate::output::ExportLensOutput, crate::error::ExportLensError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_lens_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetAnswer {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnswer {
                 type Output = std::result::Result<crate::output::GetAnswerOutput, crate::error::GetAnswerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_answer_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetLens {
 impl aws_smithy_http::response::ParseStrictResponse for GetLens {
                 type Output = std::result::Result<crate::output::GetLensOutput, crate::error::GetLensError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lens_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetLensReview {
 impl aws_smithy_http::response::ParseStrictResponse for GetLensReview {
                 type Output = std::result::Result<crate::output::GetLensReviewOutput, crate::error::GetLensReviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lens_review_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetLensReviewReport {
 impl aws_smithy_http::response::ParseStrictResponse for GetLensReviewReport {
                 type Output = std::result::Result<crate::output::GetLensReviewReportOutput, crate::error::GetLensReviewReportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lens_review_report_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetLensVersionDifference {
 impl aws_smithy_http::response::ParseStrictResponse for GetLensVersionDifference {
                 type Output = std::result::Result<crate::output::GetLensVersionDifferenceOutput, crate::error::GetLensVersionDifferenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lens_version_difference_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetMilestone {
 impl aws_smithy_http::response::ParseStrictResponse for GetMilestone {
                 type Output = std::result::Result<crate::output::GetMilestoneOutput, crate::error::GetMilestoneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_milestone_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetWorkload {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkload {
                 type Output = std::result::Result<crate::output::GetWorkloadOutput, crate::error::GetWorkloadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workload_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ImportLens {
 impl aws_smithy_http::response::ParseStrictResponse for ImportLens {
                 type Output = std::result::Result<crate::output::ImportLensOutput, crate::error::ImportLensError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_lens_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListAnswers {
 impl aws_smithy_http::response::ParseStrictResponse for ListAnswers {
                 type Output = std::result::Result<crate::output::ListAnswersOutput, crate::error::ListAnswersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_answers_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListCheckDetails {
 impl aws_smithy_http::response::ParseStrictResponse for ListCheckDetails {
                 type Output = std::result::Result<crate::output::ListCheckDetailsOutput, crate::error::ListCheckDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_check_details_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListCheckSummaries {
 impl aws_smithy_http::response::ParseStrictResponse for ListCheckSummaries {
                 type Output = std::result::Result<crate::output::ListCheckSummariesOutput, crate::error::ListCheckSummariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_check_summaries_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListLenses {
 impl aws_smithy_http::response::ParseStrictResponse for ListLenses {
                 type Output = std::result::Result<crate::output::ListLensesOutput, crate::error::ListLensesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_lenses_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListLensReviewImprovements {
 impl aws_smithy_http::response::ParseStrictResponse for ListLensReviewImprovements {
                 type Output = std::result::Result<crate::output::ListLensReviewImprovementsOutput, crate::error::ListLensReviewImprovementsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_lens_review_improvements_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListLensReviews {
 impl aws_smithy_http::response::ParseStrictResponse for ListLensReviews {
                 type Output = std::result::Result<crate::output::ListLensReviewsOutput, crate::error::ListLensReviewsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_lens_reviews_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListLensShares {
 impl aws_smithy_http::response::ParseStrictResponse for ListLensShares {
                 type Output = std::result::Result<crate::output::ListLensSharesOutput, crate::error::ListLensSharesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_lens_shares_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListMilestones {
 impl aws_smithy_http::response::ParseStrictResponse for ListMilestones {
                 type Output = std::result::Result<crate::output::ListMilestonesOutput, crate::error::ListMilestonesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_milestones_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListNotifications {
 impl aws_smithy_http::response::ParseStrictResponse for ListNotifications {
                 type Output = std::result::Result<crate::output::ListNotificationsOutput, crate::error::ListNotificationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_notifications_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListShareInvitations {
 impl aws_smithy_http::response::ParseStrictResponse for ListShareInvitations {
                 type Output = std::result::Result<crate::output::ListShareInvitationsOutput, crate::error::ListShareInvitationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_share_invitations_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListWorkloads {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkloads {
                 type Output = std::result::Result<crate::output::ListWorkloadsOutput, crate::error::ListWorkloadsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workloads_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListWorkloadShares {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkloadShares {
                 type Output = std::result::Result<crate::output::ListWorkloadSharesOutput, crate::error::ListWorkloadSharesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workload_shares_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateAnswer {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAnswer {
                 type Output = std::result::Result<crate::output::UpdateAnswerOutput, crate::error::UpdateAnswerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_answer_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateGlobalSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
                 type Output = std::result::Result<crate::output::UpdateGlobalSettingsOutput, crate::error::UpdateGlobalSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_global_settings_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateLensReview {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLensReview {
                 type Output = std::result::Result<crate::output::UpdateLensReviewOutput, crate::error::UpdateLensReviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_lens_review_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateShareInvitation {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateShareInvitation {
                 type Output = std::result::Result<crate::output::UpdateShareInvitationOutput, crate::error::UpdateShareInvitationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_share_invitation_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl UpdateWorkload {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkload {
                 type Output = std::result::Result<crate::output::UpdateWorkloadOutput, crate::error::UpdateWorkloadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_workload_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl UpdateWorkloadShare {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkloadShare {
                 type Output = std::result::Result<crate::output::UpdateWorkloadShareOutput, crate::error::UpdateWorkloadShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_workload_share_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl UpgradeLensReview {
 impl aws_smithy_http::response::ParseStrictResponse for UpgradeLensReview {
                 type Output = std::result::Result<crate::output::UpgradeLensReviewOutput, crate::error::UpgradeLensReviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_upgrade_lens_review_error(response)
                      } else {

@@ -13,15 +13,8 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,19 +32,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEndpointError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateEndpointError> for Error {
     fn from(err: crate::error::CreateEndpointError) -> Self {
-        match err.kind {
-            crate::error::CreateEndpointErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateEndpointErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateEndpointErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -59,18 +57,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteEndpointError> for Error {
     fn from(err: crate::error::DeleteEndpointError) -> Self {
-        match err.kind {
-            crate::error::DeleteEndpointErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteEndpointErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -78,18 +81,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEndpointsError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListEndpointsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListEndpointsError> for Error {
     fn from(err: crate::error::ListEndpointsError) -> Self {
-        match err.kind {
-            crate::error::ListEndpointsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListEndpointsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListEndpointsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListEndpointsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListEndpointsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -97,20 +105,37 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSharedEndpoints
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSharedEndpointsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSharedEndpointsError> for Error {
     fn from(err: crate::error::ListSharedEndpointsError) -> Self {
-        match err.kind {
-            crate::error::ListSharedEndpointsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListSharedEndpointsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListSharedEndpointsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListSharedEndpointsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSharedEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSharedEndpointsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListSharedEndpointsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListSharedEndpointsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListSharedEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSharedEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

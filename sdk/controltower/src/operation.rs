@@ -22,6 +22,7 @@ impl DisableControl {
 impl aws_smithy_http::response::ParseStrictResponse for DisableControl {
                 type Output = std::result::Result<crate::output::DisableControlOutput, crate::error::DisableControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_control_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl EnableControl {
 impl aws_smithy_http::response::ParseStrictResponse for EnableControl {
                 type Output = std::result::Result<crate::output::EnableControlOutput, crate::error::EnableControlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_control_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetControlOperation {
 impl aws_smithy_http::response::ParseStrictResponse for GetControlOperation {
                 type Output = std::result::Result<crate::output::GetControlOperationOutput, crate::error::GetControlOperationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_control_operation_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListEnabledControls {
 impl aws_smithy_http::response::ParseStrictResponse for ListEnabledControls {
                 type Output = std::result::Result<crate::output::ListEnabledControlsOutput, crate::error::ListEnabledControlsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_enabled_controls_error(response)
                      } else {

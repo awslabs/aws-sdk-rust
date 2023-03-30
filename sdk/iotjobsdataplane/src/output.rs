@@ -9,6 +9,7 @@ pub struct UpdateJobExecutionOutput  {
     /// <p>The contents of the Job Documents.</p>
     #[doc(hidden)]
     pub job_document: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateJobExecutionOutput {
     /// <p>A JobExecutionState object.</p>
@@ -20,6 +21,11 @@ impl UpdateJobExecutionOutput {
         self.job_document.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateJobExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
 pub mod update_job_execution_output {
     
@@ -29,6 +35,7 @@ pub mod update_job_execution_output {
     pub struct Builder {
         pub(crate) execution_state: std::option::Option<crate::model::JobExecutionState>,
         pub(crate) job_document: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A JobExecutionState object.</p>
@@ -49,6 +56,15 @@ pub mod update_job_execution_output {
         pub fn set_job_document(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_document = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
         pub fn build(self) -> crate::output::UpdateJobExecutionOutput {
             crate::output::UpdateJobExecutionOutput {
@@ -56,6 +72,7 @@ pub mod update_job_execution_output {
                 ,
                 job_document: self.job_document
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -76,6 +93,7 @@ pub struct StartNextPendingJobExecutionOutput  {
     /// <p>A JobExecution object.</p>
     #[doc(hidden)]
     pub execution: std::option::Option<crate::model::JobExecution>,
+    _request_id: Option<String>,
 }
 impl StartNextPendingJobExecutionOutput {
     /// <p>A JobExecution object.</p>
@@ -83,6 +101,11 @@ impl StartNextPendingJobExecutionOutput {
         self.execution.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartNextPendingJobExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
 pub mod start_next_pending_job_execution_output {
     
@@ -91,6 +114,7 @@ pub mod start_next_pending_job_execution_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A JobExecution object.</p>
@@ -102,11 +126,21 @@ pub mod start_next_pending_job_execution_output {
         pub fn set_execution(mut self, input: std::option::Option<crate::model::JobExecution>) -> Self {
             self.execution = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
         pub fn build(self) -> crate::output::StartNextPendingJobExecutionOutput {
             crate::output::StartNextPendingJobExecutionOutput {
                 execution: self.execution
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -130,6 +164,7 @@ pub struct GetPendingJobExecutionsOutput  {
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
     #[doc(hidden)]
     pub queued_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
+    _request_id: Option<String>,
 }
 impl GetPendingJobExecutionsOutput {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
@@ -141,6 +176,11 @@ impl GetPendingJobExecutionsOutput {
         self.queued_jobs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPendingJobExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
 pub mod get_pending_job_executions_output {
     
@@ -150,6 +190,7 @@ pub mod get_pending_job_executions_output {
     pub struct Builder {
         pub(crate) in_progress_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
         pub(crate) queued_jobs: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `in_progress_jobs`.
@@ -182,6 +223,15 @@ pub mod get_pending_job_executions_output {
         pub fn set_queued_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobExecutionSummary>>) -> Self {
             self.queued_jobs = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
         pub fn build(self) -> crate::output::GetPendingJobExecutionsOutput {
             crate::output::GetPendingJobExecutionsOutput {
@@ -189,6 +239,7 @@ pub mod get_pending_job_executions_output {
                 ,
                 queued_jobs: self.queued_jobs
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -209,6 +260,7 @@ pub struct DescribeJobExecutionOutput  {
     /// <p>Contains data about a job execution.</p>
     #[doc(hidden)]
     pub execution: std::option::Option<crate::model::JobExecution>,
+    _request_id: Option<String>,
 }
 impl DescribeJobExecutionOutput {
     /// <p>Contains data about a job execution.</p>
@@ -216,6 +268,11 @@ impl DescribeJobExecutionOutput {
         self.execution.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeJobExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
 pub mod describe_job_execution_output {
     
@@ -224,6 +281,7 @@ pub mod describe_job_execution_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains data about a job execution.</p>
@@ -235,11 +293,21 @@ pub mod describe_job_execution_output {
         pub fn set_execution(mut self, input: std::option::Option<crate::model::JobExecution>) -> Self {
             self.execution = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
         pub fn build(self) -> crate::output::DescribeJobExecutionOutput {
             crate::output::DescribeJobExecutionOutput {
                 execution: self.execution
                 ,
+                _request_id: self._request_id,
             }
         }
     }

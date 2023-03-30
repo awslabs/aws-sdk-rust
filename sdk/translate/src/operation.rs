@@ -22,6 +22,7 @@ impl CreateParallelData {
 impl aws_smithy_http::response::ParseStrictResponse for CreateParallelData {
                 type Output = std::result::Result<crate::output::CreateParallelDataOutput, crate::error::CreateParallelDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_parallel_data_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteParallelData {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteParallelData {
                 type Output = std::result::Result<crate::output::DeleteParallelDataOutput, crate::error::DeleteParallelDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_parallel_data_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteTerminology {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTerminology {
                 type Output = std::result::Result<crate::output::DeleteTerminologyOutput, crate::error::DeleteTerminologyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_terminology_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeTextTranslationJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTextTranslationJob {
                 type Output = std::result::Result<crate::output::DescribeTextTranslationJobOutput, crate::error::DescribeTextTranslationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_text_translation_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetParallelData {
 impl aws_smithy_http::response::ParseStrictResponse for GetParallelData {
                 type Output = std::result::Result<crate::output::GetParallelDataOutput, crate::error::GetParallelDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_parallel_data_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetTerminology {
 impl aws_smithy_http::response::ParseStrictResponse for GetTerminology {
                 type Output = std::result::Result<crate::output::GetTerminologyOutput, crate::error::GetTerminologyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_terminology_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ImportTerminology {
 impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
                 type Output = std::result::Result<crate::output::ImportTerminologyOutput, crate::error::ImportTerminologyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_terminology_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListLanguages {
 impl aws_smithy_http::response::ParseStrictResponse for ListLanguages {
                 type Output = std::result::Result<crate::output::ListLanguagesOutput, crate::error::ListLanguagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_languages_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListParallelData {
 impl aws_smithy_http::response::ParseStrictResponse for ListParallelData {
                 type Output = std::result::Result<crate::output::ListParallelDataOutput, crate::error::ListParallelDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_parallel_data_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTerminologies {
 impl aws_smithy_http::response::ParseStrictResponse for ListTerminologies {
                 type Output = std::result::Result<crate::output::ListTerminologiesOutput, crate::error::ListTerminologiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_terminologies_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListTextTranslationJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListTextTranslationJobs {
                 type Output = std::result::Result<crate::output::ListTextTranslationJobsOutput, crate::error::ListTextTranslationJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_text_translation_jobs_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl StartTextTranslationJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartTextTranslationJob {
                 type Output = std::result::Result<crate::output::StartTextTranslationJobOutput, crate::error::StartTextTranslationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_text_translation_job_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl StopTextTranslationJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopTextTranslationJob {
                 type Output = std::result::Result<crate::output::StopTextTranslationJobOutput, crate::error::StopTextTranslationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_text_translation_job_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl TranslateText {
 impl aws_smithy_http::response::ParseStrictResponse for TranslateText {
                 type Output = std::result::Result<crate::output::TranslateTextOutput, crate::error::TranslateTextError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_translate_text_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl UpdateParallelData {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateParallelData {
                 type Output = std::result::Result<crate::output::UpdateParallelDataOutput, crate::error::UpdateParallelDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_parallel_data_error(response)
                      } else {

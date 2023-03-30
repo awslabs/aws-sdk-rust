@@ -22,6 +22,7 @@ impl AssociateResource {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateResource {
                 type Output = std::result::Result<crate::output::AssociateResourceOutput, crate::error::AssociateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_resource_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateCanary {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCanary {
                 type Output = std::result::Result<crate::output::CreateCanaryOutput, crate::error::CreateCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_canary_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
                 type Output = std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_group_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteCanary {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCanary {
                 type Output = std::result::Result<crate::output::DeleteCanaryOutput, crate::error::DeleteCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_canary_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
                 type Output = std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_group_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeCanaries {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCanaries {
                 type Output = std::result::Result<crate::output::DescribeCanariesOutput, crate::error::DescribeCanariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_canaries_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeCanariesLastRun {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCanariesLastRun {
                 type Output = std::result::Result<crate::output::DescribeCanariesLastRunOutput, crate::error::DescribeCanariesLastRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_canaries_last_run_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeRuntimeVersions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRuntimeVersions {
                 type Output = std::result::Result<crate::output::DescribeRuntimeVersionsOutput, crate::error::DescribeRuntimeVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_runtime_versions_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DisassociateResource {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateResource {
                 type Output = std::result::Result<crate::output::DisassociateResourceOutput, crate::error::DisassociateResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetCanary {
 impl aws_smithy_http::response::ParseStrictResponse for GetCanary {
                 type Output = std::result::Result<crate::output::GetCanaryOutput, crate::error::GetCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_canary_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetCanaryRuns {
 impl aws_smithy_http::response::ParseStrictResponse for GetCanaryRuns {
                 type Output = std::result::Result<crate::output::GetCanaryRunsOutput, crate::error::GetCanaryRunsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_canary_runs_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
                 type Output = std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_group_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListAssociatedGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedGroups {
                 type Output = std::result::Result<crate::output::ListAssociatedGroupsOutput, crate::error::ListAssociatedGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_associated_groups_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListGroupResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListGroupResources {
                 type Output = std::result::Result<crate::output::ListGroupResourcesOutput, crate::error::ListGroupResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_group_resources_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
                 type Output = std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_groups_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl StartCanary {
 impl aws_smithy_http::response::ParseStrictResponse for StartCanary {
                 type Output = std::result::Result<crate::output::StartCanaryOutput, crate::error::StartCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_canary_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl StopCanary {
 impl aws_smithy_http::response::ParseStrictResponse for StopCanary {
                 type Output = std::result::Result<crate::output::StopCanaryOutput, crate::error::StopCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_canary_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateCanary {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCanary {
                 type Output = std::result::Result<crate::output::UpdateCanaryOutput, crate::error::UpdateCanaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_canary_error(response)
                      } else {

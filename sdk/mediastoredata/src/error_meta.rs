@@ -11,15 +11,8 @@ pub enum Error {
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
     /// <p>The requested content range is not valid.</p>
     RequestedRangeNotSatisfiableException(crate::error::RequestedRangeNotSatisfiableException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36,17 +29,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteObjectError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteObjectError> for Error {
     fn from(err: crate::error::DeleteObjectError) -> Self {
-        match err.kind {
-            crate::error::DeleteObjectErrorKind::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteObjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteObjectErrorKind::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::DeleteObjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteObjectError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::error::DeleteObjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DeleteObjectError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::error::DeleteObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -54,17 +52,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeObjectError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeObjectError> for Error {
     fn from(err: crate::error::DescribeObjectError) -> Self {
-        match err.kind {
-            crate::error::DescribeObjectErrorKind::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DescribeObjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DescribeObjectErrorKind::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::DescribeObjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeObjectError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::error::DescribeObjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DescribeObjectError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::error::DescribeObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -72,18 +75,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetObjectError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetObjectError> for Error {
     fn from(err: crate::error::GetObjectError) -> Self {
-        match err.kind {
-            crate::error::GetObjectErrorKind::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::GetObjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetObjectErrorKind::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::GetObjectErrorKind::RequestedRangeNotSatisfiableException(inner) => Error::RequestedRangeNotSatisfiableException(inner),
-            crate::error::GetObjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetObjectError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::error::GetObjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetObjectError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::error::GetObjectError::RequestedRangeNotSatisfiableException(inner) => Error::RequestedRangeNotSatisfiableException(inner),
+            crate::error::GetObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -91,16 +99,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListItemsError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListItemsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListItemsError> for Error {
     fn from(err: crate::error::ListItemsError) -> Self {
-        match err.kind {
-            crate::error::ListItemsErrorKind::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::ListItemsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::ListItemsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListItemsError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::error::ListItemsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::ListItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -108,18 +121,34 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutObjectError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutObjectError> for Error {
     fn from(err: crate::error::PutObjectError) -> Self {
-        match err.kind {
-            crate::error::PutObjectErrorKind::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::PutObjectErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::PutObjectErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutObjectError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::error::PutObjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::PutObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ContainerNotFoundException(e) => e.request_id(),
+            Self::InternalServerError(e) => e.request_id(),
+            Self::ObjectNotFoundException(e) => e.request_id(),
+            Self::RequestedRangeNotSatisfiableException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

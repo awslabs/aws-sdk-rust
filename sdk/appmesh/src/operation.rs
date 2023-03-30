@@ -22,6 +22,7 @@ impl CreateGatewayRoute {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
                 type Output = std::result::Result<crate::output::CreateGatewayRouteOutput, crate::error::CreateGatewayRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_gateway_route_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateMesh {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMesh {
                 type Output = std::result::Result<crate::output::CreateMeshOutput, crate::error::CreateMeshError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_mesh_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateRoute {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
                 type Output = std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_route_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateVirtualGateway {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualGateway {
                 type Output = std::result::Result<crate::output::CreateVirtualGatewayOutput, crate::error::CreateVirtualGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_virtual_gateway_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateVirtualNode {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualNode {
                 type Output = std::result::Result<crate::output::CreateVirtualNodeOutput, crate::error::CreateVirtualNodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_virtual_node_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateVirtualRouter {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualRouter {
                 type Output = std::result::Result<crate::output::CreateVirtualRouterOutput, crate::error::CreateVirtualRouterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_virtual_router_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateVirtualService {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualService {
                 type Output = std::result::Result<crate::output::CreateVirtualServiceOutput, crate::error::CreateVirtualServiceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_virtual_service_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteGatewayRoute {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGatewayRoute {
                 type Output = std::result::Result<crate::output::DeleteGatewayRouteOutput, crate::error::DeleteGatewayRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_gateway_route_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteMesh {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMesh {
                 type Output = std::result::Result<crate::output::DeleteMeshOutput, crate::error::DeleteMeshError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_mesh_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteRoute {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
                 type Output = std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_route_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteVirtualGateway {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualGateway {
                 type Output = std::result::Result<crate::output::DeleteVirtualGatewayOutput, crate::error::DeleteVirtualGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_virtual_gateway_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteVirtualNode {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
                 type Output = std::result::Result<crate::output::DeleteVirtualNodeOutput, crate::error::DeleteVirtualNodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_virtual_node_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteVirtualRouter {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
                 type Output = std::result::Result<crate::output::DeleteVirtualRouterOutput, crate::error::DeleteVirtualRouterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_virtual_router_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteVirtualService {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualService {
                 type Output = std::result::Result<crate::output::DeleteVirtualServiceOutput, crate::error::DeleteVirtualServiceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_virtual_service_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeGatewayRoute {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeGatewayRoute {
                 type Output = std::result::Result<crate::output::DescribeGatewayRouteOutput, crate::error::DescribeGatewayRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_gateway_route_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeMesh {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeMesh {
                 type Output = std::result::Result<crate::output::DescribeMeshOutput, crate::error::DescribeMeshError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_mesh_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeRoute {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRoute {
                 type Output = std::result::Result<crate::output::DescribeRouteOutput, crate::error::DescribeRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_route_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeVirtualGateway {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualGateway {
                 type Output = std::result::Result<crate::output::DescribeVirtualGatewayOutput, crate::error::DescribeVirtualGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_virtual_gateway_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeVirtualNode {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualNode {
                 type Output = std::result::Result<crate::output::DescribeVirtualNodeOutput, crate::error::DescribeVirtualNodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_virtual_node_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeVirtualRouter {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualRouter {
                 type Output = std::result::Result<crate::output::DescribeVirtualRouterOutput, crate::error::DescribeVirtualRouterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_virtual_router_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeVirtualService {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualService {
                 type Output = std::result::Result<crate::output::DescribeVirtualServiceOutput, crate::error::DescribeVirtualServiceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_virtual_service_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListGatewayRoutes {
 impl aws_smithy_http::response::ParseStrictResponse for ListGatewayRoutes {
                 type Output = std::result::Result<crate::output::ListGatewayRoutesOutput, crate::error::ListGatewayRoutesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_gateway_routes_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListMeshes {
 impl aws_smithy_http::response::ParseStrictResponse for ListMeshes {
                 type Output = std::result::Result<crate::output::ListMeshesOutput, crate::error::ListMeshesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_meshes_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListRoutes {
 impl aws_smithy_http::response::ParseStrictResponse for ListRoutes {
                 type Output = std::result::Result<crate::output::ListRoutesOutput, crate::error::ListRoutesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_routes_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListVirtualGateways {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualGateways {
                 type Output = std::result::Result<crate::output::ListVirtualGatewaysOutput, crate::error::ListVirtualGatewaysError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_gateways_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListVirtualNodes {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualNodes {
                 type Output = std::result::Result<crate::output::ListVirtualNodesOutput, crate::error::ListVirtualNodesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_nodes_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListVirtualRouters {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualRouters {
                 type Output = std::result::Result<crate::output::ListVirtualRoutersOutput, crate::error::ListVirtualRoutersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_routers_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListVirtualServices {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualServices {
                 type Output = std::result::Result<crate::output::ListVirtualServicesOutput, crate::error::ListVirtualServicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_services_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl UpdateGatewayRoute {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayRoute {
                 type Output = std::result::Result<crate::output::UpdateGatewayRouteOutput, crate::error::UpdateGatewayRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_gateway_route_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl UpdateMesh {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateMesh {
                 type Output = std::result::Result<crate::output::UpdateMeshOutput, crate::error::UpdateMeshError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_mesh_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl UpdateRoute {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRoute {
                 type Output = std::result::Result<crate::output::UpdateRouteOutput, crate::error::UpdateRouteError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_route_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UpdateVirtualGateway {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualGateway {
                 type Output = std::result::Result<crate::output::UpdateVirtualGatewayOutput, crate::error::UpdateVirtualGatewayError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_virtual_gateway_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateVirtualNode {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualNode {
                 type Output = std::result::Result<crate::output::UpdateVirtualNodeOutput, crate::error::UpdateVirtualNodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_virtual_node_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateVirtualRouter {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
                 type Output = std::result::Result<crate::output::UpdateVirtualRouterOutput, crate::error::UpdateVirtualRouterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_virtual_router_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateVirtualService {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualService {
                 type Output = std::result::Result<crate::output::UpdateVirtualServiceOutput, crate::error::UpdateVirtualServiceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_virtual_service_error(response)
                      } else {

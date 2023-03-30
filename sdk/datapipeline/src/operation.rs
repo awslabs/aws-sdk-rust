@@ -22,6 +22,7 @@ impl ActivatePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for ActivatePipeline {
                 type Output = std::result::Result<crate::output::ActivatePipelineOutput, crate::error::ActivatePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_activate_pipeline_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddTags {
 impl aws_smithy_http::response::ParseStrictResponse for AddTags {
                 type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_tags_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreatePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePipeline {
                 type Output = std::result::Result<crate::output::CreatePipelineOutput, crate::error::CreatePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_pipeline_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeactivatePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for DeactivatePipeline {
                 type Output = std::result::Result<crate::output::DeactivatePipelineOutput, crate::error::DeactivatePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deactivate_pipeline_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeletePipeline {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePipeline {
                 type Output = std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_pipeline_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeObjects {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeObjects {
                 type Output = std::result::Result<crate::output::DescribeObjectsOutput, crate::error::DescribeObjectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_objects_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribePipelines {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePipelines {
                 type Output = std::result::Result<crate::output::DescribePipelinesOutput, crate::error::DescribePipelinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_pipelines_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl EvaluateExpression {
 impl aws_smithy_http::response::ParseStrictResponse for EvaluateExpression {
                 type Output = std::result::Result<crate::output::EvaluateExpressionOutput, crate::error::EvaluateExpressionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_evaluate_expression_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetPipelineDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for GetPipelineDefinition {
                 type Output = std::result::Result<crate::output::GetPipelineDefinitionOutput, crate::error::GetPipelineDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pipeline_definition_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListPipelines {
 impl aws_smithy_http::response::ParseStrictResponse for ListPipelines {
                 type Output = std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_pipelines_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl PollForTask {
 impl aws_smithy_http::response::ParseStrictResponse for PollForTask {
                 type Output = std::result::Result<crate::output::PollForTaskOutput, crate::error::PollForTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_poll_for_task_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutPipelineDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for PutPipelineDefinition {
                 type Output = std::result::Result<crate::output::PutPipelineDefinitionOutput, crate::error::PutPipelineDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_pipeline_definition_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl QueryObjects {
 impl aws_smithy_http::response::ParseStrictResponse for QueryObjects {
                 type Output = std::result::Result<crate::output::QueryObjectsOutput, crate::error::QueryObjectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_query_objects_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl RemoveTags {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
                 type Output = std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_tags_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ReportTaskProgress {
 impl aws_smithy_http::response::ParseStrictResponse for ReportTaskProgress {
                 type Output = std::result::Result<crate::output::ReportTaskProgressOutput, crate::error::ReportTaskProgressError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_report_task_progress_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ReportTaskRunnerHeartbeat {
 impl aws_smithy_http::response::ParseStrictResponse for ReportTaskRunnerHeartbeat {
                 type Output = std::result::Result<crate::output::ReportTaskRunnerHeartbeatOutput, crate::error::ReportTaskRunnerHeartbeatError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_report_task_runner_heartbeat_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl SetStatus {
 impl aws_smithy_http::response::ParseStrictResponse for SetStatus {
                 type Output = std::result::Result<crate::output::SetStatusOutput, crate::error::SetStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_status_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl SetTaskStatus {
 impl aws_smithy_http::response::ParseStrictResponse for SetTaskStatus {
                 type Output = std::result::Result<crate::output::SetTaskStatusOutput, crate::error::SetTaskStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_task_status_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ValidatePipelineDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for ValidatePipelineDefinition {
                 type Output = std::result::Result<crate::output::ValidatePipelineDefinitionOutput, crate::error::ValidatePipelineDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_validate_pipeline_definition_error(response)
                      } else {

@@ -35,15 +35,8 @@ pub enum Error {
     TooManyEntriesInBatchRequest(crate::error::TooManyEntriesInBatchRequest),
     /// <p>Error code 400. Unsupported operation.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -72,15 +65,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddPermissionError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddPermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddPermissionError> for Error {
     fn from(err: crate::error::AddPermissionError) -> Self {
-        match err.kind {
-            crate::error::AddPermissionErrorKind::OverLimit(inner) => Error::OverLimit(inner),
-            crate::error::AddPermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddPermissionError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::error::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -88,16 +86,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ChangeMessageVisibilityError> for Error {
     fn from(err: crate::error::ChangeMessageVisibilityError) -> Self {
-        match err.kind {
-            crate::error::ChangeMessageVisibilityErrorKind::MessageNotInflight(inner) => Error::MessageNotInflight(inner),
-            crate::error::ChangeMessageVisibilityErrorKind::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
-            crate::error::ChangeMessageVisibilityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ChangeMessageVisibilityError::MessageNotInflight(inner) => Error::MessageNotInflight(inner),
+            crate::error::ChangeMessageVisibilityError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
+            crate::error::ChangeMessageVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -105,18 +108,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ChangeMessageVisibilityBatchError> for Error {
     fn from(err: crate::error::ChangeMessageVisibilityBatchError) -> Self {
-        match err.kind {
-            crate::error::ChangeMessageVisibilityBatchErrorKind::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::ChangeMessageVisibilityBatchErrorKind::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::ChangeMessageVisibilityBatchErrorKind::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::ChangeMessageVisibilityBatchErrorKind::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::ChangeMessageVisibilityBatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ChangeMessageVisibilityBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::error::ChangeMessageVisibilityBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::error::ChangeMessageVisibilityBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::error::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::error::ChangeMessageVisibilityBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -124,16 +132,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateQueueError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateQueueError> for Error {
     fn from(err: crate::error::CreateQueueError) -> Self {
-        match err.kind {
-            crate::error::CreateQueueErrorKind::QueueDeletedRecently(inner) => Error::QueueDeletedRecently(inner),
-            crate::error::CreateQueueErrorKind::QueueNameExists(inner) => Error::QueueNameExists(inner),
-            crate::error::CreateQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateQueueError::QueueDeletedRecently(inner) => Error::QueueDeletedRecently(inner),
+            crate::error::CreateQueueError::QueueNameExists(inner) => Error::QueueNameExists(inner),
+            crate::error::CreateQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -141,16 +154,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteMessageError> for Error {
     fn from(err: crate::error::DeleteMessageError) -> Self {
-        match err.kind {
-            crate::error::DeleteMessageErrorKind::InvalidIdFormat(inner) => Error::InvalidIdFormat(inner),
-            crate::error::DeleteMessageErrorKind::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
-            crate::error::DeleteMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteMessageError::InvalidIdFormat(inner) => Error::InvalidIdFormat(inner),
+            crate::error::DeleteMessageError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
+            crate::error::DeleteMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -158,18 +176,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageBatchE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMessageBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteMessageBatchError> for Error {
     fn from(err: crate::error::DeleteMessageBatchError) -> Self {
-        match err.kind {
-            crate::error::DeleteMessageBatchErrorKind::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::DeleteMessageBatchErrorKind::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::DeleteMessageBatchErrorKind::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::DeleteMessageBatchErrorKind::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::DeleteMessageBatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::error::DeleteMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::error::DeleteMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::error::DeleteMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::error::DeleteMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -177,14 +200,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteQueueError> for Error {
     fn from(err: crate::error::DeleteQueueError) -> Self {
-        match err.kind {
-            crate::error::DeleteQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -192,15 +220,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueAttributesE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetQueueAttributesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetQueueAttributesError> for Error {
     fn from(err: crate::error::GetQueueAttributesError) -> Self {
-        match err.kind {
-            crate::error::GetQueueAttributesErrorKind::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
-            crate::error::GetQueueAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::error::GetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -208,15 +241,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueUrlError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetQueueUrlError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetQueueUrlError> for Error {
     fn from(err: crate::error::GetQueueUrlError) -> Self {
-        match err.kind {
-            crate::error::GetQueueUrlErrorKind::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::GetQueueUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetQueueUrlError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::error::GetQueueUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -224,15 +262,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDeadLetterSourc
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDeadLetterSourceQueuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListDeadLetterSourceQueuesError> for Error {
     fn from(err: crate::error::ListDeadLetterSourceQueuesError) -> Self {
-        match err.kind {
-            crate::error::ListDeadLetterSourceQueuesErrorKind::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::ListDeadLetterSourceQueuesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListDeadLetterSourceQueuesError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::error::ListDeadLetterSourceQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -240,14 +283,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListQueuesError> for Error {
     fn from(err: crate::error::ListQueuesError) -> Self {
-        match err.kind {
-            crate::error::ListQueuesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -255,14 +303,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListQueueTagsError> for Error {
     fn from(err: crate::error::ListQueueTagsError) -> Self {
-        match err.kind {
-            crate::error::ListQueueTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListQueueTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -270,16 +323,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurgeQueueError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PurgeQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PurgeQueueError> for Error {
     fn from(err: crate::error::PurgeQueueError) -> Self {
-        match err.kind {
-            crate::error::PurgeQueueErrorKind::PurgeQueueInProgress(inner) => Error::PurgeQueueInProgress(inner),
-            crate::error::PurgeQueueErrorKind::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::PurgeQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PurgeQueueError::PurgeQueueInProgress(inner) => Error::PurgeQueueInProgress(inner),
+            crate::error::PurgeQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::error::PurgeQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -287,15 +345,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReceiveMessageError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ReceiveMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ReceiveMessageError> for Error {
     fn from(err: crate::error::ReceiveMessageError) -> Self {
-        match err.kind {
-            crate::error::ReceiveMessageErrorKind::OverLimit(inner) => Error::OverLimit(inner),
-            crate::error::ReceiveMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ReceiveMessageError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::error::ReceiveMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -303,14 +366,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemovePermissionErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemovePermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RemovePermissionError> for Error {
     fn from(err: crate::error::RemovePermissionError) -> Self {
-        match err.kind {
-            crate::error::RemovePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -318,16 +386,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SendMessageError> for Error {
     fn from(err: crate::error::SendMessageError) -> Self {
-        match err.kind {
-            crate::error::SendMessageErrorKind::InvalidMessageContents(inner) => Error::InvalidMessageContents(inner),
-            crate::error::SendMessageErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-            crate::error::SendMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SendMessageError::InvalidMessageContents(inner) => Error::InvalidMessageContents(inner),
+            crate::error::SendMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -335,20 +408,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageBatchErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessageBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SendMessageBatchError> for Error {
     fn from(err: crate::error::SendMessageBatchError) -> Self {
-        match err.kind {
-            crate::error::SendMessageBatchErrorKind::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::SendMessageBatchErrorKind::BatchRequestTooLong(inner) => Error::BatchRequestTooLong(inner),
-            crate::error::SendMessageBatchErrorKind::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::SendMessageBatchErrorKind::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::SendMessageBatchErrorKind::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::SendMessageBatchErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-            crate::error::SendMessageBatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SendMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::error::SendMessageBatchError::BatchRequestTooLong(inner) => Error::BatchRequestTooLong(inner),
+            crate::error::SendMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::error::SendMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::error::SendMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::error::SendMessageBatchError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::SendMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -356,15 +434,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetQueueAttributesE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetQueueAttributesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SetQueueAttributesError> for Error {
     fn from(err: crate::error::SetQueueAttributesError) -> Self {
-        match err.kind {
-            crate::error::SetQueueAttributesErrorKind::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
-            crate::error::SetQueueAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::error::SetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -372,14 +455,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>> 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagQueueError> for Error {
     fn from(err: crate::error::TagQueueError) -> Self {
-        match err.kind {
-            crate::error::TagQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -387,16 +475,44 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagQueueError> for Error {
     fn from(err: crate::error::UntagQueueError) -> Self {
-        match err.kind {
-            crate::error::UntagQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BatchEntryIdsNotDistinct(e) => e.request_id(),
+            Self::BatchRequestTooLong(e) => e.request_id(),
+            Self::EmptyBatchRequest(e) => e.request_id(),
+            Self::InvalidAttributeName(e) => e.request_id(),
+            Self::InvalidBatchEntryId(e) => e.request_id(),
+            Self::InvalidIdFormat(e) => e.request_id(),
+            Self::InvalidMessageContents(e) => e.request_id(),
+            Self::MessageNotInflight(e) => e.request_id(),
+            Self::OverLimit(e) => e.request_id(),
+            Self::PurgeQueueInProgress(e) => e.request_id(),
+            Self::QueueDeletedRecently(e) => e.request_id(),
+            Self::QueueDoesNotExist(e) => e.request_id(),
+            Self::QueueNameExists(e) => e.request_id(),
+            Self::ReceiptHandleIsInvalid(e) => e.request_id(),
+            Self::TooManyEntriesInBatchRequest(e) => e.request_id(),
+            Self::UnsupportedOperation(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

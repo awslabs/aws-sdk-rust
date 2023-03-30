@@ -22,6 +22,7 @@ impl CreateConnection {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
                 type Output = std::result::Result<crate::output::CreateConnectionOutput, crate::error::CreateConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_connection_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateHost {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHost {
                 type Output = std::result::Result<crate::output::CreateHostOutput, crate::error::CreateHostError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_host_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteConnection {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
                 type Output = std::result::Result<crate::output::DeleteConnectionOutput, crate::error::DeleteConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_connection_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteHost {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteHost {
                 type Output = std::result::Result<crate::output::DeleteHostOutput, crate::error::DeleteHostError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_host_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetConnection {
 impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
                 type Output = std::result::Result<crate::output::GetConnectionOutput, crate::error::GetConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_connection_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetHost {
 impl aws_smithy_http::response::ParseStrictResponse for GetHost {
                 type Output = std::result::Result<crate::output::GetHostOutput, crate::error::GetHostError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_host_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListConnections {
 impl aws_smithy_http::response::ParseStrictResponse for ListConnections {
                 type Output = std::result::Result<crate::output::ListConnectionsOutput, crate::error::ListConnectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_connections_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListHosts {
 impl aws_smithy_http::response::ParseStrictResponse for ListHosts {
                 type Output = std::result::Result<crate::output::ListHostsOutput, crate::error::ListHostsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hosts_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UpdateHost {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateHost {
                 type Output = std::result::Result<crate::output::UpdateHostOutput, crate::error::UpdateHostError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_host_error(response)
                      } else {

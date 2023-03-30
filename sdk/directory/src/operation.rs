@@ -22,6 +22,7 @@ impl AcceptSharedDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptSharedDirectory {
                 type Output = std::result::Result<crate::output::AcceptSharedDirectoryOutput, crate::error::AcceptSharedDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_shared_directory_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddIpRoutes {
 impl aws_smithy_http::response::ParseStrictResponse for AddIpRoutes {
                 type Output = std::result::Result<crate::output::AddIpRoutesOutput, crate::error::AddIpRoutesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_ip_routes_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AddRegion {
 impl aws_smithy_http::response::ParseStrictResponse for AddRegion {
                 type Output = std::result::Result<crate::output::AddRegionOutput, crate::error::AddRegionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_region_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl AddTagsToResource {
 impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
                 type Output = std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_tags_to_resource_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CancelSchemaExtension {
 impl aws_smithy_http::response::ParseStrictResponse for CancelSchemaExtension {
                 type Output = std::result::Result<crate::output::CancelSchemaExtensionOutput, crate::error::CancelSchemaExtensionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_schema_extension_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ConnectDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for ConnectDirectory {
                 type Output = std::result::Result<crate::output::ConnectDirectoryOutput, crate::error::ConnectDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_connect_directory_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateAlias {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
                 type Output = std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_alias_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateComputer {
 impl aws_smithy_http::response::ParseStrictResponse for CreateComputer {
                 type Output = std::result::Result<crate::output::CreateComputerOutput, crate::error::CreateComputerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_computer_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateConditionalForwarder {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConditionalForwarder {
                 type Output = std::result::Result<crate::output::CreateConditionalForwarderOutput, crate::error::CreateConditionalForwarderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_conditional_forwarder_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDirectory {
                 type Output = std::result::Result<crate::output::CreateDirectoryOutput, crate::error::CreateDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_directory_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateLogSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLogSubscription {
                 type Output = std::result::Result<crate::output::CreateLogSubscriptionOutput, crate::error::CreateLogSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_log_subscription_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateMicrosoftAD {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMicrosoftAD {
                 type Output = std::result::Result<crate::output::CreateMicrosoftAdOutput, crate::error::CreateMicrosoftADError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_microsoft_ad_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreateSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
                 type Output = std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_snapshot_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl CreateTrust {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTrust {
                 type Output = std::result::Result<crate::output::CreateTrustOutput, crate::error::CreateTrustError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_trust_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteConditionalForwarder {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConditionalForwarder {
                 type Output = std::result::Result<crate::output::DeleteConditionalForwarderOutput, crate::error::DeleteConditionalForwarderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_conditional_forwarder_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDirectory {
                 type Output = std::result::Result<crate::output::DeleteDirectoryOutput, crate::error::DeleteDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_directory_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteLogSubscription {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLogSubscription {
                 type Output = std::result::Result<crate::output::DeleteLogSubscriptionOutput, crate::error::DeleteLogSubscriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_log_subscription_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeleteSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
                 type Output = std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_snapshot_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteTrust {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTrust {
                 type Output = std::result::Result<crate::output::DeleteTrustOutput, crate::error::DeleteTrustError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_trust_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DeregisterCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterCertificate {
                 type Output = std::result::Result<crate::output::DeregisterCertificateOutput, crate::error::DeregisterCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_certificate_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DeregisterEventTopic {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterEventTopic {
                 type Output = std::result::Result<crate::output::DeregisterEventTopicOutput, crate::error::DeregisterEventTopicError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_event_topic_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribeCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
                 type Output = std::result::Result<crate::output::DescribeCertificateOutput, crate::error::DescribeCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_certificate_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeClientAuthenticationSettings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeClientAuthenticationSettings {
                 type Output = std::result::Result<crate::output::DescribeClientAuthenticationSettingsOutput, crate::error::DescribeClientAuthenticationSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_client_authentication_settings_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeConditionalForwarders {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConditionalForwarders {
                 type Output = std::result::Result<crate::output::DescribeConditionalForwardersOutput, crate::error::DescribeConditionalForwardersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_conditional_forwarders_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeDirectories {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDirectories {
                 type Output = std::result::Result<crate::output::DescribeDirectoriesOutput, crate::error::DescribeDirectoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_directories_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeDomainControllers {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainControllers {
                 type Output = std::result::Result<crate::output::DescribeDomainControllersOutput, crate::error::DescribeDomainControllersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_domain_controllers_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl DescribeEventTopics {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventTopics {
                 type Output = std::result::Result<crate::output::DescribeEventTopicsOutput, crate::error::DescribeEventTopicsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_event_topics_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl DescribeLDAPSSettings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLDAPSSettings {
                 type Output = std::result::Result<crate::output::DescribeLdapsSettingsOutput, crate::error::DescribeLDAPSSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_ldaps_settings_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl DescribeRegions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRegions {
                 type Output = std::result::Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_regions_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl DescribeSettings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSettings {
                 type Output = std::result::Result<crate::output::DescribeSettingsOutput, crate::error::DescribeSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_settings_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl DescribeSharedDirectories {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSharedDirectories {
                 type Output = std::result::Result<crate::output::DescribeSharedDirectoriesOutput, crate::error::DescribeSharedDirectoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_shared_directories_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl DescribeSnapshots {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
                 type Output = std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_snapshots_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl DescribeTrusts {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeTrusts {
                 type Output = std::result::Result<crate::output::DescribeTrustsOutput, crate::error::DescribeTrustsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_trusts_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl DescribeUpdateDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUpdateDirectory {
                 type Output = std::result::Result<crate::output::DescribeUpdateDirectoryOutput, crate::error::DescribeUpdateDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_update_directory_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl DisableClientAuthentication {
 impl aws_smithy_http::response::ParseStrictResponse for DisableClientAuthentication {
                 type Output = std::result::Result<crate::output::DisableClientAuthenticationOutput, crate::error::DisableClientAuthenticationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_client_authentication_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl DisableLDAPS {
 impl aws_smithy_http::response::ParseStrictResponse for DisableLDAPS {
                 type Output = std::result::Result<crate::output::DisableLdapsOutput, crate::error::DisableLDAPSError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_ldaps_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl DisableRadius {
 impl aws_smithy_http::response::ParseStrictResponse for DisableRadius {
                 type Output = std::result::Result<crate::output::DisableRadiusOutput, crate::error::DisableRadiusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_radius_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl DisableSso {
 impl aws_smithy_http::response::ParseStrictResponse for DisableSso {
                 type Output = std::result::Result<crate::output::DisableSsoOutput, crate::error::DisableSsoError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_sso_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl EnableClientAuthentication {
 impl aws_smithy_http::response::ParseStrictResponse for EnableClientAuthentication {
                 type Output = std::result::Result<crate::output::EnableClientAuthenticationOutput, crate::error::EnableClientAuthenticationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_client_authentication_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl EnableLDAPS {
 impl aws_smithy_http::response::ParseStrictResponse for EnableLDAPS {
                 type Output = std::result::Result<crate::output::EnableLdapsOutput, crate::error::EnableLDAPSError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_ldaps_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl EnableRadius {
 impl aws_smithy_http::response::ParseStrictResponse for EnableRadius {
                 type Output = std::result::Result<crate::output::EnableRadiusOutput, crate::error::EnableRadiusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_radius_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl EnableSso {
 impl aws_smithy_http::response::ParseStrictResponse for EnableSso {
                 type Output = std::result::Result<crate::output::EnableSsoOutput, crate::error::EnableSsoError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_sso_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl GetDirectoryLimits {
 impl aws_smithy_http::response::ParseStrictResponse for GetDirectoryLimits {
                 type Output = std::result::Result<crate::output::GetDirectoryLimitsOutput, crate::error::GetDirectoryLimitsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_directory_limits_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl GetSnapshotLimits {
 impl aws_smithy_http::response::ParseStrictResponse for GetSnapshotLimits {
                 type Output = std::result::Result<crate::output::GetSnapshotLimitsOutput, crate::error::GetSnapshotLimitsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_snapshot_limits_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl ListCertificates {
 impl aws_smithy_http::response::ParseStrictResponse for ListCertificates {
                 type Output = std::result::Result<crate::output::ListCertificatesOutput, crate::error::ListCertificatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_certificates_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl ListIpRoutes {
 impl aws_smithy_http::response::ParseStrictResponse for ListIpRoutes {
                 type Output = std::result::Result<crate::output::ListIpRoutesOutput, crate::error::ListIpRoutesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_ip_routes_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl ListLogSubscriptions {
 impl aws_smithy_http::response::ParseStrictResponse for ListLogSubscriptions {
                 type Output = std::result::Result<crate::output::ListLogSubscriptionsOutput, crate::error::ListLogSubscriptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_log_subscriptions_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl ListSchemaExtensions {
 impl aws_smithy_http::response::ParseStrictResponse for ListSchemaExtensions {
                 type Output = std::result::Result<crate::output::ListSchemaExtensionsOutput, crate::error::ListSchemaExtensionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_schema_extensions_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl RegisterCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterCertificate {
                 type Output = std::result::Result<crate::output::RegisterCertificateOutput, crate::error::RegisterCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_certificate_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl RegisterEventTopic {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterEventTopic {
                 type Output = std::result::Result<crate::output::RegisterEventTopicOutput, crate::error::RegisterEventTopicError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_event_topic_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl RejectSharedDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for RejectSharedDirectory {
                 type Output = std::result::Result<crate::output::RejectSharedDirectoryOutput, crate::error::RejectSharedDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_shared_directory_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl RemoveIpRoutes {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveIpRoutes {
                 type Output = std::result::Result<crate::output::RemoveIpRoutesOutput, crate::error::RemoveIpRoutesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_ip_routes_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl RemoveRegion {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveRegion {
                 type Output = std::result::Result<crate::output::RemoveRegionOutput, crate::error::RemoveRegionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_region_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl RemoveTagsFromResource {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
                 type Output = std::result::Result<crate::output::RemoveTagsFromResourceOutput, crate::error::RemoveTagsFromResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_tags_from_resource_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl ResetUserPassword {
 impl aws_smithy_http::response::ParseStrictResponse for ResetUserPassword {
                 type Output = std::result::Result<crate::output::ResetUserPasswordOutput, crate::error::ResetUserPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reset_user_password_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl RestoreFromSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreFromSnapshot {
                 type Output = std::result::Result<crate::output::RestoreFromSnapshotOutput, crate::error::RestoreFromSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restore_from_snapshot_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl ShareDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for ShareDirectory {
                 type Output = std::result::Result<crate::output::ShareDirectoryOutput, crate::error::ShareDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_share_directory_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl StartSchemaExtension {
 impl aws_smithy_http::response::ParseStrictResponse for StartSchemaExtension {
                 type Output = std::result::Result<crate::output::StartSchemaExtensionOutput, crate::error::StartSchemaExtensionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_schema_extension_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl UnshareDirectory {
 impl aws_smithy_http::response::ParseStrictResponse for UnshareDirectory {
                 type Output = std::result::Result<crate::output::UnshareDirectoryOutput, crate::error::UnshareDirectoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_unshare_directory_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl UpdateConditionalForwarder {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateConditionalForwarder {
                 type Output = std::result::Result<crate::output::UpdateConditionalForwarderOutput, crate::error::UpdateConditionalForwarderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_conditional_forwarder_error(response)
                      } else {
@@ -1913,6 +1974,7 @@ impl UpdateDirectorySetup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectorySetup {
                 type Output = std::result::Result<crate::output::UpdateDirectorySetupOutput, crate::error::UpdateDirectorySetupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_directory_setup_error(response)
                      } else {
@@ -1944,6 +2006,7 @@ impl UpdateNumberOfDomainControllers {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateNumberOfDomainControllers {
                 type Output = std::result::Result<crate::output::UpdateNumberOfDomainControllersOutput, crate::error::UpdateNumberOfDomainControllersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_number_of_domain_controllers_error(response)
                      } else {
@@ -1975,6 +2038,7 @@ impl UpdateRadius {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRadius {
                 type Output = std::result::Result<crate::output::UpdateRadiusOutput, crate::error::UpdateRadiusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_radius_error(response)
                      } else {
@@ -2006,6 +2070,7 @@ impl UpdateSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSettings {
                 type Output = std::result::Result<crate::output::UpdateSettingsOutput, crate::error::UpdateSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_settings_error(response)
                      } else {
@@ -2037,6 +2102,7 @@ impl UpdateTrust {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateTrust {
                 type Output = std::result::Result<crate::output::UpdateTrustOutput, crate::error::UpdateTrustError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_trust_error(response)
                      } else {
@@ -2068,6 +2134,7 @@ impl VerifyTrust {
 impl aws_smithy_http::response::ParseStrictResponse for VerifyTrust {
                 type Output = std::result::Result<crate::output::VerifyTrustOutput, crate::error::VerifyTrustError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_verify_trust_error(response)
                      } else {

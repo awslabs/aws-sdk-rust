@@ -22,6 +22,7 @@ impl CancelJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
                 type Output = std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_job_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateComputeEnvironment {
 impl aws_smithy_http::response::ParseStrictResponse for CreateComputeEnvironment {
                 type Output = std::result::Result<crate::output::CreateComputeEnvironmentOutput, crate::error::CreateComputeEnvironmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_compute_environment_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateJobQueue {
 impl aws_smithy_http::response::ParseStrictResponse for CreateJobQueue {
                 type Output = std::result::Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_job_queue_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateSchedulingPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSchedulingPolicy {
                 type Output = std::result::Result<crate::output::CreateSchedulingPolicyOutput, crate::error::CreateSchedulingPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_scheduling_policy_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteComputeEnvironment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteComputeEnvironment {
                 type Output = std::result::Result<crate::output::DeleteComputeEnvironmentOutput, crate::error::DeleteComputeEnvironmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_compute_environment_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteJobQueue {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteJobQueue {
                 type Output = std::result::Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_job_queue_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteSchedulingPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedulingPolicy {
                 type Output = std::result::Result<crate::output::DeleteSchedulingPolicyOutput, crate::error::DeleteSchedulingPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_scheduling_policy_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeregisterJobDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterJobDefinition {
                 type Output = std::result::Result<crate::output::DeregisterJobDefinitionOutput, crate::error::DeregisterJobDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_job_definition_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeComputeEnvironments {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeComputeEnvironments {
                 type Output = std::result::Result<crate::output::DescribeComputeEnvironmentsOutput, crate::error::DescribeComputeEnvironmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_compute_environments_error(response)
                      } else {
@@ -477,6 +486,7 @@ impl DescribeJobDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobDefinitions {
                 type Output = std::result::Result<crate::output::DescribeJobDefinitionsOutput, crate::error::DescribeJobDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_definitions_error(response)
                      } else {
@@ -508,6 +518,7 @@ impl DescribeJobQueues {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobQueues {
                 type Output = std::result::Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_queues_error(response)
                      } else {
@@ -539,6 +550,7 @@ impl DescribeJobs {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobs {
                 type Output = std::result::Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_jobs_error(response)
                      } else {
@@ -570,6 +582,7 @@ impl DescribeSchedulingPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedulingPolicies {
                 type Output = std::result::Result<crate::output::DescribeSchedulingPoliciesOutput, crate::error::DescribeSchedulingPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_scheduling_policies_error(response)
                      } else {
@@ -601,6 +614,7 @@ impl ListJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
                 type Output = std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_jobs_error(response)
                      } else {
@@ -632,6 +646,7 @@ impl ListSchedulingPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for ListSchedulingPolicies {
                 type Output = std::result::Result<crate::output::ListSchedulingPoliciesOutput, crate::error::ListSchedulingPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_scheduling_policies_error(response)
                      } else {
@@ -663,6 +678,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -694,6 +710,7 @@ impl RegisterJobDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterJobDefinition {
                 type Output = std::result::Result<crate::output::RegisterJobDefinitionOutput, crate::error::RegisterJobDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_job_definition_error(response)
                      } else {
@@ -725,6 +742,7 @@ impl SubmitJob {
 impl aws_smithy_http::response::ParseStrictResponse for SubmitJob {
                 type Output = std::result::Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_submit_job_error(response)
                      } else {
@@ -756,6 +774,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -787,6 +806,7 @@ impl TerminateJob {
 impl aws_smithy_http::response::ParseStrictResponse for TerminateJob {
                 type Output = std::result::Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_terminate_job_error(response)
                      } else {
@@ -818,6 +838,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -849,6 +870,7 @@ impl UpdateComputeEnvironment {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateComputeEnvironment {
                 type Output = std::result::Result<crate::output::UpdateComputeEnvironmentOutput, crate::error::UpdateComputeEnvironmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_compute_environment_error(response)
                      } else {
@@ -880,6 +902,7 @@ impl UpdateJobQueue {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateJobQueue {
                 type Output = std::result::Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_job_queue_error(response)
                      } else {
@@ -911,6 +934,7 @@ impl UpdateSchedulingPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSchedulingPolicy {
                 type Output = std::result::Result<crate::output::UpdateSchedulingPolicyOutput, crate::error::UpdateSchedulingPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_scheduling_policy_error(response)
                      } else {

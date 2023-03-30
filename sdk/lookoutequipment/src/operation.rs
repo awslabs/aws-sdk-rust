@@ -22,6 +22,7 @@ impl CreateDataset {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
                 type Output = std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_dataset_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceScheduler {
                 type Output = std::result::Result<crate::output::CreateInferenceSchedulerOutput, crate::error::CreateInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_inference_scheduler_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateLabel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLabel {
                 type Output = std::result::Result<crate::output::CreateLabelOutput, crate::error::CreateLabelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_label_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateLabelGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLabelGroup {
                 type Output = std::result::Result<crate::output::CreateLabelGroupOutput, crate::error::CreateLabelGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_label_group_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateModel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateModel {
                 type Output = std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_model_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteDataset {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
                 type Output = std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_dataset_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInferenceScheduler {
                 type Output = std::result::Result<crate::output::DeleteInferenceSchedulerOutput, crate::error::DeleteInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_inference_scheduler_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteLabel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLabel {
                 type Output = std::result::Result<crate::output::DeleteLabelOutput, crate::error::DeleteLabelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_label_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteLabelGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLabelGroup {
                 type Output = std::result::Result<crate::output::DeleteLabelGroupOutput, crate::error::DeleteLabelGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_label_group_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteModel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteModel {
                 type Output = std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_model_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeDataIngestionJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDataIngestionJob {
                 type Output = std::result::Result<crate::output::DescribeDataIngestionJobOutput, crate::error::DescribeDataIngestionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_data_ingestion_job_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeDataset {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
                 type Output = std::result::Result<crate::output::DescribeDatasetOutput, crate::error::DescribeDatasetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_dataset_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInferenceScheduler {
                 type Output = std::result::Result<crate::output::DescribeInferenceSchedulerOutput, crate::error::DescribeInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_inference_scheduler_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeLabel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLabel {
                 type Output = std::result::Result<crate::output::DescribeLabelOutput, crate::error::DescribeLabelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_label_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeLabelGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLabelGroup {
                 type Output = std::result::Result<crate::output::DescribeLabelGroupOutput, crate::error::DescribeLabelGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_label_group_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeModel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeModel {
                 type Output = std::result::Result<crate::output::DescribeModelOutput, crate::error::DescribeModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_model_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListDataIngestionJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListDataIngestionJobs {
                 type Output = std::result::Result<crate::output::ListDataIngestionJobsOutput, crate::error::ListDataIngestionJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_data_ingestion_jobs_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListDatasets {
 impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
                 type Output = std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_datasets_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListInferenceEvents {
 impl aws_smithy_http::response::ParseStrictResponse for ListInferenceEvents {
                 type Output = std::result::Result<crate::output::ListInferenceEventsOutput, crate::error::ListInferenceEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_inference_events_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListInferenceExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for ListInferenceExecutions {
                 type Output = std::result::Result<crate::output::ListInferenceExecutionsOutput, crate::error::ListInferenceExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_inference_executions_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListInferenceSchedulers {
 impl aws_smithy_http::response::ParseStrictResponse for ListInferenceSchedulers {
                 type Output = std::result::Result<crate::output::ListInferenceSchedulersOutput, crate::error::ListInferenceSchedulersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_inference_schedulers_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListLabelGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListLabelGroups {
                 type Output = std::result::Result<crate::output::ListLabelGroupsOutput, crate::error::ListLabelGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_label_groups_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListLabels {
 impl aws_smithy_http::response::ParseStrictResponse for ListLabels {
                 type Output = std::result::Result<crate::output::ListLabelsOutput, crate::error::ListLabelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_labels_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListModels {
 impl aws_smithy_http::response::ParseStrictResponse for ListModels {
                 type Output = std::result::Result<crate::output::ListModelsOutput, crate::error::ListModelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_models_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListSensorStatistics {
 impl aws_smithy_http::response::ParseStrictResponse for ListSensorStatistics {
                 type Output = std::result::Result<crate::output::ListSensorStatisticsOutput, crate::error::ListSensorStatisticsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sensor_statistics_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl StartDataIngestionJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartDataIngestionJob {
                 type Output = std::result::Result<crate::output::StartDataIngestionJobOutput, crate::error::StartDataIngestionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_data_ingestion_job_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl StartInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for StartInferenceScheduler {
                 type Output = std::result::Result<crate::output::StartInferenceSchedulerOutput, crate::error::StartInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_inference_scheduler_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl StopInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for StopInferenceScheduler {
                 type Output = std::result::Result<crate::output::StopInferenceSchedulerOutput, crate::error::StopInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_inference_scheduler_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl UpdateInferenceScheduler {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInferenceScheduler {
                 type Output = std::result::Result<crate::output::UpdateInferenceSchedulerOutput, crate::error::UpdateInferenceSchedulerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_inference_scheduler_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl UpdateLabelGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLabelGroup {
                 type Output = std::result::Result<crate::output::UpdateLabelGroupOutput, crate::error::UpdateLabelGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_label_group_error(response)
                      } else {

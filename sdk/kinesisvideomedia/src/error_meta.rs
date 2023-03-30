@@ -15,15 +15,8 @@ pub enum Error {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,22 +35,40 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>> 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetMediaError> for Error {
     fn from(err: crate::error::GetMediaError) -> Self {
-        match err.kind {
-            crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::error::GetMediaErrorKind::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
-            crate::error::GetMediaErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::GetMediaErrorKind::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::error::GetMediaErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::GetMediaErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetMediaErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetMediaError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::GetMediaError::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
+            crate::error::GetMediaError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::GetMediaError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::error::GetMediaError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::error::GetMediaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetMediaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ClientLimitExceededException(e) => e.request_id(),
+            Self::ConnectionLimitExceededException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::InvalidEndpointException(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

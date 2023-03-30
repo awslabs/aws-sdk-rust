@@ -22,6 +22,7 @@ impl CreateProfile {
 impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
                 type Output = std::result::Result<crate::output::CreateProfileOutput, crate::error::CreateProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_profile_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTrustAnchor {
                 type Output = std::result::Result<crate::output::CreateTrustAnchorOutput, crate::error::CreateTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_trust_anchor_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteCrl {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCrl {
                 type Output = std::result::Result<crate::output::DeleteCrlOutput, crate::error::DeleteCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_crl_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteProfile {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProfile {
                 type Output = std::result::Result<crate::output::DeleteProfileOutput, crate::error::DeleteProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_profile_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustAnchor {
                 type Output = std::result::Result<crate::output::DeleteTrustAnchorOutput, crate::error::DeleteTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_trust_anchor_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DisableCrl {
 impl aws_smithy_http::response::ParseStrictResponse for DisableCrl {
                 type Output = std::result::Result<crate::output::DisableCrlOutput, crate::error::DisableCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_crl_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DisableProfile {
 impl aws_smithy_http::response::ParseStrictResponse for DisableProfile {
                 type Output = std::result::Result<crate::output::DisableProfileOutput, crate::error::DisableProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_profile_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DisableTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for DisableTrustAnchor {
                 type Output = std::result::Result<crate::output::DisableTrustAnchorOutput, crate::error::DisableTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_trust_anchor_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl EnableCrl {
 impl aws_smithy_http::response::ParseStrictResponse for EnableCrl {
                 type Output = std::result::Result<crate::output::EnableCrlOutput, crate::error::EnableCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_crl_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl EnableProfile {
 impl aws_smithy_http::response::ParseStrictResponse for EnableProfile {
                 type Output = std::result::Result<crate::output::EnableProfileOutput, crate::error::EnableProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_profile_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl EnableTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for EnableTrustAnchor {
                 type Output = std::result::Result<crate::output::EnableTrustAnchorOutput, crate::error::EnableTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_trust_anchor_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetCrl {
 impl aws_smithy_http::response::ParseStrictResponse for GetCrl {
                 type Output = std::result::Result<crate::output::GetCrlOutput, crate::error::GetCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_crl_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetProfile {
 impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
                 type Output = std::result::Result<crate::output::GetProfileOutput, crate::error::GetProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_profile_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetSubject {
 impl aws_smithy_http::response::ParseStrictResponse for GetSubject {
                 type Output = std::result::Result<crate::output::GetSubjectOutput, crate::error::GetSubjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_subject_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for GetTrustAnchor {
                 type Output = std::result::Result<crate::output::GetTrustAnchorOutput, crate::error::GetTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_trust_anchor_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ImportCrl {
 impl aws_smithy_http::response::ParseStrictResponse for ImportCrl {
                 type Output = std::result::Result<crate::output::ImportCrlOutput, crate::error::ImportCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_import_crl_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListCrls {
 impl aws_smithy_http::response::ParseStrictResponse for ListCrls {
                 type Output = std::result::Result<crate::output::ListCrlsOutput, crate::error::ListCrlsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_crls_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListProfiles {
 impl aws_smithy_http::response::ParseStrictResponse for ListProfiles {
                 type Output = std::result::Result<crate::output::ListProfilesOutput, crate::error::ListProfilesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_profiles_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListSubjects {
 impl aws_smithy_http::response::ParseStrictResponse for ListSubjects {
                 type Output = std::result::Result<crate::output::ListSubjectsOutput, crate::error::ListSubjectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_subjects_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListTrustAnchors {
 impl aws_smithy_http::response::ParseStrictResponse for ListTrustAnchors {
                 type Output = std::result::Result<crate::output::ListTrustAnchorsOutput, crate::error::ListTrustAnchorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_trust_anchors_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UpdateCrl {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCrl {
                 type Output = std::result::Result<crate::output::UpdateCrlOutput, crate::error::UpdateCrlError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_crl_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UpdateProfile {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
                 type Output = std::result::Result<crate::output::UpdateProfileOutput, crate::error::UpdateProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_profile_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateTrustAnchor {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateTrustAnchor {
                 type Output = std::result::Result<crate::output::UpdateTrustAnchorOutput, crate::error::UpdateTrustAnchorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_trust_anchor_error(response)
                      } else {

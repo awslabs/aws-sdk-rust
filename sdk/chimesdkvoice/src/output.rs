@@ -15,6 +15,7 @@ pub struct ValidateE911AddressOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub candidate_address_list: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
+    _request_id: Option<String>,
 }
 impl ValidateE911AddressOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -34,6 +35,11 @@ impl ValidateE911AddressOutput {
         self.candidate_address_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ValidateE911AddressOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
 pub mod validate_e911_address_output {
     
@@ -45,6 +51,7 @@ pub mod validate_e911_address_output {
         pub(crate) address_external_id: std::option::Option<std::string::String>,
         pub(crate) address: std::option::Option<crate::model::Address>,
         pub(crate) candidate_address_list: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -88,6 +95,15 @@ pub mod validate_e911_address_output {
         pub fn set_candidate_address_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>) -> Self {
             self.candidate_address_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
         pub fn build(self) -> crate::output::ValidateE911AddressOutput {
             crate::output::ValidateE911AddressOutput {
@@ -100,6 +116,7 @@ pub mod validate_e911_address_output {
                 ,
                 candidate_address_list: self.candidate_address_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -120,6 +137,7 @@ pub struct UpdateVoiceConnectorGroupOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+    _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorGroupOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -127,6 +145,11 @@ impl UpdateVoiceConnectorGroupOutput {
         self.voice_connector_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVoiceConnectorGroupOutput`](crate::output::UpdateVoiceConnectorGroupOutput).
 pub mod update_voice_connector_group_output {
     
@@ -135,6 +158,7 @@ pub mod update_voice_connector_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -146,11 +170,21 @@ pub mod update_voice_connector_group_output {
         pub fn set_voice_connector_group(mut self, input: std::option::Option<crate::model::VoiceConnectorGroup>) -> Self {
             self.voice_connector_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVoiceConnectorGroupOutput`](crate::output::UpdateVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::UpdateVoiceConnectorGroupOutput {
             crate::output::UpdateVoiceConnectorGroupOutput {
                 voice_connector_group: self.voice_connector_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,6 +205,7 @@ pub struct UpdateVoiceConnectorOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
+    _request_id: Option<String>,
 }
 impl UpdateVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -178,6 +213,11 @@ impl UpdateVoiceConnectorOutput {
         self.voice_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVoiceConnectorOutput`](crate::output::UpdateVoiceConnectorOutput).
 pub mod update_voice_connector_output {
     
@@ -186,6 +226,7 @@ pub mod update_voice_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -197,11 +238,21 @@ pub mod update_voice_connector_output {
         pub fn set_voice_connector(mut self, input: std::option::Option<crate::model::VoiceConnector>) -> Self {
             self.voice_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVoiceConnectorOutput`](crate::output::UpdateVoiceConnectorOutput).
         pub fn build(self) -> crate::output::UpdateVoiceConnectorOutput {
             crate::output::UpdateVoiceConnectorOutput {
                 voice_connector: self.voice_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -222,6 +273,7 @@ pub struct UpdateSipRuleOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+    _request_id: Option<String>,
 }
 impl UpdateSipRuleOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -229,6 +281,11 @@ impl UpdateSipRuleOutput {
         self.sip_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSipRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSipRuleOutput`](crate::output::UpdateSipRuleOutput).
 pub mod update_sip_rule_output {
     
@@ -237,6 +294,7 @@ pub mod update_sip_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -248,11 +306,21 @@ pub mod update_sip_rule_output {
         pub fn set_sip_rule(mut self, input: std::option::Option<crate::model::SipRule>) -> Self {
             self.sip_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSipRuleOutput`](crate::output::UpdateSipRuleOutput).
         pub fn build(self) -> crate::output::UpdateSipRuleOutput {
             crate::output::UpdateSipRuleOutput {
                 sip_rule: self.sip_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -273,6 +341,7 @@ pub struct UpdateSipMediaApplicationCallOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+    _request_id: Option<String>,
 }
 impl UpdateSipMediaApplicationCallOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -280,6 +349,11 @@ impl UpdateSipMediaApplicationCallOutput {
         self.sip_media_application_call.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSipMediaApplicationCallOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSipMediaApplicationCallOutput`](crate::output::UpdateSipMediaApplicationCallOutput).
 pub mod update_sip_media_application_call_output {
     
@@ -288,6 +362,7 @@ pub mod update_sip_media_application_call_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -299,11 +374,21 @@ pub mod update_sip_media_application_call_output {
         pub fn set_sip_media_application_call(mut self, input: std::option::Option<crate::model::SipMediaApplicationCall>) -> Self {
             self.sip_media_application_call = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSipMediaApplicationCallOutput`](crate::output::UpdateSipMediaApplicationCallOutput).
         pub fn build(self) -> crate::output::UpdateSipMediaApplicationCallOutput {
             crate::output::UpdateSipMediaApplicationCallOutput {
                 sip_media_application_call: self.sip_media_application_call
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -324,6 +409,7 @@ pub struct UpdateSipMediaApplicationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+    _request_id: Option<String>,
 }
 impl UpdateSipMediaApplicationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -331,6 +417,11 @@ impl UpdateSipMediaApplicationOutput {
         self.sip_media_application.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSipMediaApplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSipMediaApplicationOutput`](crate::output::UpdateSipMediaApplicationOutput).
 pub mod update_sip_media_application_output {
     
@@ -339,6 +430,7 @@ pub mod update_sip_media_application_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -350,11 +442,21 @@ pub mod update_sip_media_application_output {
         pub fn set_sip_media_application(mut self, input: std::option::Option<crate::model::SipMediaApplication>) -> Self {
             self.sip_media_application = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSipMediaApplicationOutput`](crate::output::UpdateSipMediaApplicationOutput).
         pub fn build(self) -> crate::output::UpdateSipMediaApplicationOutput {
             crate::output::UpdateSipMediaApplicationOutput {
                 sip_media_application: self.sip_media_application
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -375,6 +477,7 @@ pub struct UpdateProxySessionOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
+    _request_id: Option<String>,
 }
 impl UpdateProxySessionOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -382,6 +485,11 @@ impl UpdateProxySessionOutput {
         self.proxy_session.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateProxySessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateProxySessionOutput`](crate::output::UpdateProxySessionOutput).
 pub mod update_proxy_session_output {
     
@@ -390,6 +498,7 @@ pub mod update_proxy_session_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -401,11 +510,21 @@ pub mod update_proxy_session_output {
         pub fn set_proxy_session(mut self, input: std::option::Option<crate::model::ProxySession>) -> Self {
             self.proxy_session = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateProxySessionOutput`](crate::output::UpdateProxySessionOutput).
         pub fn build(self) -> crate::output::UpdateProxySessionOutput {
             crate::output::UpdateProxySessionOutput {
                 proxy_session: self.proxy_session
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -423,7 +542,13 @@ impl UpdateProxySessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdatePhoneNumberSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePhoneNumberSettingsOutput`](crate::output::UpdatePhoneNumberSettingsOutput).
 pub mod update_phone_number_settings_output {
     
@@ -431,11 +556,22 @@ pub mod update_phone_number_settings_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsOutput`](crate::output::UpdatePhoneNumberSettingsOutput).
         pub fn build(self) -> crate::output::UpdatePhoneNumberSettingsOutput {
             crate::output::UpdatePhoneNumberSettingsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -456,6 +592,7 @@ pub struct UpdatePhoneNumberOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
+    _request_id: Option<String>,
 }
 impl UpdatePhoneNumberOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -463,6 +600,11 @@ impl UpdatePhoneNumberOutput {
         self.phone_number.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
 pub mod update_phone_number_output {
     
@@ -471,6 +613,7 @@ pub mod update_phone_number_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -482,11 +625,21 @@ pub mod update_phone_number_output {
         pub fn set_phone_number(mut self, input: std::option::Option<crate::model::PhoneNumber>) -> Self {
             self.phone_number = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
         pub fn build(self) -> crate::output::UpdatePhoneNumberOutput {
             crate::output::UpdatePhoneNumberOutput {
                 phone_number: self.phone_number
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -504,7 +657,13 @@ impl UpdatePhoneNumberOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateGlobalSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
 pub mod update_global_settings_output {
     
@@ -512,11 +671,22 @@ pub mod update_global_settings_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
         pub fn build(self) -> crate::output::UpdateGlobalSettingsOutput {
             crate::output::UpdateGlobalSettingsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -540,6 +710,7 @@ pub struct SearchAvailablePhoneNumbersOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SearchAvailablePhoneNumbersOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -551,6 +722,11 @@ impl SearchAvailablePhoneNumbersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchAvailablePhoneNumbersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput).
 pub mod search_available_phone_numbers_output {
     
@@ -560,6 +736,7 @@ pub mod search_available_phone_numbers_output {
     pub struct Builder {
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `e164_phone_numbers`.
@@ -585,6 +762,15 @@ pub mod search_available_phone_numbers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput).
         pub fn build(self) -> crate::output::SearchAvailablePhoneNumbersOutput {
             crate::output::SearchAvailablePhoneNumbersOutput {
@@ -592,6 +778,7 @@ pub mod search_available_phone_numbers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -612,6 +799,7 @@ pub struct RestorePhoneNumberOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
+    _request_id: Option<String>,
 }
 impl RestorePhoneNumberOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -619,6 +807,11 @@ impl RestorePhoneNumberOutput {
         self.phone_number.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestorePhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestorePhoneNumberOutput`](crate::output::RestorePhoneNumberOutput).
 pub mod restore_phone_number_output {
     
@@ -627,6 +820,7 @@ pub mod restore_phone_number_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -638,11 +832,21 @@ pub mod restore_phone_number_output {
         pub fn set_phone_number(mut self, input: std::option::Option<crate::model::PhoneNumber>) -> Self {
             self.phone_number = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestorePhoneNumberOutput`](crate::output::RestorePhoneNumberOutput).
         pub fn build(self) -> crate::output::RestorePhoneNumberOutput {
             crate::output::RestorePhoneNumberOutput {
                 phone_number: self.phone_number
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -660,7 +864,13 @@ impl RestorePhoneNumberOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorTerminationCredentialsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorTerminationCredentialsOutput`](crate::output::PutVoiceConnectorTerminationCredentialsOutput).
 pub mod put_voice_connector_termination_credentials_output {
     
@@ -668,11 +878,22 @@ pub mod put_voice_connector_termination_credentials_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsOutput`](crate::output::PutVoiceConnectorTerminationCredentialsOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorTerminationCredentialsOutput {
             crate::output::PutVoiceConnectorTerminationCredentialsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -693,6 +914,7 @@ pub struct PutVoiceConnectorTerminationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub termination: std::option::Option<crate::model::Termination>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorTerminationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -700,6 +922,11 @@ impl PutVoiceConnectorTerminationOutput {
         self.termination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorTerminationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorTerminationOutput`](crate::output::PutVoiceConnectorTerminationOutput).
 pub mod put_voice_connector_termination_output {
     
@@ -708,6 +935,7 @@ pub mod put_voice_connector_termination_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination: std::option::Option<crate::model::Termination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -719,11 +947,21 @@ pub mod put_voice_connector_termination_output {
         pub fn set_termination(mut self, input: std::option::Option<crate::model::Termination>) -> Self {
             self.termination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationOutput`](crate::output::PutVoiceConnectorTerminationOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorTerminationOutput {
             crate::output::PutVoiceConnectorTerminationOutput {
                 termination: self.termination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -744,6 +982,7 @@ pub struct PutVoiceConnectorStreamingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorStreamingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -751,6 +990,11 @@ impl PutVoiceConnectorStreamingConfigurationOutput {
         self.streaming_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorStreamingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorStreamingConfigurationOutput`](crate::output::PutVoiceConnectorStreamingConfigurationOutput).
 pub mod put_voice_connector_streaming_configuration_output {
     
@@ -759,6 +1003,7 @@ pub mod put_voice_connector_streaming_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -770,11 +1015,21 @@ pub mod put_voice_connector_streaming_configuration_output {
         pub fn set_streaming_configuration(mut self, input: std::option::Option<crate::model::StreamingConfiguration>) -> Self {
             self.streaming_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorStreamingConfigurationOutput`](crate::output::PutVoiceConnectorStreamingConfigurationOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorStreamingConfigurationOutput {
             crate::output::PutVoiceConnectorStreamingConfigurationOutput {
                 streaming_configuration: self.streaming_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -795,6 +1050,7 @@ pub struct PutVoiceConnectorProxyOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy: std::option::Option<crate::model::Proxy>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorProxyOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -802,6 +1058,11 @@ impl PutVoiceConnectorProxyOutput {
         self.proxy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorProxyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorProxyOutput`](crate::output::PutVoiceConnectorProxyOutput).
 pub mod put_voice_connector_proxy_output {
     
@@ -810,6 +1071,7 @@ pub mod put_voice_connector_proxy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy: std::option::Option<crate::model::Proxy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -821,11 +1083,21 @@ pub mod put_voice_connector_proxy_output {
         pub fn set_proxy(mut self, input: std::option::Option<crate::model::Proxy>) -> Self {
             self.proxy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorProxyOutput`](crate::output::PutVoiceConnectorProxyOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorProxyOutput {
             crate::output::PutVoiceConnectorProxyOutput {
                 proxy: self.proxy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -846,6 +1118,7 @@ pub struct PutVoiceConnectorOriginationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorOriginationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -853,6 +1126,11 @@ impl PutVoiceConnectorOriginationOutput {
         self.origination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorOriginationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorOriginationOutput`](crate::output::PutVoiceConnectorOriginationOutput).
 pub mod put_voice_connector_origination_output {
     
@@ -861,6 +1139,7 @@ pub mod put_voice_connector_origination_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination: std::option::Option<crate::model::Origination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -872,11 +1151,21 @@ pub mod put_voice_connector_origination_output {
         pub fn set_origination(mut self, input: std::option::Option<crate::model::Origination>) -> Self {
             self.origination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorOriginationOutput`](crate::output::PutVoiceConnectorOriginationOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorOriginationOutput {
             crate::output::PutVoiceConnectorOriginationOutput {
                 origination: self.origination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -897,6 +1186,7 @@ pub struct PutVoiceConnectorLoggingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorLoggingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -904,6 +1194,11 @@ impl PutVoiceConnectorLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorLoggingConfigurationOutput`](crate::output::PutVoiceConnectorLoggingConfigurationOutput).
 pub mod put_voice_connector_logging_configuration_output {
     
@@ -912,6 +1207,7 @@ pub mod put_voice_connector_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -923,11 +1219,21 @@ pub mod put_voice_connector_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorLoggingConfigurationOutput`](crate::output::PutVoiceConnectorLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorLoggingConfigurationOutput {
             crate::output::PutVoiceConnectorLoggingConfigurationOutput {
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -948,6 +1254,7 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub emergency_calling_configuration: std::option::Option<crate::model::EmergencyCallingConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -955,6 +1262,11 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
         self.emergency_calling_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutVoiceConnectorEmergencyCallingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput).
 pub mod put_voice_connector_emergency_calling_configuration_output {
     
@@ -963,6 +1275,7 @@ pub mod put_voice_connector_emergency_calling_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_calling_configuration: std::option::Option<crate::model::EmergencyCallingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -974,11 +1287,21 @@ pub mod put_voice_connector_emergency_calling_configuration_output {
         pub fn set_emergency_calling_configuration(mut self, input: std::option::Option<crate::model::EmergencyCallingConfiguration>) -> Self {
             self.emergency_calling_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput).
         pub fn build(self) -> crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput {
             crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput {
                 emergency_calling_configuration: self.emergency_calling_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -999,6 +1322,7 @@ pub struct PutSipMediaApplicationLoggingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_logging_configuration: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutSipMediaApplicationLoggingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1006,6 +1330,11 @@ impl PutSipMediaApplicationLoggingConfigurationOutput {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutSipMediaApplicationLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::output::PutSipMediaApplicationLoggingConfigurationOutput).
 pub mod put_sip_media_application_logging_configuration_output {
     
@@ -1014,6 +1343,7 @@ pub mod put_sip_media_application_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_logging_configuration: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1025,11 +1355,21 @@ pub mod put_sip_media_application_logging_configuration_output {
         pub fn set_sip_media_application_logging_configuration(mut self, input: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>) -> Self {
             self.sip_media_application_logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::output::PutSipMediaApplicationLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::PutSipMediaApplicationLoggingConfigurationOutput {
             crate::output::PutSipMediaApplicationLoggingConfigurationOutput {
                 sip_media_application_logging_configuration: self.sip_media_application_logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1050,6 +1390,7 @@ pub struct PutSipMediaApplicationAlexaSkillConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_alexa_skill_configuration: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1057,6 +1398,11 @@ impl PutSipMediaApplicationAlexaSkillConfigurationOutput {
         self.sip_media_application_alexa_skill_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutSipMediaApplicationAlexaSkillConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSipMediaApplicationAlexaSkillConfigurationOutput`](crate::output::PutSipMediaApplicationAlexaSkillConfigurationOutput).
 pub mod put_sip_media_application_alexa_skill_configuration_output {
     
@@ -1065,6 +1411,7 @@ pub mod put_sip_media_application_alexa_skill_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_alexa_skill_configuration: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1076,11 +1423,21 @@ pub mod put_sip_media_application_alexa_skill_configuration_output {
         pub fn set_sip_media_application_alexa_skill_configuration(mut self, input: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>) -> Self {
             self.sip_media_application_alexa_skill_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSipMediaApplicationAlexaSkillConfigurationOutput`](crate::output::PutSipMediaApplicationAlexaSkillConfigurationOutput).
         pub fn build(self) -> crate::output::PutSipMediaApplicationAlexaSkillConfigurationOutput {
             crate::output::PutSipMediaApplicationAlexaSkillConfigurationOutput {
                 sip_media_application_alexa_skill_configuration: self.sip_media_application_alexa_skill_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1101,6 +1458,7 @@ pub struct ListVoiceConnectorTerminationCredentialsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub usernames: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListVoiceConnectorTerminationCredentialsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1108,6 +1466,11 @@ impl ListVoiceConnectorTerminationCredentialsOutput {
         self.usernames.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVoiceConnectorTerminationCredentialsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVoiceConnectorTerminationCredentialsOutput`](crate::output::ListVoiceConnectorTerminationCredentialsOutput).
 pub mod list_voice_connector_termination_credentials_output {
     
@@ -1116,6 +1479,7 @@ pub mod list_voice_connector_termination_credentials_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usernames: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `usernames`.
@@ -1132,11 +1496,21 @@ pub mod list_voice_connector_termination_credentials_output {
         pub fn set_usernames(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.usernames = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVoiceConnectorTerminationCredentialsOutput`](crate::output::ListVoiceConnectorTerminationCredentialsOutput).
         pub fn build(self) -> crate::output::ListVoiceConnectorTerminationCredentialsOutput {
             crate::output::ListVoiceConnectorTerminationCredentialsOutput {
                 usernames: self.usernames
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1160,6 +1534,7 @@ pub struct ListVoiceConnectorsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVoiceConnectorsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1171,6 +1546,11 @@ impl ListVoiceConnectorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVoiceConnectorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVoiceConnectorsOutput`](crate::output::ListVoiceConnectorsOutput).
 pub mod list_voice_connectors_output {
     
@@ -1180,6 +1560,7 @@ pub mod list_voice_connectors_output {
     pub struct Builder {
         pub(crate) voice_connectors: std::option::Option<std::vec::Vec<crate::model::VoiceConnector>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `voice_connectors`.
@@ -1205,6 +1586,15 @@ pub mod list_voice_connectors_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVoiceConnectorsOutput`](crate::output::ListVoiceConnectorsOutput).
         pub fn build(self) -> crate::output::ListVoiceConnectorsOutput {
             crate::output::ListVoiceConnectorsOutput {
@@ -1212,6 +1602,7 @@ pub mod list_voice_connectors_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1235,6 +1626,7 @@ pub struct ListVoiceConnectorGroupsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVoiceConnectorGroupsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1246,6 +1638,11 @@ impl ListVoiceConnectorGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVoiceConnectorGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVoiceConnectorGroupsOutput`](crate::output::ListVoiceConnectorGroupsOutput).
 pub mod list_voice_connector_groups_output {
     
@@ -1255,6 +1652,7 @@ pub mod list_voice_connector_groups_output {
     pub struct Builder {
         pub(crate) voice_connector_groups: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `voice_connector_groups`.
@@ -1280,6 +1678,15 @@ pub mod list_voice_connector_groups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVoiceConnectorGroupsOutput`](crate::output::ListVoiceConnectorGroupsOutput).
         pub fn build(self) -> crate::output::ListVoiceConnectorGroupsOutput {
             crate::output::ListVoiceConnectorGroupsOutput {
@@ -1287,6 +1694,7 @@ pub mod list_voice_connector_groups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1307,6 +1715,7 @@ pub struct ListSupportedPhoneNumberCountriesOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_countries: std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>,
+    _request_id: Option<String>,
 }
 impl ListSupportedPhoneNumberCountriesOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1314,6 +1723,11 @@ impl ListSupportedPhoneNumberCountriesOutput {
         self.phone_number_countries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSupportedPhoneNumberCountriesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSupportedPhoneNumberCountriesOutput`](crate::output::ListSupportedPhoneNumberCountriesOutput).
 pub mod list_supported_phone_number_countries_output {
     
@@ -1322,6 +1736,7 @@ pub mod list_supported_phone_number_countries_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_countries: std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_countries`.
@@ -1338,11 +1753,21 @@ pub mod list_supported_phone_number_countries_output {
         pub fn set_phone_number_countries(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>) -> Self {
             self.phone_number_countries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSupportedPhoneNumberCountriesOutput`](crate::output::ListSupportedPhoneNumberCountriesOutput).
         pub fn build(self) -> crate::output::ListSupportedPhoneNumberCountriesOutput {
             crate::output::ListSupportedPhoneNumberCountriesOutput {
                 phone_number_countries: self.phone_number_countries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1366,6 +1791,7 @@ pub struct ListSipRulesOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSipRulesOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1377,6 +1803,11 @@ impl ListSipRulesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSipRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSipRulesOutput`](crate::output::ListSipRulesOutput).
 pub mod list_sip_rules_output {
     
@@ -1386,6 +1817,7 @@ pub mod list_sip_rules_output {
     pub struct Builder {
         pub(crate) sip_rules: std::option::Option<std::vec::Vec<crate::model::SipRule>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sip_rules`.
@@ -1411,6 +1843,15 @@ pub mod list_sip_rules_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSipRulesOutput`](crate::output::ListSipRulesOutput).
         pub fn build(self) -> crate::output::ListSipRulesOutput {
             crate::output::ListSipRulesOutput {
@@ -1418,6 +1859,7 @@ pub mod list_sip_rules_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1441,6 +1883,7 @@ pub struct ListSipMediaApplicationsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSipMediaApplicationsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1452,6 +1895,11 @@ impl ListSipMediaApplicationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSipMediaApplicationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSipMediaApplicationsOutput`](crate::output::ListSipMediaApplicationsOutput).
 pub mod list_sip_media_applications_output {
     
@@ -1461,6 +1909,7 @@ pub mod list_sip_media_applications_output {
     pub struct Builder {
         pub(crate) sip_media_applications: std::option::Option<std::vec::Vec<crate::model::SipMediaApplication>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sip_media_applications`.
@@ -1486,6 +1935,15 @@ pub mod list_sip_media_applications_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSipMediaApplicationsOutput`](crate::output::ListSipMediaApplicationsOutput).
         pub fn build(self) -> crate::output::ListSipMediaApplicationsOutput {
             crate::output::ListSipMediaApplicationsOutput {
@@ -1493,6 +1951,7 @@ pub mod list_sip_media_applications_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1516,6 +1975,7 @@ pub struct ListProxySessionsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListProxySessionsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1527,6 +1987,11 @@ impl ListProxySessionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListProxySessionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListProxySessionsOutput`](crate::output::ListProxySessionsOutput).
 pub mod list_proxy_sessions_output {
     
@@ -1536,6 +2001,7 @@ pub mod list_proxy_sessions_output {
     pub struct Builder {
         pub(crate) proxy_sessions: std::option::Option<std::vec::Vec<crate::model::ProxySession>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `proxy_sessions`.
@@ -1561,6 +2027,15 @@ pub mod list_proxy_sessions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListProxySessionsOutput`](crate::output::ListProxySessionsOutput).
         pub fn build(self) -> crate::output::ListProxySessionsOutput {
             crate::output::ListProxySessionsOutput {
@@ -1568,6 +2043,7 @@ pub mod list_proxy_sessions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1591,6 +2067,7 @@ pub struct ListPhoneNumbersOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPhoneNumbersOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1602,6 +2079,11 @@ impl ListPhoneNumbersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPhoneNumbersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput).
 pub mod list_phone_numbers_output {
     
@@ -1611,6 +2093,7 @@ pub mod list_phone_numbers_output {
     pub struct Builder {
         pub(crate) phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_numbers`.
@@ -1636,6 +2119,15 @@ pub mod list_phone_numbers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput).
         pub fn build(self) -> crate::output::ListPhoneNumbersOutput {
             crate::output::ListPhoneNumbersOutput {
@@ -1643,6 +2135,7 @@ pub mod list_phone_numbers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1666,6 +2159,7 @@ pub struct ListPhoneNumberOrdersOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPhoneNumberOrdersOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1677,6 +2171,11 @@ impl ListPhoneNumberOrdersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPhoneNumberOrdersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPhoneNumberOrdersOutput`](crate::output::ListPhoneNumberOrdersOutput).
 pub mod list_phone_number_orders_output {
     
@@ -1686,6 +2185,7 @@ pub mod list_phone_number_orders_output {
     pub struct Builder {
         pub(crate) phone_number_orders: std::option::Option<std::vec::Vec<crate::model::PhoneNumberOrder>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_orders`.
@@ -1711,6 +2211,15 @@ pub mod list_phone_number_orders_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPhoneNumberOrdersOutput`](crate::output::ListPhoneNumberOrdersOutput).
         pub fn build(self) -> crate::output::ListPhoneNumberOrdersOutput {
             crate::output::ListPhoneNumberOrdersOutput {
@@ -1718,6 +2227,7 @@ pub mod list_phone_number_orders_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1738,6 +2248,7 @@ pub struct ListAvailableVoiceConnectorRegionsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_regions: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorAwsRegion>>,
+    _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1745,6 +2256,11 @@ impl ListAvailableVoiceConnectorRegionsOutput {
         self.voice_connector_regions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAvailableVoiceConnectorRegionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAvailableVoiceConnectorRegionsOutput`](crate::output::ListAvailableVoiceConnectorRegionsOutput).
 pub mod list_available_voice_connector_regions_output {
     
@@ -1753,6 +2269,7 @@ pub mod list_available_voice_connector_regions_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_regions: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorAwsRegion>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `voice_connector_regions`.
@@ -1769,11 +2286,21 @@ pub mod list_available_voice_connector_regions_output {
         pub fn set_voice_connector_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorAwsRegion>>) -> Self {
             self.voice_connector_regions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAvailableVoiceConnectorRegionsOutput`](crate::output::ListAvailableVoiceConnectorRegionsOutput).
         pub fn build(self) -> crate::output::ListAvailableVoiceConnectorRegionsOutput {
             crate::output::ListAvailableVoiceConnectorRegionsOutput {
                 voice_connector_regions: self.voice_connector_regions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1794,6 +2321,7 @@ pub struct GetVoiceConnectorTerminationHealthOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub termination_health: std::option::Option<crate::model::TerminationHealth>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationHealthOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1801,6 +2329,11 @@ impl GetVoiceConnectorTerminationHealthOutput {
         self.termination_health.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorTerminationHealthOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorTerminationHealthOutput`](crate::output::GetVoiceConnectorTerminationHealthOutput).
 pub mod get_voice_connector_termination_health_output {
     
@@ -1809,6 +2342,7 @@ pub mod get_voice_connector_termination_health_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination_health: std::option::Option<crate::model::TerminationHealth>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1820,11 +2354,21 @@ pub mod get_voice_connector_termination_health_output {
         pub fn set_termination_health(mut self, input: std::option::Option<crate::model::TerminationHealth>) -> Self {
             self.termination_health = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorTerminationHealthOutput`](crate::output::GetVoiceConnectorTerminationHealthOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorTerminationHealthOutput {
             crate::output::GetVoiceConnectorTerminationHealthOutput {
                 termination_health: self.termination_health
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1845,6 +2389,7 @@ pub struct GetVoiceConnectorTerminationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub termination: std::option::Option<crate::model::Termination>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorTerminationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1852,6 +2397,11 @@ impl GetVoiceConnectorTerminationOutput {
         self.termination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorTerminationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorTerminationOutput`](crate::output::GetVoiceConnectorTerminationOutput).
 pub mod get_voice_connector_termination_output {
     
@@ -1860,6 +2410,7 @@ pub mod get_voice_connector_termination_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination: std::option::Option<crate::model::Termination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1871,11 +2422,21 @@ pub mod get_voice_connector_termination_output {
         pub fn set_termination(mut self, input: std::option::Option<crate::model::Termination>) -> Self {
             self.termination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorTerminationOutput`](crate::output::GetVoiceConnectorTerminationOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorTerminationOutput {
             crate::output::GetVoiceConnectorTerminationOutput {
                 termination: self.termination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1896,6 +2457,7 @@ pub struct GetVoiceConnectorStreamingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorStreamingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1903,6 +2465,11 @@ impl GetVoiceConnectorStreamingConfigurationOutput {
         self.streaming_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorStreamingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorStreamingConfigurationOutput`](crate::output::GetVoiceConnectorStreamingConfigurationOutput).
 pub mod get_voice_connector_streaming_configuration_output {
     
@@ -1911,6 +2478,7 @@ pub mod get_voice_connector_streaming_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_configuration: std::option::Option<crate::model::StreamingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1922,11 +2490,21 @@ pub mod get_voice_connector_streaming_configuration_output {
         pub fn set_streaming_configuration(mut self, input: std::option::Option<crate::model::StreamingConfiguration>) -> Self {
             self.streaming_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorStreamingConfigurationOutput`](crate::output::GetVoiceConnectorStreamingConfigurationOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorStreamingConfigurationOutput {
             crate::output::GetVoiceConnectorStreamingConfigurationOutput {
                 streaming_configuration: self.streaming_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1947,6 +2525,7 @@ pub struct GetVoiceConnectorProxyOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy: std::option::Option<crate::model::Proxy>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorProxyOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1954,6 +2533,11 @@ impl GetVoiceConnectorProxyOutput {
         self.proxy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorProxyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorProxyOutput`](crate::output::GetVoiceConnectorProxyOutput).
 pub mod get_voice_connector_proxy_output {
     
@@ -1962,6 +2546,7 @@ pub mod get_voice_connector_proxy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy: std::option::Option<crate::model::Proxy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -1973,11 +2558,21 @@ pub mod get_voice_connector_proxy_output {
         pub fn set_proxy(mut self, input: std::option::Option<crate::model::Proxy>) -> Self {
             self.proxy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorProxyOutput`](crate::output::GetVoiceConnectorProxyOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorProxyOutput {
             crate::output::GetVoiceConnectorProxyOutput {
                 proxy: self.proxy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1998,6 +2593,7 @@ pub struct GetVoiceConnectorOriginationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub origination: std::option::Option<crate::model::Origination>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorOriginationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2005,6 +2601,11 @@ impl GetVoiceConnectorOriginationOutput {
         self.origination.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorOriginationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorOriginationOutput`](crate::output::GetVoiceConnectorOriginationOutput).
 pub mod get_voice_connector_origination_output {
     
@@ -2013,6 +2614,7 @@ pub mod get_voice_connector_origination_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination: std::option::Option<crate::model::Origination>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2024,11 +2626,21 @@ pub mod get_voice_connector_origination_output {
         pub fn set_origination(mut self, input: std::option::Option<crate::model::Origination>) -> Self {
             self.origination = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorOriginationOutput`](crate::output::GetVoiceConnectorOriginationOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorOriginationOutput {
             crate::output::GetVoiceConnectorOriginationOutput {
                 origination: self.origination
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2049,6 +2661,7 @@ pub struct GetVoiceConnectorLoggingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorLoggingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2056,6 +2669,11 @@ impl GetVoiceConnectorLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorLoggingConfigurationOutput`](crate::output::GetVoiceConnectorLoggingConfigurationOutput).
 pub mod get_voice_connector_logging_configuration_output {
     
@@ -2064,6 +2682,7 @@ pub mod get_voice_connector_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2075,11 +2694,21 @@ pub mod get_voice_connector_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorLoggingConfigurationOutput`](crate::output::GetVoiceConnectorLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorLoggingConfigurationOutput {
             crate::output::GetVoiceConnectorLoggingConfigurationOutput {
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2100,6 +2729,7 @@ pub struct GetVoiceConnectorGroupOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorGroupOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2107,6 +2737,11 @@ impl GetVoiceConnectorGroupOutput {
         self.voice_connector_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorGroupOutput`](crate::output::GetVoiceConnectorGroupOutput).
 pub mod get_voice_connector_group_output {
     
@@ -2115,6 +2750,7 @@ pub mod get_voice_connector_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2126,11 +2762,21 @@ pub mod get_voice_connector_group_output {
         pub fn set_voice_connector_group(mut self, input: std::option::Option<crate::model::VoiceConnectorGroup>) -> Self {
             self.voice_connector_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorGroupOutput`](crate::output::GetVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorGroupOutput {
             crate::output::GetVoiceConnectorGroupOutput {
                 voice_connector_group: self.voice_connector_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2151,6 +2797,7 @@ pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub emergency_calling_configuration: std::option::Option<crate::model::EmergencyCallingConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2158,6 +2805,11 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
         self.emergency_calling_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorEmergencyCallingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput).
 pub mod get_voice_connector_emergency_calling_configuration_output {
     
@@ -2166,6 +2818,7 @@ pub mod get_voice_connector_emergency_calling_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_calling_configuration: std::option::Option<crate::model::EmergencyCallingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2177,11 +2830,21 @@ pub mod get_voice_connector_emergency_calling_configuration_output {
         pub fn set_emergency_calling_configuration(mut self, input: std::option::Option<crate::model::EmergencyCallingConfiguration>) -> Self {
             self.emergency_calling_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput {
             crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput {
                 emergency_calling_configuration: self.emergency_calling_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2202,6 +2865,7 @@ pub struct GetVoiceConnectorOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
+    _request_id: Option<String>,
 }
 impl GetVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2209,6 +2873,11 @@ impl GetVoiceConnectorOutput {
         self.voice_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceConnectorOutput`](crate::output::GetVoiceConnectorOutput).
 pub mod get_voice_connector_output {
     
@@ -2217,6 +2886,7 @@ pub mod get_voice_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2228,11 +2898,21 @@ pub mod get_voice_connector_output {
         pub fn set_voice_connector(mut self, input: std::option::Option<crate::model::VoiceConnector>) -> Self {
             self.voice_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceConnectorOutput`](crate::output::GetVoiceConnectorOutput).
         pub fn build(self) -> crate::output::GetVoiceConnectorOutput {
             crate::output::GetVoiceConnectorOutput {
                 voice_connector: self.voice_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2253,6 +2933,7 @@ pub struct GetSipRuleOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+    _request_id: Option<String>,
 }
 impl GetSipRuleOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2260,6 +2941,11 @@ impl GetSipRuleOutput {
         self.sip_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSipRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSipRuleOutput`](crate::output::GetSipRuleOutput).
 pub mod get_sip_rule_output {
     
@@ -2268,6 +2954,7 @@ pub mod get_sip_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2279,11 +2966,21 @@ pub mod get_sip_rule_output {
         pub fn set_sip_rule(mut self, input: std::option::Option<crate::model::SipRule>) -> Self {
             self.sip_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSipRuleOutput`](crate::output::GetSipRuleOutput).
         pub fn build(self) -> crate::output::GetSipRuleOutput {
             crate::output::GetSipRuleOutput {
                 sip_rule: self.sip_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2304,6 +3001,7 @@ pub struct GetSipMediaApplicationLoggingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_logging_configuration: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2311,6 +3009,11 @@ impl GetSipMediaApplicationLoggingConfigurationOutput {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSipMediaApplicationLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::output::GetSipMediaApplicationLoggingConfigurationOutput).
 pub mod get_sip_media_application_logging_configuration_output {
     
@@ -2319,6 +3022,7 @@ pub mod get_sip_media_application_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_logging_configuration: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2330,11 +3034,21 @@ pub mod get_sip_media_application_logging_configuration_output {
         pub fn set_sip_media_application_logging_configuration(mut self, input: std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>) -> Self {
             self.sip_media_application_logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::output::GetSipMediaApplicationLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::GetSipMediaApplicationLoggingConfigurationOutput {
             crate::output::GetSipMediaApplicationLoggingConfigurationOutput {
                 sip_media_application_logging_configuration: self.sip_media_application_logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2355,6 +3069,7 @@ pub struct GetSipMediaApplicationAlexaSkillConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_alexa_skill_configuration: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2362,6 +3077,11 @@ impl GetSipMediaApplicationAlexaSkillConfigurationOutput {
         self.sip_media_application_alexa_skill_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSipMediaApplicationAlexaSkillConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSipMediaApplicationAlexaSkillConfigurationOutput`](crate::output::GetSipMediaApplicationAlexaSkillConfigurationOutput).
 pub mod get_sip_media_application_alexa_skill_configuration_output {
     
@@ -2370,6 +3090,7 @@ pub mod get_sip_media_application_alexa_skill_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_alexa_skill_configuration: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2381,11 +3102,21 @@ pub mod get_sip_media_application_alexa_skill_configuration_output {
         pub fn set_sip_media_application_alexa_skill_configuration(mut self, input: std::option::Option<crate::model::SipMediaApplicationAlexaSkillConfiguration>) -> Self {
             self.sip_media_application_alexa_skill_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSipMediaApplicationAlexaSkillConfigurationOutput`](crate::output::GetSipMediaApplicationAlexaSkillConfigurationOutput).
         pub fn build(self) -> crate::output::GetSipMediaApplicationAlexaSkillConfigurationOutput {
             crate::output::GetSipMediaApplicationAlexaSkillConfigurationOutput {
                 sip_media_application_alexa_skill_configuration: self.sip_media_application_alexa_skill_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2406,6 +3137,7 @@ pub struct GetSipMediaApplicationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+    _request_id: Option<String>,
 }
 impl GetSipMediaApplicationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2413,6 +3145,11 @@ impl GetSipMediaApplicationOutput {
         self.sip_media_application.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSipMediaApplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSipMediaApplicationOutput`](crate::output::GetSipMediaApplicationOutput).
 pub mod get_sip_media_application_output {
     
@@ -2421,6 +3158,7 @@ pub mod get_sip_media_application_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2432,11 +3170,21 @@ pub mod get_sip_media_application_output {
         pub fn set_sip_media_application(mut self, input: std::option::Option<crate::model::SipMediaApplication>) -> Self {
             self.sip_media_application = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSipMediaApplicationOutput`](crate::output::GetSipMediaApplicationOutput).
         pub fn build(self) -> crate::output::GetSipMediaApplicationOutput {
             crate::output::GetSipMediaApplicationOutput {
                 sip_media_application: self.sip_media_application
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2457,6 +3205,7 @@ pub struct GetProxySessionOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
+    _request_id: Option<String>,
 }
 impl GetProxySessionOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2464,6 +3213,11 @@ impl GetProxySessionOutput {
         self.proxy_session.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetProxySessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetProxySessionOutput`](crate::output::GetProxySessionOutput).
 pub mod get_proxy_session_output {
     
@@ -2472,6 +3226,7 @@ pub mod get_proxy_session_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2483,11 +3238,21 @@ pub mod get_proxy_session_output {
         pub fn set_proxy_session(mut self, input: std::option::Option<crate::model::ProxySession>) -> Self {
             self.proxy_session = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetProxySessionOutput`](crate::output::GetProxySessionOutput).
         pub fn build(self) -> crate::output::GetProxySessionOutput {
             crate::output::GetProxySessionOutput {
                 proxy_session: self.proxy_session
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2511,6 +3276,7 @@ pub struct GetPhoneNumberSettingsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetPhoneNumberSettingsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2527,9 +3293,15 @@ impl  std::fmt::Debug for GetPhoneNumberSettingsOutput  {
         let mut formatter = f.debug_struct("GetPhoneNumberSettingsOutput");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
         formatter.field("calling_name_updated_timestamp", &self.calling_name_updated_timestamp);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for GetPhoneNumberSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPhoneNumberSettingsOutput`](crate::output::GetPhoneNumberSettingsOutput).
 pub mod get_phone_number_settings_output {
     
@@ -2539,6 +3311,7 @@ pub mod get_phone_number_settings_output {
     pub struct Builder {
         pub(crate) calling_name: std::option::Option<std::string::String>,
         pub(crate) calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2559,6 +3332,15 @@ pub mod get_phone_number_settings_output {
         pub fn set_calling_name_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.calling_name_updated_timestamp = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPhoneNumberSettingsOutput`](crate::output::GetPhoneNumberSettingsOutput).
         pub fn build(self) -> crate::output::GetPhoneNumberSettingsOutput {
             crate::output::GetPhoneNumberSettingsOutput {
@@ -2566,6 +3348,7 @@ pub mod get_phone_number_settings_output {
                 ,
                 calling_name_updated_timestamp: self.calling_name_updated_timestamp
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2574,6 +3357,7 @@ pub mod get_phone_number_settings_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
             formatter.field("calling_name_updated_timestamp", &self.calling_name_updated_timestamp);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2594,6 +3378,7 @@ pub struct GetPhoneNumberOrderOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
+    _request_id: Option<String>,
 }
 impl GetPhoneNumberOrderOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2601,6 +3386,11 @@ impl GetPhoneNumberOrderOutput {
         self.phone_number_order.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPhoneNumberOrderOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPhoneNumberOrderOutput`](crate::output::GetPhoneNumberOrderOutput).
 pub mod get_phone_number_order_output {
     
@@ -2609,6 +3399,7 @@ pub mod get_phone_number_order_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2620,11 +3411,21 @@ pub mod get_phone_number_order_output {
         pub fn set_phone_number_order(mut self, input: std::option::Option<crate::model::PhoneNumberOrder>) -> Self {
             self.phone_number_order = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPhoneNumberOrderOutput`](crate::output::GetPhoneNumberOrderOutput).
         pub fn build(self) -> crate::output::GetPhoneNumberOrderOutput {
             crate::output::GetPhoneNumberOrderOutput {
                 phone_number_order: self.phone_number_order
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2645,6 +3446,7 @@ pub struct GetPhoneNumberOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number: std::option::Option<crate::model::PhoneNumber>,
+    _request_id: Option<String>,
 }
 impl GetPhoneNumberOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2652,6 +3454,11 @@ impl GetPhoneNumberOutput {
         self.phone_number.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPhoneNumberOutput`](crate::output::GetPhoneNumberOutput).
 pub mod get_phone_number_output {
     
@@ -2660,6 +3467,7 @@ pub mod get_phone_number_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2671,11 +3479,21 @@ pub mod get_phone_number_output {
         pub fn set_phone_number(mut self, input: std::option::Option<crate::model::PhoneNumber>) -> Self {
             self.phone_number = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPhoneNumberOutput`](crate::output::GetPhoneNumberOutput).
         pub fn build(self) -> crate::output::GetPhoneNumberOutput {
             crate::output::GetPhoneNumberOutput {
                 phone_number: self.phone_number
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2696,6 +3514,7 @@ pub struct GetGlobalSettingsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
+    _request_id: Option<String>,
 }
 impl GetGlobalSettingsOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2703,6 +3522,11 @@ impl GetGlobalSettingsOutput {
         self.voice_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGlobalSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetGlobalSettingsOutput`](crate::output::GetGlobalSettingsOutput).
 pub mod get_global_settings_output {
     
@@ -2711,6 +3535,7 @@ pub mod get_global_settings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2722,11 +3547,21 @@ pub mod get_global_settings_output {
         pub fn set_voice_connector(mut self, input: std::option::Option<crate::model::VoiceConnectorSettings>) -> Self {
             self.voice_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetGlobalSettingsOutput`](crate::output::GetGlobalSettingsOutput).
         pub fn build(self) -> crate::output::GetGlobalSettingsOutput {
             crate::output::GetGlobalSettingsOutput {
                 voice_connector: self.voice_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2747,6 +3582,7 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2754,6 +3590,11 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociatePhoneNumbersFromVoiceConnectorGroupOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput).
 pub mod disassociate_phone_numbers_from_voice_connector_group_output {
     
@@ -2762,6 +3603,7 @@ pub mod disassociate_phone_numbers_from_voice_connector_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -2778,11 +3620,21 @@ pub mod disassociate_phone_numbers_from_voice_connector_group_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorGroupOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
             crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2803,6 +3655,7 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -2810,6 +3663,11 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociatePhoneNumbersFromVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput).
 pub mod disassociate_phone_numbers_from_voice_connector_output {
     
@@ -2818,6 +3676,7 @@ pub mod disassociate_phone_numbers_from_voice_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -2834,11 +3693,21 @@ pub mod disassociate_phone_numbers_from_voice_connector_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput).
         pub fn build(self) -> crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput {
             crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2856,7 +3725,13 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorTerminationCredentialsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::output::DeleteVoiceConnectorTerminationCredentialsOutput).
 pub mod delete_voice_connector_termination_credentials_output {
     
@@ -2864,11 +3739,22 @@ pub mod delete_voice_connector_termination_credentials_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::output::DeleteVoiceConnectorTerminationCredentialsOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorTerminationCredentialsOutput {
             crate::output::DeleteVoiceConnectorTerminationCredentialsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2886,7 +3772,13 @@ impl DeleteVoiceConnectorTerminationCredentialsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorTerminationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorTerminationOutput`](crate::output::DeleteVoiceConnectorTerminationOutput).
 pub mod delete_voice_connector_termination_output {
     
@@ -2894,11 +3786,22 @@ pub mod delete_voice_connector_termination_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationOutput`](crate::output::DeleteVoiceConnectorTerminationOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorTerminationOutput {
             crate::output::DeleteVoiceConnectorTerminationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2916,7 +3819,13 @@ impl DeleteVoiceConnectorTerminationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorStreamingConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorStreamingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::output::DeleteVoiceConnectorStreamingConfigurationOutput).
 pub mod delete_voice_connector_streaming_configuration_output {
     
@@ -2924,11 +3833,22 @@ pub mod delete_voice_connector_streaming_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::output::DeleteVoiceConnectorStreamingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorStreamingConfigurationOutput {
             crate::output::DeleteVoiceConnectorStreamingConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2946,7 +3866,13 @@ impl DeleteVoiceConnectorStreamingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorProxyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorProxyOutput`](crate::output::DeleteVoiceConnectorProxyOutput).
 pub mod delete_voice_connector_proxy_output {
     
@@ -2954,11 +3880,22 @@ pub mod delete_voice_connector_proxy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorProxyOutput`](crate::output::DeleteVoiceConnectorProxyOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorProxyOutput {
             crate::output::DeleteVoiceConnectorProxyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2976,7 +3913,13 @@ impl DeleteVoiceConnectorProxyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorOriginationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorOriginationOutput`](crate::output::DeleteVoiceConnectorOriginationOutput).
 pub mod delete_voice_connector_origination_output {
     
@@ -2984,11 +3927,22 @@ pub mod delete_voice_connector_origination_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorOriginationOutput`](crate::output::DeleteVoiceConnectorOriginationOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorOriginationOutput {
             crate::output::DeleteVoiceConnectorOriginationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3006,7 +3960,13 @@ impl DeleteVoiceConnectorOriginationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorGroupOutput`](crate::output::DeleteVoiceConnectorGroupOutput).
 pub mod delete_voice_connector_group_output {
     
@@ -3014,11 +3974,22 @@ pub mod delete_voice_connector_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorGroupOutput`](crate::output::DeleteVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorGroupOutput {
             crate::output::DeleteVoiceConnectorGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3036,7 +4007,13 @@ impl DeleteVoiceConnectorGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
 pub mod delete_voice_connector_emergency_calling_configuration_output {
     
@@ -3044,11 +4021,22 @@ pub mod delete_voice_connector_emergency_calling_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
             crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3066,7 +4054,13 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceConnectorOutput`](crate::output::DeleteVoiceConnectorOutput).
 pub mod delete_voice_connector_output {
     
@@ -3074,11 +4068,22 @@ pub mod delete_voice_connector_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorOutput`](crate::output::DeleteVoiceConnectorOutput).
         pub fn build(self) -> crate::output::DeleteVoiceConnectorOutput {
             crate::output::DeleteVoiceConnectorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3096,7 +4101,13 @@ impl DeleteVoiceConnectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSipRuleOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteSipRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSipRuleOutput`](crate::output::DeleteSipRuleOutput).
 pub mod delete_sip_rule_output {
     
@@ -3104,11 +4115,22 @@ pub mod delete_sip_rule_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSipRuleOutput`](crate::output::DeleteSipRuleOutput).
         pub fn build(self) -> crate::output::DeleteSipRuleOutput {
             crate::output::DeleteSipRuleOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3126,7 +4148,13 @@ impl DeleteSipRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteSipMediaApplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSipMediaApplicationOutput`](crate::output::DeleteSipMediaApplicationOutput).
 pub mod delete_sip_media_application_output {
     
@@ -3134,11 +4162,22 @@ pub mod delete_sip_media_application_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSipMediaApplicationOutput`](crate::output::DeleteSipMediaApplicationOutput).
         pub fn build(self) -> crate::output::DeleteSipMediaApplicationOutput {
             crate::output::DeleteSipMediaApplicationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3156,7 +4195,13 @@ impl DeleteSipMediaApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProxySessionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteProxySessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteProxySessionOutput`](crate::output::DeleteProxySessionOutput).
 pub mod delete_proxy_session_output {
     
@@ -3164,11 +4209,22 @@ pub mod delete_proxy_session_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteProxySessionOutput`](crate::output::DeleteProxySessionOutput).
         pub fn build(self) -> crate::output::DeleteProxySessionOutput {
             crate::output::DeleteProxySessionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3186,7 +4242,13 @@ impl DeleteProxySessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePhoneNumberOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePhoneNumberOutput`](crate::output::DeletePhoneNumberOutput).
 pub mod delete_phone_number_output {
     
@@ -3194,11 +4256,22 @@ pub mod delete_phone_number_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePhoneNumberOutput`](crate::output::DeletePhoneNumberOutput).
         pub fn build(self) -> crate::output::DeletePhoneNumberOutput {
             crate::output::DeletePhoneNumberOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3219,6 +4292,7 @@ pub struct CreateVoiceConnectorGroupOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+    _request_id: Option<String>,
 }
 impl CreateVoiceConnectorGroupOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3226,6 +4300,11 @@ impl CreateVoiceConnectorGroupOutput {
         self.voice_connector_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVoiceConnectorGroupOutput`](crate::output::CreateVoiceConnectorGroupOutput).
 pub mod create_voice_connector_group_output {
     
@@ -3234,6 +4313,7 @@ pub mod create_voice_connector_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3245,11 +4325,21 @@ pub mod create_voice_connector_group_output {
         pub fn set_voice_connector_group(mut self, input: std::option::Option<crate::model::VoiceConnectorGroup>) -> Self {
             self.voice_connector_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVoiceConnectorGroupOutput`](crate::output::CreateVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::CreateVoiceConnectorGroupOutput {
             crate::output::CreateVoiceConnectorGroupOutput {
                 voice_connector_group: self.voice_connector_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3270,6 +4360,7 @@ pub struct CreateVoiceConnectorOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector: std::option::Option<crate::model::VoiceConnector>,
+    _request_id: Option<String>,
 }
 impl CreateVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3277,6 +4368,11 @@ impl CreateVoiceConnectorOutput {
         self.voice_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVoiceConnectorOutput`](crate::output::CreateVoiceConnectorOutput).
 pub mod create_voice_connector_output {
     
@@ -3285,6 +4381,7 @@ pub mod create_voice_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3296,11 +4393,21 @@ pub mod create_voice_connector_output {
         pub fn set_voice_connector(mut self, input: std::option::Option<crate::model::VoiceConnector>) -> Self {
             self.voice_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVoiceConnectorOutput`](crate::output::CreateVoiceConnectorOutput).
         pub fn build(self) -> crate::output::CreateVoiceConnectorOutput {
             crate::output::CreateVoiceConnectorOutput {
                 voice_connector: self.voice_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3321,6 +4428,7 @@ pub struct CreateSipRuleOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_rule: std::option::Option<crate::model::SipRule>,
+    _request_id: Option<String>,
 }
 impl CreateSipRuleOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3328,6 +4436,11 @@ impl CreateSipRuleOutput {
         self.sip_rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSipRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSipRuleOutput`](crate::output::CreateSipRuleOutput).
 pub mod create_sip_rule_output {
     
@@ -3336,6 +4449,7 @@ pub mod create_sip_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3347,11 +4461,21 @@ pub mod create_sip_rule_output {
         pub fn set_sip_rule(mut self, input: std::option::Option<crate::model::SipRule>) -> Self {
             self.sip_rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSipRuleOutput`](crate::output::CreateSipRuleOutput).
         pub fn build(self) -> crate::output::CreateSipRuleOutput {
             crate::output::CreateSipRuleOutput {
                 sip_rule: self.sip_rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3372,6 +4496,7 @@ pub struct CreateSipMediaApplicationCallOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+    _request_id: Option<String>,
 }
 impl CreateSipMediaApplicationCallOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3379,6 +4504,11 @@ impl CreateSipMediaApplicationCallOutput {
         self.sip_media_application_call.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSipMediaApplicationCallOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSipMediaApplicationCallOutput`](crate::output::CreateSipMediaApplicationCallOutput).
 pub mod create_sip_media_application_call_output {
     
@@ -3387,6 +4517,7 @@ pub mod create_sip_media_application_call_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_call: std::option::Option<crate::model::SipMediaApplicationCall>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3398,11 +4529,21 @@ pub mod create_sip_media_application_call_output {
         pub fn set_sip_media_application_call(mut self, input: std::option::Option<crate::model::SipMediaApplicationCall>) -> Self {
             self.sip_media_application_call = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSipMediaApplicationCallOutput`](crate::output::CreateSipMediaApplicationCallOutput).
         pub fn build(self) -> crate::output::CreateSipMediaApplicationCallOutput {
             crate::output::CreateSipMediaApplicationCallOutput {
                 sip_media_application_call: self.sip_media_application_call
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3423,6 +4564,7 @@ pub struct CreateSipMediaApplicationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+    _request_id: Option<String>,
 }
 impl CreateSipMediaApplicationOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3430,6 +4572,11 @@ impl CreateSipMediaApplicationOutput {
         self.sip_media_application.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSipMediaApplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSipMediaApplicationOutput`](crate::output::CreateSipMediaApplicationOutput).
 pub mod create_sip_media_application_output {
     
@@ -3438,6 +4585,7 @@ pub mod create_sip_media_application_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3449,11 +4597,21 @@ pub mod create_sip_media_application_output {
         pub fn set_sip_media_application(mut self, input: std::option::Option<crate::model::SipMediaApplication>) -> Self {
             self.sip_media_application = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSipMediaApplicationOutput`](crate::output::CreateSipMediaApplicationOutput).
         pub fn build(self) -> crate::output::CreateSipMediaApplicationOutput {
             crate::output::CreateSipMediaApplicationOutput {
                 sip_media_application: self.sip_media_application
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3474,6 +4632,7 @@ pub struct CreateProxySessionOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub proxy_session: std::option::Option<crate::model::ProxySession>,
+    _request_id: Option<String>,
 }
 impl CreateProxySessionOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3481,6 +4640,11 @@ impl CreateProxySessionOutput {
         self.proxy_session.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateProxySessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateProxySessionOutput`](crate::output::CreateProxySessionOutput).
 pub mod create_proxy_session_output {
     
@@ -3489,6 +4653,7 @@ pub mod create_proxy_session_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3500,11 +4665,21 @@ pub mod create_proxy_session_output {
         pub fn set_proxy_session(mut self, input: std::option::Option<crate::model::ProxySession>) -> Self {
             self.proxy_session = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateProxySessionOutput`](crate::output::CreateProxySessionOutput).
         pub fn build(self) -> crate::output::CreateProxySessionOutput {
             crate::output::CreateProxySessionOutput {
                 proxy_session: self.proxy_session
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3525,6 +4700,7 @@ pub struct CreatePhoneNumberOrderOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
+    _request_id: Option<String>,
 }
 impl CreatePhoneNumberOrderOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3532,6 +4708,11 @@ impl CreatePhoneNumberOrderOutput {
         self.phone_number_order.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePhoneNumberOrderOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePhoneNumberOrderOutput`](crate::output::CreatePhoneNumberOrderOutput).
 pub mod create_phone_number_order_output {
     
@@ -3540,6 +4721,7 @@ pub mod create_phone_number_order_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
+        _request_id: Option<String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -3551,11 +4733,21 @@ pub mod create_phone_number_order_output {
         pub fn set_phone_number_order(mut self, input: std::option::Option<crate::model::PhoneNumberOrder>) -> Self {
             self.phone_number_order = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePhoneNumberOrderOutput`](crate::output::CreatePhoneNumberOrderOutput).
         pub fn build(self) -> crate::output::CreatePhoneNumberOrderOutput {
             crate::output::CreatePhoneNumberOrderOutput {
                 phone_number_order: self.phone_number_order
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3576,6 +4768,7 @@ pub struct BatchUpdatePhoneNumberOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl BatchUpdatePhoneNumberOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3583,6 +4776,11 @@ impl BatchUpdatePhoneNumberOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchUpdatePhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchUpdatePhoneNumberOutput`](crate::output::BatchUpdatePhoneNumberOutput).
 pub mod batch_update_phone_number_output {
     
@@ -3591,6 +4789,7 @@ pub mod batch_update_phone_number_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -3607,11 +4806,21 @@ pub mod batch_update_phone_number_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchUpdatePhoneNumberOutput`](crate::output::BatchUpdatePhoneNumberOutput).
         pub fn build(self) -> crate::output::BatchUpdatePhoneNumberOutput {
             crate::output::BatchUpdatePhoneNumberOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3632,6 +4841,7 @@ pub struct BatchDeletePhoneNumberOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl BatchDeletePhoneNumberOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3639,6 +4849,11 @@ impl BatchDeletePhoneNumberOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDeletePhoneNumberOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDeletePhoneNumberOutput`](crate::output::BatchDeletePhoneNumberOutput).
 pub mod batch_delete_phone_number_output {
     
@@ -3647,6 +4862,7 @@ pub mod batch_delete_phone_number_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -3663,11 +4879,21 @@ pub mod batch_delete_phone_number_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDeletePhoneNumberOutput`](crate::output::BatchDeletePhoneNumberOutput).
         pub fn build(self) -> crate::output::BatchDeletePhoneNumberOutput {
             crate::output::BatchDeletePhoneNumberOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3688,6 +4914,7 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3695,6 +4922,11 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociatePhoneNumbersWithVoiceConnectorGroupOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput).
 pub mod associate_phone_numbers_with_voice_connector_group_output {
     
@@ -3703,6 +4935,7 @@ pub mod associate_phone_numbers_with_voice_connector_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -3719,11 +4952,21 @@ pub mod associate_phone_numbers_with_voice_connector_group_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociatePhoneNumbersWithVoiceConnectorGroupOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput).
         pub fn build(self) -> crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
             crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3744,6 +4987,7 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    _request_id: Option<String>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -3751,6 +4995,11 @@ impl AssociatePhoneNumbersWithVoiceConnectorOutput {
         self.phone_number_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociatePhoneNumbersWithVoiceConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociatePhoneNumbersWithVoiceConnectorOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput).
 pub mod associate_phone_numbers_with_voice_connector_output {
     
@@ -3759,6 +5008,7 @@ pub mod associate_phone_numbers_with_voice_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `phone_number_errors`.
@@ -3775,11 +5025,21 @@ pub mod associate_phone_numbers_with_voice_connector_output {
         pub fn set_phone_number_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>) -> Self {
             self.phone_number_errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociatePhoneNumbersWithVoiceConnectorOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput).
         pub fn build(self) -> crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput {
             crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput {
                 phone_number_errors: self.phone_number_errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }

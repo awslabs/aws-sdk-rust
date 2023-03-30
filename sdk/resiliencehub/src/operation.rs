@@ -22,6 +22,7 @@ impl AddDraftAppVersionResourceMappings {
 impl aws_smithy_http::response::ParseStrictResponse for AddDraftAppVersionResourceMappings {
                 type Output = std::result::Result<crate::output::AddDraftAppVersionResourceMappingsOutput, crate::error::AddDraftAppVersionResourceMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_draft_app_version_resource_mappings_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateApp {
 impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
                 type Output = std::result::Result<crate::output::CreateAppOutput, crate::error::CreateAppError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_app_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateRecommendationTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRecommendationTemplate {
                 type Output = std::result::Result<crate::output::CreateRecommendationTemplateOutput, crate::error::CreateRecommendationTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_recommendation_template_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateResiliencyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for CreateResiliencyPolicy {
                 type Output = std::result::Result<crate::output::CreateResiliencyPolicyOutput, crate::error::CreateResiliencyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_resiliency_policy_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteApp {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
                 type Output = std::result::Result<crate::output::DeleteAppOutput, crate::error::DeleteAppError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_app_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteAppAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAppAssessment {
                 type Output = std::result::Result<crate::output::DeleteAppAssessmentOutput, crate::error::DeleteAppAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_app_assessment_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteRecommendationTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationTemplate {
                 type Output = std::result::Result<crate::output::DeleteRecommendationTemplateOutput, crate::error::DeleteRecommendationTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_recommendation_template_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteResiliencyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResiliencyPolicy {
                 type Output = std::result::Result<crate::output::DeleteResiliencyPolicyOutput, crate::error::DeleteResiliencyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resiliency_policy_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeApp {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeApp {
                 type Output = std::result::Result<crate::output::DescribeAppOutput, crate::error::DescribeAppError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_app_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeAppAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAppAssessment {
                 type Output = std::result::Result<crate::output::DescribeAppAssessmentOutput, crate::error::DescribeAppAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_app_assessment_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeAppVersionResourcesResolutionStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionResourcesResolutionStatus {
                 type Output = std::result::Result<crate::output::DescribeAppVersionResourcesResolutionStatusOutput, crate::error::DescribeAppVersionResourcesResolutionStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_app_version_resources_resolution_status_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeAppVersionTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionTemplate {
                 type Output = std::result::Result<crate::output::DescribeAppVersionTemplateOutput, crate::error::DescribeAppVersionTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_app_version_template_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeDraftAppVersionResourcesImportStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDraftAppVersionResourcesImportStatus {
                 type Output = std::result::Result<crate::output::DescribeDraftAppVersionResourcesImportStatusOutput, crate::error::DescribeDraftAppVersionResourcesImportStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_draft_app_version_resources_import_status_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeResiliencyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeResiliencyPolicy {
                 type Output = std::result::Result<crate::output::DescribeResiliencyPolicyOutput, crate::error::DescribeResiliencyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_resiliency_policy_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ImportResourcesToDraftAppVersion {
 impl aws_smithy_http::response::ParseStrictResponse for ImportResourcesToDraftAppVersion {
                 type Output = std::result::Result<crate::output::ImportResourcesToDraftAppVersionOutput, crate::error::ImportResourcesToDraftAppVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_resources_to_draft_app_version_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListAlarmRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ListAlarmRecommendations {
                 type Output = std::result::Result<crate::output::ListAlarmRecommendationsOutput, crate::error::ListAlarmRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_alarm_recommendations_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListAppAssessments {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppAssessments {
                 type Output = std::result::Result<crate::output::ListAppAssessmentsOutput, crate::error::ListAppAssessmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_assessments_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListAppComponentCompliances {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentCompliances {
                 type Output = std::result::Result<crate::output::ListAppComponentCompliancesOutput, crate::error::ListAppComponentCompliancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_component_compliances_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListAppComponentRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentRecommendations {
                 type Output = std::result::Result<crate::output::ListAppComponentRecommendationsOutput, crate::error::ListAppComponentRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_component_recommendations_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListApps {
 impl aws_smithy_http::response::ParseStrictResponse for ListApps {
                 type Output = std::result::Result<crate::output::ListAppsOutput, crate::error::ListAppsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_apps_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListAppVersionResourceMappings {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResourceMappings {
                 type Output = std::result::Result<crate::output::ListAppVersionResourceMappingsOutput, crate::error::ListAppVersionResourceMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_version_resource_mappings_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListAppVersionResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResources {
                 type Output = std::result::Result<crate::output::ListAppVersionResourcesOutput, crate::error::ListAppVersionResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_version_resources_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListAppVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppVersions {
                 type Output = std::result::Result<crate::output::ListAppVersionsOutput, crate::error::ListAppVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_versions_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListRecommendationTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationTemplates {
                 type Output = std::result::Result<crate::output::ListRecommendationTemplatesOutput, crate::error::ListRecommendationTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_recommendation_templates_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListResiliencyPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for ListResiliencyPolicies {
                 type Output = std::result::Result<crate::output::ListResiliencyPoliciesOutput, crate::error::ListResiliencyPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resiliency_policies_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListSopRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ListSopRecommendations {
                 type Output = std::result::Result<crate::output::ListSopRecommendationsOutput, crate::error::ListSopRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sop_recommendations_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListSuggestedResiliencyPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for ListSuggestedResiliencyPolicies {
                 type Output = std::result::Result<crate::output::ListSuggestedResiliencyPoliciesOutput, crate::error::ListSuggestedResiliencyPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_suggested_resiliency_policies_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListTestRecommendations {
 impl aws_smithy_http::response::ParseStrictResponse for ListTestRecommendations {
                 type Output = std::result::Result<crate::output::ListTestRecommendationsOutput, crate::error::ListTestRecommendationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_test_recommendations_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListUnsupportedAppVersionResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListUnsupportedAppVersionResources {
                 type Output = std::result::Result<crate::output::ListUnsupportedAppVersionResourcesOutput, crate::error::ListUnsupportedAppVersionResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_unsupported_app_version_resources_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl PublishAppVersion {
 impl aws_smithy_http::response::ParseStrictResponse for PublishAppVersion {
                 type Output = std::result::Result<crate::output::PublishAppVersionOutput, crate::error::PublishAppVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_publish_app_version_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl PutDraftAppVersionTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for PutDraftAppVersionTemplate {
                 type Output = std::result::Result<crate::output::PutDraftAppVersionTemplateOutput, crate::error::PutDraftAppVersionTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_draft_app_version_template_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl RemoveDraftAppVersionResourceMappings {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveDraftAppVersionResourceMappings {
                 type Output = std::result::Result<crate::output::RemoveDraftAppVersionResourceMappingsOutput, crate::error::RemoveDraftAppVersionResourceMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_draft_app_version_resource_mappings_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ResolveAppVersionResources {
 impl aws_smithy_http::response::ParseStrictResponse for ResolveAppVersionResources {
                 type Output = std::result::Result<crate::output::ResolveAppVersionResourcesOutput, crate::error::ResolveAppVersionResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resolve_app_version_resources_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl StartAppAssessment {
 impl aws_smithy_http::response::ParseStrictResponse for StartAppAssessment {
                 type Output = std::result::Result<crate::output::StartAppAssessmentOutput, crate::error::StartAppAssessmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_app_assessment_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateApp {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApp {
                 type Output = std::result::Result<crate::output::UpdateAppOutput, crate::error::UpdateAppError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_app_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateResiliencyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateResiliencyPolicy {
                 type Output = std::result::Result<crate::output::UpdateResiliencyPolicyOutput, crate::error::UpdateResiliencyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_resiliency_policy_error(response)
                      } else {

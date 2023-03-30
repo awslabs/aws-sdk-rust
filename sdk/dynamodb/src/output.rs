@@ -6,6 +6,7 @@ pub struct UpdateTimeToLiveOutput  {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
     #[doc(hidden)]
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
+    _request_id: Option<String>,
 }
 impl UpdateTimeToLiveOutput {
     /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
@@ -13,6 +14,11 @@ impl UpdateTimeToLiveOutput {
         self.time_to_live_specification.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTimeToLiveOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
 pub mod update_time_to_live_output {
     
@@ -21,6 +27,7 @@ pub mod update_time_to_live_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the output of an <code>UpdateTimeToLive</code> operation.</p>
@@ -32,11 +39,21 @@ pub mod update_time_to_live_output {
         pub fn set_time_to_live_specification(mut self, input: std::option::Option<crate::model::TimeToLiveSpecification>) -> Self {
             self.time_to_live_specification = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
         pub fn build(self) -> crate::output::UpdateTimeToLiveOutput {
             crate::output::UpdateTimeToLiveOutput {
                 time_to_live_specification: self.time_to_live_specification
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateTableReplicaAutoScalingOutput  {
     /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
     #[doc(hidden)]
     pub table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
+    _request_id: Option<String>,
 }
 impl UpdateTableReplicaAutoScalingOutput {
     /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
@@ -64,6 +82,11 @@ impl UpdateTableReplicaAutoScalingOutput {
         self.table_auto_scaling_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTableReplicaAutoScalingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
 pub mod update_table_replica_auto_scaling_output {
     
@@ -72,6 +95,7 @@ pub mod update_table_replica_auto_scaling_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about the auto scaling settings of a table with replicas.</p>
@@ -83,11 +107,21 @@ pub mod update_table_replica_auto_scaling_output {
         pub fn set_table_auto_scaling_description(mut self, input: std::option::Option<crate::model::TableAutoScalingDescription>) -> Self {
             self.table_auto_scaling_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
         pub fn build(self) -> crate::output::UpdateTableReplicaAutoScalingOutput {
             crate::output::UpdateTableReplicaAutoScalingOutput {
                 table_auto_scaling_description: self.table_auto_scaling_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateTableOutput  {
     /// <p>Represents the properties of the table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl UpdateTableOutput {
     /// <p>Represents the properties of the table.</p>
@@ -115,6 +150,11 @@ impl UpdateTableOutput {
         self.table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
     
@@ -123,6 +163,7 @@ pub mod update_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the properties of the table.</p>
@@ -134,11 +175,21 @@ pub mod update_table_output {
         pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput).
         pub fn build(self) -> crate::output::UpdateTableOutput {
             crate::output::UpdateTableOutput {
                 table_description: self.table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,6 +222,7 @@ pub struct UpdateItemOutput  {
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+    _request_id: Option<String>,
 }
 impl UpdateItemOutput {
     /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p> 
@@ -192,6 +244,11 @@ impl UpdateItemOutput {
         self.item_collection_metrics.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateItemOutput`](crate::output::UpdateItemOutput).
 pub mod update_item_output {
     
@@ -202,6 +259,7 @@ pub mod update_item_output {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
         pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -249,6 +307,15 @@ pub mod update_item_output {
         pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
             self.item_collection_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateItemOutput`](crate::output::UpdateItemOutput).
         pub fn build(self) -> crate::output::UpdateItemOutput {
             crate::output::UpdateItemOutput {
@@ -258,6 +325,7 @@ pub mod update_item_output {
                 ,
                 item_collection_metrics: self.item_collection_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -281,6 +349,7 @@ pub struct UpdateGlobalTableSettingsOutput  {
     /// <p>The Region-specific settings for the global table.</p>
     #[doc(hidden)]
     pub replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+    _request_id: Option<String>,
 }
 impl UpdateGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
@@ -292,6 +361,11 @@ impl UpdateGlobalTableSettingsOutput {
         self.replica_settings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateGlobalTableSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
 pub mod update_global_table_settings_output {
     
@@ -301,6 +375,7 @@ pub mod update_global_table_settings_output {
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the global table.</p>
@@ -327,6 +402,15 @@ pub mod update_global_table_settings_output {
         pub fn set_replica_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>) -> Self {
             self.replica_settings = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
         pub fn build(self) -> crate::output::UpdateGlobalTableSettingsOutput {
             crate::output::UpdateGlobalTableSettingsOutput {
@@ -334,6 +418,7 @@ pub mod update_global_table_settings_output {
                 ,
                 replica_settings: self.replica_settings
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,6 +439,7 @@ pub struct UpdateGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+    _request_id: Option<String>,
 }
 impl UpdateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
@@ -361,6 +447,11 @@ impl UpdateGlobalTableOutput {
         self.global_table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateGlobalTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
 pub mod update_global_table_output {
     
@@ -369,6 +460,7 @@ pub mod update_global_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -380,11 +472,21 @@ pub mod update_global_table_output {
         pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
             self.global_table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
         pub fn build(self) -> crate::output::UpdateGlobalTableOutput {
             crate::output::UpdateGlobalTableOutput {
                 global_table_description: self.global_table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -411,6 +513,7 @@ pub struct UpdateContributorInsightsOutput  {
     /// <p>The status of contributor insights</p>
     #[doc(hidden)]
     pub contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
+    _request_id: Option<String>,
 }
 impl UpdateContributorInsightsOutput {
     /// <p>The name of the table.</p>
@@ -426,6 +529,11 @@ impl UpdateContributorInsightsOutput {
         self.contributor_insights_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateContributorInsightsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
 pub mod update_contributor_insights_output {
     
@@ -436,6 +544,7 @@ pub mod update_contributor_insights_output {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the table.</p>
@@ -465,6 +574,15 @@ pub mod update_contributor_insights_output {
         pub fn set_contributor_insights_status(mut self, input: std::option::Option<crate::model::ContributorInsightsStatus>) -> Self {
             self.contributor_insights_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
         pub fn build(self) -> crate::output::UpdateContributorInsightsOutput {
             crate::output::UpdateContributorInsightsOutput {
@@ -474,6 +592,7 @@ pub mod update_contributor_insights_output {
                 ,
                 contributor_insights_status: self.contributor_insights_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -494,6 +613,7 @@ pub struct UpdateContinuousBackupsOutput  {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     #[doc(hidden)]
     pub continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
+    _request_id: Option<String>,
 }
 impl UpdateContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
@@ -501,6 +621,11 @@ impl UpdateContinuousBackupsOutput {
         self.continuous_backups_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateContinuousBackupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
 pub mod update_continuous_backups_output {
     
@@ -509,6 +634,7 @@ pub mod update_continuous_backups_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
@@ -520,11 +646,21 @@ pub mod update_continuous_backups_output {
         pub fn set_continuous_backups_description(mut self, input: std::option::Option<crate::model::ContinuousBackupsDescription>) -> Self {
             self.continuous_backups_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
         pub fn build(self) -> crate::output::UpdateContinuousBackupsOutput {
             crate::output::UpdateContinuousBackupsOutput {
                 continuous_backups_description: self.continuous_backups_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -542,7 +678,13 @@ impl UpdateContinuousBackupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -550,11 +692,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -578,6 +731,7 @@ pub struct TransactWriteItemsOutput  {
     /// <p>A list of tables that were processed by <code>TransactWriteItems</code> and, for each table, information about any item collections that were affected by individual <code>UpdateItem</code>, <code>PutItem</code>, or <code>DeleteItem</code> operations. </p>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
+    _request_id: Option<String>,
 }
 impl TransactWriteItemsOutput {
     /// <p>The capacity units consumed by the entire <code>TransactWriteItems</code> operation. The values of the list are ordered according to the ordering of the <code>TransactItems</code> request parameter. </p>
@@ -589,6 +743,11 @@ impl TransactWriteItemsOutput {
         self.item_collection_metrics.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for TransactWriteItemsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
 pub mod transact_write_items_output {
     
@@ -598,6 +757,7 @@ pub mod transact_write_items_output {
     pub struct Builder {
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
         pub(crate) item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `consumed_capacity`.
@@ -630,6 +790,15 @@ pub mod transact_write_items_output {
         pub fn set_item_collection_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>) -> Self {
             self.item_collection_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
         pub fn build(self) -> crate::output::TransactWriteItemsOutput {
             crate::output::TransactWriteItemsOutput {
@@ -637,6 +806,7 @@ pub mod transact_write_items_output {
                 ,
                 item_collection_metrics: self.item_collection_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -661,6 +831,7 @@ pub struct TransactGetItemsOutput  {
     /// <p>If a requested item could not be retrieved, the corresponding <code>ItemResponse</code> object is Null, or if the requested item has no projected attributes, the corresponding <code>ItemResponse</code> object is an empty Map. </p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+    _request_id: Option<String>,
 }
 impl TransactGetItemsOutput {
     /// <p>If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code> objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code> objects report the read-capacity units consumed by the <code>TransactGetItems</code> call in that table.</p>
@@ -673,6 +844,11 @@ impl TransactGetItemsOutput {
         self.responses.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for TransactGetItemsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
 pub mod transact_get_items_output {
     
@@ -682,6 +858,7 @@ pub mod transact_get_items_output {
     pub struct Builder {
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `consumed_capacity`.
@@ -716,6 +893,15 @@ pub mod transact_get_items_output {
         pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>) -> Self {
             self.responses = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
         pub fn build(self) -> crate::output::TransactGetItemsOutput {
             crate::output::TransactGetItemsOutput {
@@ -723,6 +909,7 @@ pub mod transact_get_items_output {
                 ,
                 responses: self.responses
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -740,7 +927,13 @@ impl TransactGetItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -748,11 +941,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -790,6 +994,7 @@ pub struct ScanOutput  {
     /// <p>The capacity units consumed by the <code>Scan</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+    _request_id: Option<String>,
 }
 impl ScanOutput {
     /// <p>An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
@@ -818,6 +1023,11 @@ impl ScanOutput {
         self.consumed_capacity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ScanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ScanOutput`](crate::output::ScanOutput).
 pub mod scan_output {
     
@@ -830,6 +1040,7 @@ pub mod scan_output {
         pub(crate) scanned_count: std::option::Option<i32>,
         pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -899,6 +1110,15 @@ pub mod scan_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ScanOutput`](crate::output::ScanOutput).
         pub fn build(self) -> crate::output::ScanOutput {
             crate::output::ScanOutput {
@@ -914,6 +1134,7 @@ pub mod scan_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -934,6 +1155,7 @@ pub struct RestoreTableToPointInTimeOutput  {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl RestoreTableToPointInTimeOutput {
     /// <p>Represents the properties of a table.</p>
@@ -941,6 +1163,11 @@ impl RestoreTableToPointInTimeOutput {
         self.table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreTableToPointInTimeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
 pub mod restore_table_to_point_in_time_output {
     
@@ -949,6 +1176,7 @@ pub mod restore_table_to_point_in_time_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the properties of a table.</p>
@@ -960,11 +1188,21 @@ pub mod restore_table_to_point_in_time_output {
         pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreTableToPointInTimeOutput {
             crate::output::RestoreTableToPointInTimeOutput {
                 table_description: self.table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -985,6 +1223,7 @@ pub struct RestoreTableFromBackupOutput  {
     /// <p>The description of the table created from an existing backup.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
@@ -992,6 +1231,11 @@ impl RestoreTableFromBackupOutput {
         self.table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreTableFromBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
 pub mod restore_table_from_backup_output {
     
@@ -1000,6 +1244,7 @@ pub mod restore_table_from_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the table created from an existing backup.</p>
@@ -1011,11 +1256,21 @@ pub mod restore_table_from_backup_output {
         pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
         pub fn build(self) -> crate::output::RestoreTableFromBackupOutput {
             crate::output::RestoreTableFromBackupOutput {
                 table_description: self.table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1053,6 +1308,7 @@ pub struct QueryOutput  {
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+    _request_id: Option<String>,
 }
 impl QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
@@ -1081,6 +1337,11 @@ impl QueryOutput {
         self.consumed_capacity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for QueryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`QueryOutput`](crate::output::QueryOutput).
 pub mod query_output {
     
@@ -1093,6 +1354,7 @@ pub mod query_output {
         pub(crate) scanned_count: std::option::Option<i32>,
         pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -1162,6 +1424,15 @@ pub mod query_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`QueryOutput`](crate::output::QueryOutput).
         pub fn build(self) -> crate::output::QueryOutput {
             crate::output::QueryOutput {
@@ -1177,6 +1448,7 @@ pub mod query_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1208,6 +1480,7 @@ pub struct PutItemOutput  {
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+    _request_id: Option<String>,
 }
 impl PutItemOutput {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
@@ -1228,6 +1501,11 @@ impl PutItemOutput {
         self.item_collection_metrics.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutItemOutput`](crate::output::PutItemOutput).
 pub mod put_item_output {
     
@@ -1238,6 +1516,7 @@ pub mod put_item_output {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
         pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -1283,6 +1562,15 @@ pub mod put_item_output {
         pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
             self.item_collection_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutItemOutput`](crate::output::PutItemOutput).
         pub fn build(self) -> crate::output::PutItemOutput {
             crate::output::PutItemOutput {
@@ -1292,6 +1580,7 @@ pub mod put_item_output {
                 ,
                 item_collection_metrics: self.item_collection_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1315,6 +1604,7 @@ pub struct ListTagsOfResourceOutput  {
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call ListTagsOfResource again, with NextToken set to this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsOfResourceOutput {
     /// <p>The tags currently associated with the Amazon DynamoDB resource.</p>
@@ -1326,6 +1616,11 @@ impl ListTagsOfResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsOfResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
 pub mod list_tags_of_resource_output {
     
@@ -1335,6 +1630,7 @@ pub mod list_tags_of_resource_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -1361,6 +1657,15 @@ pub mod list_tags_of_resource_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
         pub fn build(self) -> crate::output::ListTagsOfResourceOutput {
             crate::output::ListTagsOfResourceOutput {
@@ -1368,6 +1673,7 @@ pub mod list_tags_of_resource_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1393,6 +1699,7 @@ pub struct ListTablesOutput  {
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
     #[doc(hidden)]
     pub last_evaluated_table_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTablesOutput {
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p> 
@@ -1406,6 +1713,11 @@ impl ListTablesOutput {
         self.last_evaluated_table_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTablesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
     
@@ -1415,6 +1727,7 @@ pub mod list_tables_output {
     pub struct Builder {
         pub(crate) table_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_evaluated_table_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `table_names`.
@@ -1445,6 +1758,15 @@ pub mod list_tables_output {
         pub fn set_last_evaluated_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_evaluated_table_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
@@ -1452,6 +1774,7 @@ pub mod list_tables_output {
                 ,
                 last_evaluated_table_name: self.last_evaluated_table_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1475,6 +1798,7 @@ pub struct ListImportsOutput  {
     /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImportsOutput {
     /// <p> A list of <code>ImportSummary</code> objects. </p>
@@ -1486,6 +1810,11 @@ impl ListImportsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImportsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListImportsOutput`](crate::output::ListImportsOutput).
 pub mod list_imports_output {
     
@@ -1495,6 +1824,7 @@ pub mod list_imports_output {
     pub struct Builder {
         pub(crate) import_summary_list: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `import_summary_list`.
@@ -1521,6 +1851,15 @@ pub mod list_imports_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput).
         pub fn build(self) -> crate::output::ListImportsOutput {
             crate::output::ListImportsOutput {
@@ -1528,6 +1867,7 @@ pub mod list_imports_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1551,6 +1891,7 @@ pub struct ListGlobalTablesOutput  {
     /// <p>Last evaluated global table name.</p>
     #[doc(hidden)]
     pub last_evaluated_global_table_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGlobalTablesOutput {
     /// <p>List of global table names.</p>
@@ -1562,6 +1903,11 @@ impl ListGlobalTablesOutput {
         self.last_evaluated_global_table_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGlobalTablesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
 pub mod list_global_tables_output {
     
@@ -1571,6 +1917,7 @@ pub mod list_global_tables_output {
     pub struct Builder {
         pub(crate) global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
         pub(crate) last_evaluated_global_table_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `global_tables`.
@@ -1597,6 +1944,15 @@ pub mod list_global_tables_output {
         pub fn set_last_evaluated_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_evaluated_global_table_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
         pub fn build(self) -> crate::output::ListGlobalTablesOutput {
             crate::output::ListGlobalTablesOutput {
@@ -1604,6 +1960,7 @@ pub mod list_global_tables_output {
                 ,
                 last_evaluated_global_table_name: self.last_evaluated_global_table_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1627,6 +1984,7 @@ pub struct ListExportsOutput  {
     /// <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListExportsOutput {
     /// <p>A list of <code>ExportSummary</code> objects.</p>
@@ -1638,6 +1996,11 @@ impl ListExportsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListExportsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListExportsOutput`](crate::output::ListExportsOutput).
 pub mod list_exports_output {
     
@@ -1647,6 +2010,7 @@ pub mod list_exports_output {
     pub struct Builder {
         pub(crate) export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `export_summaries`.
@@ -1673,6 +2037,15 @@ pub mod list_exports_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput).
         pub fn build(self) -> crate::output::ListExportsOutput {
             crate::output::ListExportsOutput {
@@ -1680,6 +2053,7 @@ pub mod list_exports_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1703,6 +2077,7 @@ pub struct ListContributorInsightsOutput  {
     /// <p>A token to go to the next page if there is one.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListContributorInsightsOutput {
     /// <p>A list of ContributorInsightsSummary.</p>
@@ -1714,6 +2089,11 @@ impl ListContributorInsightsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListContributorInsightsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
 pub mod list_contributor_insights_output {
     
@@ -1723,6 +2103,7 @@ pub mod list_contributor_insights_output {
     pub struct Builder {
         pub(crate) contributor_insights_summaries: std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `contributor_insights_summaries`.
@@ -1749,6 +2130,15 @@ pub mod list_contributor_insights_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
         pub fn build(self) -> crate::output::ListContributorInsightsOutput {
             crate::output::ListContributorInsightsOutput {
@@ -1756,6 +2146,7 @@ pub mod list_contributor_insights_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1781,6 +2172,7 @@ pub struct ListBackupsOutput  {
     /// <p> If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate that there is more data to be returned. All results are guaranteed to have been returned if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. </p>
     #[doc(hidden)]
     pub last_evaluated_backup_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBackupsOutput {
     /// <p>List of <code>BackupSummary</code> objects.</p>
@@ -1794,6 +2186,11 @@ impl ListBackupsOutput {
         self.last_evaluated_backup_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBackupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBackupsOutput`](crate::output::ListBackupsOutput).
 pub mod list_backups_output {
     
@@ -1803,6 +2200,7 @@ pub mod list_backups_output {
     pub struct Builder {
         pub(crate) backup_summaries: std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
         pub(crate) last_evaluated_backup_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `backup_summaries`.
@@ -1833,6 +2231,15 @@ pub mod list_backups_output {
         pub fn set_last_evaluated_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_evaluated_backup_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBackupsOutput`](crate::output::ListBackupsOutput).
         pub fn build(self) -> crate::output::ListBackupsOutput {
             crate::output::ListBackupsOutput {
@@ -1840,6 +2247,7 @@ pub mod list_backups_output {
                 ,
                 last_evaluated_backup_arn: self.last_evaluated_backup_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1860,6 +2268,7 @@ pub struct ImportTableOutput  {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
     #[doc(hidden)]
     pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+    _request_id: Option<String>,
 }
 impl ImportTableOutput {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
@@ -1867,6 +2276,11 @@ impl ImportTableOutput {
         self.import_table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ImportTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportTableOutput`](crate::output::ImportTableOutput).
 pub mod import_table_output {
     
@@ -1875,6 +2289,7 @@ pub mod import_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
@@ -1886,11 +2301,21 @@ pub mod import_table_output {
         pub fn set_import_table_description(mut self, input: std::option::Option<crate::model::ImportTableDescription>) -> Self {
             self.import_table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportTableOutput`](crate::output::ImportTableOutput).
         pub fn build(self) -> crate::output::ImportTableOutput {
             crate::output::ImportTableOutput {
                 import_table_description: self.import_table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1914,6 +2339,7 @@ pub struct GetItemOutput  {
     /// <p>The capacity units consumed by the <code>GetItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+    _request_id: Option<String>,
 }
 impl GetItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, as specified by <code>ProjectionExpression</code>.</p>
@@ -1925,6 +2351,11 @@ impl GetItemOutput {
         self.consumed_capacity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetItemOutput`](crate::output::GetItemOutput).
 pub mod get_item_output {
     
@@ -1934,6 +2365,7 @@ pub mod get_item_output {
     pub struct Builder {
         pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `item`.
@@ -1960,6 +2392,15 @@ pub mod get_item_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::model::ConsumedCapacity>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetItemOutput`](crate::output::GetItemOutput).
         pub fn build(self) -> crate::output::GetItemOutput {
             crate::output::GetItemOutput {
@@ -1967,6 +2408,7 @@ pub mod get_item_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1987,6 +2429,7 @@ pub struct ExportTableToPointInTimeOutput  {
     /// <p>Contains a description of the table export.</p>
     #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
+    _request_id: Option<String>,
 }
 impl ExportTableToPointInTimeOutput {
     /// <p>Contains a description of the table export.</p>
@@ -1994,6 +2437,11 @@ impl ExportTableToPointInTimeOutput {
         self.export_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportTableToPointInTimeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
 pub mod export_table_to_point_in_time_output {
     
@@ -2002,6 +2450,7 @@ pub mod export_table_to_point_in_time_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains a description of the table export.</p>
@@ -2013,11 +2462,21 @@ pub mod export_table_to_point_in_time_output {
         pub fn set_export_description(mut self, input: std::option::Option<crate::model::ExportDescription>) -> Self {
             self.export_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
         pub fn build(self) -> crate::output::ExportTableToPointInTimeOutput {
             crate::output::ExportTableToPointInTimeOutput {
                 export_description: self.export_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2041,6 +2500,7 @@ pub struct ExecuteTransactionOutput  {
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    _request_id: Option<String>,
 }
 impl ExecuteTransactionOutput {
     /// <p>The response to a PartiQL transaction.</p>
@@ -2052,6 +2512,11 @@ impl ExecuteTransactionOutput {
         self.consumed_capacity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteTransactionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
 pub mod execute_transaction_output {
     
@@ -2061,6 +2526,7 @@ pub mod execute_transaction_output {
     pub struct Builder {
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -2093,6 +2559,15 @@ pub mod execute_transaction_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
         pub fn build(self) -> crate::output::ExecuteTransactionOutput {
             crate::output::ExecuteTransactionOutput {
@@ -2100,6 +2575,7 @@ pub mod execute_transaction_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2129,6 +2605,7 @@ pub struct ExecuteStatementOutput  {
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
     #[doc(hidden)]
     pub last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
+    _request_id: Option<String>,
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
@@ -2148,6 +2625,11 @@ impl ExecuteStatementOutput {
         self.last_evaluated_key.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteStatementOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
     
@@ -2159,6 +2641,7 @@ pub mod execute_statement_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
         pub(crate) last_evaluated_key: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -2209,6 +2692,15 @@ pub mod execute_statement_output {
         pub fn set_last_evaluated_key(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>) -> Self {
             self.last_evaluated_key = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
@@ -2220,6 +2712,7 @@ pub mod execute_statement_output {
                 ,
                 last_evaluated_key: self.last_evaluated_key
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2246,6 +2739,7 @@ pub struct EnableKinesisStreamingDestinationOutput  {
     /// <p>The current status of the replication.</p>
     #[doc(hidden)]
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
+    _request_id: Option<String>,
 }
 impl EnableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
@@ -2261,6 +2755,11 @@ impl EnableKinesisStreamingDestinationOutput {
         self.destination_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for EnableKinesisStreamingDestinationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
 pub mod enable_kinesis_streaming_destination_output {
     
@@ -2271,6 +2770,7 @@ pub mod enable_kinesis_streaming_destination_output {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) destination_status: std::option::Option<crate::model::DestinationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the table being modified.</p>
@@ -2300,6 +2800,15 @@ pub mod enable_kinesis_streaming_destination_output {
         pub fn set_destination_status(mut self, input: std::option::Option<crate::model::DestinationStatus>) -> Self {
             self.destination_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::EnableKinesisStreamingDestinationOutput {
             crate::output::EnableKinesisStreamingDestinationOutput {
@@ -2309,6 +2818,7 @@ pub mod enable_kinesis_streaming_destination_output {
                 ,
                 destination_status: self.destination_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2335,6 +2845,7 @@ pub struct DisableKinesisStreamingDestinationOutput  {
     /// <p>The current status of the replication.</p>
     #[doc(hidden)]
     pub destination_status: std::option::Option<crate::model::DestinationStatus>,
+    _request_id: Option<String>,
 }
 impl DisableKinesisStreamingDestinationOutput {
     /// <p>The name of the table being modified.</p>
@@ -2350,6 +2861,11 @@ impl DisableKinesisStreamingDestinationOutput {
         self.destination_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisableKinesisStreamingDestinationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
 pub mod disable_kinesis_streaming_destination_output {
     
@@ -2360,6 +2876,7 @@ pub mod disable_kinesis_streaming_destination_output {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) destination_status: std::option::Option<crate::model::DestinationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the table being modified.</p>
@@ -2389,6 +2906,15 @@ pub mod disable_kinesis_streaming_destination_output {
         pub fn set_destination_status(mut self, input: std::option::Option<crate::model::DestinationStatus>) -> Self {
             self.destination_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::DisableKinesisStreamingDestinationOutput {
             crate::output::DisableKinesisStreamingDestinationOutput {
@@ -2398,6 +2924,7 @@ pub mod disable_kinesis_streaming_destination_output {
                 ,
                 destination_status: self.destination_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2418,6 +2945,7 @@ pub struct DescribeTimeToLiveOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeTimeToLiveOutput {
     /// <p></p>
@@ -2425,6 +2953,11 @@ impl DescribeTimeToLiveOutput {
         self.time_to_live_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTimeToLiveOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
 pub mod describe_time_to_live_output {
     
@@ -2433,6 +2966,7 @@ pub mod describe_time_to_live_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_description: std::option::Option<crate::model::TimeToLiveDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p></p>
@@ -2444,11 +2978,21 @@ pub mod describe_time_to_live_output {
         pub fn set_time_to_live_description(mut self, input: std::option::Option<crate::model::TimeToLiveDescription>) -> Self {
             self.time_to_live_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
         pub fn build(self) -> crate::output::DescribeTimeToLiveOutput {
             crate::output::DescribeTimeToLiveOutput {
                 time_to_live_description: self.time_to_live_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2469,6 +3013,7 @@ pub struct DescribeTableReplicaAutoScalingOutput  {
     /// <p>Represents the auto scaling properties of the table.</p>
     #[doc(hidden)]
     pub table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeTableReplicaAutoScalingOutput {
     /// <p>Represents the auto scaling properties of the table.</p>
@@ -2476,6 +3021,11 @@ impl DescribeTableReplicaAutoScalingOutput {
         self.table_auto_scaling_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTableReplicaAutoScalingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
 pub mod describe_table_replica_auto_scaling_output {
     
@@ -2484,6 +3034,7 @@ pub mod describe_table_replica_auto_scaling_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_auto_scaling_description: std::option::Option<crate::model::TableAutoScalingDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the auto scaling properties of the table.</p>
@@ -2495,11 +3046,21 @@ pub mod describe_table_replica_auto_scaling_output {
         pub fn set_table_auto_scaling_description(mut self, input: std::option::Option<crate::model::TableAutoScalingDescription>) -> Self {
             self.table_auto_scaling_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
         pub fn build(self) -> crate::output::DescribeTableReplicaAutoScalingOutput {
             crate::output::DescribeTableReplicaAutoScalingOutput {
                 table_auto_scaling_description: self.table_auto_scaling_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2520,6 +3081,7 @@ pub struct DescribeTableOutput  {
     /// <p>The properties of the table.</p>
     #[doc(hidden)]
     pub table: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeTableOutput {
     /// <p>The properties of the table.</p>
@@ -2527,6 +3089,11 @@ impl DescribeTableOutput {
         self.table.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTableOutput`](crate::output::DescribeTableOutput).
 pub mod describe_table_output {
     
@@ -2535,6 +3102,7 @@ pub mod describe_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The properties of the table.</p>
@@ -2546,11 +3114,21 @@ pub mod describe_table_output {
         pub fn set_table(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTableOutput`](crate::output::DescribeTableOutput).
         pub fn build(self) -> crate::output::DescribeTableOutput {
             crate::output::DescribeTableOutput {
                 table: self.table
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2580,6 +3158,7 @@ pub struct DescribeLimitsOutput  {
     /// <p>The maximum write capacity units that your account allows you to provision for a new table that you are creating in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).</p>
     #[doc(hidden)]
     pub table_max_write_capacity_units: std::option::Option<i64>,
+    _request_id: Option<String>,
 }
 impl DescribeLimitsOutput {
     /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
@@ -2599,6 +3178,11 @@ impl DescribeLimitsOutput {
         self.table_max_write_capacity_units
     }
 }
+impl aws_http::request_id::RequestId for DescribeLimitsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
 pub mod describe_limits_output {
     
@@ -2610,6 +3194,7 @@ pub mod describe_limits_output {
         pub(crate) account_max_write_capacity_units: std::option::Option<i64>,
         pub(crate) table_max_read_capacity_units: std::option::Option<i64>,
         pub(crate) table_max_write_capacity_units: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The maximum total read capacity units that your account allows you to provision across all of your tables in this Region.</p>
@@ -2648,6 +3233,15 @@ pub mod describe_limits_output {
         pub fn set_table_max_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
             self.table_max_write_capacity_units = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
         pub fn build(self) -> crate::output::DescribeLimitsOutput {
             crate::output::DescribeLimitsOutput {
@@ -2659,6 +3253,7 @@ pub mod describe_limits_output {
                 ,
                 table_max_write_capacity_units: self.table_max_write_capacity_units
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2682,6 +3277,7 @@ pub struct DescribeKinesisStreamingDestinationOutput  {
     /// <p>The list of replica structures for the table being described.</p>
     #[doc(hidden)]
     pub kinesis_data_stream_destinations: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
+    _request_id: Option<String>,
 }
 impl DescribeKinesisStreamingDestinationOutput {
     /// <p>The name of the table being described.</p>
@@ -2693,6 +3289,11 @@ impl DescribeKinesisStreamingDestinationOutput {
         self.kinesis_data_stream_destinations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeKinesisStreamingDestinationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
 pub mod describe_kinesis_streaming_destination_output {
     
@@ -2702,6 +3303,7 @@ pub mod describe_kinesis_streaming_destination_output {
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) kinesis_data_stream_destinations: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
@@ -2728,6 +3330,15 @@ pub mod describe_kinesis_streaming_destination_output {
         pub fn set_kinesis_data_stream_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>) -> Self {
             self.kinesis_data_stream_destinations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
         pub fn build(self) -> crate::output::DescribeKinesisStreamingDestinationOutput {
             crate::output::DescribeKinesisStreamingDestinationOutput {
@@ -2735,6 +3346,7 @@ pub mod describe_kinesis_streaming_destination_output {
                 ,
                 kinesis_data_stream_destinations: self.kinesis_data_stream_destinations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2755,6 +3367,7 @@ pub struct DescribeImportOutput  {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
     #[doc(hidden)]
     pub import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeImportOutput {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
@@ -2762,6 +3375,11 @@ impl DescribeImportOutput {
         self.import_table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeImportOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeImportOutput`](crate::output::DescribeImportOutput).
 pub mod describe_import_output {
     
@@ -2770,6 +3388,7 @@ pub mod describe_import_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_table_description: std::option::Option<crate::model::ImportTableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
@@ -2781,11 +3400,21 @@ pub mod describe_import_output {
         pub fn set_import_table_description(mut self, input: std::option::Option<crate::model::ImportTableDescription>) -> Self {
             self.import_table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeImportOutput`](crate::output::DescribeImportOutput).
         pub fn build(self) -> crate::output::DescribeImportOutput {
             crate::output::DescribeImportOutput {
                 import_table_description: self.import_table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2809,6 +3438,7 @@ pub struct DescribeGlobalTableSettingsOutput  {
     /// <p>The Region-specific settings for the global table.</p>
     #[doc(hidden)]
     pub replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribeGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
@@ -2820,6 +3450,11 @@ impl DescribeGlobalTableSettingsOutput {
         self.replica_settings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeGlobalTableSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
 pub mod describe_global_table_settings_output {
     
@@ -2829,6 +3464,7 @@ pub mod describe_global_table_settings_output {
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replica_settings: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the global table.</p>
@@ -2855,6 +3491,15 @@ pub mod describe_global_table_settings_output {
         pub fn set_replica_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsDescription>>) -> Self {
             self.replica_settings = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
         pub fn build(self) -> crate::output::DescribeGlobalTableSettingsOutput {
             crate::output::DescribeGlobalTableSettingsOutput {
@@ -2862,6 +3507,7 @@ pub mod describe_global_table_settings_output {
                 ,
                 replica_settings: self.replica_settings
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2882,6 +3528,7 @@ pub struct DescribeGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
@@ -2889,6 +3536,11 @@ impl DescribeGlobalTableOutput {
         self.global_table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeGlobalTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
 pub mod describe_global_table_output {
     
@@ -2897,6 +3549,7 @@ pub mod describe_global_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -2908,11 +3561,21 @@ pub mod describe_global_table_output {
         pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
             self.global_table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
         pub fn build(self) -> crate::output::DescribeGlobalTableOutput {
             crate::output::DescribeGlobalTableOutput {
                 global_table_description: self.global_table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2933,6 +3596,7 @@ pub struct DescribeExportOutput  {
     /// <p>Represents the properties of the export.</p>
     #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::ExportDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeExportOutput {
     /// <p>Represents the properties of the export.</p>
@@ -2940,6 +3604,11 @@ impl DescribeExportOutput {
         self.export_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeExportOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeExportOutput`](crate::output::DescribeExportOutput).
 pub mod describe_export_output {
     
@@ -2948,6 +3617,7 @@ pub mod describe_export_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the properties of the export.</p>
@@ -2959,11 +3629,21 @@ pub mod describe_export_output {
         pub fn set_export_description(mut self, input: std::option::Option<crate::model::ExportDescription>) -> Self {
             self.export_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeExportOutput`](crate::output::DescribeExportOutput).
         pub fn build(self) -> crate::output::DescribeExportOutput {
             crate::output::DescribeExportOutput {
                 export_description: self.export_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2984,6 +3664,7 @@ pub struct DescribeEndpointsOutput  {
     /// <p>List of endpoints.</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+    _request_id: Option<String>,
 }
 impl DescribeEndpointsOutput {
     /// <p>List of endpoints.</p>
@@ -2991,6 +3672,11 @@ impl DescribeEndpointsOutput {
         self.endpoints.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
 pub mod describe_endpoints_output {
     
@@ -2999,6 +3685,7 @@ pub mod describe_endpoints_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoints`.
@@ -3016,11 +3703,21 @@ pub mod describe_endpoints_output {
         pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>) -> Self {
             self.endpoints = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeEndpointsOutput {
             crate::output::DescribeEndpointsOutput {
                 endpoints: self.endpoints
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3063,6 +3760,7 @@ pub struct DescribeContributorInsightsOutput  {
     /// </ul>
     #[doc(hidden)]
     pub failure_exception: std::option::Option<crate::model::FailureException>,
+    _request_id: Option<String>,
 }
 impl DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
@@ -3097,6 +3795,11 @@ impl DescribeContributorInsightsOutput {
         self.failure_exception.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeContributorInsightsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
 pub mod describe_contributor_insights_output {
     
@@ -3110,6 +3813,7 @@ pub mod describe_contributor_insights_output {
         pub(crate) contributor_insights_status: std::option::Option<crate::model::ContributorInsightsStatus>,
         pub(crate) last_update_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_exception: std::option::Option<crate::model::FailureException>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
@@ -3186,6 +3890,15 @@ pub mod describe_contributor_insights_output {
         pub fn set_failure_exception(mut self, input: std::option::Option<crate::model::FailureException>) -> Self {
             self.failure_exception = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
         pub fn build(self) -> crate::output::DescribeContributorInsightsOutput {
             crate::output::DescribeContributorInsightsOutput {
@@ -3201,6 +3914,7 @@ pub mod describe_contributor_insights_output {
                 ,
                 failure_exception: self.failure_exception
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3221,6 +3935,7 @@ pub struct DescribeContinuousBackupsOutput  {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     #[doc(hidden)]
     pub continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
@@ -3228,6 +3943,11 @@ impl DescribeContinuousBackupsOutput {
         self.continuous_backups_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeContinuousBackupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
 pub mod describe_continuous_backups_output {
     
@@ -3236,6 +3956,7 @@ pub mod describe_continuous_backups_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_backups_description: std::option::Option<crate::model::ContinuousBackupsDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
@@ -3247,11 +3968,21 @@ pub mod describe_continuous_backups_output {
         pub fn set_continuous_backups_description(mut self, input: std::option::Option<crate::model::ContinuousBackupsDescription>) -> Self {
             self.continuous_backups_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
         pub fn build(self) -> crate::output::DescribeContinuousBackupsOutput {
             crate::output::DescribeContinuousBackupsOutput {
                 continuous_backups_description: self.continuous_backups_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3272,6 +4003,7 @@ pub struct DescribeBackupOutput  {
     /// <p>Contains the description of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
@@ -3279,6 +4011,11 @@ impl DescribeBackupOutput {
         self.backup_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
 pub mod describe_backup_output {
     
@@ -3287,6 +4024,7 @@ pub mod describe_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the description of the backup created for the table.</p>
@@ -3298,11 +4036,21 @@ pub mod describe_backup_output {
         pub fn set_backup_description(mut self, input: std::option::Option<crate::model::BackupDescription>) -> Self {
             self.backup_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
         pub fn build(self) -> crate::output::DescribeBackupOutput {
             crate::output::DescribeBackupOutput {
                 backup_description: self.backup_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3323,6 +4071,7 @@ pub struct DeleteTableOutput  {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
@@ -3330,6 +4079,11 @@ impl DeleteTableOutput {
         self.table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
     
@@ -3338,6 +4092,7 @@ pub mod delete_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the properties of a table.</p>
@@ -3349,11 +4104,21 @@ pub mod delete_table_output {
         pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput).
         pub fn build(self) -> crate::output::DeleteTableOutput {
             crate::output::DeleteTableOutput {
                 table_description: self.table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3385,6 +4150,7 @@ pub struct DeleteItemOutput  {
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+    _request_id: Option<String>,
 }
 impl DeleteItemOutput {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the item as it appeared before the <code>DeleteItem</code> operation. This map appears in the response only if <code>ReturnValues</code> was specified as <code>ALL_OLD</code> in the request.</p>
@@ -3405,6 +4171,11 @@ impl DeleteItemOutput {
         self.item_collection_metrics.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteItemOutput`](crate::output::DeleteItemOutput).
 pub mod delete_item_output {
     
@@ -3415,6 +4186,7 @@ pub mod delete_item_output {
         pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
         pub(crate) consumed_capacity: std::option::Option<crate::model::ConsumedCapacity>,
         pub(crate) item_collection_metrics: std::option::Option<crate::model::ItemCollectionMetrics>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `attributes`.
@@ -3460,6 +4232,15 @@ pub mod delete_item_output {
         pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::model::ItemCollectionMetrics>) -> Self {
             self.item_collection_metrics = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteItemOutput`](crate::output::DeleteItemOutput).
         pub fn build(self) -> crate::output::DeleteItemOutput {
             crate::output::DeleteItemOutput {
@@ -3469,6 +4250,7 @@ pub mod delete_item_output {
                 ,
                 item_collection_metrics: self.item_collection_metrics
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3489,6 +4271,7 @@ pub struct DeleteBackupOutput  {
     /// <p>Contains the description of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_description: std::option::Option<crate::model::BackupDescription>,
+    _request_id: Option<String>,
 }
 impl DeleteBackupOutput {
     /// <p>Contains the description of the backup created for the table.</p>
@@ -3496,6 +4279,11 @@ impl DeleteBackupOutput {
         self.backup_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
     
@@ -3504,6 +4292,7 @@ pub mod delete_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the description of the backup created for the table.</p>
@@ -3515,11 +4304,21 @@ pub mod delete_backup_output {
         pub fn set_backup_description(mut self, input: std::option::Option<crate::model::BackupDescription>) -> Self {
             self.backup_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
         pub fn build(self) -> crate::output::DeleteBackupOutput {
             crate::output::DeleteBackupOutput {
                 backup_description: self.backup_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3540,6 +4339,7 @@ pub struct CreateTableOutput  {
     /// <p>Represents the properties of the table.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::model::TableDescription>,
+    _request_id: Option<String>,
 }
 impl CreateTableOutput {
     /// <p>Represents the properties of the table.</p>
@@ -3547,6 +4347,11 @@ impl CreateTableOutput {
         self.table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
     
@@ -3555,6 +4360,7 @@ pub mod create_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the properties of the table.</p>
@@ -3566,11 +4372,21 @@ pub mod create_table_output {
         pub fn set_table_description(mut self, input: std::option::Option<crate::model::TableDescription>) -> Self {
             self.table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput).
         pub fn build(self) -> crate::output::CreateTableOutput {
             crate::output::CreateTableOutput {
                 table_description: self.table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3591,6 +4407,7 @@ pub struct CreateGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+    _request_id: Option<String>,
 }
 impl CreateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
@@ -3598,6 +4415,11 @@ impl CreateGlobalTableOutput {
         self.global_table_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGlobalTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
 pub mod create_global_table_output {
     
@@ -3606,6 +4428,7 @@ pub mod create_global_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description: std::option::Option<crate::model::GlobalTableDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the global table.</p>
@@ -3617,11 +4440,21 @@ pub mod create_global_table_output {
         pub fn set_global_table_description(mut self, input: std::option::Option<crate::model::GlobalTableDescription>) -> Self {
             self.global_table_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
         pub fn build(self) -> crate::output::CreateGlobalTableOutput {
             crate::output::CreateGlobalTableOutput {
                 global_table_description: self.global_table_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3642,6 +4475,7 @@ pub struct CreateBackupOutput  {
     /// <p>Contains the details of the backup created for the table.</p>
     #[doc(hidden)]
     pub backup_details: std::option::Option<crate::model::BackupDetails>,
+    _request_id: Option<String>,
 }
 impl CreateBackupOutput {
     /// <p>Contains the details of the backup created for the table.</p>
@@ -3649,6 +4483,11 @@ impl CreateBackupOutput {
         self.backup_details.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateBackupOutput`](crate::output::CreateBackupOutput).
 pub mod create_backup_output {
     
@@ -3657,6 +4496,7 @@ pub mod create_backup_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_details: std::option::Option<crate::model::BackupDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the backup created for the table.</p>
@@ -3668,11 +4508,21 @@ pub mod create_backup_output {
         pub fn set_backup_details(mut self, input: std::option::Option<crate::model::BackupDetails>) -> Self {
             self.backup_details = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateBackupOutput`](crate::output::CreateBackupOutput).
         pub fn build(self) -> crate::output::CreateBackupOutput {
             crate::output::CreateBackupOutput {
                 backup_details: self.backup_details
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3721,6 +4571,7 @@ pub struct BatchWriteItemOutput  {
     /// </ul>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    _request_id: Option<String>,
 }
 impl BatchWriteItemOutput {
     /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p> 
@@ -3758,6 +4609,11 @@ impl BatchWriteItemOutput {
         self.consumed_capacity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchWriteItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
 pub mod batch_write_item_output {
     
@@ -3768,6 +4624,7 @@ pub mod batch_write_item_output {
         pub(crate) unprocessed_items: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>>,
         pub(crate) item_collection_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ItemCollectionMetrics>>>,
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `unprocessed_items`.
@@ -3859,6 +4716,15 @@ pub mod batch_write_item_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
         pub fn build(self) -> crate::output::BatchWriteItemOutput {
             crate::output::BatchWriteItemOutput {
@@ -3868,6 +4734,7 @@ pub mod batch_write_item_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3906,6 +4773,7 @@ pub struct BatchGetItemOutput  {
     /// </ul>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    _request_id: Option<String>,
 }
 impl BatchGetItemOutput {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
@@ -3933,6 +4801,11 @@ impl BatchGetItemOutput {
         self.consumed_capacity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchGetItemOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
 pub mod batch_get_item_output {
     
@@ -3943,6 +4816,7 @@ pub mod batch_get_item_output {
         pub(crate) responses: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>>>,
         pub(crate) unprocessed_keys: std::option::Option<std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>>,
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `responses`.
@@ -4014,6 +4888,15 @@ pub mod batch_get_item_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
         pub fn build(self) -> crate::output::BatchGetItemOutput {
             crate::output::BatchGetItemOutput {
@@ -4023,6 +4906,7 @@ pub mod batch_get_item_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4046,6 +4930,7 @@ pub struct BatchExecuteStatementOutput  {
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch.</p>
@@ -4057,6 +4942,11 @@ impl BatchExecuteStatementOutput {
         self.consumed_capacity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
     
@@ -4066,6 +4956,7 @@ pub mod batch_execute_statement_output {
     pub struct Builder {
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
         pub(crate) consumed_capacity: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `responses`.
@@ -4098,6 +4989,15 @@ pub mod batch_execute_statement_output {
         pub fn set_consumed_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>) -> Self {
             self.consumed_capacity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
@@ -4105,6 +5005,7 @@ pub mod batch_execute_statement_output {
                 ,
                 consumed_capacity: self.consumed_capacity
                 ,
+                _request_id: self._request_id,
             }
         }
     }

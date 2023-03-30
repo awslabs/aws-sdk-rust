@@ -22,6 +22,7 @@ impl CreateEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
                 type Output = std::result::Result<crate::output::CreateEndpointOutput, crate::error::CreateEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_endpoint_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
                 type Output = std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_endpoint_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ListEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
                 type Output = std::result::Result<crate::output::ListEndpointsOutput, crate::error::ListEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_endpoints_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListSharedEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for ListSharedEndpoints {
                 type Output = std::result::Result<crate::output::ListSharedEndpointsOutput, crate::error::ListSharedEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_shared_endpoints_error(response)
                      } else {

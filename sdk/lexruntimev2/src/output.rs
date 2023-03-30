@@ -37,6 +37,7 @@ pub struct RecognizeUtteranceOutput  {
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl RecognizeUtteranceOutput {
     /// <p>Indicates whether the input mode to the operation was text or speech. </p>
@@ -84,6 +85,11 @@ impl RecognizeUtteranceOutput {
         &self.audio_stream
     }
 }
+impl aws_http::request_id::RequestId for RecognizeUtteranceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
 pub mod recognize_utterance_output {
     
@@ -100,6 +106,7 @@ pub mod recognize_utterance_output {
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) input_transcript: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the input mode to the operation was text or speech. </p>
@@ -199,6 +206,15 @@ pub mod recognize_utterance_output {
         pub fn set_audio_stream(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
             self.audio_stream = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
         pub fn build(self) -> crate::output::RecognizeUtteranceOutput {
             crate::output::RecognizeUtteranceOutput {
@@ -221,6 +237,7 @@ pub mod recognize_utterance_output {
                 audio_stream: self.audio_stream
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -255,6 +272,7 @@ pub struct RecognizeTextOutput  {
     /// <p>The identifier of the session in use.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RecognizeTextOutput {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
@@ -280,6 +298,11 @@ impl RecognizeTextOutput {
         self.session_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RecognizeTextOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
 pub mod recognize_text_output {
     
@@ -292,6 +315,7 @@ pub mod recognize_text_output {
         pub(crate) interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
         pub(crate) request_attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) session_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `messages`.
@@ -361,6 +385,15 @@ pub mod recognize_text_output {
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
         pub fn build(self) -> crate::output::RecognizeTextOutput {
             crate::output::RecognizeTextOutput {
@@ -374,6 +407,7 @@ pub mod recognize_text_output {
                 ,
                 session_id: self.session_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,6 +443,7 @@ pub struct PutSessionOutput  {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl PutSessionOutput {
     /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
@@ -437,6 +472,11 @@ impl PutSessionOutput {
         &self.audio_stream
     }
 }
+impl aws_http::request_id::RequestId for PutSessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput).
 pub mod put_session_output {
     
@@ -450,6 +490,7 @@ pub mod put_session_output {
         pub(crate) request_attributes: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
@@ -508,6 +549,15 @@ pub mod put_session_output {
         pub fn set_audio_stream(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
             self.audio_stream = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSessionOutput`](crate::output::PutSessionOutput).
         pub fn build(self) -> crate::output::PutSessionOutput {
             crate::output::PutSessionOutput {
@@ -524,6 +574,7 @@ pub mod put_session_output {
                 audio_stream: self.audio_stream
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -555,6 +606,7 @@ pub struct GetSessionOutput  {
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     #[doc(hidden)]
     pub session_state: std::option::Option<crate::model::SessionState>,
+    _request_id: Option<String>,
 }
 impl GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
@@ -576,6 +628,11 @@ impl GetSessionOutput {
         self.session_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput).
 pub mod get_session_output {
     
@@ -587,6 +644,7 @@ pub mod get_session_output {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
         pub(crate) interpretations: std::option::Option<std::vec::Vec<crate::model::Interpretation>>,
         pub(crate) session_state: std::option::Option<crate::model::SessionState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the returned session.</p>
@@ -641,6 +699,15 @@ pub mod get_session_output {
         pub fn set_session_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
             self.session_state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput).
         pub fn build(self) -> crate::output::GetSessionOutput {
             crate::output::GetSessionOutput {
@@ -652,6 +719,7 @@ pub mod get_session_output {
                 ,
                 session_state: self.session_state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -681,6 +749,7 @@ pub struct DeleteSessionOutput  {
     /// <p>The identifier of the deleted session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteSessionOutput {
     /// <p>The identifier of the bot that contained the session data.</p>
@@ -700,6 +769,11 @@ impl DeleteSessionOutput {
         self.session_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSessionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
 pub mod delete_session_output {
     
@@ -711,6 +785,7 @@ pub mod delete_session_output {
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the bot that contained the session data.</p>
@@ -749,6 +824,15 @@ pub mod delete_session_output {
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
         pub fn build(self) -> crate::output::DeleteSessionOutput {
             crate::output::DeleteSessionOutput {
@@ -760,6 +844,7 @@ pub mod delete_session_output {
                 ,
                 session_id: self.session_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

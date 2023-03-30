@@ -15,15 +15,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Indicates that an error has occurred while performing a validate operation.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,20 +35,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePipeError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreatePipeError> for Error {
     fn from(err: crate::error::CreatePipeError) -> Self {
-        match err.kind {
-            crate::error::CreatePipeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreatePipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::CreatePipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreatePipeErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreatePipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreatePipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreatePipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreatePipeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreatePipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreatePipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreatePipeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreatePipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreatePipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreatePipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -63,19 +61,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePipeError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeletePipeError> for Error {
     fn from(err: crate::error::DeletePipeError) -> Self {
-        match err.kind {
-            crate::error::DeletePipeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeletePipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::DeletePipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeletePipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeletePipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeletePipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeletePipeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeletePipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DeletePipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeletePipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeletePipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeletePipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -83,18 +86,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePipeError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribePipeError> for Error {
     fn from(err: crate::error::DescribePipeError) -> Self {
-        match err.kind {
-            crate::error::DescribePipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::DescribePipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DescribePipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribePipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribePipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribePipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribePipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribePipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribePipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribePipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -102,17 +110,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPipesError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPipesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListPipesError> for Error {
     fn from(err: crate::error::ListPipesError) -> Self {
-        match err.kind {
-            crate::error::ListPipesErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::ListPipesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListPipesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListPipesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListPipesError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListPipesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListPipesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListPipesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -120,17 +133,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -138,19 +156,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartPipeError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartPipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartPipeError> for Error {
     fn from(err: crate::error::StartPipeError) -> Self {
-        match err.kind {
-            crate::error::StartPipeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartPipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::StartPipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StartPipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartPipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartPipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartPipeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StartPipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::StartPipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartPipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartPipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartPipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -158,19 +181,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopPipeError, R>> 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopPipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StopPipeError> for Error {
     fn from(err: crate::error::StopPipeError) -> Self {
-        match err.kind {
-            crate::error::StopPipeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StopPipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::StopPipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StopPipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StopPipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopPipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StopPipeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StopPipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::StopPipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopPipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StopPipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StopPipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -178,17 +206,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -196,17 +229,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -214,21 +252,39 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePipeError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePipeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdatePipeError> for Error {
     fn from(err: crate::error::UpdatePipeError) -> Self {
-        match err.kind {
-            crate::error::UpdatePipeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdatePipeErrorKind::InternalException(inner) => Error::InternalException(inner),
-            crate::error::UpdatePipeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdatePipeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdatePipeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdatePipeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdatePipeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdatePipeError::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdatePipeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdatePipeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdatePipeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdatePipeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

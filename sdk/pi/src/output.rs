@@ -9,6 +9,7 @@ pub struct ListAvailableResourceMetricsOutput  {
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAvailableResourceMetricsOutput {
     /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
@@ -20,6 +21,11 @@ impl ListAvailableResourceMetricsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAvailableResourceMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
 pub mod list_available_resource_metrics_output {
     
@@ -29,6 +35,7 @@ pub mod list_available_resource_metrics_output {
     pub struct Builder {
         pub(crate) metrics: std::option::Option<std::vec::Vec<crate::model::ResponseResourceMetric>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `metrics`.
@@ -55,6 +62,15 @@ pub mod list_available_resource_metrics_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
         pub fn build(self) -> crate::output::ListAvailableResourceMetricsOutput {
             crate::output::ListAvailableResourceMetricsOutput {
@@ -62,6 +78,7 @@ pub mod list_available_resource_metrics_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -85,6 +102,7 @@ pub struct ListAvailableResourceDimensionsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAvailableResourceDimensionsOutput {
     /// <p>The dimension information returned for requested metric types.</p>
@@ -96,6 +114,11 @@ impl ListAvailableResourceDimensionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAvailableResourceDimensionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
 pub mod list_available_resource_dimensions_output {
     
@@ -105,6 +128,7 @@ pub mod list_available_resource_dimensions_output {
     pub struct Builder {
         pub(crate) metric_dimensions: std::option::Option<std::vec::Vec<crate::model::MetricDimensionGroups>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `metric_dimensions`.
@@ -131,6 +155,15 @@ pub mod list_available_resource_dimensions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
         pub fn build(self) -> crate::output::ListAvailableResourceDimensionsOutput {
             crate::output::ListAvailableResourceDimensionsOutput {
@@ -138,6 +171,7 @@ pub mod list_available_resource_dimensions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -170,6 +204,7 @@ pub struct GetResourceMetricsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourceMetricsOutput {
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
@@ -193,6 +228,11 @@ impl GetResourceMetricsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
 pub mod get_resource_metrics_output {
     
@@ -205,6 +245,7 @@ pub mod get_resource_metrics_output {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) metric_list: std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
@@ -258,6 +299,15 @@ pub mod get_resource_metrics_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
         pub fn build(self) -> crate::output::GetResourceMetricsOutput {
             crate::output::GetResourceMetricsOutput {
@@ -271,6 +321,7 @@ pub mod get_resource_metrics_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -294,6 +345,7 @@ pub struct GetResourceMetadataOutput  {
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
     #[doc(hidden)]
     pub features: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FeatureMetadata>>,
+    _request_id: Option<String>,
 }
 impl GetResourceMetadataOutput {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
@@ -305,6 +357,11 @@ impl GetResourceMetadataOutput {
         self.features.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceMetadataOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
 pub mod get_resource_metadata_output {
     
@@ -314,6 +371,7 @@ pub mod get_resource_metadata_output {
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) features: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FeatureMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
@@ -340,6 +398,15 @@ pub mod get_resource_metadata_output {
         pub fn set_features(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FeatureMetadata>>) -> Self {
             self.features = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
         pub fn build(self) -> crate::output::GetResourceMetadataOutput {
             crate::output::GetResourceMetadataOutput {
@@ -347,6 +414,7 @@ pub mod get_resource_metadata_output {
                 ,
                 features: self.features
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -367,6 +435,7 @@ pub struct GetDimensionKeyDetailsOutput  {
     /// <p>The details for the requested dimensions.</p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
+    _request_id: Option<String>,
 }
 impl GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
@@ -374,6 +443,11 @@ impl GetDimensionKeyDetailsOutput {
         self.dimensions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDimensionKeyDetailsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
 pub mod get_dimension_key_details_output {
     
@@ -382,6 +456,7 @@ pub mod get_dimension_key_details_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `dimensions`.
@@ -399,11 +474,21 @@ pub mod get_dimension_key_details_output {
         pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>) -> Self {
             self.dimensions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
         pub fn build(self) -> crate::output::GetDimensionKeyDetailsOutput {
             crate::output::GetDimensionKeyDetailsOutput {
                 dimensions: self.dimensions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -436,6 +521,7 @@ pub struct DescribeDimensionKeysOutput  {
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDimensionKeysOutput {
     /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
@@ -459,6 +545,11 @@ impl DescribeDimensionKeysOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDimensionKeysOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
 pub mod describe_dimension_keys_output {
     
@@ -471,6 +562,7 @@ pub mod describe_dimension_keys_output {
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
         pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
@@ -530,6 +622,15 @@ pub mod describe_dimension_keys_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
         pub fn build(self) -> crate::output::DescribeDimensionKeysOutput {
             crate::output::DescribeDimensionKeysOutput {
@@ -543,6 +644,7 @@ pub mod describe_dimension_keys_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }

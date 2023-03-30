@@ -22,6 +22,7 @@ impl CreateEnvironmentEC2 {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentEC2 {
                 type Output = std::result::Result<crate::output::CreateEnvironmentEc2Output, crate::error::CreateEnvironmentEC2Error>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_environment_ec2_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateEnvironmentMembership {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentMembership {
                 type Output = std::result::Result<crate::output::CreateEnvironmentMembershipOutput, crate::error::CreateEnvironmentMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_environment_membership_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteEnvironment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
                 type Output = std::result::Result<crate::output::DeleteEnvironmentOutput, crate::error::DeleteEnvironmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_environment_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteEnvironmentMembership {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironmentMembership {
                 type Output = std::result::Result<crate::output::DeleteEnvironmentMembershipOutput, crate::error::DeleteEnvironmentMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_environment_membership_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeEnvironmentMemberships {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironmentMemberships {
                 type Output = std::result::Result<crate::output::DescribeEnvironmentMembershipsOutput, crate::error::DescribeEnvironmentMembershipsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_environment_memberships_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeEnvironments {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironments {
                 type Output = std::result::Result<crate::output::DescribeEnvironmentsOutput, crate::error::DescribeEnvironmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_environments_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeEnvironmentStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironmentStatus {
                 type Output = std::result::Result<crate::output::DescribeEnvironmentStatusOutput, crate::error::DescribeEnvironmentStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_environment_status_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListEnvironments {
 impl aws_smithy_http::response::ParseStrictResponse for ListEnvironments {
                 type Output = std::result::Result<crate::output::ListEnvironmentsOutput, crate::error::ListEnvironmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_environments_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UpdateEnvironment {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEnvironment {
                 type Output = std::result::Result<crate::output::UpdateEnvironmentOutput, crate::error::UpdateEnvironmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_environment_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UpdateEnvironmentMembership {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEnvironmentMembership {
                 type Output = std::result::Result<crate::output::UpdateEnvironmentMembershipOutput, crate::error::UpdateEnvironmentMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_environment_membership_error(response)
                      } else {

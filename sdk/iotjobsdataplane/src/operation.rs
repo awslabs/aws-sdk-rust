@@ -22,6 +22,7 @@ impl DescribeJobExecution {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobExecution {
                 type Output = std::result::Result<crate::output::DescribeJobExecutionOutput, crate::error::DescribeJobExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_execution_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetPendingJobExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions {
                 type Output = std::result::Result<crate::output::GetPendingJobExecutionsOutput, crate::error::GetPendingJobExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pending_job_executions_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl StartNextPendingJobExecution {
 impl aws_smithy_http::response::ParseStrictResponse for StartNextPendingJobExecution {
                 type Output = std::result::Result<crate::output::StartNextPendingJobExecutionOutput, crate::error::StartNextPendingJobExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_next_pending_job_execution_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl UpdateJobExecution {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateJobExecution {
                 type Output = std::result::Result<crate::output::UpdateJobExecutionOutput, crate::error::UpdateJobExecutionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_job_execution_error(response)
                      } else {

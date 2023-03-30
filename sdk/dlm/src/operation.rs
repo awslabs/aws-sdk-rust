@@ -22,6 +22,7 @@ impl CreateLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLifecyclePolicy {
                 type Output = std::result::Result<crate::output::CreateLifecyclePolicyOutput, crate::error::CreateLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_lifecycle_policy_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
                 type Output = std::result::Result<crate::output::DeleteLifecyclePolicyOutput, crate::error::DeleteLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_lifecycle_policy_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetLifecyclePolicies {
 impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicies {
                 type Output = std::result::Result<crate::output::GetLifecyclePoliciesOutput, crate::error::GetLifecyclePoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lifecycle_policies_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
                 type Output = std::result::Result<crate::output::GetLifecyclePolicyOutput, crate::error::GetLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lifecycle_policy_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl UpdateLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLifecyclePolicy {
                 type Output = std::result::Result<crate::output::UpdateLifecyclePolicyOutput, crate::error::UpdateLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_lifecycle_policy_error(response)
                      } else {

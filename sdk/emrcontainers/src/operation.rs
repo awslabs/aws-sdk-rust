@@ -22,6 +22,7 @@ impl CancelJobRun {
 impl aws_smithy_http::response::ParseStrictResponse for CancelJobRun {
                 type Output = std::result::Result<crate::output::CancelJobRunOutput, crate::error::CancelJobRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_job_run_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateJobTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateJobTemplate {
                 type Output = std::result::Result<crate::output::CreateJobTemplateOutput, crate::error::CreateJobTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_job_template_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateManagedEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for CreateManagedEndpoint {
                 type Output = std::result::Result<crate::output::CreateManagedEndpointOutput, crate::error::CreateManagedEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_managed_endpoint_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateVirtualCluster {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualCluster {
                 type Output = std::result::Result<crate::output::CreateVirtualClusterOutput, crate::error::CreateVirtualClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_virtual_cluster_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteJobTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTemplate {
                 type Output = std::result::Result<crate::output::DeleteJobTemplateOutput, crate::error::DeleteJobTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_job_template_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteManagedEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteManagedEndpoint {
                 type Output = std::result::Result<crate::output::DeleteManagedEndpointOutput, crate::error::DeleteManagedEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_managed_endpoint_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteVirtualCluster {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualCluster {
                 type Output = std::result::Result<crate::output::DeleteVirtualClusterOutput, crate::error::DeleteVirtualClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_virtual_cluster_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeJobRun {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobRun {
                 type Output = std::result::Result<crate::output::DescribeJobRunOutput, crate::error::DescribeJobRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_run_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeJobTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeJobTemplate {
                 type Output = std::result::Result<crate::output::DescribeJobTemplateOutput, crate::error::DescribeJobTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_job_template_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeManagedEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedEndpoint {
                 type Output = std::result::Result<crate::output::DescribeManagedEndpointOutput, crate::error::DescribeManagedEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_managed_endpoint_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeVirtualCluster {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualCluster {
                 type Output = std::result::Result<crate::output::DescribeVirtualClusterOutput, crate::error::DescribeVirtualClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_virtual_cluster_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListJobRuns {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobRuns {
                 type Output = std::result::Result<crate::output::ListJobRunsOutput, crate::error::ListJobRunsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_job_runs_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListJobTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
                 type Output = std::result::Result<crate::output::ListJobTemplatesOutput, crate::error::ListJobTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_job_templates_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListManagedEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for ListManagedEndpoints {
                 type Output = std::result::Result<crate::output::ListManagedEndpointsOutput, crate::error::ListManagedEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_managed_endpoints_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListVirtualClusters {
 impl aws_smithy_http::response::ParseStrictResponse for ListVirtualClusters {
                 type Output = std::result::Result<crate::output::ListVirtualClustersOutput, crate::error::ListVirtualClustersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_virtual_clusters_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl StartJobRun {
 impl aws_smithy_http::response::ParseStrictResponse for StartJobRun {
                 type Output = std::result::Result<crate::output::StartJobRunOutput, crate::error::StartJobRunError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_job_run_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

@@ -31,15 +31,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or TIFF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -66,24 +59,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AnalyzeDocumentErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeDocumentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AnalyzeDocumentError> for Error {
     fn from(err: crate::error::AnalyzeDocumentError) -> Self {
-        match err.kind {
-            crate::error::AnalyzeDocumentErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AnalyzeDocumentErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::AnalyzeDocumentErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::AnalyzeDocumentErrorKind::HumanLoopQuotaExceededException(inner) => Error::HumanLoopQuotaExceededException(inner),
-            crate::error::AnalyzeDocumentErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::AnalyzeDocumentErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AnalyzeDocumentErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::AnalyzeDocumentErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::AnalyzeDocumentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AnalyzeDocumentErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::AnalyzeDocumentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AnalyzeDocumentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AnalyzeDocumentError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::AnalyzeDocumentError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::AnalyzeDocumentError::HumanLoopQuotaExceededException(inner) => Error::HumanLoopQuotaExceededException(inner),
+            crate::error::AnalyzeDocumentError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::AnalyzeDocumentError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::AnalyzeDocumentError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::AnalyzeDocumentError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::AnalyzeDocumentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::AnalyzeDocumentError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::AnalyzeDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -91,23 +89,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AnalyzeExpenseError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeExpenseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AnalyzeExpenseError> for Error {
     fn from(err: crate::error::AnalyzeExpenseError) -> Self {
-        match err.kind {
-            crate::error::AnalyzeExpenseErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AnalyzeExpenseErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::AnalyzeExpenseErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::AnalyzeExpenseErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::AnalyzeExpenseErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AnalyzeExpenseErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::AnalyzeExpenseErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AnalyzeExpenseErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::AnalyzeExpenseErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AnalyzeExpenseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AnalyzeExpenseError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::AnalyzeExpenseError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::AnalyzeExpenseError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::AnalyzeExpenseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::AnalyzeExpenseError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::AnalyzeExpenseError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::AnalyzeExpenseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::AnalyzeExpenseError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::AnalyzeExpenseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -115,23 +118,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AnalyzeIDError> for Error {
     fn from(err: crate::error::AnalyzeIDError) -> Self {
-        match err.kind {
-            crate::error::AnalyzeIDErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AnalyzeIDErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::AnalyzeIDErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::AnalyzeIDErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::AnalyzeIDErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AnalyzeIDErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::AnalyzeIDErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::AnalyzeIDErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AnalyzeIDErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::AnalyzeIDErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AnalyzeIDError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AnalyzeIDError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::AnalyzeIDError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::AnalyzeIDError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::AnalyzeIDError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::AnalyzeIDError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::AnalyzeIDError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::AnalyzeIDError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::AnalyzeIDError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::AnalyzeIDError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -139,23 +147,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetectDocumentTextE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectDocumentTextError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DetectDocumentTextError> for Error {
     fn from(err: crate::error::DetectDocumentTextError) -> Self {
-        match err.kind {
-            crate::error::DetectDocumentTextErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetectDocumentTextErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::DetectDocumentTextErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::DetectDocumentTextErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DetectDocumentTextErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DetectDocumentTextErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::DetectDocumentTextErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::DetectDocumentTextErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DetectDocumentTextErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::DetectDocumentTextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DetectDocumentTextError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DetectDocumentTextError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::DetectDocumentTextError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::DetectDocumentTextError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::DetectDocumentTextError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::DetectDocumentTextError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::DetectDocumentTextError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::DetectDocumentTextError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DetectDocumentTextError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::DetectDocumentTextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -163,22 +176,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDocumentAnalysis
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDocumentAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDocumentAnalysisError> for Error {
     fn from(err: crate::error::GetDocumentAnalysisError) -> Self {
-        match err.kind {
-            crate::error::GetDocumentAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetDocumentAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDocumentAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetDocumentAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetDocumentAnalysisError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetDocumentAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetDocumentAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetDocumentAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetDocumentAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetDocumentAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetDocumentAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -186,22 +204,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDocumentTextDete
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDocumentTextDetectionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDocumentTextDetectionError> for Error {
     fn from(err: crate::error::GetDocumentTextDetectionError) -> Self {
-        match err.kind {
-            crate::error::GetDocumentTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDocumentTextDetectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetDocumentTextDetectionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetDocumentTextDetectionError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetDocumentTextDetectionError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetDocumentTextDetectionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetDocumentTextDetectionError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetDocumentTextDetectionError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetDocumentTextDetectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetDocumentTextDetectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -209,22 +232,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetExpenseAnalysisError> for Error {
     fn from(err: crate::error::GetExpenseAnalysisError) -> Self {
-        match err.kind {
-            crate::error::GetExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetExpenseAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetExpenseAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetExpenseAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetExpenseAnalysisError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetExpenseAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetExpenseAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetExpenseAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetExpenseAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetExpenseAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetExpenseAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -232,22 +260,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetLendingAnalysisError> for Error {
     fn from(err: crate::error::GetLendingAnalysisError) -> Self {
-        match err.kind {
-            crate::error::GetLendingAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLendingAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetLendingAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
-            crate::error::GetLendingAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::GetLendingAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetLendingAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::GetLendingAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetLendingAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetLendingAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetLendingAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetLendingAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetLendingAnalysisError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetLendingAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetLendingAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetLendingAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetLendingAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetLendingAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetLendingAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -255,22 +288,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisS
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLendingAnalysisSummaryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetLendingAnalysisSummaryError> for Error {
     fn from(err: crate::error::GetLendingAnalysisSummaryError) -> Self {
-        match err.kind {
-            crate::error::GetLendingAnalysisSummaryErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetLendingAnalysisSummaryErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetLendingAnalysisSummaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::GetLendingAnalysisSummaryError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::GetLendingAnalysisSummaryError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::error::GetLendingAnalysisSummaryError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::GetLendingAnalysisSummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetLendingAnalysisSummaryError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::GetLendingAnalysisSummaryError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::GetLendingAnalysisSummaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetLendingAnalysisSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -278,26 +316,31 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDocumentAnalys
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartDocumentAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartDocumentAnalysisError> for Error {
     fn from(err: crate::error::StartDocumentAnalysisError) -> Self {
-        match err.kind {
-            crate::error::StartDocumentAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StartDocumentAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::StartDocumentAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartDocumentAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartDocumentAnalysisError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::StartDocumentAnalysisError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::StartDocumentAnalysisError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartDocumentAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartDocumentAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::StartDocumentAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartDocumentAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartDocumentAnalysisError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartDocumentAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartDocumentAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartDocumentAnalysisError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::StartDocumentAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -305,26 +348,31 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDocumentTextDe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartDocumentTextDetectionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartDocumentTextDetectionError> for Error {
     fn from(err: crate::error::StartDocumentTextDetectionError) -> Self {
-        match err.kind {
-            crate::error::StartDocumentTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::StartDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartDocumentTextDetectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartDocumentTextDetectionError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::StartDocumentTextDetectionError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::StartDocumentTextDetectionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartDocumentTextDetectionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartDocumentTextDetectionError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::StartDocumentTextDetectionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartDocumentTextDetectionError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartDocumentTextDetectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartDocumentTextDetectionError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartDocumentTextDetectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartDocumentTextDetectionError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::StartDocumentTextDetectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -332,26 +380,31 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartExpenseAnalysisError> for Error {
     fn from(err: crate::error::StartExpenseAnalysisError) -> Self {
-        match err.kind {
-            crate::error::StartExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StartExpenseAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::StartExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartExpenseAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartExpenseAnalysisError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::StartExpenseAnalysisError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::StartExpenseAnalysisError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartExpenseAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartExpenseAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::StartExpenseAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartExpenseAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartExpenseAnalysisError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartExpenseAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartExpenseAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartExpenseAnalysisError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::StartExpenseAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -359,28 +412,54 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartLendingAnalysisError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartLendingAnalysisError> for Error {
     fn from(err: crate::error::StartLendingAnalysisError) -> Self {
-        match err.kind {
-            crate::error::StartLendingAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartLendingAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
-            crate::error::StartLendingAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
-            crate::error::StartLendingAnalysisErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::StartLendingAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StartLendingAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
-            crate::error::StartLendingAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::StartLendingAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
-            crate::error::StartLendingAnalysisErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::StartLendingAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
-            crate::error::StartLendingAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartLendingAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
-            crate::error::StartLendingAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartLendingAnalysisError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::StartLendingAnalysisError::BadDocumentException(inner) => Error::BadDocumentException(inner),
+            crate::error::StartLendingAnalysisError::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+            crate::error::StartLendingAnalysisError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::StartLendingAnalysisError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::StartLendingAnalysisError::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+            crate::error::StartLendingAnalysisError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::StartLendingAnalysisError::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+            crate::error::StartLendingAnalysisError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::StartLendingAnalysisError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+            crate::error::StartLendingAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartLendingAnalysisError::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+            crate::error::StartLendingAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::BadDocumentException(e) => e.request_id(),
+            Self::DocumentTooLargeException(e) => e.request_id(),
+            Self::HumanLoopQuotaExceededException(e) => e.request_id(),
+            Self::IdempotentParameterMismatchException(e) => e.request_id(),
+            Self::InternalServerError(e) => e.request_id(),
+            Self::InvalidJobIdException(e) => e.request_id(),
+            Self::InvalidKmsKeyException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::InvalidS3ObjectException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ProvisionedThroughputExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::UnsupportedDocumentException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

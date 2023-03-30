@@ -22,6 +22,7 @@ impl CancelZonalShift {
 impl aws_smithy_http::response::ParseStrictResponse for CancelZonalShift {
                 type Output = std::result::Result<crate::output::CancelZonalShiftOutput, crate::error::CancelZonalShiftError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_zonal_shift_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetManagedResource {
 impl aws_smithy_http::response::ParseStrictResponse for GetManagedResource {
                 type Output = std::result::Result<crate::output::GetManagedResourceOutput, crate::error::GetManagedResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_managed_resource_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ListManagedResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListManagedResources {
                 type Output = std::result::Result<crate::output::ListManagedResourcesOutput, crate::error::ListManagedResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_managed_resources_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListZonalShifts {
 impl aws_smithy_http::response::ParseStrictResponse for ListZonalShifts {
                 type Output = std::result::Result<crate::output::ListZonalShiftsOutput, crate::error::ListZonalShiftsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_zonal_shifts_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl StartZonalShift {
 impl aws_smithy_http::response::ParseStrictResponse for StartZonalShift {
                 type Output = std::result::Result<crate::output::StartZonalShiftOutput, crate::error::StartZonalShiftError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_start_zonal_shift_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl UpdateZonalShift {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateZonalShift {
                 type Output = std::result::Result<crate::output::UpdateZonalShiftOutput, crate::error::UpdateZonalShiftError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_zonal_shift_error(response)
                      } else {

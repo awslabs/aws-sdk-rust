@@ -24,6 +24,7 @@ pub struct SendCommandOutput  {
     /// <p>Contains the details of the fetched page.</p>
     #[doc(hidden)]
     pub fetch_page: std::option::Option<crate::model::FetchPageResult>,
+    _request_id: Option<String>,
 }
 impl SendCommandOutput {
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
@@ -55,6 +56,11 @@ impl SendCommandOutput {
         self.fetch_page.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SendCommandOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendCommandOutput`](crate::output::SendCommandOutput).
 pub mod send_command_output {
     
@@ -69,6 +75,7 @@ pub mod send_command_output {
         pub(crate) abort_transaction: std::option::Option<crate::model::AbortTransactionResult>,
         pub(crate) execute_statement: std::option::Option<crate::model::ExecuteStatementResult>,
         pub(crate) fetch_page: std::option::Option<crate::model::FetchPageResult>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
@@ -134,6 +141,15 @@ pub mod send_command_output {
         pub fn set_fetch_page(mut self, input: std::option::Option<crate::model::FetchPageResult>) -> Self {
             self.fetch_page = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendCommandOutput`](crate::output::SendCommandOutput).
         pub fn build(self) -> crate::output::SendCommandOutput {
             crate::output::SendCommandOutput {
@@ -151,6 +167,7 @@ pub mod send_command_output {
                 ,
                 fetch_page: self.fetch_page
                 ,
+                _request_id: self._request_id,
             }
         }
     }

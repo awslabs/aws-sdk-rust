@@ -22,6 +22,7 @@ impl CreateProject {
 impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
                 type Output = std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_project_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteProject {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
                 type Output = std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_project_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeBundle {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBundle {
                 type Output = std::result::Result<crate::output::DescribeBundleOutput, crate::error::DescribeBundleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_bundle_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeProject {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
                 type Output = std::result::Result<crate::output::DescribeProjectOutput, crate::error::DescribeProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_project_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ExportBundle {
 impl aws_smithy_http::response::ParseStrictResponse for ExportBundle {
                 type Output = std::result::Result<crate::output::ExportBundleOutput, crate::error::ExportBundleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_bundle_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ExportProject {
 impl aws_smithy_http::response::ParseStrictResponse for ExportProject {
                 type Output = std::result::Result<crate::output::ExportProjectOutput, crate::error::ExportProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_project_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListBundles {
 impl aws_smithy_http::response::ParseStrictResponse for ListBundles {
                 type Output = std::result::Result<crate::output::ListBundlesOutput, crate::error::ListBundlesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_bundles_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListProjects {
 impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
                 type Output = std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_projects_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl UpdateProject {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
                 type Output = std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_project_error(response)
                      } else {

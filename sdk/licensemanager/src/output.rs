@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServiceSettingsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateServiceSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
 pub mod update_service_settings_output {
     
@@ -11,11 +17,22 @@ pub mod update_service_settings_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
         pub fn build(self) -> crate::output::UpdateServiceSettingsOutput {
             crate::output::UpdateServiceSettingsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateServiceSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLicenseSpecificationsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
 pub mod update_license_specifications_for_resource_output {
     
@@ -41,11 +64,22 @@ pub mod update_license_specifications_for_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
         pub fn build(self) -> crate::output::UpdateLicenseSpecificationsForResourceOutput {
             crate::output::UpdateLicenseSpecificationsForResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UpdateLicenseSpecificationsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLicenseManagerReportGeneratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
 pub mod update_license_manager_report_generator_output {
     
@@ -71,11 +111,22 @@ pub mod update_license_manager_report_generator_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::UpdateLicenseManagerReportGeneratorOutput {
             crate::output::UpdateLicenseManagerReportGeneratorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl UpdateLicenseManagerReportGeneratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
 pub mod update_license_configuration_output {
     
@@ -101,11 +158,22 @@ pub mod update_license_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLicenseConfigurationOutput {
             crate::output::UpdateLicenseConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,7 +191,13 @@ impl UpdateLicenseConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -131,11 +205,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,7 +238,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -161,11 +252,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -192,6 +294,7 @@ pub struct RejectGrantOutput  {
     /// <p>Grant version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RejectGrantOutput {
     /// <p>Grant ARN.</p>
@@ -207,6 +310,11 @@ impl RejectGrantOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RejectGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RejectGrantOutput`](crate::output::RejectGrantOutput).
 pub mod reject_grant_output {
     
@@ -217,6 +325,7 @@ pub mod reject_grant_output {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant ARN.</p>
@@ -246,6 +355,15 @@ pub mod reject_grant_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RejectGrantOutput`](crate::output::RejectGrantOutput).
         pub fn build(self) -> crate::output::RejectGrantOutput {
             crate::output::RejectGrantOutput {
@@ -255,6 +373,7 @@ pub mod reject_grant_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -278,6 +397,7 @@ pub struct ListUsageForLicenseConfigurationOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListUsageForLicenseConfigurationOutput {
     /// <p>Information about the license configurations.</p>
@@ -289,6 +409,11 @@ impl ListUsageForLicenseConfigurationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListUsageForLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
 pub mod list_usage_for_license_configuration_output {
     
@@ -298,6 +423,7 @@ pub mod list_usage_for_license_configuration_output {
     pub struct Builder {
         pub(crate) license_configuration_usage_list: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_configuration_usage_list`.
@@ -324,6 +450,15 @@ pub mod list_usage_for_license_configuration_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::ListUsageForLicenseConfigurationOutput {
             crate::output::ListUsageForLicenseConfigurationOutput {
@@ -331,6 +466,7 @@ pub mod list_usage_for_license_configuration_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,6 +490,7 @@ pub struct ListTokensOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTokensOutput {
     /// <p>Received token details.</p>
@@ -365,6 +502,11 @@ impl ListTokensOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTokensOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTokensOutput`](crate::output::ListTokensOutput).
 pub mod list_tokens_output {
     
@@ -374,6 +516,7 @@ pub mod list_tokens_output {
     pub struct Builder {
         pub(crate) tokens: std::option::Option<std::vec::Vec<crate::model::TokenData>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tokens`.
@@ -400,6 +543,15 @@ pub mod list_tokens_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTokensOutput`](crate::output::ListTokensOutput).
         pub fn build(self) -> crate::output::ListTokensOutput {
             crate::output::ListTokensOutput {
@@ -407,6 +559,7 @@ pub mod list_tokens_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -427,6 +580,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
@@ -434,6 +588,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -442,6 +601,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -459,11 +619,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -487,6 +657,7 @@ pub struct ListResourceInventoryOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
@@ -498,6 +669,11 @@ impl ListResourceInventoryOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourceInventoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
 pub mod list_resource_inventory_output {
     
@@ -507,6 +683,7 @@ pub mod list_resource_inventory_output {
     pub struct Builder {
         pub(crate) resource_inventory_list: std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_inventory_list`.
@@ -533,6 +710,15 @@ pub mod list_resource_inventory_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
         pub fn build(self) -> crate::output::ListResourceInventoryOutput {
             crate::output::ListResourceInventoryOutput {
@@ -540,6 +726,7 @@ pub mod list_resource_inventory_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -563,6 +750,7 @@ pub struct ListReceivedLicensesForOrganizationOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReceivedLicensesForOrganizationOutput {
     /// <p>Lists the licenses the organization has received.</p>
@@ -574,6 +762,11 @@ impl ListReceivedLicensesForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReceivedLicensesForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
 pub mod list_received_licenses_for_organization_output {
     
@@ -583,6 +776,7 @@ pub mod list_received_licenses_for_organization_output {
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `licenses`.
@@ -609,6 +803,15 @@ pub mod list_received_licenses_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
         pub fn build(self) -> crate::output::ListReceivedLicensesForOrganizationOutput {
             crate::output::ListReceivedLicensesForOrganizationOutput {
@@ -616,6 +819,7 @@ pub mod list_received_licenses_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -639,6 +843,7 @@ pub struct ListReceivedLicensesOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReceivedLicensesOutput {
     /// <p>Received license details.</p>
@@ -650,6 +855,11 @@ impl ListReceivedLicensesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReceivedLicensesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
 pub mod list_received_licenses_output {
     
@@ -659,6 +869,7 @@ pub mod list_received_licenses_output {
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `licenses`.
@@ -685,6 +896,15 @@ pub mod list_received_licenses_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
         pub fn build(self) -> crate::output::ListReceivedLicensesOutput {
             crate::output::ListReceivedLicensesOutput {
@@ -692,6 +912,7 @@ pub mod list_received_licenses_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -715,6 +936,7 @@ pub struct ListReceivedGrantsForOrganizationOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReceivedGrantsForOrganizationOutput {
     /// <p>Lists the grants the organization has received.</p>
@@ -726,6 +948,11 @@ impl ListReceivedGrantsForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReceivedGrantsForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
 pub mod list_received_grants_for_organization_output {
     
@@ -735,6 +962,7 @@ pub mod list_received_grants_for_organization_output {
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `grants`.
@@ -761,6 +989,15 @@ pub mod list_received_grants_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
         pub fn build(self) -> crate::output::ListReceivedGrantsForOrganizationOutput {
             crate::output::ListReceivedGrantsForOrganizationOutput {
@@ -768,6 +1005,7 @@ pub mod list_received_grants_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -791,6 +1029,7 @@ pub struct ListReceivedGrantsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReceivedGrantsOutput {
     /// <p>Received grant details.</p>
@@ -802,6 +1041,11 @@ impl ListReceivedGrantsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReceivedGrantsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
 pub mod list_received_grants_output {
     
@@ -811,6 +1055,7 @@ pub mod list_received_grants_output {
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `grants`.
@@ -837,6 +1082,15 @@ pub mod list_received_grants_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
         pub fn build(self) -> crate::output::ListReceivedGrantsOutput {
             crate::output::ListReceivedGrantsOutput {
@@ -844,6 +1098,7 @@ pub mod list_received_grants_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -867,6 +1122,7 @@ pub struct ListLicenseVersionsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicenseVersionsOutput {
     /// <p>License details.</p>
@@ -878,6 +1134,11 @@ impl ListLicenseVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicenseVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
 pub mod list_license_versions_output {
     
@@ -887,6 +1148,7 @@ pub mod list_license_versions_output {
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `licenses`.
@@ -913,6 +1175,15 @@ pub mod list_license_versions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
         pub fn build(self) -> crate::output::ListLicenseVersionsOutput {
             crate::output::ListLicenseVersionsOutput {
@@ -920,6 +1191,7 @@ pub mod list_license_versions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -943,6 +1215,7 @@ pub struct ListLicenseSpecificationsForResourceOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
@@ -954,6 +1227,11 @@ impl ListLicenseSpecificationsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicenseSpecificationsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
 pub mod list_license_specifications_for_resource_output {
     
@@ -963,6 +1241,7 @@ pub mod list_license_specifications_for_resource_output {
     pub struct Builder {
         pub(crate) license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_specifications`.
@@ -989,6 +1268,15 @@ pub mod list_license_specifications_for_resource_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
         pub fn build(self) -> crate::output::ListLicenseSpecificationsForResourceOutput {
             crate::output::ListLicenseSpecificationsForResourceOutput {
@@ -996,6 +1284,7 @@ pub mod list_license_specifications_for_resource_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1019,6 +1308,7 @@ pub struct ListLicensesOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicensesOutput {
     /// <p>License details.</p>
@@ -1030,6 +1320,11 @@ impl ListLicensesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicensesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicensesOutput`](crate::output::ListLicensesOutput).
 pub mod list_licenses_output {
     
@@ -1039,6 +1334,7 @@ pub mod list_licenses_output {
     pub struct Builder {
         pub(crate) licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `licenses`.
@@ -1065,6 +1361,15 @@ pub mod list_licenses_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicensesOutput`](crate::output::ListLicensesOutput).
         pub fn build(self) -> crate::output::ListLicensesOutput {
             crate::output::ListLicensesOutput {
@@ -1072,6 +1377,7 @@ pub mod list_licenses_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1095,6 +1401,7 @@ pub struct ListLicenseManagerReportGeneratorsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicenseManagerReportGeneratorsOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
@@ -1106,6 +1413,11 @@ impl ListLicenseManagerReportGeneratorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicenseManagerReportGeneratorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
 pub mod list_license_manager_report_generators_output {
     
@@ -1115,6 +1427,7 @@ pub mod list_license_manager_report_generators_output {
     pub struct Builder {
         pub(crate) report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `report_generators`.
@@ -1141,6 +1454,15 @@ pub mod list_license_manager_report_generators_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
         pub fn build(self) -> crate::output::ListLicenseManagerReportGeneratorsOutput {
             crate::output::ListLicenseManagerReportGeneratorsOutput {
@@ -1148,6 +1470,7 @@ pub mod list_license_manager_report_generators_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1171,6 +1494,7 @@ pub struct ListLicenseConversionTasksOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
@@ -1182,6 +1506,11 @@ impl ListLicenseConversionTasksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicenseConversionTasksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
 pub mod list_license_conversion_tasks_output {
     
@@ -1191,6 +1520,7 @@ pub mod list_license_conversion_tasks_output {
     pub struct Builder {
         pub(crate) license_conversion_tasks: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_conversion_tasks`.
@@ -1217,6 +1547,15 @@ pub mod list_license_conversion_tasks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
         pub fn build(self) -> crate::output::ListLicenseConversionTasksOutput {
             crate::output::ListLicenseConversionTasksOutput {
@@ -1224,6 +1563,7 @@ pub mod list_license_conversion_tasks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1247,6 +1587,7 @@ pub struct ListLicenseConfigurationsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLicenseConfigurationsOutput {
     /// <p>Information about the license configurations.</p>
@@ -1258,6 +1599,11 @@ impl ListLicenseConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLicenseConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
 pub mod list_license_configurations_output {
     
@@ -1267,6 +1613,7 @@ pub mod list_license_configurations_output {
     pub struct Builder {
         pub(crate) license_configurations: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_configurations`.
@@ -1293,6 +1640,15 @@ pub mod list_license_configurations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
         pub fn build(self) -> crate::output::ListLicenseConfigurationsOutput {
             crate::output::ListLicenseConfigurationsOutput {
@@ -1300,6 +1656,7 @@ pub mod list_license_configurations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1323,6 +1680,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
@@ -1334,6 +1692,11 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFailuresForLicenseConfigurationOperationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
 pub mod list_failures_for_license_configuration_operations_output {
     
@@ -1343,6 +1706,7 @@ pub mod list_failures_for_license_configuration_operations_output {
     pub struct Builder {
         pub(crate) license_operation_failure_list: std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_operation_failure_list`.
@@ -1369,6 +1733,15 @@ pub mod list_failures_for_license_configuration_operations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
         pub fn build(self) -> crate::output::ListFailuresForLicenseConfigurationOperationsOutput {
             crate::output::ListFailuresForLicenseConfigurationOperationsOutput {
@@ -1376,6 +1749,7 @@ pub mod list_failures_for_license_configuration_operations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1399,6 +1773,7 @@ pub struct ListDistributedGrantsOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDistributedGrantsOutput {
     /// <p>Distributed grant details.</p>
@@ -1410,6 +1785,11 @@ impl ListDistributedGrantsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDistributedGrantsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
 pub mod list_distributed_grants_output {
     
@@ -1419,6 +1799,7 @@ pub mod list_distributed_grants_output {
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `grants`.
@@ -1445,6 +1826,15 @@ pub mod list_distributed_grants_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
         pub fn build(self) -> crate::output::ListDistributedGrantsOutput {
             crate::output::ListDistributedGrantsOutput {
@@ -1452,6 +1842,7 @@ pub mod list_distributed_grants_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1475,6 +1866,7 @@ pub struct ListAssociationsForLicenseConfigurationOutput  {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// <p>Information about the associations for the license configuration.</p>
@@ -1486,6 +1878,11 @@ impl ListAssociationsForLicenseConfigurationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAssociationsForLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
 pub mod list_associations_for_license_configuration_output {
     
@@ -1495,6 +1892,7 @@ pub mod list_associations_for_license_configuration_output {
     pub struct Builder {
         pub(crate) license_configuration_associations: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `license_configuration_associations`.
@@ -1521,6 +1919,15 @@ pub mod list_associations_for_license_configuration_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::ListAssociationsForLicenseConfigurationOutput {
             crate::output::ListAssociationsForLicenseConfigurationOutput {
@@ -1528,6 +1935,7 @@ pub mod list_associations_for_license_configuration_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1560,6 +1968,7 @@ pub struct GetServiceSettingsOutput  {
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     #[doc(hidden)]
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetServiceSettingsOutput {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
@@ -1583,6 +1992,11 @@ impl GetServiceSettingsOutput {
         self.license_manager_resource_share_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetServiceSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
 pub mod get_service_settings_output {
     
@@ -1595,6 +2009,7 @@ pub mod get_service_settings_output {
         pub(crate) organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
         pub(crate) enable_cross_accounts_discovery: std::option::Option<bool>,
         pub(crate) license_manager_resource_share_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
@@ -1642,6 +2057,15 @@ pub mod get_service_settings_output {
         pub fn set_license_manager_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_manager_resource_share_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
         pub fn build(self) -> crate::output::GetServiceSettingsOutput {
             crate::output::GetServiceSettingsOutput {
@@ -1655,6 +2079,7 @@ pub mod get_service_settings_output {
                 ,
                 license_manager_resource_share_arn: self.license_manager_resource_share_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1675,6 +2100,7 @@ pub struct GetLicenseUsageOutput  {
     /// <p>License usage details.</p>
     #[doc(hidden)]
     pub license_usage: std::option::Option<crate::model::LicenseUsage>,
+    _request_id: Option<String>,
 }
 impl GetLicenseUsageOutput {
     /// <p>License usage details.</p>
@@ -1682,6 +2108,11 @@ impl GetLicenseUsageOutput {
         self.license_usage.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLicenseUsageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
 pub mod get_license_usage_output {
     
@@ -1690,6 +2121,7 @@ pub mod get_license_usage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_usage: std::option::Option<crate::model::LicenseUsage>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>License usage details.</p>
@@ -1701,11 +2133,21 @@ pub mod get_license_usage_output {
         pub fn set_license_usage(mut self, input: std::option::Option<crate::model::LicenseUsage>) -> Self {
             self.license_usage = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
         pub fn build(self) -> crate::output::GetLicenseUsageOutput {
             crate::output::GetLicenseUsageOutput {
                 license_usage: self.license_usage
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1726,6 +2168,7 @@ pub struct GetLicenseManagerReportGeneratorOutput  {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
     #[doc(hidden)]
     pub report_generator: std::option::Option<crate::model::ReportGenerator>,
+    _request_id: Option<String>,
 }
 impl GetLicenseManagerReportGeneratorOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
@@ -1733,6 +2176,11 @@ impl GetLicenseManagerReportGeneratorOutput {
         self.report_generator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLicenseManagerReportGeneratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
 pub mod get_license_manager_report_generator_output {
     
@@ -1741,6 +2189,7 @@ pub mod get_license_manager_report_generator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generator: std::option::Option<crate::model::ReportGenerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A report generator that creates periodic reports about your license configurations.</p>
@@ -1752,11 +2201,21 @@ pub mod get_license_manager_report_generator_output {
         pub fn set_report_generator(mut self, input: std::option::Option<crate::model::ReportGenerator>) -> Self {
             self.report_generator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::GetLicenseManagerReportGeneratorOutput {
             crate::output::GetLicenseManagerReportGeneratorOutput {
                 report_generator: self.report_generator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1801,6 +2260,7 @@ pub struct GetLicenseConversionTaskOutput  {
     /// <p>Time at which the license type conversion task was completed.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetLicenseConversionTaskOutput {
     /// <p>ID of the license type conversion task.</p>
@@ -1840,6 +2300,11 @@ impl GetLicenseConversionTaskOutput {
         self.end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLicenseConversionTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
 pub mod get_license_conversion_task_output {
     
@@ -1856,6 +2321,7 @@ pub mod get_license_conversion_task_output {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the license type conversion task.</p>
@@ -1939,6 +2405,15 @@ pub mod get_license_conversion_task_output {
         pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.end_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
         pub fn build(self) -> crate::output::GetLicenseConversionTaskOutput {
             crate::output::GetLicenseConversionTaskOutput {
@@ -1960,6 +2435,7 @@ pub mod get_license_conversion_task_output {
                 ,
                 end_time: self.end_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2028,6 +2504,7 @@ pub struct GetLicenseConfigurationOutput  {
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl GetLicenseConfigurationOutput {
     /// <p>Unique ID for the license configuration.</p>
@@ -2099,6 +2576,11 @@ impl GetLicenseConfigurationOutput {
         self.disassociate_when_not_found
     }
 }
+impl aws_http::request_id::RequestId for GetLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
 pub mod get_license_configuration_output {
     
@@ -2123,6 +2605,7 @@ pub mod get_license_configuration_output {
         pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
         pub(crate) automated_discovery_information: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
         pub(crate) disassociate_when_not_found: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Unique ID for the license configuration.</p>
@@ -2308,6 +2791,15 @@ pub mod get_license_configuration_output {
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
             self.disassociate_when_not_found = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::GetLicenseConfigurationOutput {
             crate::output::GetLicenseConfigurationOutput {
@@ -2345,6 +2837,7 @@ pub mod get_license_configuration_output {
                 ,
                 disassociate_when_not_found: self.disassociate_when_not_found
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2365,6 +2858,7 @@ pub struct GetLicenseOutput  {
     /// <p>License details.</p>
     #[doc(hidden)]
     pub license: std::option::Option<crate::model::License>,
+    _request_id: Option<String>,
 }
 impl GetLicenseOutput {
     /// <p>License details.</p>
@@ -2372,6 +2866,11 @@ impl GetLicenseOutput {
         self.license.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLicenseOutput`](crate::output::GetLicenseOutput).
 pub mod get_license_output {
     
@@ -2380,6 +2879,7 @@ pub mod get_license_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license: std::option::Option<crate::model::License>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>License details.</p>
@@ -2391,11 +2891,21 @@ pub mod get_license_output {
         pub fn set_license(mut self, input: std::option::Option<crate::model::License>) -> Self {
             self.license = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLicenseOutput`](crate::output::GetLicenseOutput).
         pub fn build(self) -> crate::output::GetLicenseOutput {
             crate::output::GetLicenseOutput {
                 license: self.license
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2416,6 +2926,7 @@ pub struct GetGrantOutput  {
     /// <p>Grant details.</p>
     #[doc(hidden)]
     pub grant: std::option::Option<crate::model::Grant>,
+    _request_id: Option<String>,
 }
 impl GetGrantOutput {
     /// <p>Grant details.</p>
@@ -2423,6 +2934,11 @@ impl GetGrantOutput {
         self.grant.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetGrantOutput`](crate::output::GetGrantOutput).
 pub mod get_grant_output {
     
@@ -2431,6 +2947,7 @@ pub mod get_grant_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant: std::option::Option<crate::model::Grant>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant details.</p>
@@ -2442,11 +2959,21 @@ pub mod get_grant_output {
         pub fn set_grant(mut self, input: std::option::Option<crate::model::Grant>) -> Self {
             self.grant = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetGrantOutput`](crate::output::GetGrantOutput).
         pub fn build(self) -> crate::output::GetGrantOutput {
             crate::output::GetGrantOutput {
                 grant: self.grant
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2467,6 +2994,7 @@ pub struct GetAccessTokenOutput  {
     /// <p>Temporary access token.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
@@ -2474,6 +3002,11 @@ impl GetAccessTokenOutput {
         self.access_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAccessTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
 pub mod get_access_token_output {
     
@@ -2482,6 +3015,7 @@ pub mod get_access_token_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Temporary access token.</p>
@@ -2493,11 +3027,21 @@ pub mod get_access_token_output {
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
         pub fn build(self) -> crate::output::GetAccessTokenOutput {
             crate::output::GetAccessTokenOutput {
                 access_token: self.access_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2521,6 +3065,7 @@ pub struct ExtendLicenseConsumptionOutput  {
     /// <p>Date and time at which the license consumption expires.</p>
     #[doc(hidden)]
     pub expiration: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExtendLicenseConsumptionOutput {
     /// <p>License consumption token.</p>
@@ -2532,6 +3077,11 @@ impl ExtendLicenseConsumptionOutput {
         self.expiration.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExtendLicenseConsumptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
 pub mod extend_license_consumption_output {
     
@@ -2541,6 +3091,7 @@ pub mod extend_license_consumption_output {
     pub struct Builder {
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>License consumption token.</p>
@@ -2561,6 +3112,15 @@ pub mod extend_license_consumption_output {
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
         pub fn build(self) -> crate::output::ExtendLicenseConsumptionOutput {
             crate::output::ExtendLicenseConsumptionOutput {
@@ -2568,6 +3128,7 @@ pub mod extend_license_consumption_output {
                 ,
                 expiration: self.expiration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2585,7 +3146,13 @@ impl ExtendLicenseConsumptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTokenOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
 pub mod delete_token_output {
     
@@ -2593,11 +3160,22 @@ pub mod delete_token_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
         pub fn build(self) -> crate::output::DeleteTokenOutput {
             crate::output::DeleteTokenOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2615,7 +3193,13 @@ impl DeleteTokenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLicenseManagerReportGeneratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
 pub mod delete_license_manager_report_generator_output {
     
@@ -2623,11 +3207,22 @@ pub mod delete_license_manager_report_generator_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::DeleteLicenseManagerReportGeneratorOutput {
             crate::output::DeleteLicenseManagerReportGeneratorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2645,7 +3240,13 @@ impl DeleteLicenseManagerReportGeneratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
 pub mod delete_license_configuration_output {
     
@@ -2653,11 +3254,22 @@ pub mod delete_license_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLicenseConfigurationOutput {
             crate::output::DeleteLicenseConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2681,6 +3293,7 @@ pub struct DeleteLicenseOutput  {
     /// <p>Date when the license is deleted.</p>
     #[doc(hidden)]
     pub deletion_date: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteLicenseOutput {
     /// <p>License status.</p>
@@ -2692,6 +3305,11 @@ impl DeleteLicenseOutput {
         self.deletion_date.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
 pub mod delete_license_output {
     
@@ -2701,6 +3319,7 @@ pub mod delete_license_output {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LicenseDeletionStatus>,
         pub(crate) deletion_date: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>License status.</p>
@@ -2721,6 +3340,15 @@ pub mod delete_license_output {
         pub fn set_deletion_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.deletion_date = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
         pub fn build(self) -> crate::output::DeleteLicenseOutput {
             crate::output::DeleteLicenseOutput {
@@ -2728,6 +3356,7 @@ pub mod delete_license_output {
                 ,
                 deletion_date: self.deletion_date
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2754,6 +3383,7 @@ pub struct DeleteGrantOutput  {
     /// <p>Grant version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteGrantOutput {
     /// <p>Grant ARN.</p>
@@ -2769,6 +3399,11 @@ impl DeleteGrantOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
 pub mod delete_grant_output {
     
@@ -2779,6 +3414,7 @@ pub mod delete_grant_output {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant ARN.</p>
@@ -2808,6 +3444,15 @@ pub mod delete_grant_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
         pub fn build(self) -> crate::output::DeleteGrantOutput {
             crate::output::DeleteGrantOutput {
@@ -2817,6 +3462,7 @@ pub mod delete_grant_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2843,6 +3489,7 @@ pub struct CreateTokenOutput  {
     /// <p>Refresh token, encoded as a JWT token.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateTokenOutput {
     /// <p>Token ID.</p>
@@ -2858,6 +3505,11 @@ impl CreateTokenOutput {
         self.token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
     
@@ -2868,6 +3520,7 @@ pub mod create_token_output {
         pub(crate) token_id: std::option::Option<std::string::String>,
         pub(crate) token_type: std::option::Option<crate::model::TokenType>,
         pub(crate) token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Token ID.</p>
@@ -2897,6 +3550,15 @@ pub mod create_token_output {
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
@@ -2906,6 +3568,7 @@ pub mod create_token_output {
                 ,
                 token: self.token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2932,6 +3595,7 @@ pub struct CreateLicenseVersionOutput  {
     /// <p>License status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseStatus>,
+    _request_id: Option<String>,
 }
 impl CreateLicenseVersionOutput {
     /// <p>License ARN.</p>
@@ -2947,6 +3611,11 @@ impl CreateLicenseVersionOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLicenseVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
 pub mod create_license_version_output {
     
@@ -2957,6 +3626,7 @@ pub mod create_license_version_output {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::LicenseStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>License ARN.</p>
@@ -2986,6 +3656,15 @@ pub mod create_license_version_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
         pub fn build(self) -> crate::output::CreateLicenseVersionOutput {
             crate::output::CreateLicenseVersionOutput {
@@ -2995,6 +3674,7 @@ pub mod create_license_version_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3015,6 +3695,7 @@ pub struct CreateLicenseManagerReportGeneratorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLicenseManagerReportGeneratorOutput {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
@@ -3022,6 +3703,11 @@ impl CreateLicenseManagerReportGeneratorOutput {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLicenseManagerReportGeneratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
 pub mod create_license_manager_report_generator_output {
     
@@ -3030,6 +3716,7 @@ pub mod create_license_manager_report_generator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_manager_report_generator_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
@@ -3041,11 +3728,21 @@ pub mod create_license_manager_report_generator_output {
         pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::CreateLicenseManagerReportGeneratorOutput {
             crate::output::CreateLicenseManagerReportGeneratorOutput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3066,6 +3763,7 @@ pub struct CreateLicenseConversionTaskForResourceOutput  {
     /// <p>The ID of the created license type conversion task.</p>
     #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLicenseConversionTaskForResourceOutput {
     /// <p>The ID of the created license type conversion task.</p>
@@ -3073,6 +3771,11 @@ impl CreateLicenseConversionTaskForResourceOutput {
         self.license_conversion_task_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLicenseConversionTaskForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
 pub mod create_license_conversion_task_for_resource_output {
     
@@ -3081,6 +3784,7 @@ pub mod create_license_conversion_task_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the created license type conversion task.</p>
@@ -3092,11 +3796,21 @@ pub mod create_license_conversion_task_for_resource_output {
         pub fn set_license_conversion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_conversion_task_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
         pub fn build(self) -> crate::output::CreateLicenseConversionTaskForResourceOutput {
             crate::output::CreateLicenseConversionTaskForResourceOutput {
                 license_conversion_task_id: self.license_conversion_task_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3117,6 +3831,7 @@ pub struct CreateLicenseConfigurationOutput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLicenseConfigurationOutput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -3124,6 +3839,11 @@ impl CreateLicenseConfigurationOutput {
         self.license_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLicenseConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
 pub mod create_license_configuration_output {
     
@@ -3132,6 +3852,7 @@ pub mod create_license_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -3143,11 +3864,21 @@ pub mod create_license_configuration_output {
         pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_configuration_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::CreateLicenseConfigurationOutput {
             crate::output::CreateLicenseConfigurationOutput {
                 license_configuration_arn: self.license_configuration_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3174,6 +3905,7 @@ pub struct CreateLicenseOutput  {
     /// <p>License version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -3189,6 +3921,11 @@ impl CreateLicenseOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
 pub mod create_license_output {
     
@@ -3199,6 +3936,7 @@ pub mod create_license_output {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::LicenseStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -3228,6 +3966,15 @@ pub mod create_license_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
         pub fn build(self) -> crate::output::CreateLicenseOutput {
             crate::output::CreateLicenseOutput {
@@ -3237,6 +3984,7 @@ pub mod create_license_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3263,6 +4011,7 @@ pub struct CreateGrantVersionOutput  {
     /// <p>New version of the grant.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateGrantVersionOutput {
     /// <p>Grant ARN.</p>
@@ -3278,6 +4027,11 @@ impl CreateGrantVersionOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGrantVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
 pub mod create_grant_version_output {
     
@@ -3288,6 +4042,7 @@ pub mod create_grant_version_output {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant ARN.</p>
@@ -3317,6 +4072,15 @@ pub mod create_grant_version_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
         pub fn build(self) -> crate::output::CreateGrantVersionOutput {
             crate::output::CreateGrantVersionOutput {
@@ -3326,6 +4090,7 @@ pub mod create_grant_version_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3352,6 +4117,7 @@ pub struct CreateGrantOutput  {
     /// <p>Grant version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateGrantOutput {
     /// <p>Grant ARN.</p>
@@ -3367,6 +4133,11 @@ impl CreateGrantOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput).
 pub mod create_grant_output {
     
@@ -3377,6 +4148,7 @@ pub mod create_grant_output {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant ARN.</p>
@@ -3406,6 +4178,15 @@ pub mod create_grant_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGrantOutput`](crate::output::CreateGrantOutput).
         pub fn build(self) -> crate::output::CreateGrantOutput {
             crate::output::CreateGrantOutput {
@@ -3415,6 +4196,7 @@ pub mod create_grant_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3456,6 +4238,7 @@ pub struct CheckoutLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CheckoutLicenseOutput {
     /// <p>Checkout type.</p>
@@ -3491,6 +4274,11 @@ impl CheckoutLicenseOutput {
         self.license_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CheckoutLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
 pub mod checkout_license_output {
     
@@ -3506,6 +4294,7 @@ pub mod checkout_license_output {
         pub(crate) issued_at: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) license_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Checkout type.</p>
@@ -3586,6 +4375,15 @@ pub mod checkout_license_output {
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
         pub fn build(self) -> crate::output::CheckoutLicenseOutput {
             crate::output::CheckoutLicenseOutput {
@@ -3605,6 +4403,7 @@ pub mod checkout_license_output {
                 ,
                 license_arn: self.license_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3646,6 +4445,7 @@ pub struct CheckoutBorrowLicenseOutput  {
     /// <p>Information about constraints.</p>
     #[doc(hidden)]
     pub checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
+    _request_id: Option<String>,
 }
 impl CheckoutBorrowLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -3681,6 +4481,11 @@ impl CheckoutBorrowLicenseOutput {
         self.checkout_metadata.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CheckoutBorrowLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
 pub mod checkout_borrow_license_output {
     
@@ -3696,6 +4501,7 @@ pub mod checkout_borrow_license_output {
         pub(crate) issued_at: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) checkout_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the license.</p>
@@ -3782,6 +4588,15 @@ pub mod checkout_borrow_license_output {
         pub fn set_checkout_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
             self.checkout_metadata = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
         pub fn build(self) -> crate::output::CheckoutBorrowLicenseOutput {
             crate::output::CheckoutBorrowLicenseOutput {
@@ -3801,6 +4616,7 @@ pub mod checkout_borrow_license_output {
                 ,
                 checkout_metadata: self.checkout_metadata
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3818,7 +4634,13 @@ impl CheckoutBorrowLicenseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckInLicenseOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CheckInLicenseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
 pub mod check_in_license_output {
     
@@ -3826,11 +4648,22 @@ pub mod check_in_license_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
         pub fn build(self) -> crate::output::CheckInLicenseOutput {
             crate::output::CheckInLicenseOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3857,6 +4690,7 @@ pub struct AcceptGrantOutput  {
     /// <p>Grant version.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AcceptGrantOutput {
     /// <p>Grant ARN.</p>
@@ -3872,6 +4706,11 @@ impl AcceptGrantOutput {
         self.version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AcceptGrantOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
 pub mod accept_grant_output {
     
@@ -3882,6 +4721,7 @@ pub mod accept_grant_output {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GrantStatus>,
         pub(crate) version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Grant ARN.</p>
@@ -3911,6 +4751,15 @@ pub mod accept_grant_output {
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
         pub fn build(self) -> crate::output::AcceptGrantOutput {
             crate::output::AcceptGrantOutput {
@@ -3920,6 +4769,7 @@ pub mod accept_grant_output {
                 ,
                 version: self.version
                 ,
+                _request_id: self._request_id,
             }
         }
     }

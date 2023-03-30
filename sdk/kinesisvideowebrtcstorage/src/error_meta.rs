@@ -11,15 +11,8 @@ pub enum Error {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36,20 +29,36 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::JoinStorageSessionError> for Error {
     fn from(err: crate::error::JoinStorageSessionError) -> Self {
-        match err.kind {
-            crate::error::JoinStorageSessionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::JoinStorageSessionErrorKind::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::error::JoinStorageSessionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::JoinStorageSessionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::JoinStorageSessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::JoinStorageSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::JoinStorageSessionError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::error::JoinStorageSessionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::JoinStorageSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::JoinStorageSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ClientLimitExceededException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

@@ -22,6 +22,7 @@ impl AssociateChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateChannelFlow {
                 type Output = std::result::Result<crate::output::AssociateChannelFlowOutput, crate::error::AssociateChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_channel_flow_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchCreateChannelMembership {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCreateChannelMembership {
                 type Output = std::result::Result<crate::output::BatchCreateChannelMembershipOutput, crate::error::BatchCreateChannelMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_create_channel_membership_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ChannelFlowCallback {
 impl aws_smithy_http::response::ParseStrictResponse for ChannelFlowCallback {
                 type Output = std::result::Result<crate::output::ChannelFlowCallbackOutput, crate::error::ChannelFlowCallbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_channel_flow_callback_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
                 type Output = std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateChannelBan {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannelBan {
                 type Output = std::result::Result<crate::output::CreateChannelBanOutput, crate::error::CreateChannelBanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_ban_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannelFlow {
                 type Output = std::result::Result<crate::output::CreateChannelFlowOutput, crate::error::CreateChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_flow_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateChannelMembership {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannelMembership {
                 type Output = std::result::Result<crate::output::CreateChannelMembershipOutput, crate::error::CreateChannelMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_membership_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateChannelModerator {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannelModerator {
                 type Output = std::result::Result<crate::output::CreateChannelModeratorOutput, crate::error::CreateChannelModeratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_channel_moderator_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
                 type Output = std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteChannelBan {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelBan {
                 type Output = std::result::Result<crate::output::DeleteChannelBanOutput, crate::error::DeleteChannelBanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_ban_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelFlow {
                 type Output = std::result::Result<crate::output::DeleteChannelFlowOutput, crate::error::DeleteChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_flow_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteChannelMembership {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMembership {
                 type Output = std::result::Result<crate::output::DeleteChannelMembershipOutput, crate::error::DeleteChannelMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_membership_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMessage {
                 type Output = std::result::Result<crate::output::DeleteChannelMessageOutput, crate::error::DeleteChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_message_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteChannelModerator {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelModerator {
                 type Output = std::result::Result<crate::output::DeleteChannelModeratorOutput, crate::error::DeleteChannelModeratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_channel_moderator_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
                 type Output = std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeChannelBan {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelBan {
                 type Output = std::result::Result<crate::output::DescribeChannelBanOutput, crate::error::DescribeChannelBanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_ban_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelFlow {
                 type Output = std::result::Result<crate::output::DescribeChannelFlowOutput, crate::error::DescribeChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_flow_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeChannelMembership {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelMembership {
                 type Output = std::result::Result<crate::output::DescribeChannelMembershipOutput, crate::error::DescribeChannelMembershipError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_membership_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeChannelMembershipForAppInstanceUser {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelMembershipForAppInstanceUser {
                 type Output = std::result::Result<crate::output::DescribeChannelMembershipForAppInstanceUserOutput, crate::error::DescribeChannelMembershipForAppInstanceUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_membership_for_app_instance_user_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeChannelModeratedByAppInstanceUser {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModeratedByAppInstanceUser {
                 type Output = std::result::Result<crate::output::DescribeChannelModeratedByAppInstanceUserOutput, crate::error::DescribeChannelModeratedByAppInstanceUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_moderated_by_app_instance_user_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeChannelModerator {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerator {
                 type Output = std::result::Result<crate::output::DescribeChannelModeratorOutput, crate::error::DescribeChannelModeratorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_moderator_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DisassociateChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateChannelFlow {
                 type Output = std::result::Result<crate::output::DisassociateChannelFlowOutput, crate::error::DisassociateChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_disassociate_channel_flow_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetChannelMembershipPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for GetChannelMembershipPreferences {
                 type Output = std::result::Result<crate::output::GetChannelMembershipPreferencesOutput, crate::error::GetChannelMembershipPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_channel_membership_preferences_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessage {
                 type Output = std::result::Result<crate::output::GetChannelMessageOutput, crate::error::GetChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_channel_message_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetChannelMessageStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessageStatus {
                 type Output = std::result::Result<crate::output::GetChannelMessageStatusOutput, crate::error::GetChannelMessageStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_channel_message_status_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetMessagingSessionEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for GetMessagingSessionEndpoint {
                 type Output = std::result::Result<crate::output::GetMessagingSessionEndpointOutput, crate::error::GetMessagingSessionEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_messaging_session_endpoint_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListChannelBans {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelBans {
                 type Output = std::result::Result<crate::output::ListChannelBansOutput, crate::error::ListChannelBansError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_bans_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListChannelFlows {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelFlows {
                 type Output = std::result::Result<crate::output::ListChannelFlowsOutput, crate::error::ListChannelFlowsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_flows_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListChannelMemberships {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelMemberships {
                 type Output = std::result::Result<crate::output::ListChannelMembershipsOutput, crate::error::ListChannelMembershipsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_memberships_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListChannelMembershipsForAppInstanceUser {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelMembershipsForAppInstanceUser {
                 type Output = std::result::Result<crate::output::ListChannelMembershipsForAppInstanceUserOutput, crate::error::ListChannelMembershipsForAppInstanceUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_memberships_for_app_instance_user_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListChannelMessages {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelMessages {
                 type Output = std::result::Result<crate::output::ListChannelMessagesOutput, crate::error::ListChannelMessagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_messages_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListChannelModerators {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelModerators {
                 type Output = std::result::Result<crate::output::ListChannelModeratorsOutput, crate::error::ListChannelModeratorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channel_moderators_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListChannels {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
                 type Output = std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListChannelsAssociatedWithChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelsAssociatedWithChannelFlow {
                 type Output = std::result::Result<crate::output::ListChannelsAssociatedWithChannelFlowOutput, crate::error::ListChannelsAssociatedWithChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_associated_with_channel_flow_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListChannelsModeratedByAppInstanceUser {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannelsModeratedByAppInstanceUser {
                 type Output = std::result::Result<crate::output::ListChannelsModeratedByAppInstanceUserOutput, crate::error::ListChannelsModeratedByAppInstanceUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_moderated_by_app_instance_user_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListSubChannels {
 impl aws_smithy_http::response::ParseStrictResponse for ListSubChannels {
                 type Output = std::result::Result<crate::output::ListSubChannelsOutput, crate::error::ListSubChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sub_channels_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl PutChannelMembershipPreferences {
 impl aws_smithy_http::response::ParseStrictResponse for PutChannelMembershipPreferences {
                 type Output = std::result::Result<crate::output::PutChannelMembershipPreferencesOutput, crate::error::PutChannelMembershipPreferencesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_channel_membership_preferences_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl RedactChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for RedactChannelMessage {
                 type Output = std::result::Result<crate::output::RedactChannelMessageOutput, crate::error::RedactChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_redact_channel_message_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl SearchChannels {
 impl aws_smithy_http::response::ParseStrictResponse for SearchChannels {
                 type Output = std::result::Result<crate::output::SearchChannelsOutput, crate::error::SearchChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_channels_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl SendChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for SendChannelMessage {
                 type Output = std::result::Result<crate::output::SendChannelMessageOutput, crate::error::SendChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_send_channel_message_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl UpdateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
                 type Output = std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl UpdateChannelFlow {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelFlow {
                 type Output = std::result::Result<crate::output::UpdateChannelFlowOutput, crate::error::UpdateChannelFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_flow_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl UpdateChannelMessage {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelMessage {
                 type Output = std::result::Result<crate::output::UpdateChannelMessageOutput, crate::error::UpdateChannelMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_message_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateChannelReadMarker {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelReadMarker {
                 type Output = std::result::Result<crate::output::UpdateChannelReadMarkerOutput, crate::error::UpdateChannelReadMarkerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_read_marker_error(response)
                      } else {

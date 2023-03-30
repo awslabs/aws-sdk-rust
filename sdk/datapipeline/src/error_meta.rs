@@ -13,15 +13,8 @@ pub enum Error {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,18 +32,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ActivatePipelineErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ActivatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ActivatePipelineError> for Error {
     fn from(err: crate::error::ActivatePipelineError) -> Self {
-        match err.kind {
-            crate::error::ActivatePipelineErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ActivatePipelineErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ActivatePipelineErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ActivatePipelineErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ActivatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ActivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::ActivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ActivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::ActivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::ActivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -58,18 +56,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> f
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddTagsError> for Error {
     fn from(err: crate::error::AddTagsError) -> Self {
-        match err.kind {
-            crate::error::AddTagsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::AddTagsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::AddTagsErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::AddTagsErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::AddTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::AddTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::AddTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::AddTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -77,16 +80,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePipelineError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreatePipelineError> for Error {
     fn from(err: crate::error::CreatePipelineError) -> Self {
-        match err.kind {
-            crate::error::CreatePipelineErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::CreatePipelineErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::CreatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -94,18 +102,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeactivatePipelineE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeactivatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeactivatePipelineError> for Error {
     fn from(err: crate::error::DeactivatePipelineError) -> Self {
-        match err.kind {
-            crate::error::DeactivatePipelineErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DeactivatePipelineErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeactivatePipelineErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DeactivatePipelineErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DeactivatePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeactivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::DeactivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeactivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::DeactivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::DeactivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -113,17 +126,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePipelineError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeletePipelineError> for Error {
     fn from(err: crate::error::DeletePipelineError) -> Self {
-        match err.kind {
-            crate::error::DeletePipelineErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DeletePipelineErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeletePipelineErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DeletePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeletePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::DeletePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeletePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::DeletePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -131,18 +149,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeObjectsErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeObjectsError> for Error {
     fn from(err: crate::error::DescribeObjectsError) -> Self {
-        match err.kind {
-            crate::error::DescribeObjectsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DescribeObjectsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DescribeObjectsErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DescribeObjectsErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DescribeObjectsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::DescribeObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::DescribeObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::DescribeObjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -150,18 +173,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePipelinesEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePipelinesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribePipelinesError> for Error {
     fn from(err: crate::error::DescribePipelinesError) -> Self {
-        match err.kind {
-            crate::error::DescribePipelinesErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DescribePipelinesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DescribePipelinesErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DescribePipelinesErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DescribePipelinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribePipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::DescribePipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribePipelinesError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::DescribePipelinesError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::DescribePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -169,19 +197,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EvaluateExpressionE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EvaluateExpressionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::EvaluateExpressionError> for Error {
     fn from(err: crate::error::EvaluateExpressionError) -> Self {
-        match err.kind {
-            crate::error::EvaluateExpressionErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::EvaluateExpressionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::EvaluateExpressionErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::EvaluateExpressionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::EvaluateExpressionErrorKind::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::EvaluateExpressionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::EvaluateExpressionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::EvaluateExpressionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::EvaluateExpressionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::EvaluateExpressionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::EvaluateExpressionError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::error::EvaluateExpressionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -189,18 +222,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPipelineDefiniti
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetPipelineDefinitionError> for Error {
     fn from(err: crate::error::GetPipelineDefinitionError) -> Self {
-        match err.kind {
-            crate::error::GetPipelineDefinitionErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::GetPipelineDefinitionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetPipelineDefinitionErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::GetPipelineDefinitionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::GetPipelineDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::GetPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::GetPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::GetPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -208,16 +246,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPipelinesError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPipelinesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListPipelinesError> for Error {
     fn from(err: crate::error::ListPipelinesError) -> Self {
-        match err.kind {
-            crate::error::ListPipelinesErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ListPipelinesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListPipelinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListPipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::ListPipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListPipelinesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -225,17 +268,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PollForTaskError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PollForTaskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PollForTaskError> for Error {
     fn from(err: crate::error::PollForTaskError) -> Self {
-        match err.kind {
-            crate::error::PollForTaskErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::PollForTaskErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PollForTaskErrorKind::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::PollForTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PollForTaskError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::PollForTaskError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::PollForTaskError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::error::PollForTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -243,18 +291,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPipelineDefiniti
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutPipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PutPipelineDefinitionError> for Error {
     fn from(err: crate::error::PutPipelineDefinitionError) -> Self {
-        match err.kind {
-            crate::error::PutPipelineDefinitionErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::PutPipelineDefinitionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PutPipelineDefinitionErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::PutPipelineDefinitionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::PutPipelineDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::PutPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::PutPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::PutPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::PutPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -262,18 +315,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryObjectsError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::QueryObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::QueryObjectsError> for Error {
     fn from(err: crate::error::QueryObjectsError) -> Self {
-        match err.kind {
-            crate::error::QueryObjectsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::QueryObjectsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::QueryObjectsErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::QueryObjectsErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::QueryObjectsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::QueryObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::QueryObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::QueryObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::QueryObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::QueryObjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -281,18 +339,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RemoveTagsError> for Error {
     fn from(err: crate::error::RemoveTagsError) -> Self {
-        match err.kind {
-            crate::error::RemoveTagsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::RemoveTagsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::RemoveTagsErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::RemoveTagsErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::RemoveTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemoveTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::RemoveTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::RemoveTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::RemoveTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::RemoveTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -300,19 +363,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskProgressE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ReportTaskProgressError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ReportTaskProgressError> for Error {
     fn from(err: crate::error::ReportTaskProgressError) -> Self {
-        match err.kind {
-            crate::error::ReportTaskProgressErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ReportTaskProgressErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ReportTaskProgressErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ReportTaskProgressErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ReportTaskProgressErrorKind::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::ReportTaskProgressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ReportTaskProgressError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::ReportTaskProgressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ReportTaskProgressError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::ReportTaskProgressError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::ReportTaskProgressError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::error::ReportTaskProgressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -320,16 +388,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskRunnerHea
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ReportTaskRunnerHeartbeatError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ReportTaskRunnerHeartbeatError> for Error {
     fn from(err: crate::error::ReportTaskRunnerHeartbeatError) -> Self {
-        match err.kind {
-            crate::error::ReportTaskRunnerHeartbeatErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ReportTaskRunnerHeartbeatErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ReportTaskRunnerHeartbeatErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ReportTaskRunnerHeartbeatError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::ReportTaskRunnerHeartbeatError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ReportTaskRunnerHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -337,18 +410,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetStatusError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SetStatusError> for Error {
     fn from(err: crate::error::SetStatusError) -> Self {
-        match err.kind {
-            crate::error::SetStatusErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::SetStatusErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::SetStatusErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::SetStatusErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::SetStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SetStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::SetStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::SetStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::SetStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::SetStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -356,19 +434,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetTaskStatusError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetTaskStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SetTaskStatusError> for Error {
     fn from(err: crate::error::SetTaskStatusError) -> Self {
-        match err.kind {
-            crate::error::SetTaskStatusErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::SetTaskStatusErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::SetTaskStatusErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::SetTaskStatusErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::SetTaskStatusErrorKind::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::SetTaskStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SetTaskStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::SetTaskStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::SetTaskStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::SetTaskStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::SetTaskStatusError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::error::SetTaskStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -376,20 +459,37 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidatePipelineDef
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ValidatePipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ValidatePipelineDefinitionError> for Error {
     fn from(err: crate::error::ValidatePipelineDefinitionError) -> Self {
-        match err.kind {
-            crate::error::ValidatePipelineDefinitionErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ValidatePipelineDefinitionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ValidatePipelineDefinitionErrorKind::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ValidatePipelineDefinitionErrorKind::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ValidatePipelineDefinitionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ValidatePipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::error::ValidatePipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ValidatePipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::error::ValidatePipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::error::ValidatePipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InternalServiceError(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::PipelineDeletedException(e) => e.request_id(),
+            Self::PipelineNotFoundException(e) => e.request_id(),
+            Self::TaskNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

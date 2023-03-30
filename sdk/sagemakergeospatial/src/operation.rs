@@ -22,6 +22,7 @@ impl DeleteEarthObservationJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEarthObservationJob {
                 type Output = std::result::Result<crate::output::DeleteEarthObservationJobOutput, crate::error::DeleteEarthObservationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_earth_observation_job_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteVectorEnrichmentJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVectorEnrichmentJob {
                 type Output = std::result::Result<crate::output::DeleteVectorEnrichmentJobOutput, crate::error::DeleteVectorEnrichmentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_vector_enrichment_job_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ExportEarthObservationJob {
 impl aws_smithy_http::response::ParseStrictResponse for ExportEarthObservationJob {
                 type Output = std::result::Result<crate::output::ExportEarthObservationJobOutput, crate::error::ExportEarthObservationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_earth_observation_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ExportVectorEnrichmentJob {
 impl aws_smithy_http::response::ParseStrictResponse for ExportVectorEnrichmentJob {
                 type Output = std::result::Result<crate::output::ExportVectorEnrichmentJobOutput, crate::error::ExportVectorEnrichmentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_vector_enrichment_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetEarthObservationJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetEarthObservationJob {
                 type Output = std::result::Result<crate::output::GetEarthObservationJobOutput, crate::error::GetEarthObservationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_earth_observation_job_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetRasterDataCollection {
 impl aws_smithy_http::response::ParseStrictResponse for GetRasterDataCollection {
                 type Output = std::result::Result<crate::output::GetRasterDataCollectionOutput, crate::error::GetRasterDataCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_raster_data_collection_error(response)
                      } else {
@@ -243,6 +249,7 @@ impl GetVectorEnrichmentJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetVectorEnrichmentJob {
                 type Output = std::result::Result<crate::output::GetVectorEnrichmentJobOutput, crate::error::GetVectorEnrichmentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_vector_enrichment_job_error(response)
                      } else {
@@ -274,6 +281,7 @@ impl ListEarthObservationJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListEarthObservationJobs {
                 type Output = std::result::Result<crate::output::ListEarthObservationJobsOutput, crate::error::ListEarthObservationJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_earth_observation_jobs_error(response)
                      } else {
@@ -305,6 +313,7 @@ impl ListRasterDataCollections {
 impl aws_smithy_http::response::ParseStrictResponse for ListRasterDataCollections {
                 type Output = std::result::Result<crate::output::ListRasterDataCollectionsOutput, crate::error::ListRasterDataCollectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_raster_data_collections_error(response)
                      } else {
@@ -336,6 +345,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -367,6 +377,7 @@ impl ListVectorEnrichmentJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListVectorEnrichmentJobs {
                 type Output = std::result::Result<crate::output::ListVectorEnrichmentJobsOutput, crate::error::ListVectorEnrichmentJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vector_enrichment_jobs_error(response)
                      } else {
@@ -398,6 +409,7 @@ impl SearchRasterDataCollection {
 impl aws_smithy_http::response::ParseStrictResponse for SearchRasterDataCollection {
                 type Output = std::result::Result<crate::output::SearchRasterDataCollectionOutput, crate::error::SearchRasterDataCollectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_raster_data_collection_error(response)
                      } else {
@@ -429,6 +441,7 @@ impl StartEarthObservationJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartEarthObservationJob {
                 type Output = std::result::Result<crate::output::StartEarthObservationJobOutput, crate::error::StartEarthObservationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_earth_observation_job_error(response)
                      } else {
@@ -460,6 +473,7 @@ impl StartVectorEnrichmentJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartVectorEnrichmentJob {
                 type Output = std::result::Result<crate::output::StartVectorEnrichmentJobOutput, crate::error::StartVectorEnrichmentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_vector_enrichment_job_error(response)
                      } else {
@@ -491,6 +505,7 @@ impl StopEarthObservationJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopEarthObservationJob {
                 type Output = std::result::Result<crate::output::StopEarthObservationJobOutput, crate::error::StopEarthObservationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_earth_observation_job_error(response)
                      } else {
@@ -522,6 +537,7 @@ impl StopVectorEnrichmentJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopVectorEnrichmentJob {
                 type Output = std::result::Result<crate::output::StopVectorEnrichmentJobOutput, crate::error::StopVectorEnrichmentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_vector_enrichment_job_error(response)
                      } else {
@@ -553,6 +569,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -584,6 +601,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

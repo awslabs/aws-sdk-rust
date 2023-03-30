@@ -17,15 +17,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,19 +38,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateCustomVo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchCreateCustomVocabularyItemError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::BatchCreateCustomVocabularyItemError> for Error {
     fn from(err: crate::error::BatchCreateCustomVocabularyItemError) -> Self {
-        match err.kind {
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchCreateCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchCreateCustomVocabularyItemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchCreateCustomVocabularyItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchCreateCustomVocabularyItemError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchCreateCustomVocabularyItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchCreateCustomVocabularyItemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchCreateCustomVocabularyItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -65,19 +63,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteCustomVo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchDeleteCustomVocabularyItemError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::BatchDeleteCustomVocabularyItemError> for Error {
     fn from(err: crate::error::BatchDeleteCustomVocabularyItemError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchDeleteCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchDeleteCustomVocabularyItemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchDeleteCustomVocabularyItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -85,19 +88,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdateCustomVo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchUpdateCustomVocabularyItemError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::BatchUpdateCustomVocabularyItemError> for Error {
     fn from(err: crate::error::BatchUpdateCustomVocabularyItemError) -> Self {
-        match err.kind {
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchUpdateCustomVocabularyItemErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchUpdateCustomVocabularyItemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BatchUpdateCustomVocabularyItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -105,20 +113,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BuildBotLocaleError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BuildBotLocaleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::BuildBotLocaleError> for Error {
     fn from(err: crate::error::BuildBotLocaleError) -> Self {
-        match err.kind {
-            crate::error::BuildBotLocaleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::BuildBotLocaleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BuildBotLocaleErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::BuildBotLocaleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::BuildBotLocaleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::BuildBotLocaleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BuildBotLocaleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BuildBotLocaleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::BuildBotLocaleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::BuildBotLocaleError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::BuildBotLocaleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::BuildBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::BuildBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::BuildBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -126,20 +139,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateBotError> for Error {
     fn from(err: crate::error::CreateBotError) -> Self {
-        match err.kind {
-            crate::error::CreateBotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateBotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateBotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateBotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateBotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateBotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateBotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateBotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateBotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateBotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateBotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -147,20 +165,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotAliasError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBotAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateBotAliasError> for Error {
     fn from(err: crate::error::CreateBotAliasError) -> Self {
-        match err.kind {
-            crate::error::CreateBotAliasErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateBotAliasErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateBotAliasErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateBotAliasErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateBotAliasErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateBotAliasErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateBotAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateBotAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateBotAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateBotAliasError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateBotAliasError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateBotAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateBotAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateBotAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -168,20 +191,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotLocaleErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBotLocaleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateBotLocaleError> for Error {
     fn from(err: crate::error::CreateBotLocaleError) -> Self {
-        match err.kind {
-            crate::error::CreateBotLocaleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateBotLocaleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateBotLocaleErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateBotLocaleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateBotLocaleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateBotLocaleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateBotLocaleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateBotLocaleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateBotLocaleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateBotLocaleError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateBotLocaleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -189,20 +217,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotVersionErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBotVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateBotVersionError> for Error {
     fn from(err: crate::error::CreateBotVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateBotVersionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateBotVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateBotVersionErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateBotVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateBotVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateBotVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateBotVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateBotVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateBotVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateBotVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateBotVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateBotVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateBotVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateBotVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -210,20 +243,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateExportError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateExportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateExportError> for Error {
     fn from(err: crate::error::CreateExportError) -> Self {
-        match err.kind {
-            crate::error::CreateExportErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateExportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateExportErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateExportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateExportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateExportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateExportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -231,20 +269,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIntentError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateIntentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateIntentError> for Error {
     fn from(err: crate::error::CreateIntentError) -> Self {
-        match err.kind {
-            crate::error::CreateIntentErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateIntentErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateIntentErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateIntentErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateIntentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateIntentErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateIntentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateIntentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateIntentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateIntentError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateIntentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateIntentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateIntentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateIntentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -252,20 +295,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourcePolic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateResourcePolicyError> for Error {
     fn from(err: crate::error::CreateResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::CreateResourcePolicyErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateResourcePolicyErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateResourcePolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResourcePolicyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateResourcePolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResourcePolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateResourcePolicyError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateResourcePolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -273,21 +321,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourcePolic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResourcePolicyStatementError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateResourcePolicyStatementError> for Error {
     fn from(err: crate::error::CreateResourcePolicyStatementError) -> Self {
-        match err.kind {
-            crate::error::CreateResourcePolicyStatementErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateResourcePolicyStatementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateResourcePolicyStatementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateResourcePolicyStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateResourcePolicyStatementError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateResourcePolicyStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateResourcePolicyStatementError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateResourcePolicyStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateResourcePolicyStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateResourcePolicyStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -295,20 +348,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSlotError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSlotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateSlotError> for Error {
     fn from(err: crate::error::CreateSlotError) -> Self {
-        match err.kind {
-            crate::error::CreateSlotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateSlotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSlotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateSlotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateSlotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateSlotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateSlotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateSlotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateSlotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateSlotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateSlotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateSlotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateSlotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateSlotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -316,20 +374,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSlotTypeError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSlotTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateSlotTypeError> for Error {
     fn from(err: crate::error::CreateSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::CreateSlotTypeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateSlotTypeErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSlotTypeErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::CreateSlotTypeErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateSlotTypeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateSlotTypeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateSlotTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateSlotTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateSlotTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateSlotTypeError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::CreateSlotTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::CreateSlotTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateSlotTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateSlotTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -337,19 +400,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUploadUrlErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUploadUrlError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateUploadUrlError> for Error {
     fn from(err: crate::error::CreateUploadUrlError) -> Self {
-        match err.kind {
-            crate::error::CreateUploadUrlErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateUploadUrlErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateUploadUrlErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateUploadUrlErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateUploadUrlErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateUploadUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateUploadUrlError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateUploadUrlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateUploadUrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateUploadUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateUploadUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateUploadUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -357,20 +425,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteBotError> for Error {
     fn from(err: crate::error::DeleteBotError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteBotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteBotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteBotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteBotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteBotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteBotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteBotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteBotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteBotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteBotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -378,20 +451,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotAliasError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteBotAliasError> for Error {
     fn from(err: crate::error::DeleteBotAliasError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotAliasErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteBotAliasErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteBotAliasErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteBotAliasErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteBotAliasErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteBotAliasErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteBotAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteBotAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteBotAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteBotAliasError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteBotAliasError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteBotAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteBotAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteBotAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -399,20 +477,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotLocaleErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotLocaleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteBotLocaleError> for Error {
     fn from(err: crate::error::DeleteBotLocaleError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotLocaleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteBotLocaleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteBotLocaleErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteBotLocaleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteBotLocaleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteBotLocaleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteBotLocaleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteBotLocaleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteBotLocaleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteBotLocaleError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteBotLocaleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -420,20 +503,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBotVersionErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBotVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteBotVersionError> for Error {
     fn from(err: crate::error::DeleteBotVersionError) -> Self {
-        match err.kind {
-            crate::error::DeleteBotVersionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteBotVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteBotVersionErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteBotVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteBotVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteBotVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteBotVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteBotVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteBotVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteBotVersionError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteBotVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteBotVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteBotVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteBotVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -441,20 +529,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomVocabul
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomVocabularyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteCustomVocabularyError> for Error {
     fn from(err: crate::error::DeleteCustomVocabularyError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomVocabularyErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteCustomVocabularyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCustomVocabularyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteCustomVocabularyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteCustomVocabularyError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteCustomVocabularyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteCustomVocabularyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteCustomVocabularyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteCustomVocabularyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -462,19 +555,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteExportError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteExportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteExportError> for Error {
     fn from(err: crate::error::DeleteExportError) -> Self {
-        match err.kind {
-            crate::error::DeleteExportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteExportErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteExportErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteExportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteExportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteExportError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteExportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -482,19 +580,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteImportError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteImportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteImportError> for Error {
     fn from(err: crate::error::DeleteImportError) -> Self {
-        match err.kind {
-            crate::error::DeleteImportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteImportErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteImportErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteImportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteImportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteImportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteImportError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteImportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteImportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteImportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteImportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -502,20 +605,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIntentError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIntentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteIntentError> for Error {
     fn from(err: crate::error::DeleteIntentError) -> Self {
-        match err.kind {
-            crate::error::DeleteIntentErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteIntentErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteIntentErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteIntentErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteIntentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteIntentErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteIntentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteIntentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteIntentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteIntentError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteIntentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteIntentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteIntentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteIntentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -523,18 +631,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteResourcePolicyError> for Error {
     fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourcePolicyErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteResourcePolicyError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -542,18 +655,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyStatementError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteResourcePolicyStatementError> for Error {
     fn from(err: crate::error::DeleteResourcePolicyStatementError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourcePolicyStatementErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteResourcePolicyStatementErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteResourcePolicyStatementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResourcePolicyStatementErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResourcePolicyStatementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteResourcePolicyStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteResourcePolicyStatementError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteResourcePolicyStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteResourcePolicyStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteResourcePolicyStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -561,20 +679,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSlotError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSlotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteSlotError> for Error {
     fn from(err: crate::error::DeleteSlotError) -> Self {
-        match err.kind {
-            crate::error::DeleteSlotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteSlotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteSlotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteSlotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteSlotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteSlotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteSlotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteSlotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteSlotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteSlotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteSlotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteSlotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteSlotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteSlotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -582,20 +705,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSlotTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteSlotTypeError> for Error {
     fn from(err: crate::error::DeleteSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::DeleteSlotTypeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteSlotTypeErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteSlotTypeErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::DeleteSlotTypeErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DeleteSlotTypeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteSlotTypeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteSlotTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteSlotTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteSlotTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteSlotTypeError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::DeleteSlotTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DeleteSlotTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteSlotTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteSlotTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -603,17 +731,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUtterancesErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUtterancesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteUtterancesError> for Error {
     fn from(err: crate::error::DeleteUtterancesError) -> Self {
-        match err.kind {
-            crate::error::DeleteUtterancesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteUtterancesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteUtterancesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteUtterancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteUtterancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteUtterancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteUtterancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteUtterancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -621,19 +754,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBotError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBotError> for Error {
     fn from(err: crate::error::DescribeBotError) -> Self {
-        match err.kind {
-            crate::error::DescribeBotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeBotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeBotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeBotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeBotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeBotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -641,19 +779,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBotAliasErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBotAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBotAliasError> for Error {
     fn from(err: crate::error::DescribeBotAliasError) -> Self {
-        match err.kind {
-            crate::error::DescribeBotAliasErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBotAliasErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeBotAliasErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeBotAliasErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeBotAliasErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeBotAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBotAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBotAliasError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeBotAliasError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeBotAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeBotAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeBotAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -661,19 +804,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBotLocaleEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBotLocaleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBotLocaleError> for Error {
     fn from(err: crate::error::DescribeBotLocaleError) -> Self {
-        match err.kind {
-            crate::error::DescribeBotLocaleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBotLocaleErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeBotLocaleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeBotLocaleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeBotLocaleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeBotLocaleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBotLocaleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBotLocaleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeBotLocaleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -681,18 +829,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBotRecommen
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBotRecommendationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBotRecommendationError> for Error {
     fn from(err: crate::error::DescribeBotRecommendationError) -> Self {
-        match err.kind {
-            crate::error::DescribeBotRecommendationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBotRecommendationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeBotRecommendationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeBotRecommendationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeBotRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBotRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBotRecommendationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeBotRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeBotRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -700,19 +853,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBotVersionE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBotVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBotVersionError> for Error {
     fn from(err: crate::error::DescribeBotVersionError) -> Self {
-        match err.kind {
-            crate::error::DescribeBotVersionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBotVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeBotVersionErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeBotVersionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeBotVersionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeBotVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBotVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBotVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeBotVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeBotVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeBotVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeBotVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -720,19 +878,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCustomVocab
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeCustomVocabularyMetadataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeCustomVocabularyMetadataError> for Error {
     fn from(err: crate::error::DescribeCustomVocabularyMetadataError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeCustomVocabularyMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeCustomVocabularyMetadataError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeCustomVocabularyMetadataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeCustomVocabularyMetadataError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeCustomVocabularyMetadataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeCustomVocabularyMetadataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeCustomVocabularyMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -740,18 +903,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeExportError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeExportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeExportError> for Error {
     fn from(err: crate::error::DescribeExportError) -> Self {
-        match err.kind {
-            crate::error::DescribeExportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeExportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeExportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -759,18 +927,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeImportError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeImportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeImportError> for Error {
     fn from(err: crate::error::DescribeImportError) -> Self {
-        match err.kind {
-            crate::error::DescribeImportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeImportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeImportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeImportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeImportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeImportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeImportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeImportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeImportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -778,19 +951,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeIntentError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeIntentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeIntentError> for Error {
     fn from(err: crate::error::DescribeIntentError) -> Self {
-        match err.kind {
-            crate::error::DescribeIntentErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeIntentErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeIntentErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeIntentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeIntentErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeIntentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeIntentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeIntentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeIntentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeIntentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeIntentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeIntentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -798,17 +976,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourcePol
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeResourcePolicyError> for Error {
     fn from(err: crate::error::DescribeResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::DescribeResourcePolicyErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -816,19 +999,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSlotError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeSlotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeSlotError> for Error {
     fn from(err: crate::error::DescribeSlotError) -> Self {
-        match err.kind {
-            crate::error::DescribeSlotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeSlotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSlotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeSlotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeSlotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeSlotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeSlotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeSlotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeSlotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeSlotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeSlotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeSlotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -836,19 +1024,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSlotTypeErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeSlotTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeSlotTypeError> for Error {
     fn from(err: crate::error::DescribeSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::DescribeSlotTypeErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeSlotTypeErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSlotTypeErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::DescribeSlotTypeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeSlotTypeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeSlotTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeSlotTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeSlotTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeSlotTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::DescribeSlotTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DescribeSlotTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DescribeSlotTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -856,18 +1049,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAggregatedUtter
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAggregatedUtterancesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListAggregatedUtterancesError> for Error {
     fn from(err: crate::error::ListAggregatedUtterancesError) -> Self {
-        match err.kind {
-            crate::error::ListAggregatedUtterancesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAggregatedUtterancesErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::ListAggregatedUtterancesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAggregatedUtterancesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAggregatedUtterancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListAggregatedUtterancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListAggregatedUtterancesError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::ListAggregatedUtterancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListAggregatedUtterancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListAggregatedUtterancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -875,18 +1073,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotAliasesError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotAliasesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBotAliasesError> for Error {
     fn from(err: crate::error::ListBotAliasesError) -> Self {
-        match err.kind {
-            crate::error::ListBotAliasesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBotAliasesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBotAliasesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBotAliasesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBotAliasesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBotAliasesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBotAliasesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBotAliasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBotAliasesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBotAliasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -894,18 +1097,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotLocalesError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotLocalesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBotLocalesError> for Error {
     fn from(err: crate::error::ListBotLocalesError) -> Self {
-        match err.kind {
-            crate::error::ListBotLocalesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBotLocalesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBotLocalesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBotLocalesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBotLocalesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBotLocalesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBotLocalesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBotLocalesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBotLocalesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBotLocalesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -913,18 +1121,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotRecommendati
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotRecommendationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBotRecommendationsError> for Error {
     fn from(err: crate::error::ListBotRecommendationsError) -> Self {
-        match err.kind {
-            crate::error::ListBotRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBotRecommendationsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListBotRecommendationsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBotRecommendationsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBotRecommendationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBotRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBotRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListBotRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBotRecommendationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBotRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -932,18 +1145,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotsError, R>> 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBotsError> for Error {
     fn from(err: crate::error::ListBotsError) -> Self {
-        match err.kind {
-            crate::error::ListBotsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBotsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBotsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBotsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBotsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBotsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBotsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -951,18 +1169,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotVersionsErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotVersionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBotVersionsError> for Error {
     fn from(err: crate::error::ListBotVersionsError) -> Self {
-        match err.kind {
-            crate::error::ListBotVersionsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBotVersionsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBotVersionsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBotVersionsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBotVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBotVersionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBotVersionsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBotVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBotVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBotVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -970,18 +1193,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBuiltInIntentsE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBuiltInIntentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBuiltInIntentsError> for Error {
     fn from(err: crate::error::ListBuiltInIntentsError) -> Self {
-        match err.kind {
-            crate::error::ListBuiltInIntentsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBuiltInIntentsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBuiltInIntentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBuiltInIntentsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBuiltInIntentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBuiltInIntentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBuiltInIntentsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBuiltInIntentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBuiltInIntentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBuiltInIntentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -989,18 +1217,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBuiltInSlotType
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBuiltInSlotTypesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListBuiltInSlotTypesError> for Error {
     fn from(err: crate::error::ListBuiltInSlotTypesError) -> Self {
-        match err.kind {
-            crate::error::ListBuiltInSlotTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListBuiltInSlotTypesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListBuiltInSlotTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListBuiltInSlotTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListBuiltInSlotTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListBuiltInSlotTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListBuiltInSlotTypesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListBuiltInSlotTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListBuiltInSlotTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListBuiltInSlotTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1008,19 +1241,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCustomVocabular
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCustomVocabularyItemsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListCustomVocabularyItemsError> for Error {
     fn from(err: crate::error::ListCustomVocabularyItemsError) -> Self {
-        match err.kind {
-            crate::error::ListCustomVocabularyItemsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListCustomVocabularyItemsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListCustomVocabularyItemsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListCustomVocabularyItemsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListCustomVocabularyItemsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListCustomVocabularyItemsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListCustomVocabularyItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListCustomVocabularyItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListCustomVocabularyItemsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListCustomVocabularyItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListCustomVocabularyItemsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListCustomVocabularyItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1028,17 +1266,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListExportsError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListExportsError> for Error {
     fn from(err: crate::error::ListExportsError) -> Self {
-        match err.kind {
-            crate::error::ListExportsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListExportsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListExportsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListExportsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListExportsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListExportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListExportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListExportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1046,17 +1289,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListImportsError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListImportsError> for Error {
     fn from(err: crate::error::ListImportsError) -> Self {
-        match err.kind {
-            crate::error::ListImportsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListImportsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListImportsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListImportsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListImportsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListImportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListImportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListImportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1064,18 +1312,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIntentsError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIntentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListIntentsError> for Error {
     fn from(err: crate::error::ListIntentsError) -> Self {
-        match err.kind {
-            crate::error::ListIntentsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListIntentsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListIntentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListIntentsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListIntentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListIntentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListIntentsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListIntentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListIntentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListIntentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1083,19 +1336,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRecommendedInte
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRecommendedIntentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListRecommendedIntentsError> for Error {
     fn from(err: crate::error::ListRecommendedIntentsError) -> Self {
-        match err.kind {
-            crate::error::ListRecommendedIntentsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListRecommendedIntentsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListRecommendedIntentsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListRecommendedIntentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListRecommendedIntentsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListRecommendedIntentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListRecommendedIntentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListRecommendedIntentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListRecommendedIntentsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListRecommendedIntentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListRecommendedIntentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListRecommendedIntentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1103,18 +1361,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSlotsError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSlotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSlotsError> for Error {
     fn from(err: crate::error::ListSlotsError) -> Self {
-        match err.kind {
-            crate::error::ListSlotsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListSlotsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListSlotsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListSlotsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSlotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSlotsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListSlotsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListSlotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListSlotsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSlotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1122,18 +1385,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSlotTypesError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSlotTypesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListSlotTypesError> for Error {
     fn from(err: crate::error::ListSlotTypesError) -> Self {
-        match err.kind {
-            crate::error::ListSlotTypesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListSlotTypesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::ListSlotTypesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListSlotTypesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSlotTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListSlotTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListSlotTypesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::ListSlotTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListSlotTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListSlotTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1141,18 +1409,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1160,19 +1433,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchAssociatedTra
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchAssociatedTranscriptsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::SearchAssociatedTranscriptsError> for Error {
     fn from(err: crate::error::SearchAssociatedTranscriptsError) -> Self {
-        match err.kind {
-            crate::error::SearchAssociatedTranscriptsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::SearchAssociatedTranscriptsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SearchAssociatedTranscriptsErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::SearchAssociatedTranscriptsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::SearchAssociatedTranscriptsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::SearchAssociatedTranscriptsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SearchAssociatedTranscriptsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::SearchAssociatedTranscriptsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::SearchAssociatedTranscriptsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::SearchAssociatedTranscriptsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::SearchAssociatedTranscriptsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::SearchAssociatedTranscriptsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1180,21 +1458,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartBotRecommendat
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartBotRecommendationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartBotRecommendationError> for Error {
     fn from(err: crate::error::StartBotRecommendationError) -> Self {
-        match err.kind {
-            crate::error::StartBotRecommendationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartBotRecommendationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartBotRecommendationErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::StartBotRecommendationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartBotRecommendationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartBotRecommendationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartBotRecommendationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartBotRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartBotRecommendationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StartBotRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StartBotRecommendationError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::StartBotRecommendationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartBotRecommendationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::StartBotRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartBotRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1202,20 +1485,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartImportError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartImportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StartImportError> for Error {
     fn from(err: crate::error::StartImportError) -> Self {
-        match err.kind {
-            crate::error::StartImportErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartImportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartImportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartImportErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartImportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartImportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartImportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartImportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StartImportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StartImportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StartImportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::StartImportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StartImportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StartImportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1223,21 +1511,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopBotRecommendati
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopBotRecommendationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::StopBotRecommendationError> for Error {
     fn from(err: crate::error::StopBotRecommendationError) -> Self {
-        match err.kind {
-            crate::error::StopBotRecommendationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StopBotRecommendationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StopBotRecommendationErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::StopBotRecommendationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopBotRecommendationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StopBotRecommendationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StopBotRecommendationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopBotRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StopBotRecommendationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::StopBotRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::StopBotRecommendationError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::StopBotRecommendationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::StopBotRecommendationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::StopBotRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::StopBotRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::StopBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1245,18 +1538,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::TagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1264,18 +1562,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1283,20 +1586,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateBotError> for Error {
     fn from(err: crate::error::UpdateBotError) -> Self {
-        match err.kind {
-            crate::error::UpdateBotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateBotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateBotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateBotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateBotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateBotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateBotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateBotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateBotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateBotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateBotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1304,20 +1612,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotAliasError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBotAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateBotAliasError> for Error {
     fn from(err: crate::error::UpdateBotAliasError) -> Self {
-        match err.kind {
-            crate::error::UpdateBotAliasErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateBotAliasErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateBotAliasErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateBotAliasErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateBotAliasErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateBotAliasErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateBotAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateBotAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateBotAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateBotAliasError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateBotAliasError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateBotAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateBotAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateBotAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1325,20 +1638,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotLocaleErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBotLocaleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateBotLocaleError> for Error {
     fn from(err: crate::error::UpdateBotLocaleError) -> Self {
-        match err.kind {
-            crate::error::UpdateBotLocaleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateBotLocaleErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateBotLocaleErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateBotLocaleErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateBotLocaleErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateBotLocaleErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateBotLocaleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateBotLocaleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateBotLocaleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateBotLocaleError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateBotLocaleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1346,21 +1664,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotRecommenda
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBotRecommendationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateBotRecommendationError> for Error {
     fn from(err: crate::error::UpdateBotRecommendationError) -> Self {
-        match err.kind {
-            crate::error::UpdateBotRecommendationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateBotRecommendationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateBotRecommendationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateBotRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateBotRecommendationError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateBotRecommendationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateBotRecommendationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateBotRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateBotRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1368,20 +1691,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateExportError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateExportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateExportError> for Error {
     fn from(err: crate::error::UpdateExportError) -> Self {
-        match err.kind {
-            crate::error::UpdateExportErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateExportErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateExportErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateExportErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateExportErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateExportErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateExportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateExportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateExportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateExportError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1389,20 +1717,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIntentError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateIntentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateIntentError> for Error {
     fn from(err: crate::error::UpdateIntentError) -> Self {
-        match err.kind {
-            crate::error::UpdateIntentErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateIntentErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateIntentErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateIntentErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateIntentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateIntentErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateIntentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateIntentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateIntentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateIntentError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateIntentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateIntentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateIntentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateIntentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1410,20 +1743,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResourcePolic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateResourcePolicyError> for Error {
     fn from(err: crate::error::UpdateResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::UpdateResourcePolicyErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateResourcePolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateResourcePolicyError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateResourcePolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1431,20 +1769,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSlotError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSlotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateSlotError> for Error {
     fn from(err: crate::error::UpdateSlotError) -> Self {
-        match err.kind {
-            crate::error::UpdateSlotErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateSlotErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateSlotErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateSlotErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateSlotErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateSlotErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateSlotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateSlotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateSlotError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateSlotError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateSlotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateSlotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateSlotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateSlotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1452,22 +1795,41 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSlotTypeError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSlotTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateSlotTypeError> for Error {
     fn from(err: crate::error::UpdateSlotTypeError) -> Self {
-        match err.kind {
-            crate::error::UpdateSlotTypeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateSlotTypeErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateSlotTypeErrorKind::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
-            crate::error::UpdateSlotTypeErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::UpdateSlotTypeErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateSlotTypeErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateSlotTypeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateSlotTypeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateSlotTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateSlotTypeError::PreconditionFailedException(inner) => Error::PreconditionFailedException(inner),
+            crate::error::UpdateSlotTypeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::error::UpdateSlotTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateSlotTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateSlotTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::PreconditionFailedException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

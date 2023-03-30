@@ -22,6 +22,7 @@ impl CreateApplication {
 impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
                 type Output = std::result::Result<crate::output::CreateApplicationOutput, crate::error::CreateApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_application_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateApplicationVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationVersion {
                 type Output = std::result::Result<crate::output::CreateApplicationVersionOutput, crate::error::CreateApplicationVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_application_version_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateCloudFormationChangeSet {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFormationChangeSet {
                 type Output = std::result::Result<crate::output::CreateCloudFormationChangeSetOutput, crate::error::CreateCloudFormationChangeSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_cloud_formation_change_set_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateCloudFormationTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFormationTemplate {
                 type Output = std::result::Result<crate::output::CreateCloudFormationTemplateOutput, crate::error::CreateCloudFormationTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_cloud_formation_template_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
                 type Output = std::result::Result<crate::output::DeleteApplicationOutput, crate::error::DeleteApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_application_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetApplication {
 impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
                 type Output = std::result::Result<crate::output::GetApplicationOutput, crate::error::GetApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_application_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetApplicationPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetApplicationPolicy {
                 type Output = std::result::Result<crate::output::GetApplicationPolicyOutput, crate::error::GetApplicationPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_application_policy_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetCloudFormationTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetCloudFormationTemplate {
                 type Output = std::result::Result<crate::output::GetCloudFormationTemplateOutput, crate::error::GetCloudFormationTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_cloud_formation_template_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListApplicationDependencies {
 impl aws_smithy_http::response::ParseStrictResponse for ListApplicationDependencies {
                 type Output = std::result::Result<crate::output::ListApplicationDependenciesOutput, crate::error::ListApplicationDependenciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_application_dependencies_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListApplications {
 impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
                 type Output = std::result::Result<crate::output::ListApplicationsOutput, crate::error::ListApplicationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_applications_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListApplicationVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListApplicationVersions {
                 type Output = std::result::Result<crate::output::ListApplicationVersionsOutput, crate::error::ListApplicationVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_application_versions_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutApplicationPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutApplicationPolicy {
                 type Output = std::result::Result<crate::output::PutApplicationPolicyOutput, crate::error::PutApplicationPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_application_policy_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UnshareApplication {
 impl aws_smithy_http::response::ParseStrictResponse for UnshareApplication {
                 type Output = std::result::Result<crate::output::UnshareApplicationOutput, crate::error::UnshareApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_unshare_application_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl UpdateApplication {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateApplication {
                 type Output = std::result::Result<crate::output::UpdateApplicationOutput, crate::error::UpdateApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_application_error(response)
                      } else {

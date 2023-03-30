@@ -9,15 +9,8 @@ pub enum Error {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The calls to the GetEntitlements API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,19 +26,34 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEntitlementsErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEntitlementsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetEntitlementsError> for Error {
     fn from(err: crate::error::GetEntitlementsError) -> Self {
-        match err.kind {
-            crate::error::GetEntitlementsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetEntitlementsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetEntitlementsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetEntitlementsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetEntitlementsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::GetEntitlementsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::error::GetEntitlementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InternalServiceErrorException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

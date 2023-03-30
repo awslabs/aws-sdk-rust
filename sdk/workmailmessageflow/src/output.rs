@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRawMessageContentOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutRawMessageContentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
 pub mod put_raw_message_content_output {
     
@@ -11,11 +17,22 @@ pub mod put_raw_message_content_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
         pub fn build(self) -> crate::output::PutRawMessageContentOutput {
             crate::output::PutRawMessageContentOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -35,6 +52,7 @@ impl PutRawMessageContentOutput {
 pub struct GetRawMessageContentOutput  {
     /// <p>The raw content of the email message, in MIME format.</p>
     pub message_content: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl GetRawMessageContentOutput {
     /// <p>The raw content of the email message, in MIME format.</p>
@@ -42,6 +60,11 @@ impl GetRawMessageContentOutput {
         &self.message_content
     }
 }
+impl aws_http::request_id::RequestId for GetRawMessageContentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
 pub mod get_raw_message_content_output {
     
@@ -50,6 +73,7 @@ pub mod get_raw_message_content_output {
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_content: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The raw content of the email message, in MIME format.</p>
@@ -61,12 +85,22 @@ pub mod get_raw_message_content_output {
         pub fn set_message_content(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
             self.message_content = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
         pub fn build(self) -> crate::output::GetRawMessageContentOutput {
             crate::output::GetRawMessageContentOutput {
                 message_content: self.message_content
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }

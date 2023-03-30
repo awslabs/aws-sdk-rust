@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopVectorEnrichmentJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
 pub mod stop_vector_enrichment_job_output {
     
@@ -11,11 +17,22 @@ pub mod stop_vector_enrichment_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::StopVectorEnrichmentJobOutput {
             crate::output::StopVectorEnrichmentJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -48,6 +65,7 @@ pub struct ExportVectorEnrichmentJobOutput  {
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     #[doc(hidden)]
     pub output_config: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>,
+    _request_id: Option<String>,
 }
 impl ExportVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
@@ -71,6 +89,11 @@ impl ExportVectorEnrichmentJobOutput {
         self.output_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExportVectorEnrichmentJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
 pub mod export_vector_enrichment_job_output {
     
@@ -83,6 +106,7 @@ pub mod export_vector_enrichment_job_output {
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) export_status: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
         pub(crate) output_config: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
@@ -130,6 +154,15 @@ pub mod export_vector_enrichment_job_output {
         pub fn set_output_config(mut self, input: std::option::Option<crate::model::ExportVectorEnrichmentJobOutputConfig>) -> Self {
             self.output_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::ExportVectorEnrichmentJobOutput {
             crate::output::ExportVectorEnrichmentJobOutput {
@@ -143,6 +176,7 @@ pub mod export_vector_enrichment_job_output {
                 ,
                 output_config: self.output_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -166,6 +200,7 @@ pub struct ListVectorEnrichmentJobsOutput  {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVectorEnrichmentJobsOutput {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
@@ -182,9 +217,15 @@ impl  std::fmt::Debug for ListVectorEnrichmentJobsOutput  {
         let mut formatter = f.debug_struct("ListVectorEnrichmentJobsOutput");
         formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListVectorEnrichmentJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
 pub mod list_vector_enrichment_jobs_output {
     
@@ -194,6 +235,7 @@ pub mod list_vector_enrichment_jobs_output {
     pub struct Builder {
         pub(crate) vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `vector_enrichment_job_summaries`.
@@ -220,6 +262,15 @@ pub mod list_vector_enrichment_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
         pub fn build(self) -> crate::output::ListVectorEnrichmentJobsOutput {
             crate::output::ListVectorEnrichmentJobsOutput {
@@ -227,6 +278,7 @@ pub mod list_vector_enrichment_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -235,6 +287,7 @@ pub mod list_vector_enrichment_jobs_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -285,6 +338,7 @@ pub struct StartVectorEnrichmentJobOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl StartVectorEnrichmentJobOutput {
     /// <p>The name of the Vector Enrichment job.</p>
@@ -332,6 +386,11 @@ impl StartVectorEnrichmentJobOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartVectorEnrichmentJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
 pub mod start_vector_enrichment_job_output {
     
@@ -350,6 +409,7 @@ pub mod start_vector_enrichment_job_output {
         pub(crate) job_config: std::option::Option<crate::model::VectorEnrichmentJobConfig>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the Vector Enrichment job.</p>
@@ -457,6 +517,15 @@ pub mod start_vector_enrichment_job_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::StartVectorEnrichmentJobOutput {
             crate::output::StartVectorEnrichmentJobOutput {
@@ -482,6 +551,7 @@ pub mod start_vector_enrichment_job_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -499,7 +569,13 @@ impl StartVectorEnrichmentJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVectorEnrichmentJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
 pub mod delete_vector_enrichment_job_output {
     
@@ -507,11 +583,22 @@ pub mod delete_vector_enrichment_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::DeleteVectorEnrichmentJobOutput {
             crate::output::DeleteVectorEnrichmentJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -571,6 +658,7 @@ pub struct GetVectorEnrichmentJobOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
@@ -630,6 +718,11 @@ impl GetVectorEnrichmentJobOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVectorEnrichmentJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
 pub mod get_vector_enrichment_job_output {
     
@@ -651,6 +744,7 @@ pub mod get_vector_enrichment_job_output {
         pub(crate) export_status: std::option::Option<crate::model::VectorEnrichmentJobExportStatus>,
         pub(crate) export_error_details: std::option::Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
@@ -785,6 +879,15 @@ pub mod get_vector_enrichment_job_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
         pub fn build(self) -> crate::output::GetVectorEnrichmentJobOutput {
             crate::output::GetVectorEnrichmentJobOutput {
@@ -816,6 +919,7 @@ pub mod get_vector_enrichment_job_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -842,6 +946,7 @@ pub struct SearchRasterDataCollectionOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ItemSource>>,
+    _request_id: Option<String>,
 }
 impl SearchRasterDataCollectionOutput {
     /// <p></p>
@@ -863,9 +968,15 @@ impl  std::fmt::Debug for SearchRasterDataCollectionOutput  {
         formatter.field("approximate_result_count", &self.approximate_result_count);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("items", &self.items);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for SearchRasterDataCollectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
 pub mod search_raster_data_collection_output {
     
@@ -876,6 +987,7 @@ pub mod search_raster_data_collection_output {
         pub(crate) approximate_result_count: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ItemSource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p></p>
@@ -911,6 +1023,15 @@ pub mod search_raster_data_collection_output {
         pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ItemSource>>) -> Self {
             self.items = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
         pub fn build(self) -> crate::output::SearchRasterDataCollectionOutput {
             crate::output::SearchRasterDataCollectionOutput {
@@ -920,6 +1041,7 @@ pub mod search_raster_data_collection_output {
                 ,
                 items: self.items
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -929,6 +1051,7 @@ pub mod search_raster_data_collection_output {
             formatter.field("approximate_result_count", &self.approximate_result_count);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.field("items", &self.items);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -952,6 +1075,7 @@ pub struct ListRasterDataCollectionsOutput  {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
@@ -968,9 +1092,15 @@ impl  std::fmt::Debug for ListRasterDataCollectionsOutput  {
         let mut formatter = f.debug_struct("ListRasterDataCollectionsOutput");
         formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListRasterDataCollectionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
 pub mod list_raster_data_collections_output {
     
@@ -980,6 +1110,7 @@ pub mod list_raster_data_collections_output {
     pub struct Builder {
         pub(crate) raster_data_collection_summaries: std::option::Option<std::vec::Vec<crate::model::RasterDataCollectionMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `raster_data_collection_summaries`.
@@ -1006,6 +1137,15 @@ pub mod list_raster_data_collections_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
         pub fn build(self) -> crate::output::ListRasterDataCollectionsOutput {
             crate::output::ListRasterDataCollectionsOutput {
@@ -1013,6 +1153,7 @@ pub mod list_raster_data_collections_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1021,6 +1162,7 @@ pub mod list_raster_data_collections_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1062,6 +1204,7 @@ pub struct GetRasterDataCollectionOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
@@ -1097,6 +1240,11 @@ impl GetRasterDataCollectionOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRasterDataCollectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
 pub mod get_raster_data_collection_output {
     
@@ -1112,6 +1260,7 @@ pub mod get_raster_data_collection_output {
         pub(crate) supported_filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) image_source_bands: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the raster data collection.</p>
@@ -1204,6 +1353,15 @@ pub mod get_raster_data_collection_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
         pub fn build(self) -> crate::output::GetRasterDataCollectionOutput {
             crate::output::GetRasterDataCollectionOutput {
@@ -1223,6 +1381,7 @@ pub mod get_raster_data_collection_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1240,7 +1399,13 @@ impl GetRasterDataCollectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopEarthObservationJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopEarthObservationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
 pub mod stop_earth_observation_job_output {
     
@@ -1248,11 +1413,22 @@ pub mod stop_earth_observation_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
         pub fn build(self) -> crate::output::StopEarthObservationJobOutput {
             crate::output::StopEarthObservationJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1272,6 +1448,7 @@ impl StopEarthObservationJobOutput {
 pub struct GetTileOutput  {
     /// <p>The output binary file.</p>
     pub binary_file: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl GetTileOutput {
     /// <p>The output binary file.</p>
@@ -1279,6 +1456,11 @@ impl GetTileOutput {
         &self.binary_file
     }
 }
+impl aws_http::request_id::RequestId for GetTileOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTileOutput`](crate::output::GetTileOutput).
 pub mod get_tile_output {
     
@@ -1287,6 +1469,7 @@ pub mod get_tile_output {
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) binary_file: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output binary file.</p>
@@ -1298,12 +1481,22 @@ pub mod get_tile_output {
         pub fn set_binary_file(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
             self.binary_file = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTileOutput`](crate::output::GetTileOutput).
         pub fn build(self) -> crate::output::GetTileOutput {
             crate::output::GetTileOutput {
                 binary_file: self.binary_file
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1339,6 +1532,7 @@ pub struct ExportEarthObservationJobOutput  {
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     #[doc(hidden)]
     pub export_source_images: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl ExportEarthObservationJobOutput {
     /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
@@ -1366,6 +1560,11 @@ impl ExportEarthObservationJobOutput {
         self.export_source_images
     }
 }
+impl aws_http::request_id::RequestId for ExportEarthObservationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
 pub mod export_earth_observation_job_output {
     
@@ -1379,6 +1578,7 @@ pub mod export_earth_observation_job_output {
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfigInput>,
         pub(crate) export_source_images: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
@@ -1435,6 +1635,15 @@ pub mod export_earth_observation_job_output {
         pub fn set_export_source_images(mut self, input: std::option::Option<bool>) -> Self {
             self.export_source_images = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
         pub fn build(self) -> crate::output::ExportEarthObservationJobOutput {
             crate::output::ExportEarthObservationJobOutput {
@@ -1450,6 +1659,7 @@ pub mod export_earth_observation_job_output {
                 ,
                 export_source_images: self.export_source_images
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1473,6 +1683,7 @@ pub struct ListEarthObservationJobsOutput  {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
@@ -1489,9 +1700,15 @@ impl  std::fmt::Debug for ListEarthObservationJobsOutput  {
         let mut formatter = f.debug_struct("ListEarthObservationJobsOutput");
         formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListEarthObservationJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
 pub mod list_earth_observation_jobs_output {
     
@@ -1501,6 +1718,7 @@ pub mod list_earth_observation_jobs_output {
     pub struct Builder {
         pub(crate) earth_observation_job_summaries: std::option::Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `earth_observation_job_summaries`.
@@ -1527,6 +1745,15 @@ pub mod list_earth_observation_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
         pub fn build(self) -> crate::output::ListEarthObservationJobsOutput {
             crate::output::ListEarthObservationJobsOutput {
@@ -1534,6 +1761,7 @@ pub mod list_earth_observation_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1542,6 +1770,7 @@ pub mod list_earth_observation_jobs_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1589,6 +1818,7 @@ pub struct StartEarthObservationJobOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl StartEarthObservationJobOutput {
     /// <p>The name of the Earth Observation job.</p>
@@ -1632,6 +1862,11 @@ impl StartEarthObservationJobOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartEarthObservationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
 pub mod start_earth_observation_job_output {
     
@@ -1649,6 +1884,7 @@ pub mod start_earth_observation_job_output {
         pub(crate) job_config: std::option::Option<crate::model::JobConfigInput>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the Earth Observation job.</p>
@@ -1747,6 +1983,15 @@ pub mod start_earth_observation_job_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
         pub fn build(self) -> crate::output::StartEarthObservationJobOutput {
             crate::output::StartEarthObservationJobOutput {
@@ -1770,6 +2015,7 @@ pub mod start_earth_observation_job_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1787,7 +2033,13 @@ impl StartEarthObservationJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEarthObservationJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEarthObservationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
 pub mod delete_earth_observation_job_output {
     
@@ -1795,11 +2047,22 @@ pub mod delete_earth_observation_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
         pub fn build(self) -> crate::output::DeleteEarthObservationJobOutput {
             crate::output::DeleteEarthObservationJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1859,6 +2122,7 @@ pub struct GetEarthObservationJobOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetEarthObservationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
@@ -1918,6 +2182,11 @@ impl GetEarthObservationJobOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEarthObservationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
 pub mod get_earth_observation_job_output {
     
@@ -1939,6 +2208,7 @@ pub mod get_earth_observation_job_output {
         pub(crate) export_status: std::option::Option<crate::model::EarthObservationJobExportStatus>,
         pub(crate) export_error_details: std::option::Option<crate::model::ExportErrorDetails>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
@@ -2079,6 +2349,15 @@ pub mod get_earth_observation_job_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
         pub fn build(self) -> crate::output::GetEarthObservationJobOutput {
             crate::output::GetEarthObservationJobOutput {
@@ -2110,6 +2389,7 @@ pub mod get_earth_observation_job_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2127,7 +2407,13 @@ impl GetEarthObservationJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -2135,11 +2421,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2157,7 +2454,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -2165,11 +2468,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2190,6 +2504,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Each tag consists of a key and a value.</p>
@@ -2197,6 +2512,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2205,6 +2525,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2222,11 +2543,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

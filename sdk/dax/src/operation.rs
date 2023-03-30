@@ -22,6 +22,7 @@ impl CreateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
                 type Output = std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_cluster_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateParameterGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateParameterGroup {
                 type Output = std::result::Result<crate::output::CreateParameterGroupOutput, crate::error::CreateParameterGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_parameter_group_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateSubnetGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSubnetGroup {
                 type Output = std::result::Result<crate::output::CreateSubnetGroupOutput, crate::error::CreateSubnetGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_subnet_group_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DecreaseReplicationFactor {
 impl aws_smithy_http::response::ParseStrictResponse for DecreaseReplicationFactor {
                 type Output = std::result::Result<crate::output::DecreaseReplicationFactorOutput, crate::error::DecreaseReplicationFactorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_decrease_replication_factor_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteCluster {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
                 type Output = std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_cluster_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteParameterGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteParameterGroup {
                 type Output = std::result::Result<crate::output::DeleteParameterGroupOutput, crate::error::DeleteParameterGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_parameter_group_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteSubnetGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnetGroup {
                 type Output = std::result::Result<crate::output::DeleteSubnetGroupOutput, crate::error::DeleteSubnetGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_subnet_group_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeClusters {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeClusters {
                 type Output = std::result::Result<crate::output::DescribeClustersOutput, crate::error::DescribeClustersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_clusters_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeDefaultParameters {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDefaultParameters {
                 type Output = std::result::Result<crate::output::DescribeDefaultParametersOutput, crate::error::DescribeDefaultParametersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_default_parameters_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeEvents {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
                 type Output = std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_events_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeParameterGroups {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeParameterGroups {
                 type Output = std::result::Result<crate::output::DescribeParameterGroupsOutput, crate::error::DescribeParameterGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_parameter_groups_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeParameters {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeParameters {
                 type Output = std::result::Result<crate::output::DescribeParametersOutput, crate::error::DescribeParametersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_parameters_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeSubnetGroups {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSubnetGroups {
                 type Output = std::result::Result<crate::output::DescribeSubnetGroupsOutput, crate::error::DescribeSubnetGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_subnet_groups_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl IncreaseReplicationFactor {
 impl aws_smithy_http::response::ParseStrictResponse for IncreaseReplicationFactor {
                 type Output = std::result::Result<crate::output::IncreaseReplicationFactorOutput, crate::error::IncreaseReplicationFactorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_increase_replication_factor_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListTags {
                 type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl RebootNode {
 impl aws_smithy_http::response::ParseStrictResponse for RebootNode {
                 type Output = std::result::Result<crate::output::RebootNodeOutput, crate::error::RebootNodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reboot_node_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UpdateCluster {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCluster {
                 type Output = std::result::Result<crate::output::UpdateClusterOutput, crate::error::UpdateClusterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_cluster_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UpdateParameterGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateParameterGroup {
                 type Output = std::result::Result<crate::output::UpdateParameterGroupOutput, crate::error::UpdateParameterGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_parameter_group_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateSubnetGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSubnetGroup {
                 type Output = std::result::Result<crate::output::UpdateSubnetGroupOutput, crate::error::UpdateSubnetGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_subnet_group_error(response)
                      } else {

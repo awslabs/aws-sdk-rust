@@ -22,6 +22,7 @@ impl ApplyArchiveRule {
 impl aws_smithy_http::response::ParseStrictResponse for ApplyArchiveRule {
                 type Output = std::result::Result<crate::output::ApplyArchiveRuleOutput, crate::error::ApplyArchiveRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_apply_archive_rule_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CancelPolicyGeneration {
 impl aws_smithy_http::response::ParseStrictResponse for CancelPolicyGeneration {
                 type Output = std::result::Result<crate::output::CancelPolicyGenerationOutput, crate::error::CancelPolicyGenerationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_policy_generation_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAccessPreview {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPreview {
                 type Output = std::result::Result<crate::output::CreateAccessPreviewOutput, crate::error::CreateAccessPreviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_access_preview_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateAnalyzer {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAnalyzer {
                 type Output = std::result::Result<crate::output::CreateAnalyzerOutput, crate::error::CreateAnalyzerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_analyzer_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateArchiveRule {
 impl aws_smithy_http::response::ParseStrictResponse for CreateArchiveRule {
                 type Output = std::result::Result<crate::output::CreateArchiveRuleOutput, crate::error::CreateArchiveRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_archive_rule_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteAnalyzer {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAnalyzer {
                 type Output = std::result::Result<crate::output::DeleteAnalyzerOutput, crate::error::DeleteAnalyzerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_analyzer_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteArchiveRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteArchiveRule {
                 type Output = std::result::Result<crate::output::DeleteArchiveRuleOutput, crate::error::DeleteArchiveRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_archive_rule_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetAccessPreview {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccessPreview {
                 type Output = std::result::Result<crate::output::GetAccessPreviewOutput, crate::error::GetAccessPreviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_access_preview_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetAnalyzedResource {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnalyzedResource {
                 type Output = std::result::Result<crate::output::GetAnalyzedResourceOutput, crate::error::GetAnalyzedResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_analyzed_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetAnalyzer {
 impl aws_smithy_http::response::ParseStrictResponse for GetAnalyzer {
                 type Output = std::result::Result<crate::output::GetAnalyzerOutput, crate::error::GetAnalyzerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_analyzer_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetArchiveRule {
 impl aws_smithy_http::response::ParseStrictResponse for GetArchiveRule {
                 type Output = std::result::Result<crate::output::GetArchiveRuleOutput, crate::error::GetArchiveRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_archive_rule_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetFinding {
 impl aws_smithy_http::response::ParseStrictResponse for GetFinding {
                 type Output = std::result::Result<crate::output::GetFindingOutput, crate::error::GetFindingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_finding_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetGeneratedPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetGeneratedPolicy {
                 type Output = std::result::Result<crate::output::GetGeneratedPolicyOutput, crate::error::GetGeneratedPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_generated_policy_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListAccessPreviewFindings {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccessPreviewFindings {
                 type Output = std::result::Result<crate::output::ListAccessPreviewFindingsOutput, crate::error::ListAccessPreviewFindingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_access_preview_findings_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListAccessPreviews {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccessPreviews {
                 type Output = std::result::Result<crate::output::ListAccessPreviewsOutput, crate::error::ListAccessPreviewsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_access_previews_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListAnalyzedResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListAnalyzedResources {
                 type Output = std::result::Result<crate::output::ListAnalyzedResourcesOutput, crate::error::ListAnalyzedResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_analyzed_resources_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListAnalyzers {
 impl aws_smithy_http::response::ParseStrictResponse for ListAnalyzers {
                 type Output = std::result::Result<crate::output::ListAnalyzersOutput, crate::error::ListAnalyzersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_analyzers_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListArchiveRules {
 impl aws_smithy_http::response::ParseStrictResponse for ListArchiveRules {
                 type Output = std::result::Result<crate::output::ListArchiveRulesOutput, crate::error::ListArchiveRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_archive_rules_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListFindings {
 impl aws_smithy_http::response::ParseStrictResponse for ListFindings {
                 type Output = std::result::Result<crate::output::ListFindingsOutput, crate::error::ListFindingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_findings_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListPolicyGenerations {
 impl aws_smithy_http::response::ParseStrictResponse for ListPolicyGenerations {
                 type Output = std::result::Result<crate::output::ListPolicyGenerationsOutput, crate::error::ListPolicyGenerationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_policy_generations_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl StartPolicyGeneration {
 impl aws_smithy_http::response::ParseStrictResponse for StartPolicyGeneration {
                 type Output = std::result::Result<crate::output::StartPolicyGenerationOutput, crate::error::StartPolicyGenerationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_policy_generation_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl StartResourceScan {
 impl aws_smithy_http::response::ParseStrictResponse for StartResourceScan {
                 type Output = std::result::Result<crate::output::StartResourceScanOutput, crate::error::StartResourceScanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_resource_scan_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateArchiveRule {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateArchiveRule {
                 type Output = std::result::Result<crate::output::UpdateArchiveRuleOutput, crate::error::UpdateArchiveRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_archive_rule_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateFindings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFindings {
                 type Output = std::result::Result<crate::output::UpdateFindingsOutput, crate::error::UpdateFindingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_findings_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ValidatePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for ValidatePolicy {
                 type Output = std::result::Result<crate::output::ValidatePolicyOutput, crate::error::ValidatePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_validate_policy_error(response)
                      } else {

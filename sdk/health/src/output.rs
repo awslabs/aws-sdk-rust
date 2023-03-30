@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableHealthServiceAccessForOrganizationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for EnableHealthServiceAccessForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
 pub mod enable_health_service_access_for_organization_output {
     
@@ -11,11 +17,22 @@ pub mod enable_health_service_access_for_organization_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
         pub fn build(self) -> crate::output::EnableHealthServiceAccessForOrganizationOutput {
             crate::output::EnableHealthServiceAccessForOrganizationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl EnableHealthServiceAccessForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableHealthServiceAccessForOrganizationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisableHealthServiceAccessForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
 pub mod disable_health_service_access_for_organization_output {
     
@@ -41,11 +64,22 @@ pub mod disable_health_service_access_for_organization_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
         pub fn build(self) -> crate::output::DisableHealthServiceAccessForOrganizationOutput {
             crate::output::DisableHealthServiceAccessForOrganizationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -67,6 +101,7 @@ pub struct DescribeHealthServiceStatusForOrganizationOutput  {
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     #[doc(hidden)]
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
     /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
@@ -75,6 +110,11 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
         self.health_service_access_status_for_organization.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHealthServiceStatusForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
 pub mod describe_health_service_status_for_organization_output {
     
@@ -83,6 +123,7 @@ pub mod describe_health_service_status_for_organization_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_service_access_status_for_organization: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
@@ -96,11 +137,21 @@ pub mod describe_health_service_status_for_organization_output {
         pub fn set_health_service_access_status_for_organization(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.health_service_access_status_for_organization = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeHealthServiceStatusForOrganizationOutput {
             crate::output::DescribeHealthServiceStatusForOrganizationOutput {
                 health_service_access_status_for_organization: self.health_service_access_status_for_organization
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -124,6 +175,7 @@ pub struct DescribeEventTypesOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEventTypesOutput {
     /// <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
@@ -135,6 +187,11 @@ impl DescribeEventTypesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
 pub mod describe_event_types_output {
     
@@ -144,6 +201,7 @@ pub mod describe_event_types_output {
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_types`.
@@ -170,6 +228,15 @@ pub mod describe_event_types_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
         pub fn build(self) -> crate::output::DescribeEventTypesOutput {
             crate::output::DescribeEventTypesOutput {
@@ -177,6 +244,7 @@ pub mod describe_event_types_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -200,6 +268,7 @@ pub struct DescribeEventsForOrganizationOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEventsForOrganizationOutput {
     /// <p>The events that match the specified filter criteria.</p>
@@ -211,6 +280,11 @@ impl DescribeEventsForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventsForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
 pub mod describe_events_for_organization_output {
     
@@ -220,6 +294,7 @@ pub mod describe_events_for_organization_output {
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::OrganizationEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events`.
@@ -246,6 +321,15 @@ pub mod describe_events_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeEventsForOrganizationOutput {
             crate::output::DescribeEventsForOrganizationOutput {
@@ -253,6 +337,7 @@ pub mod describe_events_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -276,6 +361,7 @@ pub struct DescribeEventsOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEventsOutput {
     /// <p>The events that match the specified filter criteria.</p>
@@ -287,6 +373,11 @@ impl DescribeEventsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
     
@@ -296,6 +387,7 @@ pub mod describe_events_output {
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events`.
@@ -322,6 +414,15 @@ pub mod describe_events_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
@@ -329,6 +430,7 @@ pub mod describe_events_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -352,6 +454,7 @@ pub struct DescribeEventDetailsForOrganizationOutput  {
     /// <p>Error messages for any events that could not be retrieved.</p>
     #[doc(hidden)]
     pub failed_set: std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventDetailsForOrganizationOutput {
     /// <p>Information about the events that could be retrieved.</p>
@@ -363,6 +466,11 @@ impl DescribeEventDetailsForOrganizationOutput {
         self.failed_set.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventDetailsForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
 pub mod describe_event_details_for_organization_output {
     
@@ -372,6 +480,7 @@ pub mod describe_event_details_for_organization_output {
     pub struct Builder {
         pub(crate) successful_set: std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetails>>,
         pub(crate) failed_set: std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successful_set`.
@@ -404,6 +513,15 @@ pub mod describe_event_details_for_organization_output {
         pub fn set_failed_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>) -> Self {
             self.failed_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeEventDetailsForOrganizationOutput {
             crate::output::DescribeEventDetailsForOrganizationOutput {
@@ -411,6 +529,7 @@ pub mod describe_event_details_for_organization_output {
                 ,
                 failed_set: self.failed_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -434,6 +553,7 @@ pub struct DescribeEventDetailsOutput  {
     /// <p>Error messages for any events that could not be retrieved.</p>
     #[doc(hidden)]
     pub failed_set: std::option::Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventDetailsOutput {
     /// <p>Information about the events that could be retrieved.</p>
@@ -445,6 +565,11 @@ impl DescribeEventDetailsOutput {
         self.failed_set.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventDetailsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
 pub mod describe_event_details_output {
     
@@ -454,6 +579,7 @@ pub mod describe_event_details_output {
     pub struct Builder {
         pub(crate) successful_set: std::option::Option<std::vec::Vec<crate::model::EventDetails>>,
         pub(crate) failed_set: std::option::Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successful_set`.
@@ -486,6 +612,15 @@ pub mod describe_event_details_output {
         pub fn set_failed_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventDetailsErrorItem>>) -> Self {
             self.failed_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
         pub fn build(self) -> crate::output::DescribeEventDetailsOutput {
             crate::output::DescribeEventDetailsOutput {
@@ -493,6 +628,7 @@ pub mod describe_event_details_output {
                 ,
                 failed_set: self.failed_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -516,6 +652,7 @@ pub struct DescribeEventAggregatesOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
@@ -527,6 +664,11 @@ impl DescribeEventAggregatesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventAggregatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
 pub mod describe_event_aggregates_output {
     
@@ -536,6 +678,7 @@ pub mod describe_event_aggregates_output {
     pub struct Builder {
         pub(crate) event_aggregates: std::option::Option<std::vec::Vec<crate::model::EventAggregate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_aggregates`.
@@ -562,6 +705,15 @@ pub mod describe_event_aggregates_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
         pub fn build(self) -> crate::output::DescribeEventAggregatesOutput {
             crate::output::DescribeEventAggregatesOutput {
@@ -569,6 +721,7 @@ pub mod describe_event_aggregates_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -589,6 +742,7 @@ pub struct DescribeEntityAggregatesOutput  {
     /// <p>The number of entities that are affected by each of the specified events.</p>
     #[doc(hidden)]
     pub entity_aggregates: std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>,
+    _request_id: Option<String>,
 }
 impl DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
@@ -596,6 +750,11 @@ impl DescribeEntityAggregatesOutput {
         self.entity_aggregates.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEntityAggregatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
 pub mod describe_entity_aggregates_output {
     
@@ -604,6 +763,7 @@ pub mod describe_entity_aggregates_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_aggregates: std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entity_aggregates`.
@@ -621,11 +781,21 @@ pub mod describe_entity_aggregates_output {
         pub fn set_entity_aggregates(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>) -> Self {
             self.entity_aggregates = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
         pub fn build(self) -> crate::output::DescribeEntityAggregatesOutput {
             crate::output::DescribeEntityAggregatesOutput {
                 entity_aggregates: self.entity_aggregates
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -652,6 +822,7 @@ pub struct DescribeAffectedEntitiesForOrganizationOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
@@ -667,6 +838,11 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAffectedEntitiesForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
 pub mod describe_affected_entities_for_organization_output {
     
@@ -677,6 +853,7 @@ pub mod describe_affected_entities_for_organization_output {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
         pub(crate) failed_set: std::option::Option<std::vec::Vec<crate::model::OrganizationAffectedEntitiesErrorItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -718,6 +895,15 @@ pub mod describe_affected_entities_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeAffectedEntitiesForOrganizationOutput {
             crate::output::DescribeAffectedEntitiesForOrganizationOutput {
@@ -727,6 +913,7 @@ pub mod describe_affected_entities_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -750,6 +937,7 @@ pub struct DescribeAffectedEntitiesOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAffectedEntitiesOutput {
     /// <p>The entities that match the filter criteria.</p>
@@ -761,6 +949,11 @@ impl DescribeAffectedEntitiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAffectedEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
 pub mod describe_affected_entities_output {
     
@@ -770,6 +963,7 @@ pub mod describe_affected_entities_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -796,6 +990,15 @@ pub mod describe_affected_entities_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
         pub fn build(self) -> crate::output::DescribeAffectedEntitiesOutput {
             crate::output::DescribeAffectedEntitiesOutput {
@@ -803,6 +1006,7 @@ pub mod describe_affected_entities_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -834,6 +1038,7 @@ pub struct DescribeAffectedAccountsForOrganizationOutput  {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
@@ -854,6 +1059,11 @@ impl DescribeAffectedAccountsForOrganizationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAffectedAccountsForOrganizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
 pub mod describe_affected_accounts_for_organization_output {
     
@@ -864,6 +1074,7 @@ pub mod describe_affected_accounts_for_organization_output {
         pub(crate) affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) event_scope_code: std::option::Option<crate::model::EventScopeCode>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `affected_accounts`.
@@ -909,6 +1120,15 @@ pub mod describe_affected_accounts_for_organization_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeAffectedAccountsForOrganizationOutput {
             crate::output::DescribeAffectedAccountsForOrganizationOutput {
@@ -918,6 +1138,7 @@ pub mod describe_affected_accounts_for_organization_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }

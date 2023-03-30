@@ -22,6 +22,7 @@ impl CancelKeyDeletion {
 impl aws_smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
                 type Output = std::result::Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_key_deletion_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl ConnectCustomKeyStore {
 impl aws_smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
                 type Output = std::result::Result<crate::output::ConnectCustomKeyStoreOutput, crate::error::ConnectCustomKeyStoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_connect_custom_key_store_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAlias {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
                 type Output = std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_alias_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateCustomKeyStore {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
                 type Output = std::result::Result<crate::output::CreateCustomKeyStoreOutput, crate::error::CreateCustomKeyStoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_key_store_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateGrant {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
                 type Output = std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_grant_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateKey {
 impl aws_smithy_http::response::ParseStrictResponse for CreateKey {
                 type Output = std::result::Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_key_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl Decrypt {
 impl aws_smithy_http::response::ParseStrictResponse for Decrypt {
                 type Output = std::result::Result<crate::output::DecryptOutput, crate::error::DecryptError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_decrypt_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteAlias {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
                 type Output = std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_alias_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteCustomKeyStore {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
                 type Output = std::result::Result<crate::output::DeleteCustomKeyStoreOutput, crate::error::DeleteCustomKeyStoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_key_store_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteImportedKeyMaterial {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteImportedKeyMaterial {
                 type Output = std::result::Result<crate::output::DeleteImportedKeyMaterialOutput, crate::error::DeleteImportedKeyMaterialError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_imported_key_material_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeCustomKeyStores {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores {
                 type Output = std::result::Result<crate::output::DescribeCustomKeyStoresOutput, crate::error::DescribeCustomKeyStoresError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_key_stores_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeKey {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeKey {
                 type Output = std::result::Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_key_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DisableKey {
 impl aws_smithy_http::response::ParseStrictResponse for DisableKey {
                 type Output = std::result::Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_key_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DisableKeyRotation {
 impl aws_smithy_http::response::ParseStrictResponse for DisableKeyRotation {
                 type Output = std::result::Result<crate::output::DisableKeyRotationOutput, crate::error::DisableKeyRotationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_key_rotation_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DisconnectCustomKeyStore {
 impl aws_smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore {
                 type Output = std::result::Result<crate::output::DisconnectCustomKeyStoreOutput, crate::error::DisconnectCustomKeyStoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disconnect_custom_key_store_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl EnableKey {
 impl aws_smithy_http::response::ParseStrictResponse for EnableKey {
                 type Output = std::result::Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_key_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl EnableKeyRotation {
 impl aws_smithy_http::response::ParseStrictResponse for EnableKeyRotation {
                 type Output = std::result::Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_key_rotation_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl Encrypt {
 impl aws_smithy_http::response::ParseStrictResponse for Encrypt {
                 type Output = std::result::Result<crate::output::EncryptOutput, crate::error::EncryptError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_encrypt_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GenerateDataKey {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKey {
                 type Output = std::result::Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_data_key_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GenerateDataKeyPair {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
                 type Output = std::result::Result<crate::output::GenerateDataKeyPairOutput, crate::error::GenerateDataKeyPairError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_data_key_pair_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GenerateDataKeyPairWithoutPlaintext {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWithoutPlaintext {
                 type Output = std::result::Result<crate::output::GenerateDataKeyPairWithoutPlaintextOutput, crate::error::GenerateDataKeyPairWithoutPlaintextError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_data_key_pair_without_plaintext_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GenerateDataKeyWithoutPlaintext {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPlaintext {
                 type Output = std::result::Result<crate::output::GenerateDataKeyWithoutPlaintextOutput, crate::error::GenerateDataKeyWithoutPlaintextError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_data_key_without_plaintext_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GenerateMac {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateMac {
                 type Output = std::result::Result<crate::output::GenerateMacOutput, crate::error::GenerateMacError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_mac_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GenerateRandom {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateRandom {
                 type Output = std::result::Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_random_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetKeyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetKeyPolicy {
                 type Output = std::result::Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_key_policy_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetKeyRotationStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
                 type Output = std::result::Result<crate::output::GetKeyRotationStatusOutput, crate::error::GetKeyRotationStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_key_rotation_status_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl GetParametersForImport {
 impl aws_smithy_http::response::ParseStrictResponse for GetParametersForImport {
                 type Output = std::result::Result<crate::output::GetParametersForImportOutput, crate::error::GetParametersForImportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_parameters_for_import_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl GetPublicKey {
 impl aws_smithy_http::response::ParseStrictResponse for GetPublicKey {
                 type Output = std::result::Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_public_key_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ImportKeyMaterial {
 impl aws_smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
                 type Output = std::result::Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_key_material_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListAliases {
 impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
                 type Output = std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_aliases_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListGrants {
 impl aws_smithy_http::response::ParseStrictResponse for ListGrants {
                 type Output = std::result::Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_grants_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListKeyPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for ListKeyPolicies {
                 type Output = std::result::Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_key_policies_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListKeys {
 impl aws_smithy_http::response::ParseStrictResponse for ListKeys {
                 type Output = std::result::Result<crate::output::ListKeysOutput, crate::error::ListKeysError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_keys_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListResourceTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceTags {
                 type Output = std::result::Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_tags_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListRetirableGrants {
 impl aws_smithy_http::response::ParseStrictResponse for ListRetirableGrants {
                 type Output = std::result::Result<crate::output::ListRetirableGrantsOutput, crate::error::ListRetirableGrantsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_retirable_grants_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl PutKeyPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutKeyPolicy {
                 type Output = std::result::Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_key_policy_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ReEncrypt {
 impl aws_smithy_http::response::ParseStrictResponse for ReEncrypt {
                 type Output = std::result::Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_re_encrypt_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ReplicateKey {
 impl aws_smithy_http::response::ParseStrictResponse for ReplicateKey {
                 type Output = std::result::Result<crate::output::ReplicateKeyOutput, crate::error::ReplicateKeyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_replicate_key_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl RetireGrant {
 impl aws_smithy_http::response::ParseStrictResponse for RetireGrant {
                 type Output = std::result::Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_retire_grant_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl RevokeGrant {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeGrant {
                 type Output = std::result::Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_revoke_grant_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ScheduleKeyDeletion {
 impl aws_smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
                 type Output = std::result::Result<crate::output::ScheduleKeyDeletionOutput, crate::error::ScheduleKeyDeletionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_schedule_key_deletion_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl Sign {
 impl aws_smithy_http::response::ParseStrictResponse for Sign {
                 type Output = std::result::Result<crate::output::SignOutput, crate::error::SignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_sign_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl UpdateAlias {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
                 type Output = std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_alias_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl UpdateCustomKeyStore {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
                 type Output = std::result::Result<crate::output::UpdateCustomKeyStoreOutput, crate::error::UpdateCustomKeyStoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_custom_key_store_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateKeyDescription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
                 type Output = std::result::Result<crate::output::UpdateKeyDescriptionOutput, crate::error::UpdateKeyDescriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_key_description_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdatePrimaryRegion {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePrimaryRegion {
                 type Output = std::result::Result<crate::output::UpdatePrimaryRegionOutput, crate::error::UpdatePrimaryRegionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_primary_region_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl Verify {
 impl aws_smithy_http::response::ParseStrictResponse for Verify {
                 type Output = std::result::Result<crate::output::VerifyOutput, crate::error::VerifyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_verify_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl VerifyMac {
 impl aws_smithy_http::response::ParseStrictResponse for VerifyMac {
                 type Output = std::result::Result<crate::output::VerifyMacOutput, crate::error::VerifyMacError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_verify_mac_error(response)
                      } else {

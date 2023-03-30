@@ -22,6 +22,7 @@ impl BatchCreateRumMetricDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRumMetricDefinitions {
                 type Output = std::result::Result<crate::output::BatchCreateRumMetricDefinitionsOutput, crate::error::BatchCreateRumMetricDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_create_rum_metric_definitions_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDeleteRumMetricDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteRumMetricDefinitions {
                 type Output = std::result::Result<crate::output::BatchDeleteRumMetricDefinitionsOutput, crate::error::BatchDeleteRumMetricDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_rum_metric_definitions_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchGetRumMetricDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetRumMetricDefinitions {
                 type Output = std::result::Result<crate::output::BatchGetRumMetricDefinitionsOutput, crate::error::BatchGetRumMetricDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_rum_metric_definitions_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateAppMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAppMonitor {
                 type Output = std::result::Result<crate::output::CreateAppMonitorOutput, crate::error::CreateAppMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_app_monitor_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteAppMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAppMonitor {
                 type Output = std::result::Result<crate::output::DeleteAppMonitorOutput, crate::error::DeleteAppMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_app_monitor_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteRumMetricsDestination {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRumMetricsDestination {
                 type Output = std::result::Result<crate::output::DeleteRumMetricsDestinationOutput, crate::error::DeleteRumMetricsDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_rum_metrics_destination_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetAppMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitor {
                 type Output = std::result::Result<crate::output::GetAppMonitorOutput, crate::error::GetAppMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_app_monitor_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetAppMonitorData {
 impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitorData {
                 type Output = std::result::Result<crate::output::GetAppMonitorDataOutput, crate::error::GetAppMonitorDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_app_monitor_data_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListAppMonitors {
 impl aws_smithy_http::response::ParseStrictResponse for ListAppMonitors {
                 type Output = std::result::Result<crate::output::ListAppMonitorsOutput, crate::error::ListAppMonitorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_app_monitors_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListRumMetricsDestinations {
 impl aws_smithy_http::response::ParseStrictResponse for ListRumMetricsDestinations {
                 type Output = std::result::Result<crate::output::ListRumMetricsDestinationsOutput, crate::error::ListRumMetricsDestinationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_rum_metrics_destinations_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutRumEvents {
 impl aws_smithy_http::response::ParseStrictResponse for PutRumEvents {
                 type Output = std::result::Result<crate::output::PutRumEventsOutput, crate::error::PutRumEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_rum_events_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl PutRumMetricsDestination {
 impl aws_smithy_http::response::ParseStrictResponse for PutRumMetricsDestination {
                 type Output = std::result::Result<crate::output::PutRumMetricsDestinationOutput, crate::error::PutRumMetricsDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_rum_metrics_destination_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl UpdateAppMonitor {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAppMonitor {
                 type Output = std::result::Result<crate::output::UpdateAppMonitorOutput, crate::error::UpdateAppMonitorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_app_monitor_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UpdateRumMetricDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRumMetricDefinition {
                 type Output = std::result::Result<crate::output::UpdateRumMetricDefinitionOutput, crate::error::UpdateRumMetricDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_rum_metric_definition_error(response)
                      } else {

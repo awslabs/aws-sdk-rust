@@ -22,6 +22,7 @@ impl ConfigureLogsForPlaybackConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogsForPlaybackConfiguration {
                 type Output = std::result::Result<crate::output::ConfigureLogsForPlaybackConfigurationOutput, crate::error::ConfigureLogsForPlaybackConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_configure_logs_for_playback_configuration_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
                 type Output = std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_channel_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateLiveSource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLiveSource {
                 type Output = std::result::Result<crate::output::CreateLiveSourceOutput, crate::error::CreateLiveSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_live_source_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreatePrefetchSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePrefetchSchedule {
                 type Output = std::result::Result<crate::output::CreatePrefetchScheduleOutput, crate::error::CreatePrefetchScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_prefetch_schedule_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateProgram {
 impl aws_smithy_http::response::ParseStrictResponse for CreateProgram {
                 type Output = std::result::Result<crate::output::CreateProgramOutput, crate::error::CreateProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_program_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateSourceLocation {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSourceLocation {
                 type Output = std::result::Result<crate::output::CreateSourceLocationOutput, crate::error::CreateSourceLocationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_source_location_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateVodSource {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVodSource {
                 type Output = std::result::Result<crate::output::CreateVodSourceOutput, crate::error::CreateVodSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_vod_source_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
                 type Output = std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_channel_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteChannelPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelPolicy {
                 type Output = std::result::Result<crate::output::DeleteChannelPolicyOutput, crate::error::DeleteChannelPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_channel_policy_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteLiveSource {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLiveSource {
                 type Output = std::result::Result<crate::output::DeleteLiveSourceOutput, crate::error::DeleteLiveSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_live_source_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeletePlaybackConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePlaybackConfiguration {
                 type Output = std::result::Result<crate::output::DeletePlaybackConfigurationOutput, crate::error::DeletePlaybackConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_playback_configuration_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeletePrefetchSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePrefetchSchedule {
                 type Output = std::result::Result<crate::output::DeletePrefetchScheduleOutput, crate::error::DeletePrefetchScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_prefetch_schedule_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteProgram {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProgram {
                 type Output = std::result::Result<crate::output::DeleteProgramOutput, crate::error::DeleteProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_program_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteSourceLocation {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceLocation {
                 type Output = std::result::Result<crate::output::DeleteSourceLocationOutput, crate::error::DeleteSourceLocationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_source_location_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteVodSource {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVodSource {
                 type Output = std::result::Result<crate::output::DeleteVodSourceOutput, crate::error::DeleteVodSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_vod_source_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
                 type Output = std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeLiveSource {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLiveSource {
                 type Output = std::result::Result<crate::output::DescribeLiveSourceOutput, crate::error::DescribeLiveSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_live_source_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeProgram {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeProgram {
                 type Output = std::result::Result<crate::output::DescribeProgramOutput, crate::error::DescribeProgramError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_program_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeSourceLocation {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSourceLocation {
                 type Output = std::result::Result<crate::output::DescribeSourceLocationOutput, crate::error::DescribeSourceLocationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_source_location_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeVodSource {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVodSource {
                 type Output = std::result::Result<crate::output::DescribeVodSourceOutput, crate::error::DescribeVodSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_vod_source_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetChannelPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetChannelPolicy {
                 type Output = std::result::Result<crate::output::GetChannelPolicyOutput, crate::error::GetChannelPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_channel_policy_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetChannelSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for GetChannelSchedule {
                 type Output = std::result::Result<crate::output::GetChannelScheduleOutput, crate::error::GetChannelScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_channel_schedule_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetPlaybackConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetPlaybackConfiguration {
                 type Output = std::result::Result<crate::output::GetPlaybackConfigurationOutput, crate::error::GetPlaybackConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_playback_configuration_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetPrefetchSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for GetPrefetchSchedule {
                 type Output = std::result::Result<crate::output::GetPrefetchScheduleOutput, crate::error::GetPrefetchScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_prefetch_schedule_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListAlerts {
 impl aws_smithy_http::response::ParseStrictResponse for ListAlerts {
                 type Output = std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_alerts_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListChannels {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
                 type Output = std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListLiveSources {
 impl aws_smithy_http::response::ParseStrictResponse for ListLiveSources {
                 type Output = std::result::Result<crate::output::ListLiveSourcesOutput, crate::error::ListLiveSourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_live_sources_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListPlaybackConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListPlaybackConfigurations {
                 type Output = std::result::Result<crate::output::ListPlaybackConfigurationsOutput, crate::error::ListPlaybackConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_playback_configurations_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListPrefetchSchedules {
 impl aws_smithy_http::response::ParseStrictResponse for ListPrefetchSchedules {
                 type Output = std::result::Result<crate::output::ListPrefetchSchedulesOutput, crate::error::ListPrefetchSchedulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_prefetch_schedules_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListSourceLocations {
 impl aws_smithy_http::response::ParseStrictResponse for ListSourceLocations {
                 type Output = std::result::Result<crate::output::ListSourceLocationsOutput, crate::error::ListSourceLocationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_source_locations_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ListVodSources {
 impl aws_smithy_http::response::ParseStrictResponse for ListVodSources {
                 type Output = std::result::Result<crate::output::ListVodSourcesOutput, crate::error::ListVodSourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vod_sources_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl PutChannelPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutChannelPolicy {
                 type Output = std::result::Result<crate::output::PutChannelPolicyOutput, crate::error::PutChannelPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_channel_policy_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl PutPlaybackConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutPlaybackConfiguration {
                 type Output = std::result::Result<crate::output::PutPlaybackConfigurationOutput, crate::error::PutPlaybackConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_playback_configuration_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl StartChannel {
 impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
                 type Output = std::result::Result<crate::output::StartChannelOutput, crate::error::StartChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_channel_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl StopChannel {
 impl aws_smithy_http::response::ParseStrictResponse for StopChannel {
                 type Output = std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_channel_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
                 type Output = std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl UpdateLiveSource {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLiveSource {
                 type Output = std::result::Result<crate::output::UpdateLiveSourceOutput, crate::error::UpdateLiveSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_live_source_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl UpdateSourceLocation {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSourceLocation {
                 type Output = std::result::Result<crate::output::UpdateSourceLocationOutput, crate::error::UpdateSourceLocationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_source_location_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl UpdateVodSource {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVodSource {
                 type Output = std::result::Result<crate::output::UpdateVodSourceOutput, crate::error::UpdateVodSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_vod_source_error(response)
                      } else {

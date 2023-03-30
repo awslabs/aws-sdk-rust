@@ -22,6 +22,7 @@ impl CreateWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflow {
                 type Output = std::result::Result<crate::output::CreateWorkflowOutput, crate::error::CreateWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workflow_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateWorkflowStep {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStep {
                 type Output = std::result::Result<crate::output::CreateWorkflowStepOutput, crate::error::CreateWorkflowStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workflow_step_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateWorkflowStepGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStepGroup {
                 type Output = std::result::Result<crate::output::CreateWorkflowStepGroupOutput, crate::error::CreateWorkflowStepGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workflow_step_group_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
                 type Output = std::result::Result<crate::output::DeleteWorkflowOutput, crate::error::DeleteWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_workflow_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteWorkflowStep {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStep {
                 type Output = std::result::Result<crate::output::DeleteWorkflowStepOutput, crate::error::DeleteWorkflowStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_workflow_step_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteWorkflowStepGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStepGroup {
                 type Output = std::result::Result<crate::output::DeleteWorkflowStepGroupOutput, crate::error::DeleteWorkflowStepGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_workflow_step_group_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
                 type Output = std::result::Result<crate::output::GetTemplateOutput, crate::error::GetTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_template_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetTemplateStep {
 impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStep {
                 type Output = std::result::Result<crate::output::GetTemplateStepOutput, crate::error::GetTemplateStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_template_step_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetTemplateStepGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStepGroup {
                 type Output = std::result::Result<crate::output::GetTemplateStepGroupOutput, crate::error::GetTemplateStepGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_template_step_group_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
                 type Output = std::result::Result<crate::output::GetWorkflowOutput, crate::error::GetWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workflow_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetWorkflowStep {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStep {
                 type Output = std::result::Result<crate::output::GetWorkflowStepOutput, crate::error::GetWorkflowStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workflow_step_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetWorkflowStepGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStepGroup {
                 type Output = std::result::Result<crate::output::GetWorkflowStepGroupOutput, crate::error::GetWorkflowStepGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workflow_step_group_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListPlugins {
 impl aws_smithy_http::response::ParseStrictResponse for ListPlugins {
                 type Output = std::result::Result<crate::output::ListPluginsOutput, crate::error::ListPluginsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_plugins_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
                 type Output = std::result::Result<crate::output::ListTemplatesOutput, crate::error::ListTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_templates_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListTemplateStepGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListTemplateStepGroups {
                 type Output = std::result::Result<crate::output::ListTemplateStepGroupsOutput, crate::error::ListTemplateStepGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_template_step_groups_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListTemplateSteps {
 impl aws_smithy_http::response::ParseStrictResponse for ListTemplateSteps {
                 type Output = std::result::Result<crate::output::ListTemplateStepsOutput, crate::error::ListTemplateStepsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_template_steps_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListWorkflows {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
                 type Output = std::result::Result<crate::output::ListWorkflowsOutput, crate::error::ListWorkflowsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workflows_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListWorkflowStepGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowStepGroups {
                 type Output = std::result::Result<crate::output::ListWorkflowStepGroupsOutput, crate::error::ListWorkflowStepGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workflow_step_groups_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListWorkflowSteps {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowSteps {
                 type Output = std::result::Result<crate::output::ListWorkflowStepsOutput, crate::error::ListWorkflowStepsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workflow_steps_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl RetryWorkflowStep {
 impl aws_smithy_http::response::ParseStrictResponse for RetryWorkflowStep {
                 type Output = std::result::Result<crate::output::RetryWorkflowStepOutput, crate::error::RetryWorkflowStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_retry_workflow_step_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl StartWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for StartWorkflow {
                 type Output = std::result::Result<crate::output::StartWorkflowOutput, crate::error::StartWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_workflow_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl StopWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for StopWorkflow {
                 type Output = std::result::Result<crate::output::StopWorkflowOutput, crate::error::StopWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_workflow_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateWorkflow {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflow {
                 type Output = std::result::Result<crate::output::UpdateWorkflowOutput, crate::error::UpdateWorkflowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_workflow_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateWorkflowStep {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflowStep {
                 type Output = std::result::Result<crate::output::UpdateWorkflowStepOutput, crate::error::UpdateWorkflowStepError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_workflow_step_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UpdateWorkflowStepGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflowStepGroup {
                 type Output = std::result::Result<crate::output::UpdateWorkflowStepGroupOutput, crate::error::UpdateWorkflowStepGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_workflow_step_group_error(response)
                      } else {

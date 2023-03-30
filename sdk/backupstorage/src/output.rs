@@ -6,6 +6,7 @@ pub struct StartObjectOutput  {
     /// Upload Id for a given upload.
     #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartObjectOutput {
     /// Upload Id for a given upload.
@@ -13,6 +14,11 @@ impl StartObjectOutput {
         self.upload_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartObjectOutput`](crate::output::StartObjectOutput).
 pub mod start_object_output {
     
@@ -21,6 +27,7 @@ pub mod start_object_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Upload Id for a given upload.
@@ -32,11 +39,21 @@ pub mod start_object_output {
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartObjectOutput`](crate::output::StartObjectOutput).
         pub fn build(self) -> crate::output::StartObjectOutput {
             crate::output::StartObjectOutput {
                 upload_id: self.upload_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +83,7 @@ pub struct PutObjectOutput  {
     /// object checksum algorithm
     #[doc(hidden)]
     pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl PutObjectOutput {
     /// Inline chunk checksum
@@ -85,6 +103,11 @@ impl PutObjectOutput {
         self.object_checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectOutput`](crate::output::PutObjectOutput).
 pub mod put_object_output {
     
@@ -96,6 +119,7 @@ pub mod put_object_output {
         pub(crate) inline_chunk_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
         pub(crate) object_checksum: std::option::Option<std::string::String>,
         pub(crate) object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Inline chunk checksum
@@ -134,6 +158,15 @@ pub mod put_object_output {
         pub fn set_object_checksum_algorithm(mut self, input: std::option::Option<crate::model::SummaryChecksumAlgorithm>) -> Self {
             self.object_checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput).
         pub fn build(self) -> crate::output::PutObjectOutput {
             crate::output::PutObjectOutput {
@@ -145,6 +178,7 @@ pub mod put_object_output {
                 ,
                 object_checksum_algorithm: self.object_checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +202,7 @@ pub struct PutChunkOutput  {
     /// Checksum algorithm
     #[doc(hidden)]
     pub chunk_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl PutChunkOutput {
     /// Chunk checksum
@@ -179,6 +214,11 @@ impl PutChunkOutput {
         self.chunk_checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutChunkOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutChunkOutput`](crate::output::PutChunkOutput).
 pub mod put_chunk_output {
     
@@ -188,6 +228,7 @@ pub mod put_chunk_output {
     pub struct Builder {
         pub(crate) chunk_checksum: std::option::Option<std::string::String>,
         pub(crate) chunk_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Chunk checksum
@@ -208,6 +249,15 @@ pub mod put_chunk_output {
         pub fn set_chunk_checksum_algorithm(mut self, input: std::option::Option<crate::model::DataChecksumAlgorithm>) -> Self {
             self.chunk_checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutChunkOutput`](crate::output::PutChunkOutput).
         pub fn build(self) -> crate::output::PutChunkOutput {
             crate::output::PutChunkOutput {
@@ -215,6 +265,7 @@ pub mod put_chunk_output {
                 ,
                 chunk_checksum_algorithm: self.chunk_checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -238,6 +289,7 @@ pub struct NotifyObjectCompleteOutput  {
     /// Checksum algorithm
     #[doc(hidden)]
     pub object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl NotifyObjectCompleteOutput {
     /// Object checksum
@@ -249,6 +301,11 @@ impl NotifyObjectCompleteOutput {
         self.object_checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for NotifyObjectCompleteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`NotifyObjectCompleteOutput`](crate::output::NotifyObjectCompleteOutput).
 pub mod notify_object_complete_output {
     
@@ -258,6 +315,7 @@ pub mod notify_object_complete_output {
     pub struct Builder {
         pub(crate) object_checksum: std::option::Option<std::string::String>,
         pub(crate) object_checksum_algorithm: std::option::Option<crate::model::SummaryChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Object checksum
@@ -278,6 +336,15 @@ pub mod notify_object_complete_output {
         pub fn set_object_checksum_algorithm(mut self, input: std::option::Option<crate::model::SummaryChecksumAlgorithm>) -> Self {
             self.object_checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`NotifyObjectCompleteOutput`](crate::output::NotifyObjectCompleteOutput).
         pub fn build(self) -> crate::output::NotifyObjectCompleteOutput {
             crate::output::NotifyObjectCompleteOutput {
@@ -285,6 +352,7 @@ pub mod notify_object_complete_output {
                 ,
                 object_checksum_algorithm: self.object_checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -308,6 +376,7 @@ pub struct ListObjectsOutput  {
     /// Pagination token
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListObjectsOutput {
     /// Object list
@@ -319,6 +388,11 @@ impl ListObjectsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListObjectsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListObjectsOutput`](crate::output::ListObjectsOutput).
 pub mod list_objects_output {
     
@@ -328,6 +402,7 @@ pub mod list_objects_output {
     pub struct Builder {
         pub(crate) object_list: std::option::Option<std::vec::Vec<crate::model::BackupObject>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `object_list`.
@@ -354,6 +429,15 @@ pub mod list_objects_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::output::ListObjectsOutput).
         pub fn build(self) -> crate::output::ListObjectsOutput {
             crate::output::ListObjectsOutput {
@@ -361,6 +445,7 @@ pub mod list_objects_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -384,6 +469,7 @@ pub struct ListChunksOutput  {
     /// Pagination token
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChunksOutput {
     /// List of chunks
@@ -395,6 +481,11 @@ impl ListChunksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListChunksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListChunksOutput`](crate::output::ListChunksOutput).
 pub mod list_chunks_output {
     
@@ -404,6 +495,7 @@ pub mod list_chunks_output {
     pub struct Builder {
         pub(crate) chunk_list: std::option::Option<std::vec::Vec<crate::model::Chunk>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `chunk_list`.
@@ -430,6 +522,15 @@ pub mod list_chunks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListChunksOutput`](crate::output::ListChunksOutput).
         pub fn build(self) -> crate::output::ListChunksOutput {
             crate::output::ListChunksOutput {
@@ -437,6 +538,7 @@ pub mod list_chunks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -468,6 +570,7 @@ pub struct GetObjectMetadataOutput  {
     /// Checksum algorithm.
     #[doc(hidden)]
     pub metadata_blob_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl GetObjectMetadataOutput {
     /// Metadata string.
@@ -491,6 +594,11 @@ impl GetObjectMetadataOutput {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetObjectMetadataOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectMetadataOutput`](crate::output::GetObjectMetadataOutput).
 pub mod get_object_metadata_output {
     
@@ -503,6 +611,7 @@ pub mod get_object_metadata_output {
         pub(crate) metadata_blob_length: std::option::Option<i64>,
         pub(crate) metadata_blob_checksum: std::option::Option<std::string::String>,
         pub(crate) metadata_blob_checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Metadata string.
@@ -550,6 +659,15 @@ pub mod get_object_metadata_output {
         pub fn set_metadata_blob_checksum_algorithm(mut self, input: std::option::Option<crate::model::DataChecksumAlgorithm>) -> Self {
             self.metadata_blob_checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectMetadataOutput`](crate::output::GetObjectMetadataOutput).
         pub fn build(self) -> crate::output::GetObjectMetadataOutput {
             crate::output::GetObjectMetadataOutput {
@@ -565,6 +683,7 @@ pub mod get_object_metadata_output {
                 ,
                 metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -593,6 +712,7 @@ pub struct GetChunkOutput  {
     /// Checksum algorithm
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+    _request_id: Option<String>,
 }
 impl GetChunkOutput {
     /// Chunk data
@@ -612,6 +732,11 @@ impl GetChunkOutput {
         self.checksum_algorithm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetChunkOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetChunkOutput`](crate::output::GetChunkOutput).
 pub mod get_chunk_output {
     
@@ -623,6 +748,7 @@ pub mod get_chunk_output {
         pub(crate) length: std::option::Option<i64>,
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::DataChecksumAlgorithm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Chunk data
@@ -661,6 +787,15 @@ pub mod get_chunk_output {
         pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::DataChecksumAlgorithm>) -> Self {
             self.checksum_algorithm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetChunkOutput`](crate::output::GetChunkOutput).
         pub fn build(self) -> crate::output::GetChunkOutput {
             crate::output::GetChunkOutput {
@@ -674,6 +809,7 @@ pub mod get_chunk_output {
                 ,
                 checksum_algorithm: self.checksum_algorithm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -691,7 +827,13 @@ impl GetChunkOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
 pub mod delete_object_output {
     
@@ -699,11 +841,22 @@ pub mod delete_object_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
         pub fn build(self) -> crate::output::DeleteObjectOutput {
             crate::output::DeleteObjectOutput {
+                _request_id: self._request_id,
             }
         }
     }

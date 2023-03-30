@@ -6,6 +6,7 @@ pub struct UpdateVpcIngressConnectionOutput  {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    _request_id: Option<String>,
 }
 impl UpdateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
@@ -13,6 +14,11 @@ impl UpdateVpcIngressConnectionOutput {
         self.vpc_ingress_connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVpcIngressConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
 pub mod update_vpc_ingress_connection_output {
     
@@ -21,6 +27,7 @@ pub mod update_vpc_ingress_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
@@ -32,11 +39,21 @@ pub mod update_vpc_ingress_connection_output {
         pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::model::VpcIngressConnection>) -> Self {
             self.vpc_ingress_connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVpcIngressConnectionOutput`](crate::output::UpdateVpcIngressConnectionOutput).
         pub fn build(self) -> crate::output::UpdateVpcIngressConnectionOutput {
             crate::output::UpdateVpcIngressConnectionOutput {
                 vpc_ingress_connection: self.vpc_ingress_connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -60,6 +77,7 @@ pub struct UpdateServiceOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateServiceOutput {
     /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
@@ -71,6 +89,11 @@ impl UpdateServiceOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
 pub mod update_service_output {
     
@@ -80,6 +103,7 @@ pub mod update_service_output {
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
@@ -100,6 +124,15 @@ pub mod update_service_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
         pub fn build(self) -> crate::output::UpdateServiceOutput {
             crate::output::UpdateServiceOutput {
@@ -107,6 +140,7 @@ pub mod update_service_output {
                 ,
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -124,7 +158,13 @@ impl UpdateServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -132,11 +172,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -154,7 +205,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -162,11 +219,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -187,6 +255,7 @@ pub struct StartDeploymentOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartDeploymentOutput {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
@@ -194,6 +263,11 @@ impl StartDeploymentOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartDeploymentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
 pub mod start_deployment_output {
     
@@ -202,6 +276,7 @@ pub mod start_deployment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
@@ -213,11 +288,21 @@ pub mod start_deployment_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
         pub fn build(self) -> crate::output::StartDeploymentOutput {
             crate::output::StartDeploymentOutput {
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -241,6 +326,7 @@ pub struct ResumeServiceOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ResumeServiceOutput {
     /// <p>A description of the App Runner service that this request just resumed.</p>
@@ -252,6 +338,11 @@ impl ResumeServiceOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ResumeServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResumeServiceOutput`](crate::output::ResumeServiceOutput).
 pub mod resume_service_output {
     
@@ -261,6 +352,7 @@ pub mod resume_service_output {
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner service that this request just resumed.</p>
@@ -281,6 +373,15 @@ pub mod resume_service_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResumeServiceOutput`](crate::output::ResumeServiceOutput).
         pub fn build(self) -> crate::output::ResumeServiceOutput {
             crate::output::ResumeServiceOutput {
@@ -288,6 +389,7 @@ pub mod resume_service_output {
                 ,
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -311,6 +413,7 @@ pub struct PauseServiceOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PauseServiceOutput {
     /// <p>A description of the App Runner service that this request just paused.</p>
@@ -322,6 +425,11 @@ impl PauseServiceOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PauseServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PauseServiceOutput`](crate::output::PauseServiceOutput).
 pub mod pause_service_output {
     
@@ -331,6 +439,7 @@ pub mod pause_service_output {
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner service that this request just paused.</p>
@@ -351,6 +460,15 @@ pub mod pause_service_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PauseServiceOutput`](crate::output::PauseServiceOutput).
         pub fn build(self) -> crate::output::PauseServiceOutput {
             crate::output::PauseServiceOutput {
@@ -358,6 +476,7 @@ pub mod pause_service_output {
                 ,
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -381,6 +500,7 @@ pub struct ListVpcIngressConnectionsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVpcIngressConnectionsOutput {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -392,6 +512,11 @@ impl ListVpcIngressConnectionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVpcIngressConnectionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
 pub mod list_vpc_ingress_connections_output {
     
@@ -401,6 +526,7 @@ pub mod list_vpc_ingress_connections_output {
     pub struct Builder {
         pub(crate) vpc_ingress_connection_summary_list: std::option::Option<std::vec::Vec<crate::model::VpcIngressConnectionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `vpc_ingress_connection_summary_list`.
@@ -427,6 +553,15 @@ pub mod list_vpc_ingress_connections_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVpcIngressConnectionsOutput`](crate::output::ListVpcIngressConnectionsOutput).
         pub fn build(self) -> crate::output::ListVpcIngressConnectionsOutput {
             crate::output::ListVpcIngressConnectionsOutput {
@@ -434,6 +569,7 @@ pub mod list_vpc_ingress_connections_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -457,6 +593,7 @@ pub struct ListVpcConnectorsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVpcConnectorsOutput {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -468,6 +605,11 @@ impl ListVpcConnectorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVpcConnectorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput).
 pub mod list_vpc_connectors_output {
     
@@ -477,6 +619,7 @@ pub mod list_vpc_connectors_output {
     pub struct Builder {
         pub(crate) vpc_connectors: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `vpc_connectors`.
@@ -503,6 +646,15 @@ pub mod list_vpc_connectors_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput).
         pub fn build(self) -> crate::output::ListVpcConnectorsOutput {
             crate::output::ListVpcConnectorsOutput {
@@ -510,6 +662,7 @@ pub mod list_vpc_connectors_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -530,6 +683,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of the tag key-value pairs that are associated with the resource.</p>
@@ -537,6 +691,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -545,6 +704,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -562,11 +722,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -590,6 +760,7 @@ pub struct ListServicesOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListServicesOutput {
     /// <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -601,6 +772,11 @@ impl ListServicesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListServicesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
     
@@ -610,6 +786,7 @@ pub mod list_services_output {
     pub struct Builder {
         pub(crate) service_summary_list: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `service_summary_list`.
@@ -636,6 +813,15 @@ pub mod list_services_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
@@ -643,6 +829,7 @@ pub mod list_services_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -666,6 +853,7 @@ pub struct ListOperationsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListOperationsOutput {
     /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -677,6 +865,11 @@ impl ListOperationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListOperationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
     
@@ -686,6 +879,7 @@ pub mod list_operations_output {
     pub struct Builder {
         pub(crate) operation_summary_list: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `operation_summary_list`.
@@ -712,6 +906,15 @@ pub mod list_operations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
@@ -719,6 +922,7 @@ pub mod list_operations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -742,6 +946,7 @@ pub struct ListObservabilityConfigurationsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -753,6 +958,11 @@ impl ListObservabilityConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListObservabilityConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput).
 pub mod list_observability_configurations_output {
     
@@ -762,6 +972,7 @@ pub mod list_observability_configurations_output {
     pub struct Builder {
         pub(crate) observability_configuration_summary_list: std::option::Option<std::vec::Vec<crate::model::ObservabilityConfigurationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `observability_configuration_summary_list`.
@@ -788,6 +999,15 @@ pub mod list_observability_configurations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput).
         pub fn build(self) -> crate::output::ListObservabilityConfigurationsOutput {
             crate::output::ListObservabilityConfigurationsOutput {
@@ -795,6 +1015,7 @@ pub mod list_observability_configurations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -818,6 +1039,7 @@ pub struct ListConnectionsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -829,6 +1051,11 @@ impl ListConnectionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListConnectionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
 pub mod list_connections_output {
     
@@ -838,6 +1065,7 @@ pub mod list_connections_output {
     pub struct Builder {
         pub(crate) connection_summary_list: std::option::Option<std::vec::Vec<crate::model::ConnectionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `connection_summary_list`.
@@ -864,6 +1092,15 @@ pub mod list_connections_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
         pub fn build(self) -> crate::output::ListConnectionsOutput {
             crate::output::ListConnectionsOutput {
@@ -871,6 +1108,7 @@ pub mod list_connections_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -894,6 +1132,7 @@ pub struct ListAutoScalingConfigurationsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAutoScalingConfigurationsOutput {
     /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
@@ -905,6 +1144,11 @@ impl ListAutoScalingConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAutoScalingConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAutoScalingConfigurationsOutput`](crate::output::ListAutoScalingConfigurationsOutput).
 pub mod list_auto_scaling_configurations_output {
     
@@ -914,6 +1158,7 @@ pub mod list_auto_scaling_configurations_output {
     pub struct Builder {
         pub(crate) auto_scaling_configuration_summary_list: std::option::Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `auto_scaling_configuration_summary_list`.
@@ -940,6 +1185,15 @@ pub mod list_auto_scaling_configurations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAutoScalingConfigurationsOutput`](crate::output::ListAutoScalingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListAutoScalingConfigurationsOutput {
             crate::output::ListAutoScalingConfigurationsOutput {
@@ -947,6 +1201,7 @@ pub mod list_auto_scaling_configurations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -976,6 +1231,7 @@ pub struct DisassociateCustomDomainOutput  {
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     #[doc(hidden)]
     pub vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+    _request_id: Option<String>,
 }
 impl DisassociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
@@ -995,6 +1251,11 @@ impl DisassociateCustomDomainOutput {
         self.vpc_dns_targets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateCustomDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
 pub mod disassociate_custom_domain_output {
     
@@ -1006,6 +1267,7 @@ pub mod disassociate_custom_domain_output {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<crate::model::CustomDomain>,
         pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
@@ -1050,6 +1312,15 @@ pub mod disassociate_custom_domain_output {
         pub fn set_vpc_dns_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>) -> Self {
             self.vpc_dns_targets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
         pub fn build(self) -> crate::output::DisassociateCustomDomainOutput {
             crate::output::DisassociateCustomDomainOutput {
@@ -1061,6 +1332,7 @@ pub mod disassociate_custom_domain_output {
                 ,
                 vpc_dns_targets: self.vpc_dns_targets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1081,6 +1353,7 @@ pub struct DescribeVpcIngressConnectionOutput  {
     /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    _request_id: Option<String>,
 }
 impl DescribeVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
@@ -1088,6 +1361,11 @@ impl DescribeVpcIngressConnectionOutput {
         self.vpc_ingress_connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeVpcIngressConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
 pub mod describe_vpc_ingress_connection_output {
     
@@ -1096,6 +1374,7 @@ pub mod describe_vpc_ingress_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC Ingress Connection that you specified in this request.</p>
@@ -1107,11 +1386,21 @@ pub mod describe_vpc_ingress_connection_output {
         pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::model::VpcIngressConnection>) -> Self {
             self.vpc_ingress_connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeVpcIngressConnectionOutput`](crate::output::DescribeVpcIngressConnectionOutput).
         pub fn build(self) -> crate::output::DescribeVpcIngressConnectionOutput {
             crate::output::DescribeVpcIngressConnectionOutput {
                 vpc_ingress_connection: self.vpc_ingress_connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1132,6 +1421,7 @@ pub struct DescribeVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
     #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    _request_id: Option<String>,
 }
 impl DescribeVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
@@ -1139,6 +1429,11 @@ impl DescribeVpcConnectorOutput {
         self.vpc_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeVpcConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput).
 pub mod describe_vpc_connector_output {
     
@@ -1147,6 +1442,7 @@ pub mod describe_vpc_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
@@ -1158,11 +1454,21 @@ pub mod describe_vpc_connector_output {
         pub fn set_vpc_connector(mut self, input: std::option::Option<crate::model::VpcConnector>) -> Self {
             self.vpc_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput).
         pub fn build(self) -> crate::output::DescribeVpcConnectorOutput {
             crate::output::DescribeVpcConnectorOutput {
                 vpc_connector: self.vpc_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1183,6 +1489,7 @@ pub struct DescribeServiceOutput  {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::model::Service>,
+    _request_id: Option<String>,
 }
 impl DescribeServiceOutput {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
@@ -1190,6 +1497,11 @@ impl DescribeServiceOutput {
         self.service.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeServiceOutput`](crate::output::DescribeServiceOutput).
 pub mod describe_service_output {
     
@@ -1198,6 +1510,7 @@ pub mod describe_service_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the App Runner service that you specified in this request.</p>
@@ -1209,11 +1522,21 @@ pub mod describe_service_output {
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.service = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeServiceOutput`](crate::output::DescribeServiceOutput).
         pub fn build(self) -> crate::output::DescribeServiceOutput {
             crate::output::DescribeServiceOutput {
                 service: self.service
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1234,6 +1557,7 @@ pub struct DescribeObservabilityConfigurationOutput  {
     /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
     #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeObservabilityConfigurationOutput {
     /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
@@ -1241,6 +1565,11 @@ impl DescribeObservabilityConfigurationOutput {
         self.observability_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeObservabilityConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput).
 pub mod describe_observability_configuration_output {
     
@@ -1249,6 +1578,7 @@ pub mod describe_observability_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the App Runner observability configuration that you specified in this request.</p>
@@ -1260,11 +1590,21 @@ pub mod describe_observability_configuration_output {
         pub fn set_observability_configuration(mut self, input: std::option::Option<crate::model::ObservabilityConfiguration>) -> Self {
             self.observability_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeObservabilityConfigurationOutput {
             crate::output::DescribeObservabilityConfigurationOutput {
                 observability_configuration: self.observability_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1297,6 +1637,7 @@ pub struct DescribeCustomDomainsOutput  {
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomDomainsOutput {
     /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
@@ -1320,6 +1661,11 @@ impl DescribeCustomDomainsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomDomainsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomDomainsOutput`](crate::output::DescribeCustomDomainsOutput).
 pub mod describe_custom_domains_output {
     
@@ -1332,6 +1678,7 @@ pub mod describe_custom_domains_output {
         pub(crate) custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
         pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
@@ -1391,6 +1738,15 @@ pub mod describe_custom_domains_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomDomainsOutput`](crate::output::DescribeCustomDomainsOutput).
         pub fn build(self) -> crate::output::DescribeCustomDomainsOutput {
             crate::output::DescribeCustomDomainsOutput {
@@ -1404,6 +1760,7 @@ pub mod describe_custom_domains_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1424,6 +1781,7 @@ pub struct DescribeAutoScalingConfigurationOutput  {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeAutoScalingConfigurationOutput {
     /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
@@ -1431,6 +1789,11 @@ impl DescribeAutoScalingConfigurationOutput {
         self.auto_scaling_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAutoScalingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAutoScalingConfigurationOutput`](crate::output::DescribeAutoScalingConfigurationOutput).
 pub mod describe_auto_scaling_configuration_output {
     
@@ -1439,6 +1802,7 @@ pub mod describe_auto_scaling_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
@@ -1450,11 +1814,21 @@ pub mod describe_auto_scaling_configuration_output {
         pub fn set_auto_scaling_configuration(mut self, input: std::option::Option<crate::model::AutoScalingConfiguration>) -> Self {
             self.auto_scaling_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAutoScalingConfigurationOutput`](crate::output::DescribeAutoScalingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeAutoScalingConfigurationOutput {
             crate::output::DescribeAutoScalingConfigurationOutput {
                 auto_scaling_configuration: self.auto_scaling_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1475,6 +1849,7 @@ pub struct DeleteVpcIngressConnectionOutput  {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    _request_id: Option<String>,
 }
 impl DeleteVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
@@ -1482,6 +1857,11 @@ impl DeleteVpcIngressConnectionOutput {
         self.vpc_ingress_connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVpcIngressConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
 pub mod delete_vpc_ingress_connection_output {
     
@@ -1490,6 +1870,7 @@ pub mod delete_vpc_ingress_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
@@ -1501,11 +1882,21 @@ pub mod delete_vpc_ingress_connection_output {
         pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::model::VpcIngressConnection>) -> Self {
             self.vpc_ingress_connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVpcIngressConnectionOutput`](crate::output::DeleteVpcIngressConnectionOutput).
         pub fn build(self) -> crate::output::DeleteVpcIngressConnectionOutput {
             crate::output::DeleteVpcIngressConnectionOutput {
                 vpc_ingress_connection: self.vpc_ingress_connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1526,6 +1917,7 @@ pub struct DeleteVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
     #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    _request_id: Option<String>,
 }
 impl DeleteVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
@@ -1533,6 +1925,11 @@ impl DeleteVpcConnectorOutput {
         self.vpc_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVpcConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput).
 pub mod delete_vpc_connector_output {
     
@@ -1541,6 +1938,7 @@ pub mod delete_vpc_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
@@ -1552,11 +1950,21 @@ pub mod delete_vpc_connector_output {
         pub fn set_vpc_connector(mut self, input: std::option::Option<crate::model::VpcConnector>) -> Self {
             self.vpc_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput).
         pub fn build(self) -> crate::output::DeleteVpcConnectorOutput {
             crate::output::DeleteVpcConnectorOutput {
                 vpc_connector: self.vpc_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1580,6 +1988,7 @@ pub struct DeleteServiceOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteServiceOutput {
     /// <p>A description of the App Runner service that this request just deleted.</p>
@@ -1591,6 +2000,11 @@ impl DeleteServiceOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
     
@@ -1600,6 +2014,7 @@ pub mod delete_service_output {
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner service that this request just deleted.</p>
@@ -1620,6 +2035,15 @@ pub mod delete_service_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
         pub fn build(self) -> crate::output::DeleteServiceOutput {
             crate::output::DeleteServiceOutput {
@@ -1627,6 +2051,7 @@ pub mod delete_service_output {
                 ,
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1647,6 +2072,7 @@ pub struct DeleteObservabilityConfigurationOutput  {
     /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
     #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+    _request_id: Option<String>,
 }
 impl DeleteObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
@@ -1654,6 +2080,11 @@ impl DeleteObservabilityConfigurationOutput {
         self.observability_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteObservabilityConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput).
 pub mod delete_observability_configuration_output {
     
@@ -1662,6 +2093,7 @@ pub mod delete_observability_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
@@ -1673,11 +2105,21 @@ pub mod delete_observability_configuration_output {
         pub fn set_observability_configuration(mut self, input: std::option::Option<crate::model::ObservabilityConfiguration>) -> Self {
             self.observability_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteObservabilityConfigurationOutput {
             crate::output::DeleteObservabilityConfigurationOutput {
                 observability_configuration: self.observability_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1698,6 +2140,7 @@ pub struct DeleteConnectionOutput  {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
+    _request_id: Option<String>,
 }
 impl DeleteConnectionOutput {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
@@ -1705,6 +2148,11 @@ impl DeleteConnectionOutput {
         self.connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
     
@@ -1713,6 +2161,7 @@ pub mod delete_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner connection that this request just deleted.</p>
@@ -1724,11 +2173,21 @@ pub mod delete_connection_output {
         pub fn set_connection(mut self, input: std::option::Option<crate::model::Connection>) -> Self {
             self.connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
                 connection: self.connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1749,6 +2208,7 @@ pub struct DeleteAutoScalingConfigurationOutput  {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+    _request_id: Option<String>,
 }
 impl DeleteAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
@@ -1756,6 +2216,11 @@ impl DeleteAutoScalingConfigurationOutput {
         self.auto_scaling_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAutoScalingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput).
 pub mod delete_auto_scaling_configuration_output {
     
@@ -1764,6 +2229,7 @@ pub mod delete_auto_scaling_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
@@ -1775,11 +2241,21 @@ pub mod delete_auto_scaling_configuration_output {
         pub fn set_auto_scaling_configuration(mut self, input: std::option::Option<crate::model::AutoScalingConfiguration>) -> Self {
             self.auto_scaling_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteAutoScalingConfigurationOutput {
             crate::output::DeleteAutoScalingConfigurationOutput {
                 auto_scaling_configuration: self.auto_scaling_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1800,6 +2276,7 @@ pub struct CreateVpcIngressConnectionOutput  {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+    _request_id: Option<String>,
 }
 impl CreateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
@@ -1807,6 +2284,11 @@ impl CreateVpcIngressConnectionOutput {
         self.vpc_ingress_connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVpcIngressConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
 pub mod create_vpc_ingress_connection_output {
     
@@ -1815,6 +2297,7 @@ pub mod create_vpc_ingress_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_ingress_connection: std::option::Option<crate::model::VpcIngressConnection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
@@ -1826,11 +2309,21 @@ pub mod create_vpc_ingress_connection_output {
         pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::model::VpcIngressConnection>) -> Self {
             self.vpc_ingress_connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVpcIngressConnectionOutput`](crate::output::CreateVpcIngressConnectionOutput).
         pub fn build(self) -> crate::output::CreateVpcIngressConnectionOutput {
             crate::output::CreateVpcIngressConnectionOutput {
                 vpc_ingress_connection: self.vpc_ingress_connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1851,6 +2344,7 @@ pub struct CreateVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
     #[doc(hidden)]
     pub vpc_connector: std::option::Option<crate::model::VpcConnector>,
+    _request_id: Option<String>,
 }
 impl CreateVpcConnectorOutput {
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
@@ -1858,6 +2352,11 @@ impl CreateVpcConnectorOutput {
         self.vpc_connector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVpcConnectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput).
 pub mod create_vpc_connector_output {
     
@@ -1866,6 +2365,7 @@ pub mod create_vpc_connector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner VPC connector that's created by this request.</p>
@@ -1877,11 +2377,21 @@ pub mod create_vpc_connector_output {
         pub fn set_vpc_connector(mut self, input: std::option::Option<crate::model::VpcConnector>) -> Self {
             self.vpc_connector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput).
         pub fn build(self) -> crate::output::CreateVpcConnectorOutput {
             crate::output::CreateVpcConnectorOutput {
                 vpc_connector: self.vpc_connector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1905,6 +2415,7 @@ pub struct CreateServiceOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateServiceOutput {
     /// <p>A description of the App Runner service that's created by this request.</p>
@@ -1916,6 +2427,11 @@ impl CreateServiceOutput {
         self.operation_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateServiceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
 pub mod create_service_output {
     
@@ -1925,6 +2441,7 @@ pub mod create_service_output {
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner service that's created by this request.</p>
@@ -1945,6 +2462,15 @@ pub mod create_service_output {
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput).
         pub fn build(self) -> crate::output::CreateServiceOutput {
             crate::output::CreateServiceOutput {
@@ -1952,6 +2478,7 @@ pub mod create_service_output {
                 ,
                 operation_id: self.operation_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1972,6 +2499,7 @@ pub struct CreateObservabilityConfigurationOutput  {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
     #[doc(hidden)]
     pub observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+    _request_id: Option<String>,
 }
 impl CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
@@ -1979,6 +2507,11 @@ impl CreateObservabilityConfigurationOutput {
         self.observability_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateObservabilityConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput).
 pub mod create_observability_configuration_output {
     
@@ -1987,6 +2520,7 @@ pub mod create_observability_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration: std::option::Option<crate::model::ObservabilityConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner observability configuration that's created by this request.</p>
@@ -1998,11 +2532,21 @@ pub mod create_observability_configuration_output {
         pub fn set_observability_configuration(mut self, input: std::option::Option<crate::model::ObservabilityConfiguration>) -> Self {
             self.observability_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput).
         pub fn build(self) -> crate::output::CreateObservabilityConfigurationOutput {
             crate::output::CreateObservabilityConfigurationOutput {
                 observability_configuration: self.observability_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2023,6 +2567,7 @@ pub struct CreateConnectionOutput  {
     /// <p>A description of the App Runner connection that's created by this request.</p>
     #[doc(hidden)]
     pub connection: std::option::Option<crate::model::Connection>,
+    _request_id: Option<String>,
 }
 impl CreateConnectionOutput {
     /// <p>A description of the App Runner connection that's created by this request.</p>
@@ -2030,6 +2575,11 @@ impl CreateConnectionOutput {
         self.connection.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateConnectionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
     
@@ -2038,6 +2588,7 @@ pub mod create_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner connection that's created by this request.</p>
@@ -2049,11 +2600,21 @@ pub mod create_connection_output {
         pub fn set_connection(mut self, input: std::option::Option<crate::model::Connection>) -> Self {
             self.connection = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
                 connection: self.connection
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2074,6 +2635,7 @@ pub struct CreateAutoScalingConfigurationOutput  {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+    _request_id: Option<String>,
 }
 impl CreateAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
@@ -2081,6 +2643,11 @@ impl CreateAutoScalingConfigurationOutput {
         self.auto_scaling_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAutoScalingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAutoScalingConfigurationOutput`](crate::output::CreateAutoScalingConfigurationOutput).
 pub mod create_auto_scaling_configuration_output {
     
@@ -2089,6 +2656,7 @@ pub mod create_auto_scaling_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration: std::option::Option<crate::model::AutoScalingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
@@ -2100,11 +2668,21 @@ pub mod create_auto_scaling_configuration_output {
         pub fn set_auto_scaling_configuration(mut self, input: std::option::Option<crate::model::AutoScalingConfiguration>) -> Self {
             self.auto_scaling_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAutoScalingConfigurationOutput`](crate::output::CreateAutoScalingConfigurationOutput).
         pub fn build(self) -> crate::output::CreateAutoScalingConfigurationOutput {
             crate::output::CreateAutoScalingConfigurationOutput {
                 auto_scaling_configuration: self.auto_scaling_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2134,6 +2712,7 @@ pub struct AssociateCustomDomainOutput  {
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     #[doc(hidden)]
     pub vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+    _request_id: Option<String>,
 }
 impl AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
@@ -2153,6 +2732,11 @@ impl AssociateCustomDomainOutput {
         self.vpc_dns_targets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateCustomDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput).
 pub mod associate_custom_domain_output {
     
@@ -2164,6 +2748,7 @@ pub mod associate_custom_domain_output {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<crate::model::CustomDomain>,
         pub(crate) vpc_dns_targets: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
@@ -2208,6 +2793,15 @@ pub mod associate_custom_domain_output {
         pub fn set_vpc_dns_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcDnsTarget>>) -> Self {
             self.vpc_dns_targets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput).
         pub fn build(self) -> crate::output::AssociateCustomDomainOutput {
             crate::output::AssociateCustomDomainOutput {
@@ -2219,6 +2813,7 @@ pub mod associate_custom_domain_output {
                 ,
                 vpc_dns_targets: self.vpc_dns_targets
                 ,
+                _request_id: self._request_id,
             }
         }
     }

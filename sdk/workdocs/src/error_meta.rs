@@ -53,15 +53,8 @@ pub enum Error {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -99,21 +92,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AbortDocumentVersio
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AbortDocumentVersionUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AbortDocumentVersionUploadError> for Error {
     fn from(err: crate::error::AbortDocumentVersionUploadError) -> Self {
-        match err.kind {
-            crate::error::AbortDocumentVersionUploadErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::AbortDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AbortDocumentVersionUploadError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::AbortDocumentVersionUploadError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::AbortDocumentVersionUploadError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::AbortDocumentVersionUploadError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::AbortDocumentVersionUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::AbortDocumentVersionUploadError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::AbortDocumentVersionUploadError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::AbortDocumentVersionUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -121,19 +119,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ActivateUserError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ActivateUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ActivateUserError> for Error {
     fn from(err: crate::error::ActivateUserError) -> Self {
-        match err.kind {
-            crate::error::ActivateUserErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::ActivateUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::ActivateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ActivateUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::ActivateUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::ActivateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ActivateUserError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::ActivateUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::ActivateUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ActivateUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::ActivateUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::ActivateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -141,19 +144,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddResourcePermissi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddResourcePermissionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddResourcePermissionsError> for Error {
     fn from(err: crate::error::AddResourcePermissionsError) -> Self {
-        match err.kind {
-            crate::error::AddResourcePermissionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::AddResourcePermissionsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::AddResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AddResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::AddResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddResourcePermissionsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::AddResourcePermissionsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::AddResourcePermissionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::AddResourcePermissionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::AddResourcePermissionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::AddResourcePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -161,22 +169,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCommentError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCommentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateCommentError> for Error {
     fn from(err: crate::error::CreateCommentError) -> Self {
-        match err.kind {
-            crate::error::CreateCommentErrorKind::DocumentLockedForCommentsException(inner) => Error::DocumentLockedForCommentsException(inner),
-            crate::error::CreateCommentErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::CreateCommentErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::CreateCommentErrorKind::InvalidCommentOperationException(inner) => Error::InvalidCommentOperationException(inner),
-            crate::error::CreateCommentErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::CreateCommentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateCommentErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::CreateCommentErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateCommentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateCommentError::DocumentLockedForCommentsException(inner) => Error::DocumentLockedForCommentsException(inner),
+            crate::error::CreateCommentError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::CreateCommentError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::CreateCommentError::InvalidCommentOperationException(inner) => Error::InvalidCommentOperationException(inner),
+            crate::error::CreateCommentError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::CreateCommentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateCommentError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::CreateCommentError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateCommentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -184,21 +197,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomMetadat
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCustomMetadataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateCustomMetadataError> for Error {
     fn from(err: crate::error::CreateCustomMetadataError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomMetadataErrorKind::CustomMetadataLimitExceededException(inner) => Error::CustomMetadataLimitExceededException(inner),
-            crate::error::CreateCustomMetadataErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::CreateCustomMetadataErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::CreateCustomMetadataErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::CreateCustomMetadataErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateCustomMetadataErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::CreateCustomMetadataErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateCustomMetadataError::CustomMetadataLimitExceededException(inner) => Error::CustomMetadataLimitExceededException(inner),
+            crate::error::CreateCustomMetadataError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::CreateCustomMetadataError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::CreateCustomMetadataError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::CreateCustomMetadataError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateCustomMetadataError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::CreateCustomMetadataError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateCustomMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -206,24 +224,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFolderError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFolderError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateFolderError> for Error {
     fn from(err: crate::error::CreateFolderError) -> Self {
-        match err.kind {
-            crate::error::CreateFolderErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::CreateFolderErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::CreateFolderErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
-            crate::error::CreateFolderErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::CreateFolderErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::CreateFolderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateFolderErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::CreateFolderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateFolderErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::CreateFolderErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateFolderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateFolderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateFolderError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::CreateFolderError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::error::CreateFolderError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::CreateFolderError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::CreateFolderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateFolderError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::CreateFolderError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateFolderError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::CreateFolderError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -231,20 +254,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLabelsError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLabelsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateLabelsError> for Error {
     fn from(err: crate::error::CreateLabelsError) -> Self {
-        match err.kind {
-            crate::error::CreateLabelsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::CreateLabelsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::CreateLabelsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateLabelsErrorKind::TooManyLabelsException(inner) => Error::TooManyLabelsException(inner),
-            crate::error::CreateLabelsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::CreateLabelsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateLabelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateLabelsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::CreateLabelsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::CreateLabelsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateLabelsError::TooManyLabelsException(inner) => Error::TooManyLabelsException(inner),
+            crate::error::CreateLabelsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::CreateLabelsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateLabelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -252,18 +280,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateNotificationS
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateNotificationSubscriptionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateNotificationSubscriptionError> for Error {
     fn from(err: crate::error::CreateNotificationSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::CreateNotificationSubscriptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException(inner) => Error::TooManySubscriptionsException(inner),
-            crate::error::CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateNotificationSubscriptionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::CreateNotificationSubscriptionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateNotificationSubscriptionError::TooManySubscriptionsException(inner) => Error::TooManySubscriptionsException(inner),
+            crate::error::CreateNotificationSubscriptionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateNotificationSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -271,19 +304,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateUserError> for Error {
     fn from(err: crate::error::CreateUserError) -> Self {
-        match err.kind {
-            crate::error::CreateUserErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
-            crate::error::CreateUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::CreateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::CreateUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateUserError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::error::CreateUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::CreateUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::CreateUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::CreateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -291,19 +329,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeactivateUserError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeactivateUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeactivateUserError> for Error {
     fn from(err: crate::error::DeactivateUserError) -> Self {
-        match err.kind {
-            crate::error::DeactivateUserErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeactivateUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeactivateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeactivateUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeactivateUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeactivateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeactivateUserError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeactivateUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeactivateUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeactivateUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeactivateUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeactivateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -311,21 +354,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCommentError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCommentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteCommentError> for Error {
     fn from(err: crate::error::DeleteCommentError) -> Self {
-        match err.kind {
-            crate::error::DeleteCommentErrorKind::DocumentLockedForCommentsException(inner) => Error::DocumentLockedForCommentsException(inner),
-            crate::error::DeleteCommentErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteCommentErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteCommentErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteCommentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteCommentErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteCommentErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteCommentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCommentError::DocumentLockedForCommentsException(inner) => Error::DocumentLockedForCommentsException(inner),
+            crate::error::DeleteCommentError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteCommentError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteCommentError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteCommentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteCommentError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteCommentError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteCommentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -333,20 +381,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomMetadat
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomMetadataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteCustomMetadataError> for Error {
     fn from(err: crate::error::DeleteCustomMetadataError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomMetadataErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteCustomMetadataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCustomMetadataError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteCustomMetadataError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteCustomMetadataError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteCustomMetadataError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteCustomMetadataError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteCustomMetadataError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteCustomMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -354,23 +407,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDocumentError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDocumentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteDocumentError> for Error {
     fn from(err: crate::error::DeleteDocumentError) -> Self {
-        match err.kind {
-            crate::error::DeleteDocumentErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteDocumentErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::DeleteDocumentErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteDocumentErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteDocumentErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::DeleteDocumentErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteDocumentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteDocumentErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteDocumentErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteDocumentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDocumentError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteDocumentError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::DeleteDocumentError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteDocumentError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteDocumentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::DeleteDocumentError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteDocumentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteDocumentError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteDocumentError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -378,22 +436,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDocumentVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteDocumentVersionError> for Error {
     fn from(err: crate::error::DeleteDocumentVersionError) -> Self {
-        match err.kind {
-            crate::error::DeleteDocumentVersionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteDocumentVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDocumentVersionError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteDocumentVersionError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::DeleteDocumentVersionError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteDocumentVersionError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteDocumentVersionError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::error::DeleteDocumentVersionError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteDocumentVersionError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteDocumentVersionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteDocumentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -401,23 +464,28 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFolderError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFolderError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteFolderError> for Error {
     fn from(err: crate::error::DeleteFolderError) -> Self {
-        match err.kind {
-            crate::error::DeleteFolderErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteFolderErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::DeleteFolderErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteFolderErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteFolderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::DeleteFolderErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteFolderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteFolderErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteFolderErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteFolderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteFolderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteFolderError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::DeleteFolderError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteFolderError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteFolderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::DeleteFolderError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteFolderError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteFolderError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteFolderError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -425,21 +493,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFolderContent
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFolderContentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteFolderContentsError> for Error {
     fn from(err: crate::error::DeleteFolderContentsError) -> Self {
-        match err.kind {
-            crate::error::DeleteFolderContentsErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::DeleteFolderContentsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteFolderContentsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteFolderContentsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteFolderContentsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteFolderContentsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteFolderContentsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteFolderContentsError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::DeleteFolderContentsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteFolderContentsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteFolderContentsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteFolderContentsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteFolderContentsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteFolderContentsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteFolderContentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -447,20 +520,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLabelsError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLabelsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteLabelsError> for Error {
     fn from(err: crate::error::DeleteLabelsError) -> Self {
-        match err.kind {
-            crate::error::DeleteLabelsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteLabelsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteLabelsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteLabelsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteLabelsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteLabelsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteLabelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteLabelsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteLabelsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteLabelsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteLabelsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteLabelsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteLabelsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteLabelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -468,18 +546,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteNotificationS
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteNotificationSubscriptionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteNotificationSubscriptionError> for Error {
     fn from(err: crate::error::DeleteNotificationSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::DeleteNotificationSubscriptionErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteNotificationSubscriptionErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DeleteNotificationSubscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteNotificationSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteNotificationSubscriptionError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteNotificationSubscriptionError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DeleteNotificationSubscriptionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteNotificationSubscriptionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteNotificationSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -487,19 +570,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteUserError> for Error {
     fn from(err: crate::error::DeleteUserError) -> Self {
-        match err.kind {
-            crate::error::DeleteUserErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DeleteUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DeleteUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DeleteUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DeleteUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteUserError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DeleteUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DeleteUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DeleteUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DeleteUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -507,19 +595,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeActivitiesE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeActivitiesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeActivitiesError> for Error {
     fn from(err: crate::error::DescribeActivitiesError) -> Self {
-        match err.kind {
-            crate::error::DescribeActivitiesErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeActivitiesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeActivitiesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeActivitiesErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeActivitiesErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeActivitiesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeActivitiesError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeActivitiesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeActivitiesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeActivitiesError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeActivitiesError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeActivitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -527,20 +620,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCommentsErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeCommentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeCommentsError> for Error {
     fn from(err: crate::error::DescribeCommentsError) -> Self {
-        match err.kind {
-            crate::error::DescribeCommentsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DescribeCommentsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeCommentsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DescribeCommentsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeCommentsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeCommentsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeCommentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeCommentsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DescribeCommentsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeCommentsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DescribeCommentsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeCommentsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeCommentsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeCommentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -548,22 +646,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDocumentVer
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDocumentVersionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeDocumentVersionsError> for Error {
     fn from(err: crate::error::DescribeDocumentVersionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeDocumentVersionsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeDocumentVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeDocumentVersionsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DescribeDocumentVersionsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeDocumentVersionsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeDocumentVersionsError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::error::DescribeDocumentVersionsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DescribeDocumentVersionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeDocumentVersionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeDocumentVersionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeDocumentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -571,20 +674,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFolderConte
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFolderContentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeFolderContentsError> for Error {
     fn from(err: crate::error::DescribeFolderContentsError) -> Self {
-        match err.kind {
-            crate::error::DescribeFolderContentsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DescribeFolderContentsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeFolderContentsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeFolderContentsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::DescribeFolderContentsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeFolderContentsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeFolderContentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeFolderContentsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DescribeFolderContentsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeFolderContentsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeFolderContentsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::DescribeFolderContentsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeFolderContentsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeFolderContentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -592,18 +700,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGroupsError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGroupsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeGroupsError> for Error {
     fn from(err: crate::error::DescribeGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeGroupsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeGroupsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeGroupsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeGroupsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeGroupsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeGroupsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeGroupsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeGroupsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -611,17 +724,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeNotificatio
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeNotificationSubscriptionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeNotificationSubscriptionsError> for Error {
     fn from(err: crate::error::DescribeNotificationSubscriptionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeNotificationSubscriptionsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DescribeNotificationSubscriptionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeNotificationSubscriptionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeNotificationSubscriptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeNotificationSubscriptionsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DescribeNotificationSubscriptionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeNotificationSubscriptionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeNotificationSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -629,19 +747,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeResourcePer
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeResourcePermissionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeResourcePermissionsError> for Error {
     fn from(err: crate::error::DescribeResourcePermissionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeResourcePermissionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeResourcePermissionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeResourcePermissionsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeResourcePermissionsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeResourcePermissionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeResourcePermissionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeResourcePermissionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeResourcePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -649,19 +772,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRootFolders
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeRootFoldersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeRootFoldersError> for Error {
     fn from(err: crate::error::DescribeRootFoldersError) -> Self {
-        match err.kind {
-            crate::error::DescribeRootFoldersErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeRootFoldersErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeRootFoldersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeRootFoldersErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeRootFoldersErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeRootFoldersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeRootFoldersError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeRootFoldersError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeRootFoldersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeRootFoldersError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeRootFoldersError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeRootFoldersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -669,21 +797,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeUsersError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeUsersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeUsersError> for Error {
     fn from(err: crate::error::DescribeUsersError) -> Self {
-        match err.kind {
-            crate::error::DescribeUsersErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::DescribeUsersErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::DescribeUsersErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeUsersErrorKind::RequestedEntityTooLargeException(inner) => Error::RequestedEntityTooLargeException(inner),
-            crate::error::DescribeUsersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeUsersErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::DescribeUsersErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::DescribeUsersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeUsersError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::DescribeUsersError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::DescribeUsersError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeUsersError::RequestedEntityTooLargeException(inner) => Error::RequestedEntityTooLargeException(inner),
+            crate::error::DescribeUsersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeUsersError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::DescribeUsersError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::DescribeUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -691,19 +824,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCurrentUserError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCurrentUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetCurrentUserError> for Error {
     fn from(err: crate::error::GetCurrentUserError) -> Self {
-        match err.kind {
-            crate::error::GetCurrentUserErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetCurrentUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetCurrentUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetCurrentUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetCurrentUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetCurrentUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetCurrentUserError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetCurrentUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetCurrentUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetCurrentUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetCurrentUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetCurrentUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -711,21 +849,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDocumentError, R
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDocumentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDocumentError> for Error {
     fn from(err: crate::error::GetDocumentError) -> Self {
-        match err.kind {
-            crate::error::GetDocumentErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetDocumentErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetDocumentErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::GetDocumentErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::GetDocumentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetDocumentErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetDocumentErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetDocumentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDocumentError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetDocumentError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetDocumentError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::GetDocumentError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::error::GetDocumentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetDocumentError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetDocumentError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -733,19 +876,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDocumentPathErro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDocumentPathError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDocumentPathError> for Error {
     fn from(err: crate::error::GetDocumentPathError) -> Self {
-        match err.kind {
-            crate::error::GetDocumentPathErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetDocumentPathErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetDocumentPathErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetDocumentPathErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetDocumentPathErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetDocumentPathErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDocumentPathError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetDocumentPathError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetDocumentPathError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetDocumentPathError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetDocumentPathError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetDocumentPathError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -753,21 +901,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDocumentVersionE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDocumentVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDocumentVersionError> for Error {
     fn from(err: crate::error::GetDocumentVersionError) -> Self {
-        match err.kind {
-            crate::error::GetDocumentVersionErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetDocumentVersionErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetDocumentVersionErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::GetDocumentVersionErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::GetDocumentVersionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetDocumentVersionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetDocumentVersionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetDocumentVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDocumentVersionError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetDocumentVersionError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetDocumentVersionError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::error::GetDocumentVersionError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::GetDocumentVersionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetDocumentVersionError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetDocumentVersionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetDocumentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -775,21 +928,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFolderError, R>>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFolderError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetFolderError> for Error {
     fn from(err: crate::error::GetFolderError) -> Self {
-        match err.kind {
-            crate::error::GetFolderErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetFolderErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetFolderErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::GetFolderErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::GetFolderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetFolderErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetFolderErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetFolderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetFolderError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetFolderError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetFolderError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::GetFolderError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::GetFolderError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetFolderError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetFolderError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -797,19 +955,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFolderPathError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFolderPathError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetFolderPathError> for Error {
     fn from(err: crate::error::GetFolderPathError) -> Self {
-        match err.kind {
-            crate::error::GetFolderPathErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::GetFolderPathErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetFolderPathErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetFolderPathErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetFolderPathErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetFolderPathErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetFolderPathError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::GetFolderPathError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetFolderPathError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetFolderPathError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetFolderPathError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetFolderPathError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -817,19 +980,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcesError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetResourcesError> for Error {
     fn from(err: crate::error::GetResourcesError) -> Self {
-        match err.kind {
-            crate::error::GetResourcesErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::GetResourcesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::GetResourcesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetResourcesErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::GetResourcesErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::GetResourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetResourcesError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::GetResourcesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::GetResourcesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetResourcesError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::GetResourcesError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::GetResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -837,27 +1005,32 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateDocumentVer
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateDocumentVersionUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::InitiateDocumentVersionUploadError> for Error {
     fn from(err: crate::error::InitiateDocumentVersionUploadError) -> Self {
-        match err.kind {
-            crate::error::InitiateDocumentVersionUploadErrorKind::DraftUploadOutOfSyncException(inner) => Error::DraftUploadOutOfSyncException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::ResourceAlreadyCheckedOutException(inner) => Error::ResourceAlreadyCheckedOutException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::StorageLimitExceededException(inner) => Error::StorageLimitExceededException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::StorageLimitWillExceedException(inner) => Error::StorageLimitWillExceedException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::InitiateDocumentVersionUploadErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::InitiateDocumentVersionUploadError::DraftUploadOutOfSyncException(inner) => Error::DraftUploadOutOfSyncException(inner),
+            crate::error::InitiateDocumentVersionUploadError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::error::InitiateDocumentVersionUploadError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::InitiateDocumentVersionUploadError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::InitiateDocumentVersionUploadError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
+            crate::error::InitiateDocumentVersionUploadError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::InitiateDocumentVersionUploadError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::InitiateDocumentVersionUploadError::ResourceAlreadyCheckedOutException(inner) => Error::ResourceAlreadyCheckedOutException(inner),
+            crate::error::InitiateDocumentVersionUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::InitiateDocumentVersionUploadError::StorageLimitExceededException(inner) => Error::StorageLimitExceededException(inner),
+            crate::error::InitiateDocumentVersionUploadError::StorageLimitWillExceedException(inner) => Error::StorageLimitWillExceedException(inner),
+            crate::error::InitiateDocumentVersionUploadError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::InitiateDocumentVersionUploadError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::InitiateDocumentVersionUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -865,18 +1038,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveAllResourcePe
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveAllResourcePermissionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RemoveAllResourcePermissionsError> for Error {
     fn from(err: crate::error::RemoveAllResourcePermissionsError) -> Self {
-        match err.kind {
-            crate::error::RemoveAllResourcePermissionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::RemoveAllResourcePermissionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::RemoveAllResourcePermissionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::RemoveAllResourcePermissionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::RemoveAllResourcePermissionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemoveAllResourcePermissionsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::RemoveAllResourcePermissionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RemoveAllResourcePermissionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::RemoveAllResourcePermissionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::RemoveAllResourcePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -884,18 +1062,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveResourcePermi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveResourcePermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RemoveResourcePermissionError> for Error {
     fn from(err: crate::error::RemoveResourcePermissionError) -> Self {
-        match err.kind {
-            crate::error::RemoveResourcePermissionErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::RemoveResourcePermissionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::RemoveResourcePermissionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::RemoveResourcePermissionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemoveResourcePermissionError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::RemoveResourcePermissionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RemoveResourcePermissionError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::RemoveResourcePermissionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::RemoveResourcePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -903,22 +1086,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVers
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RestoreDocumentVersionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::RestoreDocumentVersionsError> for Error {
     fn from(err: crate::error::RestoreDocumentVersionsError) -> Self {
-        match err.kind {
-            crate::error::RestoreDocumentVersionsErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::RestoreDocumentVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RestoreDocumentVersionsError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::RestoreDocumentVersionsError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::RestoreDocumentVersionsError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::RestoreDocumentVersionsError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::RestoreDocumentVersionsError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::error::RestoreDocumentVersionsError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::RestoreDocumentVersionsError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::RestoreDocumentVersionsError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::RestoreDocumentVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -926,24 +1114,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDocumentError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDocumentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDocumentError> for Error {
     fn from(err: crate::error::UpdateDocumentError) -> Self {
-        match err.kind {
-            crate::error::UpdateDocumentErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateDocumentErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::UpdateDocumentErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
-            crate::error::UpdateDocumentErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::UpdateDocumentErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::UpdateDocumentErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::UpdateDocumentErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::UpdateDocumentErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateDocumentErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::UpdateDocumentErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::UpdateDocumentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDocumentError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdateDocumentError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::UpdateDocumentError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::error::UpdateDocumentError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::UpdateDocumentError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::UpdateDocumentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateDocumentError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::UpdateDocumentError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateDocumentError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::UpdateDocumentError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::UpdateDocumentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -951,22 +1144,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDocumentVersi
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDocumentVersionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDocumentVersionError> for Error {
     fn from(err: crate::error::UpdateDocumentVersionError) -> Self {
-        match err.kind {
-            crate::error::UpdateDocumentVersionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::UpdateDocumentVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDocumentVersionError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdateDocumentVersionError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::UpdateDocumentVersionError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::UpdateDocumentVersionError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::error::UpdateDocumentVersionError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::UpdateDocumentVersionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateDocumentVersionError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::UpdateDocumentVersionError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::UpdateDocumentVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -974,24 +1172,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFolderError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFolderError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateFolderError> for Error {
     fn from(err: crate::error::UpdateFolderError) -> Self {
-        match err.kind {
-            crate::error::UpdateFolderErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateFolderErrorKind::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
-            crate::error::UpdateFolderErrorKind::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
-            crate::error::UpdateFolderErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::UpdateFolderErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::UpdateFolderErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::UpdateFolderErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::UpdateFolderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateFolderErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::UpdateFolderErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::UpdateFolderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateFolderError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdateFolderError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::error::UpdateFolderError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::error::UpdateFolderError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::UpdateFolderError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::UpdateFolderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateFolderError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::UpdateFolderError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateFolderError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::UpdateFolderError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::UpdateFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -999,25 +1202,62 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateUserError> for Error {
     fn from(err: crate::error::UpdateUserError) -> Self {
-        match err.kind {
-            crate::error::UpdateUserErrorKind::DeactivatingLastSystemUserException(inner) => Error::DeactivatingLastSystemUserException(inner),
-            crate::error::UpdateUserErrorKind::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
-            crate::error::UpdateUserErrorKind::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
-            crate::error::UpdateUserErrorKind::IllegalUserStateException(inner) => Error::IllegalUserStateException(inner),
-            crate::error::UpdateUserErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::UpdateUserErrorKind::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
-            crate::error::UpdateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateUserErrorKind::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
-            crate::error::UpdateUserErrorKind::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
-            crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateUserError::DeactivatingLastSystemUserException(inner) => Error::DeactivatingLastSystemUserException(inner),
+            crate::error::UpdateUserError::EntityNotExistsException(inner) => Error::EntityNotExistsException(inner),
+            crate::error::UpdateUserError::FailedDependencyException(inner) => Error::FailedDependencyException(inner),
+            crate::error::UpdateUserError::IllegalUserStateException(inner) => Error::IllegalUserStateException(inner),
+            crate::error::UpdateUserError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UpdateUserError::ProhibitedStateException(inner) => Error::ProhibitedStateException(inner),
+            crate::error::UpdateUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateUserError::UnauthorizedOperationException(inner) => Error::UnauthorizedOperationException(inner),
+            crate::error::UpdateUserError::UnauthorizedResourceAccessException(inner) => Error::UnauthorizedResourceAccessException(inner),
+            crate::error::UpdateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConflictingOperationException(e) => e.request_id(),
+            Self::CustomMetadataLimitExceededException(e) => e.request_id(),
+            Self::DeactivatingLastSystemUserException(e) => e.request_id(),
+            Self::DocumentLockedForCommentsException(e) => e.request_id(),
+            Self::DraftUploadOutOfSyncException(e) => e.request_id(),
+            Self::EntityAlreadyExistsException(e) => e.request_id(),
+            Self::EntityNotExistsException(e) => e.request_id(),
+            Self::FailedDependencyException(e) => e.request_id(),
+            Self::IllegalUserStateException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::InvalidCommentOperationException(e) => e.request_id(),
+            Self::InvalidOperationException(e) => e.request_id(),
+            Self::InvalidPasswordException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ProhibitedStateException(e) => e.request_id(),
+            Self::RequestedEntityTooLargeException(e) => e.request_id(),
+            Self::ResourceAlreadyCheckedOutException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::StorageLimitExceededException(e) => e.request_id(),
+            Self::StorageLimitWillExceedException(e) => e.request_id(),
+            Self::TooManyLabelsException(e) => e.request_id(),
+            Self::TooManySubscriptionsException(e) => e.request_id(),
+            Self::UnauthorizedOperationException(e) => e.request_id(),
+            Self::UnauthorizedResourceAccessException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +100,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
@@ -73,6 +108,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -81,6 +121,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -98,11 +139,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -126,6 +177,7 @@ pub struct DescribeSavingsPlansOfferingsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSavingsPlansOfferingsOutput {
     /// <p>Information about the Savings Plans offerings.</p>
@@ -137,6 +189,11 @@ impl DescribeSavingsPlansOfferingsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSavingsPlansOfferingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
 pub mod describe_savings_plans_offerings_output {
     
@@ -146,6 +203,7 @@ pub mod describe_savings_plans_offerings_output {
     pub struct Builder {
         pub(crate) search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOffering>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `search_results`.
@@ -172,6 +230,15 @@ pub mod describe_savings_plans_offerings_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeSavingsPlansOfferingsOutput {
             crate::output::DescribeSavingsPlansOfferingsOutput {
@@ -179,6 +246,7 @@ pub mod describe_savings_plans_offerings_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -202,6 +270,7 @@ pub struct DescribeSavingsPlansOfferingRatesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSavingsPlansOfferingRatesOutput {
     /// <p>Information about the Savings Plans offering rates.</p>
@@ -213,6 +282,11 @@ impl DescribeSavingsPlansOfferingRatesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSavingsPlansOfferingRatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
 pub mod describe_savings_plans_offering_rates_output {
     
@@ -222,6 +296,7 @@ pub mod describe_savings_plans_offering_rates_output {
     pub struct Builder {
         pub(crate) search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `search_results`.
@@ -248,6 +323,15 @@ pub mod describe_savings_plans_offering_rates_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
         pub fn build(self) -> crate::output::DescribeSavingsPlansOfferingRatesOutput {
             crate::output::DescribeSavingsPlansOfferingRatesOutput {
@@ -255,6 +339,7 @@ pub mod describe_savings_plans_offering_rates_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -278,6 +363,7 @@ pub struct DescribeSavingsPlansOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSavingsPlansOutput {
     /// <p>Information about the Savings Plans.</p>
@@ -289,6 +375,11 @@ impl DescribeSavingsPlansOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSavingsPlansOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
 pub mod describe_savings_plans_output {
     
@@ -298,6 +389,7 @@ pub mod describe_savings_plans_output {
     pub struct Builder {
         pub(crate) savings_plans: std::option::Option<std::vec::Vec<crate::model::SavingsPlan>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `savings_plans`.
@@ -324,6 +416,15 @@ pub mod describe_savings_plans_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
         pub fn build(self) -> crate::output::DescribeSavingsPlansOutput {
             crate::output::DescribeSavingsPlansOutput {
@@ -331,6 +432,7 @@ pub mod describe_savings_plans_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -357,6 +459,7 @@ pub struct DescribeSavingsPlanRatesOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSavingsPlanRatesOutput {
     /// <p>The ID of the Savings Plan.</p>
@@ -372,6 +475,11 @@ impl DescribeSavingsPlanRatesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSavingsPlanRatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
 pub mod describe_savings_plan_rates_output {
     
@@ -382,6 +490,7 @@ pub mod describe_savings_plan_rates_output {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
         pub(crate) search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Savings Plan.</p>
@@ -417,6 +526,15 @@ pub mod describe_savings_plan_rates_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
         pub fn build(self) -> crate::output::DescribeSavingsPlanRatesOutput {
             crate::output::DescribeSavingsPlanRatesOutput {
@@ -426,6 +544,7 @@ pub mod describe_savings_plan_rates_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -443,7 +562,13 @@ impl DescribeSavingsPlanRatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteQueuedSavingsPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
 pub mod delete_queued_savings_plan_output {
     
@@ -451,11 +576,22 @@ pub mod delete_queued_savings_plan_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
         pub fn build(self) -> crate::output::DeleteQueuedSavingsPlanOutput {
             crate::output::DeleteQueuedSavingsPlanOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -476,6 +612,7 @@ pub struct CreateSavingsPlanOutput  {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateSavingsPlanOutput {
     /// <p>The ID of the Savings Plan.</p>
@@ -483,6 +620,11 @@ impl CreateSavingsPlanOutput {
         self.savings_plan_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSavingsPlanOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
 pub mod create_savings_plan_output {
     
@@ -491,6 +633,7 @@ pub mod create_savings_plan_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Savings Plan.</p>
@@ -502,11 +645,21 @@ pub mod create_savings_plan_output {
         pub fn set_savings_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.savings_plan_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
         pub fn build(self) -> crate::output::CreateSavingsPlanOutput {
             crate::output::CreateSavingsPlanOutput {
                 savings_plan_id: self.savings_plan_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

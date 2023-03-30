@@ -22,6 +22,7 @@ impl AssociateMemberAccount {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateMemberAccount {
                 type Output = std::result::Result<crate::output::AssociateMemberAccountOutput, crate::error::AssociateMemberAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_member_account_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AssociateS3Resources {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateS3Resources {
                 type Output = std::result::Result<crate::output::AssociateS3ResourcesOutput, crate::error::AssociateS3ResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_s3_resources_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DisassociateMemberAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateMemberAccount {
                 type Output = std::result::Result<crate::output::DisassociateMemberAccountOutput, crate::error::DisassociateMemberAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_member_account_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DisassociateS3Resources {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateS3Resources {
                 type Output = std::result::Result<crate::output::DisassociateS3ResourcesOutput, crate::error::DisassociateS3ResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_s3_resources_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListMemberAccounts {
 impl aws_smithy_http::response::ParseStrictResponse for ListMemberAccounts {
                 type Output = std::result::Result<crate::output::ListMemberAccountsOutput, crate::error::ListMemberAccountsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_member_accounts_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListS3Resources {
 impl aws_smithy_http::response::ParseStrictResponse for ListS3Resources {
                 type Output = std::result::Result<crate::output::ListS3ResourcesOutput, crate::error::ListS3ResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_s3_resources_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl UpdateS3Resources {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateS3Resources {
                 type Output = std::result::Result<crate::output::UpdateS3ResourcesOutput, crate::error::UpdateS3ResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_s3_resources_error(response)
                      } else {

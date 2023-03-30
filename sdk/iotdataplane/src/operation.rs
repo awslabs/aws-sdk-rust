@@ -22,6 +22,7 @@ impl DeleteThingShadow {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteThingShadow {
                 type Output = std::result::Result<crate::output::DeleteThingShadowOutput, crate::error::DeleteThingShadowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_thing_shadow_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetRetainedMessage {
 impl aws_smithy_http::response::ParseStrictResponse for GetRetainedMessage {
                 type Output = std::result::Result<crate::output::GetRetainedMessageOutput, crate::error::GetRetainedMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_retained_message_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetThingShadow {
 impl aws_smithy_http::response::ParseStrictResponse for GetThingShadow {
                 type Output = std::result::Result<crate::output::GetThingShadowOutput, crate::error::GetThingShadowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_thing_shadow_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListNamedShadowsForThing {
 impl aws_smithy_http::response::ParseStrictResponse for ListNamedShadowsForThing {
                 type Output = std::result::Result<crate::output::ListNamedShadowsForThingOutput, crate::error::ListNamedShadowsForThingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_named_shadows_for_thing_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListRetainedMessages {
 impl aws_smithy_http::response::ParseStrictResponse for ListRetainedMessages {
                 type Output = std::result::Result<crate::output::ListRetainedMessagesOutput, crate::error::ListRetainedMessagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_retained_messages_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl Publish {
 impl aws_smithy_http::response::ParseStrictResponse for Publish {
                 type Output = std::result::Result<crate::output::PublishOutput, crate::error::PublishError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_publish_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl UpdateThingShadow {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateThingShadow {
                 type Output = std::result::Result<crate::output::UpdateThingShadowOutput, crate::error::UpdateThingShadowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_thing_shadow_error(response)
                      } else {

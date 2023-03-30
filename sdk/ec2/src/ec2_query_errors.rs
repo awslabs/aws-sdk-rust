@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
 use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlDecodeError};
 use std::convert::TryFrom;
 
@@ -14,36 +15,30 @@ pub fn body_is_error(body: &[u8]) -> Result<bool, XmlDecodeError> {
     Ok(scoped.start_el().matches("Response"))
 }
 
-pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlDecodeError> {
+pub fn parse_error_metadata(body: &[u8]) -> Result<ErrorMetadataBuilder, XmlDecodeError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;
-    let mut err_builder = aws_smithy_types::Error::builder();
+    let mut err_builder = ErrorMetadata::builder();
     while let Some(mut tag) = root.next_tag() {
-        match tag.start_el().local() {
-            "Errors" => {
-                while let Some(mut error_tag) = tag.next_tag() {
-                    if let "Error" = error_tag.start_el().local() {
-                        while let Some(mut error_field) = error_tag.next_tag() {
-                            match error_field.start_el().local() {
-                                "Code" => {
-                                    err_builder.code(try_data(&mut error_field)?);
-                                }
-                                "Message" => {
-                                    err_builder.message(try_data(&mut error_field)?);
-                                }
-                                _ => {}
+        if tag.start_el().local() == "Errors" {
+            while let Some(mut error_tag) = tag.next_tag() {
+                if let "Error" = error_tag.start_el().local() {
+                    while let Some(mut error_field) = error_tag.next_tag() {
+                        match error_field.start_el().local() {
+                            "Code" => {
+                                err_builder = err_builder.code(try_data(&mut error_field)?);
                             }
+                            "Message" => {
+                                err_builder = err_builder.message(try_data(&mut error_field)?);
+                            }
+                            _ => {}
                         }
                     }
                 }
             }
-            "RequestId" => {
-                err_builder.request_id(try_data(&mut tag)?);
-            }
-            _ => {}
         }
     }
-    Ok(err_builder.build())
+    Ok(err_builder)
 }
 
 #[allow(unused)]
@@ -72,7 +67,7 @@ pub fn error_scope<'a, 'b>(
 
 #[cfg(test)]
 mod test {
-    use super::{body_is_error, parse_generic_error};
+    use super::{body_is_error, parse_error_metadata};
     use crate::ec2_query_errors::error_scope;
     use aws_smithy_xml::decode::Document;
     use std::convert::TryFrom;
@@ -93,8 +88,7 @@ mod test {
         </Response>
         "#;
         assert!(body_is_error(xml).unwrap());
-        let parsed = parse_generic_error(xml).expect("valid xml");
-        assert_eq!(parsed.request_id(), Some("foo-id"));
+        let parsed = parse_error_metadata(xml).expect("valid xml").build();
         assert_eq!(parsed.message(), Some("Hi"));
         assert_eq!(parsed.code(), Some("InvalidGreeting"));
     }

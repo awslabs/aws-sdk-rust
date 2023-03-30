@@ -6,6 +6,7 @@ pub struct UpdateSubnetGroupOutput  {
     /// <p>The subnet group that has been modified.</p>
     #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+    _request_id: Option<String>,
 }
 impl UpdateSubnetGroupOutput {
     /// <p>The subnet group that has been modified.</p>
@@ -13,6 +14,11 @@ impl UpdateSubnetGroupOutput {
         self.subnet_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput).
 pub mod update_subnet_group_output {
     
@@ -21,6 +27,7 @@ pub mod update_subnet_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The subnet group that has been modified.</p>
@@ -32,11 +39,21 @@ pub mod update_subnet_group_output {
         pub fn set_subnet_group(mut self, input: std::option::Option<crate::model::SubnetGroup>) -> Self {
             self.subnet_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput).
         pub fn build(self) -> crate::output::UpdateSubnetGroupOutput {
             crate::output::UpdateSubnetGroupOutput {
                 subnet_group: self.subnet_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateParameterGroupOutput  {
     /// <p>The parameter group that has been modified.</p>
     #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
+    _request_id: Option<String>,
 }
 impl UpdateParameterGroupOutput {
     /// <p>The parameter group that has been modified.</p>
@@ -64,6 +82,11 @@ impl UpdateParameterGroupOutput {
         self.parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput).
 pub mod update_parameter_group_output {
     
@@ -72,6 +95,7 @@ pub mod update_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The parameter group that has been modified.</p>
@@ -83,11 +107,21 @@ pub mod update_parameter_group_output {
         pub fn set_parameter_group(mut self, input: std::option::Option<crate::model::ParameterGroup>) -> Self {
             self.parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput).
         pub fn build(self) -> crate::output::UpdateParameterGroupOutput {
             crate::output::UpdateParameterGroupOutput {
                 parameter_group: self.parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateClusterOutput  {
     /// <p>A description of the DAX cluster, after it has been modified.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl UpdateClusterOutput {
     /// <p>A description of the DAX cluster, after it has been modified.</p>
@@ -115,6 +150,11 @@ impl UpdateClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
 pub mod update_cluster_output {
     
@@ -123,6 +163,7 @@ pub mod update_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster, after it has been modified.</p>
@@ -134,11 +175,21 @@ pub mod update_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
         pub fn build(self) -> crate::output::UpdateClusterOutput {
             crate::output::UpdateClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +210,7 @@ pub struct UntagResourceOutput  {
     /// <p>The tag keys that have been removed from the cluster.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl UntagResourceOutput {
     /// <p>The tag keys that have been removed from the cluster.</p>
@@ -166,6 +218,11 @@ impl UntagResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -174,6 +231,7 @@ pub mod untag_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -191,11 +249,21 @@ pub mod untag_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -216,6 +284,7 @@ pub struct TagResourceOutput  {
     /// <p>The list of tags that are associated with the DAX resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl TagResourceOutput {
     /// <p>The list of tags that are associated with the DAX resource.</p>
@@ -223,6 +292,11 @@ impl TagResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -231,6 +305,7 @@ pub mod tag_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -248,11 +323,21 @@ pub mod tag_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -273,6 +358,7 @@ pub struct RebootNodeOutput  {
     /// <p>A description of the DAX cluster after a node has been rebooted.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl RebootNodeOutput {
     /// <p>A description of the DAX cluster after a node has been rebooted.</p>
@@ -280,6 +366,11 @@ impl RebootNodeOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RebootNodeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RebootNodeOutput`](crate::output::RebootNodeOutput).
 pub mod reboot_node_output {
     
@@ -288,6 +379,7 @@ pub mod reboot_node_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster after a node has been rebooted.</p>
@@ -299,11 +391,21 @@ pub mod reboot_node_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RebootNodeOutput`](crate::output::RebootNodeOutput).
         pub fn build(self) -> crate::output::RebootNodeOutput {
             crate::output::RebootNodeOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -327,6 +429,7 @@ pub struct ListTagsOutput  {
     /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsOutput {
     /// <p>A list of tags currently associated with the DAX cluster.</p>
@@ -338,6 +441,11 @@ impl ListTagsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
     
@@ -347,6 +455,7 @@ pub mod list_tags_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -373,6 +482,15 @@ pub mod list_tags_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
@@ -380,6 +498,7 @@ pub mod list_tags_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -400,6 +519,7 @@ pub struct IncreaseReplicationFactorOutput  {
     /// <p>A description of the DAX cluster. with its new replication factor.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl IncreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster. with its new replication factor.</p>
@@ -407,6 +527,11 @@ impl IncreaseReplicationFactorOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for IncreaseReplicationFactorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`IncreaseReplicationFactorOutput`](crate::output::IncreaseReplicationFactorOutput).
 pub mod increase_replication_factor_output {
     
@@ -415,6 +540,7 @@ pub mod increase_replication_factor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster. with its new replication factor.</p>
@@ -426,11 +552,21 @@ pub mod increase_replication_factor_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`IncreaseReplicationFactorOutput`](crate::output::IncreaseReplicationFactorOutput).
         pub fn build(self) -> crate::output::IncreaseReplicationFactorOutput {
             crate::output::IncreaseReplicationFactorOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -454,6 +590,7 @@ pub struct DescribeSubnetGroupsOutput  {
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
     #[doc(hidden)]
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
+    _request_id: Option<String>,
 }
 impl DescribeSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -465,6 +602,11 @@ impl DescribeSubnetGroupsOutput {
         self.subnet_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSubnetGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput).
 pub mod describe_subnet_groups_output {
     
@@ -474,6 +616,7 @@ pub mod describe_subnet_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -500,6 +643,15 @@ pub mod describe_subnet_groups_output {
         pub fn set_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>) -> Self {
             self.subnet_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeSubnetGroupsOutput {
             crate::output::DescribeSubnetGroupsOutput {
@@ -507,6 +659,7 @@ pub mod describe_subnet_groups_output {
                 ,
                 subnet_groups: self.subnet_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -530,6 +683,7 @@ pub struct DescribeParametersOutput  {
     /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+    _request_id: Option<String>,
 }
 impl DescribeParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -541,6 +695,11 @@ impl DescribeParametersOutput {
         self.parameters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
 pub mod describe_parameters_output {
     
@@ -550,6 +709,7 @@ pub mod describe_parameters_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -576,6 +736,15 @@ pub mod describe_parameters_output {
         pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
             self.parameters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeParametersOutput`](crate::output::DescribeParametersOutput).
         pub fn build(self) -> crate::output::DescribeParametersOutput {
             crate::output::DescribeParametersOutput {
@@ -583,6 +752,7 @@ pub mod describe_parameters_output {
                 ,
                 parameters: self.parameters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -606,6 +776,7 @@ pub struct DescribeParameterGroupsOutput  {
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
     #[doc(hidden)]
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
+    _request_id: Option<String>,
 }
 impl DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -617,6 +788,11 @@ impl DescribeParameterGroupsOutput {
         self.parameter_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeParameterGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput).
 pub mod describe_parameter_groups_output {
     
@@ -626,6 +802,7 @@ pub mod describe_parameter_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -652,6 +829,15 @@ pub mod describe_parameter_groups_output {
         pub fn set_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>) -> Self {
             self.parameter_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeParameterGroupsOutput {
             crate::output::DescribeParameterGroupsOutput {
@@ -659,6 +845,7 @@ pub mod describe_parameter_groups_output {
                 ,
                 parameter_groups: self.parameter_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -682,6 +869,7 @@ pub struct DescribeEventsOutput  {
     /// <p>An array of events. Each element in the array represents one event.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
+    _request_id: Option<String>,
 }
 impl DescribeEventsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -693,6 +881,11 @@ impl DescribeEventsOutput {
         self.events.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
     
@@ -702,6 +895,7 @@ pub mod describe_events_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -728,6 +922,15 @@ pub mod describe_events_output {
         pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
             self.events = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
@@ -735,6 +938,7 @@ pub mod describe_events_output {
                 ,
                 events: self.events
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -758,6 +962,7 @@ pub struct DescribeDefaultParametersOutput  {
     /// <p>A list of parameters. Each element in the list represents one parameter.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+    _request_id: Option<String>,
 }
 impl DescribeDefaultParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -769,6 +974,11 @@ impl DescribeDefaultParametersOutput {
         self.parameters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDefaultParametersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDefaultParametersOutput`](crate::output::DescribeDefaultParametersOutput).
 pub mod describe_default_parameters_output {
     
@@ -778,6 +988,7 @@ pub mod describe_default_parameters_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -804,6 +1015,15 @@ pub mod describe_default_parameters_output {
         pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
             self.parameters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDefaultParametersOutput`](crate::output::DescribeDefaultParametersOutput).
         pub fn build(self) -> crate::output::DescribeDefaultParametersOutput {
             crate::output::DescribeDefaultParametersOutput {
@@ -811,6 +1031,7 @@ pub mod describe_default_parameters_output {
                 ,
                 parameters: self.parameters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -834,6 +1055,7 @@ pub struct DescribeClustersOutput  {
     /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
     #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+    _request_id: Option<String>,
 }
 impl DescribeClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -845,6 +1067,11 @@ impl DescribeClustersOutput {
         self.clusters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeClustersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeClustersOutput`](crate::output::DescribeClustersOutput).
 pub mod describe_clusters_output {
     
@@ -854,6 +1081,7 @@ pub mod describe_clusters_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -880,6 +1108,15 @@ pub mod describe_clusters_output {
         pub fn set_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Cluster>>) -> Self {
             self.clusters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeClustersOutput`](crate::output::DescribeClustersOutput).
         pub fn build(self) -> crate::output::DescribeClustersOutput {
             crate::output::DescribeClustersOutput {
@@ -887,6 +1124,7 @@ pub mod describe_clusters_output {
                 ,
                 clusters: self.clusters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -907,6 +1145,7 @@ pub struct DeleteSubnetGroupOutput  {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
     #[doc(hidden)]
     pub deletion_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteSubnetGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
@@ -914,6 +1153,11 @@ impl DeleteSubnetGroupOutput {
         self.deletion_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput).
 pub mod delete_subnet_group_output {
     
@@ -922,6 +1166,7 @@ pub mod delete_subnet_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
@@ -933,11 +1178,21 @@ pub mod delete_subnet_group_output {
         pub fn set_deletion_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.deletion_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteSubnetGroupOutput {
             crate::output::DeleteSubnetGroupOutput {
                 deletion_message: self.deletion_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -958,6 +1213,7 @@ pub struct DeleteParameterGroupOutput  {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     #[doc(hidden)]
     pub deletion_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteParameterGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
@@ -965,6 +1221,11 @@ impl DeleteParameterGroupOutput {
         self.deletion_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput).
 pub mod delete_parameter_group_output {
     
@@ -973,6 +1234,7 @@ pub mod delete_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
@@ -984,11 +1246,21 @@ pub mod delete_parameter_group_output {
         pub fn set_deletion_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.deletion_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteParameterGroupOutput {
             crate::output::DeleteParameterGroupOutput {
                 deletion_message: self.deletion_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1009,6 +1281,7 @@ pub struct DeleteClusterOutput  {
     /// <p>A description of the DAX cluster that is being deleted.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl DeleteClusterOutput {
     /// <p>A description of the DAX cluster that is being deleted.</p>
@@ -1016,6 +1289,11 @@ impl DeleteClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
 pub mod delete_cluster_output {
     
@@ -1024,6 +1302,7 @@ pub mod delete_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster that is being deleted.</p>
@@ -1035,11 +1314,21 @@ pub mod delete_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
         pub fn build(self) -> crate::output::DeleteClusterOutput {
             crate::output::DeleteClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1060,6 +1349,7 @@ pub struct DecreaseReplicationFactorOutput  {
     /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl DecreaseReplicationFactorOutput {
     /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
@@ -1067,6 +1357,11 @@ impl DecreaseReplicationFactorOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DecreaseReplicationFactorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DecreaseReplicationFactorOutput`](crate::output::DecreaseReplicationFactorOutput).
 pub mod decrease_replication_factor_output {
     
@@ -1075,6 +1370,7 @@ pub mod decrease_replication_factor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
@@ -1086,11 +1382,21 @@ pub mod decrease_replication_factor_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DecreaseReplicationFactorOutput`](crate::output::DecreaseReplicationFactorOutput).
         pub fn build(self) -> crate::output::DecreaseReplicationFactorOutput {
             crate::output::DecreaseReplicationFactorOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1111,6 +1417,7 @@ pub struct CreateSubnetGroupOutput  {
     /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
     #[doc(hidden)]
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
+    _request_id: Option<String>,
 }
 impl CreateSubnetGroupOutput {
     /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
@@ -1118,6 +1425,11 @@ impl CreateSubnetGroupOutput {
         self.subnet_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSubnetGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput).
 pub mod create_subnet_group_output {
     
@@ -1126,6 +1438,7 @@ pub mod create_subnet_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
@@ -1137,11 +1450,21 @@ pub mod create_subnet_group_output {
         pub fn set_subnet_group(mut self, input: std::option::Option<crate::model::SubnetGroup>) -> Self {
             self.subnet_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateSubnetGroupOutput {
             crate::output::CreateSubnetGroupOutput {
                 subnet_group: self.subnet_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1162,6 +1485,7 @@ pub struct CreateParameterGroupOutput  {
     /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
     #[doc(hidden)]
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
+    _request_id: Option<String>,
 }
 impl CreateParameterGroupOutput {
     /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
@@ -1169,6 +1493,11 @@ impl CreateParameterGroupOutput {
         self.parameter_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateParameterGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput).
 pub mod create_parameter_group_output {
     
@@ -1177,6 +1506,7 @@ pub mod create_parameter_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
@@ -1188,11 +1518,21 @@ pub mod create_parameter_group_output {
         pub fn set_parameter_group(mut self, input: std::option::Option<crate::model::ParameterGroup>) -> Self {
             self.parameter_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateParameterGroupOutput {
             crate::output::CreateParameterGroupOutput {
                 parameter_group: self.parameter_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1213,6 +1553,7 @@ pub struct CreateClusterOutput  {
     /// <p>A description of the DAX cluster that you have created.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl CreateClusterOutput {
     /// <p>A description of the DAX cluster that you have created.</p>
@@ -1220,6 +1561,11 @@ impl CreateClusterOutput {
         self.cluster.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateClusterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
     
@@ -1228,6 +1574,7 @@ pub mod create_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A description of the DAX cluster that you have created.</p>
@@ -1239,11 +1586,21 @@ pub mod create_cluster_output {
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput).
         pub fn build(self) -> crate::output::CreateClusterOutput {
             crate::output::CreateClusterOutput {
                 cluster: self.cluster
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -57,6 +57,7 @@ impl GetDASHStreamingSessionURL {
 impl aws_smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionURL {
                 type Output = std::result::Result<crate::output::GetDashStreamingSessionUrlOutput, crate::error::GetDASHStreamingSessionURLError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_dash_streaming_session_url_error(response)
                      } else {
@@ -88,6 +89,7 @@ impl GetHLSStreamingSessionURL {
 impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionURL {
                 type Output = std::result::Result<crate::output::GetHlsStreamingSessionUrlOutput, crate::error::GetHLSStreamingSessionURLError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_hls_streaming_session_url_error(response)
                      } else {
@@ -119,6 +121,7 @@ impl GetImages {
 impl aws_smithy_http::response::ParseStrictResponse for GetImages {
                 type Output = std::result::Result<crate::output::GetImagesOutput, crate::error::GetImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_images_error(response)
                      } else {
@@ -185,6 +188,7 @@ impl ListFragments {
 impl aws_smithy_http::response::ParseStrictResponse for ListFragments {
                 type Output = std::result::Result<crate::output::ListFragmentsOutput, crate::error::ListFragmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_fragments_error(response)
                      } else {

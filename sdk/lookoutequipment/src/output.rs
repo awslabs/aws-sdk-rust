@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLabelGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLabelGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
 pub mod update_label_group_output {
     
@@ -11,11 +17,22 @@ pub mod update_label_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLabelGroupOutput`](crate::output::UpdateLabelGroupOutput).
         pub fn build(self) -> crate::output::UpdateLabelGroupOutput {
             crate::output::UpdateLabelGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateLabelGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateInferenceSchedulerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
 pub mod update_inference_scheduler_output {
     
@@ -41,11 +64,22 @@ pub mod update_inference_scheduler_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::UpdateInferenceSchedulerOutput {
             crate::output::UpdateInferenceSchedulerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UpdateInferenceSchedulerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -71,11 +111,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -101,11 +158,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -138,6 +206,7 @@ pub struct StopInferenceSchedulerOutput  {
     /// <p>Indicates the status of the inference scheduler. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+    _request_id: Option<String>,
 }
 impl StopInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
@@ -161,6 +230,11 @@ impl StopInferenceSchedulerOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
 pub mod stop_inference_scheduler_output {
     
@@ -173,6 +247,7 @@ pub mod stop_inference_scheduler_output {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
@@ -220,6 +295,15 @@ pub mod stop_inference_scheduler_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::StopInferenceSchedulerOutput {
             crate::output::StopInferenceSchedulerOutput {
@@ -233,6 +317,7 @@ pub mod stop_inference_scheduler_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -265,6 +350,7 @@ pub struct StartInferenceSchedulerOutput  {
     /// <p>Indicates the status of the inference scheduler. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+    _request_id: Option<String>,
 }
 impl StartInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
@@ -288,6 +374,11 @@ impl StartInferenceSchedulerOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
 pub mod start_inference_scheduler_output {
     
@@ -300,6 +391,7 @@ pub mod start_inference_scheduler_output {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
@@ -347,6 +439,15 @@ pub mod start_inference_scheduler_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::StartInferenceSchedulerOutput {
             crate::output::StartInferenceSchedulerOutput {
@@ -360,6 +461,7 @@ pub mod start_inference_scheduler_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -383,6 +485,7 @@ pub struct StartDataIngestionJobOutput  {
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::IngestionJobStatus>,
+    _request_id: Option<String>,
 }
 impl StartDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
@@ -394,6 +497,11 @@ impl StartDataIngestionJobOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartDataIngestionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
 pub mod start_data_ingestion_job_output {
     
@@ -403,6 +511,7 @@ pub mod start_data_ingestion_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::IngestionJobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates the job ID of the data ingestion job. </p>
@@ -423,6 +532,15 @@ pub mod start_data_ingestion_job_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::IngestionJobStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput).
         pub fn build(self) -> crate::output::StartDataIngestionJobOutput {
             crate::output::StartDataIngestionJobOutput {
@@ -430,6 +548,7 @@ pub mod start_data_ingestion_job_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -450,6 +569,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p> Any tags associated with the resource. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p> Any tags associated with the resource. </p>
@@ -457,6 +577,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -465,6 +590,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -482,11 +608,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -510,6 +646,7 @@ pub struct ListSensorStatisticsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSensorStatisticsOutput {
     /// <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps. </p>
@@ -521,6 +658,11 @@ impl ListSensorStatisticsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSensorStatisticsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
 pub mod list_sensor_statistics_output {
     
@@ -530,6 +672,7 @@ pub mod list_sensor_statistics_output {
     pub struct Builder {
         pub(crate) sensor_statistics_summaries: std::option::Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sensor_statistics_summaries`.
@@ -556,6 +699,15 @@ pub mod list_sensor_statistics_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSensorStatisticsOutput`](crate::output::ListSensorStatisticsOutput).
         pub fn build(self) -> crate::output::ListSensorStatisticsOutput {
             crate::output::ListSensorStatisticsOutput {
@@ -563,6 +715,7 @@ pub mod list_sensor_statistics_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -586,6 +739,7 @@ pub struct ListModelsOutput  {
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
     #[doc(hidden)]
     pub model_summaries: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
+    _request_id: Option<String>,
 }
 impl ListModelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
@@ -597,6 +751,11 @@ impl ListModelsOutput {
         self.model_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListModelsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListModelsOutput`](crate::output::ListModelsOutput).
 pub mod list_models_output {
     
@@ -606,6 +765,7 @@ pub mod list_models_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) model_summaries: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
@@ -632,6 +792,15 @@ pub mod list_models_output {
         pub fn set_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ModelSummary>>) -> Self {
             self.model_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListModelsOutput`](crate::output::ListModelsOutput).
         pub fn build(self) -> crate::output::ListModelsOutput {
             crate::output::ListModelsOutput {
@@ -639,6 +808,7 @@ pub mod list_models_output {
                 ,
                 model_summaries: self.model_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -662,6 +832,7 @@ pub struct ListLabelsOutput  {
     /// <p> A summary of the items in the label group. </p>
     #[doc(hidden)]
     pub label_summaries: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
+    _request_id: Option<String>,
 }
 impl ListLabelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
@@ -673,6 +844,11 @@ impl ListLabelsOutput {
         self.label_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLabelsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLabelsOutput`](crate::output::ListLabelsOutput).
 pub mod list_labels_output {
     
@@ -682,6 +858,7 @@ pub mod list_labels_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) label_summaries: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
@@ -708,6 +885,15 @@ pub mod list_labels_output {
         pub fn set_label_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>) -> Self {
             self.label_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLabelsOutput`](crate::output::ListLabelsOutput).
         pub fn build(self) -> crate::output::ListLabelsOutput {
             crate::output::ListLabelsOutput {
@@ -715,6 +901,7 @@ pub mod list_labels_output {
                 ,
                 label_summaries: self.label_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -738,6 +925,7 @@ pub struct ListLabelGroupsOutput  {
     /// <p> A summary of the label groups. </p>
     #[doc(hidden)]
     pub label_group_summaries: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListLabelGroupsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
@@ -749,6 +937,11 @@ impl ListLabelGroupsOutput {
         self.label_group_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLabelGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
 pub mod list_label_groups_output {
     
@@ -758,6 +951,7 @@ pub mod list_label_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) label_group_summaries: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
@@ -784,6 +978,15 @@ pub mod list_label_groups_output {
         pub fn set_label_group_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelGroupSummary>>) -> Self {
             self.label_group_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLabelGroupsOutput`](crate::output::ListLabelGroupsOutput).
         pub fn build(self) -> crate::output::ListLabelGroupsOutput {
             crate::output::ListLabelGroupsOutput {
@@ -791,6 +994,7 @@ pub mod list_label_groups_output {
                 ,
                 label_group_summaries: self.label_group_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -814,6 +1018,7 @@ pub struct ListInferenceSchedulersOutput  {
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     #[doc(hidden)]
     pub inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+    _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -825,6 +1030,11 @@ impl ListInferenceSchedulersOutput {
         self.inference_scheduler_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListInferenceSchedulersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
 pub mod list_inference_schedulers_output {
     
@@ -834,6 +1044,7 @@ pub mod list_inference_schedulers_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
@@ -860,6 +1071,15 @@ pub mod list_inference_schedulers_output {
         pub fn set_inference_scheduler_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>) -> Self {
             self.inference_scheduler_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput).
         pub fn build(self) -> crate::output::ListInferenceSchedulersOutput {
             crate::output::ListInferenceSchedulersOutput {
@@ -867,6 +1087,7 @@ pub mod list_inference_schedulers_output {
                 ,
                 inference_scheduler_summaries: self.inference_scheduler_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -890,6 +1111,7 @@ pub struct ListInferenceExecutionsOutput  {
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
     #[doc(hidden)]
     pub inference_execution_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
+    _request_id: Option<String>,
 }
 impl ListInferenceExecutionsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -901,6 +1123,11 @@ impl ListInferenceExecutionsOutput {
         self.inference_execution_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListInferenceExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
 pub mod list_inference_executions_output {
     
@@ -910,6 +1137,7 @@ pub mod list_inference_executions_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) inference_execution_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -936,6 +1164,15 @@ pub mod list_inference_executions_output {
         pub fn set_inference_execution_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>) -> Self {
             self.inference_execution_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput).
         pub fn build(self) -> crate::output::ListInferenceExecutionsOutput {
             crate::output::ListInferenceExecutionsOutput {
@@ -943,6 +1180,7 @@ pub mod list_inference_executions_output {
                 ,
                 inference_execution_summaries: self.inference_execution_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -966,6 +1204,7 @@ pub struct ListInferenceEventsOutput  {
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     #[doc(hidden)]
     pub inference_event_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+    _request_id: Option<String>,
 }
 impl ListInferenceEventsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -977,6 +1216,11 @@ impl ListInferenceEventsOutput {
         self.inference_event_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListInferenceEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
 pub mod list_inference_events_output {
     
@@ -986,6 +1230,7 @@ pub mod list_inference_events_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) inference_event_summaries: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
@@ -1012,6 +1257,15 @@ pub mod list_inference_events_output {
         pub fn set_inference_event_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InferenceEventSummary>>) -> Self {
             self.inference_event_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListInferenceEventsOutput`](crate::output::ListInferenceEventsOutput).
         pub fn build(self) -> crate::output::ListInferenceEventsOutput {
             crate::output::ListInferenceEventsOutput {
@@ -1019,6 +1273,7 @@ pub mod list_inference_events_output {
                 ,
                 inference_event_summaries: self.inference_event_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1042,6 +1297,7 @@ pub struct ListDatasetsOutput  {
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
     #[doc(hidden)]
     pub dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
@@ -1053,6 +1309,11 @@ impl ListDatasetsOutput {
         self.dataset_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDatasetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
     
@@ -1062,6 +1323,7 @@ pub mod list_datasets_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
@@ -1088,6 +1350,15 @@ pub mod list_datasets_output {
         pub fn set_dataset_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>) -> Self {
             self.dataset_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
         pub fn build(self) -> crate::output::ListDatasetsOutput {
             crate::output::ListDatasetsOutput {
@@ -1095,6 +1366,7 @@ pub mod list_datasets_output {
                 ,
                 dataset_summaries: self.dataset_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1118,6 +1390,7 @@ pub struct ListDataIngestionJobsOutput  {
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
     #[doc(hidden)]
     pub data_ingestion_job_summaries: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
+    _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
@@ -1129,6 +1402,11 @@ impl ListDataIngestionJobsOutput {
         self.data_ingestion_job_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDataIngestionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
 pub mod list_data_ingestion_jobs_output {
     
@@ -1138,6 +1416,7 @@ pub mod list_data_ingestion_jobs_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) data_ingestion_job_summaries: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
@@ -1164,6 +1443,15 @@ pub mod list_data_ingestion_jobs_output {
         pub fn set_data_ingestion_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataIngestionJobSummary>>) -> Self {
             self.data_ingestion_job_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput).
         pub fn build(self) -> crate::output::ListDataIngestionJobsOutput {
             crate::output::ListDataIngestionJobsOutput {
@@ -1171,6 +1459,7 @@ pub mod list_data_ingestion_jobs_output {
                 ,
                 data_ingestion_job_summaries: self.data_ingestion_job_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1252,6 +1541,7 @@ pub struct DescribeModelOutput  {
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     #[doc(hidden)]
     pub off_condition: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeModelOutput {
     /// <p>The name of the ML model being described. </p>
@@ -1340,6 +1630,11 @@ impl DescribeModelOutput {
         self.off_condition.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeModelOutput`](crate::output::DescribeModelOutput).
 pub mod describe_model_output {
     
@@ -1368,6 +1663,7 @@ pub mod describe_model_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) off_condition: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the ML model being described. </p>
@@ -1561,6 +1857,15 @@ pub mod describe_model_output {
         pub fn set_off_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.off_condition = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeModelOutput`](crate::output::DescribeModelOutput).
         pub fn build(self) -> crate::output::DescribeModelOutput {
             crate::output::DescribeModelOutput {
@@ -1606,6 +1911,7 @@ pub mod describe_model_output {
                 ,
                 off_condition: self.off_condition
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1638,6 +1944,7 @@ pub struct DescribeLabelGroupOutput  {
     /// <p> The time at which the label group was updated. </p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLabelGroupOutput {
     /// <p> The name of the label group. </p>
@@ -1661,6 +1968,11 @@ impl DescribeLabelGroupOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLabelGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
 pub mod describe_label_group_output {
     
@@ -1673,6 +1985,7 @@ pub mod describe_label_group_output {
         pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The name of the label group. </p>
@@ -1726,6 +2039,15 @@ pub mod describe_label_group_output {
         pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLabelGroupOutput`](crate::output::DescribeLabelGroupOutput).
         pub fn build(self) -> crate::output::DescribeLabelGroupOutput {
             crate::output::DescribeLabelGroupOutput {
@@ -1739,6 +2061,7 @@ pub mod describe_label_group_output {
                 ,
                 updated_at: self.updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1788,6 +2111,7 @@ pub struct DescribeLabelOutput  {
     /// <p> The time at which the label was created. </p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLabelOutput {
     /// <p> The name of the requested label group. </p>
@@ -1833,6 +2157,11 @@ impl DescribeLabelOutput {
         self.created_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLabelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
 pub mod describe_label_output {
     
@@ -1850,6 +2179,7 @@ pub mod describe_label_output {
         pub(crate) notes: std::option::Option<std::string::String>,
         pub(crate) equipment: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The name of the requested label group. </p>
@@ -1946,6 +2276,15 @@ pub mod describe_label_output {
         pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.created_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLabelOutput`](crate::output::DescribeLabelOutput).
         pub fn build(self) -> crate::output::DescribeLabelOutput {
             crate::output::DescribeLabelOutput {
@@ -1969,6 +2308,7 @@ pub mod describe_label_output {
                 ,
                 created_at: self.created_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2028,6 +2368,7 @@ pub struct DescribeInferenceSchedulerOutput  {
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
     #[doc(hidden)]
     pub latest_inference_result: std::option::Option<crate::model::LatestInferenceResult>,
+    _request_id: Option<String>,
 }
 impl DescribeInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
@@ -2087,6 +2428,11 @@ impl DescribeInferenceSchedulerOutput {
         self.latest_inference_result.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
 pub mod describe_inference_scheduler_output {
     
@@ -2108,6 +2454,7 @@ pub mod describe_inference_scheduler_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) server_side_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) latest_inference_result: std::option::Option<crate::model::LatestInferenceResult>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
@@ -2236,6 +2583,15 @@ pub mod describe_inference_scheduler_output {
         pub fn set_latest_inference_result(mut self, input: std::option::Option<crate::model::LatestInferenceResult>) -> Self {
             self.latest_inference_result = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::DescribeInferenceSchedulerOutput {
             crate::output::DescribeInferenceSchedulerOutput {
@@ -2267,6 +2623,7 @@ pub mod describe_inference_scheduler_output {
                 ,
                 latest_inference_result: self.latest_inference_result
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2323,6 +2680,7 @@ pub struct DescribeDatasetOutput  {
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     #[doc(hidden)]
     pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeDatasetOutput {
     /// <p>The name of the dataset being described. </p>
@@ -2378,6 +2736,11 @@ impl DescribeDatasetOutput {
         self.data_end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDatasetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
 pub mod describe_dataset_output {
     
@@ -2398,6 +2761,7 @@ pub mod describe_dataset_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the dataset being described. </p>
@@ -2517,6 +2881,15 @@ pub mod describe_dataset_output {
         pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.data_end_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
         pub fn build(self) -> crate::output::DescribeDatasetOutput {
             crate::output::DescribeDatasetOutput {
@@ -2546,6 +2919,7 @@ pub mod describe_dataset_output {
                 ,
                 data_end_time: self.data_end_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2602,6 +2976,7 @@ pub struct DescribeDataIngestionJobOutput  {
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
     #[doc(hidden)]
     pub data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
@@ -2657,6 +3032,11 @@ impl DescribeDataIngestionJobOutput {
         self.data_end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDataIngestionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
 pub mod describe_data_ingestion_job_output {
     
@@ -2677,6 +3057,7 @@ pub mod describe_data_ingestion_job_output {
         pub(crate) ingested_data_size: std::option::Option<i64>,
         pub(crate) data_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates the job ID of the data ingestion job. </p>
@@ -2796,6 +3177,15 @@ pub mod describe_data_ingestion_job_output {
         pub fn set_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.data_end_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput).
         pub fn build(self) -> crate::output::DescribeDataIngestionJobOutput {
             crate::output::DescribeDataIngestionJobOutput {
@@ -2825,6 +3215,7 @@ pub mod describe_data_ingestion_job_output {
                 ,
                 data_end_time: self.data_end_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2842,7 +3233,13 @@ impl DescribeDataIngestionJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteModelOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
     
@@ -2850,11 +3247,22 @@ pub mod delete_model_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteModelOutput`](crate::output::DeleteModelOutput).
         pub fn build(self) -> crate::output::DeleteModelOutput {
             crate::output::DeleteModelOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2872,7 +3280,13 @@ impl DeleteModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLabelGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLabelGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
 pub mod delete_label_group_output {
     
@@ -2880,11 +3294,22 @@ pub mod delete_label_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLabelGroupOutput`](crate::output::DeleteLabelGroupOutput).
         pub fn build(self) -> crate::output::DeleteLabelGroupOutput {
             crate::output::DeleteLabelGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2902,7 +3327,13 @@ impl DeleteLabelGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLabelOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLabelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
 pub mod delete_label_output {
     
@@ -2910,11 +3341,22 @@ pub mod delete_label_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
         pub fn build(self) -> crate::output::DeleteLabelOutput {
             crate::output::DeleteLabelOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2932,7 +3374,13 @@ impl DeleteLabelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
 pub mod delete_inference_scheduler_output {
     
@@ -2940,11 +3388,22 @@ pub mod delete_inference_scheduler_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::DeleteInferenceSchedulerOutput {
             crate::output::DeleteInferenceSchedulerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2962,7 +3421,13 @@ impl DeleteInferenceSchedulerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDatasetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
     
@@ -2970,11 +3435,22 @@ pub mod delete_dataset_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
         pub fn build(self) -> crate::output::DeleteDatasetOutput {
             crate::output::DeleteDatasetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2998,6 +3474,7 @@ pub struct CreateModelOutput  {
     /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ModelStatus>,
+    _request_id: Option<String>,
 }
 impl CreateModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
@@ -3009,6 +3486,11 @@ impl CreateModelOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
 pub mod create_model_output {
     
@@ -3018,6 +3500,7 @@ pub mod create_model_output {
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
@@ -3038,6 +3521,15 @@ pub mod create_model_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateModelOutput`](crate::output::CreateModelOutput).
         pub fn build(self) -> crate::output::CreateModelOutput {
             crate::output::CreateModelOutput {
@@ -3045,6 +3537,7 @@ pub mod create_model_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3068,6 +3561,7 @@ pub struct CreateLabelGroupOutput  {
     /// <p> The ARN of the label group that you have created. </p>
     #[doc(hidden)]
     pub label_group_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLabelGroupOutput {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
@@ -3079,6 +3573,11 @@ impl CreateLabelGroupOutput {
         self.label_group_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLabelGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
 pub mod create_label_group_output {
     
@@ -3088,6 +3587,7 @@ pub mod create_label_group_output {
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_group_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
@@ -3108,6 +3608,15 @@ pub mod create_label_group_output {
         pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label_group_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLabelGroupOutput`](crate::output::CreateLabelGroupOutput).
         pub fn build(self) -> crate::output::CreateLabelGroupOutput {
             crate::output::CreateLabelGroupOutput {
@@ -3115,6 +3624,7 @@ pub mod create_label_group_output {
                 ,
                 label_group_arn: self.label_group_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3135,6 +3645,7 @@ pub struct CreateLabelOutput  {
     /// <p> The ID of the label that you have created. </p>
     #[doc(hidden)]
     pub label_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLabelOutput {
     /// <p> The ID of the label that you have created. </p>
@@ -3142,6 +3653,11 @@ impl CreateLabelOutput {
         self.label_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLabelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLabelOutput`](crate::output::CreateLabelOutput).
 pub mod create_label_output {
     
@@ -3150,6 +3666,7 @@ pub mod create_label_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The ID of the label that you have created. </p>
@@ -3161,11 +3678,21 @@ pub mod create_label_output {
         pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLabelOutput`](crate::output::CreateLabelOutput).
         pub fn build(self) -> crate::output::CreateLabelOutput {
             crate::output::CreateLabelOutput {
                 label_id: self.label_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3192,6 +3719,7 @@ pub struct CreateInferenceSchedulerOutput  {
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+    _request_id: Option<String>,
 }
 impl CreateInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
@@ -3207,6 +3735,11 @@ impl CreateInferenceSchedulerOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateInferenceSchedulerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
 pub mod create_inference_scheduler_output {
     
@@ -3217,6 +3750,7 @@ pub mod create_inference_scheduler_output {
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InferenceSchedulerStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
@@ -3246,6 +3780,15 @@ pub mod create_inference_scheduler_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::InferenceSchedulerStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput).
         pub fn build(self) -> crate::output::CreateInferenceSchedulerOutput {
             crate::output::CreateInferenceSchedulerOutput {
@@ -3255,6 +3798,7 @@ pub mod create_inference_scheduler_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3281,6 +3825,7 @@ pub struct CreateDatasetOutput  {
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DatasetStatus>,
+    _request_id: Option<String>,
 }
 impl CreateDatasetOutput {
     /// <p>The name of the dataset being created. </p>
@@ -3296,6 +3841,11 @@ impl CreateDatasetOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDatasetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
 pub mod create_dataset_output {
     
@@ -3306,6 +3856,7 @@ pub mod create_dataset_output {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the dataset being created. </p>
@@ -3335,6 +3886,15 @@ pub mod create_dataset_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::DatasetStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
         pub fn build(self) -> crate::output::CreateDatasetOutput {
             crate::output::CreateDatasetOutput {
@@ -3344,6 +3904,7 @@ pub mod create_dataset_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }

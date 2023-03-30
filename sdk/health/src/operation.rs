@@ -22,6 +22,7 @@ impl DescribeAffectedAccountsForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedAccountsForOrganization {
                 type Output = std::result::Result<crate::output::DescribeAffectedAccountsForOrganizationOutput, crate::error::DescribeAffectedAccountsForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_affected_accounts_for_organization_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeAffectedEntities {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedEntities {
                 type Output = std::result::Result<crate::output::DescribeAffectedEntitiesOutput, crate::error::DescribeAffectedEntitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_affected_entities_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeAffectedEntitiesForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedEntitiesForOrganization {
                 type Output = std::result::Result<crate::output::DescribeAffectedEntitiesForOrganizationOutput, crate::error::DescribeAffectedEntitiesForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_affected_entities_for_organization_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeEntityAggregates {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEntityAggregates {
                 type Output = std::result::Result<crate::output::DescribeEntityAggregatesOutput, crate::error::DescribeEntityAggregatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_entity_aggregates_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeEventAggregates {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventAggregates {
                 type Output = std::result::Result<crate::output::DescribeEventAggregatesOutput, crate::error::DescribeEventAggregatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_event_aggregates_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeEventDetails {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventDetails {
                 type Output = std::result::Result<crate::output::DescribeEventDetailsOutput, crate::error::DescribeEventDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_event_details_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeEventDetailsForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventDetailsForOrganization {
                 type Output = std::result::Result<crate::output::DescribeEventDetailsForOrganizationOutput, crate::error::DescribeEventDetailsForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_event_details_for_organization_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeEvents {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
                 type Output = std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_events_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeEventsForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventsForOrganization {
                 type Output = std::result::Result<crate::output::DescribeEventsForOrganizationOutput, crate::error::DescribeEventsForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_events_for_organization_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeEventTypes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEventTypes {
                 type Output = std::result::Result<crate::output::DescribeEventTypesOutput, crate::error::DescribeEventTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_event_types_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeHealthServiceStatusForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeHealthServiceStatusForOrganization {
                 type Output = std::result::Result<crate::output::DescribeHealthServiceStatusForOrganizationOutput, crate::error::DescribeHealthServiceStatusForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_health_service_status_for_organization_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DisableHealthServiceAccessForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for DisableHealthServiceAccessForOrganization {
                 type Output = std::result::Result<crate::output::DisableHealthServiceAccessForOrganizationOutput, crate::error::DisableHealthServiceAccessForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disable_health_service_access_for_organization_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl EnableHealthServiceAccessForOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for EnableHealthServiceAccessForOrganization {
                 type Output = std::result::Result<crate::output::EnableHealthServiceAccessForOrganizationOutput, crate::error::EnableHealthServiceAccessForOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_health_service_access_for_organization_error(response)
                      } else {

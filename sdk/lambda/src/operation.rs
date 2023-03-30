@@ -22,6 +22,7 @@ impl AddLayerVersionPermission {
 impl aws_smithy_http::response::ParseStrictResponse for AddLayerVersionPermission {
                 type Output = std::result::Result<crate::output::AddLayerVersionPermissionOutput, crate::error::AddLayerVersionPermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_layer_version_permission_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddPermission {
 impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
                 type Output = std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_permission_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAlias {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
                 type Output = std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_alias_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
                 type Output = std::result::Result<crate::output::CreateCodeSigningConfigOutput, crate::error::CreateCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_code_signing_config_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateEventSourceMapping {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEventSourceMapping {
                 type Output = std::result::Result<crate::output::CreateEventSourceMappingOutput, crate::error::CreateEventSourceMappingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_create_event_source_mapping_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateFunction {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFunction {
                 type Output = std::result::Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_function_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateFunctionUrlConfig {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFunctionUrlConfig {
                 type Output = std::result::Result<crate::output::CreateFunctionUrlConfigOutput, crate::error::CreateFunctionUrlConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_function_url_config_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteAlias {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
                 type Output = std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_alias_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig {
                 type Output = std::result::Result<crate::output::DeleteCodeSigningConfigOutput, crate::error::DeleteCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_code_signing_config_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteEventSourceMapping {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSourceMapping {
                 type Output = std::result::Result<crate::output::DeleteEventSourceMappingOutput, crate::error::DeleteEventSourceMappingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_event_source_mapping_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteFunction {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFunction {
                 type Output = std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_function_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteFunctionCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionCodeSigningConfig {
                 type Output = std::result::Result<crate::output::DeleteFunctionCodeSigningConfigOutput, crate::error::DeleteFunctionCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_function_code_signing_config_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteFunctionConcurrency {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionConcurrency {
                 type Output = std::result::Result<crate::output::DeleteFunctionConcurrencyOutput, crate::error::DeleteFunctionConcurrencyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_function_concurrency_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteFunctionEventInvokeConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvokeConfig {
                 type Output = std::result::Result<crate::output::DeleteFunctionEventInvokeConfigOutput, crate::error::DeleteFunctionEventInvokeConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_function_event_invoke_config_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteFunctionUrlConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionUrlConfig {
                 type Output = std::result::Result<crate::output::DeleteFunctionUrlConfigOutput, crate::error::DeleteFunctionUrlConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_function_url_config_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteLayerVersion {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLayerVersion {
                 type Output = std::result::Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_layer_version_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteProvisionedConcurrencyConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProvisionedConcurrencyConfig {
                 type Output = std::result::Result<crate::output::DeleteProvisionedConcurrencyConfigOutput, crate::error::DeleteProvisionedConcurrencyConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_provisioned_concurrency_config_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetAccountSettings {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
                 type Output = std::result::Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_account_settings_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetAlias {
 impl aws_smithy_http::response::ParseStrictResponse for GetAlias {
                 type Output = std::result::Result<crate::output::GetAliasOutput, crate::error::GetAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_alias_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
                 type Output = std::result::Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_code_signing_config_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetEventSourceMapping {
 impl aws_smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
                 type Output = std::result::Result<crate::output::GetEventSourceMappingOutput, crate::error::GetEventSourceMappingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_event_source_mapping_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetFunction {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunction {
                 type Output = std::result::Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetFunctionCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunctionCodeSigningConfig {
                 type Output = std::result::Result<crate::output::GetFunctionCodeSigningConfigOutput, crate::error::GetFunctionCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_code_signing_config_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetFunctionConcurrency {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
                 type Output = std::result::Result<crate::output::GetFunctionConcurrencyOutput, crate::error::GetFunctionConcurrencyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_concurrency_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetFunctionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunctionConfiguration {
                 type Output = std::result::Result<crate::output::GetFunctionConfigurationOutput, crate::error::GetFunctionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_configuration_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl GetFunctionEventInvokeConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeConfig {
                 type Output = std::result::Result<crate::output::GetFunctionEventInvokeConfigOutput, crate::error::GetFunctionEventInvokeConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_event_invoke_config_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl GetFunctionUrlConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetFunctionUrlConfig {
                 type Output = std::result::Result<crate::output::GetFunctionUrlConfigOutput, crate::error::GetFunctionUrlConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_function_url_config_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl GetLayerVersion {
 impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersion {
                 type Output = std::result::Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_layer_version_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl GetLayerVersionByArn {
 impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
                 type Output = std::result::Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_layer_version_by_arn_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl GetLayerVersionPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersionPolicy {
                 type Output = std::result::Result<crate::output::GetLayerVersionPolicyOutput, crate::error::GetLayerVersionPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_layer_version_policy_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl GetPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
                 type Output = std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_policy_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl GetProvisionedConcurrencyConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetProvisionedConcurrencyConfig {
                 type Output = std::result::Result<crate::output::GetProvisionedConcurrencyConfigOutput, crate::error::GetProvisionedConcurrencyConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_provisioned_concurrency_config_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl GetRuntimeManagementConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetRuntimeManagementConfig {
                 type Output = std::result::Result<crate::output::GetRuntimeManagementConfigOutput, crate::error::GetRuntimeManagementConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_runtime_management_config_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl Invoke {
 impl aws_smithy_http::response::ParseStrictResponse for Invoke {
                 type Output = std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_invoke_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl InvokeAsync {
 impl aws_smithy_http::response::ParseStrictResponse for InvokeAsync {
                 type Output = std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_invoke_async_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListAliases {
 impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
                 type Output = std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_aliases_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListCodeSigningConfigs {
 impl aws_smithy_http::response::ParseStrictResponse for ListCodeSigningConfigs {
                 type Output = std::result::Result<crate::output::ListCodeSigningConfigsOutput, crate::error::ListCodeSigningConfigsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_code_signing_configs_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListEventSourceMappings {
 impl aws_smithy_http::response::ParseStrictResponse for ListEventSourceMappings {
                 type Output = std::result::Result<crate::output::ListEventSourceMappingsOutput, crate::error::ListEventSourceMappingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_event_source_mappings_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListFunctionEventInvokeConfigs {
 impl aws_smithy_http::response::ParseStrictResponse for ListFunctionEventInvokeConfigs {
                 type Output = std::result::Result<crate::output::ListFunctionEventInvokeConfigsOutput, crate::error::ListFunctionEventInvokeConfigsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_function_event_invoke_configs_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListFunctions {
 impl aws_smithy_http::response::ParseStrictResponse for ListFunctions {
                 type Output = std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_functions_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListFunctionsByCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigningConfig {
                 type Output = std::result::Result<crate::output::ListFunctionsByCodeSigningConfigOutput, crate::error::ListFunctionsByCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_functions_by_code_signing_config_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl ListFunctionUrlConfigs {
 impl aws_smithy_http::response::ParseStrictResponse for ListFunctionUrlConfigs {
                 type Output = std::result::Result<crate::output::ListFunctionUrlConfigsOutput, crate::error::ListFunctionUrlConfigsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_function_url_configs_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl ListLayers {
 impl aws_smithy_http::response::ParseStrictResponse for ListLayers {
                 type Output = std::result::Result<crate::output::ListLayersOutput, crate::error::ListLayersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_layers_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl ListLayerVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListLayerVersions {
                 type Output = std::result::Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_layer_versions_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl ListProvisionedConcurrencyConfigs {
 impl aws_smithy_http::response::ParseStrictResponse for ListProvisionedConcurrencyConfigs {
                 type Output = std::result::Result<crate::output::ListProvisionedConcurrencyConfigsOutput, crate::error::ListProvisionedConcurrencyConfigsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_provisioned_concurrency_configs_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl ListTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListTags {
                 type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl ListVersionsByFunction {
 impl aws_smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
                 type Output = std::result::Result<crate::output::ListVersionsByFunctionOutput, crate::error::ListVersionsByFunctionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_versions_by_function_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl PublishLayerVersion {
 impl aws_smithy_http::response::ParseStrictResponse for PublishLayerVersion {
                 type Output = std::result::Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_publish_layer_version_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl PublishVersion {
 impl aws_smithy_http::response::ParseStrictResponse for PublishVersion {
                 type Output = std::result::Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_publish_version_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl PutFunctionCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for PutFunctionCodeSigningConfig {
                 type Output = std::result::Result<crate::output::PutFunctionCodeSigningConfigOutput, crate::error::PutFunctionCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_function_code_signing_config_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl PutFunctionConcurrency {
 impl aws_smithy_http::response::ParseStrictResponse for PutFunctionConcurrency {
                 type Output = std::result::Result<crate::output::PutFunctionConcurrencyOutput, crate::error::PutFunctionConcurrencyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_function_concurrency_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl PutFunctionEventInvokeConfig {
 impl aws_smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeConfig {
                 type Output = std::result::Result<crate::output::PutFunctionEventInvokeConfigOutput, crate::error::PutFunctionEventInvokeConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_function_event_invoke_config_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl PutProvisionedConcurrencyConfig {
 impl aws_smithy_http::response::ParseStrictResponse for PutProvisionedConcurrencyConfig {
                 type Output = std::result::Result<crate::output::PutProvisionedConcurrencyConfigOutput, crate::error::PutProvisionedConcurrencyConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_put_provisioned_concurrency_config_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl PutRuntimeManagementConfig {
 impl aws_smithy_http::response::ParseStrictResponse for PutRuntimeManagementConfig {
                 type Output = std::result::Result<crate::output::PutRuntimeManagementConfigOutput, crate::error::PutRuntimeManagementConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_runtime_management_config_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl RemoveLayerVersionPermission {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermission {
                 type Output = std::result::Result<crate::output::RemoveLayerVersionPermissionOutput, crate::error::RemoveLayerVersionPermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_remove_layer_version_permission_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl RemovePermission {
 impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
                 type Output = std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_remove_permission_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl UpdateAlias {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
                 type Output = std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_alias_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl UpdateCodeSigningConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig {
                 type Output = std::result::Result<crate::output::UpdateCodeSigningConfigOutput, crate::error::UpdateCodeSigningConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_code_signing_config_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl UpdateEventSourceMapping {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping {
                 type Output = std::result::Result<crate::output::UpdateEventSourceMappingOutput, crate::error::UpdateEventSourceMappingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_event_source_mapping_error(response)
                      } else {
@@ -1913,6 +1974,7 @@ impl UpdateFunctionCode {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
                 type Output = std::result::Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_function_code_error(response)
                      } else {
@@ -1944,6 +2006,7 @@ impl UpdateFunctionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionConfiguration {
                 type Output = std::result::Result<crate::output::UpdateFunctionConfigurationOutput, crate::error::UpdateFunctionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_function_configuration_error(response)
                      } else {
@@ -1975,6 +2038,7 @@ impl UpdateFunctionEventInvokeConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionEventInvokeConfig {
                 type Output = std::result::Result<crate::output::UpdateFunctionEventInvokeConfigOutput, crate::error::UpdateFunctionEventInvokeConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_function_event_invoke_config_error(response)
                      } else {
@@ -2006,6 +2070,7 @@ impl UpdateFunctionUrlConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionUrlConfig {
                 type Output = std::result::Result<crate::output::UpdateFunctionUrlConfigOutput, crate::error::UpdateFunctionUrlConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_function_url_config_error(response)
                      } else {

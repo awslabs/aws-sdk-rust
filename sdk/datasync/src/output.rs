@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskExecutionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateTaskExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
 pub mod update_task_execution_output {
     
@@ -11,11 +17,22 @@ pub mod update_task_execution_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
         pub fn build(self) -> crate::output::UpdateTaskExecutionOutput {
             crate::output::UpdateTaskExecutionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateTaskExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaskOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
 pub mod update_task_output {
     
@@ -41,11 +64,22 @@ pub mod update_task_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
         pub fn build(self) -> crate::output::UpdateTaskOutput {
             crate::output::UpdateTaskOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UpdateTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationSmbOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLocationSmbOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
 pub mod update_location_smb_output {
     
@@ -71,11 +111,22 @@ pub mod update_location_smb_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
         pub fn build(self) -> crate::output::UpdateLocationSmbOutput {
             crate::output::UpdateLocationSmbOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl UpdateLocationSmbOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLocationObjectStorageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
 pub mod update_location_object_storage_output {
     
@@ -101,11 +158,22 @@ pub mod update_location_object_storage_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::UpdateLocationObjectStorageOutput {
             crate::output::UpdateLocationObjectStorageOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,7 +191,13 @@ impl UpdateLocationObjectStorageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationNfsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLocationNfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
 pub mod update_location_nfs_output {
     
@@ -131,11 +205,22 @@ pub mod update_location_nfs_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
         pub fn build(self) -> crate::output::UpdateLocationNfsOutput {
             crate::output::UpdateLocationNfsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,7 +238,13 @@ impl UpdateLocationNfsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLocationHdfsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateLocationHdfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
 pub mod update_location_hdfs_output {
     
@@ -161,11 +252,22 @@ pub mod update_location_hdfs_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
         pub fn build(self) -> crate::output::UpdateLocationHdfsOutput {
             crate::output::UpdateLocationHdfsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -183,7 +285,13 @@ impl UpdateLocationHdfsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAgentOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateAgentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
 pub mod update_agent_output {
     
@@ -191,11 +299,22 @@ pub mod update_agent_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
         pub fn build(self) -> crate::output::UpdateAgentOutput {
             crate::output::UpdateAgentOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -213,7 +332,13 @@ impl UpdateAgentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -221,11 +346,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -243,7 +379,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -251,11 +393,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -276,6 +429,7 @@ pub struct StartTaskExecutionOutput  {
     /// <p>The ARN of the running task execution.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
@@ -283,6 +437,11 @@ impl StartTaskExecutionOutput {
         self.task_execution_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartTaskExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
 pub mod start_task_execution_output {
     
@@ -291,6 +450,7 @@ pub mod start_task_execution_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_execution_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the running task execution.</p>
@@ -302,11 +462,21 @@ pub mod start_task_execution_output {
         pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_execution_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
         pub fn build(self) -> crate::output::StartTaskExecutionOutput {
             crate::output::StartTaskExecutionOutput {
                 task_execution_arn: self.task_execution_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -330,6 +500,7 @@ pub struct ListTasksOutput  {
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTasksOutput {
     /// <p>A list of all the tasks that are returned.</p>
@@ -341,6 +512,11 @@ impl ListTasksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTasksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTasksOutput`](crate::output::ListTasksOutput).
 pub mod list_tasks_output {
     
@@ -350,6 +526,7 @@ pub mod list_tasks_output {
     pub struct Builder {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::TaskListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tasks`.
@@ -376,6 +553,15 @@ pub mod list_tasks_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTasksOutput`](crate::output::ListTasksOutput).
         pub fn build(self) -> crate::output::ListTasksOutput {
             crate::output::ListTasksOutput {
@@ -383,6 +569,7 @@ pub mod list_tasks_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -406,6 +593,7 @@ pub struct ListTaskExecutionsOutput  {
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
@@ -417,6 +605,11 @@ impl ListTaskExecutionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTaskExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
 pub mod list_task_executions_output {
     
@@ -426,6 +619,7 @@ pub mod list_task_executions_output {
     pub struct Builder {
         pub(crate) task_executions: std::option::Option<std::vec::Vec<crate::model::TaskExecutionListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `task_executions`.
@@ -452,6 +646,15 @@ pub mod list_task_executions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
         pub fn build(self) -> crate::output::ListTaskExecutionsOutput {
             crate::output::ListTaskExecutionsOutput {
@@ -459,6 +662,7 @@ pub mod list_task_executions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -482,6 +686,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of tags applied to the specified resource.</p>
@@ -493,6 +698,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -502,6 +712,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -528,6 +739,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -535,6 +755,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -558,6 +779,7 @@ pub struct ListLocationsOutput  {
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
@@ -569,6 +791,11 @@ impl ListLocationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLocationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLocationsOutput`](crate::output::ListLocationsOutput).
 pub mod list_locations_output {
     
@@ -578,6 +805,7 @@ pub mod list_locations_output {
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::LocationListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `locations`.
@@ -604,6 +832,15 @@ pub mod list_locations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLocationsOutput`](crate::output::ListLocationsOutput).
         pub fn build(self) -> crate::output::ListLocationsOutput {
             crate::output::ListLocationsOutput {
@@ -611,6 +848,7 @@ pub mod list_locations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -634,6 +872,7 @@ pub struct ListAgentsOutput  {
     /// <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAgentsOutput {
     /// <p>A list of agents in your account.</p>
@@ -645,6 +884,11 @@ impl ListAgentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAgentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAgentsOutput`](crate::output::ListAgentsOutput).
 pub mod list_agents_output {
     
@@ -654,6 +898,7 @@ pub mod list_agents_output {
     pub struct Builder {
         pub(crate) agents: std::option::Option<std::vec::Vec<crate::model::AgentListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `agents`.
@@ -680,6 +925,15 @@ pub mod list_agents_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAgentsOutput`](crate::output::ListAgentsOutput).
         pub fn build(self) -> crate::output::ListAgentsOutput {
             crate::output::ListAgentsOutput {
@@ -687,6 +941,7 @@ pub mod list_agents_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -747,6 +1002,7 @@ pub struct DescribeTaskExecutionOutput  {
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     #[doc(hidden)]
     pub bytes_compressed: i64,
+    _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
@@ -806,6 +1062,11 @@ impl DescribeTaskExecutionOutput {
         self.bytes_compressed
     }
 }
+impl aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
 pub mod describe_task_execution_output {
     
@@ -826,6 +1087,7 @@ pub mod describe_task_execution_output {
         pub(crate) bytes_transferred: std::option::Option<i64>,
         pub(crate) result: std::option::Option<crate::model::TaskExecutionResultDetail>,
         pub(crate) bytes_compressed: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p> 
@@ -965,6 +1227,15 @@ pub mod describe_task_execution_output {
         pub fn set_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
             self.bytes_compressed = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
         pub fn build(self) -> crate::output::DescribeTaskExecutionOutput {
             crate::output::DescribeTaskExecutionOutput {
@@ -1000,6 +1271,7 @@ pub mod describe_task_execution_output {
                 bytes_compressed: self.bytes_compressed
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1068,6 +1340,7 @@ pub struct DescribeTaskOutput  {
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
     pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+    _request_id: Option<String>,
 }
 impl DescribeTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
@@ -1138,6 +1411,11 @@ impl DescribeTaskOutput {
         self.includes.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
 pub mod describe_task_output {
     
@@ -1161,6 +1439,7 @@ pub mod describe_task_output {
         pub(crate) error_detail: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
@@ -1337,6 +1616,15 @@ pub mod describe_task_output {
         pub fn set_includes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>) -> Self {
             self.includes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
         pub fn build(self) -> crate::output::DescribeTaskOutput {
             crate::output::DescribeTaskOutput {
@@ -1372,6 +1660,7 @@ pub mod describe_task_output {
                 ,
                 includes: self.includes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1410,6 +1699,7 @@ pub struct DescribeLocationSmbOutput  {
     /// <p>The time that the SMB location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
@@ -1441,6 +1731,11 @@ impl DescribeLocationSmbOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationSmbOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
 pub mod describe_location_smb_output {
     
@@ -1455,6 +1750,7 @@ pub mod describe_location_smb_output {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) mount_options: std::option::Option<crate::model::SmbMountOptions>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
@@ -1526,6 +1822,15 @@ pub mod describe_location_smb_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
         pub fn build(self) -> crate::output::DescribeLocationSmbOutput {
             crate::output::DescribeLocationSmbOutput {
@@ -1543,6 +1848,7 @@ pub mod describe_location_smb_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1579,6 +1885,7 @@ pub struct DescribeLocationS3Output  {
     /// <p>The time that the Amazon S3 bucket location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
@@ -1607,6 +1914,11 @@ impl DescribeLocationS3Output {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationS3Output {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
 pub mod describe_location_s3_output {
     
@@ -1620,6 +1932,7 @@ pub mod describe_location_s3_output {
         pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
@@ -1684,6 +1997,15 @@ pub mod describe_location_s3_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
         pub fn build(self) -> crate::output::DescribeLocationS3Output {
             crate::output::DescribeLocationS3Output {
@@ -1699,6 +2021,7 @@ pub mod describe_location_s3_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1740,6 +2063,7 @@ pub struct DescribeLocationObjectStorageOutput  {
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
     #[doc(hidden)]
     pub server_certificate: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
@@ -1775,6 +2099,11 @@ impl DescribeLocationObjectStorageOutput {
         self.server_certificate.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationObjectStorageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
 pub mod describe_location_object_storage_output {
     
@@ -1790,6 +2119,7 @@ pub mod describe_location_object_storage_output {
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_certificate: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the object storage system location.</p>
@@ -1870,6 +2200,15 @@ pub mod describe_location_object_storage_output {
         pub fn set_server_certificate(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.server_certificate = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::DescribeLocationObjectStorageOutput {
             crate::output::DescribeLocationObjectStorageOutput {
@@ -1889,6 +2228,7 @@ pub mod describe_location_object_storage_output {
                 ,
                 server_certificate: self.server_certificate
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1921,6 +2261,7 @@ pub struct DescribeLocationNfsOutput  {
     /// <p>The time that the NFS location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
@@ -1944,6 +2285,11 @@ impl DescribeLocationNfsOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationNfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
 pub mod describe_location_nfs_output {
     
@@ -1956,6 +2302,7 @@ pub mod describe_location_nfs_output {
         pub(crate) on_prem_config: std::option::Option<crate::model::OnPremConfig>,
         pub(crate) mount_options: std::option::Option<crate::model::NfsMountOptions>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
@@ -2003,6 +2350,15 @@ pub mod describe_location_nfs_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationNfsOutput {
             crate::output::DescribeLocationNfsOutput {
@@ -2016,6 +2372,7 @@ pub mod describe_location_nfs_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2069,6 +2426,7 @@ pub struct DescribeLocationHdfsOutput  {
     /// <p>The time that the HDFS location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationHdfsOutput {
     /// <p>The ARN of the HDFS cluster location.</p>
@@ -2120,6 +2478,11 @@ impl DescribeLocationHdfsOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationHdfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
 pub mod describe_location_hdfs_output {
     
@@ -2139,6 +2502,7 @@ pub mod describe_location_hdfs_output {
         pub(crate) kerberos_principal: std::option::Option<std::string::String>,
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the HDFS cluster location.</p>
@@ -2261,6 +2625,15 @@ pub mod describe_location_hdfs_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationHdfsOutput {
             crate::output::DescribeLocationHdfsOutput {
@@ -2288,6 +2661,7 @@ pub mod describe_location_hdfs_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2323,6 +2697,7 @@ pub struct DescribeLocationFsxWindowsOutput  {
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
@@ -2350,6 +2725,11 @@ impl DescribeLocationFsxWindowsOutput {
         self.domain.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationFsxWindowsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
 pub mod describe_location_fsx_windows_output {
     
@@ -2363,6 +2743,7 @@ pub mod describe_location_fsx_windows_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) user: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
@@ -2425,6 +2806,15 @@ pub mod describe_location_fsx_windows_output {
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxWindowsOutput {
             crate::output::DescribeLocationFsxWindowsOutput {
@@ -2440,6 +2830,7 @@ pub mod describe_location_fsx_windows_output {
                 ,
                 domain: self.domain
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2473,6 +2864,7 @@ pub struct DescribeLocationFsxOpenZfsOutput  {
     /// <p>The time that the FSx for OpenZFS location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
@@ -2497,6 +2889,11 @@ impl DescribeLocationFsxOpenZfsOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationFsxOpenZfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
 pub mod describe_location_fsx_open_zfs_output {
     
@@ -2509,6 +2906,7 @@ pub mod describe_location_fsx_open_zfs_output {
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) protocol: std::option::Option<crate::model::FsxProtocol>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
@@ -2564,6 +2962,15 @@ pub mod describe_location_fsx_open_zfs_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxOpenZfsOutput {
             crate::output::DescribeLocationFsxOpenZfsOutput {
@@ -2577,6 +2984,7 @@ pub mod describe_location_fsx_open_zfs_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2615,6 +3023,7 @@ pub struct DescribeLocationFsxOntapOutput  {
     /// <p>The ARN of the FSx for ONTAP file system.</p>
     #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationFsxOntapOutput {
     /// <p>The time that the location was created.</p>
@@ -2646,6 +3055,11 @@ impl DescribeLocationFsxOntapOutput {
         self.fsx_filesystem_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationFsxOntapOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
 pub mod describe_location_fsx_ontap_output {
     
@@ -2660,6 +3074,7 @@ pub mod describe_location_fsx_ontap_output {
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) storage_virtual_machine_arn: std::option::Option<std::string::String>,
         pub(crate) fsx_filesystem_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time that the location was created.</p>
@@ -2731,6 +3146,15 @@ pub mod describe_location_fsx_ontap_output {
         pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fsx_filesystem_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxOntapOutput {
             crate::output::DescribeLocationFsxOntapOutput {
@@ -2748,6 +3172,7 @@ pub mod describe_location_fsx_ontap_output {
                 ,
                 fsx_filesystem_arn: self.fsx_filesystem_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2777,6 +3202,7 @@ pub struct DescribeLocationFsxLustreOutput  {
     /// <p>The time that the FSx for Lustre location was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
@@ -2796,6 +3222,11 @@ impl DescribeLocationFsxLustreOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationFsxLustreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
 pub mod describe_location_fsx_lustre_output {
     
@@ -2807,6 +3238,7 @@ pub mod describe_location_fsx_lustre_output {
         pub(crate) location_uri: std::option::Option<std::string::String>,
         pub(crate) security_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
@@ -2851,6 +3283,15 @@ pub mod describe_location_fsx_lustre_output {
         pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.creation_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
         pub fn build(self) -> crate::output::DescribeLocationFsxLustreOutput {
             crate::output::DescribeLocationFsxLustreOutput {
@@ -2862,6 +3303,7 @@ pub mod describe_location_fsx_lustre_output {
                 ,
                 creation_time: self.creation_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2900,6 +3342,7 @@ pub struct DescribeLocationEfsOutput  {
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     #[doc(hidden)]
     pub in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
@@ -2931,6 +3374,11 @@ impl DescribeLocationEfsOutput {
         self.in_transit_encryption.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLocationEfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
 pub mod describe_location_efs_output {
     
@@ -2945,6 +3393,7 @@ pub mod describe_location_efs_output {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
         pub(crate) file_system_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) in_transit_encryption: std::option::Option<crate::model::EfsInTransitEncryption>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the Amazon EFS file system location.</p>
@@ -3010,6 +3459,15 @@ pub mod describe_location_efs_output {
         pub fn set_in_transit_encryption(mut self, input: std::option::Option<crate::model::EfsInTransitEncryption>) -> Self {
             self.in_transit_encryption = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
         pub fn build(self) -> crate::output::DescribeLocationEfsOutput {
             crate::output::DescribeLocationEfsOutput {
@@ -3027,6 +3485,7 @@ pub mod describe_location_efs_output {
                 ,
                 in_transit_encryption: self.in_transit_encryption
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3065,6 +3524,7 @@ pub struct DescribeAgentOutput  {
     /// <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
     #[doc(hidden)]
     pub private_link_config: std::option::Option<crate::model::PrivateLinkConfig>,
+    _request_id: Option<String>,
 }
 impl DescribeAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent.</p>
@@ -3096,6 +3556,11 @@ impl DescribeAgentOutput {
         self.private_link_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAgentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
 pub mod describe_agent_output {
     
@@ -3110,6 +3575,7 @@ pub mod describe_agent_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) endpoint_type: std::option::Option<crate::model::EndpointType>,
         pub(crate) private_link_config: std::option::Option<crate::model::PrivateLinkConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the agent.</p>
@@ -3175,6 +3641,15 @@ pub mod describe_agent_output {
         pub fn set_private_link_config(mut self, input: std::option::Option<crate::model::PrivateLinkConfig>) -> Self {
             self.private_link_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
         pub fn build(self) -> crate::output::DescribeAgentOutput {
             crate::output::DescribeAgentOutput {
@@ -3192,6 +3667,7 @@ pub mod describe_agent_output {
                 ,
                 private_link_config: self.private_link_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3209,7 +3685,13 @@ impl DescribeAgentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTaskOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
 pub mod delete_task_output {
     
@@ -3217,11 +3699,22 @@ pub mod delete_task_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
         pub fn build(self) -> crate::output::DeleteTaskOutput {
             crate::output::DeleteTaskOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3239,7 +3732,13 @@ impl DeleteTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLocationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLocationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
 pub mod delete_location_output {
     
@@ -3247,11 +3746,22 @@ pub mod delete_location_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
         pub fn build(self) -> crate::output::DeleteLocationOutput {
             crate::output::DeleteLocationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3269,7 +3779,13 @@ impl DeleteLocationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAgentOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAgentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
 pub mod delete_agent_output {
     
@@ -3277,11 +3793,22 @@ pub mod delete_agent_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
         pub fn build(self) -> crate::output::DeleteAgentOutput {
             crate::output::DeleteAgentOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3302,6 +3829,7 @@ pub struct CreateTaskOutput  {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -3309,6 +3837,11 @@ impl CreateTaskOutput {
         self.task_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTaskOutput`](crate::output::CreateTaskOutput).
 pub mod create_task_output {
     
@@ -3317,6 +3850,7 @@ pub mod create_task_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -3328,11 +3862,21 @@ pub mod create_task_output {
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTaskOutput`](crate::output::CreateTaskOutput).
         pub fn build(self) -> crate::output::CreateTaskOutput {
             crate::output::CreateTaskOutput {
                 task_arn: self.task_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3353,6 +3897,7 @@ pub struct CreateLocationSmbOutput  {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
@@ -3360,6 +3905,11 @@ impl CreateLocationSmbOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationSmbOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
 pub mod create_location_smb_output {
     
@@ -3368,6 +3918,7 @@ pub mod create_location_smb_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
@@ -3379,11 +3930,21 @@ pub mod create_location_smb_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
         pub fn build(self) -> crate::output::CreateLocationSmbOutput {
             crate::output::CreateLocationSmbOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3404,6 +3965,7 @@ pub struct CreateLocationS3Output  {
     /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationS3Output {
     /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
@@ -3411,6 +3973,11 @@ impl CreateLocationS3Output {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationS3Output {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
 pub mod create_location_s3_output {
     
@@ -3419,6 +3986,7 @@ pub mod create_location_s3_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
@@ -3430,11 +3998,21 @@ pub mod create_location_s3_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
         pub fn build(self) -> crate::output::CreateLocationS3Output {
             crate::output::CreateLocationS3Output {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3455,6 +4033,7 @@ pub struct CreateLocationObjectStorageOutput  {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationObjectStorageOutput {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
@@ -3462,6 +4041,11 @@ impl CreateLocationObjectStorageOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationObjectStorageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
 pub mod create_location_object_storage_output {
     
@@ -3470,6 +4054,7 @@ pub mod create_location_object_storage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the ARN of the object storage system location that you create.</p>
@@ -3481,11 +4066,21 @@ pub mod create_location_object_storage_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
         pub fn build(self) -> crate::output::CreateLocationObjectStorageOutput {
             crate::output::CreateLocationObjectStorageOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3506,6 +4101,7 @@ pub struct CreateLocationNfsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
@@ -3513,6 +4109,11 @@ impl CreateLocationNfsOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationNfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
 pub mod create_location_nfs_output {
     
@@ -3521,6 +4122,7 @@ pub mod create_location_nfs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
@@ -3532,11 +4134,21 @@ pub mod create_location_nfs_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
         pub fn build(self) -> crate::output::CreateLocationNfsOutput {
             crate::output::CreateLocationNfsOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3557,6 +4169,7 @@ pub struct CreateLocationHdfsOutput  {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationHdfsOutput {
     /// <p>The ARN of the source HDFS cluster location that's created. </p>
@@ -3564,6 +4177,11 @@ impl CreateLocationHdfsOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationHdfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
 pub mod create_location_hdfs_output {
     
@@ -3572,6 +4190,7 @@ pub mod create_location_hdfs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the source HDFS cluster location that's created. </p>
@@ -3583,11 +4202,21 @@ pub mod create_location_hdfs_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
         pub fn build(self) -> crate::output::CreateLocationHdfsOutput {
             crate::output::CreateLocationHdfsOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3608,6 +4237,7 @@ pub struct CreateLocationFsxWindowsOutput  {
     /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationFsxWindowsOutput {
     /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
@@ -3615,6 +4245,11 @@ impl CreateLocationFsxWindowsOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationFsxWindowsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
 pub mod create_location_fsx_windows_output {
     
@@ -3623,6 +4258,7 @@ pub mod create_location_fsx_windows_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the FSx for Windows File Server file system location you created.</p>
@@ -3634,11 +4270,21 @@ pub mod create_location_fsx_windows_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxWindowsOutput {
             crate::output::CreateLocationFsxWindowsOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3659,6 +4305,7 @@ pub struct CreateLocationFsxOpenZfsOutput  {
     /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
@@ -3666,6 +4313,11 @@ impl CreateLocationFsxOpenZfsOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationFsxOpenZfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
 pub mod create_location_fsx_open_zfs_output {
     
@@ -3674,6 +4326,7 @@ pub mod create_location_fsx_open_zfs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
@@ -3685,11 +4338,21 @@ pub mod create_location_fsx_open_zfs_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxOpenZfsOutput {
             crate::output::CreateLocationFsxOpenZfsOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3710,6 +4373,7 @@ pub struct CreateLocationFsxOntapOutput  {
     /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationFsxOntapOutput {
     /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
@@ -3717,6 +4381,11 @@ impl CreateLocationFsxOntapOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationFsxOntapOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
 pub mod create_location_fsx_ontap_output {
     
@@ -3725,6 +4394,7 @@ pub mod create_location_fsx_ontap_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
@@ -3736,11 +4406,21 @@ pub mod create_location_fsx_ontap_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxOntapOutput {
             crate::output::CreateLocationFsxOntapOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3761,6 +4441,7 @@ pub struct CreateLocationFsxLustreOutput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationFsxLustreOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
@@ -3768,6 +4449,11 @@ impl CreateLocationFsxLustreOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationFsxLustreOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
 pub mod create_location_fsx_lustre_output {
     
@@ -3776,6 +4462,7 @@ pub mod create_location_fsx_lustre_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
@@ -3787,11 +4474,21 @@ pub mod create_location_fsx_lustre_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
         pub fn build(self) -> crate::output::CreateLocationFsxLustreOutput {
             crate::output::CreateLocationFsxLustreOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3812,6 +4509,7 @@ pub struct CreateLocationEfsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLocationEfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
@@ -3819,6 +4517,11 @@ impl CreateLocationEfsOutput {
         self.location_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLocationEfsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
 pub mod create_location_efs_output {
     
@@ -3827,6 +4530,7 @@ pub mod create_location_efs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
@@ -3838,11 +4542,21 @@ pub mod create_location_efs_output {
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
         pub fn build(self) -> crate::output::CreateLocationEfsOutput {
             crate::output::CreateLocationEfsOutput {
                 location_arn: self.location_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3863,6 +4577,7 @@ pub struct CreateAgentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
@@ -3870,6 +4585,11 @@ impl CreateAgentOutput {
         self.agent_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAgentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAgentOutput`](crate::output::CreateAgentOutput).
 pub mod create_agent_output {
     
@@ -3878,6 +4598,7 @@ pub mod create_agent_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
@@ -3889,11 +4610,21 @@ pub mod create_agent_output {
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAgentOutput`](crate::output::CreateAgentOutput).
         pub fn build(self) -> crate::output::CreateAgentOutput {
             crate::output::CreateAgentOutput {
                 agent_arn: self.agent_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3911,7 +4642,13 @@ impl CreateAgentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelTaskExecutionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CancelTaskExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
 pub mod cancel_task_execution_output {
     
@@ -3919,11 +4656,22 @@ pub mod cancel_task_execution_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
         pub fn build(self) -> crate::output::CancelTaskExecutionOutput {
             crate::output::CancelTaskExecutionOutput {
+                _request_id: self._request_id,
             }
         }
     }

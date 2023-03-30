@@ -22,6 +22,7 @@ impl CancelJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
                 type Output = std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_job_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CancelQuantumTask {
 impl aws_smithy_http::response::ParseStrictResponse for CancelQuantumTask {
                 type Output = std::result::Result<crate::output::CancelQuantumTaskOutput, crate::error::CancelQuantumTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_quantum_task_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
                 type Output = std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateQuantumTask {
 impl aws_smithy_http::response::ParseStrictResponse for CreateQuantumTask {
                 type Output = std::result::Result<crate::output::CreateQuantumTaskOutput, crate::error::CreateQuantumTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_quantum_task_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
                 type Output = std::result::Result<crate::output::GetDeviceOutput, crate::error::GetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_device_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetJob {
                 type Output = std::result::Result<crate::output::GetJobOutput, crate::error::GetJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_job_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetQuantumTask {
 impl aws_smithy_http::response::ParseStrictResponse for GetQuantumTask {
                 type Output = std::result::Result<crate::output::GetQuantumTaskOutput, crate::error::GetQuantumTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_quantum_task_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl SearchDevices {
 impl aws_smithy_http::response::ParseStrictResponse for SearchDevices {
                 type Output = std::result::Result<crate::output::SearchDevicesOutput, crate::error::SearchDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_devices_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl SearchJobs {
 impl aws_smithy_http::response::ParseStrictResponse for SearchJobs {
                 type Output = std::result::Result<crate::output::SearchJobsOutput, crate::error::SearchJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_jobs_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl SearchQuantumTasks {
 impl aws_smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
                 type Output = std::result::Result<crate::output::SearchQuantumTasksOutput, crate::error::SearchQuantumTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_quantum_tasks_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

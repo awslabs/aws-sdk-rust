@@ -13,6 +13,7 @@ pub struct ResolveCustomerOutput  {
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     #[doc(hidden)]
     pub customer_aws_account_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ResolveCustomerOutput {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
@@ -28,6 +29,11 @@ impl ResolveCustomerOutput {
         self.customer_aws_account_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ResolveCustomerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
 pub mod resolve_customer_output {
     
@@ -38,6 +44,7 @@ pub mod resolve_customer_output {
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) customer_aws_account_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
@@ -67,6 +74,15 @@ pub mod resolve_customer_output {
         pub fn set_customer_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.customer_aws_account_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
         pub fn build(self) -> crate::output::ResolveCustomerOutput {
             crate::output::ResolveCustomerOutput {
@@ -76,6 +92,7 @@ pub mod resolve_customer_output {
                 ,
                 customer_aws_account_id: self.customer_aws_account_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -99,6 +116,7 @@ pub struct RegisterUsageOutput  {
     /// <p>JWT Token</p>
     #[doc(hidden)]
     pub signature: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
@@ -110,6 +128,11 @@ impl RegisterUsageOutput {
         self.signature.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RegisterUsageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
 pub mod register_usage_output {
     
@@ -119,6 +142,7 @@ pub mod register_usage_output {
     pub struct Builder {
         pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signature: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>(Optional) Only included when public key version has expired</p>
@@ -139,6 +163,15 @@ pub mod register_usage_output {
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
         pub fn build(self) -> crate::output::RegisterUsageOutput {
             crate::output::RegisterUsageOutput {
@@ -146,6 +179,7 @@ pub mod register_usage_output {
                 ,
                 signature: self.signature
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -166,6 +200,7 @@ pub struct MeterUsageOutput  {
     /// <p>Metering record id.</p>
     #[doc(hidden)]
     pub metering_record_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl MeterUsageOutput {
     /// <p>Metering record id.</p>
@@ -173,6 +208,11 @@ impl MeterUsageOutput {
         self.metering_record_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for MeterUsageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`MeterUsageOutput`](crate::output::MeterUsageOutput).
 pub mod meter_usage_output {
     
@@ -181,6 +221,7 @@ pub mod meter_usage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metering_record_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metering record id.</p>
@@ -192,11 +233,21 @@ pub mod meter_usage_output {
         pub fn set_metering_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metering_record_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`MeterUsageOutput`](crate::output::MeterUsageOutput).
         pub fn build(self) -> crate::output::MeterUsageOutput {
             crate::output::MeterUsageOutput {
                 metering_record_id: self.metering_record_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -220,6 +271,7 @@ pub struct BatchMeterUsageOutput  {
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     #[doc(hidden)]
     pub unprocessed_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
+    _request_id: Option<String>,
 }
 impl BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
@@ -231,6 +283,11 @@ impl BatchMeterUsageOutput {
         self.unprocessed_records.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchMeterUsageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
 pub mod batch_meter_usage_output {
     
@@ -240,6 +297,7 @@ pub mod batch_meter_usage_output {
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::UsageRecordResult>>,
         pub(crate) unprocessed_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `results`.
@@ -272,6 +330,15 @@ pub mod batch_meter_usage_output {
         pub fn set_unprocessed_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>) -> Self {
             self.unprocessed_records = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
         pub fn build(self) -> crate::output::BatchMeterUsageOutput {
             crate::output::BatchMeterUsageOutput {
@@ -279,6 +346,7 @@ pub mod batch_meter_usage_output {
                 ,
                 unprocessed_records: self.unprocessed_records
                 ,
+                _request_id: self._request_id,
             }
         }
     }

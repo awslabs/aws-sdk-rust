@@ -3,7 +3,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WriteGetObjectResponseOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for WriteGetObjectResponseOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for WriteGetObjectResponseOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`WriteGetObjectResponseOutput`](crate::output::WriteGetObjectResponseOutput).
 pub mod write_get_object_response_output {
     
@@ -11,11 +23,33 @@ pub mod write_get_object_response_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`WriteGetObjectResponseOutput`](crate::output::WriteGetObjectResponseOutput).
         pub fn build(self) -> crate::output::WriteGetObjectResponseOutput {
             crate::output::WriteGetObjectResponseOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +91,8 @@ pub struct UploadPartCopyOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl UploadPartCopyOutput {
     /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
@@ -103,9 +139,21 @@ impl  std::fmt::Debug for UploadPartCopyOutput  {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for UploadPartCopyOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for UploadPartCopyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput).
 pub mod upload_part_copy_output {
     
@@ -121,6 +169,8 @@ pub mod upload_part_copy_output {
         pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
@@ -195,6 +245,24 @@ pub mod upload_part_copy_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UploadPartCopyOutput`](crate::output::UploadPartCopyOutput).
         pub fn build(self) -> crate::output::UploadPartCopyOutput {
             crate::output::UploadPartCopyOutput {
@@ -215,6 +283,8 @@ pub mod upload_part_copy_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -229,6 +299,8 @@ pub mod upload_part_copy_output {
             formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -279,6 +351,8 @@ pub struct UploadPartOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl UploadPartOutput {
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
@@ -340,9 +414,21 @@ impl  std::fmt::Debug for UploadPartOutput  {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for UploadPartOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for UploadPartOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UploadPartOutput`](crate::output::UploadPartOutput).
 pub mod upload_part_output {
     
@@ -361,6 +447,8 @@ pub mod upload_part_output {
         pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
@@ -462,6 +550,24 @@ pub mod upload_part_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UploadPartOutput`](crate::output::UploadPartOutput).
         pub fn build(self) -> crate::output::UploadPartOutput {
             crate::output::UploadPartOutput {
@@ -488,6 +594,8 @@ pub mod upload_part_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -505,6 +613,8 @@ pub mod upload_part_output {
             formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -524,6 +634,8 @@ impl UploadPartOutput {
 pub struct SelectObjectContentOutput  {
     /// <p>The array of results.</p>
     pub payload: aws_smithy_http::event_stream::Receiver<crate::model::SelectObjectContentEventStream, crate::error::SelectObjectContentEventStreamError>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl SelectObjectContentOutput {
     /// <p>The array of results.</p>
@@ -531,6 +643,16 @@ impl SelectObjectContentOutput {
         &self.payload
     }
 }
+impl crate::s3_request_id::RequestIdExt for SelectObjectContentOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for SelectObjectContentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput).
 pub mod select_object_content_output {
     
@@ -539,6 +661,8 @@ pub mod select_object_content_output {
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::SelectObjectContentEventStream, crate::error::SelectObjectContentEventStreamError>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The array of results.</p>
@@ -550,6 +674,24 @@ pub mod select_object_content_output {
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::model::SelectObjectContentEventStream, crate::error::SelectObjectContentEventStreamError>>) -> Self {
             self.payload = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput).
         pub fn build(self) -> Result<crate::output::SelectObjectContentOutput, aws_smithy_http::operation::error::BuildError> {
             Ok(
@@ -559,6 +701,8 @@ pub mod select_object_content_output {
                             aws_smithy_http::operation::error::BuildError::missing_field("payload", "payload was not specified but it is required when building SelectObjectContentOutput")
                         )?
                     ,
+                    _extended_request_id: self._extended_request_id,
+                    _request_id: self._request_id,
                 }
             )
         }
@@ -583,6 +727,8 @@ pub struct RestoreObjectOutput  {
     /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
     #[doc(hidden)]
     pub restore_output_path: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl RestoreObjectOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -594,6 +740,16 @@ impl RestoreObjectOutput {
         self.restore_output_path.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for RestoreObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for RestoreObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreObjectOutput`](crate::output::RestoreObjectOutput).
 pub mod restore_object_output {
     
@@ -603,6 +759,8 @@ pub mod restore_object_output {
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
         pub(crate) restore_output_path: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -623,6 +781,24 @@ pub mod restore_object_output {
         pub fn set_restore_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restore_output_path = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreObjectOutput`](crate::output::RestoreObjectOutput).
         pub fn build(self) -> crate::output::RestoreObjectOutput {
             crate::output::RestoreObjectOutput {
@@ -630,6 +806,8 @@ pub mod restore_object_output {
                 ,
                 restore_output_path: self.restore_output_path
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -647,7 +825,19 @@ impl RestoreObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPublicAccessBlockOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutPublicAccessBlockOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutPublicAccessBlockOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
 pub mod put_public_access_block_output {
     
@@ -655,11 +845,33 @@ pub mod put_public_access_block_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::PutPublicAccessBlockOutput {
             crate::output::PutPublicAccessBlockOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -680,6 +892,8 @@ pub struct PutObjectTaggingOutput  {
     /// <p>The versionId of the object the tag-set was added to.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectTaggingOutput {
     /// <p>The versionId of the object the tag-set was added to.</p>
@@ -687,6 +901,16 @@ impl PutObjectTaggingOutput {
         self.version_id.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput).
 pub mod put_object_tagging_output {
     
@@ -695,6 +919,8 @@ pub mod put_object_tagging_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The versionId of the object the tag-set was added to.</p>
@@ -706,11 +932,31 @@ pub mod put_object_tagging_output {
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectTaggingOutput`](crate::output::PutObjectTaggingOutput).
         pub fn build(self) -> crate::output::PutObjectTaggingOutput {
             crate::output::PutObjectTaggingOutput {
                 version_id: self.version_id
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -731,6 +977,8 @@ pub struct PutObjectRetentionOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectRetentionOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -738,6 +986,16 @@ impl PutObjectRetentionOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectRetentionOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectRetentionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput).
 pub mod put_object_retention_output {
     
@@ -746,6 +1004,8 @@ pub mod put_object_retention_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -757,11 +1017,31 @@ pub mod put_object_retention_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectRetentionOutput`](crate::output::PutObjectRetentionOutput).
         pub fn build(self) -> crate::output::PutObjectRetentionOutput {
             crate::output::PutObjectRetentionOutput {
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -782,6 +1062,8 @@ pub struct PutObjectLockConfigurationOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectLockConfigurationOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -789,6 +1071,16 @@ impl PutObjectLockConfigurationOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectLockConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectLockConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput).
 pub mod put_object_lock_configuration_output {
     
@@ -797,6 +1089,8 @@ pub mod put_object_lock_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -808,11 +1102,31 @@ pub mod put_object_lock_configuration_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectLockConfigurationOutput`](crate::output::PutObjectLockConfigurationOutput).
         pub fn build(self) -> crate::output::PutObjectLockConfigurationOutput {
             crate::output::PutObjectLockConfigurationOutput {
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -833,6 +1147,8 @@ pub struct PutObjectLegalHoldOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectLegalHoldOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -840,6 +1156,16 @@ impl PutObjectLegalHoldOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectLegalHoldOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectLegalHoldOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput).
 pub mod put_object_legal_hold_output {
     
@@ -848,6 +1174,8 @@ pub mod put_object_legal_hold_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -859,11 +1187,31 @@ pub mod put_object_legal_hold_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectLegalHoldOutput`](crate::output::PutObjectLegalHoldOutput).
         pub fn build(self) -> crate::output::PutObjectLegalHoldOutput {
             crate::output::PutObjectLegalHoldOutput {
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -884,6 +1232,8 @@ pub struct PutObjectAclOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectAclOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -891,6 +1241,16 @@ impl PutObjectAclOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectAclOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectAclOutput`](crate::output::PutObjectAclOutput).
 pub mod put_object_acl_output {
     
@@ -899,6 +1259,8 @@ pub mod put_object_acl_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -910,11 +1272,31 @@ pub mod put_object_acl_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectAclOutput`](crate::output::PutObjectAclOutput).
         pub fn build(self) -> crate::output::PutObjectAclOutput {
             crate::output::PutObjectAclOutput {
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -974,6 +1356,8 @@ pub struct PutObjectOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl PutObjectOutput {
     /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
@@ -1050,9 +1434,21 @@ impl  std::fmt::Debug for PutObjectOutput  {
         formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for PutObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectOutput`](crate::output::PutObjectOutput).
 pub mod put_object_output {
     
@@ -1074,6 +1470,8 @@ pub mod put_object_output {
         pub(crate) ssekms_encryption_context: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
@@ -1202,6 +1600,24 @@ pub mod put_object_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput).
         pub fn build(self) -> crate::output::PutObjectOutput {
             crate::output::PutObjectOutput {
@@ -1234,6 +1650,8 @@ pub mod put_object_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1254,6 +1672,8 @@ pub mod put_object_output {
             formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1271,7 +1691,19 @@ impl PutObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketWebsiteOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketWebsiteOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketWebsiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketWebsiteOutput`](crate::output::PutBucketWebsiteOutput).
 pub mod put_bucket_website_output {
     
@@ -1279,11 +1711,33 @@ pub mod put_bucket_website_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketWebsiteOutput`](crate::output::PutBucketWebsiteOutput).
         pub fn build(self) -> crate::output::PutBucketWebsiteOutput {
             crate::output::PutBucketWebsiteOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1301,7 +1755,19 @@ impl PutBucketWebsiteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketVersioningOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketVersioningOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketVersioningOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
 pub mod put_bucket_versioning_output {
     
@@ -1309,11 +1775,33 @@ pub mod put_bucket_versioning_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
         pub fn build(self) -> crate::output::PutBucketVersioningOutput {
             crate::output::PutBucketVersioningOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1331,7 +1819,19 @@ impl PutBucketVersioningOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketTaggingOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
 pub mod put_bucket_tagging_output {
     
@@ -1339,11 +1839,33 @@ pub mod put_bucket_tagging_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
         pub fn build(self) -> crate::output::PutBucketTaggingOutput {
             crate::output::PutBucketTaggingOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1361,7 +1883,19 @@ impl PutBucketTaggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketRequestPaymentOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketRequestPaymentOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketRequestPaymentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketRequestPaymentOutput`](crate::output::PutBucketRequestPaymentOutput).
 pub mod put_bucket_request_payment_output {
     
@@ -1369,11 +1903,33 @@ pub mod put_bucket_request_payment_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketRequestPaymentOutput`](crate::output::PutBucketRequestPaymentOutput).
         pub fn build(self) -> crate::output::PutBucketRequestPaymentOutput {
             crate::output::PutBucketRequestPaymentOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1391,7 +1947,19 @@ impl PutBucketRequestPaymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketReplicationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketReplicationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketReplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketReplicationOutput`](crate::output::PutBucketReplicationOutput).
 pub mod put_bucket_replication_output {
     
@@ -1399,11 +1967,33 @@ pub mod put_bucket_replication_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketReplicationOutput`](crate::output::PutBucketReplicationOutput).
         pub fn build(self) -> crate::output::PutBucketReplicationOutput {
             crate::output::PutBucketReplicationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1421,7 +2011,19 @@ impl PutBucketReplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketPolicyOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketPolicyOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
 pub mod put_bucket_policy_output {
     
@@ -1429,11 +2031,33 @@ pub mod put_bucket_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
         pub fn build(self) -> crate::output::PutBucketPolicyOutput {
             crate::output::PutBucketPolicyOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1451,7 +2075,19 @@ impl PutBucketPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketOwnershipControlsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketOwnershipControlsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketOwnershipControlsOutput`](crate::output::PutBucketOwnershipControlsOutput).
 pub mod put_bucket_ownership_controls_output {
     
@@ -1459,11 +2095,33 @@ pub mod put_bucket_ownership_controls_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketOwnershipControlsOutput`](crate::output::PutBucketOwnershipControlsOutput).
         pub fn build(self) -> crate::output::PutBucketOwnershipControlsOutput {
             crate::output::PutBucketOwnershipControlsOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1481,7 +2139,19 @@ impl PutBucketOwnershipControlsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketNotificationConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketNotificationConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketNotificationConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketNotificationConfigurationOutput`](crate::output::PutBucketNotificationConfigurationOutput).
 pub mod put_bucket_notification_configuration_output {
     
@@ -1489,11 +2159,33 @@ pub mod put_bucket_notification_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketNotificationConfigurationOutput`](crate::output::PutBucketNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketNotificationConfigurationOutput {
             crate::output::PutBucketNotificationConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1511,7 +2203,19 @@ impl PutBucketNotificationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketMetricsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketMetricsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketMetricsConfigurationOutput`](crate::output::PutBucketMetricsConfigurationOutput).
 pub mod put_bucket_metrics_configuration_output {
     
@@ -1519,11 +2223,33 @@ pub mod put_bucket_metrics_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketMetricsConfigurationOutput`](crate::output::PutBucketMetricsConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketMetricsConfigurationOutput {
             crate::output::PutBucketMetricsConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1541,7 +2267,19 @@ impl PutBucketMetricsConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLoggingOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketLoggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketLoggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketLoggingOutput`](crate::output::PutBucketLoggingOutput).
 pub mod put_bucket_logging_output {
     
@@ -1549,11 +2287,33 @@ pub mod put_bucket_logging_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketLoggingOutput`](crate::output::PutBucketLoggingOutput).
         pub fn build(self) -> crate::output::PutBucketLoggingOutput {
             crate::output::PutBucketLoggingOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1571,7 +2331,19 @@ impl PutBucketLoggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketLifecycleConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketLifecycleConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
 pub mod put_bucket_lifecycle_configuration_output {
     
@@ -1579,11 +2351,33 @@ pub mod put_bucket_lifecycle_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketLifecycleConfigurationOutput {
             crate::output::PutBucketLifecycleConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1601,7 +2395,19 @@ impl PutBucketLifecycleConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketInventoryConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketInventoryConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketInventoryConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketInventoryConfigurationOutput`](crate::output::PutBucketInventoryConfigurationOutput).
 pub mod put_bucket_inventory_configuration_output {
     
@@ -1609,11 +2415,33 @@ pub mod put_bucket_inventory_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketInventoryConfigurationOutput`](crate::output::PutBucketInventoryConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketInventoryConfigurationOutput {
             crate::output::PutBucketInventoryConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1631,7 +2459,19 @@ impl PutBucketInventoryConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketIntelligentTieringConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketIntelligentTieringConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketIntelligentTieringConfigurationOutput`](crate::output::PutBucketIntelligentTieringConfigurationOutput).
 pub mod put_bucket_intelligent_tiering_configuration_output {
     
@@ -1639,11 +2479,33 @@ pub mod put_bucket_intelligent_tiering_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketIntelligentTieringConfigurationOutput`](crate::output::PutBucketIntelligentTieringConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketIntelligentTieringConfigurationOutput {
             crate::output::PutBucketIntelligentTieringConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1661,7 +2523,19 @@ impl PutBucketIntelligentTieringConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketEncryptionOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketEncryptionOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketEncryptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketEncryptionOutput`](crate::output::PutBucketEncryptionOutput).
 pub mod put_bucket_encryption_output {
     
@@ -1669,11 +2543,33 @@ pub mod put_bucket_encryption_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketEncryptionOutput`](crate::output::PutBucketEncryptionOutput).
         pub fn build(self) -> crate::output::PutBucketEncryptionOutput {
             crate::output::PutBucketEncryptionOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1691,7 +2587,19 @@ impl PutBucketEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketCorsOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketCorsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketCorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketCorsOutput`](crate::output::PutBucketCorsOutput).
 pub mod put_bucket_cors_output {
     
@@ -1699,11 +2607,33 @@ pub mod put_bucket_cors_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketCorsOutput`](crate::output::PutBucketCorsOutput).
         pub fn build(self) -> crate::output::PutBucketCorsOutput {
             crate::output::PutBucketCorsOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1721,7 +2651,19 @@ impl PutBucketCorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketAnalyticsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketAnalyticsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketAnalyticsConfigurationOutput`](crate::output::PutBucketAnalyticsConfigurationOutput).
 pub mod put_bucket_analytics_configuration_output {
     
@@ -1729,11 +2671,33 @@ pub mod put_bucket_analytics_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationOutput`](crate::output::PutBucketAnalyticsConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketAnalyticsConfigurationOutput {
             crate::output::PutBucketAnalyticsConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1751,7 +2715,19 @@ impl PutBucketAnalyticsConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAclOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketAclOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketAclOutput`](crate::output::PutBucketAclOutput).
 pub mod put_bucket_acl_output {
     
@@ -1759,11 +2735,33 @@ pub mod put_bucket_acl_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketAclOutput`](crate::output::PutBucketAclOutput).
         pub fn build(self) -> crate::output::PutBucketAclOutput {
             crate::output::PutBucketAclOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1781,7 +2779,19 @@ impl PutBucketAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for PutBucketAccelerateConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for PutBucketAccelerateConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutBucketAccelerateConfigurationOutput`](crate::output::PutBucketAccelerateConfigurationOutput).
 pub mod put_bucket_accelerate_configuration_output {
     
@@ -1789,11 +2799,33 @@ pub mod put_bucket_accelerate_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutBucketAccelerateConfigurationOutput`](crate::output::PutBucketAccelerateConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketAccelerateConfigurationOutput {
             crate::output::PutBucketAccelerateConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1857,6 +2889,8 @@ pub struct ListPartsOutput  {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListPartsOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> 
@@ -1921,6 +2955,16 @@ impl ListPartsOutput {
         self.checksum_algorithm.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListPartsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListPartsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPartsOutput`](crate::output::ListPartsOutput).
 pub mod list_parts_output {
     
@@ -1943,6 +2987,8 @@ pub mod list_parts_output {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> 
@@ -2088,6 +3134,24 @@ pub mod list_parts_output {
         pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
             self.checksum_algorithm = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPartsOutput`](crate::output::ListPartsOutput).
         pub fn build(self) -> crate::output::ListPartsOutput {
             crate::output::ListPartsOutput {
@@ -2123,6 +3187,8 @@ pub mod list_parts_output {
                 ,
                 checksum_algorithm: self.checksum_algorithm
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2181,6 +3247,8 @@ pub struct ListObjectVersionsOutput  {
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListObjectVersionsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
@@ -2238,6 +3306,16 @@ impl ListObjectVersionsOutput {
         self.encoding_type.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListObjectVersionsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListObjectVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput).
 pub mod list_object_versions_output {
     
@@ -2258,6 +3336,8 @@ pub mod list_object_versions_output {
         pub(crate) max_keys: std::option::Option<i32>,
         pub(crate) common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
@@ -2399,6 +3479,24 @@ pub mod list_object_versions_output {
         pub fn set_encoding_type(mut self, input: std::option::Option<crate::model::EncodingType>) -> Self {
             self.encoding_type = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListObjectVersionsOutput`](crate::output::ListObjectVersionsOutput).
         pub fn build(self) -> crate::output::ListObjectVersionsOutput {
             crate::output::ListObjectVersionsOutput {
@@ -2430,6 +3528,8 @@ pub mod list_object_versions_output {
                 ,
                 encoding_type: self.encoding_type
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2491,6 +3591,8 @@ pub struct ListObjectsV2Output  {
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
     #[doc(hidden)]
     pub start_after: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListObjectsV2Output {
     /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
@@ -2550,6 +3652,16 @@ impl ListObjectsV2Output {
         self.start_after.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListObjectsV2Output {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListObjectsV2Output {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListObjectsV2Output`](crate::output::ListObjectsV2Output).
 pub mod list_objects_v2_output {
     
@@ -2569,6 +3681,8 @@ pub mod list_objects_v2_output {
         pub(crate) continuation_token: std::option::Option<std::string::String>,
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
         pub(crate) start_after: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
@@ -2707,6 +3821,24 @@ pub mod list_objects_v2_output {
         pub fn set_start_after(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_after = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListObjectsV2Output`](crate::output::ListObjectsV2Output).
         pub fn build(self) -> crate::output::ListObjectsV2Output {
             crate::output::ListObjectsV2Output {
@@ -2737,6 +3869,8 @@ pub mod list_objects_v2_output {
                 ,
                 start_after: self.start_after
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2788,6 +3922,8 @@ pub struct ListObjectsOutput  {
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListObjectsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
@@ -2835,6 +3971,16 @@ impl ListObjectsOutput {
         self.encoding_type.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListObjectsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListObjectsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListObjectsOutput`](crate::output::ListObjectsOutput).
 pub mod list_objects_output {
     
@@ -2852,6 +3998,8 @@ pub mod list_objects_output {
         pub(crate) max_keys: std::option::Option<i32>,
         pub(crate) common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
@@ -2964,6 +4112,24 @@ pub mod list_objects_output {
         pub fn set_encoding_type(mut self, input: std::option::Option<crate::model::EncodingType>) -> Self {
             self.encoding_type = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::output::ListObjectsOutput).
         pub fn build(self) -> crate::output::ListObjectsOutput {
             crate::output::ListObjectsOutput {
@@ -2989,6 +4155,8 @@ pub mod list_objects_output {
                 ,
                 encoding_type: self.encoding_type
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3044,6 +4212,8 @@ pub struct ListMultipartUploadsOutput  {
     /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListMultipartUploadsOutput {
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
@@ -3097,6 +4267,16 @@ impl ListMultipartUploadsOutput {
         self.encoding_type.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListMultipartUploadsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListMultipartUploadsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
 pub mod list_multipart_uploads_output {
     
@@ -3116,6 +4296,8 @@ pub mod list_multipart_uploads_output {
         pub(crate) uploads: std::option::Option<std::vec::Vec<crate::model::MultipartUpload>>,
         pub(crate) common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
@@ -3242,6 +4424,24 @@ pub mod list_multipart_uploads_output {
         pub fn set_encoding_type(mut self, input: std::option::Option<crate::model::EncodingType>) -> Self {
             self.encoding_type = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
         pub fn build(self) -> crate::output::ListMultipartUploadsOutput {
             crate::output::ListMultipartUploadsOutput {
@@ -3271,6 +4471,8 @@ pub mod list_multipart_uploads_output {
                 ,
                 encoding_type: self.encoding_type
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3294,6 +4496,8 @@ pub struct ListBucketsOutput  {
     /// <p>The owner of the buckets listed.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::model::Owner>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListBucketsOutput {
     /// <p>The list of buckets owned by the requester.</p>
@@ -3305,6 +4509,16 @@ impl ListBucketsOutput {
         self.owner.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListBucketsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListBucketsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBucketsOutput`](crate::output::ListBucketsOutput).
 pub mod list_buckets_output {
     
@@ -3314,6 +4528,8 @@ pub mod list_buckets_output {
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `buckets`.
@@ -3340,6 +4556,24 @@ pub mod list_buckets_output {
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBucketsOutput`](crate::output::ListBucketsOutput).
         pub fn build(self) -> crate::output::ListBucketsOutput {
             crate::output::ListBucketsOutput {
@@ -3347,6 +4581,8 @@ pub mod list_buckets_output {
                 ,
                 owner: self.owner
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3376,6 +4612,8 @@ pub struct ListBucketMetricsConfigurationsOutput  {
     /// <p>The list of metrics configurations for a bucket.</p>
     #[doc(hidden)]
     pub metrics_configuration_list: std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListBucketMetricsConfigurationsOutput {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
@@ -3395,6 +4633,16 @@ impl ListBucketMetricsConfigurationsOutput {
         self.metrics_configuration_list.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListBucketMetricsConfigurationsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListBucketMetricsConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput).
 pub mod list_bucket_metrics_configurations_output {
     
@@ -3406,6 +4654,8 @@ pub mod list_bucket_metrics_configurations_output {
         pub(crate) continuation_token: std::option::Option<std::string::String>,
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
         pub(crate) metrics_configuration_list: std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
@@ -3450,6 +4700,24 @@ pub mod list_bucket_metrics_configurations_output {
         pub fn set_metrics_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>) -> Self {
             self.metrics_configuration_list = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsOutput`](crate::output::ListBucketMetricsConfigurationsOutput).
         pub fn build(self) -> crate::output::ListBucketMetricsConfigurationsOutput {
             crate::output::ListBucketMetricsConfigurationsOutput {
@@ -3462,6 +4730,8 @@ pub mod list_bucket_metrics_configurations_output {
                 ,
                 metrics_configuration_list: self.metrics_configuration_list
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3491,6 +4761,8 @@ pub struct ListBucketInventoryConfigurationsOutput  {
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     #[doc(hidden)]
     pub next_continuation_token: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListBucketInventoryConfigurationsOutput {
     /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
@@ -3510,6 +4782,16 @@ impl ListBucketInventoryConfigurationsOutput {
         self.next_continuation_token.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListBucketInventoryConfigurationsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListBucketInventoryConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput).
 pub mod list_bucket_inventory_configurations_output {
     
@@ -3521,6 +4803,8 @@ pub mod list_bucket_inventory_configurations_output {
         pub(crate) inventory_configuration_list: std::option::Option<std::vec::Vec<crate::model::InventoryConfiguration>>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
@@ -3565,6 +4849,24 @@ pub mod list_bucket_inventory_configurations_output {
         pub fn set_next_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_continuation_token = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsOutput`](crate::output::ListBucketInventoryConfigurationsOutput).
         pub fn build(self) -> crate::output::ListBucketInventoryConfigurationsOutput {
             crate::output::ListBucketInventoryConfigurationsOutput {
@@ -3577,6 +4879,8 @@ pub mod list_bucket_inventory_configurations_output {
                 ,
                 next_continuation_token: self.next_continuation_token
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3606,6 +4910,8 @@ pub struct ListBucketIntelligentTieringConfigurationsOutput  {
     /// <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
     #[doc(hidden)]
     pub intelligent_tiering_configuration_list: std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListBucketIntelligentTieringConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
@@ -3625,6 +4931,16 @@ impl ListBucketIntelligentTieringConfigurationsOutput {
         self.intelligent_tiering_configuration_list.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListBucketIntelligentTieringConfigurationsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListBucketIntelligentTieringConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput).
 pub mod list_bucket_intelligent_tiering_configurations_output {
     
@@ -3636,6 +4952,8 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
         pub(crate) continuation_token: std::option::Option<std::string::String>,
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
         pub(crate) intelligent_tiering_configuration_list: std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
@@ -3680,6 +4998,24 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
         pub fn set_intelligent_tiering_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>) -> Self {
             self.intelligent_tiering_configuration_list = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBucketIntelligentTieringConfigurationsOutput`](crate::output::ListBucketIntelligentTieringConfigurationsOutput).
         pub fn build(self) -> crate::output::ListBucketIntelligentTieringConfigurationsOutput {
             crate::output::ListBucketIntelligentTieringConfigurationsOutput {
@@ -3692,6 +5028,8 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
                 ,
                 intelligent_tiering_configuration_list: self.intelligent_tiering_configuration_list
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3721,6 +5059,8 @@ pub struct ListBucketAnalyticsConfigurationsOutput  {
     /// <p>The list of analytics configurations for a bucket.</p>
     #[doc(hidden)]
     pub analytics_configuration_list: std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl ListBucketAnalyticsConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
@@ -3740,6 +5080,16 @@ impl ListBucketAnalyticsConfigurationsOutput {
         self.analytics_configuration_list.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for ListBucketAnalyticsConfigurationsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for ListBucketAnalyticsConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput).
 pub mod list_bucket_analytics_configurations_output {
     
@@ -3751,6 +5101,8 @@ pub mod list_bucket_analytics_configurations_output {
         pub(crate) continuation_token: std::option::Option<std::string::String>,
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
         pub(crate) analytics_configuration_list: std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
@@ -3795,6 +5147,24 @@ pub mod list_bucket_analytics_configurations_output {
         pub fn set_analytics_configuration_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>) -> Self {
             self.analytics_configuration_list = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsOutput`](crate::output::ListBucketAnalyticsConfigurationsOutput).
         pub fn build(self) -> crate::output::ListBucketAnalyticsConfigurationsOutput {
             crate::output::ListBucketAnalyticsConfigurationsOutput {
@@ -3807,6 +5177,8 @@ pub mod list_bucket_analytics_configurations_output {
                 ,
                 analytics_configuration_list: self.analytics_configuration_list
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3938,6 +5310,8 @@ pub struct HeadObjectOutput  {
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     #[doc(hidden)]
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl HeadObjectOutput {
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
@@ -4126,9 +5500,21 @@ impl  std::fmt::Debug for HeadObjectOutput  {
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for HeadObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for HeadObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`HeadObjectOutput`](crate::output::HeadObjectOutput).
 pub mod head_object_output {
     
@@ -4170,6 +5556,8 @@ pub mod head_object_output {
         pub(crate) object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
         pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
@@ -4508,6 +5896,24 @@ pub mod head_object_output {
         pub fn set_object_lock_legal_hold_status(mut self, input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>) -> Self {
             self.object_lock_legal_hold_status = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`HeadObjectOutput`](crate::output::HeadObjectOutput).
         pub fn build(self) -> crate::output::HeadObjectOutput {
             crate::output::HeadObjectOutput {
@@ -4584,6 +5990,8 @@ pub mod head_object_output {
                 ,
                 object_lock_legal_hold_status: self.object_lock_legal_hold_status
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4624,6 +6032,8 @@ pub mod head_object_output {
             formatter.field("object_lock_mode", &self.object_lock_mode);
             formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
             formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -4641,7 +6051,19 @@ impl HeadObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HeadBucketOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for HeadBucketOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for HeadBucketOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`HeadBucketOutput`](crate::output::HeadBucketOutput).
 pub mod head_bucket_output {
     
@@ -4649,11 +6071,33 @@ pub mod head_bucket_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`HeadBucketOutput`](crate::output::HeadBucketOutput).
         pub fn build(self) -> crate::output::HeadBucketOutput {
             crate::output::HeadBucketOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4674,6 +6118,8 @@ pub struct GetPublicAccessBlockOutput  {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
@@ -4681,6 +6127,16 @@ impl GetPublicAccessBlockOutput {
         self.public_access_block_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetPublicAccessBlockOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetPublicAccessBlockOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
 pub mod get_public_access_block_output {
     
@@ -4689,6 +6145,8 @@ pub mod get_public_access_block_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
@@ -4700,11 +6158,31 @@ pub mod get_public_access_block_output {
         pub fn set_public_access_block_configuration(mut self, input: std::option::Option<crate::model::PublicAccessBlockConfiguration>) -> Self {
             self.public_access_block_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::GetPublicAccessBlockOutput {
             crate::output::GetPublicAccessBlockOutput {
                 public_access_block_configuration: self.public_access_block_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4727,6 +6205,8 @@ pub struct GetObjectTorrentOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectTorrentOutput {
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
@@ -4738,6 +6218,16 @@ impl GetObjectTorrentOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectTorrentOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectTorrentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput).
 pub mod get_object_torrent_output {
     
@@ -4747,6 +6237,8 @@ pub mod get_object_torrent_output {
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
@@ -4767,6 +6259,24 @@ pub mod get_object_torrent_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectTorrentOutput`](crate::output::GetObjectTorrentOutput).
         pub fn build(self) -> crate::output::GetObjectTorrentOutput {
             crate::output::GetObjectTorrentOutput {
@@ -4775,6 +6285,8 @@ pub mod get_object_torrent_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4798,6 +6310,8 @@ pub struct GetObjectTaggingOutput  {
     /// <p>Contains the tag set.</p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectTaggingOutput {
     /// <p>The versionId of the object for which you got the tagging information.</p>
@@ -4809,6 +6323,16 @@ impl GetObjectTaggingOutput {
         self.tag_set.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput).
 pub mod get_object_tagging_output {
     
@@ -4818,6 +6342,8 @@ pub mod get_object_tagging_output {
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The versionId of the object for which you got the tagging information.</p>
@@ -4844,6 +6370,24 @@ pub mod get_object_tagging_output {
         pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tag_set = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectTaggingOutput`](crate::output::GetObjectTaggingOutput).
         pub fn build(self) -> crate::output::GetObjectTaggingOutput {
             crate::output::GetObjectTaggingOutput {
@@ -4851,6 +6395,8 @@ pub mod get_object_tagging_output {
                 ,
                 tag_set: self.tag_set
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4871,6 +6417,8 @@ pub struct GetObjectRetentionOutput  {
     /// <p>The container element for an object's retention settings.</p>
     #[doc(hidden)]
     pub retention: std::option::Option<crate::model::ObjectLockRetention>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectRetentionOutput {
     /// <p>The container element for an object's retention settings.</p>
@@ -4878,6 +6426,16 @@ impl GetObjectRetentionOutput {
         self.retention.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectRetentionOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectRetentionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput).
 pub mod get_object_retention_output {
     
@@ -4886,6 +6444,8 @@ pub mod get_object_retention_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention: std::option::Option<crate::model::ObjectLockRetention>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The container element for an object's retention settings.</p>
@@ -4897,11 +6457,31 @@ pub mod get_object_retention_output {
         pub fn set_retention(mut self, input: std::option::Option<crate::model::ObjectLockRetention>) -> Self {
             self.retention = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectRetentionOutput`](crate::output::GetObjectRetentionOutput).
         pub fn build(self) -> crate::output::GetObjectRetentionOutput {
             crate::output::GetObjectRetentionOutput {
                 retention: self.retention
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4922,6 +6502,8 @@ pub struct GetObjectLockConfigurationOutput  {
     /// <p>The specified bucket's Object Lock configuration.</p>
     #[doc(hidden)]
     pub object_lock_configuration: std::option::Option<crate::model::ObjectLockConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectLockConfigurationOutput {
     /// <p>The specified bucket's Object Lock configuration.</p>
@@ -4929,6 +6511,16 @@ impl GetObjectLockConfigurationOutput {
         self.object_lock_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectLockConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectLockConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput).
 pub mod get_object_lock_configuration_output {
     
@@ -4937,6 +6529,8 @@ pub mod get_object_lock_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lock_configuration: std::option::Option<crate::model::ObjectLockConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The specified bucket's Object Lock configuration.</p>
@@ -4948,11 +6542,31 @@ pub mod get_object_lock_configuration_output {
         pub fn set_object_lock_configuration(mut self, input: std::option::Option<crate::model::ObjectLockConfiguration>) -> Self {
             self.object_lock_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectLockConfigurationOutput`](crate::output::GetObjectLockConfigurationOutput).
         pub fn build(self) -> crate::output::GetObjectLockConfigurationOutput {
             crate::output::GetObjectLockConfigurationOutput {
                 object_lock_configuration: self.object_lock_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4973,6 +6587,8 @@ pub struct GetObjectLegalHoldOutput  {
     /// <p>The current legal hold status for the specified object.</p>
     #[doc(hidden)]
     pub legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectLegalHoldOutput {
     /// <p>The current legal hold status for the specified object.</p>
@@ -4980,6 +6596,16 @@ impl GetObjectLegalHoldOutput {
         self.legal_hold.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectLegalHoldOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectLegalHoldOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput).
 pub mod get_object_legal_hold_output {
     
@@ -4988,6 +6614,8 @@ pub mod get_object_legal_hold_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The current legal hold status for the specified object.</p>
@@ -4999,11 +6627,31 @@ pub mod get_object_legal_hold_output {
         pub fn set_legal_hold(mut self, input: std::option::Option<crate::model::ObjectLockLegalHold>) -> Self {
             self.legal_hold = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput).
         pub fn build(self) -> crate::output::GetObjectLegalHoldOutput {
             crate::output::GetObjectLegalHoldOutput {
                 legal_hold: self.legal_hold
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5049,6 +6697,8 @@ pub struct GetObjectAttributesOutput  {
     /// <p>The size of the object in bytes.</p>
     #[doc(hidden)]
     pub object_size: i64,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectAttributesOutput {
     /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
@@ -5089,6 +6739,16 @@ impl GetObjectAttributesOutput {
         self.object_size
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectAttributesOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
 pub mod get_object_attributes_output {
     
@@ -5105,6 +6765,8 @@ pub mod get_object_attributes_output {
         pub(crate) object_parts: std::option::Option<crate::model::GetObjectAttributesParts>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) object_size: std::option::Option<i64>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
@@ -5190,6 +6852,24 @@ pub mod get_object_attributes_output {
         pub fn set_object_size(mut self, input: std::option::Option<i64>) -> Self {
             self.object_size = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
         pub fn build(self) -> crate::output::GetObjectAttributesOutput {
             crate::output::GetObjectAttributesOutput {
@@ -5213,6 +6893,8 @@ pub mod get_object_attributes_output {
                 object_size: self.object_size
                     .unwrap_or_default()
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5239,6 +6921,8 @@ pub struct GetObjectAclOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectAclOutput {
     /// <p> Container for the bucket owner's display name and ID.</p>
@@ -5254,6 +6938,16 @@ impl GetObjectAclOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectAclOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectAclOutput`](crate::output::GetObjectAclOutput).
 pub mod get_object_acl_output {
     
@@ -5264,6 +6958,8 @@ pub mod get_object_acl_output {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Container for the bucket owner's display name and ID.</p>
@@ -5299,6 +6995,24 @@ pub mod get_object_acl_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectAclOutput`](crate::output::GetObjectAclOutput).
         pub fn build(self) -> crate::output::GetObjectAclOutput {
             crate::output::GetObjectAclOutput {
@@ -5308,6 +7022,8 @@ pub mod get_object_acl_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5431,6 +7147,8 @@ pub struct GetObjectOutput  {
     /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
     #[doc(hidden)]
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetObjectOutput {
     /// <p>Object data.</p>
@@ -5617,9 +7335,21 @@ impl  std::fmt::Debug for GetObjectOutput  {
         formatter.field("object_lock_mode", &self.object_lock_mode);
         formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
         formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectOutput`](crate::output::GetObjectOutput).
 pub mod get_object_output {
     
@@ -5663,6 +7393,8 @@ pub mod get_object_output {
         pub(crate) object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
         pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Object data.</p>
@@ -5995,6 +7727,24 @@ pub mod get_object_output {
         pub fn set_object_lock_legal_hold_status(mut self, input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>) -> Self {
             self.object_lock_legal_hold_status = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectOutput`](crate::output::GetObjectOutput).
         pub fn build(self) -> crate::output::GetObjectOutput {
             crate::output::GetObjectOutput {
@@ -6077,6 +7827,8 @@ pub mod get_object_output {
                 ,
                 object_lock_legal_hold_status: self.object_lock_legal_hold_status
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6119,6 +7871,8 @@ pub mod get_object_output {
             formatter.field("object_lock_mode", &self.object_lock_mode);
             formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
             formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -6148,6 +7902,8 @@ pub struct GetBucketWebsiteOutput  {
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     #[doc(hidden)]
     pub routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketWebsiteOutput {
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
@@ -6167,6 +7923,16 @@ impl GetBucketWebsiteOutput {
         self.routing_rules.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketWebsiteOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketWebsiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput).
 pub mod get_bucket_website_output {
     
@@ -6178,6 +7944,8 @@ pub mod get_bucket_website_output {
         pub(crate) index_document: std::option::Option<crate::model::IndexDocument>,
         pub(crate) error_document: std::option::Option<crate::model::ErrorDocument>,
         pub(crate) routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
@@ -6222,6 +7990,24 @@ pub mod get_bucket_website_output {
         pub fn set_routing_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>) -> Self {
             self.routing_rules = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketWebsiteOutput`](crate::output::GetBucketWebsiteOutput).
         pub fn build(self) -> crate::output::GetBucketWebsiteOutput {
             crate::output::GetBucketWebsiteOutput {
@@ -6233,6 +8019,8 @@ pub mod get_bucket_website_output {
                 ,
                 routing_rules: self.routing_rules
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6256,6 +8044,8 @@ pub struct GetBucketVersioningOutput  {
     /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     #[doc(hidden)]
     pub mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketVersioningOutput {
     /// <p>The versioning state of the bucket.</p>
@@ -6267,6 +8057,16 @@ impl GetBucketVersioningOutput {
         self.mfa_delete.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketVersioningOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketVersioningOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
 pub mod get_bucket_versioning_output {
     
@@ -6276,6 +8076,8 @@ pub mod get_bucket_versioning_output {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
         pub(crate) mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The versioning state of the bucket.</p>
@@ -6296,6 +8098,24 @@ pub mod get_bucket_versioning_output {
         pub fn set_mfa_delete(mut self, input: std::option::Option<crate::model::MfaDeleteStatus>) -> Self {
             self.mfa_delete = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
         pub fn build(self) -> crate::output::GetBucketVersioningOutput {
             crate::output::GetBucketVersioningOutput {
@@ -6303,6 +8123,8 @@ pub mod get_bucket_versioning_output {
                 ,
                 mfa_delete: self.mfa_delete
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6323,6 +8145,8 @@ pub struct GetBucketTaggingOutput  {
     /// <p>Contains the tag set.</p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketTaggingOutput {
     /// <p>Contains the tag set.</p>
@@ -6330,6 +8154,16 @@ impl GetBucketTaggingOutput {
         self.tag_set.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
 pub mod get_bucket_tagging_output {
     
@@ -6338,6 +8172,8 @@ pub mod get_bucket_tagging_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_set`.
@@ -6355,11 +8191,31 @@ pub mod get_bucket_tagging_output {
         pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tag_set = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
         pub fn build(self) -> crate::output::GetBucketTaggingOutput {
             crate::output::GetBucketTaggingOutput {
                 tag_set: self.tag_set
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6380,6 +8236,8 @@ pub struct GetBucketRequestPaymentOutput  {
     /// <p>Specifies who pays for the download and request fees.</p>
     #[doc(hidden)]
     pub payer: std::option::Option<crate::model::Payer>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketRequestPaymentOutput {
     /// <p>Specifies who pays for the download and request fees.</p>
@@ -6387,6 +8245,16 @@ impl GetBucketRequestPaymentOutput {
         self.payer.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketRequestPaymentOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketRequestPaymentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput).
 pub mod get_bucket_request_payment_output {
     
@@ -6395,6 +8263,8 @@ pub mod get_bucket_request_payment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payer: std::option::Option<crate::model::Payer>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies who pays for the download and request fees.</p>
@@ -6406,11 +8276,31 @@ pub mod get_bucket_request_payment_output {
         pub fn set_payer(mut self, input: std::option::Option<crate::model::Payer>) -> Self {
             self.payer = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketRequestPaymentOutput`](crate::output::GetBucketRequestPaymentOutput).
         pub fn build(self) -> crate::output::GetBucketRequestPaymentOutput {
             crate::output::GetBucketRequestPaymentOutput {
                 payer: self.payer
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6431,6 +8321,8 @@ pub struct GetBucketReplicationOutput  {
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     #[doc(hidden)]
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketReplicationOutput {
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
@@ -6438,6 +8330,16 @@ impl GetBucketReplicationOutput {
         self.replication_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketReplicationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketReplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput).
 pub mod get_bucket_replication_output {
     
@@ -6446,6 +8348,8 @@ pub mod get_bucket_replication_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
@@ -6457,11 +8361,31 @@ pub mod get_bucket_replication_output {
         pub fn set_replication_configuration(mut self, input: std::option::Option<crate::model::ReplicationConfiguration>) -> Self {
             self.replication_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketReplicationOutput`](crate::output::GetBucketReplicationOutput).
         pub fn build(self) -> crate::output::GetBucketReplicationOutput {
             crate::output::GetBucketReplicationOutput {
                 replication_configuration: self.replication_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6482,6 +8406,8 @@ pub struct GetBucketPolicyStatusOutput  {
     /// <p>The policy status for the specified bucket.</p>
     #[doc(hidden)]
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketPolicyStatusOutput {
     /// <p>The policy status for the specified bucket.</p>
@@ -6489,6 +8415,16 @@ impl GetBucketPolicyStatusOutput {
         self.policy_status.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketPolicyStatusOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketPolicyStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput).
 pub mod get_bucket_policy_status_output {
     
@@ -6497,6 +8433,8 @@ pub mod get_bucket_policy_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The policy status for the specified bucket.</p>
@@ -6508,11 +8446,31 @@ pub mod get_bucket_policy_status_output {
         pub fn set_policy_status(mut self, input: std::option::Option<crate::model::PolicyStatus>) -> Self {
             self.policy_status = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketPolicyStatusOutput`](crate::output::GetBucketPolicyStatusOutput).
         pub fn build(self) -> crate::output::GetBucketPolicyStatusOutput {
             crate::output::GetBucketPolicyStatusOutput {
                 policy_status: self.policy_status
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6533,6 +8491,8 @@ pub struct GetBucketPolicyOutput  {
     /// <p>The bucket policy as a JSON document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketPolicyOutput {
     /// <p>The bucket policy as a JSON document.</p>
@@ -6540,6 +8500,16 @@ impl GetBucketPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketPolicyOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
 pub mod get_bucket_policy_output {
     
@@ -6548,6 +8518,8 @@ pub mod get_bucket_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The bucket policy as a JSON document.</p>
@@ -6559,11 +8531,31 @@ pub mod get_bucket_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
         pub fn build(self) -> crate::output::GetBucketPolicyOutput {
             crate::output::GetBucketPolicyOutput {
                 policy: self.policy
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6584,6 +8576,8 @@ pub struct GetBucketOwnershipControlsOutput  {
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub ownership_controls: std::option::Option<crate::model::OwnershipControls>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketOwnershipControlsOutput {
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
@@ -6591,6 +8585,16 @@ impl GetBucketOwnershipControlsOutput {
         self.ownership_controls.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketOwnershipControlsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketOwnershipControlsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput).
 pub mod get_bucket_ownership_controls_output {
     
@@ -6599,6 +8603,8 @@ pub mod get_bucket_ownership_controls_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ownership_controls: std::option::Option<crate::model::OwnershipControls>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
@@ -6610,11 +8616,31 @@ pub mod get_bucket_ownership_controls_output {
         pub fn set_ownership_controls(mut self, input: std::option::Option<crate::model::OwnershipControls>) -> Self {
             self.ownership_controls = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketOwnershipControlsOutput`](crate::output::GetBucketOwnershipControlsOutput).
         pub fn build(self) -> crate::output::GetBucketOwnershipControlsOutput {
             crate::output::GetBucketOwnershipControlsOutput {
                 ownership_controls: self.ownership_controls
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6644,6 +8670,8 @@ pub struct GetBucketNotificationConfigurationOutput  {
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     #[doc(hidden)]
     pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketNotificationConfigurationOutput {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
@@ -6663,6 +8691,16 @@ impl GetBucketNotificationConfigurationOutput {
         self.event_bridge_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketNotificationConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketNotificationConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput).
 pub mod get_bucket_notification_configuration_output {
     
@@ -6674,6 +8712,8 @@ pub mod get_bucket_notification_configuration_output {
         pub(crate) queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
         pub(crate) lambda_function_configurations: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
         pub(crate) event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `topic_configurations`.
@@ -6730,6 +8770,24 @@ pub mod get_bucket_notification_configuration_output {
         pub fn set_event_bridge_configuration(mut self, input: std::option::Option<crate::model::EventBridgeConfiguration>) -> Self {
             self.event_bridge_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketNotificationConfigurationOutput`](crate::output::GetBucketNotificationConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketNotificationConfigurationOutput {
             crate::output::GetBucketNotificationConfigurationOutput {
@@ -6741,6 +8799,8 @@ pub mod get_bucket_notification_configuration_output {
                 ,
                 event_bridge_configuration: self.event_bridge_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6761,6 +8821,8 @@ pub struct GetBucketMetricsConfigurationOutput  {
     /// <p>Specifies the metrics configuration.</p>
     #[doc(hidden)]
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketMetricsConfigurationOutput {
     /// <p>Specifies the metrics configuration.</p>
@@ -6768,6 +8830,16 @@ impl GetBucketMetricsConfigurationOutput {
         self.metrics_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketMetricsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketMetricsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput).
 pub mod get_bucket_metrics_configuration_output {
     
@@ -6776,6 +8848,8 @@ pub mod get_bucket_metrics_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the metrics configuration.</p>
@@ -6787,11 +8861,31 @@ pub mod get_bucket_metrics_configuration_output {
         pub fn set_metrics_configuration(mut self, input: std::option::Option<crate::model::MetricsConfiguration>) -> Self {
             self.metrics_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketMetricsConfigurationOutput`](crate::output::GetBucketMetricsConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketMetricsConfigurationOutput {
             crate::output::GetBucketMetricsConfigurationOutput {
                 metrics_configuration: self.metrics_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6812,6 +8906,8 @@ pub struct GetBucketLoggingOutput  {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     #[doc(hidden)]
     pub logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketLoggingOutput {
     /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
@@ -6819,6 +8915,16 @@ impl GetBucketLoggingOutput {
         self.logging_enabled.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketLoggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketLoggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput).
 pub mod get_bucket_logging_output {
     
@@ -6827,6 +8933,8 @@ pub mod get_bucket_logging_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
@@ -6838,11 +8946,31 @@ pub mod get_bucket_logging_output {
         pub fn set_logging_enabled(mut self, input: std::option::Option<crate::model::LoggingEnabled>) -> Self {
             self.logging_enabled = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketLoggingOutput`](crate::output::GetBucketLoggingOutput).
         pub fn build(self) -> crate::output::GetBucketLoggingOutput {
             crate::output::GetBucketLoggingOutput {
                 logging_enabled: self.logging_enabled
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6863,6 +8991,8 @@ pub struct GetBucketLocationOutput  {
     /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
     #[doc(hidden)]
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketLocationOutput {
     /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
@@ -6870,6 +9000,16 @@ impl GetBucketLocationOutput {
         self.location_constraint.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketLocationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketLocationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput).
 pub mod get_bucket_location_output {
     
@@ -6878,6 +9018,8 @@ pub mod get_bucket_location_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
@@ -6889,11 +9031,31 @@ pub mod get_bucket_location_output {
         pub fn set_location_constraint(mut self, input: std::option::Option<crate::model::BucketLocationConstraint>) -> Self {
             self.location_constraint = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketLocationOutput`](crate::output::GetBucketLocationOutput).
         pub fn build(self) -> crate::output::GetBucketLocationOutput {
             crate::output::GetBucketLocationOutput {
                 location_constraint: self.location_constraint
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6914,6 +9076,8 @@ pub struct GetBucketLifecycleConfigurationOutput  {
     /// <p>Container for a lifecycle rule.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketLifecycleConfigurationOutput {
     /// <p>Container for a lifecycle rule.</p>
@@ -6921,6 +9085,16 @@ impl GetBucketLifecycleConfigurationOutput {
         self.rules.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketLifecycleConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketLifecycleConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
 pub mod get_bucket_lifecycle_configuration_output {
     
@@ -6929,6 +9103,8 @@ pub mod get_bucket_lifecycle_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `rules`.
@@ -6946,11 +9122,31 @@ pub mod get_bucket_lifecycle_configuration_output {
         pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>) -> Self {
             self.rules = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketLifecycleConfigurationOutput {
             crate::output::GetBucketLifecycleConfigurationOutput {
                 rules: self.rules
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6971,6 +9167,8 @@ pub struct GetBucketInventoryConfigurationOutput  {
     /// <p>Specifies the inventory configuration.</p>
     #[doc(hidden)]
     pub inventory_configuration: std::option::Option<crate::model::InventoryConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketInventoryConfigurationOutput {
     /// <p>Specifies the inventory configuration.</p>
@@ -6978,6 +9176,16 @@ impl GetBucketInventoryConfigurationOutput {
         self.inventory_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketInventoryConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketInventoryConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput).
 pub mod get_bucket_inventory_configuration_output {
     
@@ -6986,6 +9194,8 @@ pub mod get_bucket_inventory_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inventory_configuration: std::option::Option<crate::model::InventoryConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the inventory configuration.</p>
@@ -6997,11 +9207,31 @@ pub mod get_bucket_inventory_configuration_output {
         pub fn set_inventory_configuration(mut self, input: std::option::Option<crate::model::InventoryConfiguration>) -> Self {
             self.inventory_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketInventoryConfigurationOutput`](crate::output::GetBucketInventoryConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketInventoryConfigurationOutput {
             crate::output::GetBucketInventoryConfigurationOutput {
                 inventory_configuration: self.inventory_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7022,6 +9252,8 @@ pub struct GetBucketIntelligentTieringConfigurationOutput  {
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
     #[doc(hidden)]
     pub intelligent_tiering_configuration: std::option::Option<crate::model::IntelligentTieringConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketIntelligentTieringConfigurationOutput {
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
@@ -7029,6 +9261,16 @@ impl GetBucketIntelligentTieringConfigurationOutput {
         self.intelligent_tiering_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketIntelligentTieringConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketIntelligentTieringConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput).
 pub mod get_bucket_intelligent_tiering_configuration_output {
     
@@ -7037,6 +9279,8 @@ pub mod get_bucket_intelligent_tiering_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intelligent_tiering_configuration: std::option::Option<crate::model::IntelligentTieringConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Container for S3 Intelligent-Tiering configuration.</p>
@@ -7048,11 +9292,31 @@ pub mod get_bucket_intelligent_tiering_configuration_output {
         pub fn set_intelligent_tiering_configuration(mut self, input: std::option::Option<crate::model::IntelligentTieringConfiguration>) -> Self {
             self.intelligent_tiering_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketIntelligentTieringConfigurationOutput`](crate::output::GetBucketIntelligentTieringConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketIntelligentTieringConfigurationOutput {
             crate::output::GetBucketIntelligentTieringConfigurationOutput {
                 intelligent_tiering_configuration: self.intelligent_tiering_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7073,6 +9337,8 @@ pub struct GetBucketEncryptionOutput  {
     /// <p>Specifies the default server-side-encryption configuration.</p>
     #[doc(hidden)]
     pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketEncryptionOutput {
     /// <p>Specifies the default server-side-encryption configuration.</p>
@@ -7080,6 +9346,16 @@ impl GetBucketEncryptionOutput {
         self.server_side_encryption_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketEncryptionOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketEncryptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput).
 pub mod get_bucket_encryption_output {
     
@@ -7088,6 +9364,8 @@ pub mod get_bucket_encryption_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the default server-side-encryption configuration.</p>
@@ -7099,11 +9377,31 @@ pub mod get_bucket_encryption_output {
         pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
             self.server_side_encryption_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketEncryptionOutput`](crate::output::GetBucketEncryptionOutput).
         pub fn build(self) -> crate::output::GetBucketEncryptionOutput {
             crate::output::GetBucketEncryptionOutput {
                 server_side_encryption_configuration: self.server_side_encryption_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7124,6 +9422,8 @@ pub struct GetBucketCorsOutput  {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     #[doc(hidden)]
     pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketCorsOutput {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
@@ -7131,6 +9431,16 @@ impl GetBucketCorsOutput {
         self.cors_rules.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketCorsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketCorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput).
 pub mod get_bucket_cors_output {
     
@@ -7139,6 +9449,8 @@ pub mod get_bucket_cors_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cors_rules`.
@@ -7156,11 +9468,31 @@ pub mod get_bucket_cors_output {
         pub fn set_cors_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>) -> Self {
             self.cors_rules = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketCorsOutput`](crate::output::GetBucketCorsOutput).
         pub fn build(self) -> crate::output::GetBucketCorsOutput {
             crate::output::GetBucketCorsOutput {
                 cors_rules: self.cors_rules
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7181,6 +9513,8 @@ pub struct GetBucketAnalyticsConfigurationOutput  {
     /// <p>The configuration and any analyses for the analytics filter.</p>
     #[doc(hidden)]
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfiguration>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketAnalyticsConfigurationOutput {
     /// <p>The configuration and any analyses for the analytics filter.</p>
@@ -7188,6 +9522,16 @@ impl GetBucketAnalyticsConfigurationOutput {
         self.analytics_configuration.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketAnalyticsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketAnalyticsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput).
 pub mod get_bucket_analytics_configuration_output {
     
@@ -7196,6 +9540,8 @@ pub mod get_bucket_analytics_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analytics_configuration: std::option::Option<crate::model::AnalyticsConfiguration>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The configuration and any analyses for the analytics filter.</p>
@@ -7207,11 +9553,31 @@ pub mod get_bucket_analytics_configuration_output {
         pub fn set_analytics_configuration(mut self, input: std::option::Option<crate::model::AnalyticsConfiguration>) -> Self {
             self.analytics_configuration = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketAnalyticsConfigurationOutput`](crate::output::GetBucketAnalyticsConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketAnalyticsConfigurationOutput {
             crate::output::GetBucketAnalyticsConfigurationOutput {
                 analytics_configuration: self.analytics_configuration
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7235,6 +9601,8 @@ pub struct GetBucketAclOutput  {
     /// <p>A list of grants.</p>
     #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketAclOutput {
     /// <p>Container for the bucket owner's display name and ID.</p>
@@ -7246,6 +9614,16 @@ impl GetBucketAclOutput {
         self.grants.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketAclOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketAclOutput`](crate::output::GetBucketAclOutput).
 pub mod get_bucket_acl_output {
     
@@ -7255,6 +9633,8 @@ pub mod get_bucket_acl_output {
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Container for the bucket owner's display name and ID.</p>
@@ -7281,6 +9661,24 @@ pub mod get_bucket_acl_output {
         pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::Grant>>) -> Self {
             self.grants = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketAclOutput`](crate::output::GetBucketAclOutput).
         pub fn build(self) -> crate::output::GetBucketAclOutput {
             crate::output::GetBucketAclOutput {
@@ -7288,6 +9686,8 @@ pub mod get_bucket_acl_output {
                 ,
                 grants: self.grants
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7308,6 +9708,8 @@ pub struct GetBucketAccelerateConfigurationOutput  {
     /// <p>The accelerate configuration of the bucket.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::BucketAccelerateStatus>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl GetBucketAccelerateConfigurationOutput {
     /// <p>The accelerate configuration of the bucket.</p>
@@ -7315,6 +9717,16 @@ impl GetBucketAccelerateConfigurationOutput {
         self.status.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for GetBucketAccelerateConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for GetBucketAccelerateConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput).
 pub mod get_bucket_accelerate_configuration_output {
     
@@ -7323,6 +9735,8 @@ pub mod get_bucket_accelerate_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BucketAccelerateStatus>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The accelerate configuration of the bucket.</p>
@@ -7334,11 +9748,31 @@ pub mod get_bucket_accelerate_configuration_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::BucketAccelerateStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBucketAccelerateConfigurationOutput`](crate::output::GetBucketAccelerateConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketAccelerateConfigurationOutput {
             crate::output::GetBucketAccelerateConfigurationOutput {
                 status: self.status
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7356,7 +9790,19 @@ impl GetBucketAccelerateConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePublicAccessBlockOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeletePublicAccessBlockOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeletePublicAccessBlockOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
 pub mod delete_public_access_block_output {
     
@@ -7364,11 +9810,33 @@ pub mod delete_public_access_block_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
         pub fn build(self) -> crate::output::DeletePublicAccessBlockOutput {
             crate::output::DeletePublicAccessBlockOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7389,6 +9857,8 @@ pub struct DeleteObjectTaggingOutput  {
     /// <p>The versionId of the object the tag-set was removed from.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl DeleteObjectTaggingOutput {
     /// <p>The versionId of the object the tag-set was removed from.</p>
@@ -7396,6 +9866,16 @@ impl DeleteObjectTaggingOutput {
         self.version_id.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for DeleteObjectTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteObjectTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput).
 pub mod delete_object_tagging_output {
     
@@ -7404,6 +9884,8 @@ pub mod delete_object_tagging_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The versionId of the object the tag-set was removed from.</p>
@@ -7415,11 +9897,31 @@ pub mod delete_object_tagging_output {
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObjectTaggingOutput`](crate::output::DeleteObjectTaggingOutput).
         pub fn build(self) -> crate::output::DeleteObjectTaggingOutput {
             crate::output::DeleteObjectTaggingOutput {
                 version_id: self.version_id
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7446,6 +9948,8 @@ pub struct DeleteObjectsOutput  {
     /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::Error>>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl DeleteObjectsOutput {
     /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
@@ -7461,6 +9965,16 @@ impl DeleteObjectsOutput {
         self.errors.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for DeleteObjectsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteObjectsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput).
 pub mod delete_objects_output {
     
@@ -7471,6 +9985,8 @@ pub mod delete_objects_output {
         pub(crate) deleted: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::Error>>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `deleted`.
@@ -7512,6 +10028,24 @@ pub mod delete_objects_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Error>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObjectsOutput`](crate::output::DeleteObjectsOutput).
         pub fn build(self) -> crate::output::DeleteObjectsOutput {
             crate::output::DeleteObjectsOutput {
@@ -7521,6 +10055,8 @@ pub mod delete_objects_output {
                 ,
                 errors: self.errors
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7547,6 +10083,8 @@ pub struct DeleteObjectOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl DeleteObjectOutput {
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
@@ -7562,6 +10100,16 @@ impl DeleteObjectOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for DeleteObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
 pub mod delete_object_output {
     
@@ -7572,6 +10120,8 @@ pub mod delete_object_output {
         pub(crate) delete_marker: std::option::Option<bool>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
@@ -7601,6 +10151,24 @@ pub mod delete_object_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
         pub fn build(self) -> crate::output::DeleteObjectOutput {
             crate::output::DeleteObjectOutput {
@@ -7611,6 +10179,8 @@ pub mod delete_object_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7628,7 +10198,19 @@ impl DeleteObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketWebsiteOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketWebsiteOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketWebsiteOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketWebsiteOutput`](crate::output::DeleteBucketWebsiteOutput).
 pub mod delete_bucket_website_output {
     
@@ -7636,11 +10218,33 @@ pub mod delete_bucket_website_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketWebsiteOutput`](crate::output::DeleteBucketWebsiteOutput).
         pub fn build(self) -> crate::output::DeleteBucketWebsiteOutput {
             crate::output::DeleteBucketWebsiteOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7658,7 +10262,19 @@ impl DeleteBucketWebsiteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketTaggingOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketTaggingOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketTaggingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
 pub mod delete_bucket_tagging_output {
     
@@ -7666,11 +10282,33 @@ pub mod delete_bucket_tagging_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
         pub fn build(self) -> crate::output::DeleteBucketTaggingOutput {
             crate::output::DeleteBucketTaggingOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7688,7 +10326,19 @@ impl DeleteBucketTaggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketReplicationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketReplicationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketReplicationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketReplicationOutput`](crate::output::DeleteBucketReplicationOutput).
 pub mod delete_bucket_replication_output {
     
@@ -7696,11 +10346,33 @@ pub mod delete_bucket_replication_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketReplicationOutput`](crate::output::DeleteBucketReplicationOutput).
         pub fn build(self) -> crate::output::DeleteBucketReplicationOutput {
             crate::output::DeleteBucketReplicationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7718,7 +10390,19 @@ impl DeleteBucketReplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketPolicyOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketPolicyOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
 pub mod delete_bucket_policy_output {
     
@@ -7726,11 +10410,33 @@ pub mod delete_bucket_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
         pub fn build(self) -> crate::output::DeleteBucketPolicyOutput {
             crate::output::DeleteBucketPolicyOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7748,7 +10454,19 @@ impl DeleteBucketPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControlsOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketOwnershipControlsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketOwnershipControlsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketOwnershipControlsOutput`](crate::output::DeleteBucketOwnershipControlsOutput).
 pub mod delete_bucket_ownership_controls_output {
     
@@ -7756,11 +10474,33 @@ pub mod delete_bucket_ownership_controls_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketOwnershipControlsOutput`](crate::output::DeleteBucketOwnershipControlsOutput).
         pub fn build(self) -> crate::output::DeleteBucketOwnershipControlsOutput {
             crate::output::DeleteBucketOwnershipControlsOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7778,7 +10518,19 @@ impl DeleteBucketOwnershipControlsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketMetricsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketMetricsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketMetricsConfigurationOutput`](crate::output::DeleteBucketMetricsConfigurationOutput).
 pub mod delete_bucket_metrics_configuration_output {
     
@@ -7786,11 +10538,33 @@ pub mod delete_bucket_metrics_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketMetricsConfigurationOutput`](crate::output::DeleteBucketMetricsConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketMetricsConfigurationOutput {
             crate::output::DeleteBucketMetricsConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7808,7 +10582,19 @@ impl DeleteBucketMetricsConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketLifecycleOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketLifecycleOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketLifecycleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketLifecycleOutput`](crate::output::DeleteBucketLifecycleOutput).
 pub mod delete_bucket_lifecycle_output {
     
@@ -7816,11 +10602,33 @@ pub mod delete_bucket_lifecycle_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketLifecycleOutput`](crate::output::DeleteBucketLifecycleOutput).
         pub fn build(self) -> crate::output::DeleteBucketLifecycleOutput {
             crate::output::DeleteBucketLifecycleOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7838,7 +10646,19 @@ impl DeleteBucketLifecycleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketInventoryConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketInventoryConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketInventoryConfigurationOutput`](crate::output::DeleteBucketInventoryConfigurationOutput).
 pub mod delete_bucket_inventory_configuration_output {
     
@@ -7846,11 +10666,33 @@ pub mod delete_bucket_inventory_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketInventoryConfigurationOutput`](crate::output::DeleteBucketInventoryConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketInventoryConfigurationOutput {
             crate::output::DeleteBucketInventoryConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7868,7 +10710,19 @@ impl DeleteBucketInventoryConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketIntelligentTieringConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketIntelligentTieringConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::output::DeleteBucketIntelligentTieringConfigurationOutput).
 pub mod delete_bucket_intelligent_tiering_configuration_output {
     
@@ -7876,11 +10730,33 @@ pub mod delete_bucket_intelligent_tiering_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::output::DeleteBucketIntelligentTieringConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketIntelligentTieringConfigurationOutput {
             crate::output::DeleteBucketIntelligentTieringConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7898,7 +10774,19 @@ impl DeleteBucketIntelligentTieringConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketEncryptionOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketEncryptionOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketEncryptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketEncryptionOutput`](crate::output::DeleteBucketEncryptionOutput).
 pub mod delete_bucket_encryption_output {
     
@@ -7906,11 +10794,33 @@ pub mod delete_bucket_encryption_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketEncryptionOutput`](crate::output::DeleteBucketEncryptionOutput).
         pub fn build(self) -> crate::output::DeleteBucketEncryptionOutput {
             crate::output::DeleteBucketEncryptionOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7928,7 +10838,19 @@ impl DeleteBucketEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketCorsOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketCorsOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketCorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketCorsOutput`](crate::output::DeleteBucketCorsOutput).
 pub mod delete_bucket_cors_output {
     
@@ -7936,11 +10858,33 @@ pub mod delete_bucket_cors_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketCorsOutput`](crate::output::DeleteBucketCorsOutput).
         pub fn build(self) -> crate::output::DeleteBucketCorsOutput {
             crate::output::DeleteBucketCorsOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7958,7 +10902,19 @@ impl DeleteBucketCorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfigurationOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketAnalyticsConfigurationOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketAnalyticsConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketAnalyticsConfigurationOutput`](crate::output::DeleteBucketAnalyticsConfigurationOutput).
 pub mod delete_bucket_analytics_configuration_output {
     
@@ -7966,11 +10922,33 @@ pub mod delete_bucket_analytics_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketAnalyticsConfigurationOutput`](crate::output::DeleteBucketAnalyticsConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketAnalyticsConfigurationOutput {
             crate::output::DeleteBucketAnalyticsConfigurationOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7988,7 +10966,19 @@ impl DeleteBucketAnalyticsConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBucketOutput  {
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
+impl crate::s3_request_id::RequestIdExt for DeleteBucketOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for DeleteBucketOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
     
@@ -7996,11 +10986,33 @@ pub mod delete_bucket_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
         pub fn build(self) -> crate::output::DeleteBucketOutput {
             crate::output::DeleteBucketOutput {
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8060,6 +11072,8 @@ pub struct CreateMultipartUploadOutput  {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     #[doc(hidden)]
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl CreateMultipartUploadOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> 
@@ -8134,9 +11148,21 @@ impl  std::fmt::Debug for CreateMultipartUploadOutput  {
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for CreateMultipartUploadOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for CreateMultipartUploadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput).
 pub mod create_multipart_upload_output {
     
@@ -8157,6 +11183,8 @@ pub mod create_multipart_upload_output {
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> 
@@ -8282,6 +11310,24 @@ pub mod create_multipart_upload_output {
         pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::model::ChecksumAlgorithm>) -> Self {
             self.checksum_algorithm = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput).
         pub fn build(self) -> crate::output::CreateMultipartUploadOutput {
             crate::output::CreateMultipartUploadOutput {
@@ -8312,6 +11358,8 @@ pub mod create_multipart_upload_output {
                 ,
                 checksum_algorithm: self.checksum_algorithm
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8331,6 +11379,8 @@ pub mod create_multipart_upload_output {
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
             formatter.field("checksum_algorithm", &self.checksum_algorithm);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -8351,6 +11401,8 @@ pub struct CreateBucketOutput  {
     /// <p>A forward slash followed by the name of the bucket.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl CreateBucketOutput {
     /// <p>A forward slash followed by the name of the bucket.</p>
@@ -8358,6 +11410,16 @@ impl CreateBucketOutput {
         self.location.as_deref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for CreateBucketOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for CreateBucketOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
     
@@ -8366,6 +11428,8 @@ pub mod create_bucket_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A forward slash followed by the name of the bucket.</p>
@@ -8377,11 +11441,31 @@ pub mod create_bucket_output {
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput).
         pub fn build(self) -> crate::output::CreateBucketOutput {
             crate::output::CreateBucketOutput {
                 location: self.location
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8432,6 +11516,8 @@ pub struct CopyObjectOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl CopyObjectOutput {
     /// <p>Container for all response elements.</p>
@@ -8493,9 +11579,21 @@ impl  std::fmt::Debug for CopyObjectOutput  {
         formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for CopyObjectOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for CopyObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CopyObjectOutput`](crate::output::CopyObjectOutput).
 pub mod copy_object_output {
     
@@ -8514,6 +11612,8 @@ pub mod copy_object_output {
         pub(crate) ssekms_encryption_context: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Container for all response elements.</p>
@@ -8615,6 +11715,24 @@ pub mod copy_object_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CopyObjectOutput`](crate::output::CopyObjectOutput).
         pub fn build(self) -> crate::output::CopyObjectOutput {
             crate::output::CopyObjectOutput {
@@ -8641,6 +11759,8 @@ pub mod copy_object_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8658,6 +11778,8 @@ pub mod copy_object_output {
             formatter.field("ssekms_encryption_context", &"*** Sensitive Data Redacted ***");
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -8719,6 +11841,8 @@ pub struct CompleteMultipartUploadOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl CompleteMultipartUploadOutput {
     /// <p>The URI that identifies the newly created object.</p>
@@ -8797,9 +11921,21 @@ impl  std::fmt::Debug for CompleteMultipartUploadOutput  {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("_extended_request_id", &self._extended_request_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl crate::s3_request_id::RequestIdExt for CompleteMultipartUploadOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for CompleteMultipartUploadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
 pub mod complete_multipart_upload_output {
     
@@ -8821,6 +11957,8 @@ pub mod complete_multipart_upload_output {
         pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URI that identifies the newly created object.</p>
@@ -8953,6 +12091,24 @@ pub mod complete_multipart_upload_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
         pub fn build(self) -> crate::output::CompleteMultipartUploadOutput {
             crate::output::CompleteMultipartUploadOutput {
@@ -8985,6 +12141,8 @@ pub mod complete_multipart_upload_output {
                 ,
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -9005,6 +12163,8 @@ pub mod complete_multipart_upload_output {
             formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
             formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
             formatter.field("request_charged", &self.request_charged);
+            formatter.field("_extended_request_id", &self._extended_request_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -9025,6 +12185,8 @@ pub struct AbortMultipartUploadOutput  {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    _extended_request_id: Option<String>,
+    _request_id: Option<String>,
 }
 impl AbortMultipartUploadOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -9032,6 +12194,16 @@ impl AbortMultipartUploadOutput {
         self.request_charged.as_ref()
     }
 }
+impl crate::s3_request_id::RequestIdExt for AbortMultipartUploadOutput {
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
+impl aws_http::request_id::RequestId for AbortMultipartUploadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
 pub mod abort_multipart_upload_output {
     
@@ -9040,6 +12212,8 @@ pub mod abort_multipart_upload_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        _extended_request_id: Option<String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -9051,11 +12225,31 @@ pub mod abort_multipart_upload_output {
         pub fn set_request_charged(mut self, input: std::option::Option<crate::model::RequestCharged>) -> Self {
             self.request_charged = input; self
         }
+        pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
         pub fn build(self) -> crate::output::AbortMultipartUploadOutput {
             crate::output::AbortMultipartUploadOutput {
                 request_charged: self.request_charged
                 ,
+                _extended_request_id: self._extended_request_id,
+                _request_id: self._request_id,
             }
         }
     }

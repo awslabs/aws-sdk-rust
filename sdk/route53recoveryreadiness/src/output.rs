@@ -19,6 +19,7 @@ pub struct UpdateResourceSetOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -43,6 +44,11 @@ impl UpdateResourceSetOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResourceSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
 pub mod update_resource_set_output {
     
@@ -55,6 +61,7 @@ pub mod update_resource_set_output {
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -116,6 +123,15 @@ pub mod update_resource_set_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
         pub fn build(self) -> crate::output::UpdateResourceSetOutput {
             crate::output::UpdateResourceSetOutput {
@@ -129,6 +145,7 @@ pub mod update_resource_set_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -158,6 +175,7 @@ pub struct UpdateRecoveryGroupOutput  {
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
@@ -177,6 +195,11 @@ impl UpdateRecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRecoveryGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
 pub mod update_recovery_group_output {
     
@@ -188,6 +211,7 @@ pub mod update_recovery_group_output {
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -238,6 +262,15 @@ pub mod update_recovery_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
         pub fn build(self) -> crate::output::UpdateRecoveryGroupOutput {
             crate::output::UpdateRecoveryGroupOutput {
@@ -249,6 +282,7 @@ pub mod update_recovery_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -278,6 +312,7 @@ pub struct UpdateReadinessCheckOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -297,6 +332,11 @@ impl UpdateReadinessCheckOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateReadinessCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
 pub mod update_readiness_check_output {
     
@@ -308,6 +348,7 @@ pub mod update_readiness_check_output {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -352,6 +393,15 @@ pub mod update_readiness_check_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
         pub fn build(self) -> crate::output::UpdateReadinessCheckOutput {
             crate::output::UpdateReadinessCheckOutput {
@@ -363,6 +413,7 @@ pub mod update_readiness_check_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -395,6 +446,7 @@ pub struct UpdateCellOutput  {
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -418,6 +470,11 @@ impl UpdateCellOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCellOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCellOutput`](crate::output::UpdateCellOutput).
 pub mod update_cell_output {
     
@@ -430,6 +487,7 @@ pub mod update_cell_output {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -495,6 +553,15 @@ pub mod update_cell_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCellOutput`](crate::output::UpdateCellOutput).
         pub fn build(self) -> crate::output::UpdateCellOutput {
             crate::output::UpdateCellOutput {
@@ -508,6 +575,7 @@ pub mod update_cell_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -525,7 +593,13 @@ impl UpdateCellOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -533,11 +607,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -555,7 +640,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -563,11 +654,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -588,6 +690,7 @@ pub struct ListTagsForResourcesOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutput {
     /// <p></p>
@@ -595,6 +698,11 @@ impl ListTagsForResourcesOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
 pub mod list_tags_for_resources_output {
     
@@ -603,6 +711,7 @@ pub mod list_tags_for_resources_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -620,11 +729,21 @@ pub mod list_tags_for_resources_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
         pub fn build(self) -> crate::output::ListTagsForResourcesOutput {
             crate::output::ListTagsForResourcesOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -648,6 +767,7 @@ pub struct ListRulesOutput  {
     /// <p>A list of readiness rules for a specific resource type.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
+    _request_id: Option<String>,
 }
 impl ListRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -659,6 +779,11 @@ impl ListRulesOutput {
         self.rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
     
@@ -668,6 +793,7 @@ pub mod list_rules_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -694,6 +820,15 @@ pub mod list_rules_output {
         pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>) -> Self {
             self.rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
@@ -701,6 +836,7 @@ pub mod list_rules_output {
                 ,
                 rules: self.rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -724,6 +860,7 @@ pub struct ListResourceSetsOutput  {
     /// <p>A list of resource sets associated with the account.</p>
     #[doc(hidden)]
     pub resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
+    _request_id: Option<String>,
 }
 impl ListResourceSetsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -735,6 +872,11 @@ impl ListResourceSetsOutput {
         self.resource_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourceSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
 pub mod list_resource_sets_output {
     
@@ -744,6 +886,7 @@ pub mod list_resource_sets_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -770,6 +913,15 @@ pub mod list_resource_sets_output {
         pub fn set_resource_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceSetOutput>>) -> Self {
             self.resource_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
         pub fn build(self) -> crate::output::ListResourceSetsOutput {
             crate::output::ListResourceSetsOutput {
@@ -777,6 +929,7 @@ pub mod list_resource_sets_output {
                 ,
                 resource_sets: self.resource_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -800,6 +953,7 @@ pub struct ListRecoveryGroupsOutput  {
     /// <p>A list of recovery groups.</p>
     #[doc(hidden)]
     pub recovery_groups: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
+    _request_id: Option<String>,
 }
 impl ListRecoveryGroupsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -811,6 +965,11 @@ impl ListRecoveryGroupsOutput {
         self.recovery_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRecoveryGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
 pub mod list_recovery_groups_output {
     
@@ -820,6 +979,7 @@ pub mod list_recovery_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recovery_groups: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -846,6 +1006,15 @@ pub mod list_recovery_groups_output {
         pub fn set_recovery_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>) -> Self {
             self.recovery_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
         pub fn build(self) -> crate::output::ListRecoveryGroupsOutput {
             crate::output::ListRecoveryGroupsOutput {
@@ -853,6 +1022,7 @@ pub mod list_recovery_groups_output {
                 ,
                 recovery_groups: self.recovery_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -876,6 +1046,7 @@ pub struct ListReadinessChecksOutput  {
     /// <p>A list of readiness checks associated with the account.</p>
     #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
+    _request_id: Option<String>,
 }
 impl ListReadinessChecksOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -887,6 +1058,11 @@ impl ListReadinessChecksOutput {
         self.readiness_checks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReadinessChecksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
 pub mod list_readiness_checks_output {
     
@@ -896,6 +1072,7 @@ pub mod list_readiness_checks_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -922,6 +1099,15 @@ pub mod list_readiness_checks_output {
         pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckOutput>>) -> Self {
             self.readiness_checks = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
         pub fn build(self) -> crate::output::ListReadinessChecksOutput {
             crate::output::ListReadinessChecksOutput {
@@ -929,6 +1115,7 @@ pub mod list_readiness_checks_output {
                 ,
                 readiness_checks: self.readiness_checks
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -952,6 +1139,7 @@ pub struct ListCrossAccountAuthorizationsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCrossAccountAuthorizationsOutput {
     /// <p>A list of cross-account authorizations.</p>
@@ -963,6 +1151,11 @@ impl ListCrossAccountAuthorizationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCrossAccountAuthorizationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
 pub mod list_cross_account_authorizations_output {
     
@@ -972,6 +1165,7 @@ pub mod list_cross_account_authorizations_output {
     pub struct Builder {
         pub(crate) cross_account_authorizations: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cross_account_authorizations`.
@@ -998,6 +1192,15 @@ pub mod list_cross_account_authorizations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
         pub fn build(self) -> crate::output::ListCrossAccountAuthorizationsOutput {
             crate::output::ListCrossAccountAuthorizationsOutput {
@@ -1005,6 +1208,7 @@ pub mod list_cross_account_authorizations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1028,6 +1232,7 @@ pub struct ListCellsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCellsOutput {
     /// <p>A list of cells.</p>
@@ -1039,6 +1244,11 @@ impl ListCellsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCellsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCellsOutput`](crate::output::ListCellsOutput).
 pub mod list_cells_output {
     
@@ -1048,6 +1258,7 @@ pub mod list_cells_output {
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<crate::model::CellOutput>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -1074,6 +1285,15 @@ pub mod list_cells_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCellsOutput`](crate::output::ListCellsOutput).
         pub fn build(self) -> crate::output::ListCellsOutput {
             crate::output::ListCellsOutput {
@@ -1081,6 +1301,7 @@ pub mod list_cells_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1114,6 +1335,7 @@ pub struct GetResourceSetOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -1138,6 +1360,11 @@ impl GetResourceSetOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
 pub mod get_resource_set_output {
     
@@ -1150,6 +1377,7 @@ pub mod get_resource_set_output {
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -1211,6 +1439,15 @@ pub mod get_resource_set_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
         pub fn build(self) -> crate::output::GetResourceSetOutput {
             crate::output::GetResourceSetOutput {
@@ -1224,6 +1461,7 @@ pub mod get_resource_set_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1250,6 +1488,7 @@ pub struct GetRecoveryGroupReadinessSummaryOutput  {
     /// <p>Summaries of the readiness checks for the recovery group.</p>
     #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+    _request_id: Option<String>,
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1265,6 +1504,11 @@ impl GetRecoveryGroupReadinessSummaryOutput {
         self.readiness_checks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecoveryGroupReadinessSummaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
 pub mod get_recovery_group_readiness_summary_output {
     
@@ -1275,6 +1519,7 @@ pub mod get_recovery_group_readiness_summary_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1310,6 +1555,15 @@ pub mod get_recovery_group_readiness_summary_output {
         pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>) -> Self {
             self.readiness_checks = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
         pub fn build(self) -> crate::output::GetRecoveryGroupReadinessSummaryOutput {
             crate::output::GetRecoveryGroupReadinessSummaryOutput {
@@ -1319,6 +1573,7 @@ pub mod get_recovery_group_readiness_summary_output {
                 ,
                 readiness_checks: self.readiness_checks
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1348,6 +1603,7 @@ pub struct GetRecoveryGroupOutput  {
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
@@ -1367,6 +1623,11 @@ impl GetRecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecoveryGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
 pub mod get_recovery_group_output {
     
@@ -1378,6 +1639,7 @@ pub mod get_recovery_group_output {
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -1428,6 +1690,15 @@ pub mod get_recovery_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
         pub fn build(self) -> crate::output::GetRecoveryGroupOutput {
             crate::output::GetRecoveryGroupOutput {
@@ -1439,6 +1710,7 @@ pub mod get_recovery_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1468,6 +1740,7 @@ pub struct GetReadinessCheckStatusOutput  {
     /// <p>Summary of the readiness of resources.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>,
+    _request_id: Option<String>,
 }
 impl GetReadinessCheckStatusOutput {
     /// <p>Top level messages for readiness check status</p>
@@ -1487,6 +1760,11 @@ impl GetReadinessCheckStatusOutput {
         self.resources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetReadinessCheckStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
 pub mod get_readiness_check_status_output {
     
@@ -1498,6 +1776,7 @@ pub mod get_readiness_check_status_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `messages`.
@@ -1548,6 +1827,15 @@ pub mod get_readiness_check_status_output {
         pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceResult>>) -> Self {
             self.resources = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckStatusOutput {
             crate::output::GetReadinessCheckStatusOutput {
@@ -1559,6 +1847,7 @@ pub mod get_readiness_check_status_output {
                 ,
                 resources: self.resources
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1585,6 +1874,7 @@ pub struct GetReadinessCheckResourceStatusOutput  {
     /// <p>Details of the rule's results.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
+    _request_id: Option<String>,
 }
 impl GetReadinessCheckResourceStatusOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1600,6 +1890,11 @@ impl GetReadinessCheckResourceStatusOutput {
         self.rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetReadinessCheckResourceStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
 pub mod get_readiness_check_resource_status_output {
     
@@ -1610,6 +1905,7 @@ pub mod get_readiness_check_resource_status_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1645,6 +1941,15 @@ pub mod get_readiness_check_resource_status_output {
         pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleResult>>) -> Self {
             self.rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckResourceStatusOutput {
             crate::output::GetReadinessCheckResourceStatusOutput {
@@ -1654,6 +1959,7 @@ pub mod get_readiness_check_resource_status_output {
                 ,
                 rules: self.rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1683,6 +1989,7 @@ pub struct GetReadinessCheckOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -1702,6 +2009,11 @@ impl GetReadinessCheckOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetReadinessCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
 pub mod get_readiness_check_output {
     
@@ -1713,6 +2025,7 @@ pub mod get_readiness_check_output {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -1757,6 +2070,15 @@ pub mod get_readiness_check_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
         pub fn build(self) -> crate::output::GetReadinessCheckOutput {
             crate::output::GetReadinessCheckOutput {
@@ -1768,6 +2090,7 @@ pub mod get_readiness_check_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1794,6 +2117,7 @@ pub struct GetCellReadinessSummaryOutput  {
     /// <p>Summaries for the readiness checks that make up the cell.</p>
     #[doc(hidden)]
     pub readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+    _request_id: Option<String>,
 }
 impl GetCellReadinessSummaryOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1809,6 +2133,11 @@ impl GetCellReadinessSummaryOutput {
         self.readiness_checks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCellReadinessSummaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
 pub mod get_cell_readiness_summary_output {
     
@@ -1819,6 +2148,7 @@ pub mod get_cell_readiness_summary_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
         pub(crate) readiness_checks: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1854,6 +2184,15 @@ pub mod get_cell_readiness_summary_output {
         pub fn set_readiness_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>) -> Self {
             self.readiness_checks = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
         pub fn build(self) -> crate::output::GetCellReadinessSummaryOutput {
             crate::output::GetCellReadinessSummaryOutput {
@@ -1863,6 +2202,7 @@ pub mod get_cell_readiness_summary_output {
                 ,
                 readiness_checks: self.readiness_checks
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1895,6 +2235,7 @@ pub struct GetCellOutput  {
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -1918,6 +2259,11 @@ impl GetCellOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCellOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCellOutput`](crate::output::GetCellOutput).
 pub mod get_cell_output {
     
@@ -1930,6 +2276,7 @@ pub mod get_cell_output {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -1995,6 +2342,15 @@ pub mod get_cell_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCellOutput`](crate::output::GetCellOutput).
         pub fn build(self) -> crate::output::GetCellOutput {
             crate::output::GetCellOutput {
@@ -2008,6 +2364,7 @@ pub mod get_cell_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2034,6 +2391,7 @@ pub struct GetArchitectureRecommendationsOutput  {
     /// <p>A list of the recommendations for the customer's application.</p>
     #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+    _request_id: Option<String>,
 }
 impl GetArchitectureRecommendationsOutput {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
@@ -2049,6 +2407,11 @@ impl GetArchitectureRecommendationsOutput {
         self.recommendations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetArchitectureRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
 pub mod get_architecture_recommendations_output {
     
@@ -2059,6 +2422,7 @@ pub mod get_architecture_recommendations_output {
         pub(crate) last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
@@ -2094,6 +2458,15 @@ pub mod get_architecture_recommendations_output {
         pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>) -> Self {
             self.recommendations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
         pub fn build(self) -> crate::output::GetArchitectureRecommendationsOutput {
             crate::output::GetArchitectureRecommendationsOutput {
@@ -2103,6 +2476,7 @@ pub mod get_architecture_recommendations_output {
                 ,
                 recommendations: self.recommendations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2120,7 +2494,13 @@ impl GetArchitectureRecommendationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceSetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteResourceSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
 pub mod delete_resource_set_output {
     
@@ -2128,11 +2508,22 @@ pub mod delete_resource_set_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
         pub fn build(self) -> crate::output::DeleteResourceSetOutput {
             crate::output::DeleteResourceSetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2150,7 +2541,13 @@ impl DeleteResourceSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecoveryGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteRecoveryGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
 pub mod delete_recovery_group_output {
     
@@ -2158,11 +2555,22 @@ pub mod delete_recovery_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
         pub fn build(self) -> crate::output::DeleteRecoveryGroupOutput {
             crate::output::DeleteRecoveryGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2180,7 +2588,13 @@ impl DeleteRecoveryGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReadinessCheckOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteReadinessCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
 pub mod delete_readiness_check_output {
     
@@ -2188,11 +2602,22 @@ pub mod delete_readiness_check_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
         pub fn build(self) -> crate::output::DeleteReadinessCheckOutput {
             crate::output::DeleteReadinessCheckOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2210,7 +2635,13 @@ impl DeleteReadinessCheckOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCrossAccountAuthorizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
 pub mod delete_cross_account_authorization_output {
     
@@ -2218,11 +2649,22 @@ pub mod delete_cross_account_authorization_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
         pub fn build(self) -> crate::output::DeleteCrossAccountAuthorizationOutput {
             crate::output::DeleteCrossAccountAuthorizationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2240,7 +2682,13 @@ impl DeleteCrossAccountAuthorizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCellOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCellOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCellOutput`](crate::output::DeleteCellOutput).
 pub mod delete_cell_output {
     
@@ -2248,11 +2696,22 @@ pub mod delete_cell_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCellOutput`](crate::output::DeleteCellOutput).
         pub fn build(self) -> crate::output::DeleteCellOutput {
             crate::output::DeleteCellOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2286,6 +2745,7 @@ pub struct CreateResourceSetOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -2310,6 +2770,11 @@ impl CreateResourceSetOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResourceSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
 pub mod create_resource_set_output {
     
@@ -2322,6 +2787,7 @@ pub mod create_resource_set_output {
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -2383,6 +2849,15 @@ pub mod create_resource_set_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
         pub fn build(self) -> crate::output::CreateResourceSetOutput {
             crate::output::CreateResourceSetOutput {
@@ -2396,6 +2871,7 @@ pub mod create_resource_set_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2425,6 +2901,7 @@ pub struct CreateRecoveryGroupOutput  {
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
@@ -2444,6 +2921,11 @@ impl CreateRecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRecoveryGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
 pub mod create_recovery_group_output {
     
@@ -2455,6 +2937,7 @@ pub mod create_recovery_group_output {
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cells`.
@@ -2505,6 +2988,15 @@ pub mod create_recovery_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
         pub fn build(self) -> crate::output::CreateRecoveryGroupOutput {
             crate::output::CreateRecoveryGroupOutput {
@@ -2516,6 +3008,7 @@ pub mod create_recovery_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2545,6 +3038,7 @@ pub struct CreateReadinessCheckOutput  {
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateReadinessCheckOutput {
     /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -2564,6 +3058,11 @@ impl CreateReadinessCheckOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateReadinessCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
 pub mod create_readiness_check_output {
     
@@ -2575,6 +3074,7 @@ pub mod create_readiness_check_output {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
@@ -2619,6 +3119,15 @@ pub mod create_readiness_check_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
         pub fn build(self) -> crate::output::CreateReadinessCheckOutput {
             crate::output::CreateReadinessCheckOutput {
@@ -2630,6 +3139,7 @@ pub mod create_readiness_check_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2650,6 +3160,7 @@ pub struct CreateCrossAccountAuthorizationOutput  {
     /// <p>The cross-account authorization.</p>
     #[doc(hidden)]
     pub cross_account_authorization: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCrossAccountAuthorizationOutput {
     /// <p>The cross-account authorization.</p>
@@ -2657,6 +3168,11 @@ impl CreateCrossAccountAuthorizationOutput {
         self.cross_account_authorization.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCrossAccountAuthorizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
 pub mod create_cross_account_authorization_output {
     
@@ -2665,6 +3181,7 @@ pub mod create_cross_account_authorization_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The cross-account authorization.</p>
@@ -2676,11 +3193,21 @@ pub mod create_cross_account_authorization_output {
         pub fn set_cross_account_authorization(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cross_account_authorization = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
         pub fn build(self) -> crate::output::CreateCrossAccountAuthorizationOutput {
             crate::output::CreateCrossAccountAuthorizationOutput {
                 cross_account_authorization: self.cross_account_authorization
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2713,6 +3240,7 @@ pub struct CreateCellOutput  {
     /// <p>Tags on the resources.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateCellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -2736,6 +3264,11 @@ impl CreateCellOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCellOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCellOutput`](crate::output::CreateCellOutput).
 pub mod create_cell_output {
     
@@ -2748,6 +3281,7 @@ pub mod create_cell_output {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) parent_readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the cell.</p>
@@ -2813,6 +3347,15 @@ pub mod create_cell_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCellOutput`](crate::output::CreateCellOutput).
         pub fn build(self) -> crate::output::CreateCellOutput {
             crate::output::CreateCellOutput {
@@ -2826,6 +3369,7 @@ pub mod create_cell_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecordOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutRecordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput).
 pub mod put_record_output {
     
@@ -11,11 +17,22 @@ pub mod put_record_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRecordOutput`](crate::output::PutRecordOutput).
         pub fn build(self) -> crate::output::PutRecordOutput {
             crate::output::PutRecordOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -36,6 +53,7 @@ pub struct GetRecordOutput  {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     #[doc(hidden)]
     pub record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+    _request_id: Option<String>,
 }
 impl GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
@@ -43,6 +61,11 @@ impl GetRecordOutput {
         self.record.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecordOutput`](crate::output::GetRecordOutput).
 pub mod get_record_output {
     
@@ -51,6 +74,7 @@ pub mod get_record_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `record`.
@@ -68,11 +92,21 @@ pub mod get_record_output {
         pub fn set_record(mut self, input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>) -> Self {
             self.record = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecordOutput`](crate::output::GetRecordOutput).
         pub fn build(self) -> crate::output::GetRecordOutput {
             crate::output::GetRecordOutput {
                 record: self.record
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -90,7 +124,13 @@ impl GetRecordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRecordOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteRecordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
 pub mod delete_record_output {
     
@@ -98,11 +138,22 @@ pub mod delete_record_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
         pub fn build(self) -> crate::output::DeleteRecordOutput {
             crate::output::DeleteRecordOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -129,6 +180,7 @@ pub struct BatchGetRecordOutput  {
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
     #[doc(hidden)]
     pub unprocessed_identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+    _request_id: Option<String>,
 }
 impl BatchGetRecordOutput {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
@@ -144,6 +196,11 @@ impl BatchGetRecordOutput {
         self.unprocessed_identifiers.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchGetRecordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
 pub mod batch_get_record_output {
     
@@ -154,6 +211,7 @@ pub mod batch_get_record_output {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,
         pub(crate) unprocessed_identifiers: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -201,6 +259,15 @@ pub mod batch_get_record_output {
         pub fn set_unprocessed_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>) -> Self {
             self.unprocessed_identifiers = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
         pub fn build(self) -> crate::output::BatchGetRecordOutput {
             crate::output::BatchGetRecordOutput {
@@ -210,6 +277,7 @@ pub mod batch_get_record_output {
                 ,
                 unprocessed_identifiers: self.unprocessed_identifiers
                 ,
+                _request_id: self._request_id,
             }
         }
     }

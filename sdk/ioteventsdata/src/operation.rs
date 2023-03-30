@@ -22,6 +22,7 @@ impl BatchAcknowledgeAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
                 type Output = std::result::Result<crate::output::BatchAcknowledgeAlarmOutput, crate::error::BatchAcknowledgeAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_batch_acknowledge_alarm_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDeleteDetector {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDetector {
                 type Output = std::result::Result<crate::output::BatchDeleteDetectorOutput, crate::error::BatchDeleteDetectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_detector_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchDisableAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
                 type Output = std::result::Result<crate::output::BatchDisableAlarmOutput, crate::error::BatchDisableAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_batch_disable_alarm_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchEnableAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for BatchEnableAlarm {
                 type Output = std::result::Result<crate::output::BatchEnableAlarmOutput, crate::error::BatchEnableAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_batch_enable_alarm_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl BatchPutMessage {
 impl aws_smithy_http::response::ParseStrictResponse for BatchPutMessage {
                 type Output = std::result::Result<crate::output::BatchPutMessageOutput, crate::error::BatchPutMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_put_message_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl BatchResetAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for BatchResetAlarm {
                 type Output = std::result::Result<crate::output::BatchResetAlarmOutput, crate::error::BatchResetAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_batch_reset_alarm_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl BatchSnoozeAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for BatchSnoozeAlarm {
                 type Output = std::result::Result<crate::output::BatchSnoozeAlarmOutput, crate::error::BatchSnoozeAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_batch_snooze_alarm_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl BatchUpdateDetector {
 impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
                 type Output = std::result::Result<crate::output::BatchUpdateDetectorOutput, crate::error::BatchUpdateDetectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_update_detector_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeAlarm {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarm {
                 type Output = std::result::Result<crate::output::DescribeAlarmOutput, crate::error::DescribeAlarmError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_alarm_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeDetector {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDetector {
                 type Output = std::result::Result<crate::output::DescribeDetectorOutput, crate::error::DescribeDetectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_detector_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListAlarms {
 impl aws_smithy_http::response::ParseStrictResponse for ListAlarms {
                 type Output = std::result::Result<crate::output::ListAlarmsOutput, crate::error::ListAlarmsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_alarms_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListDetectors {
 impl aws_smithy_http::response::ParseStrictResponse for ListDetectors {
                 type Output = std::result::Result<crate::output::ListDetectorsOutput, crate::error::ListDetectorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_detectors_error(response)
                      } else {

@@ -9,6 +9,7 @@ pub struct ListDetectorsOutput  {
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDetectorsOutput {
     /// <p>A list of summary information about the detectors (instances).</p>
@@ -20,6 +21,11 @@ impl ListDetectorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDetectorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
 pub mod list_detectors_output {
     
@@ -29,6 +35,7 @@ pub mod list_detectors_output {
     pub struct Builder {
         pub(crate) detector_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `detector_summaries`.
@@ -55,6 +62,15 @@ pub mod list_detectors_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
         pub fn build(self) -> crate::output::ListDetectorsOutput {
             crate::output::ListDetectorsOutput {
@@ -62,6 +78,7 @@ pub mod list_detectors_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -85,6 +102,7 @@ pub struct ListAlarmsOutput  {
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAlarmsOutput {
     /// <p>A list that summarizes each alarm.</p>
@@ -96,6 +114,11 @@ impl ListAlarmsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAlarmsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
 pub mod list_alarms_output {
     
@@ -105,6 +128,7 @@ pub mod list_alarms_output {
     pub struct Builder {
         pub(crate) alarm_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `alarm_summaries`.
@@ -131,6 +155,15 @@ pub mod list_alarms_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
         pub fn build(self) -> crate::output::ListAlarmsOutput {
             crate::output::ListAlarmsOutput {
@@ -138,6 +171,7 @@ pub mod list_alarms_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -158,6 +192,7 @@ pub struct DescribeDetectorOutput  {
     /// <p>Information about the detector (instance).</p>
     #[doc(hidden)]
     pub detector: std::option::Option<crate::model::Detector>,
+    _request_id: Option<String>,
 }
 impl DescribeDetectorOutput {
     /// <p>Information about the detector (instance).</p>
@@ -165,6 +200,11 @@ impl DescribeDetectorOutput {
         self.detector.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
 pub mod describe_detector_output {
     
@@ -173,6 +213,7 @@ pub mod describe_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector: std::option::Option<crate::model::Detector>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the detector (instance).</p>
@@ -184,11 +225,21 @@ pub mod describe_detector_output {
         pub fn set_detector(mut self, input: std::option::Option<crate::model::Detector>) -> Self {
             self.detector = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
         pub fn build(self) -> crate::output::DescribeDetectorOutput {
             crate::output::DescribeDetectorOutput {
                 detector: self.detector
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -209,6 +260,7 @@ pub struct DescribeAlarmOutput  {
     /// <p>Contains information about an alarm.</p>
     #[doc(hidden)]
     pub alarm: std::option::Option<crate::model::Alarm>,
+    _request_id: Option<String>,
 }
 impl DescribeAlarmOutput {
     /// <p>Contains information about an alarm.</p>
@@ -216,6 +268,11 @@ impl DescribeAlarmOutput {
         self.alarm.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
 pub mod describe_alarm_output {
     
@@ -224,6 +281,7 @@ pub mod describe_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm: std::option::Option<crate::model::Alarm>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains information about an alarm.</p>
@@ -235,11 +293,21 @@ pub mod describe_alarm_output {
         pub fn set_alarm(mut self, input: std::option::Option<crate::model::Alarm>) -> Self {
             self.alarm = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
         pub fn build(self) -> crate::output::DescribeAlarmOutput {
             crate::output::DescribeAlarmOutput {
                 alarm: self.alarm
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -260,6 +328,7 @@ pub struct BatchUpdateDetectorOutput  {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
     #[doc(hidden)]
     pub batch_update_detector_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchUpdateDetectorOutput {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
@@ -267,6 +336,11 @@ impl BatchUpdateDetectorOutput {
         self.batch_update_detector_error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchUpdateDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
 pub mod batch_update_detector_output {
     
@@ -275,6 +349,7 @@ pub mod batch_update_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_update_detector_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `batch_update_detector_error_entries`.
@@ -292,11 +367,21 @@ pub mod batch_update_detector_output {
         pub fn set_batch_update_detector_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>) -> Self {
             self.batch_update_detector_error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
         pub fn build(self) -> crate::output::BatchUpdateDetectorOutput {
             crate::output::BatchUpdateDetectorOutput {
                 batch_update_detector_error_entries: self.batch_update_detector_error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -317,6 +402,7 @@ pub struct BatchSnoozeAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchSnoozeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
@@ -324,6 +410,11 @@ impl BatchSnoozeAlarmOutput {
         self.error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchSnoozeAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
 pub mod batch_snooze_alarm_output {
     
@@ -332,6 +423,7 @@ pub mod batch_snooze_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -349,11 +441,21 @@ pub mod batch_snooze_alarm_output {
         pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>) -> Self {
             self.error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
         pub fn build(self) -> crate::output::BatchSnoozeAlarmOutput {
             crate::output::BatchSnoozeAlarmOutput {
                 error_entries: self.error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -374,6 +476,7 @@ pub struct BatchResetAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchResetAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
@@ -381,6 +484,11 @@ impl BatchResetAlarmOutput {
         self.error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchResetAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
 pub mod batch_reset_alarm_output {
     
@@ -389,6 +497,7 @@ pub mod batch_reset_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -406,11 +515,21 @@ pub mod batch_reset_alarm_output {
         pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>) -> Self {
             self.error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
         pub fn build(self) -> crate::output::BatchResetAlarmOutput {
             crate::output::BatchResetAlarmOutput {
                 error_entries: self.error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -431,6 +550,7 @@ pub struct BatchPutMessageOutput  {
     /// <p>A list of any errors encountered when sending the messages.</p>
     #[doc(hidden)]
     pub batch_put_message_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
@@ -438,6 +558,11 @@ impl BatchPutMessageOutput {
         self.batch_put_message_error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchPutMessageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
 pub mod batch_put_message_output {
     
@@ -446,6 +571,7 @@ pub mod batch_put_message_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_put_message_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `batch_put_message_error_entries`.
@@ -463,11 +589,21 @@ pub mod batch_put_message_output {
         pub fn set_batch_put_message_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>) -> Self {
             self.batch_put_message_error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
         pub fn build(self) -> crate::output::BatchPutMessageOutput {
             crate::output::BatchPutMessageOutput {
                 batch_put_message_error_entries: self.batch_put_message_error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -488,6 +624,7 @@ pub struct BatchEnableAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchEnableAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
@@ -495,6 +632,11 @@ impl BatchEnableAlarmOutput {
         self.error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchEnableAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
 pub mod batch_enable_alarm_output {
     
@@ -503,6 +645,7 @@ pub mod batch_enable_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -520,11 +663,21 @@ pub mod batch_enable_alarm_output {
         pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>) -> Self {
             self.error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
         pub fn build(self) -> crate::output::BatchEnableAlarmOutput {
             crate::output::BatchEnableAlarmOutput {
                 error_entries: self.error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -545,6 +698,7 @@ pub struct BatchDisableAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchDisableAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
@@ -552,6 +706,11 @@ impl BatchDisableAlarmOutput {
         self.error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDisableAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
 pub mod batch_disable_alarm_output {
     
@@ -560,6 +719,7 @@ pub mod batch_disable_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -577,11 +737,21 @@ pub mod batch_disable_alarm_output {
         pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>) -> Self {
             self.error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
         pub fn build(self) -> crate::output::BatchDisableAlarmOutput {
             crate::output::BatchDisableAlarmOutput {
                 error_entries: self.error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -602,6 +772,7 @@ pub struct BatchDeleteDetectorOutput  {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub batch_delete_detector_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchDeleteDetectorOutput {
     /// <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
@@ -609,6 +780,11 @@ impl BatchDeleteDetectorOutput {
         self.batch_delete_detector_error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDeleteDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
 pub mod batch_delete_detector_output {
     
@@ -617,6 +793,7 @@ pub mod batch_delete_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_delete_detector_error_entries: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `batch_delete_detector_error_entries`.
@@ -634,11 +811,21 @@ pub mod batch_delete_detector_output {
         pub fn set_batch_delete_detector_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>) -> Self {
             self.batch_delete_detector_error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
         pub fn build(self) -> crate::output::BatchDeleteDetectorOutput {
             crate::output::BatchDeleteDetectorOutput {
                 batch_delete_detector_error_entries: self.batch_delete_detector_error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -659,6 +846,7 @@ pub struct BatchAcknowledgeAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     #[doc(hidden)]
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+    _request_id: Option<String>,
 }
 impl BatchAcknowledgeAlarmOutput {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
@@ -666,6 +854,11 @@ impl BatchAcknowledgeAlarmOutput {
         self.error_entries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchAcknowledgeAlarmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
 pub mod batch_acknowledge_alarm_output {
     
@@ -674,6 +867,7 @@ pub mod batch_acknowledge_alarm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `error_entries`.
@@ -691,11 +885,21 @@ pub mod batch_acknowledge_alarm_output {
         pub fn set_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>) -> Self {
             self.error_entries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
         pub fn build(self) -> crate::output::BatchAcknowledgeAlarmOutput {
             crate::output::BatchAcknowledgeAlarmOutput {
                 error_entries: self.error_entries
                 ,
+                _request_id: self._request_id,
             }
         }
     }

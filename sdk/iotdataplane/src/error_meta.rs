@@ -23,15 +23,8 @@ pub enum Error {
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The document encoding is not supported.</p>
     UnsupportedDocumentEncodingException(crate::error::UnsupportedDocumentEncodingException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -54,22 +47,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteThingShadowEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteThingShadowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteThingShadowError> for Error {
     fn from(err: crate::error::DeleteThingShadowError) -> Self {
-        match err.kind {
-            crate::error::DeleteThingShadowErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::DeleteThingShadowErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeleteThingShadowErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::DeleteThingShadowErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteThingShadowErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteThingShadowErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteThingShadowErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::DeleteThingShadowErrorKind::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
-            crate::error::DeleteThingShadowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteThingShadowError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::DeleteThingShadowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteThingShadowError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::DeleteThingShadowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteThingShadowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteThingShadowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::DeleteThingShadowError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteThingShadowError::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
+            crate::error::DeleteThingShadowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -77,21 +75,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRetainedMessageE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRetainedMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetRetainedMessageError> for Error {
     fn from(err: crate::error::GetRetainedMessageError) -> Self {
-        match err.kind {
-            crate::error::GetRetainedMessageErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::GetRetainedMessageErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetRetainedMessageErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::GetRetainedMessageErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetRetainedMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetRetainedMessageErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetRetainedMessageErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::GetRetainedMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetRetainedMessageError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::GetRetainedMessageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetRetainedMessageError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::GetRetainedMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetRetainedMessageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetRetainedMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetRetainedMessageError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetRetainedMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -99,22 +102,27 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetThingShadowError
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetThingShadowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetThingShadowError> for Error {
     fn from(err: crate::error::GetThingShadowError) -> Self {
-        match err.kind {
-            crate::error::GetThingShadowErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::GetThingShadowErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetThingShadowErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::GetThingShadowErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetThingShadowErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetThingShadowErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetThingShadowErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::GetThingShadowErrorKind::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
-            crate::error::GetThingShadowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetThingShadowError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::GetThingShadowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetThingShadowError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::GetThingShadowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetThingShadowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetThingShadowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::GetThingShadowError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetThingShadowError::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
+            crate::error::GetThingShadowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -122,21 +130,26 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListNamedShadowsFor
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListNamedShadowsForThingError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListNamedShadowsForThingError> for Error {
     fn from(err: crate::error::ListNamedShadowsForThingError) -> Self {
-        match err.kind {
-            crate::error::ListNamedShadowsForThingErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::ListNamedShadowsForThingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListNamedShadowsForThingError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::ListNamedShadowsForThingError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListNamedShadowsForThingError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::ListNamedShadowsForThingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListNamedShadowsForThingError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListNamedShadowsForThingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListNamedShadowsForThingError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListNamedShadowsForThingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -144,20 +157,25 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRetainedMessage
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRetainedMessagesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::ListRetainedMessagesError> for Error {
     fn from(err: crate::error::ListRetainedMessagesError) -> Self {
-        match err.kind {
-            crate::error::ListRetainedMessagesErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::ListRetainedMessagesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListRetainedMessagesErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::ListRetainedMessagesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListRetainedMessagesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListRetainedMessagesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::ListRetainedMessagesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListRetainedMessagesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::ListRetainedMessagesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListRetainedMessagesError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::ListRetainedMessagesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListRetainedMessagesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListRetainedMessagesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListRetainedMessagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -165,19 +183,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PublishError, R>> f
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PublishError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PublishError> for Error {
     fn from(err: crate::error::PublishError) -> Self {
-        match err.kind {
-            crate::error::PublishErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::PublishErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PublishErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::PublishErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PublishErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::PublishErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PublishError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::PublishError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::PublishError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::PublishError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::PublishError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::PublishError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -185,25 +208,47 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateThingShadowEr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateThingShadowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateThingShadowError> for Error {
     fn from(err: crate::error::UpdateThingShadowError) -> Self {
-        match err.kind {
-            crate::error::UpdateThingShadowErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateThingShadowErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-            crate::error::UpdateThingShadowErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateThingShadowErrorKind::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
-            crate::error::UpdateThingShadowErrorKind::RequestEntityTooLargeException(inner) => Error::RequestEntityTooLargeException(inner),
-            crate::error::UpdateThingShadowErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateThingShadowErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateThingShadowErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
-            crate::error::UpdateThingShadowErrorKind::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
-            crate::error::UpdateThingShadowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateThingShadowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateThingShadowError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::error::UpdateThingShadowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateThingShadowError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::error::UpdateThingShadowError::RequestEntityTooLargeException(inner) => Error::RequestEntityTooLargeException(inner),
+            crate::error::UpdateThingShadowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateThingShadowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateThingShadowError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateThingShadowError::UnsupportedDocumentEncodingException(inner) => Error::UnsupportedDocumentEncodingException(inner),
+            crate::error::UpdateThingShadowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalFailureException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::MethodNotAllowedException(e) => e.request_id(),
+            Self::RequestEntityTooLargeException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
+            Self::UnsupportedDocumentEncodingException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

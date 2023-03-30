@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRecommendationFeedbackOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutRecommendationFeedbackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
 pub mod put_recommendation_feedback_output {
     
@@ -71,11 +111,22 @@ pub mod put_recommendation_feedback_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::PutRecommendationFeedbackOutput {
             crate::output::PutRecommendationFeedbackOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -100,6 +151,7 @@ pub struct ListTagsForResourceOutput  {
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
@@ -111,6 +163,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -119,6 +176,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -144,11 +202,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -172,6 +240,7 @@ pub struct ListRepositoryAssociationsOutput  {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
@@ -183,6 +252,11 @@ impl ListRepositoryAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRepositoryAssociationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
 pub mod list_repository_associations_output {
     
@@ -192,6 +266,7 @@ pub mod list_repository_associations_output {
     pub struct Builder {
         pub(crate) repository_association_summaries: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `repository_association_summaries`.
@@ -218,6 +293,15 @@ pub mod list_repository_associations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
         pub fn build(self) -> crate::output::ListRepositoryAssociationsOutput {
             crate::output::ListRepositoryAssociationsOutput {
@@ -225,6 +309,7 @@ pub mod list_repository_associations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -248,6 +333,7 @@ pub struct ListRecommendationsOutput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRecommendationsOutput {
     /// <p>List of recommendations for the requested code review.</p>
@@ -259,6 +345,11 @@ impl ListRecommendationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
     
@@ -268,6 +359,7 @@ pub mod list_recommendations_output {
     pub struct Builder {
         pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recommendation_summaries`.
@@ -294,6 +386,15 @@ pub mod list_recommendations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
         pub fn build(self) -> crate::output::ListRecommendationsOutput {
             crate::output::ListRecommendationsOutput {
@@ -301,6 +402,7 @@ pub mod list_recommendations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -324,6 +426,7 @@ pub struct ListRecommendationFeedbackOutput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
@@ -335,6 +438,11 @@ impl ListRecommendationFeedbackOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRecommendationFeedbackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
 pub mod list_recommendation_feedback_output {
     
@@ -344,6 +452,7 @@ pub mod list_recommendation_feedback_output {
     pub struct Builder {
         pub(crate) recommendation_feedback_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recommendation_feedback_summaries`.
@@ -370,6 +479,15 @@ pub mod list_recommendation_feedback_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::ListRecommendationFeedbackOutput {
             crate::output::ListRecommendationFeedbackOutput {
@@ -377,6 +495,7 @@ pub mod list_recommendation_feedback_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -400,6 +519,7 @@ pub struct ListCodeReviewsOutput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCodeReviewsOutput {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
@@ -411,6 +531,11 @@ impl ListCodeReviewsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCodeReviewsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
 pub mod list_code_reviews_output {
     
@@ -420,6 +545,7 @@ pub mod list_code_reviews_output {
     pub struct Builder {
         pub(crate) code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `code_review_summaries`.
@@ -446,6 +572,15 @@ pub mod list_code_reviews_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
         pub fn build(self) -> crate::output::ListCodeReviewsOutput {
             crate::output::ListCodeReviewsOutput {
@@ -453,6 +588,7 @@ pub mod list_code_reviews_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -480,6 +616,7 @@ pub struct DisassociateRepositoryOutput  {
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DisassociateRepositoryOutput {
     /// <p>Information about the disassociated repository.</p>
@@ -495,6 +632,11 @@ impl DisassociateRepositoryOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateRepositoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
 pub mod disassociate_repository_output {
     
@@ -504,6 +646,7 @@ pub mod disassociate_repository_output {
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the disassociated repository.</p>
@@ -538,6 +681,15 @@ pub mod disassociate_repository_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
         pub fn build(self) -> crate::output::DisassociateRepositoryOutput {
             crate::output::DisassociateRepositoryOutput {
@@ -545,6 +697,7 @@ pub mod disassociate_repository_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -572,6 +725,7 @@ pub struct DescribeRepositoryAssociationOutput  {
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeRepositoryAssociationOutput {
     /// <p>Information about the repository association.</p>
@@ -587,6 +741,11 @@ impl DescribeRepositoryAssociationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRepositoryAssociationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
 pub mod describe_repository_association_output {
     
@@ -596,6 +755,7 @@ pub mod describe_repository_association_output {
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the repository association.</p>
@@ -630,6 +790,15 @@ pub mod describe_repository_association_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
         pub fn build(self) -> crate::output::DescribeRepositoryAssociationOutput {
             crate::output::DescribeRepositoryAssociationOutput {
@@ -637,6 +806,7 @@ pub mod describe_repository_association_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -657,6 +827,7 @@ pub struct DescribeRecommendationFeedbackOutput  {
     /// <p>The recommendation feedback given by the user.</p>
     #[doc(hidden)]
     pub recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
+    _request_id: Option<String>,
 }
 impl DescribeRecommendationFeedbackOutput {
     /// <p>The recommendation feedback given by the user.</p>
@@ -664,6 +835,11 @@ impl DescribeRecommendationFeedbackOutput {
         self.recommendation_feedback.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRecommendationFeedbackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
 pub mod describe_recommendation_feedback_output {
     
@@ -672,6 +848,7 @@ pub mod describe_recommendation_feedback_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The recommendation feedback given by the user.</p>
@@ -683,11 +860,21 @@ pub mod describe_recommendation_feedback_output {
         pub fn set_recommendation_feedback(mut self, input: std::option::Option<crate::model::RecommendationFeedback>) -> Self {
             self.recommendation_feedback = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::DescribeRecommendationFeedbackOutput {
             crate::output::DescribeRecommendationFeedbackOutput {
                 recommendation_feedback: self.recommendation_feedback
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -708,6 +895,7 @@ pub struct DescribeCodeReviewOutput  {
     /// <p>Information about the code review.</p>
     #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
+    _request_id: Option<String>,
 }
 impl DescribeCodeReviewOutput {
     /// <p>Information about the code review.</p>
@@ -715,6 +903,11 @@ impl DescribeCodeReviewOutput {
         self.code_review.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCodeReviewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
 pub mod describe_code_review_output {
     
@@ -723,6 +916,7 @@ pub mod describe_code_review_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the code review.</p>
@@ -734,11 +928,21 @@ pub mod describe_code_review_output {
         pub fn set_code_review(mut self, input: std::option::Option<crate::model::CodeReview>) -> Self {
             self.code_review = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
         pub fn build(self) -> crate::output::DescribeCodeReviewOutput {
             crate::output::DescribeCodeReviewOutput {
                 code_review: self.code_review
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -759,6 +963,7 @@ pub struct CreateCodeReviewOutput  {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
     #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
+    _request_id: Option<String>,
 }
 impl CreateCodeReviewOutput {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
@@ -766,6 +971,11 @@ impl CreateCodeReviewOutput {
         self.code_review.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCodeReviewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
 pub mod create_code_review_output {
     
@@ -774,6 +984,7 @@ pub mod create_code_review_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
@@ -785,11 +996,21 @@ pub mod create_code_review_output {
         pub fn set_code_review(mut self, input: std::option::Option<crate::model::CodeReview>) -> Self {
             self.code_review = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
         pub fn build(self) -> crate::output::CreateCodeReviewOutput {
             crate::output::CreateCodeReviewOutput {
                 code_review: self.code_review
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -817,6 +1038,7 @@ pub struct AssociateRepositoryOutput  {
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl AssociateRepositoryOutput {
     /// <p>Information about the repository association.</p>
@@ -832,6 +1054,11 @@ impl AssociateRepositoryOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateRepositoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
 pub mod associate_repository_output {
     
@@ -841,6 +1068,7 @@ pub mod associate_repository_output {
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the repository association.</p>
@@ -875,6 +1103,15 @@ pub mod associate_repository_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
         pub fn build(self) -> crate::output::AssociateRepositoryOutput {
             crate::output::AssociateRepositoryOutput {
@@ -882,6 +1119,7 @@ pub mod associate_repository_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

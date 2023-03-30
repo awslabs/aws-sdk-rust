@@ -9,6 +9,7 @@ pub struct ListScheduleGroupsOutput  {
     /// <p>The schedule groups that match the specified criteria.</p>
     #[doc(hidden)]
     pub schedule_groups: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListScheduleGroupsOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
@@ -20,6 +21,11 @@ impl ListScheduleGroupsOutput {
         self.schedule_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListScheduleGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
 pub mod list_schedule_groups_output {
     
@@ -29,6 +35,7 @@ pub mod list_schedule_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) schedule_groups: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
@@ -55,6 +62,15 @@ pub mod list_schedule_groups_output {
         pub fn set_schedule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduleGroupSummary>>) -> Self {
             self.schedule_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
         pub fn build(self) -> crate::output::ListScheduleGroupsOutput {
             crate::output::ListScheduleGroupsOutput {
@@ -62,6 +78,7 @@ pub mod list_schedule_groups_output {
                 ,
                 schedule_groups: self.schedule_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -82,6 +99,7 @@ pub struct CreateScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     #[doc(hidden)]
     pub schedule_group_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
@@ -89,6 +107,11 @@ impl CreateScheduleGroupOutput {
         self.schedule_group_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateScheduleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
 pub mod create_schedule_group_output {
     
@@ -97,6 +120,7 @@ pub mod create_schedule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_group_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
@@ -108,11 +132,21 @@ pub mod create_schedule_group_output {
         pub fn set_schedule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule_group_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
         pub fn build(self) -> crate::output::CreateScheduleGroupOutput {
             crate::output::CreateScheduleGroupOutput {
                 schedule_group_arn: self.schedule_group_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -130,7 +164,13 @@ impl CreateScheduleGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduleGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteScheduleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
 pub mod delete_schedule_group_output {
     
@@ -138,11 +178,22 @@ pub mod delete_schedule_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
         pub fn build(self) -> crate::output::DeleteScheduleGroupOutput {
             crate::output::DeleteScheduleGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -175,6 +226,7 @@ pub struct GetScheduleGroupOutput  {
     /// <p>The time at which the schedule group was last modified.</p>
     #[doc(hidden)]
     pub last_modification_date: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
@@ -198,6 +250,11 @@ impl GetScheduleGroupOutput {
         self.last_modification_date.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetScheduleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
 pub mod get_schedule_group_output {
     
@@ -210,6 +267,7 @@ pub mod get_schedule_group_output {
         pub(crate) state: std::option::Option<crate::model::ScheduleGroupState>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modification_date: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
@@ -257,6 +315,15 @@ pub mod get_schedule_group_output {
         pub fn set_last_modification_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modification_date = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
         pub fn build(self) -> crate::output::GetScheduleGroupOutput {
             crate::output::GetScheduleGroupOutput {
@@ -270,6 +337,7 @@ pub mod get_schedule_group_output {
                 ,
                 last_modification_date: self.last_modification_date
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -293,6 +361,7 @@ pub struct ListSchedulesOutput  {
     /// <p>The schedules that match the specified criteria.</p>
     #[doc(hidden)]
     pub schedules: std::option::Option<std::vec::Vec<crate::model::ScheduleSummary>>,
+    _request_id: Option<String>,
 }
 impl ListSchedulesOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
@@ -304,6 +373,11 @@ impl ListSchedulesOutput {
         self.schedules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSchedulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
 pub mod list_schedules_output {
     
@@ -313,6 +387,7 @@ pub mod list_schedules_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) schedules: std::option::Option<std::vec::Vec<crate::model::ScheduleSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
@@ -339,6 +414,15 @@ pub mod list_schedules_output {
         pub fn set_schedules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScheduleSummary>>) -> Self {
             self.schedules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
         pub fn build(self) -> crate::output::ListSchedulesOutput {
             crate::output::ListSchedulesOutput {
@@ -346,6 +430,7 @@ pub mod list_schedules_output {
                 ,
                 schedules: self.schedules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -366,6 +451,7 @@ pub struct CreateScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
@@ -373,6 +459,11 @@ impl CreateScheduleOutput {
         self.schedule_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateScheduleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
 pub mod create_schedule_output {
     
@@ -381,6 +472,7 @@ pub mod create_schedule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
@@ -392,11 +484,21 @@ pub mod create_schedule_output {
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
         pub fn build(self) -> crate::output::CreateScheduleOutput {
             crate::output::CreateScheduleOutput {
                 schedule_arn: self.schedule_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -414,7 +516,13 @@ impl CreateScheduleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduleOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteScheduleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
     
@@ -422,11 +530,22 @@ pub mod delete_schedule_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
         pub fn build(self) -> crate::output::DeleteScheduleOutput {
             crate::output::DeleteScheduleOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -447,6 +566,7 @@ pub struct UpdateScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
@@ -454,6 +574,11 @@ impl UpdateScheduleOutput {
         self.schedule_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateScheduleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
 pub mod update_schedule_output {
     
@@ -462,6 +587,7 @@ pub mod update_schedule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
@@ -473,11 +599,21 @@ pub mod update_schedule_output {
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
         pub fn build(self) -> crate::output::UpdateScheduleOutput {
             crate::output::UpdateScheduleOutput {
                 schedule_arn: self.schedule_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -546,6 +682,7 @@ pub struct GetScheduleOutput  {
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
     #[doc(hidden)]
     pub flexible_time_window: std::option::Option<crate::model::FlexibleTimeWindow>,
+    _request_id: Option<String>,
 }
 impl GetScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
@@ -614,6 +751,11 @@ impl GetScheduleOutput {
         self.flexible_time_window.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetScheduleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetScheduleOutput`](crate::output::GetScheduleOutput).
 pub mod get_schedule_output {
     
@@ -635,6 +777,7 @@ pub mod get_schedule_output {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
         pub(crate) flexible_time_window: std::option::Option<crate::model::FlexibleTimeWindow>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
@@ -781,6 +924,15 @@ pub mod get_schedule_output {
         pub fn set_flexible_time_window(mut self, input: std::option::Option<crate::model::FlexibleTimeWindow>) -> Self {
             self.flexible_time_window = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetScheduleOutput`](crate::output::GetScheduleOutput).
         pub fn build(self) -> crate::output::GetScheduleOutput {
             crate::output::GetScheduleOutput {
@@ -812,6 +964,7 @@ pub mod get_schedule_output {
                 ,
                 flexible_time_window: self.flexible_time_window
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -829,7 +982,13 @@ impl GetScheduleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -837,11 +996,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -859,7 +1029,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -867,11 +1043,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -892,6 +1079,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags associated with the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags associated with the specified resource.</p>
@@ -899,6 +1087,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -907,6 +1100,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -924,11 +1118,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

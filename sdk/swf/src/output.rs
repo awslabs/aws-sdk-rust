@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UndeprecateWorkflowTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
 pub mod undeprecate_workflow_type_output {
     
@@ -41,11 +64,22 @@ pub mod undeprecate_workflow_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateWorkflowTypeOutput {
             crate::output::UndeprecateWorkflowTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UndeprecateWorkflowTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateDomainOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UndeprecateDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
 pub mod undeprecate_domain_output {
     
@@ -71,11 +111,22 @@ pub mod undeprecate_domain_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
         pub fn build(self) -> crate::output::UndeprecateDomainOutput {
             crate::output::UndeprecateDomainOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl UndeprecateDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateActivityTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UndeprecateActivityTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
 pub mod undeprecate_activity_type_output {
     
@@ -101,11 +158,22 @@ pub mod undeprecate_activity_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateActivityTypeOutput {
             crate::output::UndeprecateActivityTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,7 +191,13 @@ impl UndeprecateActivityTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TerminateWorkflowExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
 pub mod terminate_workflow_execution_output {
     
@@ -131,11 +205,22 @@ pub mod terminate_workflow_execution_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::TerminateWorkflowExecutionOutput {
             crate::output::TerminateWorkflowExecutionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,7 +238,13 @@ impl TerminateWorkflowExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -161,11 +252,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -186,6 +288,7 @@ pub struct StartWorkflowExecutionOutput  {
     /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartWorkflowExecutionOutput {
     /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
@@ -193,6 +296,11 @@ impl StartWorkflowExecutionOutput {
         self.run_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartWorkflowExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
 pub mod start_workflow_execution_output {
     
@@ -201,6 +309,7 @@ pub mod start_workflow_execution_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
@@ -212,11 +321,21 @@ pub mod start_workflow_execution_output {
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::StartWorkflowExecutionOutput {
             crate::output::StartWorkflowExecutionOutput {
                 run_id: self.run_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -234,7 +353,13 @@ impl StartWorkflowExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalWorkflowExecutionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SignalWorkflowExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
 pub mod signal_workflow_execution_output {
     
@@ -242,11 +367,22 @@ pub mod signal_workflow_execution_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::SignalWorkflowExecutionOutput {
             crate::output::SignalWorkflowExecutionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -264,7 +400,13 @@ impl SignalWorkflowExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RespondDecisionTaskCompletedOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
 pub mod respond_decision_task_completed_output {
     
@@ -272,11 +414,22 @@ pub mod respond_decision_task_completed_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondDecisionTaskCompletedOutput {
             crate::output::RespondDecisionTaskCompletedOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -294,7 +447,13 @@ impl RespondDecisionTaskCompletedOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskFailedOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RespondActivityTaskFailedOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
 pub mod respond_activity_task_failed_output {
     
@@ -302,11 +461,22 @@ pub mod respond_activity_task_failed_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskFailedOutput {
             crate::output::RespondActivityTaskFailedOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -324,7 +494,13 @@ impl RespondActivityTaskFailedOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RespondActivityTaskCompletedOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
 pub mod respond_activity_task_completed_output {
     
@@ -332,11 +508,22 @@ pub mod respond_activity_task_completed_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCompletedOutput {
             crate::output::RespondActivityTaskCompletedOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,7 +541,13 @@ impl RespondActivityTaskCompletedOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RespondActivityTaskCanceledOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
 pub mod respond_activity_task_canceled_output {
     
@@ -362,11 +555,22 @@ pub mod respond_activity_task_canceled_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCanceledOutput {
             crate::output::RespondActivityTaskCanceledOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -384,7 +588,13 @@ impl RespondActivityTaskCanceledOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecutionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RequestCancelWorkflowExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
 pub mod request_cancel_workflow_execution_output {
     
@@ -392,11 +602,22 @@ pub mod request_cancel_workflow_execution_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::RequestCancelWorkflowExecutionOutput {
             crate::output::RequestCancelWorkflowExecutionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -414,7 +635,13 @@ impl RequestCancelWorkflowExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWorkflowTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RegisterWorkflowTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
 pub mod register_workflow_type_output {
     
@@ -422,11 +649,22 @@ pub mod register_workflow_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
         pub fn build(self) -> crate::output::RegisterWorkflowTypeOutput {
             crate::output::RegisterWorkflowTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -444,7 +682,13 @@ impl RegisterWorkflowTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDomainOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RegisterDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
     
@@ -452,11 +696,22 @@ pub mod register_domain_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
         pub fn build(self) -> crate::output::RegisterDomainOutput {
             crate::output::RegisterDomainOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -474,7 +729,13 @@ impl RegisterDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterActivityTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RegisterActivityTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
 pub mod register_activity_type_output {
     
@@ -482,11 +743,22 @@ pub mod register_activity_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
         pub fn build(self) -> crate::output::RegisterActivityTypeOutput {
             crate::output::RegisterActivityTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -507,6 +779,7 @@ pub struct RecordActivityTaskHeartbeatOutput  {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     #[doc(hidden)]
     pub cancel_requested: bool,
+    _request_id: Option<String>,
 }
 impl RecordActivityTaskHeartbeatOutput {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
@@ -514,6 +787,11 @@ impl RecordActivityTaskHeartbeatOutput {
         self.cancel_requested
     }
 }
+impl aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
 pub mod record_activity_task_heartbeat_output {
     
@@ -522,6 +800,7 @@ pub mod record_activity_task_heartbeat_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cancel_requested: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
@@ -533,12 +812,22 @@ pub mod record_activity_task_heartbeat_output {
         pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
             self.cancel_requested = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
         pub fn build(self) -> crate::output::RecordActivityTaskHeartbeatOutput {
             crate::output::RecordActivityTaskHeartbeatOutput {
                 cancel_requested: self.cancel_requested
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -578,6 +867,7 @@ pub struct PollForDecisionTaskOutput  {
     /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
     #[doc(hidden)]
     pub previous_started_event_id: i64,
+    _request_id: Option<String>,
 }
 impl PollForDecisionTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
@@ -610,6 +900,11 @@ impl PollForDecisionTaskOutput {
         self.previous_started_event_id
     }
 }
+impl aws_http::request_id::RequestId for PollForDecisionTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
 pub mod poll_for_decision_task_output {
     
@@ -624,6 +919,7 @@ pub mod poll_for_decision_task_output {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) previous_started_event_id: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
@@ -697,6 +993,15 @@ pub mod poll_for_decision_task_output {
         pub fn set_previous_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.previous_started_event_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
         pub fn build(self) -> crate::output::PollForDecisionTaskOutput {
             crate::output::PollForDecisionTaskOutput {
@@ -716,6 +1021,7 @@ pub mod poll_for_decision_task_output {
                 previous_started_event_id: self.previous_started_event_id
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -751,6 +1057,7 @@ pub struct PollForActivityTaskOutput  {
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PollForActivityTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
@@ -778,6 +1085,11 @@ impl PollForActivityTaskOutput {
         self.input.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PollForActivityTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
 pub mod poll_for_activity_task_output {
     
@@ -791,6 +1103,7 @@ pub mod poll_for_activity_task_output {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) input: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
@@ -847,6 +1160,15 @@ pub mod poll_for_activity_task_output {
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
         pub fn build(self) -> crate::output::PollForActivityTaskOutput {
             crate::output::PollForActivityTaskOutput {
@@ -863,6 +1185,7 @@ pub mod poll_for_activity_task_output {
                 ,
                 input: self.input
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -887,6 +1210,7 @@ pub struct ListWorkflowTypesOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListWorkflowTypesOutput {
     /// <p>The list of workflow type information.</p>
@@ -899,6 +1223,11 @@ impl ListWorkflowTypesOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkflowTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
 pub mod list_workflow_types_output {
     
@@ -908,6 +1237,7 @@ pub mod list_workflow_types_output {
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `type_infos`.
@@ -936,6 +1266,15 @@ pub mod list_workflow_types_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
         pub fn build(self) -> crate::output::ListWorkflowTypesOutput {
             crate::output::ListWorkflowTypesOutput {
@@ -943,6 +1282,7 @@ pub mod list_workflow_types_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -963,6 +1303,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>An array of tags associated with the domain.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of tags associated with the domain.</p>
@@ -970,6 +1311,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -978,6 +1324,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -995,11 +1342,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1024,6 +1381,7 @@ pub struct ListOpenWorkflowExecutionsOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListOpenWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
@@ -1036,6 +1394,11 @@ impl ListOpenWorkflowExecutionsOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListOpenWorkflowExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
 pub mod list_open_workflow_executions_output {
     
@@ -1045,6 +1408,7 @@ pub mod list_open_workflow_executions_output {
     pub struct Builder {
         pub(crate) execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `execution_infos`.
@@ -1073,6 +1437,15 @@ pub mod list_open_workflow_executions_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListOpenWorkflowExecutionsOutput {
             crate::output::ListOpenWorkflowExecutionsOutput {
@@ -1080,6 +1453,7 @@ pub mod list_open_workflow_executions_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1104,6 +1478,7 @@ pub struct ListDomainsOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDomainsOutput {
     /// <p>A list of DomainInfo structures.</p>
@@ -1116,6 +1491,11 @@ impl ListDomainsOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDomainsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
     
@@ -1125,6 +1505,7 @@ pub mod list_domains_output {
     pub struct Builder {
         pub(crate) domain_infos: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `domain_infos`.
@@ -1153,6 +1534,15 @@ pub mod list_domains_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
@@ -1160,6 +1550,7 @@ pub mod list_domains_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1184,6 +1575,7 @@ pub struct ListClosedWorkflowExecutionsOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
@@ -1196,6 +1588,11 @@ impl ListClosedWorkflowExecutionsOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListClosedWorkflowExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
 pub mod list_closed_workflow_executions_output {
     
@@ -1205,6 +1602,7 @@ pub mod list_closed_workflow_executions_output {
     pub struct Builder {
         pub(crate) execution_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `execution_infos`.
@@ -1233,6 +1631,15 @@ pub mod list_closed_workflow_executions_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListClosedWorkflowExecutionsOutput {
             crate::output::ListClosedWorkflowExecutionsOutput {
@@ -1240,6 +1647,7 @@ pub mod list_closed_workflow_executions_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1264,6 +1672,7 @@ pub struct ListActivityTypesOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListActivityTypesOutput {
     /// <p>List of activity type information.</p>
@@ -1276,6 +1685,11 @@ impl ListActivityTypesOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListActivityTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
 pub mod list_activity_types_output {
     
@@ -1285,6 +1699,7 @@ pub mod list_activity_types_output {
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `type_infos`.
@@ -1313,6 +1728,15 @@ pub mod list_activity_types_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
         pub fn build(self) -> crate::output::ListActivityTypesOutput {
             crate::output::ListActivityTypesOutput {
@@ -1320,6 +1744,7 @@ pub mod list_activity_types_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1344,6 +1769,7 @@ pub struct GetWorkflowExecutionHistoryOutput  {
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
@@ -1356,6 +1782,11 @@ impl GetWorkflowExecutionHistoryOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetWorkflowExecutionHistoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
 pub mod get_workflow_execution_history_output {
     
@@ -1365,6 +1796,7 @@ pub mod get_workflow_execution_history_output {
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events`.
@@ -1393,6 +1825,15 @@ pub mod get_workflow_execution_history_output {
         pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_page_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
         pub fn build(self) -> crate::output::GetWorkflowExecutionHistoryOutput {
             crate::output::GetWorkflowExecutionHistoryOutput {
@@ -1400,6 +1841,7 @@ pub mod get_workflow_execution_history_output {
                 ,
                 next_page_token: self.next_page_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1428,6 +1870,7 @@ pub struct DescribeWorkflowTypeOutput  {
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::WorkflowTypeConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeWorkflowTypeOutput {
     /// <p>General information about the workflow type.</p> 
@@ -1444,6 +1887,11 @@ impl DescribeWorkflowTypeOutput {
         self.configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeWorkflowTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
 pub mod describe_workflow_type_output {
     
@@ -1453,6 +1901,7 @@ pub mod describe_workflow_type_output {
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::WorkflowTypeInfo>,
         pub(crate) configuration: std::option::Option<crate::model::WorkflowTypeConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>General information about the workflow type.</p> 
@@ -1483,6 +1932,15 @@ pub mod describe_workflow_type_output {
         pub fn set_configuration(mut self, input: std::option::Option<crate::model::WorkflowTypeConfiguration>) -> Self {
             self.configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowTypeOutput {
             crate::output::DescribeWorkflowTypeOutput {
@@ -1490,6 +1948,7 @@ pub mod describe_workflow_type_output {
                 ,
                 configuration: self.configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1522,6 +1981,7 @@ pub struct DescribeWorkflowExecutionOutput  {
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
     #[doc(hidden)]
     pub latest_execution_context: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeWorkflowExecutionOutput {
     /// <p>Information about the workflow execution.</p>
@@ -1545,6 +2005,11 @@ impl DescribeWorkflowExecutionOutput {
         self.latest_execution_context.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeWorkflowExecutionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
 pub mod describe_workflow_execution_output {
     
@@ -1557,6 +2022,7 @@ pub mod describe_workflow_execution_output {
         pub(crate) open_counts: std::option::Option<crate::model::WorkflowExecutionOpenCounts>,
         pub(crate) latest_activity_task_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_execution_context: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the workflow execution.</p>
@@ -1604,6 +2070,15 @@ pub mod describe_workflow_execution_output {
         pub fn set_latest_execution_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.latest_execution_context = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowExecutionOutput {
             crate::output::DescribeWorkflowExecutionOutput {
@@ -1617,6 +2092,7 @@ pub mod describe_workflow_execution_output {
                 ,
                 latest_execution_context: self.latest_execution_context
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1640,6 +2116,7 @@ pub struct DescribeDomainOutput  {
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::DomainConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeDomainOutput {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
@@ -1651,6 +2128,11 @@ impl DescribeDomainOutput {
         self.configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
     
@@ -1660,6 +2142,7 @@ pub mod describe_domain_output {
     pub struct Builder {
         pub(crate) domain_info: std::option::Option<crate::model::DomainInfo>,
         pub(crate) configuration: std::option::Option<crate::model::DomainConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The basic information about a domain, such as its name, status, and description.</p>
@@ -1680,6 +2163,15 @@ pub mod describe_domain_output {
         pub fn set_configuration(mut self, input: std::option::Option<crate::model::DomainConfiguration>) -> Self {
             self.configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
@@ -1687,6 +2179,7 @@ pub mod describe_domain_output {
                 ,
                 configuration: self.configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1715,6 +2208,7 @@ pub struct DescribeActivityTypeOutput  {
     /// <p>The configuration settings registered with the activity type.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ActivityTypeConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeActivityTypeOutput {
     /// <p>General information about the activity type.</p> 
@@ -1731,6 +2225,11 @@ impl DescribeActivityTypeOutput {
         self.configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeActivityTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
 pub mod describe_activity_type_output {
     
@@ -1740,6 +2239,7 @@ pub mod describe_activity_type_output {
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::ActivityTypeInfo>,
         pub(crate) configuration: std::option::Option<crate::model::ActivityTypeConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>General information about the activity type.</p> 
@@ -1770,6 +2270,15 @@ pub mod describe_activity_type_output {
         pub fn set_configuration(mut self, input: std::option::Option<crate::model::ActivityTypeConfiguration>) -> Self {
             self.configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
         pub fn build(self) -> crate::output::DescribeActivityTypeOutput {
             crate::output::DescribeActivityTypeOutput {
@@ -1777,6 +2286,7 @@ pub mod describe_activity_type_output {
                 ,
                 configuration: self.configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1794,7 +2304,13 @@ impl DescribeActivityTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateWorkflowTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeprecateWorkflowTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
 pub mod deprecate_workflow_type_output {
     
@@ -1802,11 +2318,22 @@ pub mod deprecate_workflow_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DeprecateWorkflowTypeOutput {
             crate::output::DeprecateWorkflowTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1824,7 +2351,13 @@ impl DeprecateWorkflowTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateDomainOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeprecateDomainOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
 pub mod deprecate_domain_output {
     
@@ -1832,11 +2365,22 @@ pub mod deprecate_domain_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
         pub fn build(self) -> crate::output::DeprecateDomainOutput {
             crate::output::DeprecateDomainOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1854,7 +2398,13 @@ impl DeprecateDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateActivityTypeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeprecateActivityTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
 pub mod deprecate_activity_type_output {
     
@@ -1862,11 +2412,22 @@ pub mod deprecate_activity_type_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::DeprecateActivityTypeOutput {
             crate::output::DeprecateActivityTypeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1890,6 +2451,7 @@ pub struct CountPendingDecisionTasksOutput  {
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl CountPendingDecisionTasksOutput {
     /// <p>The number of tasks in the task list.</p>
@@ -1901,6 +2463,11 @@ impl CountPendingDecisionTasksOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for CountPendingDecisionTasksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
 pub mod count_pending_decision_tasks_output {
     
@@ -1910,6 +2477,7 @@ pub mod count_pending_decision_tasks_output {
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of tasks in the task list.</p>
@@ -1930,6 +2498,15 @@ pub mod count_pending_decision_tasks_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
         pub fn build(self) -> crate::output::CountPendingDecisionTasksOutput {
             crate::output::CountPendingDecisionTasksOutput {
@@ -1939,6 +2516,7 @@ pub mod count_pending_decision_tasks_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1962,6 +2540,7 @@ pub struct CountPendingActivityTasksOutput  {
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl CountPendingActivityTasksOutput {
     /// <p>The number of tasks in the task list.</p>
@@ -1973,6 +2552,11 @@ impl CountPendingActivityTasksOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for CountPendingActivityTasksOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
 pub mod count_pending_activity_tasks_output {
     
@@ -1982,6 +2566,7 @@ pub mod count_pending_activity_tasks_output {
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of tasks in the task list.</p>
@@ -2002,6 +2587,15 @@ pub mod count_pending_activity_tasks_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
         pub fn build(self) -> crate::output::CountPendingActivityTasksOutput {
             crate::output::CountPendingActivityTasksOutput {
@@ -2011,6 +2605,7 @@ pub mod count_pending_activity_tasks_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2034,6 +2629,7 @@ pub struct CountOpenWorkflowExecutionsOutput  {
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl CountOpenWorkflowExecutionsOutput {
     /// <p>The number of workflow executions.</p>
@@ -2045,6 +2641,11 @@ impl CountOpenWorkflowExecutionsOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for CountOpenWorkflowExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
 pub mod count_open_workflow_executions_output {
     
@@ -2054,6 +2655,7 @@ pub mod count_open_workflow_executions_output {
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of workflow executions.</p>
@@ -2074,6 +2676,15 @@ pub mod count_open_workflow_executions_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountOpenWorkflowExecutionsOutput {
             crate::output::CountOpenWorkflowExecutionsOutput {
@@ -2083,6 +2694,7 @@ pub mod count_open_workflow_executions_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2106,6 +2718,7 @@ pub struct CountClosedWorkflowExecutionsOutput  {
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     #[doc(hidden)]
     pub truncated: bool,
+    _request_id: Option<String>,
 }
 impl CountClosedWorkflowExecutionsOutput {
     /// <p>The number of workflow executions.</p>
@@ -2117,6 +2730,11 @@ impl CountClosedWorkflowExecutionsOutput {
         self.truncated
     }
 }
+impl aws_http::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
 pub mod count_closed_workflow_executions_output {
     
@@ -2126,6 +2744,7 @@ pub mod count_closed_workflow_executions_output {
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of workflow executions.</p>
@@ -2146,6 +2765,15 @@ pub mod count_closed_workflow_executions_output {
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountClosedWorkflowExecutionsOutput {
             crate::output::CountClosedWorkflowExecutionsOutput {
@@ -2155,6 +2783,7 @@ pub mod count_closed_workflow_executions_output {
                 truncated: self.truncated
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }

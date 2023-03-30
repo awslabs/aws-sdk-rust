@@ -22,6 +22,7 @@ impl BatchPutPropertyValues {
 impl aws_smithy_http::response::ParseStrictResponse for BatchPutPropertyValues {
                 type Output = std::result::Result<crate::output::BatchPutPropertyValuesOutput, crate::error::BatchPutPropertyValuesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_put_property_values_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateComponentType {
 impl aws_smithy_http::response::ParseStrictResponse for CreateComponentType {
                 type Output = std::result::Result<crate::output::CreateComponentTypeOutput, crate::error::CreateComponentTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_component_type_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateEntity {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEntity {
                 type Output = std::result::Result<crate::output::CreateEntityOutput, crate::error::CreateEntityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_entity_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateScene {
 impl aws_smithy_http::response::ParseStrictResponse for CreateScene {
                 type Output = std::result::Result<crate::output::CreateSceneOutput, crate::error::CreateSceneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_scene_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateSyncJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSyncJob {
                 type Output = std::result::Result<crate::output::CreateSyncJobOutput, crate::error::CreateSyncJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_sync_job_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateWorkspace {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
                 type Output = std::result::Result<crate::output::CreateWorkspaceOutput, crate::error::CreateWorkspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_workspace_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteComponentType {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteComponentType {
                 type Output = std::result::Result<crate::output::DeleteComponentTypeOutput, crate::error::DeleteComponentTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_component_type_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteEntity {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEntity {
                 type Output = std::result::Result<crate::output::DeleteEntityOutput, crate::error::DeleteEntityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_entity_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteScene {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteScene {
                 type Output = std::result::Result<crate::output::DeleteSceneOutput, crate::error::DeleteSceneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_scene_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteSyncJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSyncJob {
                 type Output = std::result::Result<crate::output::DeleteSyncJobOutput, crate::error::DeleteSyncJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_sync_job_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteWorkspace {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkspace {
                 type Output = std::result::Result<crate::output::DeleteWorkspaceOutput, crate::error::DeleteWorkspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_workspace_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ExecuteQuery {
 impl aws_smithy_http::response::ParseStrictResponse for ExecuteQuery {
                 type Output = std::result::Result<crate::output::ExecuteQueryOutput, crate::error::ExecuteQueryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_execute_query_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetComponentType {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponentType {
                 type Output = std::result::Result<crate::output::GetComponentTypeOutput, crate::error::GetComponentTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_component_type_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetEntity {
 impl aws_smithy_http::response::ParseStrictResponse for GetEntity {
                 type Output = std::result::Result<crate::output::GetEntityOutput, crate::error::GetEntityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_entity_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetPricingPlan {
 impl aws_smithy_http::response::ParseStrictResponse for GetPricingPlan {
                 type Output = std::result::Result<crate::output::GetPricingPlanOutput, crate::error::GetPricingPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_pricing_plan_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetPropertyValue {
 impl aws_smithy_http::response::ParseStrictResponse for GetPropertyValue {
                 type Output = std::result::Result<crate::output::GetPropertyValueOutput, crate::error::GetPropertyValueError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_property_value_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetPropertyValueHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetPropertyValueHistory {
                 type Output = std::result::Result<crate::output::GetPropertyValueHistoryOutput, crate::error::GetPropertyValueHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_property_value_history_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetScene {
 impl aws_smithy_http::response::ParseStrictResponse for GetScene {
                 type Output = std::result::Result<crate::output::GetSceneOutput, crate::error::GetSceneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_scene_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetSyncJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetSyncJob {
                 type Output = std::result::Result<crate::output::GetSyncJobOutput, crate::error::GetSyncJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_sync_job_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetWorkspace {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorkspace {
                 type Output = std::result::Result<crate::output::GetWorkspaceOutput, crate::error::GetWorkspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_workspace_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListComponentTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListComponentTypes {
                 type Output = std::result::Result<crate::output::ListComponentTypesOutput, crate::error::ListComponentTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_component_types_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListEntities {
 impl aws_smithy_http::response::ParseStrictResponse for ListEntities {
                 type Output = std::result::Result<crate::output::ListEntitiesOutput, crate::error::ListEntitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_entities_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListScenes {
 impl aws_smithy_http::response::ParseStrictResponse for ListScenes {
                 type Output = std::result::Result<crate::output::ListScenesOutput, crate::error::ListScenesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_scenes_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListSyncJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListSyncJobs {
                 type Output = std::result::Result<crate::output::ListSyncJobsOutput, crate::error::ListSyncJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sync_jobs_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListSyncResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListSyncResources {
                 type Output = std::result::Result<crate::output::ListSyncResourcesOutput, crate::error::ListSyncResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sync_resources_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListWorkspaces {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkspaces {
                 type Output = std::result::Result<crate::output::ListWorkspacesOutput, crate::error::ListWorkspacesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workspaces_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateComponentType {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateComponentType {
                 type Output = std::result::Result<crate::output::UpdateComponentTypeOutput, crate::error::UpdateComponentTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_component_type_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UpdateEntity {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEntity {
                 type Output = std::result::Result<crate::output::UpdateEntityOutput, crate::error::UpdateEntityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_entity_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl UpdatePricingPlan {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
                 type Output = std::result::Result<crate::output::UpdatePricingPlanOutput, crate::error::UpdatePricingPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_pricing_plan_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl UpdateScene {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateScene {
                 type Output = std::result::Result<crate::output::UpdateSceneOutput, crate::error::UpdateSceneError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_scene_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl UpdateWorkspace {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspace {
                 type Output = std::result::Result<crate::output::UpdateWorkspaceOutput, crate::error::UpdateWorkspaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_workspace_error(response)
                      } else {

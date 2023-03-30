@@ -24,6 +24,7 @@ pub struct UpdatePackagingGroupOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdatePackagingGroupOutput {
     /// The approximate asset count of the PackagingGroup.
@@ -55,6 +56,11 @@ impl UpdatePackagingGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePackagingGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
 pub mod update_packaging_group_output {
     
@@ -69,6 +75,7 @@ pub mod update_packaging_group_output {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The approximate asset count of the PackagingGroup.
@@ -140,6 +147,15 @@ pub mod update_packaging_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
         pub fn build(self) -> crate::output::UpdatePackagingGroupOutput {
             crate::output::UpdatePackagingGroupOutput {
@@ -158,6 +174,7 @@ pub mod update_packaging_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -175,7 +192,13 @@ impl UpdatePackagingGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -183,11 +206,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -205,7 +239,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -213,11 +253,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -238,6 +289,7 @@ pub struct ListTagsForResourceOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// A collection of tags associated with a resource
@@ -245,6 +297,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -253,6 +310,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -270,11 +328,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -298,6 +366,7 @@ pub struct ListPackagingGroupsOutput  {
     /// A list of MediaPackage VOD PackagingGroup resources.
     #[doc(hidden)]
     pub packaging_groups: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
+    _request_id: Option<String>,
 }
 impl ListPackagingGroupsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
@@ -309,6 +378,11 @@ impl ListPackagingGroupsOutput {
         self.packaging_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPackagingGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
 pub mod list_packaging_groups_output {
     
@@ -318,6 +392,7 @@ pub mod list_packaging_groups_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) packaging_groups: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -344,6 +419,15 @@ pub mod list_packaging_groups_output {
         pub fn set_packaging_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackagingGroup>>) -> Self {
             self.packaging_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
         pub fn build(self) -> crate::output::ListPackagingGroupsOutput {
             crate::output::ListPackagingGroupsOutput {
@@ -351,6 +435,7 @@ pub mod list_packaging_groups_output {
                 ,
                 packaging_groups: self.packaging_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -374,6 +459,7 @@ pub struct ListPackagingConfigurationsOutput  {
     /// A list of MediaPackage VOD PackagingConfiguration resources.
     #[doc(hidden)]
     pub packaging_configurations: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+    _request_id: Option<String>,
 }
 impl ListPackagingConfigurationsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
@@ -385,6 +471,11 @@ impl ListPackagingConfigurationsOutput {
         self.packaging_configurations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPackagingConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
 pub mod list_packaging_configurations_output {
     
@@ -394,6 +485,7 @@ pub mod list_packaging_configurations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) packaging_configurations: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -420,6 +512,15 @@ pub mod list_packaging_configurations_output {
         pub fn set_packaging_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::PackagingConfiguration>>) -> Self {
             self.packaging_configurations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListPackagingConfigurationsOutput {
             crate::output::ListPackagingConfigurationsOutput {
@@ -427,6 +528,7 @@ pub mod list_packaging_configurations_output {
                 ,
                 packaging_configurations: self.packaging_configurations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -450,6 +552,7 @@ pub struct ListAssetsOutput  {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAssetsOutput {
     /// A list of MediaPackage VOD Asset resources.
@@ -461,6 +564,11 @@ impl ListAssetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAssetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput).
 pub mod list_assets_output {
     
@@ -470,6 +578,7 @@ pub mod list_assets_output {
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetShallow>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `assets`.
@@ -496,6 +605,15 @@ pub mod list_assets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::output::ListAssetsOutput).
         pub fn build(self) -> crate::output::ListAssetsOutput {
             crate::output::ListAssetsOutput {
@@ -503,6 +621,7 @@ pub mod list_assets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -541,6 +660,7 @@ pub struct DescribePackagingGroupOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribePackagingGroupOutput {
     /// The approximate asset count of the PackagingGroup.
@@ -572,6 +692,11 @@ impl DescribePackagingGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePackagingGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
 pub mod describe_packaging_group_output {
     
@@ -586,6 +711,7 @@ pub mod describe_packaging_group_output {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The approximate asset count of the PackagingGroup.
@@ -657,6 +783,15 @@ pub mod describe_packaging_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
         pub fn build(self) -> crate::output::DescribePackagingGroupOutput {
             crate::output::DescribePackagingGroupOutput {
@@ -675,6 +810,7 @@ pub mod describe_packaging_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -716,6 +852,7 @@ pub struct DescribePackagingConfigurationOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
@@ -751,6 +888,11 @@ impl DescribePackagingConfigurationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePackagingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
 pub mod describe_packaging_configuration_output {
     
@@ -766,6 +908,7 @@ pub mod describe_packaging_configuration_output {
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the PackagingConfiguration.
@@ -846,6 +989,15 @@ pub mod describe_packaging_configuration_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribePackagingConfigurationOutput {
             crate::output::DescribePackagingConfigurationOutput {
@@ -865,6 +1017,7 @@ pub mod describe_packaging_configuration_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -909,6 +1062,7 @@ pub struct DescribeAssetOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeAssetOutput {
     /// The ARN of the Asset.
@@ -948,6 +1102,11 @@ impl DescribeAssetOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
 pub mod describe_asset_output {
     
@@ -964,6 +1123,7 @@ pub mod describe_asset_output {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the Asset.
@@ -1059,6 +1219,15 @@ pub mod describe_asset_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
         pub fn build(self) -> crate::output::DescribeAssetOutput {
             crate::output::DescribeAssetOutput {
@@ -1080,6 +1249,7 @@ pub mod describe_asset_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1097,7 +1267,13 @@ impl DescribeAssetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackagingGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePackagingGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
 pub mod delete_packaging_group_output {
     
@@ -1105,11 +1281,22 @@ pub mod delete_packaging_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
         pub fn build(self) -> crate::output::DeletePackagingGroupOutput {
             crate::output::DeletePackagingGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1127,7 +1314,13 @@ impl DeletePackagingGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackagingConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePackagingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
 pub mod delete_packaging_configuration_output {
     
@@ -1135,11 +1328,22 @@ pub mod delete_packaging_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::DeletePackagingConfigurationOutput {
             crate::output::DeletePackagingConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1157,7 +1361,13 @@ impl DeletePackagingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
     
@@ -1165,11 +1375,22 @@ pub mod delete_asset_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
         pub fn build(self) -> crate::output::DeleteAssetOutput {
             crate::output::DeleteAssetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1205,6 +1426,7 @@ pub struct CreatePackagingGroupOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreatePackagingGroupOutput {
     /// The ARN of the PackagingGroup.
@@ -1232,6 +1454,11 @@ impl CreatePackagingGroupOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePackagingGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
 pub mod create_packaging_group_output {
     
@@ -1245,6 +1472,7 @@ pub mod create_packaging_group_output {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the PackagingGroup.
@@ -1307,6 +1535,15 @@ pub mod create_packaging_group_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
         pub fn build(self) -> crate::output::CreatePackagingGroupOutput {
             crate::output::CreatePackagingGroupOutput {
@@ -1322,6 +1559,7 @@ pub mod create_packaging_group_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1363,6 +1601,7 @@ pub struct CreatePackagingConfigurationOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreatePackagingConfigurationOutput {
     /// The ARN of the PackagingConfiguration.
@@ -1398,6 +1637,11 @@ impl CreatePackagingConfigurationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePackagingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
 pub mod create_packaging_configuration_output {
     
@@ -1413,6 +1657,7 @@ pub mod create_packaging_configuration_output {
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) packaging_group_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the PackagingConfiguration.
@@ -1493,6 +1738,15 @@ pub mod create_packaging_configuration_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
         pub fn build(self) -> crate::output::CreatePackagingConfigurationOutput {
             crate::output::CreatePackagingConfigurationOutput {
@@ -1512,6 +1766,7 @@ pub mod create_packaging_configuration_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1556,6 +1811,7 @@ pub struct CreateAssetOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateAssetOutput {
     /// The ARN of the Asset.
@@ -1595,6 +1851,11 @@ impl CreateAssetOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAssetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAssetOutput`](crate::output::CreateAssetOutput).
 pub mod create_asset_output {
     
@@ -1611,6 +1872,7 @@ pub mod create_asset_output {
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) source_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the Asset.
@@ -1706,6 +1968,15 @@ pub mod create_asset_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAssetOutput`](crate::output::CreateAssetOutput).
         pub fn build(self) -> crate::output::CreateAssetOutput {
             crate::output::CreateAssetOutput {
@@ -1727,6 +1998,7 @@ pub mod create_asset_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1762,6 +2034,7 @@ pub struct ConfigureLogsOutput  {
     /// A collection of tags associated with a resource
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ConfigureLogsOutput {
     /// The ARN of the PackagingGroup.
@@ -1789,6 +2062,11 @@ impl ConfigureLogsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfigureLogsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
 pub mod configure_logs_output {
     
@@ -1802,6 +2080,7 @@ pub mod configure_logs_output {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the PackagingGroup.
@@ -1864,6 +2143,15 @@ pub mod configure_logs_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
         pub fn build(self) -> crate::output::ConfigureLogsOutput {
             crate::output::ConfigureLogsOutput {
@@ -1879,6 +2167,7 @@ pub mod configure_logs_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }

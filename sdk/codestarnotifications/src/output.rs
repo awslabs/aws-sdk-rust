@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateNotificationRuleOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateNotificationRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
 pub mod update_notification_rule_output {
     
@@ -11,11 +17,22 @@ pub mod update_notification_rule_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
         pub fn build(self) -> crate::output::UpdateNotificationRuleOutput {
             crate::output::UpdateNotificationRuleOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateNotificationRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +100,7 @@ pub struct UnsubscribeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
@@ -73,6 +108,11 @@ impl UnsubscribeOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UnsubscribeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
 pub mod unsubscribe_output {
     
@@ -81,6 +121,7 @@ pub mod unsubscribe_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
@@ -92,11 +133,21 @@ pub mod unsubscribe_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
         pub fn build(self) -> crate::output::UnsubscribeOutput {
             crate::output::UnsubscribeOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,6 +168,7 @@ pub struct TagResourceOutput  {
     /// <p>The list of tags associated with the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl TagResourceOutput {
     /// <p>The list of tags associated with the resource.</p>
@@ -124,6 +176,11 @@ impl TagResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -132,6 +189,7 @@ pub mod tag_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -149,11 +207,21 @@ pub mod tag_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -174,6 +242,7 @@ pub struct SubscribeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
@@ -181,6 +250,11 @@ impl SubscribeOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SubscribeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SubscribeOutput`](crate::output::SubscribeOutput).
 pub mod subscribe_output {
     
@@ -189,6 +263,7 @@ pub mod subscribe_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
@@ -200,11 +275,21 @@ pub mod subscribe_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SubscribeOutput`](crate::output::SubscribeOutput).
         pub fn build(self) -> crate::output::SubscribeOutput {
             crate::output::SubscribeOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -228,6 +313,7 @@ pub struct ListTargetsOutput  {
     /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTargetsOutput {
     /// <p>The list of notification rule targets. </p>
@@ -239,6 +325,11 @@ impl ListTargetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTargetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTargetsOutput`](crate::output::ListTargetsOutput).
 pub mod list_targets_output {
     
@@ -248,6 +339,7 @@ pub mod list_targets_output {
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `targets`.
@@ -274,6 +366,15 @@ pub mod list_targets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTargetsOutput`](crate::output::ListTargetsOutput).
         pub fn build(self) -> crate::output::ListTargetsOutput {
             crate::output::ListTargetsOutput {
@@ -281,6 +382,7 @@ pub mod list_targets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -301,6 +403,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with the notification rule.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with the notification rule.</p>
@@ -308,6 +411,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -316,6 +424,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -333,11 +442,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -361,6 +480,7 @@ pub struct ListNotificationRulesOutput  {
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     #[doc(hidden)]
     pub notification_rules: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
+    _request_id: Option<String>,
 }
 impl ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -372,6 +492,11 @@ impl ListNotificationRulesOutput {
         self.notification_rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListNotificationRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
 pub mod list_notification_rules_output {
     
@@ -381,6 +506,7 @@ pub mod list_notification_rules_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) notification_rules: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -407,6 +533,15 @@ pub mod list_notification_rules_output {
         pub fn set_notification_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::NotificationRuleSummary>>) -> Self {
             self.notification_rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
         pub fn build(self) -> crate::output::ListNotificationRulesOutput {
             crate::output::ListNotificationRulesOutput {
@@ -414,6 +549,7 @@ pub mod list_notification_rules_output {
                 ,
                 notification_rules: self.notification_rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -437,6 +573,7 @@ pub struct ListEventTypesOutput  {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEventTypesOutput {
     /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
@@ -448,6 +585,11 @@ impl ListEventTypesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEventTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
 pub mod list_event_types_output {
     
@@ -457,6 +599,7 @@ pub mod list_event_types_output {
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_types`.
@@ -483,6 +626,15 @@ pub mod list_event_types_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
         pub fn build(self) -> crate::output::ListEventTypesOutput {
             crate::output::ListEventTypesOutput {
@@ -490,6 +642,7 @@ pub mod list_event_types_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -540,6 +693,7 @@ pub struct DescribeNotificationRuleOutput  {
     /// <p>The tags associated with the notification rule.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -601,9 +755,15 @@ impl  std::fmt::Debug for DescribeNotificationRuleOutput  {
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
         formatter.field("tags", &self.tags);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DescribeNotificationRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
 pub mod describe_notification_rule_output {
     
@@ -622,6 +782,7 @@ pub mod describe_notification_rule_output {
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -741,6 +902,15 @@ pub mod describe_notification_rule_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
         pub fn build(self) -> crate::output::DescribeNotificationRuleOutput {
             crate::output::DescribeNotificationRuleOutput {
@@ -766,6 +936,7 @@ pub mod describe_notification_rule_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -783,6 +954,7 @@ pub mod describe_notification_rule_output {
             formatter.field("created_timestamp", &self.created_timestamp);
             formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
             formatter.field("tags", &self.tags);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -800,7 +972,13 @@ impl DescribeNotificationRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTargetOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTargetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
 pub mod delete_target_output {
     
@@ -808,11 +986,22 @@ pub mod delete_target_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
         pub fn build(self) -> crate::output::DeleteTargetOutput {
             crate::output::DeleteTargetOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -833,6 +1022,7 @@ pub struct DeleteNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
@@ -840,6 +1030,11 @@ impl DeleteNotificationRuleOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteNotificationRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
 pub mod delete_notification_rule_output {
     
@@ -848,6 +1043,7 @@ pub mod delete_notification_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
@@ -859,11 +1055,21 @@ pub mod delete_notification_rule_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
         pub fn build(self) -> crate::output::DeleteNotificationRuleOutput {
             crate::output::DeleteNotificationRuleOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -884,6 +1090,7 @@ pub struct CreateNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateNotificationRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -891,6 +1098,11 @@ impl CreateNotificationRuleOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateNotificationRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
 pub mod create_notification_rule_output {
     
@@ -899,6 +1111,7 @@ pub mod create_notification_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -910,11 +1123,21 @@ pub mod create_notification_rule_output {
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
         pub fn build(self) -> crate::output::CreateNotificationRuleOutput {
             crate::output::CreateNotificationRuleOutput {
                 arn: self.arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }

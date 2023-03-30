@@ -6,6 +6,7 @@ pub struct VerifyOtpMessageOutput  {
     /// <p>Verify OTP Message Response.</p>
     #[doc(hidden)]
     pub verification_response: std::option::Option<crate::model::VerificationResponse>,
+    _request_id: Option<String>,
 }
 impl VerifyOtpMessageOutput {
     /// <p>Verify OTP Message Response.</p>
@@ -13,6 +14,11 @@ impl VerifyOtpMessageOutput {
         self.verification_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for VerifyOtpMessageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
 pub mod verify_otp_message_output {
     
@@ -21,6 +27,7 @@ pub mod verify_otp_message_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) verification_response: std::option::Option<crate::model::VerificationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Verify OTP Message Response.</p>
@@ -32,11 +39,21 @@ pub mod verify_otp_message_output {
         pub fn set_verification_response(mut self, input: std::option::Option<crate::model::VerificationResponse>) -> Self {
             self.verification_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`VerifyOtpMessageOutput`](crate::output::VerifyOtpMessageOutput).
         pub fn build(self) -> crate::output::VerifyOtpMessageOutput {
             crate::output::VerifyOtpMessageOutput {
                 verification_response: self.verification_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -64,6 +82,11 @@ impl UpdateVoiceTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVoiceTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
 pub mod update_voice_template_output {
     
@@ -72,6 +95,7 @@ pub mod update_voice_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -83,11 +107,21 @@ pub mod update_voice_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVoiceTemplateOutput`](crate::output::UpdateVoiceTemplateOutput).
         pub fn build(self) -> crate::output::UpdateVoiceTemplateOutput {
             crate::output::UpdateVoiceTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -115,6 +150,11 @@ impl UpdateVoiceChannelOutput {
         self.voice_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVoiceChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
 pub mod update_voice_channel_output {
     
@@ -123,6 +163,7 @@ pub mod update_voice_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -134,11 +175,21 @@ pub mod update_voice_channel_output {
         pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
             self.voice_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVoiceChannelOutput`](crate::output::UpdateVoiceChannelOutput).
         pub fn build(self) -> crate::output::UpdateVoiceChannelOutput {
             crate::output::UpdateVoiceChannelOutput {
                 voice_channel_response: self.voice_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +210,7 @@ pub struct UpdateTemplateActiveVersionOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateTemplateActiveVersionOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -166,6 +218,11 @@ impl UpdateTemplateActiveVersionOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTemplateActiveVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
 pub mod update_template_active_version_output {
     
@@ -174,6 +231,7 @@ pub mod update_template_active_version_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -185,11 +243,21 @@ pub mod update_template_active_version_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTemplateActiveVersionOutput`](crate::output::UpdateTemplateActiveVersionOutput).
         pub fn build(self) -> crate::output::UpdateTemplateActiveVersionOutput {
             crate::output::UpdateTemplateActiveVersionOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,6 +278,7 @@ pub struct UpdateSmsTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -217,6 +286,11 @@ impl UpdateSmsTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSmsTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
 pub mod update_sms_template_output {
     
@@ -225,6 +299,7 @@ pub mod update_sms_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -236,11 +311,21 @@ pub mod update_sms_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSmsTemplateOutput`](crate::output::UpdateSmsTemplateOutput).
         pub fn build(self) -> crate::output::UpdateSmsTemplateOutput {
             crate::output::UpdateSmsTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -261,6 +346,7 @@ pub struct UpdateSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -268,6 +354,11 @@ impl UpdateSmsChannelOutput {
         self.sms_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSmsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
 pub mod update_sms_channel_output {
     
@@ -276,6 +367,7 @@ pub mod update_sms_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -287,11 +379,21 @@ pub mod update_sms_channel_output {
         pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
             self.sms_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSmsChannelOutput`](crate::output::UpdateSmsChannelOutput).
         pub fn build(self) -> crate::output::UpdateSmsChannelOutput {
             crate::output::UpdateSmsChannelOutput {
                 sms_channel_response: self.sms_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -312,6 +414,7 @@ pub struct UpdateSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -319,6 +422,11 @@ impl UpdateSegmentOutput {
         self.segment_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSegmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
 pub mod update_segment_output {
     
@@ -327,6 +435,7 @@ pub mod update_segment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -338,11 +447,21 @@ pub mod update_segment_output {
         pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
             self.segment_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSegmentOutput`](crate::output::UpdateSegmentOutput).
         pub fn build(self) -> crate::output::UpdateSegmentOutput {
             crate::output::UpdateSegmentOutput {
                 segment_response: self.segment_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -363,6 +482,7 @@ pub struct UpdateRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
     pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -370,6 +490,11 @@ impl UpdateRecommenderConfigurationOutput {
         self.recommender_configuration_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRecommenderConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
 pub mod update_recommender_configuration_output {
     
@@ -378,6 +503,7 @@ pub mod update_recommender_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -389,11 +515,21 @@ pub mod update_recommender_configuration_output {
         pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
             self.recommender_configuration_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRecommenderConfigurationOutput`](crate::output::UpdateRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateRecommenderConfigurationOutput {
             crate::output::UpdateRecommenderConfigurationOutput {
                 recommender_configuration_response: self.recommender_configuration_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -414,6 +550,7 @@ pub struct UpdatePushTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdatePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -421,6 +558,11 @@ impl UpdatePushTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePushTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
 pub mod update_push_template_output {
     
@@ -429,6 +571,7 @@ pub mod update_push_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -440,11 +583,21 @@ pub mod update_push_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdatePushTemplateOutput`](crate::output::UpdatePushTemplateOutput).
         pub fn build(self) -> crate::output::UpdatePushTemplateOutput {
             crate::output::UpdatePushTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -465,6 +618,7 @@ pub struct UpdateJourneyStateOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateJourneyStateOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -472,6 +626,11 @@ impl UpdateJourneyStateOutput {
         self.journey_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateJourneyStateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
 pub mod update_journey_state_output {
     
@@ -480,6 +639,7 @@ pub mod update_journey_state_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -491,11 +651,21 @@ pub mod update_journey_state_output {
         pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
             self.journey_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateJourneyStateOutput`](crate::output::UpdateJourneyStateOutput).
         pub fn build(self) -> crate::output::UpdateJourneyStateOutput {
             crate::output::UpdateJourneyStateOutput {
                 journey_response: self.journey_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -516,6 +686,7 @@ pub struct UpdateJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -523,6 +694,11 @@ impl UpdateJourneyOutput {
         self.journey_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateJourneyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
 pub mod update_journey_output {
     
@@ -531,6 +707,7 @@ pub mod update_journey_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -542,11 +719,21 @@ pub mod update_journey_output {
         pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
             self.journey_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateJourneyOutput`](crate::output::UpdateJourneyOutput).
         pub fn build(self) -> crate::output::UpdateJourneyOutput {
             crate::output::UpdateJourneyOutput {
                 journey_response: self.journey_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -567,6 +754,7 @@ pub struct UpdateInAppTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -574,6 +762,11 @@ impl UpdateInAppTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateInAppTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
 pub mod update_in_app_template_output {
     
@@ -582,6 +775,7 @@ pub mod update_in_app_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -593,11 +787,21 @@ pub mod update_in_app_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput).
         pub fn build(self) -> crate::output::UpdateInAppTemplateOutput {
             crate::output::UpdateInAppTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -618,6 +822,7 @@ pub struct UpdateGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -625,6 +830,11 @@ impl UpdateGcmChannelOutput {
         self.gcm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateGcmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
 pub mod update_gcm_channel_output {
     
@@ -633,6 +843,7 @@ pub mod update_gcm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -644,11 +855,21 @@ pub mod update_gcm_channel_output {
         pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
             self.gcm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGcmChannelOutput`](crate::output::UpdateGcmChannelOutput).
         pub fn build(self) -> crate::output::UpdateGcmChannelOutput {
             crate::output::UpdateGcmChannelOutput {
                 gcm_channel_response: self.gcm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -669,6 +890,7 @@ pub struct UpdateEndpointsBatchOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateEndpointsBatchOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -676,6 +898,11 @@ impl UpdateEndpointsBatchOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEndpointsBatchOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
 pub mod update_endpoints_batch_output {
     
@@ -684,6 +911,7 @@ pub mod update_endpoints_batch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -695,11 +923,21 @@ pub mod update_endpoints_batch_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEndpointsBatchOutput`](crate::output::UpdateEndpointsBatchOutput).
         pub fn build(self) -> crate::output::UpdateEndpointsBatchOutput {
             crate::output::UpdateEndpointsBatchOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -720,6 +958,7 @@ pub struct UpdateEndpointOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateEndpointOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -727,6 +966,11 @@ impl UpdateEndpointOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
 pub mod update_endpoint_output {
     
@@ -735,6 +979,7 @@ pub mod update_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -746,11 +991,21 @@ pub mod update_endpoint_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
         pub fn build(self) -> crate::output::UpdateEndpointOutput {
             crate::output::UpdateEndpointOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -771,6 +1026,7 @@ pub struct UpdateEmailTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl UpdateEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -778,6 +1034,11 @@ impl UpdateEmailTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEmailTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
 pub mod update_email_template_output {
     
@@ -786,6 +1047,7 @@ pub mod update_email_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -797,11 +1059,21 @@ pub mod update_email_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
         pub fn build(self) -> crate::output::UpdateEmailTemplateOutput {
             crate::output::UpdateEmailTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -822,6 +1094,7 @@ pub struct UpdateEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -829,6 +1102,11 @@ impl UpdateEmailChannelOutput {
         self.email_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEmailChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
 pub mod update_email_channel_output {
     
@@ -837,6 +1115,7 @@ pub mod update_email_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -848,11 +1127,21 @@ pub mod update_email_channel_output {
         pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
             self.email_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEmailChannelOutput`](crate::output::UpdateEmailChannelOutput).
         pub fn build(self) -> crate::output::UpdateEmailChannelOutput {
             crate::output::UpdateEmailChannelOutput {
                 email_channel_response: self.email_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -873,6 +1162,7 @@ pub struct UpdateCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -880,6 +1170,11 @@ impl UpdateCampaignOutput {
         self.campaign_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCampaignOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
 pub mod update_campaign_output {
     
@@ -888,6 +1183,7 @@ pub mod update_campaign_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -899,11 +1195,21 @@ pub mod update_campaign_output {
         pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
             self.campaign_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCampaignOutput`](crate::output::UpdateCampaignOutput).
         pub fn build(self) -> crate::output::UpdateCampaignOutput {
             crate::output::UpdateCampaignOutput {
                 campaign_response: self.campaign_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -924,6 +1230,7 @@ pub struct UpdateBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -931,6 +1238,11 @@ impl UpdateBaiduChannelOutput {
         self.baidu_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBaiduChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
 pub mod update_baidu_channel_output {
     
@@ -939,6 +1251,7 @@ pub mod update_baidu_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -950,11 +1263,21 @@ pub mod update_baidu_channel_output {
         pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
             self.baidu_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateBaiduChannelOutput`](crate::output::UpdateBaiduChannelOutput).
         pub fn build(self) -> crate::output::UpdateBaiduChannelOutput {
             crate::output::UpdateBaiduChannelOutput {
                 baidu_channel_response: self.baidu_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -975,6 +1298,7 @@ pub struct UpdateApplicationSettingsOutput  {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
     pub application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
+    _request_id: Option<String>,
 }
 impl UpdateApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
@@ -982,6 +1306,11 @@ impl UpdateApplicationSettingsOutput {
         self.application_settings_resource.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateApplicationSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
 pub mod update_application_settings_output {
     
@@ -990,6 +1319,7 @@ pub mod update_application_settings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an application, including the default settings for an application.</p>
@@ -1001,11 +1331,21 @@ pub mod update_application_settings_output {
         pub fn set_application_settings_resource(mut self, input: std::option::Option<crate::model::ApplicationSettingsResource>) -> Self {
             self.application_settings_resource = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
         pub fn build(self) -> crate::output::UpdateApplicationSettingsOutput {
             crate::output::UpdateApplicationSettingsOutput {
                 application_settings_resource: self.application_settings_resource
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1026,6 +1366,7 @@ pub struct UpdateApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -1033,6 +1374,11 @@ impl UpdateApnsVoipSandboxChannelOutput {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateApnsVoipSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
 pub mod update_apns_voip_sandbox_channel_output {
     
@@ -1041,6 +1387,7 @@ pub mod update_apns_voip_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -1052,11 +1399,21 @@ pub mod update_apns_voip_sandbox_channel_output {
         pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
             self.apns_voip_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateApnsVoipSandboxChannelOutput`](crate::output::UpdateApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsVoipSandboxChannelOutput {
             crate::output::UpdateApnsVoipSandboxChannelOutput {
                 apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1077,6 +1434,7 @@ pub struct UpdateApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -1084,6 +1442,11 @@ impl UpdateApnsVoipChannelOutput {
         self.apns_voip_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateApnsVoipChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
 pub mod update_apns_voip_channel_output {
     
@@ -1092,6 +1455,7 @@ pub mod update_apns_voip_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -1103,11 +1467,21 @@ pub mod update_apns_voip_channel_output {
         pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
             self.apns_voip_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateApnsVoipChannelOutput`](crate::output::UpdateApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsVoipChannelOutput {
             crate::output::UpdateApnsVoipChannelOutput {
                 apns_voip_channel_response: self.apns_voip_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1128,6 +1502,7 @@ pub struct UpdateApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -1135,6 +1510,11 @@ impl UpdateApnsSandboxChannelOutput {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateApnsSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
 pub mod update_apns_sandbox_channel_output {
     
@@ -1143,6 +1523,7 @@ pub mod update_apns_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -1154,11 +1535,21 @@ pub mod update_apns_sandbox_channel_output {
         pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
             self.apns_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateApnsSandboxChannelOutput`](crate::output::UpdateApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsSandboxChannelOutput {
             crate::output::UpdateApnsSandboxChannelOutput {
                 apns_sandbox_channel_response: self.apns_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1179,6 +1570,7 @@ pub struct UpdateApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -1186,6 +1578,11 @@ impl UpdateApnsChannelOutput {
         self.apns_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateApnsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
 pub mod update_apns_channel_output {
     
@@ -1194,6 +1591,7 @@ pub mod update_apns_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -1205,11 +1603,21 @@ pub mod update_apns_channel_output {
         pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
             self.apns_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateApnsChannelOutput`](crate::output::UpdateApnsChannelOutput).
         pub fn build(self) -> crate::output::UpdateApnsChannelOutput {
             crate::output::UpdateApnsChannelOutput {
                 apns_channel_response: self.apns_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1230,6 +1638,7 @@ pub struct UpdateAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl UpdateAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -1237,6 +1646,11 @@ impl UpdateAdmChannelOutput {
         self.adm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAdmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
 pub mod update_adm_channel_output {
     
@@ -1245,6 +1659,7 @@ pub mod update_adm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -1256,11 +1671,21 @@ pub mod update_adm_channel_output {
         pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
             self.adm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAdmChannelOutput`](crate::output::UpdateAdmChannelOutput).
         pub fn build(self) -> crate::output::UpdateAdmChannelOutput {
             crate::output::UpdateAdmChannelOutput {
                 adm_channel_response: self.adm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1278,7 +1703,13 @@ impl UpdateAdmChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -1286,11 +1717,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1308,7 +1750,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -1316,11 +1764,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1341,6 +1800,7 @@ pub struct SendUsersMessagesOutput  {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
     #[doc(hidden)]
     pub send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
+    _request_id: Option<String>,
 }
 impl SendUsersMessagesOutput {
     /// <p>Provides information about which users and endpoints a message was sent to.</p>
@@ -1348,6 +1808,11 @@ impl SendUsersMessagesOutput {
         self.send_users_message_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SendUsersMessagesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
 pub mod send_users_messages_output {
     
@@ -1356,6 +1821,7 @@ pub mod send_users_messages_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) send_users_message_response: std::option::Option<crate::model::SendUsersMessageResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about which users and endpoints a message was sent to.</p>
@@ -1367,11 +1833,21 @@ pub mod send_users_messages_output {
         pub fn set_send_users_message_response(mut self, input: std::option::Option<crate::model::SendUsersMessageResponse>) -> Self {
             self.send_users_message_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendUsersMessagesOutput`](crate::output::SendUsersMessagesOutput).
         pub fn build(self) -> crate::output::SendUsersMessagesOutput {
             crate::output::SendUsersMessagesOutput {
                 send_users_message_response: self.send_users_message_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1392,6 +1868,7 @@ pub struct SendOtpMessageOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
+    _request_id: Option<String>,
 }
 impl SendOtpMessageOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
@@ -1399,6 +1876,11 @@ impl SendOtpMessageOutput {
         self.message_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SendOtpMessageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
 pub mod send_otp_message_output {
     
@@ -1407,6 +1889,7 @@ pub mod send_otp_message_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_response: std::option::Option<crate::model::MessageResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
@@ -1418,11 +1901,21 @@ pub mod send_otp_message_output {
         pub fn set_message_response(mut self, input: std::option::Option<crate::model::MessageResponse>) -> Self {
             self.message_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendOtpMessageOutput`](crate::output::SendOtpMessageOutput).
         pub fn build(self) -> crate::output::SendOtpMessageOutput {
             crate::output::SendOtpMessageOutput {
                 message_response: self.message_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1443,6 +1936,7 @@ pub struct SendMessagesOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     #[doc(hidden)]
     pub message_response: std::option::Option<crate::model::MessageResponse>,
+    _request_id: Option<String>,
 }
 impl SendMessagesOutput {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
@@ -1450,6 +1944,11 @@ impl SendMessagesOutput {
         self.message_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SendMessagesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendMessagesOutput`](crate::output::SendMessagesOutput).
 pub mod send_messages_output {
     
@@ -1458,6 +1957,7 @@ pub mod send_messages_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_response: std::option::Option<crate::model::MessageResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
@@ -1469,11 +1969,21 @@ pub mod send_messages_output {
         pub fn set_message_response(mut self, input: std::option::Option<crate::model::MessageResponse>) -> Self {
             self.message_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendMessagesOutput`](crate::output::SendMessagesOutput).
         pub fn build(self) -> crate::output::SendMessagesOutput {
             crate::output::SendMessagesOutput {
                 message_response: self.message_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1494,6 +2004,7 @@ pub struct RemoveAttributesOutput  {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
     #[doc(hidden)]
     pub attributes_resource: std::option::Option<crate::model::AttributesResource>,
+    _request_id: Option<String>,
 }
 impl RemoveAttributesOutput {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
@@ -1501,6 +2012,11 @@ impl RemoveAttributesOutput {
         self.attributes_resource.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
 pub mod remove_attributes_output {
     
@@ -1509,6 +2025,7 @@ pub mod remove_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes_resource: std::option::Option<crate::model::AttributesResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
@@ -1520,11 +2037,21 @@ pub mod remove_attributes_output {
         pub fn set_attributes_resource(mut self, input: std::option::Option<crate::model::AttributesResource>) -> Self {
             self.attributes_resource = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveAttributesOutput`](crate::output::RemoveAttributesOutput).
         pub fn build(self) -> crate::output::RemoveAttributesOutput {
             crate::output::RemoveAttributesOutput {
                 attributes_resource: self.attributes_resource
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1545,6 +2072,7 @@ pub struct PutEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
+    _request_id: Option<String>,
 }
 impl PutEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -1552,6 +2080,11 @@ impl PutEventStreamOutput {
         self.event_stream.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutEventStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
 pub mod put_event_stream_output {
     
@@ -1560,6 +2093,7 @@ pub mod put_event_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -1571,11 +2105,21 @@ pub mod put_event_stream_output {
         pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
             self.event_stream = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutEventStreamOutput`](crate::output::PutEventStreamOutput).
         pub fn build(self) -> crate::output::PutEventStreamOutput {
             crate::output::PutEventStreamOutput {
                 event_stream: self.event_stream
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1596,6 +2140,7 @@ pub struct PutEventsOutput  {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
     #[doc(hidden)]
     pub events_response: std::option::Option<crate::model::EventsResponse>,
+    _request_id: Option<String>,
 }
 impl PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
@@ -1603,6 +2148,11 @@ impl PutEventsOutput {
         self.events_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutEventsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput).
 pub mod put_events_output {
     
@@ -1611,6 +2161,7 @@ pub mod put_events_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_response: std::option::Option<crate::model::EventsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about endpoints and the events that they're associated with.</p>
@@ -1622,11 +2173,21 @@ pub mod put_events_output {
         pub fn set_events_response(mut self, input: std::option::Option<crate::model::EventsResponse>) -> Self {
             self.events_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutEventsOutput`](crate::output::PutEventsOutput).
         pub fn build(self) -> crate::output::PutEventsOutput {
             crate::output::PutEventsOutput {
                 events_response: self.events_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1647,6 +2208,7 @@ pub struct PhoneNumberValidateOutput  {
     /// <p>Provides information about a phone number.</p>
     #[doc(hidden)]
     pub number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
+    _request_id: Option<String>,
 }
 impl PhoneNumberValidateOutput {
     /// <p>Provides information about a phone number.</p>
@@ -1654,6 +2216,11 @@ impl PhoneNumberValidateOutput {
         self.number_validate_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PhoneNumberValidateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
 pub mod phone_number_validate_output {
     
@@ -1662,6 +2229,7 @@ pub mod phone_number_validate_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_validate_response: std::option::Option<crate::model::NumberValidateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a phone number.</p>
@@ -1673,11 +2241,21 @@ pub mod phone_number_validate_output {
         pub fn set_number_validate_response(mut self, input: std::option::Option<crate::model::NumberValidateResponse>) -> Self {
             self.number_validate_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PhoneNumberValidateOutput`](crate::output::PhoneNumberValidateOutput).
         pub fn build(self) -> crate::output::PhoneNumberValidateOutput {
             crate::output::PhoneNumberValidateOutput {
                 number_validate_response: self.number_validate_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1698,6 +2276,7 @@ pub struct ListTemplateVersionsOutput  {
     /// <p>Provides information about all the versions of a specific message template.</p>
     #[doc(hidden)]
     pub template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
+    _request_id: Option<String>,
 }
 impl ListTemplateVersionsOutput {
     /// <p>Provides information about all the versions of a specific message template.</p>
@@ -1705,6 +2284,11 @@ impl ListTemplateVersionsOutput {
         self.template_versions_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTemplateVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
 pub mod list_template_versions_output {
     
@@ -1713,6 +2297,7 @@ pub mod list_template_versions_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_versions_response: std::option::Option<crate::model::TemplateVersionsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the versions of a specific message template.</p>
@@ -1724,11 +2309,21 @@ pub mod list_template_versions_output {
         pub fn set_template_versions_response(mut self, input: std::option::Option<crate::model::TemplateVersionsResponse>) -> Self {
             self.template_versions_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTemplateVersionsOutput`](crate::output::ListTemplateVersionsOutput).
         pub fn build(self) -> crate::output::ListTemplateVersionsOutput {
             crate::output::ListTemplateVersionsOutput {
                 template_versions_response: self.template_versions_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1749,6 +2344,7 @@ pub struct ListTemplatesOutput  {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub templates_response: std::option::Option<crate::model::TemplatesResponse>,
+    _request_id: Option<String>,
 }
 impl ListTemplatesOutput {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
@@ -1756,6 +2352,11 @@ impl ListTemplatesOutput {
         self.templates_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTemplatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
 pub mod list_templates_output {
     
@@ -1764,6 +2365,7 @@ pub mod list_templates_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) templates_response: std::option::Option<crate::model::TemplatesResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
@@ -1775,11 +2377,21 @@ pub mod list_templates_output {
         pub fn set_templates_response(mut self, input: std::option::Option<crate::model::TemplatesResponse>) -> Self {
             self.templates_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
         pub fn build(self) -> crate::output::ListTemplatesOutput {
             crate::output::ListTemplatesOutput {
                 templates_response: self.templates_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1800,6 +2412,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     #[doc(hidden)]
     pub tags_model: std::option::Option<crate::model::TagsModel>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
@@ -1807,6 +2420,11 @@ impl ListTagsForResourceOutput {
         self.tags_model.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1815,6 +2433,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags_model: std::option::Option<crate::model::TagsModel>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
@@ -1826,11 +2445,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags_model(mut self, input: std::option::Option<crate::model::TagsModel>) -> Self {
             self.tags_model = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags_model: self.tags_model
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1851,6 +2480,7 @@ pub struct ListJourneysOutput  {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     #[doc(hidden)]
     pub journeys_response: std::option::Option<crate::model::JourneysResponse>,
+    _request_id: Option<String>,
 }
 impl ListJourneysOutput {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
@@ -1858,6 +2488,11 @@ impl ListJourneysOutput {
         self.journeys_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListJourneysOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListJourneysOutput`](crate::output::ListJourneysOutput).
 pub mod list_journeys_output {
     
@@ -1866,6 +2501,7 @@ pub mod list_journeys_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journeys_response: std::option::Option<crate::model::JourneysResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
@@ -1877,11 +2513,21 @@ pub mod list_journeys_output {
         pub fn set_journeys_response(mut self, input: std::option::Option<crate::model::JourneysResponse>) -> Self {
             self.journeys_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListJourneysOutput`](crate::output::ListJourneysOutput).
         pub fn build(self) -> crate::output::ListJourneysOutput {
             crate::output::ListJourneysOutput {
                 journeys_response: self.journeys_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1902,6 +2548,7 @@ pub struct GetVoiceTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     #[doc(hidden)]
     pub voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
+    _request_id: Option<String>,
 }
 impl GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -1909,6 +2556,11 @@ impl GetVoiceTemplateOutput {
         self.voice_template_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
 pub mod get_voice_template_output {
     
@@ -1917,6 +2569,7 @@ pub mod get_voice_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_template_response: std::option::Option<crate::model::VoiceTemplateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -1928,11 +2581,21 @@ pub mod get_voice_template_output {
         pub fn set_voice_template_response(mut self, input: std::option::Option<crate::model::VoiceTemplateResponse>) -> Self {
             self.voice_template_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceTemplateOutput`](crate::output::GetVoiceTemplateOutput).
         pub fn build(self) -> crate::output::GetVoiceTemplateOutput {
             crate::output::GetVoiceTemplateOutput {
                 voice_template_response: self.voice_template_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1953,6 +2616,7 @@ pub struct GetVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -1960,6 +2624,11 @@ impl GetVoiceChannelOutput {
         self.voice_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetVoiceChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
 pub mod get_voice_channel_output {
     
@@ -1968,6 +2637,7 @@ pub mod get_voice_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -1979,11 +2649,21 @@ pub mod get_voice_channel_output {
         pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
             self.voice_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVoiceChannelOutput`](crate::output::GetVoiceChannelOutput).
         pub fn build(self) -> crate::output::GetVoiceChannelOutput {
             crate::output::GetVoiceChannelOutput {
                 voice_channel_response: self.voice_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2004,6 +2684,7 @@ pub struct GetUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
+    _request_id: Option<String>,
 }
 impl GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
@@ -2011,6 +2692,11 @@ impl GetUserEndpointsOutput {
         self.endpoints_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetUserEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
 pub mod get_user_endpoints_output {
     
@@ -2019,6 +2705,7 @@ pub mod get_user_endpoints_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
@@ -2030,11 +2717,21 @@ pub mod get_user_endpoints_output {
         pub fn set_endpoints_response(mut self, input: std::option::Option<crate::model::EndpointsResponse>) -> Self {
             self.endpoints_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetUserEndpointsOutput`](crate::output::GetUserEndpointsOutput).
         pub fn build(self) -> crate::output::GetUserEndpointsOutput {
             crate::output::GetUserEndpointsOutput {
                 endpoints_response: self.endpoints_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2055,6 +2752,7 @@ pub struct GetSmsTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     #[doc(hidden)]
     pub sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
+    _request_id: Option<String>,
 }
 impl GetSmsTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -2062,6 +2760,11 @@ impl GetSmsTemplateOutput {
         self.sms_template_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSmsTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
 pub mod get_sms_template_output {
     
@@ -2070,6 +2773,7 @@ pub mod get_sms_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_template_response: std::option::Option<crate::model::SmsTemplateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -2081,11 +2785,21 @@ pub mod get_sms_template_output {
         pub fn set_sms_template_response(mut self, input: std::option::Option<crate::model::SmsTemplateResponse>) -> Self {
             self.sms_template_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSmsTemplateOutput`](crate::output::GetSmsTemplateOutput).
         pub fn build(self) -> crate::output::GetSmsTemplateOutput {
             crate::output::GetSmsTemplateOutput {
                 sms_template_response: self.sms_template_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2106,6 +2820,7 @@ pub struct GetSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -2113,6 +2828,11 @@ impl GetSmsChannelOutput {
         self.sms_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSmsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
 pub mod get_sms_channel_output {
     
@@ -2121,6 +2841,7 @@ pub mod get_sms_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -2132,11 +2853,21 @@ pub mod get_sms_channel_output {
         pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
             self.sms_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSmsChannelOutput`](crate::output::GetSmsChannelOutput).
         pub fn build(self) -> crate::output::GetSmsChannelOutput {
             crate::output::GetSmsChannelOutput {
                 sms_channel_response: self.sms_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2157,6 +2888,7 @@ pub struct GetSegmentVersionsOutput  {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentVersionsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
@@ -2164,6 +2896,11 @@ impl GetSegmentVersionsOutput {
         self.segments_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
 pub mod get_segment_versions_output {
     
@@ -2172,6 +2909,7 @@ pub mod get_segment_versions_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments_response: std::option::Option<crate::model::SegmentsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the segments that are associated with an application.</p>
@@ -2183,11 +2921,21 @@ pub mod get_segment_versions_output {
         pub fn set_segments_response(mut self, input: std::option::Option<crate::model::SegmentsResponse>) -> Self {
             self.segments_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentVersionsOutput`](crate::output::GetSegmentVersionsOutput).
         pub fn build(self) -> crate::output::GetSegmentVersionsOutput {
             crate::output::GetSegmentVersionsOutput {
                 segments_response: self.segments_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2208,6 +2956,7 @@ pub struct GetSegmentVersionOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentVersionOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -2215,6 +2964,11 @@ impl GetSegmentVersionOutput {
         self.segment_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
 pub mod get_segment_version_output {
     
@@ -2223,6 +2977,7 @@ pub mod get_segment_version_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -2234,11 +2989,21 @@ pub mod get_segment_version_output {
         pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
             self.segment_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentVersionOutput`](crate::output::GetSegmentVersionOutput).
         pub fn build(self) -> crate::output::GetSegmentVersionOutput {
             crate::output::GetSegmentVersionOutput {
                 segment_response: self.segment_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2259,6 +3024,7 @@ pub struct GetSegmentsOutput  {
     /// <p>Provides information about all the segments that are associated with an application.</p>
     #[doc(hidden)]
     pub segments_response: std::option::Option<crate::model::SegmentsResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
@@ -2266,6 +3032,11 @@ impl GetSegmentsOutput {
         self.segments_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
 pub mod get_segments_output {
     
@@ -2274,6 +3045,7 @@ pub mod get_segments_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments_response: std::option::Option<crate::model::SegmentsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the segments that are associated with an application.</p>
@@ -2285,11 +3057,21 @@ pub mod get_segments_output {
         pub fn set_segments_response(mut self, input: std::option::Option<crate::model::SegmentsResponse>) -> Self {
             self.segments_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentsOutput`](crate::output::GetSegmentsOutput).
         pub fn build(self) -> crate::output::GetSegmentsOutput {
             crate::output::GetSegmentsOutput {
                 segments_response: self.segments_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2310,6 +3092,7 @@ pub struct GetSegmentImportJobsOutput  {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
@@ -2317,6 +3100,11 @@ impl GetSegmentImportJobsOutput {
         self.import_jobs_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentImportJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
 pub mod get_segment_import_jobs_output {
     
@@ -2325,6 +3113,7 @@ pub mod get_segment_import_jobs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
@@ -2336,11 +3125,21 @@ pub mod get_segment_import_jobs_output {
         pub fn set_import_jobs_response(mut self, input: std::option::Option<crate::model::ImportJobsResponse>) -> Self {
             self.import_jobs_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentImportJobsOutput`](crate::output::GetSegmentImportJobsOutput).
         pub fn build(self) -> crate::output::GetSegmentImportJobsOutput {
             crate::output::GetSegmentImportJobsOutput {
                 import_jobs_response: self.import_jobs_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2361,6 +3160,7 @@ pub struct GetSegmentExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
@@ -2368,6 +3168,11 @@ impl GetSegmentExportJobsOutput {
         self.export_jobs_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentExportJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
 pub mod get_segment_export_jobs_output {
     
@@ -2376,6 +3181,7 @@ pub mod get_segment_export_jobs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
@@ -2387,11 +3193,21 @@ pub mod get_segment_export_jobs_output {
         pub fn set_export_jobs_response(mut self, input: std::option::Option<crate::model::ExportJobsResponse>) -> Self {
             self.export_jobs_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentExportJobsOutput`](crate::output::GetSegmentExportJobsOutput).
         pub fn build(self) -> crate::output::GetSegmentExportJobsOutput {
             crate::output::GetSegmentExportJobsOutput {
                 export_jobs_response: self.export_jobs_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2412,6 +3228,7 @@ pub struct GetSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+    _request_id: Option<String>,
 }
 impl GetSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -2419,6 +3236,11 @@ impl GetSegmentOutput {
         self.segment_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSegmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSegmentOutput`](crate::output::GetSegmentOutput).
 pub mod get_segment_output {
     
@@ -2427,6 +3249,7 @@ pub mod get_segment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -2438,11 +3261,21 @@ pub mod get_segment_output {
         pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
             self.segment_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSegmentOutput`](crate::output::GetSegmentOutput).
         pub fn build(self) -> crate::output::GetSegmentOutput {
             crate::output::GetSegmentOutput {
                 segment_response: self.segment_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2463,6 +3296,7 @@ pub struct GetRecommenderConfigurationsOutput  {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub list_recommender_configurations_response: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
+    _request_id: Option<String>,
 }
 impl GetRecommenderConfigurationsOutput {
     /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
@@ -2470,6 +3304,11 @@ impl GetRecommenderConfigurationsOutput {
         self.list_recommender_configurations_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecommenderConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
 pub mod get_recommender_configurations_output {
     
@@ -2478,6 +3317,7 @@ pub mod get_recommender_configurations_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_recommender_configurations_response: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
@@ -2489,11 +3329,21 @@ pub mod get_recommender_configurations_output {
         pub fn set_list_recommender_configurations_response(mut self, input: std::option::Option<crate::model::ListRecommenderConfigurationsResponse>) -> Self {
             self.list_recommender_configurations_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecommenderConfigurationsOutput`](crate::output::GetRecommenderConfigurationsOutput).
         pub fn build(self) -> crate::output::GetRecommenderConfigurationsOutput {
             crate::output::GetRecommenderConfigurationsOutput {
                 list_recommender_configurations_response: self.list_recommender_configurations_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2514,6 +3364,7 @@ pub struct GetRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
     pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    _request_id: Option<String>,
 }
 impl GetRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -2521,6 +3372,11 @@ impl GetRecommenderConfigurationOutput {
         self.recommender_configuration_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecommenderConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
 pub mod get_recommender_configuration_output {
     
@@ -2529,6 +3385,7 @@ pub mod get_recommender_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -2540,11 +3397,21 @@ pub mod get_recommender_configuration_output {
         pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
             self.recommender_configuration_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecommenderConfigurationOutput`](crate::output::GetRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::GetRecommenderConfigurationOutput {
             crate::output::GetRecommenderConfigurationOutput {
                 recommender_configuration_response: self.recommender_configuration_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2565,6 +3432,7 @@ pub struct GetPushTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     #[doc(hidden)]
     pub push_notification_template_response: std::option::Option<crate::model::PushNotificationTemplateResponse>,
+    _request_id: Option<String>,
 }
 impl GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -2572,6 +3440,11 @@ impl GetPushTemplateOutput {
         self.push_notification_template_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPushTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
 pub mod get_push_template_output {
     
@@ -2580,6 +3453,7 @@ pub mod get_push_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) push_notification_template_response: std::option::Option<crate::model::PushNotificationTemplateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -2591,11 +3465,21 @@ pub mod get_push_template_output {
         pub fn set_push_notification_template_response(mut self, input: std::option::Option<crate::model::PushNotificationTemplateResponse>) -> Self {
             self.push_notification_template_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPushTemplateOutput`](crate::output::GetPushTemplateOutput).
         pub fn build(self) -> crate::output::GetPushTemplateOutput {
             crate::output::GetPushTemplateOutput {
                 push_notification_template_response: self.push_notification_template_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2616,6 +3500,7 @@ pub struct GetJourneyExecutionMetricsOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
     pub journey_execution_metrics_response: std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
+    _request_id: Option<String>,
 }
 impl GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
@@ -2623,6 +3508,11 @@ impl GetJourneyExecutionMetricsOutput {
         self.journey_execution_metrics_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJourneyExecutionMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
 pub mod get_journey_execution_metrics_output {
     
@@ -2631,6 +3521,7 @@ pub mod get_journey_execution_metrics_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_execution_metrics_response: std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
@@ -2642,11 +3533,21 @@ pub mod get_journey_execution_metrics_output {
         pub fn set_journey_execution_metrics_response(mut self, input: std::option::Option<crate::model::JourneyExecutionMetricsResponse>) -> Self {
             self.journey_execution_metrics_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJourneyExecutionMetricsOutput`](crate::output::GetJourneyExecutionMetricsOutput).
         pub fn build(self) -> crate::output::GetJourneyExecutionMetricsOutput {
             crate::output::GetJourneyExecutionMetricsOutput {
                 journey_execution_metrics_response: self.journey_execution_metrics_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2667,6 +3568,7 @@ pub struct GetJourneyExecutionActivityMetricsOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
     #[doc(hidden)]
     pub journey_execution_activity_metrics_response: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
+    _request_id: Option<String>,
 }
 impl GetJourneyExecutionActivityMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
@@ -2674,6 +3576,11 @@ impl GetJourneyExecutionActivityMetricsOutput {
         self.journey_execution_activity_metrics_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJourneyExecutionActivityMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
 pub mod get_journey_execution_activity_metrics_output {
     
@@ -2682,6 +3589,7 @@ pub mod get_journey_execution_activity_metrics_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_execution_activity_metrics_response: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
@@ -2693,11 +3601,21 @@ pub mod get_journey_execution_activity_metrics_output {
         pub fn set_journey_execution_activity_metrics_response(mut self, input: std::option::Option<crate::model::JourneyExecutionActivityMetricsResponse>) -> Self {
             self.journey_execution_activity_metrics_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJourneyExecutionActivityMetricsOutput`](crate::output::GetJourneyExecutionActivityMetricsOutput).
         pub fn build(self) -> crate::output::GetJourneyExecutionActivityMetricsOutput {
             crate::output::GetJourneyExecutionActivityMetricsOutput {
                 journey_execution_activity_metrics_response: self.journey_execution_activity_metrics_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2718,6 +3636,7 @@ pub struct GetJourneyDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
     pub journey_date_range_kpi_response: std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
+    _request_id: Option<String>,
 }
 impl GetJourneyDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
@@ -2725,6 +3644,11 @@ impl GetJourneyDateRangeKpiOutput {
         self.journey_date_range_kpi_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJourneyDateRangeKpiOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
 pub mod get_journey_date_range_kpi_output {
     
@@ -2733,6 +3657,7 @@ pub mod get_journey_date_range_kpi_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_date_range_kpi_response: std::option::Option<crate::model::JourneyDateRangeKpiResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
@@ -2744,11 +3669,21 @@ pub mod get_journey_date_range_kpi_output {
         pub fn set_journey_date_range_kpi_response(mut self, input: std::option::Option<crate::model::JourneyDateRangeKpiResponse>) -> Self {
             self.journey_date_range_kpi_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJourneyDateRangeKpiOutput`](crate::output::GetJourneyDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetJourneyDateRangeKpiOutput {
             crate::output::GetJourneyDateRangeKpiOutput {
                 journey_date_range_kpi_response: self.journey_date_range_kpi_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2769,6 +3704,7 @@ pub struct GetJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+    _request_id: Option<String>,
 }
 impl GetJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -2776,6 +3712,11 @@ impl GetJourneyOutput {
         self.journey_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJourneyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetJourneyOutput`](crate::output::GetJourneyOutput).
 pub mod get_journey_output {
     
@@ -2784,6 +3725,7 @@ pub mod get_journey_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -2795,11 +3737,21 @@ pub mod get_journey_output {
         pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
             self.journey_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetJourneyOutput`](crate::output::GetJourneyOutput).
         pub fn build(self) -> crate::output::GetJourneyOutput {
             crate::output::GetJourneyOutput {
                 journey_response: self.journey_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2820,6 +3772,7 @@ pub struct GetInAppTemplateOutput  {
     /// <p>In-App Template Response.</p>
     #[doc(hidden)]
     pub in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
+    _request_id: Option<String>,
 }
 impl GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
@@ -2827,6 +3780,11 @@ impl GetInAppTemplateOutput {
         self.in_app_template_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetInAppTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
 pub mod get_in_app_template_output {
     
@@ -2835,6 +3793,7 @@ pub mod get_in_app_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>In-App Template Response.</p>
@@ -2846,11 +3805,21 @@ pub mod get_in_app_template_output {
         pub fn set_in_app_template_response(mut self, input: std::option::Option<crate::model::InAppTemplateResponse>) -> Self {
             self.in_app_template_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput).
         pub fn build(self) -> crate::output::GetInAppTemplateOutput {
             crate::output::GetInAppTemplateOutput {
                 in_app_template_response: self.in_app_template_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2871,6 +3840,7 @@ pub struct GetInAppMessagesOutput  {
     /// <p>Get in-app messages response object.</p>
     #[doc(hidden)]
     pub in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
+    _request_id: Option<String>,
 }
 impl GetInAppMessagesOutput {
     /// <p>Get in-app messages response object.</p>
@@ -2878,6 +3848,11 @@ impl GetInAppMessagesOutput {
         self.in_app_messages_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetInAppMessagesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
 pub mod get_in_app_messages_output {
     
@@ -2886,6 +3861,7 @@ pub mod get_in_app_messages_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Get in-app messages response object.</p>
@@ -2897,11 +3873,21 @@ pub mod get_in_app_messages_output {
         pub fn set_in_app_messages_response(mut self, input: std::option::Option<crate::model::InAppMessagesResponse>) -> Self {
             self.in_app_messages_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput).
         pub fn build(self) -> crate::output::GetInAppMessagesOutput {
             crate::output::GetInAppMessagesOutput {
                 in_app_messages_response: self.in_app_messages_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2922,6 +3908,7 @@ pub struct GetImportJobsOutput  {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     #[doc(hidden)]
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
+    _request_id: Option<String>,
 }
 impl GetImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
@@ -2929,6 +3916,11 @@ impl GetImportJobsOutput {
         self.import_jobs_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetImportJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
 pub mod get_import_jobs_output {
     
@@ -2937,6 +3929,7 @@ pub mod get_import_jobs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
@@ -2948,11 +3941,21 @@ pub mod get_import_jobs_output {
         pub fn set_import_jobs_response(mut self, input: std::option::Option<crate::model::ImportJobsResponse>) -> Self {
             self.import_jobs_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetImportJobsOutput`](crate::output::GetImportJobsOutput).
         pub fn build(self) -> crate::output::GetImportJobsOutput {
             crate::output::GetImportJobsOutput {
                 import_jobs_response: self.import_jobs_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2973,6 +3976,7 @@ pub struct GetImportJobOutput  {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
+    _request_id: Option<String>,
 }
 impl GetImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
@@ -2980,6 +3984,11 @@ impl GetImportJobOutput {
         self.import_job_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetImportJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetImportJobOutput`](crate::output::GetImportJobOutput).
 pub mod get_import_job_output {
     
@@ -2988,6 +3997,7 @@ pub mod get_import_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_response: std::option::Option<crate::model::ImportJobResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
@@ -2999,11 +4009,21 @@ pub mod get_import_job_output {
         pub fn set_import_job_response(mut self, input: std::option::Option<crate::model::ImportJobResponse>) -> Self {
             self.import_job_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetImportJobOutput`](crate::output::GetImportJobOutput).
         pub fn build(self) -> crate::output::GetImportJobOutput {
             crate::output::GetImportJobOutput {
                 import_job_response: self.import_job_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3024,6 +4044,7 @@ pub struct GetGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -3031,6 +4052,11 @@ impl GetGcmChannelOutput {
         self.gcm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGcmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
 pub mod get_gcm_channel_output {
     
@@ -3039,6 +4065,7 @@ pub mod get_gcm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -3050,11 +4077,21 @@ pub mod get_gcm_channel_output {
         pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
             self.gcm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetGcmChannelOutput`](crate::output::GetGcmChannelOutput).
         pub fn build(self) -> crate::output::GetGcmChannelOutput {
             crate::output::GetGcmChannelOutput {
                 gcm_channel_response: self.gcm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3075,6 +4112,7 @@ pub struct GetExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
+    _request_id: Option<String>,
 }
 impl GetExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
@@ -3082,6 +4120,11 @@ impl GetExportJobsOutput {
         self.export_jobs_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetExportJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
 pub mod get_export_jobs_output {
     
@@ -3090,6 +4133,7 @@ pub mod get_export_jobs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_jobs_response: std::option::Option<crate::model::ExportJobsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
@@ -3101,11 +4145,21 @@ pub mod get_export_jobs_output {
         pub fn set_export_jobs_response(mut self, input: std::option::Option<crate::model::ExportJobsResponse>) -> Self {
             self.export_jobs_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetExportJobsOutput`](crate::output::GetExportJobsOutput).
         pub fn build(self) -> crate::output::GetExportJobsOutput {
             crate::output::GetExportJobsOutput {
                 export_jobs_response: self.export_jobs_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3126,6 +4180,7 @@ pub struct GetExportJobOutput  {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
+    _request_id: Option<String>,
 }
 impl GetExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
@@ -3133,6 +4188,11 @@ impl GetExportJobOutput {
         self.export_job_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetExportJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetExportJobOutput`](crate::output::GetExportJobOutput).
 pub mod get_export_job_output {
     
@@ -3141,6 +4201,7 @@ pub mod get_export_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_response: std::option::Option<crate::model::ExportJobResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
@@ -3152,11 +4213,21 @@ pub mod get_export_job_output {
         pub fn set_export_job_response(mut self, input: std::option::Option<crate::model::ExportJobResponse>) -> Self {
             self.export_job_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetExportJobOutput`](crate::output::GetExportJobOutput).
         pub fn build(self) -> crate::output::GetExportJobOutput {
             crate::output::GetExportJobOutput {
                 export_job_response: self.export_job_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3177,6 +4248,7 @@ pub struct GetEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
+    _request_id: Option<String>,
 }
 impl GetEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -3184,6 +4256,11 @@ impl GetEventStreamOutput {
         self.event_stream.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEventStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
 pub mod get_event_stream_output {
     
@@ -3192,6 +4269,7 @@ pub mod get_event_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -3203,11 +4281,21 @@ pub mod get_event_stream_output {
         pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
             self.event_stream = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEventStreamOutput`](crate::output::GetEventStreamOutput).
         pub fn build(self) -> crate::output::GetEventStreamOutput {
             crate::output::GetEventStreamOutput {
                 event_stream: self.event_stream
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3228,6 +4316,7 @@ pub struct GetEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
+    _request_id: Option<String>,
 }
 impl GetEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
@@ -3235,6 +4324,11 @@ impl GetEndpointOutput {
         self.endpoint_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEndpointOutput`](crate::output::GetEndpointOutput).
 pub mod get_endpoint_output {
     
@@ -3243,6 +4337,7 @@ pub mod get_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_response: std::option::Option<crate::model::EndpointResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the channel type and other settings for an endpoint.</p>
@@ -3254,11 +4349,21 @@ pub mod get_endpoint_output {
         pub fn set_endpoint_response(mut self, input: std::option::Option<crate::model::EndpointResponse>) -> Self {
             self.endpoint_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEndpointOutput`](crate::output::GetEndpointOutput).
         pub fn build(self) -> crate::output::GetEndpointOutput {
             crate::output::GetEndpointOutput {
                 endpoint_response: self.endpoint_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3279,6 +4384,7 @@ pub struct GetEmailTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     #[doc(hidden)]
     pub email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
+    _request_id: Option<String>,
 }
 impl GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -3286,6 +4392,11 @@ impl GetEmailTemplateOutput {
         self.email_template_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEmailTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
 pub mod get_email_template_output {
     
@@ -3294,6 +4405,7 @@ pub mod get_email_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_template_response: std::option::Option<crate::model::EmailTemplateResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -3305,11 +4417,21 @@ pub mod get_email_template_output {
         pub fn set_email_template_response(mut self, input: std::option::Option<crate::model::EmailTemplateResponse>) -> Self {
             self.email_template_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
         pub fn build(self) -> crate::output::GetEmailTemplateOutput {
             crate::output::GetEmailTemplateOutput {
                 email_template_response: self.email_template_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3330,6 +4452,7 @@ pub struct GetEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -3337,6 +4460,11 @@ impl GetEmailChannelOutput {
         self.email_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEmailChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
 pub mod get_email_channel_output {
     
@@ -3345,6 +4473,7 @@ pub mod get_email_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -3356,11 +4485,21 @@ pub mod get_email_channel_output {
         pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
             self.email_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetEmailChannelOutput`](crate::output::GetEmailChannelOutput).
         pub fn build(self) -> crate::output::GetEmailChannelOutput {
             crate::output::GetEmailChannelOutput {
                 email_channel_response: self.email_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3381,6 +4520,7 @@ pub struct GetChannelsOutput  {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     #[doc(hidden)]
     pub channels_response: std::option::Option<crate::model::ChannelsResponse>,
+    _request_id: Option<String>,
 }
 impl GetChannelsOutput {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
@@ -3388,6 +4528,11 @@ impl GetChannelsOutput {
         self.channels_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetChannelsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetChannelsOutput`](crate::output::GetChannelsOutput).
 pub mod get_channels_output {
     
@@ -3396,6 +4541,7 @@ pub mod get_channels_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels_response: std::option::Option<crate::model::ChannelsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
@@ -3407,11 +4553,21 @@ pub mod get_channels_output {
         pub fn set_channels_response(mut self, input: std::option::Option<crate::model::ChannelsResponse>) -> Self {
             self.channels_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetChannelsOutput`](crate::output::GetChannelsOutput).
         pub fn build(self) -> crate::output::GetChannelsOutput {
             crate::output::GetChannelsOutput {
                 channels_response: self.channels_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3432,6 +4588,7 @@ pub struct GetCampaignVersionsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignVersionsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
@@ -3439,6 +4596,11 @@ impl GetCampaignVersionsOutput {
         self.campaigns_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
 pub mod get_campaign_versions_output {
     
@@ -3447,6 +4609,7 @@ pub mod get_campaign_versions_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
@@ -3458,11 +4621,21 @@ pub mod get_campaign_versions_output {
         pub fn set_campaigns_response(mut self, input: std::option::Option<crate::model::CampaignsResponse>) -> Self {
             self.campaigns_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignVersionsOutput`](crate::output::GetCampaignVersionsOutput).
         pub fn build(self) -> crate::output::GetCampaignVersionsOutput {
             crate::output::GetCampaignVersionsOutput {
                 campaigns_response: self.campaigns_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3483,6 +4656,7 @@ pub struct GetCampaignVersionOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignVersionOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -3490,6 +4664,11 @@ impl GetCampaignVersionOutput {
         self.campaign_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
 pub mod get_campaign_version_output {
     
@@ -3498,6 +4677,7 @@ pub mod get_campaign_version_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -3509,11 +4689,21 @@ pub mod get_campaign_version_output {
         pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
             self.campaign_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignVersionOutput`](crate::output::GetCampaignVersionOutput).
         pub fn build(self) -> crate::output::GetCampaignVersionOutput {
             crate::output::GetCampaignVersionOutput {
                 campaign_response: self.campaign_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3534,6 +4724,7 @@ pub struct GetCampaignsOutput  {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
     #[doc(hidden)]
     pub campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
@@ -3541,6 +4732,11 @@ impl GetCampaignsOutput {
         self.campaigns_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
 pub mod get_campaigns_output {
     
@@ -3549,6 +4745,7 @@ pub mod get_campaigns_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaigns_response: std::option::Option<crate::model::CampaignsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
@@ -3560,11 +4757,21 @@ pub mod get_campaigns_output {
         pub fn set_campaigns_response(mut self, input: std::option::Option<crate::model::CampaignsResponse>) -> Self {
             self.campaigns_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignsOutput`](crate::output::GetCampaignsOutput).
         pub fn build(self) -> crate::output::GetCampaignsOutput {
             crate::output::GetCampaignsOutput {
                 campaigns_response: self.campaigns_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3585,6 +4792,7 @@ pub struct GetCampaignDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     #[doc(hidden)]
     pub campaign_date_range_kpi_response: std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
@@ -3592,6 +4800,11 @@ impl GetCampaignDateRangeKpiOutput {
         self.campaign_date_range_kpi_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignDateRangeKpiOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
 pub mod get_campaign_date_range_kpi_output {
     
@@ -3600,6 +4813,7 @@ pub mod get_campaign_date_range_kpi_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_date_range_kpi_response: std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
@@ -3611,11 +4825,21 @@ pub mod get_campaign_date_range_kpi_output {
         pub fn set_campaign_date_range_kpi_response(mut self, input: std::option::Option<crate::model::CampaignDateRangeKpiResponse>) -> Self {
             self.campaign_date_range_kpi_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignDateRangeKpiOutput`](crate::output::GetCampaignDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetCampaignDateRangeKpiOutput {
             crate::output::GetCampaignDateRangeKpiOutput {
                 campaign_date_range_kpi_response: self.campaign_date_range_kpi_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3636,6 +4860,7 @@ pub struct GetCampaignActivitiesOutput  {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
     #[doc(hidden)]
     pub activities_response: std::option::Option<crate::model::ActivitiesResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignActivitiesOutput {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
@@ -3643,6 +4868,11 @@ impl GetCampaignActivitiesOutput {
         self.activities_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignActivitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
 pub mod get_campaign_activities_output {
     
@@ -3651,6 +4881,7 @@ pub mod get_campaign_activities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities_response: std::option::Option<crate::model::ActivitiesResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the activities that were performed by a campaign.</p>
@@ -3662,11 +4893,21 @@ pub mod get_campaign_activities_output {
         pub fn set_activities_response(mut self, input: std::option::Option<crate::model::ActivitiesResponse>) -> Self {
             self.activities_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignActivitiesOutput`](crate::output::GetCampaignActivitiesOutput).
         pub fn build(self) -> crate::output::GetCampaignActivitiesOutput {
             crate::output::GetCampaignActivitiesOutput {
                 activities_response: self.activities_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3687,6 +4928,7 @@ pub struct GetCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+    _request_id: Option<String>,
 }
 impl GetCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -3694,6 +4936,11 @@ impl GetCampaignOutput {
         self.campaign_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCampaignOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCampaignOutput`](crate::output::GetCampaignOutput).
 pub mod get_campaign_output {
     
@@ -3702,6 +4949,7 @@ pub mod get_campaign_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -3713,11 +4961,21 @@ pub mod get_campaign_output {
         pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
             self.campaign_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCampaignOutput`](crate::output::GetCampaignOutput).
         pub fn build(self) -> crate::output::GetCampaignOutput {
             crate::output::GetCampaignOutput {
                 campaign_response: self.campaign_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3738,6 +4996,7 @@ pub struct GetBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -3745,6 +5004,11 @@ impl GetBaiduChannelOutput {
         self.baidu_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetBaiduChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
 pub mod get_baidu_channel_output {
     
@@ -3753,6 +5017,7 @@ pub mod get_baidu_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -3764,11 +5029,21 @@ pub mod get_baidu_channel_output {
         pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
             self.baidu_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetBaiduChannelOutput`](crate::output::GetBaiduChannelOutput).
         pub fn build(self) -> crate::output::GetBaiduChannelOutput {
             crate::output::GetBaiduChannelOutput {
                 baidu_channel_response: self.baidu_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3789,6 +5064,7 @@ pub struct GetAppsOutput  {
     /// <p>Provides information about all of your applications.</p>
     #[doc(hidden)]
     pub applications_response: std::option::Option<crate::model::ApplicationsResponse>,
+    _request_id: Option<String>,
 }
 impl GetAppsOutput {
     /// <p>Provides information about all of your applications.</p>
@@ -3796,6 +5072,11 @@ impl GetAppsOutput {
         self.applications_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAppsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAppsOutput`](crate::output::GetAppsOutput).
 pub mod get_apps_output {
     
@@ -3804,6 +5085,7 @@ pub mod get_apps_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications_response: std::option::Option<crate::model::ApplicationsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all of your applications.</p>
@@ -3815,11 +5097,21 @@ pub mod get_apps_output {
         pub fn set_applications_response(mut self, input: std::option::Option<crate::model::ApplicationsResponse>) -> Self {
             self.applications_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAppsOutput`](crate::output::GetAppsOutput).
         pub fn build(self) -> crate::output::GetAppsOutput {
             crate::output::GetAppsOutput {
                 applications_response: self.applications_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3840,6 +5132,7 @@ pub struct GetApplicationSettingsOutput  {
     /// <p>Provides information about an application, including the default settings for an application.</p>
     #[doc(hidden)]
     pub application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
+    _request_id: Option<String>,
 }
 impl GetApplicationSettingsOutput {
     /// <p>Provides information about an application, including the default settings for an application.</p>
@@ -3847,6 +5140,11 @@ impl GetApplicationSettingsOutput {
         self.application_settings_resource.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApplicationSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
 pub mod get_application_settings_output {
     
@@ -3855,6 +5153,7 @@ pub mod get_application_settings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_settings_resource: std::option::Option<crate::model::ApplicationSettingsResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an application, including the default settings for an application.</p>
@@ -3866,11 +5165,21 @@ pub mod get_application_settings_output {
         pub fn set_application_settings_resource(mut self, input: std::option::Option<crate::model::ApplicationSettingsResource>) -> Self {
             self.application_settings_resource = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApplicationSettingsOutput`](crate::output::GetApplicationSettingsOutput).
         pub fn build(self) -> crate::output::GetApplicationSettingsOutput {
             crate::output::GetApplicationSettingsOutput {
                 application_settings_resource: self.application_settings_resource
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3891,6 +5200,7 @@ pub struct GetApplicationDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     #[doc(hidden)]
     pub application_date_range_kpi_response: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
+    _request_id: Option<String>,
 }
 impl GetApplicationDateRangeKpiOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
@@ -3898,6 +5208,11 @@ impl GetApplicationDateRangeKpiOutput {
         self.application_date_range_kpi_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApplicationDateRangeKpiOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
 pub mod get_application_date_range_kpi_output {
     
@@ -3906,6 +5221,7 @@ pub mod get_application_date_range_kpi_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_date_range_kpi_response: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
@@ -3917,11 +5233,21 @@ pub mod get_application_date_range_kpi_output {
         pub fn set_application_date_range_kpi_response(mut self, input: std::option::Option<crate::model::ApplicationDateRangeKpiResponse>) -> Self {
             self.application_date_range_kpi_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApplicationDateRangeKpiOutput`](crate::output::GetApplicationDateRangeKpiOutput).
         pub fn build(self) -> crate::output::GetApplicationDateRangeKpiOutput {
             crate::output::GetApplicationDateRangeKpiOutput {
                 application_date_range_kpi_response: self.application_date_range_kpi_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3942,6 +5268,7 @@ pub struct GetAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
+    _request_id: Option<String>,
 }
 impl GetAppOutput {
     /// <p>Provides information about an application.</p>
@@ -3949,6 +5276,11 @@ impl GetAppOutput {
         self.application_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAppOutput`](crate::output::GetAppOutput).
 pub mod get_app_output {
     
@@ -3957,6 +5289,7 @@ pub mod get_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an application.</p>
@@ -3968,11 +5301,21 @@ pub mod get_app_output {
         pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
             self.application_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAppOutput`](crate::output::GetAppOutput).
         pub fn build(self) -> crate::output::GetAppOutput {
             crate::output::GetAppOutput {
                 application_response: self.application_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3993,6 +5336,7 @@ pub struct GetApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -4000,6 +5344,11 @@ impl GetApnsVoipSandboxChannelOutput {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApnsVoipSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
 pub mod get_apns_voip_sandbox_channel_output {
     
@@ -4008,6 +5357,7 @@ pub mod get_apns_voip_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -4019,11 +5369,21 @@ pub mod get_apns_voip_sandbox_channel_output {
         pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
             self.apns_voip_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApnsVoipSandboxChannelOutput`](crate::output::GetApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::GetApnsVoipSandboxChannelOutput {
             crate::output::GetApnsVoipSandboxChannelOutput {
                 apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4044,6 +5404,7 @@ pub struct GetApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -4051,6 +5412,11 @@ impl GetApnsVoipChannelOutput {
         self.apns_voip_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApnsVoipChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
 pub mod get_apns_voip_channel_output {
     
@@ -4059,6 +5425,7 @@ pub mod get_apns_voip_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -4070,11 +5437,21 @@ pub mod get_apns_voip_channel_output {
         pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
             self.apns_voip_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApnsVoipChannelOutput`](crate::output::GetApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::GetApnsVoipChannelOutput {
             crate::output::GetApnsVoipChannelOutput {
                 apns_voip_channel_response: self.apns_voip_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4095,6 +5472,7 @@ pub struct GetApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -4102,6 +5480,11 @@ impl GetApnsSandboxChannelOutput {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApnsSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
 pub mod get_apns_sandbox_channel_output {
     
@@ -4110,6 +5493,7 @@ pub mod get_apns_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -4121,11 +5505,21 @@ pub mod get_apns_sandbox_channel_output {
         pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
             self.apns_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApnsSandboxChannelOutput`](crate::output::GetApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::GetApnsSandboxChannelOutput {
             crate::output::GetApnsSandboxChannelOutput {
                 apns_sandbox_channel_response: self.apns_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4146,6 +5540,7 @@ pub struct GetApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -4153,6 +5548,11 @@ impl GetApnsChannelOutput {
         self.apns_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetApnsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
 pub mod get_apns_channel_output {
     
@@ -4161,6 +5561,7 @@ pub mod get_apns_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -4172,11 +5573,21 @@ pub mod get_apns_channel_output {
         pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
             self.apns_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetApnsChannelOutput`](crate::output::GetApnsChannelOutput).
         pub fn build(self) -> crate::output::GetApnsChannelOutput {
             crate::output::GetApnsChannelOutput {
                 apns_channel_response: self.apns_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4197,6 +5608,7 @@ pub struct GetAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl GetAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -4204,6 +5616,11 @@ impl GetAdmChannelOutput {
         self.adm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAdmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
 pub mod get_adm_channel_output {
     
@@ -4212,6 +5629,7 @@ pub mod get_adm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -4223,11 +5641,21 @@ pub mod get_adm_channel_output {
         pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
             self.adm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAdmChannelOutput`](crate::output::GetAdmChannelOutput).
         pub fn build(self) -> crate::output::GetAdmChannelOutput {
             crate::output::GetAdmChannelOutput {
                 adm_channel_response: self.adm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4248,6 +5676,7 @@ pub struct DeleteVoiceTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl DeleteVoiceTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -4255,6 +5684,11 @@ impl DeleteVoiceTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVoiceTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
 pub mod delete_voice_template_output {
     
@@ -4263,6 +5697,7 @@ pub mod delete_voice_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -4274,11 +5709,21 @@ pub mod delete_voice_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceTemplateOutput`](crate::output::DeleteVoiceTemplateOutput).
         pub fn build(self) -> crate::output::DeleteVoiceTemplateOutput {
             crate::output::DeleteVoiceTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4299,6 +5744,7 @@ pub struct DeleteVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     #[doc(hidden)]
     pub voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -4306,6 +5752,11 @@ impl DeleteVoiceChannelOutput {
         self.voice_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVoiceChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
 pub mod delete_voice_channel_output {
     
@@ -4314,6 +5765,7 @@ pub mod delete_voice_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_channel_response: std::option::Option<crate::model::VoiceChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the voice channel for an application.</p>
@@ -4325,11 +5777,21 @@ pub mod delete_voice_channel_output {
         pub fn set_voice_channel_response(mut self, input: std::option::Option<crate::model::VoiceChannelResponse>) -> Self {
             self.voice_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVoiceChannelOutput`](crate::output::DeleteVoiceChannelOutput).
         pub fn build(self) -> crate::output::DeleteVoiceChannelOutput {
             crate::output::DeleteVoiceChannelOutput {
                 voice_channel_response: self.voice_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4350,6 +5812,7 @@ pub struct DeleteUserEndpointsOutput  {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
@@ -4357,6 +5820,11 @@ impl DeleteUserEndpointsOutput {
         self.endpoints_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteUserEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
 pub mod delete_user_endpoints_output {
     
@@ -4365,6 +5833,7 @@ pub mod delete_user_endpoints_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints_response: std::option::Option<crate::model::EndpointsResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
@@ -4376,11 +5845,21 @@ pub mod delete_user_endpoints_output {
         pub fn set_endpoints_response(mut self, input: std::option::Option<crate::model::EndpointsResponse>) -> Self {
             self.endpoints_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteUserEndpointsOutput`](crate::output::DeleteUserEndpointsOutput).
         pub fn build(self) -> crate::output::DeleteUserEndpointsOutput {
             crate::output::DeleteUserEndpointsOutput {
                 endpoints_response: self.endpoints_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4401,6 +5880,7 @@ pub struct DeleteSmsTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl DeleteSmsTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -4408,6 +5888,11 @@ impl DeleteSmsTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSmsTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
 pub mod delete_sms_template_output {
     
@@ -4416,6 +5901,7 @@ pub mod delete_sms_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -4427,11 +5913,21 @@ pub mod delete_sms_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSmsTemplateOutput`](crate::output::DeleteSmsTemplateOutput).
         pub fn build(self) -> crate::output::DeleteSmsTemplateOutput {
             crate::output::DeleteSmsTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4452,6 +5948,7 @@ pub struct DeleteSmsChannelOutput  {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
     #[doc(hidden)]
     pub sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -4459,6 +5956,11 @@ impl DeleteSmsChannelOutput {
         self.sms_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSmsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
 pub mod delete_sms_channel_output {
     
@@ -4467,6 +5969,7 @@ pub mod delete_sms_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sms_channel_response: std::option::Option<crate::model::SmsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
@@ -4478,11 +5981,21 @@ pub mod delete_sms_channel_output {
         pub fn set_sms_channel_response(mut self, input: std::option::Option<crate::model::SmsChannelResponse>) -> Self {
             self.sms_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSmsChannelOutput`](crate::output::DeleteSmsChannelOutput).
         pub fn build(self) -> crate::output::DeleteSmsChannelOutput {
             crate::output::DeleteSmsChannelOutput {
                 sms_channel_response: self.sms_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4503,6 +6016,7 @@ pub struct DeleteSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -4510,6 +6024,11 @@ impl DeleteSegmentOutput {
         self.segment_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSegmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
 pub mod delete_segment_output {
     
@@ -4518,6 +6037,7 @@ pub mod delete_segment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -4529,11 +6049,21 @@ pub mod delete_segment_output {
         pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
             self.segment_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSegmentOutput`](crate::output::DeleteSegmentOutput).
         pub fn build(self) -> crate::output::DeleteSegmentOutput {
             crate::output::DeleteSegmentOutput {
                 segment_response: self.segment_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4554,6 +6084,7 @@ pub struct DeleteRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
     pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -4561,6 +6092,11 @@ impl DeleteRecommenderConfigurationOutput {
         self.recommender_configuration_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRecommenderConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
 pub mod delete_recommender_configuration_output {
     
@@ -4569,6 +6105,7 @@ pub mod delete_recommender_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -4580,11 +6117,21 @@ pub mod delete_recommender_configuration_output {
         pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
             self.recommender_configuration_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRecommenderConfigurationOutput`](crate::output::DeleteRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteRecommenderConfigurationOutput {
             crate::output::DeleteRecommenderConfigurationOutput {
                 recommender_configuration_response: self.recommender_configuration_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4605,6 +6152,7 @@ pub struct DeletePushTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl DeletePushTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -4612,6 +6160,11 @@ impl DeletePushTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeletePushTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
 pub mod delete_push_template_output {
     
@@ -4620,6 +6173,7 @@ pub mod delete_push_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -4631,11 +6185,21 @@ pub mod delete_push_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePushTemplateOutput`](crate::output::DeletePushTemplateOutput).
         pub fn build(self) -> crate::output::DeletePushTemplateOutput {
             crate::output::DeletePushTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4656,6 +6220,7 @@ pub struct DeleteJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -4663,6 +6228,11 @@ impl DeleteJourneyOutput {
         self.journey_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteJourneyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
 pub mod delete_journey_output {
     
@@ -4671,6 +6241,7 @@ pub mod delete_journey_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -4682,11 +6253,21 @@ pub mod delete_journey_output {
         pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
             self.journey_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteJourneyOutput`](crate::output::DeleteJourneyOutput).
         pub fn build(self) -> crate::output::DeleteJourneyOutput {
             crate::output::DeleteJourneyOutput {
                 journey_response: self.journey_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4707,6 +6288,7 @@ pub struct DeleteInAppTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl DeleteInAppTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -4714,6 +6296,11 @@ impl DeleteInAppTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteInAppTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
 pub mod delete_in_app_template_output {
     
@@ -4722,6 +6309,7 @@ pub mod delete_in_app_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -4733,11 +6321,21 @@ pub mod delete_in_app_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput).
         pub fn build(self) -> crate::output::DeleteInAppTemplateOutput {
             crate::output::DeleteInAppTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4758,6 +6356,7 @@ pub struct DeleteGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     #[doc(hidden)]
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -4765,6 +6364,11 @@ impl DeleteGcmChannelOutput {
         self.gcm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteGcmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
 pub mod delete_gcm_channel_output {
     
@@ -4773,6 +6377,7 @@ pub mod delete_gcm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -4784,11 +6389,21 @@ pub mod delete_gcm_channel_output {
         pub fn set_gcm_channel_response(mut self, input: std::option::Option<crate::model::GcmChannelResponse>) -> Self {
             self.gcm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteGcmChannelOutput`](crate::output::DeleteGcmChannelOutput).
         pub fn build(self) -> crate::output::DeleteGcmChannelOutput {
             crate::output::DeleteGcmChannelOutput {
                 gcm_channel_response: self.gcm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4809,6 +6424,7 @@ pub struct DeleteEventStreamOutput  {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub event_stream: std::option::Option<crate::model::EventStream>,
+    _request_id: Option<String>,
 }
 impl DeleteEventStreamOutput {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -4816,6 +6432,11 @@ impl DeleteEventStreamOutput {
         self.event_stream.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEventStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
 pub mod delete_event_stream_output {
     
@@ -4824,6 +6445,7 @@ pub mod delete_event_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_stream: std::option::Option<crate::model::EventStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
@@ -4835,11 +6457,21 @@ pub mod delete_event_stream_output {
         pub fn set_event_stream(mut self, input: std::option::Option<crate::model::EventStream>) -> Self {
             self.event_stream = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEventStreamOutput`](crate::output::DeleteEventStreamOutput).
         pub fn build(self) -> crate::output::DeleteEventStreamOutput {
             crate::output::DeleteEventStreamOutput {
                 event_stream: self.event_stream
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4860,6 +6492,7 @@ pub struct DeleteEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     #[doc(hidden)]
     pub endpoint_response: std::option::Option<crate::model::EndpointResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteEndpointOutput {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
@@ -4867,6 +6500,11 @@ impl DeleteEndpointOutput {
         self.endpoint_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
     
@@ -4875,6 +6513,7 @@ pub mod delete_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_response: std::option::Option<crate::model::EndpointResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the channel type and other settings for an endpoint.</p>
@@ -4886,11 +6525,21 @@ pub mod delete_endpoint_output {
         pub fn set_endpoint_response(mut self, input: std::option::Option<crate::model::EndpointResponse>) -> Self {
             self.endpoint_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
             crate::output::DeleteEndpointOutput {
                 endpoint_response: self.endpoint_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4911,6 +6560,7 @@ pub struct DeleteEmailTemplateOutput  {
     /// <p>Provides information about an API request or response.</p>
     #[doc(hidden)]
     pub message_body: std::option::Option<crate::model::MessageBody>,
+    _request_id: Option<String>,
 }
 impl DeleteEmailTemplateOutput {
     /// <p>Provides information about an API request or response.</p>
@@ -4918,6 +6568,11 @@ impl DeleteEmailTemplateOutput {
         self.message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEmailTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
 pub mod delete_email_template_output {
     
@@ -4926,6 +6581,7 @@ pub mod delete_email_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an API request or response.</p>
@@ -4937,11 +6593,21 @@ pub mod delete_email_template_output {
         pub fn set_message_body(mut self, input: std::option::Option<crate::model::MessageBody>) -> Self {
             self.message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
         pub fn build(self) -> crate::output::DeleteEmailTemplateOutput {
             crate::output::DeleteEmailTemplateOutput {
                 message_body: self.message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4962,6 +6628,7 @@ pub struct DeleteEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -4969,6 +6636,11 @@ impl DeleteEmailChannelOutput {
         self.email_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEmailChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
 pub mod delete_email_channel_output {
     
@@ -4977,6 +6649,7 @@ pub mod delete_email_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_channel_response: std::option::Option<crate::model::EmailChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the email channel for an application.</p>
@@ -4988,11 +6661,21 @@ pub mod delete_email_channel_output {
         pub fn set_email_channel_response(mut self, input: std::option::Option<crate::model::EmailChannelResponse>) -> Self {
             self.email_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEmailChannelOutput`](crate::output::DeleteEmailChannelOutput).
         pub fn build(self) -> crate::output::DeleteEmailChannelOutput {
             crate::output::DeleteEmailChannelOutput {
                 email_channel_response: self.email_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5013,6 +6696,7 @@ pub struct DeleteCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -5020,6 +6704,11 @@ impl DeleteCampaignOutput {
         self.campaign_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteCampaignOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
 pub mod delete_campaign_output {
     
@@ -5028,6 +6717,7 @@ pub mod delete_campaign_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -5039,11 +6729,21 @@ pub mod delete_campaign_output {
         pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
             self.campaign_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
         pub fn build(self) -> crate::output::DeleteCampaignOutput {
             crate::output::DeleteCampaignOutput {
                 campaign_response: self.campaign_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5064,6 +6764,7 @@ pub struct DeleteBaiduChannelOutput  {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     #[doc(hidden)]
     pub baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -5071,6 +6772,11 @@ impl DeleteBaiduChannelOutput {
         self.baidu_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBaiduChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
 pub mod delete_baidu_channel_output {
     
@@ -5079,6 +6785,7 @@ pub mod delete_baidu_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) baidu_channel_response: std::option::Option<crate::model::BaiduChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -5090,11 +6797,21 @@ pub mod delete_baidu_channel_output {
         pub fn set_baidu_channel_response(mut self, input: std::option::Option<crate::model::BaiduChannelResponse>) -> Self {
             self.baidu_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBaiduChannelOutput`](crate::output::DeleteBaiduChannelOutput).
         pub fn build(self) -> crate::output::DeleteBaiduChannelOutput {
             crate::output::DeleteBaiduChannelOutput {
                 baidu_channel_response: self.baidu_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5115,6 +6832,7 @@ pub struct DeleteAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteAppOutput {
     /// <p>Provides information about an application.</p>
@@ -5122,6 +6840,11 @@ impl DeleteAppOutput {
         self.application_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
 pub mod delete_app_output {
     
@@ -5130,6 +6853,7 @@ pub mod delete_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an application.</p>
@@ -5141,11 +6865,21 @@ pub mod delete_app_output {
         pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
             self.application_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
             crate::output::DeleteAppOutput {
                 application_response: self.application_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5166,6 +6900,7 @@ pub struct DeleteApnsVoipSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -5173,6 +6908,11 @@ impl DeleteApnsVoipSandboxChannelOutput {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteApnsVoipSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
 pub mod delete_apns_voip_sandbox_channel_output {
     
@@ -5181,6 +6921,7 @@ pub mod delete_apns_voip_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_sandbox_channel_response: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -5192,11 +6933,21 @@ pub mod delete_apns_voip_sandbox_channel_output {
         pub fn set_apns_voip_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipSandboxChannelResponse>) -> Self {
             self.apns_voip_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteApnsVoipSandboxChannelOutput`](crate::output::DeleteApnsVoipSandboxChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsVoipSandboxChannelOutput {
             crate::output::DeleteApnsVoipSandboxChannelOutput {
                 apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5217,6 +6968,7 @@ pub struct DeleteApnsVoipChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     #[doc(hidden)]
     pub apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteApnsVoipChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -5224,6 +6976,11 @@ impl DeleteApnsVoipChannelOutput {
         self.apns_voip_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteApnsVoipChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
 pub mod delete_apns_voip_channel_output {
     
@@ -5232,6 +6989,7 @@ pub mod delete_apns_voip_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_voip_channel_response: std::option::Option<crate::model::ApnsVoipChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -5243,11 +7001,21 @@ pub mod delete_apns_voip_channel_output {
         pub fn set_apns_voip_channel_response(mut self, input: std::option::Option<crate::model::ApnsVoipChannelResponse>) -> Self {
             self.apns_voip_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteApnsVoipChannelOutput`](crate::output::DeleteApnsVoipChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsVoipChannelOutput {
             crate::output::DeleteApnsVoipChannelOutput {
                 apns_voip_channel_response: self.apns_voip_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5268,6 +7036,7 @@ pub struct DeleteApnsSandboxChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
     #[doc(hidden)]
     pub apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteApnsSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -5275,6 +7044,11 @@ impl DeleteApnsSandboxChannelOutput {
         self.apns_sandbox_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteApnsSandboxChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
 pub mod delete_apns_sandbox_channel_output {
     
@@ -5283,6 +7057,7 @@ pub mod delete_apns_sandbox_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_sandbox_channel_response: std::option::Option<crate::model::ApnsSandboxChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -5294,11 +7069,21 @@ pub mod delete_apns_sandbox_channel_output {
         pub fn set_apns_sandbox_channel_response(mut self, input: std::option::Option<crate::model::ApnsSandboxChannelResponse>) -> Self {
             self.apns_sandbox_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteApnsSandboxChannelOutput`](crate::output::DeleteApnsSandboxChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsSandboxChannelOutput {
             crate::output::DeleteApnsSandboxChannelOutput {
                 apns_sandbox_channel_response: self.apns_sandbox_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5319,6 +7104,7 @@ pub struct DeleteApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -5326,6 +7112,11 @@ impl DeleteApnsChannelOutput {
         self.apns_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteApnsChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
 pub mod delete_apns_channel_output {
     
@@ -5334,6 +7125,7 @@ pub mod delete_apns_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apns_channel_response: std::option::Option<crate::model::ApnsChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -5345,11 +7137,21 @@ pub mod delete_apns_channel_output {
         pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::model::ApnsChannelResponse>) -> Self {
             self.apns_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteApnsChannelOutput`](crate::output::DeleteApnsChannelOutput).
         pub fn build(self) -> crate::output::DeleteApnsChannelOutput {
             crate::output::DeleteApnsChannelOutput {
                 apns_channel_response: self.apns_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5370,6 +7172,7 @@ pub struct DeleteAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     #[doc(hidden)]
     pub adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+    _request_id: Option<String>,
 }
 impl DeleteAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -5377,6 +7180,11 @@ impl DeleteAdmChannelOutput {
         self.adm_channel_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAdmChannelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
 pub mod delete_adm_channel_output {
     
@@ -5385,6 +7193,7 @@ pub mod delete_adm_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adm_channel_response: std::option::Option<crate::model::AdmChannelResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -5396,11 +7205,21 @@ pub mod delete_adm_channel_output {
         pub fn set_adm_channel_response(mut self, input: std::option::Option<crate::model::AdmChannelResponse>) -> Self {
             self.adm_channel_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAdmChannelOutput`](crate::output::DeleteAdmChannelOutput).
         pub fn build(self) -> crate::output::DeleteAdmChannelOutput {
             crate::output::DeleteAdmChannelOutput {
                 adm_channel_response: self.adm_channel_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5421,6 +7240,7 @@ pub struct CreateVoiceTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+    _request_id: Option<String>,
 }
 impl CreateVoiceTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
@@ -5428,6 +7248,11 @@ impl CreateVoiceTemplateOutput {
         self.create_template_message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVoiceTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
 pub mod create_voice_template_output {
     
@@ -5436,6 +7261,7 @@ pub mod create_voice_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
@@ -5447,11 +7273,21 @@ pub mod create_voice_template_output {
         pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
             self.create_template_message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVoiceTemplateOutput`](crate::output::CreateVoiceTemplateOutput).
         pub fn build(self) -> crate::output::CreateVoiceTemplateOutput {
             crate::output::CreateVoiceTemplateOutput {
                 create_template_message_body: self.create_template_message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5472,6 +7308,7 @@ pub struct CreateSmsTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+    _request_id: Option<String>,
 }
 impl CreateSmsTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
@@ -5479,6 +7316,11 @@ impl CreateSmsTemplateOutput {
         self.create_template_message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSmsTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
 pub mod create_sms_template_output {
     
@@ -5487,6 +7329,7 @@ pub mod create_sms_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
@@ -5498,11 +7341,21 @@ pub mod create_sms_template_output {
         pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
             self.create_template_message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSmsTemplateOutput`](crate::output::CreateSmsTemplateOutput).
         pub fn build(self) -> crate::output::CreateSmsTemplateOutput {
             crate::output::CreateSmsTemplateOutput {
                 create_template_message_body: self.create_template_message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5523,6 +7376,7 @@ pub struct CreateSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     #[doc(hidden)]
     pub segment_response: std::option::Option<crate::model::SegmentResponse>,
+    _request_id: Option<String>,
 }
 impl CreateSegmentOutput {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -5530,6 +7384,11 @@ impl CreateSegmentOutput {
         self.segment_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSegmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
 pub mod create_segment_output {
     
@@ -5538,6 +7397,7 @@ pub mod create_segment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_response: std::option::Option<crate::model::SegmentResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
@@ -5549,11 +7409,21 @@ pub mod create_segment_output {
         pub fn set_segment_response(mut self, input: std::option::Option<crate::model::SegmentResponse>) -> Self {
             self.segment_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSegmentOutput`](crate::output::CreateSegmentOutput).
         pub fn build(self) -> crate::output::CreateSegmentOutput {
             crate::output::CreateSegmentOutput {
                 segment_response: self.segment_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5574,6 +7444,7 @@ pub struct CreateRecommenderConfigurationOutput  {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
     #[doc(hidden)]
     pub recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+    _request_id: Option<String>,
 }
 impl CreateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -5581,6 +7452,11 @@ impl CreateRecommenderConfigurationOutput {
         self.recommender_configuration_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRecommenderConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
 pub mod create_recommender_configuration_output {
     
@@ -5589,6 +7465,7 @@ pub mod create_recommender_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommender_configuration_response: std::option::Option<crate::model::RecommenderConfigurationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
@@ -5600,11 +7477,21 @@ pub mod create_recommender_configuration_output {
         pub fn set_recommender_configuration_response(mut self, input: std::option::Option<crate::model::RecommenderConfigurationResponse>) -> Self {
             self.recommender_configuration_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRecommenderConfigurationOutput`](crate::output::CreateRecommenderConfigurationOutput).
         pub fn build(self) -> crate::output::CreateRecommenderConfigurationOutput {
             crate::output::CreateRecommenderConfigurationOutput {
                 recommender_configuration_response: self.recommender_configuration_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5625,6 +7512,7 @@ pub struct CreatePushTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+    _request_id: Option<String>,
 }
 impl CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
@@ -5632,6 +7520,11 @@ impl CreatePushTemplateOutput {
         self.create_template_message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePushTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
 pub mod create_push_template_output {
     
@@ -5640,6 +7533,7 @@ pub mod create_push_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
@@ -5651,11 +7545,21 @@ pub mod create_push_template_output {
         pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
             self.create_template_message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePushTemplateOutput`](crate::output::CreatePushTemplateOutput).
         pub fn build(self) -> crate::output::CreatePushTemplateOutput {
             crate::output::CreatePushTemplateOutput {
                 create_template_message_body: self.create_template_message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5676,6 +7580,7 @@ pub struct CreateJourneyOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
     #[doc(hidden)]
     pub journey_response: std::option::Option<crate::model::JourneyResponse>,
+    _request_id: Option<String>,
 }
 impl CreateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -5683,6 +7588,11 @@ impl CreateJourneyOutput {
         self.journey_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateJourneyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
 pub mod create_journey_output {
     
@@ -5691,6 +7601,7 @@ pub mod create_journey_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journey_response: std::option::Option<crate::model::JourneyResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
@@ -5702,11 +7613,21 @@ pub mod create_journey_output {
         pub fn set_journey_response(mut self, input: std::option::Option<crate::model::JourneyResponse>) -> Self {
             self.journey_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateJourneyOutput`](crate::output::CreateJourneyOutput).
         pub fn build(self) -> crate::output::CreateJourneyOutput {
             crate::output::CreateJourneyOutput {
                 journey_response: self.journey_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5727,6 +7648,7 @@ pub struct CreateInAppTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
+    _request_id: Option<String>,
 }
 impl CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
@@ -5734,6 +7656,11 @@ impl CreateInAppTemplateOutput {
         self.template_create_message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateInAppTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
 pub mod create_in_app_template_output {
     
@@ -5742,6 +7669,7 @@ pub mod create_in_app_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
@@ -5753,11 +7681,21 @@ pub mod create_in_app_template_output {
         pub fn set_template_create_message_body(mut self, input: std::option::Option<crate::model::TemplateCreateMessageBody>) -> Self {
             self.template_create_message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput).
         pub fn build(self) -> crate::output::CreateInAppTemplateOutput {
             crate::output::CreateInAppTemplateOutput {
                 template_create_message_body: self.template_create_message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5778,6 +7716,7 @@ pub struct CreateImportJobOutput  {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub import_job_response: std::option::Option<crate::model::ImportJobResponse>,
+    _request_id: Option<String>,
 }
 impl CreateImportJobOutput {
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
@@ -5785,6 +7724,11 @@ impl CreateImportJobOutput {
         self.import_job_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateImportJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
 pub mod create_import_job_output {
     
@@ -5793,6 +7737,7 @@ pub mod create_import_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_response: std::option::Option<crate::model::ImportJobResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
@@ -5804,11 +7749,21 @@ pub mod create_import_job_output {
         pub fn set_import_job_response(mut self, input: std::option::Option<crate::model::ImportJobResponse>) -> Self {
             self.import_job_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
         pub fn build(self) -> crate::output::CreateImportJobOutput {
             crate::output::CreateImportJobOutput {
                 import_job_response: self.import_job_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5829,6 +7784,7 @@ pub struct CreateExportJobOutput  {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub export_job_response: std::option::Option<crate::model::ExportJobResponse>,
+    _request_id: Option<String>,
 }
 impl CreateExportJobOutput {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
@@ -5836,6 +7792,11 @@ impl CreateExportJobOutput {
         self.export_job_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateExportJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
 pub mod create_export_job_output {
     
@@ -5844,6 +7805,7 @@ pub mod create_export_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_response: std::option::Option<crate::model::ExportJobResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
@@ -5855,11 +7817,21 @@ pub mod create_export_job_output {
         pub fn set_export_job_response(mut self, input: std::option::Option<crate::model::ExportJobResponse>) -> Self {
             self.export_job_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateExportJobOutput`](crate::output::CreateExportJobOutput).
         pub fn build(self) -> crate::output::CreateExportJobOutput {
             crate::output::CreateExportJobOutput {
                 export_job_response: self.export_job_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5880,6 +7852,7 @@ pub struct CreateEmailTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
     pub create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+    _request_id: Option<String>,
 }
 impl CreateEmailTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
@@ -5887,6 +7860,11 @@ impl CreateEmailTemplateOutput {
         self.create_template_message_body.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEmailTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
 pub mod create_email_template_output {
     
@@ -5895,6 +7873,7 @@ pub mod create_email_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_template_message_body: std::option::Option<crate::model::CreateTemplateMessageBody>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a request to create a message template.</p>
@@ -5906,11 +7885,21 @@ pub mod create_email_template_output {
         pub fn set_create_template_message_body(mut self, input: std::option::Option<crate::model::CreateTemplateMessageBody>) -> Self {
             self.create_template_message_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
         pub fn build(self) -> crate::output::CreateEmailTemplateOutput {
             crate::output::CreateEmailTemplateOutput {
                 create_template_message_body: self.create_template_message_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5931,6 +7920,7 @@ pub struct CreateCampaignOutput  {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     #[doc(hidden)]
     pub campaign_response: std::option::Option<crate::model::CampaignResponse>,
+    _request_id: Option<String>,
 }
 impl CreateCampaignOutput {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -5938,6 +7928,11 @@ impl CreateCampaignOutput {
         self.campaign_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCampaignOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
 pub mod create_campaign_output {
     
@@ -5946,6 +7941,7 @@ pub mod create_campaign_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_response: std::option::Option<crate::model::CampaignResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
@@ -5957,11 +7953,21 @@ pub mod create_campaign_output {
         pub fn set_campaign_response(mut self, input: std::option::Option<crate::model::CampaignResponse>) -> Self {
             self.campaign_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
         pub fn build(self) -> crate::output::CreateCampaignOutput {
             crate::output::CreateCampaignOutput {
                 campaign_response: self.campaign_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5982,6 +7988,7 @@ pub struct CreateAppOutput  {
     /// <p>Provides information about an application.</p>
     #[doc(hidden)]
     pub application_response: std::option::Option<crate::model::ApplicationResponse>,
+    _request_id: Option<String>,
 }
 impl CreateAppOutput {
     /// <p>Provides information about an application.</p>
@@ -5989,6 +7996,11 @@ impl CreateAppOutput {
         self.application_response.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).
 pub mod create_app_output {
     
@@ -5997,6 +8009,7 @@ pub mod create_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_response: std::option::Option<crate::model::ApplicationResponse>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about an application.</p>
@@ -6008,11 +8021,21 @@ pub mod create_app_output {
         pub fn set_application_response(mut self, input: std::option::Option<crate::model::ApplicationResponse>) -> Self {
             self.application_response = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAppOutput`](crate::output::CreateAppOutput).
         pub fn build(self) -> crate::output::CreateAppOutput {
             crate::output::CreateAppOutput {
                 application_response: self.application_response
                 ,
+                _request_id: self._request_id,
             }
         }
     }

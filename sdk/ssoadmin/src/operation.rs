@@ -22,6 +22,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for AttachCustomerManagedPolicyReferenceToPermissionSet {
                 type Output = std::result::Result<crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput, crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_attach_customer_managed_policy_reference_to_permission_set_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AttachManagedPolicyToPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPermissionSet {
                 type Output = std::result::Result<crate::output::AttachManagedPolicyToPermissionSetOutput, crate::error::AttachManagedPolicyToPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_attach_managed_policy_to_permission_set_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateAccountAssignment {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAccountAssignment {
                 type Output = std::result::Result<crate::output::CreateAccountAssignmentOutput, crate::error::CreateAccountAssignmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_account_assignment_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateInstanceAccessControlAttributeConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateInstanceAccessControlAttributeConfiguration {
                 type Output = std::result::Result<crate::output::CreateInstanceAccessControlAttributeConfigurationOutput, crate::error::CreateInstanceAccessControlAttributeConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_instance_access_control_attribute_configuration_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreatePermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePermissionSet {
                 type Output = std::result::Result<crate::output::CreatePermissionSetOutput, crate::error::CreatePermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_permission_set_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteAccountAssignment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAssignment {
                 type Output = std::result::Result<crate::output::DeleteAccountAssignmentOutput, crate::error::DeleteAccountAssignmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_account_assignment_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteInlinePolicyFromPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInlinePolicyFromPermissionSet {
                 type Output = std::result::Result<crate::output::DeleteInlinePolicyFromPermissionSetOutput, crate::error::DeleteInlinePolicyFromPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_inline_policy_from_permission_set_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteInstanceAccessControlAttributeConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceAccessControlAttributeConfiguration {
                 type Output = std::result::Result<crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput, crate::error::DeleteInstanceAccessControlAttributeConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_instance_access_control_attribute_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeletePermissionsBoundaryFromPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionsBoundaryFromPermissionSet {
                 type Output = std::result::Result<crate::output::DeletePermissionsBoundaryFromPermissionSetOutput, crate::error::DeletePermissionsBoundaryFromPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_permissions_boundary_from_permission_set_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeletePermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionSet {
                 type Output = std::result::Result<crate::output::DeletePermissionSetOutput, crate::error::DeletePermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_permission_set_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeAccountAssignmentCreationStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmentCreationStatus {
                 type Output = std::result::Result<crate::output::DescribeAccountAssignmentCreationStatusOutput, crate::error::DescribeAccountAssignmentCreationStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_account_assignment_creation_status_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeAccountAssignmentDeletionStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmentDeletionStatus {
                 type Output = std::result::Result<crate::output::DescribeAccountAssignmentDeletionStatusOutput, crate::error::DescribeAccountAssignmentDeletionStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_account_assignment_deletion_status_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeInstanceAccessControlAttributeConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceAccessControlAttributeConfiguration {
                 type Output = std::result::Result<crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput, crate::error::DescribeInstanceAccessControlAttributeConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_instance_access_control_attribute_configuration_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribePermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSet {
                 type Output = std::result::Result<crate::output::DescribePermissionSetOutput, crate::error::DescribePermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_permission_set_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribePermissionSetProvisioningStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSetProvisioningStatus {
                 type Output = std::result::Result<crate::output::DescribePermissionSetProvisioningStatusOutput, crate::error::DescribePermissionSetProvisioningStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_permission_set_provisioning_status_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DetachCustomerManagedPolicyReferenceFromPermissionSet {
                 type Output = std::result::Result<crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput, crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detach_customer_managed_policy_reference_from_permission_set_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DetachManagedPolicyFromPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for DetachManagedPolicyFromPermissionSet {
                 type Output = std::result::Result<crate::output::DetachManagedPolicyFromPermissionSetOutput, crate::error::DetachManagedPolicyFromPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detach_managed_policy_from_permission_set_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetInlinePolicyForPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for GetInlinePolicyForPermissionSet {
                 type Output = std::result::Result<crate::output::GetInlinePolicyForPermissionSetOutput, crate::error::GetInlinePolicyForPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_inline_policy_for_permission_set_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetPermissionsBoundaryForPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for GetPermissionsBoundaryForPermissionSet {
                 type Output = std::result::Result<crate::output::GetPermissionsBoundaryForPermissionSetOutput, crate::error::GetPermissionsBoundaryForPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_permissions_boundary_for_permission_set_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListAccountAssignmentCreationStatus {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentCreationStatus {
                 type Output = std::result::Result<crate::output::ListAccountAssignmentCreationStatusOutput, crate::error::ListAccountAssignmentCreationStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_account_assignment_creation_status_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListAccountAssignmentDeletionStatus {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentDeletionStatus {
                 type Output = std::result::Result<crate::output::ListAccountAssignmentDeletionStatusOutput, crate::error::ListAccountAssignmentDeletionStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_account_assignment_deletion_status_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListAccountAssignments {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignments {
                 type Output = std::result::Result<crate::output::ListAccountAssignmentsOutput, crate::error::ListAccountAssignmentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_account_assignments_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListAccountsForProvisionedPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for ListAccountsForProvisionedPermissionSet {
                 type Output = std::result::Result<crate::output::ListAccountsForProvisionedPermissionSetOutput, crate::error::ListAccountsForProvisionedPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_accounts_for_provisioned_permission_set_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomerManagedPolicyReferencesInPermissionSet {
                 type Output = std::result::Result<crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput, crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_customer_managed_policy_references_in_permission_set_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListInstances {
 impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
                 type Output = std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_instances_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListManagedPoliciesInPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for ListManagedPoliciesInPermissionSet {
                 type Output = std::result::Result<crate::output::ListManagedPoliciesInPermissionSetOutput, crate::error::ListManagedPoliciesInPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_managed_policies_in_permission_set_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListPermissionSetProvisioningStatus {
 impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetProvisioningStatus {
                 type Output = std::result::Result<crate::output::ListPermissionSetProvisioningStatusOutput, crate::error::ListPermissionSetProvisioningStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_permission_set_provisioning_status_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListPermissionSets {
 impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSets {
                 type Output = std::result::Result<crate::output::ListPermissionSetsOutput, crate::error::ListPermissionSetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_permission_sets_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListPermissionSetsProvisionedToAccount {
 impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetsProvisionedToAccount {
                 type Output = std::result::Result<crate::output::ListPermissionSetsProvisionedToAccountOutput, crate::error::ListPermissionSetsProvisionedToAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_permission_sets_provisioned_to_account_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ProvisionPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for ProvisionPermissionSet {
                 type Output = std::result::Result<crate::output::ProvisionPermissionSetOutput, crate::error::ProvisionPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_provision_permission_set_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl PutInlinePolicyToPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for PutInlinePolicyToPermissionSet {
                 type Output = std::result::Result<crate::output::PutInlinePolicyToPermissionSetOutput, crate::error::PutInlinePolicyToPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_inline_policy_to_permission_set_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl PutPermissionsBoundaryToPermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for PutPermissionsBoundaryToPermissionSet {
                 type Output = std::result::Result<crate::output::PutPermissionsBoundaryToPermissionSetOutput, crate::error::PutPermissionsBoundaryToPermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_permissions_boundary_to_permission_set_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateInstanceAccessControlAttributeConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceAccessControlAttributeConfiguration {
                 type Output = std::result::Result<crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput, crate::error::UpdateInstanceAccessControlAttributeConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_instance_access_control_attribute_configuration_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdatePermissionSet {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissionSet {
                 type Output = std::result::Result<crate::output::UpdatePermissionSetOutput, crate::error::UpdatePermissionSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_permission_set_error(response)
                      } else {

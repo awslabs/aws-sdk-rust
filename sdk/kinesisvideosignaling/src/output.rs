@@ -6,6 +6,7 @@ pub struct SendAlexaOfferToMasterOutput  {
     /// <p>The base64-encoded SDP answer content.</p>
     #[doc(hidden)]
     pub answer: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SendAlexaOfferToMasterOutput {
     /// <p>The base64-encoded SDP answer content.</p>
@@ -13,6 +14,11 @@ impl SendAlexaOfferToMasterOutput {
         self.answer.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SendAlexaOfferToMasterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
 pub mod send_alexa_offer_to_master_output {
     
@@ -21,6 +27,7 @@ pub mod send_alexa_offer_to_master_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) answer: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The base64-encoded SDP answer content.</p>
@@ -32,11 +39,21 @@ pub mod send_alexa_offer_to_master_output {
         pub fn set_answer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
         pub fn build(self) -> crate::output::SendAlexaOfferToMasterOutput {
             crate::output::SendAlexaOfferToMasterOutput {
                 answer: self.answer
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct GetIceServerConfigOutput  {
     /// <p>The list of ICE server information objects.</p>
     #[doc(hidden)]
     pub ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,
+    _request_id: Option<String>,
 }
 impl GetIceServerConfigOutput {
     /// <p>The list of ICE server information objects.</p>
@@ -64,6 +82,11 @@ impl GetIceServerConfigOutput {
         self.ice_server_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetIceServerConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
 pub mod get_ice_server_config_output {
     
@@ -72,6 +95,7 @@ pub mod get_ice_server_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `ice_server_list`.
@@ -89,11 +113,21 @@ pub mod get_ice_server_config_output {
         pub fn set_ice_server_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::IceServer>>) -> Self {
             self.ice_server_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
         pub fn build(self) -> crate::output::GetIceServerConfigOutput {
             crate::output::GetIceServerConfigOutput {
                 ice_server_list: self.ice_server_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }

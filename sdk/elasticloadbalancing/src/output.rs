@@ -4,7 +4,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SetLoadBalancerPoliciesOfListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
 pub mod set_load_balancer_policies_of_listener_output {
     
@@ -12,11 +18,22 @@ pub mod set_load_balancer_policies_of_listener_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerPoliciesOfListenerOutput {
             crate::output::SetLoadBalancerPoliciesOfListenerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -34,7 +51,13 @@ impl SetLoadBalancerPoliciesOfListenerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SetLoadBalancerPoliciesForBackendServerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
 pub mod set_load_balancer_policies_for_backend_server_output {
     
@@ -42,11 +65,22 @@ pub mod set_load_balancer_policies_for_backend_server_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerPoliciesForBackendServerOutput {
             crate::output::SetLoadBalancerPoliciesForBackendServerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -64,7 +98,13 @@ impl SetLoadBalancerPoliciesForBackendServerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSslCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SetLoadBalancerListenerSslCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
 pub mod set_load_balancer_listener_ssl_certificate_output {
     
@@ -72,11 +112,22 @@ pub mod set_load_balancer_listener_ssl_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
         pub fn build(self) -> crate::output::SetLoadBalancerListenerSslCertificateOutput {
             crate::output::SetLoadBalancerListenerSslCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -94,7 +145,13 @@ impl SetLoadBalancerListenerSslCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
     
@@ -102,11 +159,22 @@ pub mod remove_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
             crate::output::RemoveTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -127,6 +195,7 @@ pub struct RegisterInstancesWithLoadBalancerOutput  {
     /// <p>The updated list of instances for the load balancer.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+    _request_id: Option<String>,
 }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
@@ -134,6 +203,11 @@ impl RegisterInstancesWithLoadBalancerOutput {
         self.instances.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RegisterInstancesWithLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
 pub mod register_instances_with_load_balancer_output {
     
@@ -142,6 +216,7 @@ pub mod register_instances_with_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instances`.
@@ -159,11 +234,21 @@ pub mod register_instances_with_load_balancer_output {
         pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
             self.instances = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
         pub fn build(self) -> crate::output::RegisterInstancesWithLoadBalancerOutput {
             crate::output::RegisterInstancesWithLoadBalancerOutput {
                 instances: self.instances
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -187,6 +272,7 @@ pub struct ModifyLoadBalancerAttributesOutput  {
     /// <p>Information about the load balancer attributes.</p>
     #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+    _request_id: Option<String>,
 }
 impl ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
@@ -198,6 +284,11 @@ impl ModifyLoadBalancerAttributesOutput {
         self.load_balancer_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
 pub mod modify_load_balancer_attributes_output {
     
@@ -207,6 +298,7 @@ pub mod modify_load_balancer_attributes_output {
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the load balancer.</p>
@@ -227,6 +319,15 @@ pub mod modify_load_balancer_attributes_output {
         pub fn set_load_balancer_attributes(mut self, input: std::option::Option<crate::model::LoadBalancerAttributes>) -> Self {
             self.load_balancer_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
         pub fn build(self) -> crate::output::ModifyLoadBalancerAttributesOutput {
             crate::output::ModifyLoadBalancerAttributesOutput {
@@ -234,6 +335,7 @@ pub mod modify_load_balancer_attributes_output {
                 ,
                 load_balancer_attributes: self.load_balancer_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -254,6 +356,7 @@ pub struct EnableAvailabilityZonesForLoadBalancerOutput  {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
@@ -261,6 +364,11 @@ impl EnableAvailabilityZonesForLoadBalancerOutput {
         self.availability_zones.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for EnableAvailabilityZonesForLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
 pub mod enable_availability_zones_for_load_balancer_output {
     
@@ -269,6 +377,7 @@ pub mod enable_availability_zones_for_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -286,11 +395,21 @@ pub mod enable_availability_zones_for_load_balancer_output {
         pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.availability_zones = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
         pub fn build(self) -> crate::output::EnableAvailabilityZonesForLoadBalancerOutput {
             crate::output::EnableAvailabilityZonesForLoadBalancerOutput {
                 availability_zones: self.availability_zones
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -311,6 +430,7 @@ pub struct DisableAvailabilityZonesForLoadBalancerOutput  {
     /// <p>The remaining Availability Zones for the load balancer.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
@@ -318,6 +438,11 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
         self.availability_zones.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
 pub mod disable_availability_zones_for_load_balancer_output {
     
@@ -326,6 +451,7 @@ pub mod disable_availability_zones_for_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `availability_zones`.
@@ -343,11 +469,21 @@ pub mod disable_availability_zones_for_load_balancer_output {
         pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.availability_zones = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
         pub fn build(self) -> crate::output::DisableAvailabilityZonesForLoadBalancerOutput {
             crate::output::DisableAvailabilityZonesForLoadBalancerOutput {
                 availability_zones: self.availability_zones
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -368,6 +504,7 @@ pub struct DetachLoadBalancerFromSubnetsOutput  {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DetachLoadBalancerFromSubnetsOutput {
     /// <p>The IDs of the remaining subnets for the load balancer.</p>
@@ -375,6 +512,11 @@ impl DetachLoadBalancerFromSubnetsOutput {
         self.subnets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetachLoadBalancerFromSubnetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
 pub mod detach_load_balancer_from_subnets_output {
     
@@ -383,6 +525,7 @@ pub mod detach_load_balancer_from_subnets_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `subnets`.
@@ -400,11 +543,21 @@ pub mod detach_load_balancer_from_subnets_output {
         pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.subnets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
         pub fn build(self) -> crate::output::DetachLoadBalancerFromSubnetsOutput {
             crate::output::DetachLoadBalancerFromSubnetsOutput {
                 subnets: self.subnets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -425,6 +578,7 @@ pub struct DescribeTagsOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
@@ -432,6 +586,11 @@ impl DescribeTagsOutput {
         self.tag_descriptions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
     
@@ -440,6 +599,7 @@ pub mod describe_tags_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_descriptions: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_descriptions`.
@@ -457,11 +617,21 @@ pub mod describe_tags_output {
         pub fn set_tag_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>) -> Self {
             self.tag_descriptions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
                 tag_descriptions: self.tag_descriptions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -485,6 +655,7 @@ pub struct DescribeLoadBalancersOutput  {
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
@@ -496,6 +667,11 @@ impl DescribeLoadBalancersOutput {
         self.next_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
 pub mod describe_load_balancers_output {
     
@@ -505,6 +681,7 @@ pub mod describe_load_balancers_output {
     pub struct Builder {
         pub(crate) load_balancer_descriptions: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `load_balancer_descriptions`.
@@ -531,6 +708,15 @@ pub mod describe_load_balancers_output {
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancersOutput {
             crate::output::DescribeLoadBalancersOutput {
@@ -538,6 +724,7 @@ pub mod describe_load_balancers_output {
                 ,
                 next_marker: self.next_marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -558,6 +745,7 @@ pub struct DescribeLoadBalancerPolicyTypesOutput  {
     /// <p>Information about the policy types.</p>
     #[doc(hidden)]
     pub policy_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
@@ -565,6 +753,11 @@ impl DescribeLoadBalancerPolicyTypesOutput {
         self.policy_type_descriptions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoadBalancerPolicyTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
 pub mod describe_load_balancer_policy_types_output {
     
@@ -573,6 +766,7 @@ pub mod describe_load_balancer_policy_types_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `policy_type_descriptions`.
@@ -590,11 +784,21 @@ pub mod describe_load_balancer_policy_types_output {
         pub fn set_policy_type_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>) -> Self {
             self.policy_type_descriptions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerPolicyTypesOutput {
             crate::output::DescribeLoadBalancerPolicyTypesOutput {
                 policy_type_descriptions: self.policy_type_descriptions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -615,6 +819,7 @@ pub struct DescribeLoadBalancerPoliciesOutput  {
     /// <p>Information about the policies.</p>
     #[doc(hidden)]
     pub policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
@@ -622,6 +827,11 @@ impl DescribeLoadBalancerPoliciesOutput {
         self.policy_descriptions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoadBalancerPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
 pub mod describe_load_balancer_policies_output {
     
@@ -630,6 +840,7 @@ pub mod describe_load_balancer_policies_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_descriptions: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `policy_descriptions`.
@@ -647,11 +858,21 @@ pub mod describe_load_balancer_policies_output {
         pub fn set_policy_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>) -> Self {
             self.policy_descriptions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerPoliciesOutput {
             crate::output::DescribeLoadBalancerPoliciesOutput {
                 policy_descriptions: self.policy_descriptions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -672,6 +893,7 @@ pub struct DescribeLoadBalancerAttributesOutput  {
     /// <p>Information about the load balancer attributes.</p>
     #[doc(hidden)]
     pub load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+    _request_id: Option<String>,
 }
 impl DescribeLoadBalancerAttributesOutput {
     /// <p>Information about the load balancer attributes.</p>
@@ -679,6 +901,11 @@ impl DescribeLoadBalancerAttributesOutput {
         self.load_balancer_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoadBalancerAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
 pub mod describe_load_balancer_attributes_output {
     
@@ -687,6 +914,7 @@ pub mod describe_load_balancer_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_attributes: std::option::Option<crate::model::LoadBalancerAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the load balancer attributes.</p>
@@ -698,11 +926,21 @@ pub mod describe_load_balancer_attributes_output {
         pub fn set_load_balancer_attributes(mut self, input: std::option::Option<crate::model::LoadBalancerAttributes>) -> Self {
             self.load_balancer_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
         pub fn build(self) -> crate::output::DescribeLoadBalancerAttributesOutput {
             crate::output::DescribeLoadBalancerAttributesOutput {
                 load_balancer_attributes: self.load_balancer_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -723,6 +961,7 @@ pub struct DescribeInstanceHealthOutput  {
     /// <p>Information about the health of the instances.</p>
     #[doc(hidden)]
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
+    _request_id: Option<String>,
 }
 impl DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
@@ -730,6 +969,11 @@ impl DescribeInstanceHealthOutput {
         self.instance_states.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeInstanceHealthOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
 pub mod describe_instance_health_output {
     
@@ -738,6 +982,7 @@ pub mod describe_instance_health_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instance_states`.
@@ -755,11 +1000,21 @@ pub mod describe_instance_health_output {
         pub fn set_instance_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>) -> Self {
             self.instance_states = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
         pub fn build(self) -> crate::output::DescribeInstanceHealthOutput {
             crate::output::DescribeInstanceHealthOutput {
                 instance_states: self.instance_states
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -783,6 +1038,7 @@ pub struct DescribeAccountLimitsOutput  {
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
@@ -794,6 +1050,11 @@ impl DescribeAccountLimitsOutput {
         self.next_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
     
@@ -803,6 +1064,7 @@ pub mod describe_account_limits_output {
     pub struct Builder {
         pub(crate) limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `limits`.
@@ -829,6 +1091,15 @@ pub mod describe_account_limits_output {
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
         pub fn build(self) -> crate::output::DescribeAccountLimitsOutput {
             crate::output::DescribeAccountLimitsOutput {
@@ -836,6 +1107,7 @@ pub mod describe_account_limits_output {
                 ,
                 next_marker: self.next_marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -856,6 +1128,7 @@ pub struct DeregisterInstancesFromLoadBalancerOutput  {
     /// <p>The remaining instances registered with the load balancer.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+    _request_id: Option<String>,
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
@@ -863,6 +1136,11 @@ impl DeregisterInstancesFromLoadBalancerOutput {
         self.instances.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeregisterInstancesFromLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
 pub mod deregister_instances_from_load_balancer_output {
     
@@ -871,6 +1149,7 @@ pub mod deregister_instances_from_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instances`.
@@ -888,11 +1167,21 @@ pub mod deregister_instances_from_load_balancer_output {
         pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
             self.instances = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
         pub fn build(self) -> crate::output::DeregisterInstancesFromLoadBalancerOutput {
             crate::output::DeregisterInstancesFromLoadBalancerOutput {
                 instances: self.instances
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -910,7 +1199,13 @@ impl DeregisterInstancesFromLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLoadBalancerPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
 pub mod delete_load_balancer_policy_output {
     
@@ -918,11 +1213,22 @@ pub mod delete_load_balancer_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerPolicyOutput {
             crate::output::DeleteLoadBalancerPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -940,7 +1246,13 @@ impl DeleteLoadBalancerPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLoadBalancerListenersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
 pub mod delete_load_balancer_listeners_output {
     
@@ -948,11 +1260,22 @@ pub mod delete_load_balancer_listeners_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerListenersOutput {
             crate::output::DeleteLoadBalancerListenersOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -970,7 +1293,13 @@ impl DeleteLoadBalancerListenersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoadBalancerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
     
@@ -978,11 +1307,22 @@ pub mod delete_load_balancer_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
         pub fn build(self) -> crate::output::DeleteLoadBalancerOutput {
             crate::output::DeleteLoadBalancerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1000,7 +1340,13 @@ impl DeleteLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateLoadBalancerPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
 pub mod create_load_balancer_policy_output {
     
@@ -1008,11 +1354,22 @@ pub mod create_load_balancer_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerPolicyOutput {
             crate::output::CreateLoadBalancerPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1030,7 +1387,13 @@ impl CreateLoadBalancerPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateLoadBalancerListenersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
 pub mod create_load_balancer_listeners_output {
     
@@ -1038,11 +1401,22 @@ pub mod create_load_balancer_listeners_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerListenersOutput {
             crate::output::CreateLoadBalancerListenersOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1063,6 +1437,7 @@ pub struct CreateLoadBalancerOutput  {
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
@@ -1070,6 +1445,11 @@ impl CreateLoadBalancerOutput {
         self.dns_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
     
@@ -1078,6 +1458,7 @@ pub mod create_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The DNS name of the load balancer.</p>
@@ -1089,11 +1470,21 @@ pub mod create_load_balancer_output {
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
         pub fn build(self) -> crate::output::CreateLoadBalancerOutput {
             crate::output::CreateLoadBalancerOutput {
                 dns_name: self.dns_name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1111,7 +1502,13 @@ impl CreateLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateLbCookieStickinessPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
 pub mod create_lb_cookie_stickiness_policy_output {
     
@@ -1119,11 +1516,22 @@ pub mod create_lb_cookie_stickiness_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
         pub fn build(self) -> crate::output::CreateLbCookieStickinessPolicyOutput {
             crate::output::CreateLbCookieStickinessPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1141,7 +1549,13 @@ impl CreateLbCookieStickinessPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateAppCookieStickinessPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
 pub mod create_app_cookie_stickiness_policy_output {
     
@@ -1149,11 +1563,22 @@ pub mod create_app_cookie_stickiness_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
         pub fn build(self) -> crate::output::CreateAppCookieStickinessPolicyOutput {
             crate::output::CreateAppCookieStickinessPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1174,6 +1599,7 @@ pub struct ConfigureHealthCheckOutput  {
     /// <p>The updated health check.</p>
     #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::HealthCheck>,
+    _request_id: Option<String>,
 }
 impl ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
@@ -1181,6 +1607,11 @@ impl ConfigureHealthCheckOutput {
         self.health_check.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfigureHealthCheckOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
 pub mod configure_health_check_output {
     
@@ -1189,6 +1620,7 @@ pub mod configure_health_check_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::HealthCheck>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated health check.</p>
@@ -1200,11 +1632,21 @@ pub mod configure_health_check_output {
         pub fn set_health_check(mut self, input: std::option::Option<crate::model::HealthCheck>) -> Self {
             self.health_check = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
         pub fn build(self) -> crate::output::ConfigureHealthCheckOutput {
             crate::output::ConfigureHealthCheckOutput {
                 health_check: self.health_check
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1225,6 +1667,7 @@ pub struct AttachLoadBalancerToSubnetsOutput  {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
@@ -1232,6 +1675,11 @@ impl AttachLoadBalancerToSubnetsOutput {
         self.subnets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
 pub mod attach_load_balancer_to_subnets_output {
     
@@ -1240,6 +1688,7 @@ pub mod attach_load_balancer_to_subnets_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `subnets`.
@@ -1257,11 +1706,21 @@ pub mod attach_load_balancer_to_subnets_output {
         pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.subnets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
         pub fn build(self) -> crate::output::AttachLoadBalancerToSubnetsOutput {
             crate::output::AttachLoadBalancerToSubnetsOutput {
                 subnets: self.subnets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1282,6 +1741,7 @@ pub struct ApplySecurityGroupsToLoadBalancerOutput  {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ApplySecurityGroupsToLoadBalancerOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
@@ -1289,6 +1749,11 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
         self.security_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ApplySecurityGroupsToLoadBalancerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
 pub mod apply_security_groups_to_load_balancer_output {
     
@@ -1297,6 +1762,7 @@ pub mod apply_security_groups_to_load_balancer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `security_groups`.
@@ -1314,11 +1780,21 @@ pub mod apply_security_groups_to_load_balancer_output {
         pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.security_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
         pub fn build(self) -> crate::output::ApplySecurityGroupsToLoadBalancerOutput {
             crate::output::ApplySecurityGroupsToLoadBalancerOutput {
                 security_groups: self.security_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1336,7 +1812,13 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
     
@@ -1344,11 +1826,22 @@ pub mod add_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
             crate::output::AddTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }

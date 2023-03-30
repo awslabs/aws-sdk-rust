@@ -22,6 +22,7 @@ impl CreateCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
                 type Output = std::result::Result<crate::output::CreateCampaignOutput, crate::error::CreateCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_campaign_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
                 type Output = std::result::Result<crate::output::DeleteCampaignOutput, crate::error::DeleteCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_campaign_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteConnectInstanceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectInstanceConfig {
                 type Output = std::result::Result<crate::output::DeleteConnectInstanceConfigOutput, crate::error::DeleteConnectInstanceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_connect_instance_config_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteInstanceOnboardingJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceOnboardingJob {
                 type Output = std::result::Result<crate::output::DeleteInstanceOnboardingJobOutput, crate::error::DeleteInstanceOnboardingJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_instance_onboarding_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCampaign {
                 type Output = std::result::Result<crate::output::DescribeCampaignOutput, crate::error::DescribeCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_campaign_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetCampaignState {
 impl aws_smithy_http::response::ParseStrictResponse for GetCampaignState {
                 type Output = std::result::Result<crate::output::GetCampaignStateOutput, crate::error::GetCampaignStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_campaign_state_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetCampaignStateBatch {
 impl aws_smithy_http::response::ParseStrictResponse for GetCampaignStateBatch {
                 type Output = std::result::Result<crate::output::GetCampaignStateBatchOutput, crate::error::GetCampaignStateBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_campaign_state_batch_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetConnectInstanceConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig {
                 type Output = std::result::Result<crate::output::GetConnectInstanceConfigOutput, crate::error::GetConnectInstanceConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_connect_instance_config_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetInstanceOnboardingJobStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetInstanceOnboardingJobStatus {
                 type Output = std::result::Result<crate::output::GetInstanceOnboardingJobStatusOutput, crate::error::GetInstanceOnboardingJobStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_instance_onboarding_job_status_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListCampaigns {
 impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
                 type Output = std::result::Result<crate::output::ListCampaignsOutput, crate::error::ListCampaignsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_campaigns_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PauseCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for PauseCampaign {
                 type Output = std::result::Result<crate::output::PauseCampaignOutput, crate::error::PauseCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_pause_campaign_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl PutDialRequestBatch {
 impl aws_smithy_http::response::ParseStrictResponse for PutDialRequestBatch {
                 type Output = std::result::Result<crate::output::PutDialRequestBatchOutput, crate::error::PutDialRequestBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_dial_request_batch_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ResumeCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for ResumeCampaign {
                 type Output = std::result::Result<crate::output::ResumeCampaignOutput, crate::error::ResumeCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resume_campaign_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl StartCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for StartCampaign {
                 type Output = std::result::Result<crate::output::StartCampaignOutput, crate::error::StartCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_campaign_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl StartInstanceOnboardingJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartInstanceOnboardingJob {
                 type Output = std::result::Result<crate::output::StartInstanceOnboardingJobOutput, crate::error::StartInstanceOnboardingJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_instance_onboarding_job_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl StopCampaign {
 impl aws_smithy_http::response::ParseStrictResponse for StopCampaign {
                 type Output = std::result::Result<crate::output::StopCampaignOutput, crate::error::StopCampaignError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_campaign_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UpdateCampaignDialerConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignDialerConfig {
                 type Output = std::result::Result<crate::output::UpdateCampaignDialerConfigOutput, crate::error::UpdateCampaignDialerConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_campaign_dialer_config_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateCampaignName {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignName {
                 type Output = std::result::Result<crate::output::UpdateCampaignNameOutput, crate::error::UpdateCampaignNameError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_campaign_name_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UpdateCampaignOutboundCallConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignOutboundCallConfig {
                 type Output = std::result::Result<crate::output::UpdateCampaignOutboundCallConfigOutput, crate::error::UpdateCampaignOutboundCallConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_campaign_outbound_call_config_error(response)
                      } else {

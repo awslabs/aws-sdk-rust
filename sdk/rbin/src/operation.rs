@@ -22,6 +22,7 @@ impl CreateRule {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
                 type Output = std::result::Result<crate::output::CreateRuleOutput, crate::error::CreateRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_rule_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
                 type Output = std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_rule_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetRule {
 impl aws_smithy_http::response::ParseStrictResponse for GetRule {
                 type Output = std::result::Result<crate::output::GetRuleOutput, crate::error::GetRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_rule_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListRules {
 impl aws_smithy_http::response::ParseStrictResponse for ListRules {
                 type Output = std::result::Result<crate::output::ListRulesOutput, crate::error::ListRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_rules_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl LockRule {
 impl aws_smithy_http::response::ParseStrictResponse for LockRule {
                 type Output = std::result::Result<crate::output::LockRuleOutput, crate::error::LockRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_lock_rule_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl UnlockRule {
 impl aws_smithy_http::response::ParseStrictResponse for UnlockRule {
                 type Output = std::result::Result<crate::output::UnlockRuleOutput, crate::error::UnlockRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_unlock_rule_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl UpdateRule {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRule {
                 type Output = std::result::Result<crate::output::UpdateRuleOutput, crate::error::UpdateRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_rule_error(response)
                      } else {

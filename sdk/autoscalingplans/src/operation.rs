@@ -22,6 +22,7 @@ impl CreateScalingPlan {
 impl aws_smithy_http::response::ParseStrictResponse for CreateScalingPlan {
                 type Output = std::result::Result<crate::output::CreateScalingPlanOutput, crate::error::CreateScalingPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_scaling_plan_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteScalingPlan {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPlan {
                 type Output = std::result::Result<crate::output::DeleteScalingPlanOutput, crate::error::DeleteScalingPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_scaling_plan_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeScalingPlanResources {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlanResources {
                 type Output = std::result::Result<crate::output::DescribeScalingPlanResourcesOutput, crate::error::DescribeScalingPlanResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_scaling_plan_resources_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeScalingPlans {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlans {
                 type Output = std::result::Result<crate::output::DescribeScalingPlansOutput, crate::error::DescribeScalingPlansError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_scaling_plans_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetScalingPlanResourceForecastData {
 impl aws_smithy_http::response::ParseStrictResponse for GetScalingPlanResourceForecastData {
                 type Output = std::result::Result<crate::output::GetScalingPlanResourceForecastDataOutput, crate::error::GetScalingPlanResourceForecastDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_scaling_plan_resource_forecast_data_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl UpdateScalingPlan {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateScalingPlan {
                 type Output = std::result::Result<crate::output::UpdateScalingPlanOutput, crate::error::UpdateScalingPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_scaling_plan_error(response)
                      } else {

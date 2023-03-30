@@ -22,6 +22,7 @@ impl DeleteReportDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
                 type Output = std::result::Result<crate::output::DeleteReportDefinitionOutput, crate::error::DeleteReportDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_report_definition_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeReportDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReportDefinitions {
                 type Output = std::result::Result<crate::output::DescribeReportDefinitionsOutput, crate::error::DescribeReportDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_report_definitions_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ModifyReportDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for ModifyReportDefinition {
                 type Output = std::result::Result<crate::output::ModifyReportDefinitionOutput, crate::error::ModifyReportDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_modify_report_definition_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl PutReportDefinition {
 impl aws_smithy_http::response::ParseStrictResponse for PutReportDefinition {
                 type Output = std::result::Result<crate::output::PutReportDefinitionOutput, crate::error::PutReportDefinitionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_report_definition_error(response)
                      } else {

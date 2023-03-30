@@ -22,6 +22,7 @@ impl AddTagsToCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for AddTagsToCertificate {
                 type Output = std::result::Result<crate::output::AddTagsToCertificateOutput, crate::error::AddTagsToCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_tags_to_certificate_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
                 type Output = std::result::Result<crate::output::DeleteCertificateOutput, crate::error::DeleteCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_certificate_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
                 type Output = std::result::Result<crate::output::DescribeCertificateOutput, crate::error::DescribeCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_certificate_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ExportCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for ExportCertificate {
                 type Output = std::result::Result<crate::output::ExportCertificateOutput, crate::error::ExportCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_export_certificate_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetAccountConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccountConfiguration {
                 type Output = std::result::Result<crate::output::GetAccountConfigurationOutput, crate::error::GetAccountConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_account_configuration_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for GetCertificate {
                 type Output = std::result::Result<crate::output::GetCertificateOutput, crate::error::GetCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_certificate_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ImportCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for ImportCertificate {
                 type Output = std::result::Result<crate::output::ImportCertificateOutput, crate::error::ImportCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_import_certificate_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListCertificates {
 impl aws_smithy_http::response::ParseStrictResponse for ListCertificates {
                 type Output = std::result::Result<crate::output::ListCertificatesOutput, crate::error::ListCertificatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_certificates_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForCertificate {
                 type Output = std::result::Result<crate::output::ListTagsForCertificateOutput, crate::error::ListTagsForCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_certificate_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl PutAccountConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutAccountConfiguration {
                 type Output = std::result::Result<crate::output::PutAccountConfigurationOutput, crate::error::PutAccountConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_account_configuration_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl RemoveTagsFromCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromCertificate {
                 type Output = std::result::Result<crate::output::RemoveTagsFromCertificateOutput, crate::error::RemoveTagsFromCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_tags_from_certificate_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl RenewCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for RenewCertificate {
                 type Output = std::result::Result<crate::output::RenewCertificateOutput, crate::error::RenewCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_renew_certificate_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl RequestCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for RequestCertificate {
                 type Output = std::result::Result<crate::output::RequestCertificateOutput, crate::error::RequestCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_request_certificate_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ResendValidationEmail {
 impl aws_smithy_http::response::ParseStrictResponse for ResendValidationEmail {
                 type Output = std::result::Result<crate::output::ResendValidationEmailOutput, crate::error::ResendValidationEmailError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resend_validation_email_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UpdateCertificateOptions {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCertificateOptions {
                 type Output = std::result::Result<crate::output::UpdateCertificateOptionsOutput, crate::error::UpdateCertificateOptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_certificate_options_error(response)
                      } else {

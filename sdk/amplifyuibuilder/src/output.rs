@@ -9,6 +9,7 @@ pub struct ExportThemesOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportThemesOutput {
     /// <p>Represents the configuration of the exported themes.</p>
@@ -20,6 +21,11 @@ impl ExportThemesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExportThemesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportThemesOutput`](crate::output::ExportThemesOutput).
 pub mod export_themes_output {
     
@@ -29,6 +35,7 @@ pub mod export_themes_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -55,6 +62,15 @@ pub mod export_themes_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::output::ExportThemesOutput).
         pub fn build(self) -> crate::output::ExportThemesOutput {
             crate::output::ExportThemesOutput {
@@ -62,6 +78,7 @@ pub mod export_themes_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -85,6 +102,7 @@ pub struct ListThemesOutput  {
     /// <p>The pagination token that's returned if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
@@ -96,6 +114,11 @@ impl ListThemesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListThemesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListThemesOutput`](crate::output::ListThemesOutput).
 pub mod list_themes_output {
     
@@ -105,6 +128,7 @@ pub mod list_themes_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -131,6 +155,15 @@ pub mod list_themes_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListThemesOutput`](crate::output::ListThemesOutput).
         pub fn build(self) -> crate::output::ListThemesOutput {
             crate::output::ListThemesOutput {
@@ -138,6 +171,7 @@ pub mod list_themes_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -158,6 +192,7 @@ pub struct CreateThemeOutput  {
     /// <p>Describes the configuration of the new theme.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
+    _request_id: Option<String>,
 }
 impl CreateThemeOutput {
     /// <p>Describes the configuration of the new theme.</p>
@@ -165,6 +200,11 @@ impl CreateThemeOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateThemeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateThemeOutput`](crate::output::CreateThemeOutput).
 pub mod create_theme_output {
     
@@ -173,6 +213,7 @@ pub mod create_theme_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Theme>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the new theme.</p>
@@ -184,11 +225,21 @@ pub mod create_theme_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::output::CreateThemeOutput).
         pub fn build(self) -> crate::output::CreateThemeOutput {
             crate::output::CreateThemeOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -206,7 +257,13 @@ impl CreateThemeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteThemeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteThemeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
 pub mod delete_theme_output {
     
@@ -214,11 +271,22 @@ pub mod delete_theme_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
         pub fn build(self) -> crate::output::DeleteThemeOutput {
             crate::output::DeleteThemeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -239,6 +307,7 @@ pub struct UpdateThemeOutput  {
     /// <p>Describes the configuration of the updated theme.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Theme>,
+    _request_id: Option<String>,
 }
 impl UpdateThemeOutput {
     /// <p>Describes the configuration of the updated theme.</p>
@@ -246,6 +315,11 @@ impl UpdateThemeOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateThemeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
 pub mod update_theme_output {
     
@@ -254,6 +328,7 @@ pub mod update_theme_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Theme>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the updated theme.</p>
@@ -265,11 +340,21 @@ pub mod update_theme_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
         pub fn build(self) -> crate::output::UpdateThemeOutput {
             crate::output::UpdateThemeOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -290,6 +375,7 @@ pub struct GetThemeOutput  {
     /// <p>Represents the configuration settings for the theme.</p>
     #[doc(hidden)]
     pub theme: std::option::Option<crate::model::Theme>,
+    _request_id: Option<String>,
 }
 impl GetThemeOutput {
     /// <p>Represents the configuration settings for the theme.</p>
@@ -297,6 +383,11 @@ impl GetThemeOutput {
         self.theme.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetThemeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetThemeOutput`](crate::output::GetThemeOutput).
 pub mod get_theme_output {
     
@@ -305,6 +396,7 @@ pub mod get_theme_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) theme: std::option::Option<crate::model::Theme>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the configuration settings for the theme.</p>
@@ -316,11 +408,21 @@ pub mod get_theme_output {
         pub fn set_theme(mut self, input: std::option::Option<crate::model::Theme>) -> Self {
             self.theme = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetThemeOutput`](crate::output::GetThemeOutput).
         pub fn build(self) -> crate::output::GetThemeOutput {
             crate::output::GetThemeOutput {
                 theme: self.theme
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -344,6 +446,7 @@ pub struct ExportFormsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportFormsOutput {
     /// <p>Represents the configuration of the exported forms.</p>
@@ -355,6 +458,11 @@ impl ExportFormsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExportFormsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportFormsOutput`](crate::output::ExportFormsOutput).
 pub mod export_forms_output {
     
@@ -364,6 +472,7 @@ pub mod export_forms_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Form>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -390,6 +499,15 @@ pub mod export_forms_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportFormsOutput`](crate::output::ExportFormsOutput).
         pub fn build(self) -> crate::output::ExportFormsOutput {
             crate::output::ExportFormsOutput {
@@ -397,6 +515,7 @@ pub mod export_forms_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -420,6 +539,7 @@ pub struct ListFormsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFormsOutput {
     /// <p>The list of forms for the Amplify app.</p>
@@ -431,6 +551,11 @@ impl ListFormsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFormsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListFormsOutput`](crate::output::ListFormsOutput).
 pub mod list_forms_output {
     
@@ -440,6 +565,7 @@ pub mod list_forms_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::FormSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -466,6 +592,15 @@ pub mod list_forms_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListFormsOutput`](crate::output::ListFormsOutput).
         pub fn build(self) -> crate::output::ListFormsOutput {
             crate::output::ListFormsOutput {
@@ -473,6 +608,7 @@ pub mod list_forms_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -493,6 +629,7 @@ pub struct CreateFormOutput  {
     /// <p>Describes the configuration of the new form.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Form>,
+    _request_id: Option<String>,
 }
 impl CreateFormOutput {
     /// <p>Describes the configuration of the new form.</p>
@@ -500,6 +637,11 @@ impl CreateFormOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFormOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateFormOutput`](crate::output::CreateFormOutput).
 pub mod create_form_output {
     
@@ -508,6 +650,7 @@ pub mod create_form_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Form>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the new form.</p>
@@ -519,11 +662,21 @@ pub mod create_form_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateFormOutput`](crate::output::CreateFormOutput).
         pub fn build(self) -> crate::output::CreateFormOutput {
             crate::output::CreateFormOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -541,7 +694,13 @@ impl CreateFormOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFormOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteFormOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteFormOutput`](crate::output::DeleteFormOutput).
 pub mod delete_form_output {
     
@@ -549,11 +708,22 @@ pub mod delete_form_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteFormOutput`](crate::output::DeleteFormOutput).
         pub fn build(self) -> crate::output::DeleteFormOutput {
             crate::output::DeleteFormOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -574,6 +744,7 @@ pub struct UpdateFormOutput  {
     /// <p>Describes the configuration of the updated form.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Form>,
+    _request_id: Option<String>,
 }
 impl UpdateFormOutput {
     /// <p>Describes the configuration of the updated form.</p>
@@ -581,6 +752,11 @@ impl UpdateFormOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFormOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateFormOutput`](crate::output::UpdateFormOutput).
 pub mod update_form_output {
     
@@ -589,6 +765,7 @@ pub mod update_form_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Form>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the updated form.</p>
@@ -600,11 +777,21 @@ pub mod update_form_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Form>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateFormOutput`](crate::output::UpdateFormOutput).
         pub fn build(self) -> crate::output::UpdateFormOutput {
             crate::output::UpdateFormOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -625,6 +812,7 @@ pub struct GetFormOutput  {
     /// <p>Represents the configuration settings for the form.</p>
     #[doc(hidden)]
     pub form: std::option::Option<crate::model::Form>,
+    _request_id: Option<String>,
 }
 impl GetFormOutput {
     /// <p>Represents the configuration settings for the form.</p>
@@ -632,6 +820,11 @@ impl GetFormOutput {
         self.form.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFormOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFormOutput`](crate::output::GetFormOutput).
 pub mod get_form_output {
     
@@ -640,6 +833,7 @@ pub mod get_form_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) form: std::option::Option<crate::model::Form>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the configuration settings for the form.</p>
@@ -651,11 +845,21 @@ pub mod get_form_output {
         pub fn set_form(mut self, input: std::option::Option<crate::model::Form>) -> Self {
             self.form = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFormOutput`](crate::output::GetFormOutput).
         pub fn build(self) -> crate::output::GetFormOutput {
             crate::output::GetFormOutput {
                 form: self.form
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -679,6 +883,7 @@ pub struct ExportComponentsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
@@ -690,6 +895,11 @@ impl ExportComponentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExportComponentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
 pub mod export_components_output {
     
@@ -699,6 +909,7 @@ pub mod export_components_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -725,6 +936,15 @@ pub mod export_components_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
         pub fn build(self) -> crate::output::ExportComponentsOutput {
             crate::output::ExportComponentsOutput {
@@ -732,6 +952,7 @@ pub mod export_components_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -755,6 +976,7 @@ pub struct ListComponentsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListComponentsOutput {
     /// <p>The list of components for the Amplify app.</p>
@@ -766,6 +988,11 @@ impl ListComponentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListComponentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
     
@@ -775,6 +1002,7 @@ pub mod list_components_output {
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -801,6 +1029,15 @@ pub mod list_components_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput).
         pub fn build(self) -> crate::output::ListComponentsOutput {
             crate::output::ListComponentsOutput {
@@ -808,6 +1045,7 @@ pub mod list_components_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -828,6 +1066,7 @@ pub struct CreateComponentOutput  {
     /// <p>Describes the configuration of the new component.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
+    _request_id: Option<String>,
 }
 impl CreateComponentOutput {
     /// <p>Describes the configuration of the new component.</p>
@@ -835,6 +1074,11 @@ impl CreateComponentOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateComponentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateComponentOutput`](crate::output::CreateComponentOutput).
 pub mod create_component_output {
     
@@ -843,6 +1087,7 @@ pub mod create_component_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Component>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the new component.</p>
@@ -854,11 +1099,21 @@ pub mod create_component_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Component>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::output::CreateComponentOutput).
         pub fn build(self) -> crate::output::CreateComponentOutput {
             crate::output::CreateComponentOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -876,7 +1131,13 @@ impl CreateComponentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComponentOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteComponentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
 pub mod delete_component_output {
     
@@ -884,11 +1145,22 @@ pub mod delete_component_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
         pub fn build(self) -> crate::output::DeleteComponentOutput {
             crate::output::DeleteComponentOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -909,6 +1181,7 @@ pub struct UpdateComponentOutput  {
     /// <p>Describes the configuration of the updated component.</p>
     #[doc(hidden)]
     pub entity: std::option::Option<crate::model::Component>,
+    _request_id: Option<String>,
 }
 impl UpdateComponentOutput {
     /// <p>Describes the configuration of the updated component.</p>
@@ -916,6 +1189,11 @@ impl UpdateComponentOutput {
         self.entity.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateComponentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
 pub mod update_component_output {
     
@@ -924,6 +1202,7 @@ pub mod update_component_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Component>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the configuration of the updated component.</p>
@@ -935,11 +1214,21 @@ pub mod update_component_output {
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Component>) -> Self {
             self.entity = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
         pub fn build(self) -> crate::output::UpdateComponentOutput {
             crate::output::UpdateComponentOutput {
                 entity: self.entity
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -960,6 +1249,7 @@ pub struct GetComponentOutput  {
     /// <p>Represents the configuration settings for the component.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
+    _request_id: Option<String>,
 }
 impl GetComponentOutput {
     /// <p>Represents the configuration settings for the component.</p>
@@ -967,6 +1257,11 @@ impl GetComponentOutput {
         self.component.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetComponentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
     
@@ -975,6 +1270,7 @@ pub mod get_component_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component: std::option::Option<crate::model::Component>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Represents the configuration settings for the component.</p>
@@ -986,11 +1282,21 @@ pub mod get_component_output {
         pub fn set_component(mut self, input: std::option::Option<crate::model::Component>) -> Self {
             self.component = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput).
         pub fn build(self) -> crate::output::GetComponentOutput {
             crate::output::GetComponentOutput {
                 component: self.component
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1014,6 +1320,7 @@ pub struct RefreshTokenOutput  {
     /// <p>The date and time when the new access token expires.</p>
     #[doc(hidden)]
     pub expires_in: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl RefreshTokenOutput {
     /// <p>The access token.</p>
@@ -1030,9 +1337,15 @@ impl  std::fmt::Debug for RefreshTokenOutput  {
         let mut formatter = f.debug_struct("RefreshTokenOutput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("expires_in", &self.expires_in);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for RefreshTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
 pub mod refresh_token_output {
     
@@ -1042,6 +1355,7 @@ pub mod refresh_token_output {
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) expires_in: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The access token.</p>
@@ -1062,6 +1376,15 @@ pub mod refresh_token_output {
         pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
             self.expires_in = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
         pub fn build(self) -> crate::output::RefreshTokenOutput {
             crate::output::RefreshTokenOutput {
@@ -1069,6 +1392,7 @@ pub mod refresh_token_output {
                 ,
                 expires_in: self.expires_in
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1077,6 +1401,7 @@ pub mod refresh_token_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("access_token", &"*** Sensitive Data Redacted ***");
             formatter.field("expires_in", &self.expires_in);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1094,7 +1419,13 @@ impl RefreshTokenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetadataFlagOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutMetadataFlagOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
 pub mod put_metadata_flag_output {
     
@@ -1102,11 +1433,22 @@ pub mod put_metadata_flag_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutMetadataFlagOutput`](crate::output::PutMetadataFlagOutput).
         pub fn build(self) -> crate::output::PutMetadataFlagOutput {
             crate::output::PutMetadataFlagOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1127,6 +1469,7 @@ pub struct GetMetadataOutput  {
     /// <p>Represents the configuration settings for the features metadata.</p>
     #[doc(hidden)]
     pub features: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetMetadataOutput {
     /// <p>Represents the configuration settings for the features metadata.</p>
@@ -1134,6 +1477,11 @@ impl GetMetadataOutput {
         self.features.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMetadataOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMetadataOutput`](crate::output::GetMetadataOutput).
 pub mod get_metadata_output {
     
@@ -1142,6 +1490,7 @@ pub mod get_metadata_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) features: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `features`.
@@ -1159,11 +1508,21 @@ pub mod get_metadata_output {
         pub fn set_features(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.features = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMetadataOutput`](crate::output::GetMetadataOutput).
         pub fn build(self) -> crate::output::GetMetadataOutput {
             crate::output::GetMetadataOutput {
                 features: self.features
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1190,6 +1549,7 @@ pub struct ExchangeCodeForTokenOutput  {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExchangeCodeForTokenOutput {
     /// <p>The access token.</p>
@@ -1211,9 +1571,15 @@ impl  std::fmt::Debug for ExchangeCodeForTokenOutput  {
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("expires_in", &self.expires_in);
         formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ExchangeCodeForTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
 pub mod exchange_code_for_token_output {
     
@@ -1224,6 +1590,7 @@ pub mod exchange_code_for_token_output {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) expires_in: std::option::Option<i32>,
         pub(crate) refresh_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The access token.</p>
@@ -1253,6 +1620,15 @@ pub mod exchange_code_for_token_output {
         pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.refresh_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
         pub fn build(self) -> crate::output::ExchangeCodeForTokenOutput {
             crate::output::ExchangeCodeForTokenOutput {
@@ -1262,6 +1638,7 @@ pub mod exchange_code_for_token_output {
                 ,
                 refresh_token: self.refresh_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1271,6 +1648,7 @@ pub mod exchange_code_for_token_output {
             formatter.field("access_token", &"*** Sensitive Data Redacted ***");
             formatter.field("expires_in", &self.expires_in);
             formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

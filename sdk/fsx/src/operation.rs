@@ -22,6 +22,7 @@ impl AssociateFileSystemAliases {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateFileSystemAliases {
                 type Output = std::result::Result<crate::output::AssociateFileSystemAliasesOutput, crate::error::AssociateFileSystemAliasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_file_system_aliases_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CancelDataRepositoryTask {
 impl aws_smithy_http::response::ParseStrictResponse for CancelDataRepositoryTask {
                 type Output = std::result::Result<crate::output::CancelDataRepositoryTaskOutput, crate::error::CancelDataRepositoryTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_data_repository_task_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CopyBackup {
 impl aws_smithy_http::response::ParseStrictResponse for CopyBackup {
                 type Output = std::result::Result<crate::output::CopyBackupOutput, crate::error::CopyBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_copy_backup_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateBackup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBackup {
                 type Output = std::result::Result<crate::output::CreateBackupOutput, crate::error::CreateBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_backup_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateDataRepositoryAssociation {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryAssociation {
                 type Output = std::result::Result<crate::output::CreateDataRepositoryAssociationOutput, crate::error::CreateDataRepositoryAssociationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_data_repository_association_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateDataRepositoryTask {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryTask {
                 type Output = std::result::Result<crate::output::CreateDataRepositoryTaskOutput, crate::error::CreateDataRepositoryTaskError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_data_repository_task_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateFileCache {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFileCache {
                 type Output = std::result::Result<crate::output::CreateFileCacheOutput, crate::error::CreateFileCacheError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_file_cache_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateFileSystem {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystem {
                 type Output = std::result::Result<crate::output::CreateFileSystemOutput, crate::error::CreateFileSystemError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_file_system_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateFileSystemFromBackup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystemFromBackup {
                 type Output = std::result::Result<crate::output::CreateFileSystemFromBackupOutput, crate::error::CreateFileSystemFromBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_file_system_from_backup_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
                 type Output = std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_snapshot_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateStorageVirtualMachine {
 impl aws_smithy_http::response::ParseStrictResponse for CreateStorageVirtualMachine {
                 type Output = std::result::Result<crate::output::CreateStorageVirtualMachineOutput, crate::error::CreateStorageVirtualMachineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_storage_virtual_machine_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateVolume {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVolume {
                 type Output = std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_volume_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreateVolumeFromBackup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVolumeFromBackup {
                 type Output = std::result::Result<crate::output::CreateVolumeFromBackupOutput, crate::error::CreateVolumeFromBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_volume_from_backup_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeleteBackup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBackup {
                 type Output = std::result::Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_backup_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteDataRepositoryAssociation {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDataRepositoryAssociation {
                 type Output = std::result::Result<crate::output::DeleteDataRepositoryAssociationOutput, crate::error::DeleteDataRepositoryAssociationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_data_repository_association_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DeleteFileCache {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFileCache {
                 type Output = std::result::Result<crate::output::DeleteFileCacheOutput, crate::error::DeleteFileCacheError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_file_cache_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DeleteFileSystem {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystem {
                 type Output = std::result::Result<crate::output::DeleteFileSystemOutput, crate::error::DeleteFileSystemError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_file_system_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DeleteSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
                 type Output = std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_snapshot_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteStorageVirtualMachine {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageVirtualMachine {
                 type Output = std::result::Result<crate::output::DeleteStorageVirtualMachineOutput, crate::error::DeleteStorageVirtualMachineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_storage_virtual_machine_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DeleteVolume {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVolume {
                 type Output = std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_volume_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeBackups {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBackups {
                 type Output = std::result::Result<crate::output::DescribeBackupsOutput, crate::error::DescribeBackupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_backups_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribeDataRepositoryAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryAssociations {
                 type Output = std::result::Result<crate::output::DescribeDataRepositoryAssociationsOutput, crate::error::DescribeDataRepositoryAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_data_repository_associations_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeDataRepositoryTasks {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryTasks {
                 type Output = std::result::Result<crate::output::DescribeDataRepositoryTasksOutput, crate::error::DescribeDataRepositoryTasksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_data_repository_tasks_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribeFileCaches {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFileCaches {
                 type Output = std::result::Result<crate::output::DescribeFileCachesOutput, crate::error::DescribeFileCachesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_file_caches_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeFileSystemAliases {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystemAliases {
                 type Output = std::result::Result<crate::output::DescribeFileSystemAliasesOutput, crate::error::DescribeFileSystemAliasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_file_system_aliases_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeFileSystems {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
                 type Output = std::result::Result<crate::output::DescribeFileSystemsOutput, crate::error::DescribeFileSystemsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_file_systems_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl DescribeSnapshots {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
                 type Output = std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_snapshots_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl DescribeStorageVirtualMachines {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeStorageVirtualMachines {
                 type Output = std::result::Result<crate::output::DescribeStorageVirtualMachinesOutput, crate::error::DescribeStorageVirtualMachinesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_storage_virtual_machines_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl DescribeVolumes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumes {
                 type Output = std::result::Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_volumes_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl DisassociateFileSystemAliases {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateFileSystemAliases {
                 type Output = std::result::Result<crate::output::DisassociateFileSystemAliasesOutput, crate::error::DisassociateFileSystemAliasesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_file_system_aliases_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ReleaseFileSystemNfsV3Locks {
 impl aws_smithy_http::response::ParseStrictResponse for ReleaseFileSystemNfsV3Locks {
                 type Output = std::result::Result<crate::output::ReleaseFileSystemNfsV3LocksOutput, crate::error::ReleaseFileSystemNfsV3LocksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_release_file_system_nfs_v3_locks_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl RestoreVolumeFromSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for RestoreVolumeFromSnapshot {
                 type Output = std::result::Result<crate::output::RestoreVolumeFromSnapshotOutput, crate::error::RestoreVolumeFromSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restore_volume_from_snapshot_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateDataRepositoryAssociation {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRepositoryAssociation {
                 type Output = std::result::Result<crate::output::UpdateDataRepositoryAssociationOutput, crate::error::UpdateDataRepositoryAssociationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_data_repository_association_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateFileCache {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFileCache {
                 type Output = std::result::Result<crate::output::UpdateFileCacheOutput, crate::error::UpdateFileCacheError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_file_cache_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateFileSystem {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFileSystem {
                 type Output = std::result::Result<crate::output::UpdateFileSystemOutput, crate::error::UpdateFileSystemError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_file_system_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateSnapshot {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
                 type Output = std::result::Result<crate::output::UpdateSnapshotOutput, crate::error::UpdateSnapshotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_snapshot_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl UpdateStorageVirtualMachine {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateStorageVirtualMachine {
                 type Output = std::result::Result<crate::output::UpdateStorageVirtualMachineOutput, crate::error::UpdateStorageVirtualMachineError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_storage_virtual_machine_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl UpdateVolume {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVolume {
                 type Output = std::result::Result<crate::output::UpdateVolumeOutput, crate::error::UpdateVolumeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_volume_error(response)
                      } else {

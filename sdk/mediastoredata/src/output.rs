@@ -12,6 +12,7 @@ pub struct PutObjectOutput  {
     /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
+    _request_id: Option<String>,
 }
 impl PutObjectOutput {
     /// <p>The SHA256 digest of the object that is persisted.</p>
@@ -27,6 +28,11 @@ impl PutObjectOutput {
         self.storage_class.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutObjectOutput`](crate::output::PutObjectOutput).
 pub mod put_object_output {
     
@@ -37,6 +43,7 @@ pub mod put_object_output {
         pub(crate) content_sha256: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The SHA256 digest of the object that is persisted.</p>
@@ -66,6 +73,15 @@ pub mod put_object_output {
         pub fn set_storage_class(mut self, input: std::option::Option<crate::model::StorageClass>) -> Self {
             self.storage_class = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput).
         pub fn build(self) -> crate::output::PutObjectOutput {
             crate::output::PutObjectOutput {
@@ -75,6 +91,7 @@ pub mod put_object_output {
                 ,
                 storage_class: self.storage_class
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -98,6 +115,7 @@ pub struct ListItemsOutput  {
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListItemsOutput {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
@@ -109,6 +127,11 @@ impl ListItemsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListItemsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListItemsOutput`](crate::output::ListItemsOutput).
 pub mod list_items_output {
     
@@ -118,6 +141,7 @@ pub mod list_items_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -144,6 +168,15 @@ pub mod list_items_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListItemsOutput`](crate::output::ListItemsOutput).
         pub fn build(self) -> crate::output::ListItemsOutput {
             crate::output::ListItemsOutput {
@@ -151,6 +184,7 @@ pub mod list_items_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -192,6 +226,7 @@ pub struct GetObjectOutput  {
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     #[doc(hidden)]
     pub status_code: i32,
+    _request_id: Option<String>,
 }
 impl GetObjectOutput {
     /// <p>The bytes of the object. </p>
@@ -228,6 +263,11 @@ impl GetObjectOutput {
         self.status_code
     }
 }
+impl aws_http::request_id::RequestId for GetObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetObjectOutput`](crate::output::GetObjectOutput).
 pub mod get_object_output {
     
@@ -243,6 +283,7 @@ pub mod get_object_output {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_code: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The bytes of the object. </p>
@@ -319,6 +360,15 @@ pub mod get_object_output {
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetObjectOutput`](crate::output::GetObjectOutput).
         pub fn build(self) -> crate::output::GetObjectOutput {
             crate::output::GetObjectOutput {
@@ -340,6 +390,7 @@ pub mod get_object_output {
                 status_code: self.status_code
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -373,6 +424,7 @@ pub struct DescribeObjectOutput  {
     /// <p>The date and time that the object was last modified.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeObjectOutput {
     /// <p>The ETag that represents a unique instance of the object.</p>
@@ -397,6 +449,11 @@ impl DescribeObjectOutput {
         self.last_modified.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
 pub mod describe_object_output {
     
@@ -409,6 +466,7 @@ pub mod describe_object_output {
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ETag that represents a unique instance of the object.</p>
@@ -458,6 +516,15 @@ pub mod describe_object_output {
         pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
         pub fn build(self) -> crate::output::DescribeObjectOutput {
             crate::output::DescribeObjectOutput {
@@ -471,6 +538,7 @@ pub mod describe_object_output {
                 ,
                 last_modified: self.last_modified
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -488,7 +556,13 @@ impl DescribeObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteObjectOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
 pub mod delete_object_output {
     
@@ -496,11 +570,22 @@ pub mod delete_object_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
         pub fn build(self) -> crate::output::DeleteObjectOutput {
             crate::output::DeleteObjectOutput {
+                _request_id: self._request_id,
             }
         }
     }

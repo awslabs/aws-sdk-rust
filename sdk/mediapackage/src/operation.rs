@@ -22,6 +22,7 @@ impl ConfigureLogs {
 impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
                 type Output = std::result::Result<crate::output::ConfigureLogsOutput, crate::error::ConfigureLogsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_configure_logs_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
                 type Output = std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_channel_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateHarvestJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHarvestJob {
                 type Output = std::result::Result<crate::output::CreateHarvestJobOutput, crate::error::CreateHarvestJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_harvest_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateOriginEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for CreateOriginEndpoint {
                 type Output = std::result::Result<crate::output::CreateOriginEndpointOutput, crate::error::CreateOriginEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_origin_endpoint_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
                 type Output = std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_channel_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteOriginEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginEndpoint {
                 type Output = std::result::Result<crate::output::DeleteOriginEndpointOutput, crate::error::DeleteOriginEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_origin_endpoint_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeChannel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
                 type Output = std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_channel_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeHarvestJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeHarvestJob {
                 type Output = std::result::Result<crate::output::DescribeHarvestJobOutput, crate::error::DescribeHarvestJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_harvest_job_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeOriginEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOriginEndpoint {
                 type Output = std::result::Result<crate::output::DescribeOriginEndpointOutput, crate::error::DescribeOriginEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_origin_endpoint_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListChannels {
 impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
                 type Output = std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_channels_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListHarvestJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListHarvestJobs {
                 type Output = std::result::Result<crate::output::ListHarvestJobsOutput, crate::error::ListHarvestJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_harvest_jobs_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListOriginEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for ListOriginEndpoints {
                 type Output = std::result::Result<crate::output::ListOriginEndpointsOutput, crate::error::ListOriginEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_origin_endpoints_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl RotateChannelCredentials {
 impl aws_smithy_http::response::ParseStrictResponse for RotateChannelCredentials {
                 type Output = std::result::Result<crate::output::RotateChannelCredentialsOutput, crate::error::RotateChannelCredentialsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_rotate_channel_credentials_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl RotateIngestEndpointCredentials {
 impl aws_smithy_http::response::ParseStrictResponse for RotateIngestEndpointCredentials {
                 type Output = std::result::Result<crate::output::RotateIngestEndpointCredentialsOutput, crate::error::RotateIngestEndpointCredentialsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_rotate_ingest_endpoint_credentials_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl UpdateChannel {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
                 type Output = std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_channel_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UpdateOriginEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateOriginEndpoint {
                 type Output = std::result::Result<crate::output::UpdateOriginEndpointOutput, crate::error::UpdateOriginEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_origin_endpoint_error(response)
                      } else {

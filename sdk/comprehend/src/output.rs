@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateEndpointOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
 pub mod update_endpoint_output {
     
@@ -11,11 +17,22 @@ pub mod update_endpoint_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
         pub fn build(self) -> crate::output::UpdateEndpointOutput {
             crate::output::UpdateEndpointOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,7 +97,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -71,11 +111,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -93,7 +144,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopTrainingEntityRecognizerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
 pub mod stop_training_entity_recognizer_output {
     
@@ -101,11 +158,22 @@ pub mod stop_training_entity_recognizer_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
         pub fn build(self) -> crate::output::StopTrainingEntityRecognizerOutput {
             crate::output::StopTrainingEntityRecognizerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,7 +191,13 @@ impl StopTrainingEntityRecognizerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopTrainingDocumentClassifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
 pub mod stop_training_document_classifier_output {
     
@@ -131,11 +205,22 @@ pub mod stop_training_document_classifier_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
         pub fn build(self) -> crate::output::StopTrainingDocumentClassifierOutput {
             crate::output::StopTrainingDocumentClassifierOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +244,7 @@ pub struct StopTargetedSentimentDetectionJobOutput  {
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopTargetedSentimentDetectionJobOutput {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
@@ -170,6 +256,11 @@ impl StopTargetedSentimentDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopTargetedSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
 pub mod stop_targeted_sentiment_detection_job_output {
     
@@ -179,6 +270,7 @@ pub mod stop_targeted_sentiment_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the targeted sentiment detection job to stop.</p>
@@ -199,6 +291,15 @@ pub mod stop_targeted_sentiment_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StopTargetedSentimentDetectionJobOutput {
             crate::output::StopTargetedSentimentDetectionJobOutput {
@@ -206,6 +307,7 @@ pub mod stop_targeted_sentiment_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -229,6 +331,7 @@ pub struct StopSentimentDetectionJobOutput  {
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
@@ -240,6 +343,11 @@ impl StopSentimentDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
 pub mod stop_sentiment_detection_job_output {
     
@@ -249,6 +357,7 @@ pub mod stop_sentiment_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the sentiment detection job to stop.</p>
@@ -269,6 +378,15 @@ pub mod stop_sentiment_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StopSentimentDetectionJobOutput {
             crate::output::StopSentimentDetectionJobOutput {
@@ -276,6 +394,7 @@ pub mod stop_sentiment_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -299,6 +418,7 @@ pub struct StopPiiEntitiesDetectionJobOutput  {
     /// <p>The status of the PII entities detection job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopPiiEntitiesDetectionJobOutput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
@@ -310,6 +430,11 @@ impl StopPiiEntitiesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopPiiEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
 pub mod stop_pii_entities_detection_job_output {
     
@@ -319,6 +444,7 @@ pub mod stop_pii_entities_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the PII entities detection job to stop.</p>
@@ -339,6 +465,15 @@ pub mod stop_pii_entities_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopPiiEntitiesDetectionJobOutput {
             crate::output::StopPiiEntitiesDetectionJobOutput {
@@ -346,6 +481,7 @@ pub mod stop_pii_entities_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -369,6 +505,7 @@ pub struct StopKeyPhrasesDetectionJobOutput  {
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopKeyPhrasesDetectionJobOutput {
     /// <p>The identifier of the key phrases detection job to stop.</p>
@@ -380,6 +517,11 @@ impl StopKeyPhrasesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopKeyPhrasesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
 pub mod stop_key_phrases_detection_job_output {
     
@@ -389,6 +531,7 @@ pub mod stop_key_phrases_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the key phrases detection job to stop.</p>
@@ -409,6 +552,15 @@ pub mod stop_key_phrases_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopKeyPhrasesDetectionJobOutput {
             crate::output::StopKeyPhrasesDetectionJobOutput {
@@ -416,6 +568,7 @@ pub mod stop_key_phrases_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -439,6 +592,7 @@ pub struct StopEventsDetectionJobOutput  {
     /// <p>The status of the events detection job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopEventsDetectionJobOutput {
     /// <p>The identifier of the events detection job to stop.</p>
@@ -450,6 +604,11 @@ impl StopEventsDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopEventsDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
 pub mod stop_events_detection_job_output {
     
@@ -459,6 +618,7 @@ pub mod stop_events_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the events detection job to stop.</p>
@@ -479,6 +639,15 @@ pub mod stop_events_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::StopEventsDetectionJobOutput {
             crate::output::StopEventsDetectionJobOutput {
@@ -486,6 +655,7 @@ pub mod stop_events_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -509,6 +679,7 @@ pub struct StopEntitiesDetectionJobOutput  {
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopEntitiesDetectionJobOutput {
     /// <p>The identifier of the entities detection job to stop.</p>
@@ -520,6 +691,11 @@ impl StopEntitiesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
 pub mod stop_entities_detection_job_output {
     
@@ -529,6 +705,7 @@ pub mod stop_entities_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the entities detection job to stop.</p>
@@ -549,6 +726,15 @@ pub mod stop_entities_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopEntitiesDetectionJobOutput {
             crate::output::StopEntitiesDetectionJobOutput {
@@ -556,6 +742,7 @@ pub mod stop_entities_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -579,6 +766,7 @@ pub struct StopDominantLanguageDetectionJobOutput  {
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopDominantLanguageDetectionJobOutput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
@@ -590,6 +778,11 @@ impl StopDominantLanguageDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopDominantLanguageDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
 pub mod stop_dominant_language_detection_job_output {
     
@@ -599,6 +792,7 @@ pub mod stop_dominant_language_detection_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the dominant language detection job to stop.</p>
@@ -619,6 +813,15 @@ pub mod stop_dominant_language_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::StopDominantLanguageDetectionJobOutput {
             crate::output::StopDominantLanguageDetectionJobOutput {
@@ -626,6 +829,7 @@ pub mod stop_dominant_language_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -671,6 +875,7 @@ pub struct StartTopicsDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartTopicsDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
@@ -705,6 +910,11 @@ impl StartTopicsDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartTopicsDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
 pub mod start_topics_detection_job_output {
     
@@ -715,6 +925,7 @@ pub mod start_topics_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
@@ -782,6 +993,15 @@ pub mod start_topics_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
         pub fn build(self) -> crate::output::StartTopicsDetectionJobOutput {
             crate::output::StartTopicsDetectionJobOutput {
@@ -791,6 +1011,7 @@ pub mod start_topics_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -836,6 +1057,7 @@ pub struct StartTargetedSentimentDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartTargetedSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -870,6 +1092,11 @@ impl StartTargetedSentimentDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartTargetedSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
 pub mod start_targeted_sentiment_detection_job_output {
     
@@ -880,6 +1107,7 @@ pub mod start_targeted_sentiment_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -947,6 +1175,15 @@ pub mod start_targeted_sentiment_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StartTargetedSentimentDetectionJobOutput {
             crate::output::StartTargetedSentimentDetectionJobOutput {
@@ -956,6 +1193,7 @@ pub mod start_targeted_sentiment_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1001,6 +1239,7 @@ pub struct StartSentimentDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1035,6 +1274,11 @@ impl StartSentimentDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
 pub mod start_sentiment_detection_job_output {
     
@@ -1045,6 +1289,7 @@ pub mod start_sentiment_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1112,6 +1357,15 @@ pub mod start_sentiment_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StartSentimentDetectionJobOutput {
             crate::output::StartSentimentDetectionJobOutput {
@@ -1121,6 +1375,7 @@ pub mod start_sentiment_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1160,6 +1415,7 @@ pub struct StartPiiEntitiesDetectionJobOutput  {
     /// <p>The status of the job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartPiiEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job.</p>
@@ -1188,6 +1444,11 @@ impl StartPiiEntitiesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartPiiEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
 pub mod start_pii_entities_detection_job_output {
     
@@ -1198,6 +1459,7 @@ pub mod start_pii_entities_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job.</p>
@@ -1253,6 +1515,15 @@ pub mod start_pii_entities_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartPiiEntitiesDetectionJobOutput {
             crate::output::StartPiiEntitiesDetectionJobOutput {
@@ -1262,6 +1533,7 @@ pub mod start_pii_entities_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1307,6 +1579,7 @@ pub struct StartKeyPhrasesDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartKeyPhrasesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1341,6 +1614,11 @@ impl StartKeyPhrasesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartKeyPhrasesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
 pub mod start_key_phrases_detection_job_output {
     
@@ -1351,6 +1629,7 @@ pub mod start_key_phrases_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1418,6 +1697,15 @@ pub mod start_key_phrases_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartKeyPhrasesDetectionJobOutput {
             crate::output::StartKeyPhrasesDetectionJobOutput {
@@ -1427,6 +1715,7 @@ pub mod start_key_phrases_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1466,6 +1755,7 @@ pub struct StartEventsDetectionJobOutput  {
     /// <p>The status of the events detection job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartEventsDetectionJobOutput {
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
@@ -1494,6 +1784,11 @@ impl StartEventsDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartEventsDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
 pub mod start_events_detection_job_output {
     
@@ -1504,6 +1799,7 @@ pub mod start_events_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
@@ -1559,6 +1855,15 @@ pub mod start_events_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::StartEventsDetectionJobOutput {
             crate::output::StartEventsDetectionJobOutput {
@@ -1568,6 +1873,7 @@ pub mod start_events_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1615,6 +1921,7 @@ pub struct StartEntitiesDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
@@ -1651,6 +1958,11 @@ impl StartEntitiesDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
 pub mod start_entities_detection_job_output {
     
@@ -1661,6 +1973,7 @@ pub mod start_entities_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
@@ -1732,6 +2045,15 @@ pub mod start_entities_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartEntitiesDetectionJobOutput {
             crate::output::StartEntitiesDetectionJobOutput {
@@ -1741,6 +2063,7 @@ pub mod start_entities_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1786,6 +2109,7 @@ pub struct StartDominantLanguageDetectionJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartDominantLanguageDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1820,6 +2144,11 @@ impl StartDominantLanguageDetectionJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartDominantLanguageDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
 pub mod start_dominant_language_detection_job_output {
     
@@ -1830,6 +2159,7 @@ pub mod start_dominant_language_detection_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
@@ -1897,6 +2227,15 @@ pub mod start_dominant_language_detection_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::StartDominantLanguageDetectionJobOutput {
             crate::output::StartDominantLanguageDetectionJobOutput {
@@ -1906,6 +2245,7 @@ pub mod start_dominant_language_detection_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1953,6 +2293,7 @@ pub struct StartDocumentClassificationJobOutput  {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartDocumentClassificationJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
@@ -1989,6 +2330,11 @@ impl StartDocumentClassificationJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartDocumentClassificationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
 pub mod start_document_classification_job_output {
     
@@ -1999,6 +2345,7 @@ pub mod start_document_classification_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
@@ -2070,6 +2417,15 @@ pub mod start_document_classification_job_output {
         pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.job_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
         pub fn build(self) -> crate::output::StartDocumentClassificationJobOutput {
             crate::output::StartDocumentClassificationJobOutput {
@@ -2079,6 +2435,7 @@ pub mod start_document_classification_job_output {
                 ,
                 job_status: self.job_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2099,6 +2456,7 @@ pub struct PutResourcePolicyOutput  {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     #[doc(hidden)]
     pub policy_revision_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
@@ -2106,6 +2464,11 @@ impl PutResourcePolicyOutput {
         self.policy_revision_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
     
@@ -2114,6 +2477,7 @@ pub mod put_resource_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
@@ -2125,11 +2489,21 @@ pub mod put_resource_policy_output {
         pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_revision_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
                 policy_revision_id: self.policy_revision_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2153,6 +2527,7 @@ pub struct ListTopicsDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTopicsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2164,6 +2539,11 @@ impl ListTopicsDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTopicsDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
 pub mod list_topics_detection_jobs_output {
     
@@ -2173,6 +2553,7 @@ pub mod list_topics_detection_jobs_output {
     pub struct Builder {
         pub(crate) topics_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `topics_detection_job_properties_list`.
@@ -2199,6 +2580,15 @@ pub mod list_topics_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListTopicsDetectionJobsOutput {
             crate::output::ListTopicsDetectionJobsOutput {
@@ -2206,6 +2596,7 @@ pub mod list_topics_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2229,6 +2620,7 @@ pub struct ListTargetedSentimentDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTargetedSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2240,6 +2632,11 @@ impl ListTargetedSentimentDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTargetedSentimentDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
 pub mod list_targeted_sentiment_detection_jobs_output {
     
@@ -2249,6 +2646,7 @@ pub mod list_targeted_sentiment_detection_jobs_output {
     pub struct Builder {
         pub(crate) targeted_sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `targeted_sentiment_detection_job_properties_list`.
@@ -2275,6 +2673,15 @@ pub mod list_targeted_sentiment_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListTargetedSentimentDetectionJobsOutput {
             crate::output::ListTargetedSentimentDetectionJobsOutput {
@@ -2282,6 +2689,7 @@ pub mod list_targeted_sentiment_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2305,6 +2713,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
@@ -2316,6 +2725,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2325,6 +2739,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
@@ -2351,6 +2766,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -2358,6 +2782,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2381,6 +2806,7 @@ pub struct ListSentimentDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2392,6 +2818,11 @@ impl ListSentimentDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSentimentDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
 pub mod list_sentiment_detection_jobs_output {
     
@@ -2401,6 +2832,7 @@ pub mod list_sentiment_detection_jobs_output {
     pub struct Builder {
         pub(crate) sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sentiment_detection_job_properties_list`.
@@ -2427,6 +2859,15 @@ pub mod list_sentiment_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListSentimentDetectionJobsOutput {
             crate::output::ListSentimentDetectionJobsOutput {
@@ -2434,6 +2875,7 @@ pub mod list_sentiment_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2457,6 +2899,7 @@ pub struct ListPiiEntitiesDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPiiEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2468,6 +2911,11 @@ impl ListPiiEntitiesDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPiiEntitiesDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
 pub mod list_pii_entities_detection_jobs_output {
     
@@ -2477,6 +2925,7 @@ pub mod list_pii_entities_detection_jobs_output {
     pub struct Builder {
         pub(crate) pii_entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pii_entities_detection_job_properties_list`.
@@ -2503,6 +2952,15 @@ pub mod list_pii_entities_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListPiiEntitiesDetectionJobsOutput {
             crate::output::ListPiiEntitiesDetectionJobsOutput {
@@ -2510,6 +2968,7 @@ pub mod list_pii_entities_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2533,6 +2992,7 @@ pub struct ListKeyPhrasesDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListKeyPhrasesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2544,6 +3004,11 @@ impl ListKeyPhrasesDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListKeyPhrasesDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
 pub mod list_key_phrases_detection_jobs_output {
     
@@ -2553,6 +3018,7 @@ pub mod list_key_phrases_detection_jobs_output {
     pub struct Builder {
         pub(crate) key_phrases_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `key_phrases_detection_job_properties_list`.
@@ -2579,6 +3045,15 @@ pub mod list_key_phrases_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListKeyPhrasesDetectionJobsOutput {
             crate::output::ListKeyPhrasesDetectionJobsOutput {
@@ -2586,6 +3061,7 @@ pub mod list_key_phrases_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2609,6 +3085,7 @@ pub struct ListEventsDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEventsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2620,6 +3097,11 @@ impl ListEventsDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEventsDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
 pub mod list_events_detection_jobs_output {
     
@@ -2629,6 +3111,7 @@ pub mod list_events_detection_jobs_output {
     pub struct Builder {
         pub(crate) events_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events_detection_job_properties_list`.
@@ -2655,6 +3138,15 @@ pub mod list_events_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListEventsDetectionJobsOutput {
             crate::output::ListEventsDetectionJobsOutput {
@@ -2662,6 +3154,7 @@ pub mod list_events_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2685,6 +3178,7 @@ pub struct ListEntityRecognizerSummariesOutput  {
     /// <p>The list entity recognizer summaries.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
@@ -2696,6 +3190,11 @@ impl ListEntityRecognizerSummariesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEntityRecognizerSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
 pub mod list_entity_recognizer_summaries_output {
     
@@ -2705,6 +3204,7 @@ pub mod list_entity_recognizer_summaries_output {
     pub struct Builder {
         pub(crate) entity_recognizer_summaries_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entity_recognizer_summaries_list`.
@@ -2731,6 +3231,15 @@ pub mod list_entity_recognizer_summaries_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
         pub fn build(self) -> crate::output::ListEntityRecognizerSummariesOutput {
             crate::output::ListEntityRecognizerSummariesOutput {
@@ -2738,6 +3247,7 @@ pub mod list_entity_recognizer_summaries_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2761,6 +3271,7 @@ pub struct ListEntityRecognizersOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
@@ -2772,6 +3283,11 @@ impl ListEntityRecognizersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEntityRecognizersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
 pub mod list_entity_recognizers_output {
     
@@ -2781,6 +3297,7 @@ pub mod list_entity_recognizers_output {
     pub struct Builder {
         pub(crate) entity_recognizer_properties_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entity_recognizer_properties_list`.
@@ -2807,6 +3324,15 @@ pub mod list_entity_recognizers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
         pub fn build(self) -> crate::output::ListEntityRecognizersOutput {
             crate::output::ListEntityRecognizersOutput {
@@ -2814,6 +3340,7 @@ pub mod list_entity_recognizers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2837,6 +3364,7 @@ pub struct ListEntitiesDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -2848,6 +3376,11 @@ impl ListEntitiesDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEntitiesDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
 pub mod list_entities_detection_jobs_output {
     
@@ -2857,6 +3390,7 @@ pub mod list_entities_detection_jobs_output {
     pub struct Builder {
         pub(crate) entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities_detection_job_properties_list`.
@@ -2883,6 +3417,15 @@ pub mod list_entities_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListEntitiesDetectionJobsOutput {
             crate::output::ListEntitiesDetectionJobsOutput {
@@ -2890,6 +3433,7 @@ pub mod list_entities_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2913,6 +3457,7 @@ pub struct ListEndpointsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
@@ -2924,6 +3469,11 @@ impl ListEndpointsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
     
@@ -2933,6 +3483,7 @@ pub mod list_endpoints_output {
     pub struct Builder {
         pub(crate) endpoint_properties_list: std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoint_properties_list`.
@@ -2959,6 +3510,15 @@ pub mod list_endpoints_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
         pub fn build(self) -> crate::output::ListEndpointsOutput {
             crate::output::ListEndpointsOutput {
@@ -2966,6 +3526,7 @@ pub mod list_endpoints_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2989,6 +3550,7 @@ pub struct ListDominantLanguageDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -3000,6 +3562,11 @@ impl ListDominantLanguageDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDominantLanguageDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
 pub mod list_dominant_language_detection_jobs_output {
     
@@ -3009,6 +3576,7 @@ pub mod list_dominant_language_detection_jobs_output {
     pub struct Builder {
         pub(crate) dominant_language_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `dominant_language_detection_job_properties_list`.
@@ -3035,6 +3603,15 @@ pub mod list_dominant_language_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListDominantLanguageDetectionJobsOutput {
             crate::output::ListDominantLanguageDetectionJobsOutput {
@@ -3042,6 +3619,7 @@ pub mod list_dominant_language_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3065,6 +3643,7 @@ pub struct ListDocumentClassifierSummariesOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
@@ -3076,6 +3655,11 @@ impl ListDocumentClassifierSummariesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDocumentClassifierSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
 pub mod list_document_classifier_summaries_output {
     
@@ -3085,6 +3669,7 @@ pub mod list_document_classifier_summaries_output {
     pub struct Builder {
         pub(crate) document_classifier_summaries_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `document_classifier_summaries_list`.
@@ -3111,6 +3696,15 @@ pub mod list_document_classifier_summaries_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
         pub fn build(self) -> crate::output::ListDocumentClassifierSummariesOutput {
             crate::output::ListDocumentClassifierSummariesOutput {
@@ -3118,6 +3712,7 @@ pub mod list_document_classifier_summaries_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3141,6 +3736,7 @@ pub struct ListDocumentClassifiersOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDocumentClassifiersOutput {
     /// <p>A list containing the properties of each job returned.</p>
@@ -3152,6 +3748,11 @@ impl ListDocumentClassifiersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDocumentClassifiersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
 pub mod list_document_classifiers_output {
     
@@ -3161,6 +3762,7 @@ pub mod list_document_classifiers_output {
     pub struct Builder {
         pub(crate) document_classifier_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `document_classifier_properties_list`.
@@ -3187,6 +3789,15 @@ pub mod list_document_classifiers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
         pub fn build(self) -> crate::output::ListDocumentClassifiersOutput {
             crate::output::ListDocumentClassifiersOutput {
@@ -3194,6 +3805,7 @@ pub mod list_document_classifiers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3217,6 +3829,7 @@ pub struct ListDocumentClassificationJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDocumentClassificationJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
@@ -3228,6 +3841,11 @@ impl ListDocumentClassificationJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDocumentClassificationJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
 pub mod list_document_classification_jobs_output {
     
@@ -3237,6 +3855,7 @@ pub mod list_document_classification_jobs_output {
     pub struct Builder {
         pub(crate) document_classification_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `document_classification_job_properties_list`.
@@ -3263,6 +3882,15 @@ pub mod list_document_classification_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
         pub fn build(self) -> crate::output::ListDocumentClassificationJobsOutput {
             crate::output::ListDocumentClassificationJobsOutput {
@@ -3270,6 +3898,7 @@ pub mod list_document_classification_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3290,6 +3919,7 @@ pub struct ImportModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
@@ -3297,6 +3927,11 @@ impl ImportModelOutput {
         self.model_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportModelOutput`](crate::output::ImportModelOutput).
 pub mod import_model_output {
     
@@ -3305,6 +3940,7 @@ pub mod import_model_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
@@ -3316,11 +3952,21 @@ pub mod import_model_output {
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportModelOutput`](crate::output::ImportModelOutput).
         pub fn build(self) -> crate::output::ImportModelOutput {
             crate::output::ImportModelOutput {
                 model_arn: self.model_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3341,6 +3987,7 @@ pub struct DetectTargetedSentimentOutput  {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+    _request_id: Option<String>,
 }
 impl DetectTargetedSentimentOutput {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
@@ -3352,9 +3999,15 @@ impl  std::fmt::Debug for DetectTargetedSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectTargetedSentimentOutput");
         formatter.field("entities", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectTargetedSentimentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
 pub mod detect_targeted_sentiment_output {
     
@@ -3363,6 +4016,7 @@ pub mod detect_targeted_sentiment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -3380,11 +4034,21 @@ pub mod detect_targeted_sentiment_output {
         pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>) -> Self {
             self.entities = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
         pub fn build(self) -> crate::output::DetectTargetedSentimentOutput {
             crate::output::DetectTargetedSentimentOutput {
                 entities: self.entities
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3392,6 +4056,7 @@ pub mod detect_targeted_sentiment_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("entities", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3412,6 +4077,7 @@ pub struct DetectSyntaxOutput  {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
+    _request_id: Option<String>,
 }
 impl DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
@@ -3423,9 +4089,15 @@ impl  std::fmt::Debug for DetectSyntaxOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxOutput");
         formatter.field("syntax_tokens", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectSyntaxOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
 pub mod detect_syntax_output {
     
@@ -3434,6 +4106,7 @@ pub mod detect_syntax_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `syntax_tokens`.
@@ -3451,11 +4124,21 @@ pub mod detect_syntax_output {
         pub fn set_syntax_tokens(mut self, input: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>) -> Self {
             self.syntax_tokens = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
         pub fn build(self) -> crate::output::DetectSyntaxOutput {
             crate::output::DetectSyntaxOutput {
                 syntax_tokens: self.syntax_tokens
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3463,6 +4146,7 @@ pub mod detect_syntax_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("syntax_tokens", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3486,6 +4170,7 @@ pub struct DetectSentimentOutput  {
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
     #[doc(hidden)]
     pub sentiment_score: std::option::Option<crate::model::SentimentScore>,
+    _request_id: Option<String>,
 }
 impl DetectSentimentOutput {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
@@ -3502,9 +4187,15 @@ impl  std::fmt::Debug for DetectSentimentOutput  {
         let mut formatter = f.debug_struct("DetectSentimentOutput");
         formatter.field("sentiment", &"*** Sensitive Data Redacted ***");
         formatter.field("sentiment_score", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectSentimentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
 pub mod detect_sentiment_output {
     
@@ -3514,6 +4205,7 @@ pub mod detect_sentiment_output {
     pub struct Builder {
         pub(crate) sentiment: std::option::Option<crate::model::SentimentType>,
         pub(crate) sentiment_score: std::option::Option<crate::model::SentimentScore>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
@@ -3534,6 +4226,15 @@ pub mod detect_sentiment_output {
         pub fn set_sentiment_score(mut self, input: std::option::Option<crate::model::SentimentScore>) -> Self {
             self.sentiment_score = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
         pub fn build(self) -> crate::output::DetectSentimentOutput {
             crate::output::DetectSentimentOutput {
@@ -3541,6 +4242,7 @@ pub mod detect_sentiment_output {
                 ,
                 sentiment_score: self.sentiment_score
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3549,6 +4251,7 @@ pub mod detect_sentiment_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("sentiment", &"*** Sensitive Data Redacted ***");
             formatter.field("sentiment_score", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3569,6 +4272,7 @@ pub struct DetectPiiEntitiesOutput  {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
+    _request_id: Option<String>,
 }
 impl DetectPiiEntitiesOutput {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
@@ -3576,6 +4280,11 @@ impl DetectPiiEntitiesOutput {
         self.entities.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetectPiiEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
 pub mod detect_pii_entities_output {
     
@@ -3584,6 +4293,7 @@ pub mod detect_pii_entities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -3601,11 +4311,21 @@ pub mod detect_pii_entities_output {
         pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>) -> Self {
             self.entities = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
         pub fn build(self) -> crate::output::DetectPiiEntitiesOutput {
             crate::output::DetectPiiEntitiesOutput {
                 entities: self.entities
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3626,6 +4346,7 @@ pub struct DetectKeyPhrasesOutput  {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
     #[doc(hidden)]
     pub key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
+    _request_id: Option<String>,
 }
 impl DetectKeyPhrasesOutput {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
@@ -3637,9 +4358,15 @@ impl  std::fmt::Debug for DetectKeyPhrasesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectKeyPhrasesOutput");
         formatter.field("key_phrases", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectKeyPhrasesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
 pub mod detect_key_phrases_output {
     
@@ -3648,6 +4375,7 @@ pub mod detect_key_phrases_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `key_phrases`.
@@ -3665,11 +4393,21 @@ pub mod detect_key_phrases_output {
         pub fn set_key_phrases(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>) -> Self {
             self.key_phrases = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
         pub fn build(self) -> crate::output::DetectKeyPhrasesOutput {
             crate::output::DetectKeyPhrasesOutput {
                 key_phrases: self.key_phrases
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3677,6 +4415,7 @@ pub mod detect_key_phrases_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("key_phrases", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3712,6 +4451,7 @@ pub struct DetectEntitiesOutput  {
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+    _request_id: Option<String>,
 }
 impl DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p> 
@@ -3746,9 +4486,15 @@ impl  std::fmt::Debug for DetectEntitiesOutput  {
         formatter.field("document_type", &"*** Sensitive Data Redacted ***");
         formatter.field("blocks", &"*** Sensitive Data Redacted ***");
         formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
     
@@ -3761,6 +4507,7 @@ pub mod detect_entities_output {
         pub(crate) document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -3838,6 +4585,15 @@ pub mod detect_entities_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
@@ -3851,6 +4607,7 @@ pub mod detect_entities_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3862,6 +4619,7 @@ pub mod detect_entities_output {
             formatter.field("document_type", &"*** Sensitive Data Redacted ***");
             formatter.field("blocks", &"*** Sensitive Data Redacted ***");
             formatter.field("errors", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3882,6 +4640,7 @@ pub struct DetectDominantLanguageOutput  {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
+    _request_id: Option<String>,
 }
 impl DetectDominantLanguageOutput {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
@@ -3893,9 +4652,15 @@ impl  std::fmt::Debug for DetectDominantLanguageOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageOutput");
         formatter.field("languages", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for DetectDominantLanguageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
 pub mod detect_dominant_language_output {
     
@@ -3904,6 +4669,7 @@ pub mod detect_dominant_language_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `languages`.
@@ -3921,11 +4687,21 @@ pub mod detect_dominant_language_output {
         pub fn set_languages(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>) -> Self {
             self.languages = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
         pub fn build(self) -> crate::output::DetectDominantLanguageOutput {
             crate::output::DetectDominantLanguageOutput {
                 languages: self.languages
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3933,6 +4709,7 @@ pub mod detect_dominant_language_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("languages", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3953,6 +4730,7 @@ pub struct DescribeTopicsDetectionJobOutput  {
     /// <p>The list of properties for the requested job.</p>
     #[doc(hidden)]
     pub topics_detection_job_properties: std::option::Option<crate::model::TopicsDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
@@ -3960,6 +4738,11 @@ impl DescribeTopicsDetectionJobOutput {
         self.topics_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTopicsDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
 pub mod describe_topics_detection_job_output {
     
@@ -3968,6 +4751,7 @@ pub mod describe_topics_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topics_detection_job_properties: std::option::Option<crate::model::TopicsDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The list of properties for the requested job.</p>
@@ -3979,11 +4763,21 @@ pub mod describe_topics_detection_job_output {
         pub fn set_topics_detection_job_properties(mut self, input: std::option::Option<crate::model::TopicsDetectionJobProperties>) -> Self {
             self.topics_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeTopicsDetectionJobOutput {
             crate::output::DescribeTopicsDetectionJobOutput {
                 topics_detection_job_properties: self.topics_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4004,6 +4798,7 @@ pub struct DescribeTargetedSentimentDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
     #[doc(hidden)]
     pub targeted_sentiment_detection_job_properties: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeTargetedSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
@@ -4011,6 +4806,11 @@ impl DescribeTargetedSentimentDetectionJobOutput {
         self.targeted_sentiment_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTargetedSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
 pub mod describe_targeted_sentiment_detection_job_output {
     
@@ -4019,6 +4819,7 @@ pub mod describe_targeted_sentiment_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targeted_sentiment_detection_job_properties: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
@@ -4030,11 +4831,21 @@ pub mod describe_targeted_sentiment_detection_job_output {
         pub fn set_targeted_sentiment_detection_job_properties(mut self, input: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>) -> Self {
             self.targeted_sentiment_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeTargetedSentimentDetectionJobOutput {
             crate::output::DescribeTargetedSentimentDetectionJobOutput {
                 targeted_sentiment_detection_job_properties: self.targeted_sentiment_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4055,6 +4866,7 @@ pub struct DescribeSentimentDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
     #[doc(hidden)]
     pub sentiment_detection_job_properties: std::option::Option<crate::model::SentimentDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
@@ -4062,6 +4874,11 @@ impl DescribeSentimentDetectionJobOutput {
         self.sentiment_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSentimentDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
 pub mod describe_sentiment_detection_job_output {
     
@@ -4070,6 +4887,7 @@ pub mod describe_sentiment_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiment_detection_job_properties: std::option::Option<crate::model::SentimentDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a sentiment detection job.</p>
@@ -4081,11 +4899,21 @@ pub mod describe_sentiment_detection_job_output {
         pub fn set_sentiment_detection_job_properties(mut self, input: std::option::Option<crate::model::SentimentDetectionJobProperties>) -> Self {
             self.sentiment_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeSentimentDetectionJobOutput {
             crate::output::DescribeSentimentDetectionJobOutput {
                 sentiment_detection_job_properties: self.sentiment_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4115,6 +4943,7 @@ pub struct DescribeResourcePolicyOutput  {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     #[doc(hidden)]
     pub policy_revision_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeResourcePolicyOutput {
     /// <p>The JSON body of the resource-based policy.</p>
@@ -4134,6 +4963,11 @@ impl DescribeResourcePolicyOutput {
         self.policy_revision_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
     
@@ -4145,6 +4979,7 @@ pub mod describe_resource_policy_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) policy_revision_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The JSON body of the resource-based policy.</p>
@@ -4183,6 +5018,15 @@ pub mod describe_resource_policy_output {
         pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_revision_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
@@ -4194,6 +5038,7 @@ pub mod describe_resource_policy_output {
                 ,
                 policy_revision_id: self.policy_revision_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4214,6 +5059,7 @@ pub struct DescribePiiEntitiesDetectionJobOutput  {
     /// <p>Provides information about a PII entities detection job.</p>
     #[doc(hidden)]
     pub pii_entities_detection_job_properties: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
@@ -4221,6 +5067,11 @@ impl DescribePiiEntitiesDetectionJobOutput {
         self.pii_entities_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePiiEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
 pub mod describe_pii_entities_detection_job_output {
     
@@ -4229,6 +5080,7 @@ pub mod describe_pii_entities_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pii_entities_detection_job_properties: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a PII entities detection job.</p>
@@ -4240,11 +5092,21 @@ pub mod describe_pii_entities_detection_job_output {
         pub fn set_pii_entities_detection_job_properties(mut self, input: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>) -> Self {
             self.pii_entities_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribePiiEntitiesDetectionJobOutput {
             crate::output::DescribePiiEntitiesDetectionJobOutput {
                 pii_entities_detection_job_properties: self.pii_entities_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4265,6 +5127,7 @@ pub struct DescribeKeyPhrasesDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     #[doc(hidden)]
     pub key_phrases_detection_job_properties: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
@@ -4272,6 +5135,11 @@ impl DescribeKeyPhrasesDetectionJobOutput {
         self.key_phrases_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeKeyPhrasesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
 pub mod describe_key_phrases_detection_job_output {
     
@@ -4280,6 +5148,7 @@ pub mod describe_key_phrases_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_phrases_detection_job_properties: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a key phrases detection job. </p>
@@ -4291,11 +5160,21 @@ pub mod describe_key_phrases_detection_job_output {
         pub fn set_key_phrases_detection_job_properties(mut self, input: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>) -> Self {
             self.key_phrases_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeKeyPhrasesDetectionJobOutput {
             crate::output::DescribeKeyPhrasesDetectionJobOutput {
                 key_phrases_detection_job_properties: self.key_phrases_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4316,6 +5195,7 @@ pub struct DescribeEventsDetectionJobOutput  {
     /// <p>An object that contains the properties associated with an event detection job.</p>
     #[doc(hidden)]
     pub events_detection_job_properties: std::option::Option<crate::model::EventsDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
@@ -4323,6 +5203,11 @@ impl DescribeEventsDetectionJobOutput {
         self.events_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEventsDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
 pub mod describe_events_detection_job_output {
     
@@ -4331,6 +5216,7 @@ pub mod describe_events_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_detection_job_properties: std::option::Option<crate::model::EventsDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an event detection job.</p>
@@ -4342,11 +5228,21 @@ pub mod describe_events_detection_job_output {
         pub fn set_events_detection_job_properties(mut self, input: std::option::Option<crate::model::EventsDetectionJobProperties>) -> Self {
             self.events_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeEventsDetectionJobOutput {
             crate::output::DescribeEventsDetectionJobOutput {
                 events_detection_job_properties: self.events_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4367,6 +5263,7 @@ pub struct DescribeEntityRecognizerOutput  {
     /// <p>Describes information associated with an entity recognizer.</p>
     #[doc(hidden)]
     pub entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
@@ -4374,6 +5271,11 @@ impl DescribeEntityRecognizerOutput {
         self.entity_recognizer_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEntityRecognizerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
 pub mod describe_entity_recognizer_output {
     
@@ -4382,6 +5284,7 @@ pub mod describe_entity_recognizer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes information associated with an entity recognizer.</p>
@@ -4393,11 +5296,21 @@ pub mod describe_entity_recognizer_output {
         pub fn set_entity_recognizer_properties(mut self, input: std::option::Option<crate::model::EntityRecognizerProperties>) -> Self {
             self.entity_recognizer_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
         pub fn build(self) -> crate::output::DescribeEntityRecognizerOutput {
             crate::output::DescribeEntityRecognizerOutput {
                 entity_recognizer_properties: self.entity_recognizer_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4418,6 +5331,7 @@ pub struct DescribeEntitiesDetectionJobOutput  {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
     #[doc(hidden)]
     pub entities_detection_job_properties: std::option::Option<crate::model::EntitiesDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
@@ -4425,6 +5339,11 @@ impl DescribeEntitiesDetectionJobOutput {
         self.entities_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEntitiesDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
 pub mod describe_entities_detection_job_output {
     
@@ -4433,6 +5352,7 @@ pub mod describe_entities_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities_detection_job_properties: std::option::Option<crate::model::EntitiesDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an entities detection job.</p>
@@ -4444,11 +5364,21 @@ pub mod describe_entities_detection_job_output {
         pub fn set_entities_detection_job_properties(mut self, input: std::option::Option<crate::model::EntitiesDetectionJobProperties>) -> Self {
             self.entities_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeEntitiesDetectionJobOutput {
             crate::output::DescribeEntitiesDetectionJobOutput {
                 entities_detection_job_properties: self.entities_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4469,6 +5399,7 @@ pub struct DescribeEndpointOutput  {
     /// <p>Describes information associated with the specific endpoint.</p>
     #[doc(hidden)]
     pub endpoint_properties: std::option::Option<crate::model::EndpointProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
@@ -4476,6 +5407,11 @@ impl DescribeEndpointOutput {
         self.endpoint_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
 pub mod describe_endpoint_output {
     
@@ -4484,6 +5420,7 @@ pub mod describe_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_properties: std::option::Option<crate::model::EndpointProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes information associated with the specific endpoint.</p>
@@ -4495,11 +5432,21 @@ pub mod describe_endpoint_output {
         pub fn set_endpoint_properties(mut self, input: std::option::Option<crate::model::EndpointProperties>) -> Self {
             self.endpoint_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
         pub fn build(self) -> crate::output::DescribeEndpointOutput {
             crate::output::DescribeEndpointOutput {
                 endpoint_properties: self.endpoint_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4520,6 +5467,7 @@ pub struct DescribeDominantLanguageDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
     #[doc(hidden)]
     pub dominant_language_detection_job_properties: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
@@ -4527,6 +5475,11 @@ impl DescribeDominantLanguageDetectionJobOutput {
         self.dominant_language_detection_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDominantLanguageDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
 pub mod describe_dominant_language_detection_job_output {
     
@@ -4535,6 +5488,7 @@ pub mod describe_dominant_language_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dominant_language_detection_job_properties: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a dominant language detection job.</p>
@@ -4546,11 +5500,21 @@ pub mod describe_dominant_language_detection_job_output {
         pub fn set_dominant_language_detection_job_properties(mut self, input: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>) -> Self {
             self.dominant_language_detection_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeDominantLanguageDetectionJobOutput {
             crate::output::DescribeDominantLanguageDetectionJobOutput {
                 dominant_language_detection_job_properties: self.dominant_language_detection_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4571,6 +5535,7 @@ pub struct DescribeDocumentClassifierOutput  {
     /// <p>An object that contains the properties associated with a document classifier.</p>
     #[doc(hidden)]
     pub document_classifier_properties: std::option::Option<crate::model::DocumentClassifierProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeDocumentClassifierOutput {
     /// <p>An object that contains the properties associated with a document classifier.</p>
@@ -4578,6 +5543,11 @@ impl DescribeDocumentClassifierOutput {
         self.document_classifier_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDocumentClassifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
 pub mod describe_document_classifier_output {
     
@@ -4586,6 +5556,7 @@ pub mod describe_document_classifier_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_properties: std::option::Option<crate::model::DocumentClassifierProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a document classifier.</p>
@@ -4597,11 +5568,21 @@ pub mod describe_document_classifier_output {
         pub fn set_document_classifier_properties(mut self, input: std::option::Option<crate::model::DocumentClassifierProperties>) -> Self {
             self.document_classifier_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
         pub fn build(self) -> crate::output::DescribeDocumentClassifierOutput {
             crate::output::DescribeDocumentClassifierOutput {
                 document_classifier_properties: self.document_classifier_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4622,6 +5603,7 @@ pub struct DescribeDocumentClassificationJobOutput  {
     /// <p>An object that describes the properties associated with the document classification job.</p>
     #[doc(hidden)]
     pub document_classification_job_properties: std::option::Option<crate::model::DocumentClassificationJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
@@ -4629,6 +5611,11 @@ impl DescribeDocumentClassificationJobOutput {
         self.document_classification_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDocumentClassificationJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
 pub mod describe_document_classification_job_output {
     
@@ -4637,6 +5624,7 @@ pub mod describe_document_classification_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classification_job_properties: std::option::Option<crate::model::DocumentClassificationJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that describes the properties associated with the document classification job.</p>
@@ -4648,11 +5636,21 @@ pub mod describe_document_classification_job_output {
         pub fn set_document_classification_job_properties(mut self, input: std::option::Option<crate::model::DocumentClassificationJobProperties>) -> Self {
             self.document_classification_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
         pub fn build(self) -> crate::output::DescribeDocumentClassificationJobOutput {
             crate::output::DescribeDocumentClassificationJobOutput {
                 document_classification_job_properties: self.document_classification_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4670,7 +5668,13 @@ impl DescribeDocumentClassificationJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
     
@@ -4678,11 +5682,22 @@ pub mod delete_resource_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -4700,7 +5715,13 @@ impl DeleteResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEntityRecognizerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEntityRecognizerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
 pub mod delete_entity_recognizer_output {
     
@@ -4708,11 +5729,22 @@ pub mod delete_entity_recognizer_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
         pub fn build(self) -> crate::output::DeleteEntityRecognizerOutput {
             crate::output::DeleteEntityRecognizerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -4730,7 +5762,13 @@ impl DeleteEntityRecognizerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
     
@@ -4738,11 +5776,22 @@ pub mod delete_endpoint_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
             crate::output::DeleteEndpointOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -4760,7 +5809,13 @@ impl DeleteEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDocumentClassifierOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteDocumentClassifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
 pub mod delete_document_classifier_output {
     
@@ -4768,11 +5823,22 @@ pub mod delete_document_classifier_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
         pub fn build(self) -> crate::output::DeleteDocumentClassifierOutput {
             crate::output::DeleteDocumentClassifierOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -4793,6 +5859,7 @@ pub struct CreateEntityRecognizerOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     #[doc(hidden)]
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -4800,6 +5867,11 @@ impl CreateEntityRecognizerOutput {
         self.entity_recognizer_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEntityRecognizerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
 pub mod create_entity_recognizer_output {
     
@@ -4808,6 +5880,7 @@ pub mod create_entity_recognizer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -4819,11 +5892,21 @@ pub mod create_entity_recognizer_output {
         pub fn set_entity_recognizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_recognizer_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
         pub fn build(self) -> crate::output::CreateEntityRecognizerOutput {
             crate::output::CreateEntityRecognizerOutput {
                 entity_recognizer_arn: self.entity_recognizer_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4844,6 +5927,7 @@ pub struct CreateEndpointOutput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
@@ -4851,6 +5935,11 @@ impl CreateEndpointOutput {
         self.endpoint_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEndpointOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
     
@@ -4859,6 +5948,7 @@ pub mod create_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
@@ -4870,11 +5960,21 @@ pub mod create_endpoint_output {
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
         pub fn build(self) -> crate::output::CreateEndpointOutput {
             crate::output::CreateEndpointOutput {
                 endpoint_arn: self.endpoint_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4895,6 +5995,7 @@ pub struct CreateDocumentClassifierOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateDocumentClassifierOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -4902,6 +6003,11 @@ impl CreateDocumentClassifierOutput {
         self.document_classifier_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDocumentClassifierOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
 pub mod create_document_classifier_output {
     
@@ -4910,6 +6016,7 @@ pub mod create_document_classifier_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -4921,11 +6028,21 @@ pub mod create_document_classifier_output {
         pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_classifier_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
         pub fn build(self) -> crate::output::CreateDocumentClassifierOutput {
             crate::output::CreateDocumentClassifierOutput {
                 document_classifier_arn: self.document_classifier_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4946,6 +6063,7 @@ pub struct ContainsPiiEntitiesOutput  {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
+    _request_id: Option<String>,
 }
 impl ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
@@ -4953,6 +6071,11 @@ impl ContainsPiiEntitiesOutput {
         self.labels.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ContainsPiiEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
 pub mod contains_pii_entities_output {
     
@@ -4961,6 +6084,7 @@ pub mod contains_pii_entities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `labels`.
@@ -4978,11 +6102,21 @@ pub mod contains_pii_entities_output {
         pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>) -> Self {
             self.labels = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
         pub fn build(self) -> crate::output::ContainsPiiEntitiesOutput {
             crate::output::ContainsPiiEntitiesOutput {
                 labels: self.labels
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5015,6 +6149,7 @@ pub struct ClassifyDocumentOutput  {
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+    _request_id: Option<String>,
 }
 impl ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
@@ -5046,9 +6181,15 @@ impl  std::fmt::Debug for ClassifyDocumentOutput  {
         formatter.field("document_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("document_type", &"*** Sensitive Data Redacted ***");
         formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ClassifyDocumentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
 pub mod classify_document_output {
     
@@ -5061,6 +6202,7 @@ pub mod classify_document_output {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `classes`.
@@ -5132,6 +6274,15 @@ pub mod classify_document_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
         pub fn build(self) -> crate::output::ClassifyDocumentOutput {
             crate::output::ClassifyDocumentOutput {
@@ -5145,6 +6296,7 @@ pub mod classify_document_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5156,6 +6308,7 @@ pub mod classify_document_output {
             formatter.field("document_metadata", &"*** Sensitive Data Redacted ***");
             formatter.field("document_type", &"*** Sensitive Data Redacted ***");
             formatter.field("errors", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5179,6 +6332,7 @@ pub struct BatchDetectTargetedSentimentOutput  {
     /// <p>List of errors that the operation can return.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectTargetedSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5195,9 +6349,15 @@ impl  std::fmt::Debug for BatchDetectTargetedSentimentOutput  {
         let mut formatter = f.debug_struct("BatchDetectTargetedSentimentOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectTargetedSentimentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
 pub mod batch_detect_targeted_sentiment_output {
     
@@ -5207,6 +6367,7 @@ pub mod batch_detect_targeted_sentiment_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5239,6 +6400,15 @@ pub mod batch_detect_targeted_sentiment_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
         pub fn build(self) -> crate::output::BatchDetectTargetedSentimentOutput {
             crate::output::BatchDetectTargetedSentimentOutput {
@@ -5246,6 +6416,7 @@ pub mod batch_detect_targeted_sentiment_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5254,6 +6425,7 @@ pub mod batch_detect_targeted_sentiment_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5277,6 +6449,7 @@ pub struct BatchDetectSyntaxOutput  {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectSyntaxOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5293,9 +6466,15 @@ impl  std::fmt::Debug for BatchDetectSyntaxOutput  {
         let mut formatter = f.debug_struct("BatchDetectSyntaxOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectSyntaxOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
 pub mod batch_detect_syntax_output {
     
@@ -5305,6 +6484,7 @@ pub mod batch_detect_syntax_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5337,6 +6517,15 @@ pub mod batch_detect_syntax_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
         pub fn build(self) -> crate::output::BatchDetectSyntaxOutput {
             crate::output::BatchDetectSyntaxOutput {
@@ -5344,6 +6533,7 @@ pub mod batch_detect_syntax_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5352,6 +6542,7 @@ pub mod batch_detect_syntax_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5375,6 +6566,7 @@ pub struct BatchDetectSentimentOutput  {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5391,9 +6583,15 @@ impl  std::fmt::Debug for BatchDetectSentimentOutput  {
         let mut formatter = f.debug_struct("BatchDetectSentimentOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectSentimentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
 pub mod batch_detect_sentiment_output {
     
@@ -5403,6 +6601,7 @@ pub mod batch_detect_sentiment_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5435,6 +6634,15 @@ pub mod batch_detect_sentiment_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
         pub fn build(self) -> crate::output::BatchDetectSentimentOutput {
             crate::output::BatchDetectSentimentOutput {
@@ -5442,6 +6650,7 @@ pub mod batch_detect_sentiment_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5450,6 +6659,7 @@ pub mod batch_detect_sentiment_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5473,6 +6683,7 @@ pub struct BatchDetectKeyPhrasesOutput  {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectKeyPhrasesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5489,9 +6700,15 @@ impl  std::fmt::Debug for BatchDetectKeyPhrasesOutput  {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectKeyPhrasesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
 pub mod batch_detect_key_phrases_output {
     
@@ -5501,6 +6718,7 @@ pub mod batch_detect_key_phrases_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5533,6 +6751,15 @@ pub mod batch_detect_key_phrases_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
         pub fn build(self) -> crate::output::BatchDetectKeyPhrasesOutput {
             crate::output::BatchDetectKeyPhrasesOutput {
@@ -5540,6 +6767,7 @@ pub mod batch_detect_key_phrases_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5548,6 +6776,7 @@ pub mod batch_detect_key_phrases_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5571,6 +6800,7 @@ pub struct BatchDetectEntitiesOutput  {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectEntitiesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5587,9 +6817,15 @@ impl  std::fmt::Debug for BatchDetectEntitiesOutput  {
         let mut formatter = f.debug_struct("BatchDetectEntitiesOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
 pub mod batch_detect_entities_output {
     
@@ -5599,6 +6835,7 @@ pub mod batch_detect_entities_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5631,6 +6868,15 @@ pub mod batch_detect_entities_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
         pub fn build(self) -> crate::output::BatchDetectEntitiesOutput {
             crate::output::BatchDetectEntitiesOutput {
@@ -5638,6 +6884,7 @@ pub mod batch_detect_entities_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5646,6 +6893,7 @@ pub mod batch_detect_entities_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -5669,6 +6917,7 @@ pub struct BatchDetectDominantLanguageOutput  {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+    _request_id: Option<String>,
 }
 impl BatchDetectDominantLanguageOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
@@ -5685,9 +6934,15 @@ impl  std::fmt::Debug for BatchDetectDominantLanguageOutput  {
         let mut formatter = f.debug_struct("BatchDetectDominantLanguageOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
         formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for BatchDetectDominantLanguageOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
 pub mod batch_detect_dominant_language_output {
     
@@ -5697,6 +6952,7 @@ pub mod batch_detect_dominant_language_output {
     pub struct Builder {
         pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `result_list`.
@@ -5729,6 +6985,15 @@ pub mod batch_detect_dominant_language_output {
         pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
             self.error_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
         pub fn build(self) -> crate::output::BatchDetectDominantLanguageOutput {
             crate::output::BatchDetectDominantLanguageOutput {
@@ -5736,6 +7001,7 @@ pub mod batch_detect_dominant_language_output {
                 ,
                 error_list: self.error_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5744,6 +7010,7 @@ pub mod batch_detect_dominant_language_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("result_list", &"*** Sensitive Data Redacted ***");
             formatter.field("error_list", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

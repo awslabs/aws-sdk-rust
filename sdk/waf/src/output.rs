@@ -7,6 +7,7 @@ pub struct UpdateXssMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -14,6 +15,11 @@ impl UpdateXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateXssMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
 pub mod update_xss_match_set_output {
     
@@ -22,6 +28,7 @@ pub mod update_xss_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -33,11 +40,21 @@ pub mod update_xss_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateXssMatchSetOutput {
             crate::output::UpdateXssMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -58,6 +75,7 @@ pub struct UpdateWebAclOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -65,6 +83,11 @@ impl UpdateWebAclOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWebAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
 pub mod update_web_acl_output {
     
@@ -73,6 +96,7 @@ pub mod update_web_acl_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -84,11 +108,21 @@ pub mod update_web_acl_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
         pub fn build(self) -> crate::output::UpdateWebAclOutput {
             crate::output::UpdateWebAclOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -109,6 +143,7 @@ pub struct UpdateSqlInjectionMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -116,6 +151,11 @@ impl UpdateSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSqlInjectionMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
 pub mod update_sql_injection_match_set_output {
     
@@ -124,6 +164,7 @@ pub mod update_sql_injection_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -135,11 +176,21 @@ pub mod update_sql_injection_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateSqlInjectionMatchSetOutput {
             crate::output::UpdateSqlInjectionMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -160,6 +211,7 @@ pub struct UpdateSizeConstraintSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -167,6 +219,11 @@ impl UpdateSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSizeConstraintSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
 pub mod update_size_constraint_set_output {
     
@@ -175,6 +232,7 @@ pub mod update_size_constraint_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -186,11 +244,21 @@ pub mod update_size_constraint_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::UpdateSizeConstraintSetOutput {
             crate::output::UpdateSizeConstraintSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -211,6 +279,7 @@ pub struct UpdateRuleGroupOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -218,6 +287,11 @@ impl UpdateRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
     
@@ -226,6 +300,7 @@ pub mod update_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -237,11 +312,21 @@ pub mod update_rule_group_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
         pub fn build(self) -> crate::output::UpdateRuleGroupOutput {
             crate::output::UpdateRuleGroupOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -262,6 +347,7 @@ pub struct UpdateRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -269,6 +355,11 @@ impl UpdateRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
     
@@ -277,6 +368,7 @@ pub mod update_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -288,11 +380,21 @@ pub mod update_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
         pub fn build(self) -> crate::output::UpdateRuleOutput {
             crate::output::UpdateRuleOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -313,6 +415,7 @@ pub struct UpdateRegexPatternSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -320,6 +423,11 @@ impl UpdateRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRegexPatternSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
 pub mod update_regex_pattern_set_output {
     
@@ -328,6 +436,7 @@ pub mod update_regex_pattern_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -339,11 +448,21 @@ pub mod update_regex_pattern_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::UpdateRegexPatternSetOutput {
             crate::output::UpdateRegexPatternSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -364,6 +483,7 @@ pub struct UpdateRegexMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -371,6 +491,11 @@ impl UpdateRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRegexMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
 pub mod update_regex_match_set_output {
     
@@ -379,6 +504,7 @@ pub mod update_regex_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -390,11 +516,21 @@ pub mod update_regex_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateRegexMatchSetOutput {
             crate::output::UpdateRegexMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -415,6 +551,7 @@ pub struct UpdateRateBasedRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -422,6 +559,11 @@ impl UpdateRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRateBasedRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
 pub mod update_rate_based_rule_output {
     
@@ -430,6 +572,7 @@ pub mod update_rate_based_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -441,11 +584,21 @@ pub mod update_rate_based_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
         pub fn build(self) -> crate::output::UpdateRateBasedRuleOutput {
             crate::output::UpdateRateBasedRuleOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -466,6 +619,7 @@ pub struct UpdateIpSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -473,6 +627,11 @@ impl UpdateIpSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateIpSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
 pub mod update_ip_set_output {
     
@@ -481,6 +640,7 @@ pub mod update_ip_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -492,11 +652,21 @@ pub mod update_ip_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
         pub fn build(self) -> crate::output::UpdateIpSetOutput {
             crate::output::UpdateIpSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -517,6 +687,7 @@ pub struct UpdateGeoMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -524,6 +695,11 @@ impl UpdateGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateGeoMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
 pub mod update_geo_match_set_output {
     
@@ -532,6 +708,7 @@ pub mod update_geo_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -543,11 +720,21 @@ pub mod update_geo_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateGeoMatchSetOutput {
             crate::output::UpdateGeoMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -568,6 +755,7 @@ pub struct UpdateByteMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -575,6 +763,11 @@ impl UpdateByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateByteMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
 pub mod update_byte_match_set_output {
     
@@ -583,6 +776,7 @@ pub mod update_byte_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -594,11 +788,21 @@ pub mod update_byte_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
         pub fn build(self) -> crate::output::UpdateByteMatchSetOutput {
             crate::output::UpdateByteMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -616,7 +820,13 @@ impl UpdateByteMatchSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -624,11 +834,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -646,7 +867,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -654,11 +881,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -676,7 +914,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutPermissionPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
 pub mod put_permission_policy_output {
     
@@ -684,11 +928,22 @@ pub mod put_permission_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
         pub fn build(self) -> crate::output::PutPermissionPolicyOutput {
             crate::output::PutPermissionPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -709,6 +964,7 @@ pub struct PutLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl PutLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
@@ -716,6 +972,11 @@ impl PutLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
 pub mod put_logging_configuration_output {
     
@@ -724,6 +985,7 @@ pub mod put_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>LoggingConfiguration</code> that you submitted in the request.</p>
@@ -735,11 +997,21 @@ pub mod put_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::PutLoggingConfigurationOutput {
             crate::output::PutLoggingConfigurationOutput {
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -763,6 +1035,7 @@ pub struct ListXssMatchSetsOutput  {
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub xss_match_sets: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -774,6 +1047,11 @@ impl ListXssMatchSetsOutput {
         self.xss_match_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListXssMatchSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
 pub mod list_xss_match_sets_output {
     
@@ -783,6 +1061,7 @@ pub mod list_xss_match_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) xss_match_sets: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -809,6 +1088,15 @@ pub mod list_xss_match_sets_output {
         pub fn set_xss_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>) -> Self {
             self.xss_match_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
         pub fn build(self) -> crate::output::ListXssMatchSetsOutput {
             crate::output::ListXssMatchSetsOutput {
@@ -816,6 +1104,7 @@ pub mod list_xss_match_sets_output {
                 ,
                 xss_match_sets: self.xss_match_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -839,6 +1128,7 @@ pub struct ListWebAcLsOutput  {
     /// <p>An array of <code>WebACLSummary</code> objects.</p>
     #[doc(hidden)]
     pub web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
+    _request_id: Option<String>,
 }
 impl ListWebAcLsOutput {
     /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -850,6 +1140,11 @@ impl ListWebAcLsOutput {
         self.web_ac_ls.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWebAcLsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
 pub mod list_web_ac_ls_output {
     
@@ -859,6 +1154,7 @@ pub mod list_web_ac_ls_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -885,6 +1181,15 @@ pub mod list_web_ac_ls_output {
         pub fn set_web_ac_ls(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>) -> Self {
             self.web_ac_ls = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
         pub fn build(self) -> crate::output::ListWebAcLsOutput {
             crate::output::ListWebAcLsOutput {
@@ -892,6 +1197,7 @@ pub mod list_web_ac_ls_output {
                 ,
                 web_ac_ls: self.web_ac_ls
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -915,6 +1221,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p></p>
@@ -926,6 +1233,11 @@ impl ListTagsForResourceOutput {
         self.tag_info_for_resource.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -935,6 +1247,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p></p>
@@ -955,6 +1268,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tag_info_for_resource(mut self, input: std::option::Option<crate::model::TagInfoForResource>) -> Self {
             self.tag_info_for_resource = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -962,6 +1284,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tag_info_for_resource: self.tag_info_for_resource
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -985,6 +1308,7 @@ pub struct ListSubscribedRuleGroupsOutput  {
     /// <p>An array of <code>RuleGroup</code> objects.</p>
     #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -996,6 +1320,11 @@ impl ListSubscribedRuleGroupsOutput {
         self.rule_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSubscribedRuleGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
 pub mod list_subscribed_rule_groups_output {
     
@@ -1005,6 +1334,7 @@ pub mod list_subscribed_rule_groups_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1031,6 +1361,15 @@ pub mod list_subscribed_rule_groups_output {
         pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>) -> Self {
             self.rule_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListSubscribedRuleGroupsOutput {
             crate::output::ListSubscribedRuleGroupsOutput {
@@ -1038,6 +1377,7 @@ pub mod list_subscribed_rule_groups_output {
                 ,
                 rule_groups: self.rule_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1061,6 +1401,7 @@ pub struct ListSqlInjectionMatchSetsOutput  {
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub sql_injection_match_sets: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1072,6 +1413,11 @@ impl ListSqlInjectionMatchSetsOutput {
         self.sql_injection_match_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
 pub mod list_sql_injection_match_sets_output {
     
@@ -1081,6 +1427,7 @@ pub mod list_sql_injection_match_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) sql_injection_match_sets: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1107,6 +1454,15 @@ pub mod list_sql_injection_match_sets_output {
         pub fn set_sql_injection_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>) -> Self {
             self.sql_injection_match_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
         pub fn build(self) -> crate::output::ListSqlInjectionMatchSetsOutput {
             crate::output::ListSqlInjectionMatchSetsOutput {
@@ -1114,6 +1470,7 @@ pub mod list_sql_injection_match_sets_output {
                 ,
                 sql_injection_match_sets: self.sql_injection_match_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1137,6 +1494,7 @@ pub struct ListSizeConstraintSetsOutput  {
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub size_constraint_sets: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListSizeConstraintSetsOutput {
     /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1148,6 +1506,11 @@ impl ListSizeConstraintSetsOutput {
         self.size_constraint_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSizeConstraintSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
 pub mod list_size_constraint_sets_output {
     
@@ -1157,6 +1520,7 @@ pub mod list_size_constraint_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) size_constraint_sets: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1183,6 +1547,15 @@ pub mod list_size_constraint_sets_output {
         pub fn set_size_constraint_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>) -> Self {
             self.size_constraint_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
         pub fn build(self) -> crate::output::ListSizeConstraintSetsOutput {
             crate::output::ListSizeConstraintSetsOutput {
@@ -1190,6 +1563,7 @@ pub mod list_size_constraint_sets_output {
                 ,
                 size_constraint_sets: self.size_constraint_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1213,6 +1587,7 @@ pub struct ListRulesOutput  {
     /// <p>An array of <code>RuleSummary</code> objects.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+    _request_id: Option<String>,
 }
 impl ListRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1224,6 +1599,11 @@ impl ListRulesOutput {
         self.rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
     
@@ -1233,6 +1613,7 @@ pub mod list_rules_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1259,6 +1640,15 @@ pub mod list_rules_output {
         pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>) -> Self {
             self.rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
@@ -1266,6 +1656,7 @@ pub mod list_rules_output {
                 ,
                 rules: self.rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1289,6 +1680,7 @@ pub struct ListRuleGroupsOutput  {
     /// <p>An array of <code>RuleGroup</code> objects.</p>
     #[doc(hidden)]
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListRuleGroupsOutput {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1300,6 +1692,11 @@ impl ListRuleGroupsOutput {
         self.rule_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRuleGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
     
@@ -1309,6 +1706,7 @@ pub mod list_rule_groups_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1335,6 +1733,15 @@ pub mod list_rule_groups_output {
         pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>) -> Self {
             self.rule_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsOutput {
             crate::output::ListRuleGroupsOutput {
@@ -1342,6 +1749,7 @@ pub mod list_rule_groups_output {
                 ,
                 rule_groups: self.rule_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1365,6 +1773,7 @@ pub struct ListRegexPatternSetsOutput  {
     /// <p>An array of <code>RegexPatternSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListRegexPatternSetsOutput {
     /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1376,6 +1785,11 @@ impl ListRegexPatternSetsOutput {
         self.regex_pattern_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRegexPatternSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
 pub mod list_regex_pattern_sets_output {
     
@@ -1385,6 +1799,7 @@ pub mod list_regex_pattern_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1411,6 +1826,15 @@ pub mod list_regex_pattern_sets_output {
         pub fn set_regex_pattern_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>) -> Self {
             self.regex_pattern_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
         pub fn build(self) -> crate::output::ListRegexPatternSetsOutput {
             crate::output::ListRegexPatternSetsOutput {
@@ -1418,6 +1842,7 @@ pub mod list_regex_pattern_sets_output {
                 ,
                 regex_pattern_sets: self.regex_pattern_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1441,6 +1866,7 @@ pub struct ListRegexMatchSetsOutput  {
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub regex_match_sets: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListRegexMatchSetsOutput {
     /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1452,6 +1878,11 @@ impl ListRegexMatchSetsOutput {
         self.regex_match_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRegexMatchSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
 pub mod list_regex_match_sets_output {
     
@@ -1461,6 +1892,7 @@ pub mod list_regex_match_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) regex_match_sets: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1487,6 +1919,15 @@ pub mod list_regex_match_sets_output {
         pub fn set_regex_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>) -> Self {
             self.regex_match_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
         pub fn build(self) -> crate::output::ListRegexMatchSetsOutput {
             crate::output::ListRegexMatchSetsOutput {
@@ -1494,6 +1935,7 @@ pub mod list_regex_match_sets_output {
                 ,
                 regex_match_sets: self.regex_match_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1517,6 +1959,7 @@ pub struct ListRateBasedRulesOutput  {
     /// <p>An array of <code>RuleSummary</code> objects.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+    _request_id: Option<String>,
 }
 impl ListRateBasedRulesOutput {
     /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1528,6 +1971,11 @@ impl ListRateBasedRulesOutput {
         self.rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRateBasedRulesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
 pub mod list_rate_based_rules_output {
     
@@ -1537,6 +1985,7 @@ pub mod list_rate_based_rules_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1563,6 +2012,15 @@ pub mod list_rate_based_rules_output {
         pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>) -> Self {
             self.rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
         pub fn build(self) -> crate::output::ListRateBasedRulesOutput {
             crate::output::ListRateBasedRulesOutput {
@@ -1570,6 +2028,7 @@ pub mod list_rate_based_rules_output {
                 ,
                 rules: self.rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1593,6 +2052,7 @@ pub struct ListLoggingConfigurationsOutput  {
     /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
@@ -1604,6 +2064,11 @@ impl ListLoggingConfigurationsOutput {
         self.next_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLoggingConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
     
@@ -1613,6 +2078,7 @@ pub mod list_logging_configurations_output {
     pub struct Builder {
         pub(crate) logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `logging_configurations`.
@@ -1639,6 +2105,15 @@ pub mod list_logging_configurations_output {
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListLoggingConfigurationsOutput {
             crate::output::ListLoggingConfigurationsOutput {
@@ -1646,6 +2121,7 @@ pub mod list_logging_configurations_output {
                 ,
                 next_marker: self.next_marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1669,6 +2145,7 @@ pub struct ListIpSetsOutput  {
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
@@ -1680,6 +2157,11 @@ impl ListIpSetsOutput {
         self.ip_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIpSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
 pub mod list_ip_sets_output {
     
@@ -1689,6 +2171,7 @@ pub mod list_ip_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
@@ -1715,6 +2198,15 @@ pub mod list_ip_sets_output {
         pub fn set_ip_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>) -> Self {
             self.ip_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
         pub fn build(self) -> crate::output::ListIpSetsOutput {
             crate::output::ListIpSetsOutput {
@@ -1722,6 +2214,7 @@ pub mod list_ip_sets_output {
                 ,
                 ip_sets: self.ip_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1745,6 +2238,7 @@ pub struct ListGeoMatchSetsOutput  {
     /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub geo_match_sets: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListGeoMatchSetsOutput {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1756,6 +2250,11 @@ impl ListGeoMatchSetsOutput {
         self.geo_match_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGeoMatchSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
 pub mod list_geo_match_sets_output {
     
@@ -1765,6 +2264,7 @@ pub mod list_geo_match_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) geo_match_sets: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1791,6 +2291,15 @@ pub mod list_geo_match_sets_output {
         pub fn set_geo_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>) -> Self {
             self.geo_match_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
         pub fn build(self) -> crate::output::ListGeoMatchSetsOutput {
             crate::output::ListGeoMatchSetsOutput {
@@ -1798,6 +2307,7 @@ pub mod list_geo_match_sets_output {
                 ,
                 geo_match_sets: self.geo_match_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1821,6 +2331,7 @@ pub struct ListByteMatchSetsOutput  {
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub byte_match_sets: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
+    _request_id: Option<String>,
 }
 impl ListByteMatchSetsOutput {
     /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1832,6 +2343,11 @@ impl ListByteMatchSetsOutput {
         self.byte_match_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListByteMatchSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
 pub mod list_byte_match_sets_output {
     
@@ -1841,6 +2357,7 @@ pub mod list_byte_match_sets_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) byte_match_sets: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1867,6 +2384,15 @@ pub mod list_byte_match_sets_output {
         pub fn set_byte_match_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>) -> Self {
             self.byte_match_sets = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
         pub fn build(self) -> crate::output::ListByteMatchSetsOutput {
             crate::output::ListByteMatchSetsOutput {
@@ -1874,6 +2400,7 @@ pub mod list_byte_match_sets_output {
                 ,
                 byte_match_sets: self.byte_match_sets
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1897,6 +2424,7 @@ pub struct ListActivatedRulesInRuleGroupOutput  {
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
     #[doc(hidden)]
     pub activated_rules: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
+    _request_id: Option<String>,
 }
 impl ListActivatedRulesInRuleGroupOutput {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1908,6 +2436,11 @@ impl ListActivatedRulesInRuleGroupOutput {
         self.activated_rules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListActivatedRulesInRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
 pub mod list_activated_rules_in_rule_group_output {
     
@@ -1917,6 +2450,7 @@ pub mod list_activated_rules_in_rule_group_output {
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) activated_rules: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
@@ -1943,6 +2477,15 @@ pub mod list_activated_rules_in_rule_group_output {
         pub fn set_activated_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>) -> Self {
             self.activated_rules = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
         pub fn build(self) -> crate::output::ListActivatedRulesInRuleGroupOutput {
             crate::output::ListActivatedRulesInRuleGroupOutput {
@@ -1950,6 +2493,7 @@ pub mod list_activated_rules_in_rule_group_output {
                 ,
                 activated_rules: self.activated_rules
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1975,6 +2519,7 @@ pub struct GetXssMatchSetOutput  {
     /// </ul>
     #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::model::XssMatchSet>,
+    _request_id: Option<String>,
 }
 impl GetXssMatchSetOutput {
     /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
@@ -1987,6 +2532,11 @@ impl GetXssMatchSetOutput {
         self.xss_match_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetXssMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
 pub mod get_xss_match_set_output {
     
@@ -1995,6 +2545,7 @@ pub mod get_xss_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
@@ -2016,11 +2567,21 @@ pub mod get_xss_match_set_output {
         pub fn set_xss_match_set(mut self, input: std::option::Option<crate::model::XssMatchSet>) -> Self {
             self.xss_match_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
         pub fn build(self) -> crate::output::GetXssMatchSetOutput {
             crate::output::GetXssMatchSetOutput {
                 xss_match_set: self.xss_match_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2047,6 +2608,7 @@ pub struct GetWebAclOutput  {
     /// </ul>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
+    _request_id: Option<String>,
 }
 impl GetWebAclOutput {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
@@ -2060,6 +2622,11 @@ impl GetWebAclOutput {
         self.web_acl.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetWebAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetWebAclOutput`](crate::output::GetWebAclOutput).
 pub mod get_web_acl_output {
     
@@ -2068,6 +2635,7 @@ pub mod get_web_acl_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p> 
@@ -2091,11 +2659,21 @@ pub mod get_web_acl_output {
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
             self.web_acl = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::output::GetWebAclOutput).
         pub fn build(self) -> crate::output::GetWebAclOutput {
             crate::output::GetWebAclOutput {
                 web_acl: self.web_acl
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2121,6 +2699,7 @@ pub struct GetSqlInjectionMatchSetOutput  {
     /// </ul>
     #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
+    _request_id: Option<String>,
 }
 impl GetSqlInjectionMatchSetOutput {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
@@ -2133,6 +2712,11 @@ impl GetSqlInjectionMatchSetOutput {
         self.sql_injection_match_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSqlInjectionMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
 pub mod get_sql_injection_match_set_output {
     
@@ -2141,6 +2725,7 @@ pub mod get_sql_injection_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p> 
@@ -2162,11 +2747,21 @@ pub mod get_sql_injection_match_set_output {
         pub fn set_sql_injection_match_set(mut self, input: std::option::Option<crate::model::SqlInjectionMatchSet>) -> Self {
             self.sql_injection_match_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::GetSqlInjectionMatchSetOutput {
             crate::output::GetSqlInjectionMatchSetOutput {
                 sql_injection_match_set: self.sql_injection_match_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2192,6 +2787,7 @@ pub struct GetSizeConstraintSetOutput  {
     /// </ul>
     #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
+    _request_id: Option<String>,
 }
 impl GetSizeConstraintSetOutput {
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
@@ -2204,6 +2800,11 @@ impl GetSizeConstraintSetOutput {
         self.size_constraint_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSizeConstraintSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
 pub mod get_size_constraint_set_output {
     
@@ -2212,6 +2813,7 @@ pub mod get_size_constraint_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p> 
@@ -2233,11 +2835,21 @@ pub mod get_size_constraint_set_output {
         pub fn set_size_constraint_set(mut self, input: std::option::Option<crate::model::SizeConstraintSet>) -> Self {
             self.size_constraint_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::GetSizeConstraintSetOutput {
             crate::output::GetSizeConstraintSetOutput {
                 size_constraint_set: self.size_constraint_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2264,6 +2876,7 @@ pub struct GetSampledRequestsOutput  {
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
     #[doc(hidden)]
     pub time_window: std::option::Option<crate::model::TimeWindow>,
+    _request_id: Option<String>,
 }
 impl GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
@@ -2279,6 +2892,11 @@ impl GetSampledRequestsOutput {
         self.time_window.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSampledRequestsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
 pub mod get_sampled_requests_output {
     
@@ -2289,6 +2907,7 @@ pub mod get_sampled_requests_output {
         pub(crate) sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
         pub(crate) population_size: std::option::Option<i64>,
         pub(crate) time_window: std::option::Option<crate::model::TimeWindow>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `sampled_requests`.
@@ -2324,6 +2943,15 @@ pub mod get_sampled_requests_output {
         pub fn set_time_window(mut self, input: std::option::Option<crate::model::TimeWindow>) -> Self {
             self.time_window = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
         pub fn build(self) -> crate::output::GetSampledRequestsOutput {
             crate::output::GetSampledRequestsOutput {
@@ -2334,6 +2962,7 @@ pub mod get_sampled_requests_output {
                 ,
                 time_window: self.time_window
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2354,6 +2983,7 @@ pub struct GetRuleGroupOutput  {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
+    _request_id: Option<String>,
 }
 impl GetRuleGroupOutput {
     /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
@@ -2361,6 +2991,11 @@ impl GetRuleGroupOutput {
         self.rule_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
 pub mod get_rule_group_output {
     
@@ -2369,6 +3004,7 @@ pub mod get_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
@@ -2380,11 +3016,21 @@ pub mod get_rule_group_output {
         pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
             self.rule_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
         pub fn build(self) -> crate::output::GetRuleGroupOutput {
             crate::output::GetRuleGroupOutput {
                 rule_group: self.rule_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2409,6 +3055,7 @@ pub struct GetRuleOutput  {
     /// </ul>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
+    _request_id: Option<String>,
 }
 impl GetRuleOutput {
     /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
@@ -2420,6 +3067,11 @@ impl GetRuleOutput {
         self.rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
     
@@ -2428,6 +3080,7 @@ pub mod get_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p> 
@@ -2447,11 +3100,21 @@ pub mod get_rule_output {
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
             self.rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRuleOutput`](crate::output::GetRuleOutput).
         pub fn build(self) -> crate::output::GetRuleOutput {
             crate::output::GetRuleOutput {
                 rule: self.rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2472,6 +3135,7 @@ pub struct GetRegexPatternSetOutput  {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
     #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
+    _request_id: Option<String>,
 }
 impl GetRegexPatternSetOutput {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
@@ -2479,6 +3143,11 @@ impl GetRegexPatternSetOutput {
         self.regex_pattern_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRegexPatternSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
 pub mod get_regex_pattern_set_output {
     
@@ -2487,6 +3156,7 @@ pub mod get_regex_pattern_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
@@ -2498,11 +3168,21 @@ pub mod get_regex_pattern_set_output {
         pub fn set_regex_pattern_set(mut self, input: std::option::Option<crate::model::RegexPatternSet>) -> Self {
             self.regex_pattern_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
         pub fn build(self) -> crate::output::GetRegexPatternSetOutput {
             crate::output::GetRegexPatternSetOutput {
                 regex_pattern_set: self.regex_pattern_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2523,6 +3203,7 @@ pub struct GetRegexMatchSetOutput  {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
     #[doc(hidden)]
     pub regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
+    _request_id: Option<String>,
 }
 impl GetRegexMatchSetOutput {
     /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
@@ -2530,6 +3211,11 @@ impl GetRegexMatchSetOutput {
         self.regex_match_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRegexMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
 pub mod get_regex_match_set_output {
     
@@ -2538,6 +3224,7 @@ pub mod get_regex_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
@@ -2549,11 +3236,21 @@ pub mod get_regex_match_set_output {
         pub fn set_regex_match_set(mut self, input: std::option::Option<crate::model::RegexMatchSet>) -> Self {
             self.regex_match_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
         pub fn build(self) -> crate::output::GetRegexMatchSetOutput {
             crate::output::GetRegexMatchSetOutput {
                 regex_match_set: self.regex_match_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2577,6 +3274,7 @@ pub struct GetRateBasedRuleManagedKeysOutput  {
     /// <p>A null value and not currently used.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
@@ -2588,6 +3286,11 @@ impl GetRateBasedRuleManagedKeysOutput {
         self.next_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRateBasedRuleManagedKeysOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
 pub mod get_rate_based_rule_managed_keys_output {
     
@@ -2597,6 +3300,7 @@ pub mod get_rate_based_rule_managed_keys_output {
     pub struct Builder {
         pub(crate) managed_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `managed_keys`.
@@ -2623,6 +3327,15 @@ pub mod get_rate_based_rule_managed_keys_output {
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
         pub fn build(self) -> crate::output::GetRateBasedRuleManagedKeysOutput {
             crate::output::GetRateBasedRuleManagedKeysOutput {
@@ -2630,6 +3343,7 @@ pub mod get_rate_based_rule_managed_keys_output {
                 ,
                 next_marker: self.next_marker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2650,6 +3364,7 @@ pub struct GetRateBasedRuleOutput  {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::RateBasedRule>,
+    _request_id: Option<String>,
 }
 impl GetRateBasedRuleOutput {
     /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
@@ -2657,6 +3372,11 @@ impl GetRateBasedRuleOutput {
         self.rule.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRateBasedRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
 pub mod get_rate_based_rule_output {
     
@@ -2665,6 +3385,7 @@ pub mod get_rate_based_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
@@ -2676,11 +3397,21 @@ pub mod get_rate_based_rule_output {
         pub fn set_rule(mut self, input: std::option::Option<crate::model::RateBasedRule>) -> Self {
             self.rule = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
         pub fn build(self) -> crate::output::GetRateBasedRuleOutput {
             crate::output::GetRateBasedRuleOutput {
                 rule: self.rule
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2701,6 +3432,7 @@ pub struct GetPermissionPolicyOutput  {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetPermissionPolicyOutput {
     /// <p>The IAM policy attached to the specified RuleGroup.</p>
@@ -2708,6 +3440,11 @@ impl GetPermissionPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPermissionPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
 pub mod get_permission_policy_output {
     
@@ -2716,6 +3453,7 @@ pub mod get_permission_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The IAM policy attached to the specified RuleGroup.</p>
@@ -2727,11 +3465,21 @@ pub mod get_permission_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
         pub fn build(self) -> crate::output::GetPermissionPolicyOutput {
             crate::output::GetPermissionPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2752,6 +3500,7 @@ pub struct GetLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
@@ -2759,6 +3508,11 @@ impl GetLoggingConfigurationOutput {
         self.logging_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
     
@@ -2767,6 +3521,7 @@ pub mod get_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
@@ -2778,11 +3533,21 @@ pub mod get_logging_configuration_output {
         pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
             self.logging_configuration = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::GetLoggingConfigurationOutput {
             crate::output::GetLoggingConfigurationOutput {
                 logging_configuration: self.logging_configuration
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2807,6 +3572,7 @@ pub struct GetIpSetOutput  {
     /// </ul>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
+    _request_id: Option<String>,
 }
 impl GetIpSetOutput {
     /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
@@ -2818,6 +3584,11 @@ impl GetIpSetOutput {
         self.ip_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetIpSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetIpSetOutput`](crate::output::GetIpSetOutput).
 pub mod get_ip_set_output {
     
@@ -2826,6 +3597,7 @@ pub mod get_ip_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
@@ -2845,11 +3617,21 @@ pub mod get_ip_set_output {
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
             self.ip_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetIpSetOutput`](crate::output::GetIpSetOutput).
         pub fn build(self) -> crate::output::GetIpSetOutput {
             crate::output::GetIpSetOutput {
                 ip_set: self.ip_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2870,6 +3652,7 @@ pub struct GetGeoMatchSetOutput  {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
     #[doc(hidden)]
     pub geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
+    _request_id: Option<String>,
 }
 impl GetGeoMatchSetOutput {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
@@ -2877,6 +3660,11 @@ impl GetGeoMatchSetOutput {
         self.geo_match_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGeoMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
 pub mod get_geo_match_set_output {
     
@@ -2885,6 +3673,7 @@ pub mod get_geo_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
@@ -2896,11 +3685,21 @@ pub mod get_geo_match_set_output {
         pub fn set_geo_match_set(mut self, input: std::option::Option<crate::model::GeoMatchSet>) -> Self {
             self.geo_match_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
         pub fn build(self) -> crate::output::GetGeoMatchSetOutput {
             crate::output::GetGeoMatchSetOutput {
                 geo_match_set: self.geo_match_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2921,6 +3720,7 @@ pub struct GetChangeTokenStatusOutput  {
     /// <p>The status of the change token.</p>
     #[doc(hidden)]
     pub change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
+    _request_id: Option<String>,
 }
 impl GetChangeTokenStatusOutput {
     /// <p>The status of the change token.</p>
@@ -2928,6 +3728,11 @@ impl GetChangeTokenStatusOutput {
         self.change_token_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetChangeTokenStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
 pub mod get_change_token_status_output {
     
@@ -2936,6 +3741,7 @@ pub mod get_change_token_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token_status: std::option::Option<crate::model::ChangeTokenStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the change token.</p>
@@ -2947,11 +3753,21 @@ pub mod get_change_token_status_output {
         pub fn set_change_token_status(mut self, input: std::option::Option<crate::model::ChangeTokenStatus>) -> Self {
             self.change_token_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
         pub fn build(self) -> crate::output::GetChangeTokenStatusOutput {
             crate::output::GetChangeTokenStatusOutput {
                 change_token_status: self.change_token_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2972,6 +3788,7 @@ pub struct GetChangeTokenOutput  {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetChangeTokenOutput {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
@@ -2979,6 +3796,11 @@ impl GetChangeTokenOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetChangeTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
 pub mod get_change_token_output {
     
@@ -2987,6 +3809,7 @@ pub mod get_change_token_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request. </p>
@@ -2998,11 +3821,21 @@ pub mod get_change_token_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
         pub fn build(self) -> crate::output::GetChangeTokenOutput {
             crate::output::GetChangeTokenOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3028,6 +3861,7 @@ pub struct GetByteMatchSetOutput  {
     /// </ul>
     #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
+    _request_id: Option<String>,
 }
 impl GetByteMatchSetOutput {
     /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
@@ -3040,6 +3874,11 @@ impl GetByteMatchSetOutput {
         self.byte_match_set.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetByteMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
 pub mod get_byte_match_set_output {
     
@@ -3048,6 +3887,7 @@ pub mod get_byte_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p> 
@@ -3069,11 +3909,21 @@ pub mod get_byte_match_set_output {
         pub fn set_byte_match_set(mut self, input: std::option::Option<crate::model::ByteMatchSet>) -> Self {
             self.byte_match_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
         pub fn build(self) -> crate::output::GetByteMatchSetOutput {
             crate::output::GetByteMatchSetOutput {
                 byte_match_set: self.byte_match_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3094,6 +3944,7 @@ pub struct DeleteXssMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteXssMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3101,6 +3952,11 @@ impl DeleteXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteXssMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
 pub mod delete_xss_match_set_output {
     
@@ -3109,6 +3965,7 @@ pub mod delete_xss_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3120,11 +3977,21 @@ pub mod delete_xss_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteXssMatchSetOutput {
             crate::output::DeleteXssMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3145,6 +4012,7 @@ pub struct DeleteWebAclOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteWebAclOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3152,6 +4020,11 @@ impl DeleteWebAclOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteWebAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
 pub mod delete_web_acl_output {
     
@@ -3160,6 +4033,7 @@ pub mod delete_web_acl_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3171,11 +4045,21 @@ pub mod delete_web_acl_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
         pub fn build(self) -> crate::output::DeleteWebAclOutput {
             crate::output::DeleteWebAclOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3196,6 +4080,7 @@ pub struct DeleteSqlInjectionMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3203,6 +4088,11 @@ impl DeleteSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSqlInjectionMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
 pub mod delete_sql_injection_match_set_output {
     
@@ -3211,6 +4101,7 @@ pub mod delete_sql_injection_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3222,11 +4113,21 @@ pub mod delete_sql_injection_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteSqlInjectionMatchSetOutput {
             crate::output::DeleteSqlInjectionMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3247,6 +4148,7 @@ pub struct DeleteSizeConstraintSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteSizeConstraintSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3254,6 +4156,11 @@ impl DeleteSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSizeConstraintSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
 pub mod delete_size_constraint_set_output {
     
@@ -3262,6 +4169,7 @@ pub mod delete_size_constraint_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3273,11 +4181,21 @@ pub mod delete_size_constraint_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::DeleteSizeConstraintSetOutput {
             crate::output::DeleteSizeConstraintSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3298,6 +4216,7 @@ pub struct DeleteRuleGroupOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRuleGroupOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3305,6 +4224,11 @@ impl DeleteRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
     
@@ -3313,6 +4237,7 @@ pub mod delete_rule_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3324,11 +4249,21 @@ pub mod delete_rule_group_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupOutput {
             crate::output::DeleteRuleGroupOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3349,6 +4284,7 @@ pub struct DeleteRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3356,6 +4292,11 @@ impl DeleteRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
     
@@ -3364,6 +4305,7 @@ pub mod delete_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3375,11 +4317,21 @@ pub mod delete_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
             crate::output::DeleteRuleOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3400,6 +4352,7 @@ pub struct DeleteRegexPatternSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRegexPatternSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3407,6 +4360,11 @@ impl DeleteRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRegexPatternSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
 pub mod delete_regex_pattern_set_output {
     
@@ -3415,6 +4373,7 @@ pub mod delete_regex_pattern_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3426,11 +4385,21 @@ pub mod delete_regex_pattern_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
         pub fn build(self) -> crate::output::DeleteRegexPatternSetOutput {
             crate::output::DeleteRegexPatternSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3451,6 +4420,7 @@ pub struct DeleteRegexMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRegexMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3458,6 +4428,11 @@ impl DeleteRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRegexMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
 pub mod delete_regex_match_set_output {
     
@@ -3466,6 +4441,7 @@ pub mod delete_regex_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3477,11 +4453,21 @@ pub mod delete_regex_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteRegexMatchSetOutput {
             crate::output::DeleteRegexMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3502,6 +4488,7 @@ pub struct DeleteRateBasedRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRateBasedRuleOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3509,6 +4496,11 @@ impl DeleteRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRateBasedRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
 pub mod delete_rate_based_rule_output {
     
@@ -3517,6 +4509,7 @@ pub mod delete_rate_based_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3528,11 +4521,21 @@ pub mod delete_rate_based_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
         pub fn build(self) -> crate::output::DeleteRateBasedRuleOutput {
             crate::output::DeleteRateBasedRuleOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3550,7 +4553,13 @@ impl DeleteRateBasedRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionPolicyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePermissionPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
 pub mod delete_permission_policy_output {
     
@@ -3558,11 +4567,22 @@ pub mod delete_permission_policy_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
         pub fn build(self) -> crate::output::DeletePermissionPolicyOutput {
             crate::output::DeletePermissionPolicyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3580,7 +4600,13 @@ impl DeletePermissionPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLoggingConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
     
@@ -3588,11 +4614,22 @@ pub mod delete_logging_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
             crate::output::DeleteLoggingConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -3613,6 +4650,7 @@ pub struct DeleteIpSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteIpSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3620,6 +4658,11 @@ impl DeleteIpSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteIpSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
 pub mod delete_ip_set_output {
     
@@ -3628,6 +4671,7 @@ pub mod delete_ip_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3639,11 +4683,21 @@ pub mod delete_ip_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
         pub fn build(self) -> crate::output::DeleteIpSetOutput {
             crate::output::DeleteIpSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3664,6 +4718,7 @@ pub struct DeleteGeoMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteGeoMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3671,6 +4726,11 @@ impl DeleteGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteGeoMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
 pub mod delete_geo_match_set_output {
     
@@ -3679,6 +4739,7 @@ pub mod delete_geo_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3690,11 +4751,21 @@ pub mod delete_geo_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteGeoMatchSetOutput {
             crate::output::DeleteGeoMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3715,6 +4786,7 @@ pub struct DeleteByteMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteByteMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3722,6 +4794,11 @@ impl DeleteByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteByteMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
 pub mod delete_byte_match_set_output {
     
@@ -3730,6 +4807,7 @@ pub mod delete_byte_match_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -3741,11 +4819,21 @@ pub mod delete_byte_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
         pub fn build(self) -> crate::output::DeleteByteMatchSetOutput {
             crate::output::DeleteByteMatchSetOutput {
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3769,6 +4857,7 @@ pub struct CreateXssMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
@@ -3780,6 +4869,11 @@ impl CreateXssMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateXssMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
 pub mod create_xss_match_set_output {
     
@@ -3789,6 +4883,7 @@ pub mod create_xss_match_set_output {
     pub struct Builder {
         pub(crate) xss_match_set: std::option::Option<crate::model::XssMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An <code>XssMatchSet</code>.</p>
@@ -3809,6 +4904,15 @@ pub mod create_xss_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
         pub fn build(self) -> crate::output::CreateXssMatchSetOutput {
             crate::output::CreateXssMatchSetOutput {
@@ -3816,6 +4920,7 @@ pub mod create_xss_match_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3836,6 +4941,7 @@ pub struct CreateWebAclMigrationStackOutput  {
     /// <p>The URL of the template created in Amazon S3. </p>
     #[doc(hidden)]
     pub s3_object_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWebAclMigrationStackOutput {
     /// <p>The URL of the template created in Amazon S3. </p>
@@ -3843,6 +4949,11 @@ impl CreateWebAclMigrationStackOutput {
         self.s3_object_url.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWebAclMigrationStackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
 pub mod create_web_acl_migration_stack_output {
     
@@ -3851,6 +4962,7 @@ pub mod create_web_acl_migration_stack_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_object_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URL of the template created in Amazon S3. </p>
@@ -3862,11 +4974,21 @@ pub mod create_web_acl_migration_stack_output {
         pub fn set_s3_object_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_object_url = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
         pub fn build(self) -> crate::output::CreateWebAclMigrationStackOutput {
             crate::output::CreateWebAclMigrationStackOutput {
                 s3_object_url: self.s3_object_url
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3890,6 +5012,7 @@ pub struct CreateWebAclOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWebAclOutput {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
@@ -3901,6 +5024,11 @@ impl CreateWebAclOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWebAclOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
 pub mod create_web_acl_output {
     
@@ -3910,6 +5038,7 @@ pub mod create_web_acl_output {
     pub struct Builder {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
@@ -3930,6 +5059,15 @@ pub mod create_web_acl_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
         pub fn build(self) -> crate::output::CreateWebAclOutput {
             crate::output::CreateWebAclOutput {
@@ -3937,6 +5075,7 @@ pub mod create_web_acl_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3960,6 +5099,7 @@ pub struct CreateSqlInjectionMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
@@ -3971,6 +5111,11 @@ impl CreateSqlInjectionMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
 pub mod create_sql_injection_match_set_output {
     
@@ -3980,6 +5125,7 @@ pub mod create_sql_injection_match_set_output {
     pub struct Builder {
         pub(crate) sql_injection_match_set: std::option::Option<crate::model::SqlInjectionMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>SqlInjectionMatchSet</code>.</p>
@@ -4000,6 +5146,15 @@ pub mod create_sql_injection_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
         pub fn build(self) -> crate::output::CreateSqlInjectionMatchSetOutput {
             crate::output::CreateSqlInjectionMatchSetOutput {
@@ -4007,6 +5162,7 @@ pub mod create_sql_injection_match_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4030,6 +5186,7 @@ pub struct CreateSizeConstraintSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
@@ -4041,6 +5198,11 @@ impl CreateSizeConstraintSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSizeConstraintSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
 pub mod create_size_constraint_set_output {
     
@@ -4050,6 +5212,7 @@ pub mod create_size_constraint_set_output {
     pub struct Builder {
         pub(crate) size_constraint_set: std::option::Option<crate::model::SizeConstraintSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
@@ -4070,6 +5233,15 @@ pub mod create_size_constraint_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
         pub fn build(self) -> crate::output::CreateSizeConstraintSetOutput {
             crate::output::CreateSizeConstraintSetOutput {
@@ -4077,6 +5249,7 @@ pub mod create_size_constraint_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4100,6 +5273,7 @@ pub struct CreateRuleGroupOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRuleGroupOutput {
     /// <p>An empty <code>RuleGroup</code>.</p>
@@ -4111,6 +5285,11 @@ impl CreateRuleGroupOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRuleGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
     
@@ -4120,6 +5299,7 @@ pub mod create_rule_group_output {
     pub struct Builder {
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An empty <code>RuleGroup</code>.</p>
@@ -4140,6 +5320,15 @@ pub mod create_rule_group_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupOutput {
             crate::output::CreateRuleGroupOutput {
@@ -4147,6 +5336,7 @@ pub mod create_rule_group_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4170,6 +5360,7 @@ pub struct CreateRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRuleOutput {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
@@ -4181,6 +5372,11 @@ impl CreateRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
     
@@ -4190,6 +5386,7 @@ pub mod create_rule_output {
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
@@ -4210,6 +5407,15 @@ pub mod create_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
         pub fn build(self) -> crate::output::CreateRuleOutput {
             crate::output::CreateRuleOutput {
@@ -4217,6 +5423,7 @@ pub mod create_rule_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4240,6 +5447,7 @@ pub struct CreateRegexPatternSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
@@ -4251,6 +5459,11 @@ impl CreateRegexPatternSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
 pub mod create_regex_pattern_set_output {
     
@@ -4260,6 +5473,7 @@ pub mod create_regex_pattern_set_output {
     pub struct Builder {
         pub(crate) regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
@@ -4280,6 +5494,15 @@ pub mod create_regex_pattern_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::CreateRegexPatternSetOutput {
             crate::output::CreateRegexPatternSetOutput {
@@ -4287,6 +5510,7 @@ pub mod create_regex_pattern_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4310,6 +5534,7 @@ pub struct CreateRegexMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRegexMatchSetOutput {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
@@ -4321,6 +5546,11 @@ impl CreateRegexMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRegexMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
 pub mod create_regex_match_set_output {
     
@@ -4330,6 +5560,7 @@ pub mod create_regex_match_set_output {
     pub struct Builder {
         pub(crate) regex_match_set: std::option::Option<crate::model::RegexMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
@@ -4350,6 +5581,15 @@ pub mod create_regex_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
         pub fn build(self) -> crate::output::CreateRegexMatchSetOutput {
             crate::output::CreateRegexMatchSetOutput {
@@ -4357,6 +5597,7 @@ pub mod create_regex_match_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4380,6 +5621,7 @@ pub struct CreateRateBasedRuleOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateRateBasedRuleOutput {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
@@ -4391,6 +5633,11 @@ impl CreateRateBasedRuleOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRateBasedRuleOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
 pub mod create_rate_based_rule_output {
     
@@ -4400,6 +5647,7 @@ pub mod create_rate_based_rule_output {
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::RateBasedRule>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
@@ -4420,6 +5668,15 @@ pub mod create_rate_based_rule_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
         pub fn build(self) -> crate::output::CreateRateBasedRuleOutput {
             crate::output::CreateRateBasedRuleOutput {
@@ -4427,6 +5684,7 @@ pub mod create_rate_based_rule_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4450,6 +5708,7 @@ pub struct CreateIpSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
@@ -4461,6 +5720,11 @@ impl CreateIpSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateIpSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
 pub mod create_ip_set_output {
     
@@ -4470,6 +5734,7 @@ pub mod create_ip_set_output {
     pub struct Builder {
         pub(crate) ip_set: std::option::Option<crate::model::IpSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
@@ -4490,6 +5755,15 @@ pub mod create_ip_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
         pub fn build(self) -> crate::output::CreateIpSetOutput {
             crate::output::CreateIpSetOutput {
@@ -4497,6 +5771,7 @@ pub mod create_ip_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4520,6 +5795,7 @@ pub struct CreateGeoMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateGeoMatchSetOutput {
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
@@ -4531,6 +5807,11 @@ impl CreateGeoMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGeoMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
 pub mod create_geo_match_set_output {
     
@@ -4540,6 +5821,7 @@ pub mod create_geo_match_set_output {
     pub struct Builder {
         pub(crate) geo_match_set: std::option::Option<crate::model::GeoMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
@@ -4560,6 +5842,15 @@ pub mod create_geo_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
         pub fn build(self) -> crate::output::CreateGeoMatchSetOutput {
             crate::output::CreateGeoMatchSetOutput {
@@ -4567,6 +5858,7 @@ pub mod create_geo_match_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4590,6 +5882,7 @@ pub struct CreateByteMatchSetOutput  {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
     pub change_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
@@ -4601,6 +5894,11 @@ impl CreateByteMatchSetOutput {
         self.change_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateByteMatchSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
 pub mod create_byte_match_set_output {
     
@@ -4610,6 +5908,7 @@ pub mod create_byte_match_set_output {
     pub struct Builder {
         pub(crate) byte_match_set: std::option::Option<crate::model::ByteMatchSet>,
         pub(crate) change_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
@@ -4630,6 +5929,15 @@ pub mod create_byte_match_set_output {
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
         pub fn build(self) -> crate::output::CreateByteMatchSetOutput {
             crate::output::CreateByteMatchSetOutput {
@@ -4637,6 +5945,7 @@ pub mod create_byte_match_set_output {
                 ,
                 change_token: self.change_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }

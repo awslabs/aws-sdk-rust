@@ -22,6 +22,7 @@ impl BatchCheckLayerAvailability {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCheckLayerAvailability {
                 type Output = std::result::Result<crate::output::BatchCheckLayerAvailabilityOutput, crate::error::BatchCheckLayerAvailabilityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_check_layer_availability_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDeleteImage {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteImage {
                 type Output = std::result::Result<crate::output::BatchDeleteImageOutput, crate::error::BatchDeleteImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_image_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CompleteLayerUpload {
 impl aws_smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
                 type Output = std::result::Result<crate::output::CompleteLayerUploadOutput, crate::error::CompleteLayerUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_complete_layer_upload_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateRepository {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
                 type Output = std::result::Result<crate::output::CreateRepositoryOutput, crate::error::CreateRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_repository_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteRepository {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
                 type Output = std::result::Result<crate::output::DeleteRepositoryOutput, crate::error::DeleteRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_repository_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPolicy {
                 type Output = std::result::Result<crate::output::DeleteRepositoryPolicyOutput, crate::error::DeleteRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_repository_policy_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeImages {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeImages {
                 type Output = std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_images_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeImageTags {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeImageTags {
                 type Output = std::result::Result<crate::output::DescribeImageTagsOutput, crate::error::DescribeImageTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_image_tags_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeRegistries {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRegistries {
                 type Output = std::result::Result<crate::output::DescribeRegistriesOutput, crate::error::DescribeRegistriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_registries_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositories {
                 type Output = std::result::Result<crate::output::DescribeRepositoriesOutput, crate::error::DescribeRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_repositories_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetAuthorizationToken {
 impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
                 type Output = std::result::Result<crate::output::GetAuthorizationTokenOutput, crate::error::GetAuthorizationTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_authorization_token_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetRegistryCatalogData {
 impl aws_smithy_http::response::ParseStrictResponse for GetRegistryCatalogData {
                 type Output = std::result::Result<crate::output::GetRegistryCatalogDataOutput, crate::error::GetRegistryCatalogDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_registry_catalog_data_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetRepositoryCatalogData {
 impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryCatalogData {
                 type Output = std::result::Result<crate::output::GetRepositoryCatalogDataOutput, crate::error::GetRepositoryCatalogDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_repository_catalog_data_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPolicy {
                 type Output = std::result::Result<crate::output::GetRepositoryPolicyOutput, crate::error::GetRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_repository_policy_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl InitiateLayerUpload {
 impl aws_smithy_http::response::ParseStrictResponse for InitiateLayerUpload {
                 type Output = std::result::Result<crate::output::InitiateLayerUploadOutput, crate::error::InitiateLayerUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_initiate_layer_upload_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl PutImage {
 impl aws_smithy_http::response::ParseStrictResponse for PutImage {
                 type Output = std::result::Result<crate::output::PutImageOutput, crate::error::PutImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl PutRegistryCatalogData {
 impl aws_smithy_http::response::ParseStrictResponse for PutRegistryCatalogData {
                 type Output = std::result::Result<crate::output::PutRegistryCatalogDataOutput, crate::error::PutRegistryCatalogDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_registry_catalog_data_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl PutRepositoryCatalogData {
 impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryCatalogData {
                 type Output = std::result::Result<crate::output::PutRepositoryCatalogDataOutput, crate::error::PutRepositoryCatalogDataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_repository_catalog_data_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl SetRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
                 type Output = std::result::Result<crate::output::SetRepositoryPolicyOutput, crate::error::SetRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_repository_policy_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UploadLayerPart {
 impl aws_smithy_http::response::ParseStrictResponse for UploadLayerPart {
                 type Output = std::result::Result<crate::output::UploadLayerPartOutput, crate::error::UploadLayerPartError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_upload_layer_part_error(response)
                      } else {

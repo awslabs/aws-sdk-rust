@@ -22,6 +22,7 @@ impl GetServiceSettings {
 impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
                 type Output = std::result::Result<crate::output::GetServiceSettingsOutput, crate::error::GetServiceSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_service_settings_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl ListLinuxSubscriptionInstances {
 impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptionInstances {
                 type Output = std::result::Result<crate::output::ListLinuxSubscriptionInstancesOutput, crate::error::ListLinuxSubscriptionInstancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_linux_subscription_instances_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl ListLinuxSubscriptions {
 impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptions {
                 type Output = std::result::Result<crate::output::ListLinuxSubscriptionsOutput, crate::error::ListLinuxSubscriptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_linux_subscriptions_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl UpdateServiceSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSettings {
                 type Output = std::result::Result<crate::output::UpdateServiceSettingsOutput, crate::error::UpdateServiceSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_service_settings_error(response)
                      } else {

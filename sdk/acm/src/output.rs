@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCertificateOptionsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateCertificateOptionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
 pub mod update_certificate_options_output {
     
@@ -11,11 +17,22 @@ pub mod update_certificate_options_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
         pub fn build(self) -> crate::output::UpdateCertificateOptionsOutput {
             crate::output::UpdateCertificateOptionsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UpdateCertificateOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResendValidationEmailOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for ResendValidationEmailOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
 pub mod resend_validation_email_output {
     
@@ -41,11 +64,22 @@ pub mod resend_validation_email_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
         pub fn build(self) -> crate::output::ResendValidationEmailOutput {
             crate::output::ResendValidationEmailOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -67,6 +101,7 @@ pub struct RequestCertificateOutput  {
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RequestCertificateOutput {
     /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
@@ -75,6 +110,11 @@ impl RequestCertificateOutput {
         self.certificate_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RequestCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
 pub mod request_certificate_output {
     
@@ -83,6 +123,7 @@ pub mod request_certificate_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p> 
@@ -96,11 +137,21 @@ pub mod request_certificate_output {
         pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
         pub fn build(self) -> crate::output::RequestCertificateOutput {
             crate::output::RequestCertificateOutput {
                 certificate_arn: self.certificate_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -118,7 +169,13 @@ impl RequestCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenewCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RenewCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
 pub mod renew_certificate_output {
     
@@ -126,11 +183,22 @@ pub mod renew_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
         pub fn build(self) -> crate::output::RenewCertificateOutput {
             crate::output::RenewCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -148,7 +216,13 @@ impl RenewCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveTagsFromCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
 pub mod remove_tags_from_certificate_output {
     
@@ -156,11 +230,22 @@ pub mod remove_tags_from_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromCertificateOutput {
             crate::output::RemoveTagsFromCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -178,7 +263,13 @@ impl RemoveTagsFromCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAccountConfigurationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutAccountConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
 pub mod put_account_configuration_output {
     
@@ -186,11 +277,22 @@ pub mod put_account_configuration_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
         pub fn build(self) -> crate::output::PutAccountConfigurationOutput {
             crate::output::PutAccountConfigurationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -211,6 +313,7 @@ pub struct ListTagsForCertificateOutput  {
     /// <p>The key-value pairs that define the applied tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForCertificateOutput {
     /// <p>The key-value pairs that define the applied tags.</p>
@@ -218,6 +321,11 @@ impl ListTagsForCertificateOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
 pub mod list_tags_for_certificate_output {
     
@@ -226,6 +334,7 @@ pub mod list_tags_for_certificate_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -243,11 +352,21 @@ pub mod list_tags_for_certificate_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
         pub fn build(self) -> crate::output::ListTagsForCertificateOutput {
             crate::output::ListTagsForCertificateOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -271,6 +390,7 @@ pub struct ListCertificatesOutput  {
     /// <p>A list of ACM certificates.</p>
     #[doc(hidden)]
     pub certificate_summary_list: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+    _request_id: Option<String>,
 }
 impl ListCertificatesOutput {
     /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
@@ -282,6 +402,11 @@ impl ListCertificatesOutput {
         self.certificate_summary_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCertificatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
 pub mod list_certificates_output {
     
@@ -291,6 +416,7 @@ pub mod list_certificates_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) certificate_summary_list: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
@@ -317,6 +443,15 @@ pub mod list_certificates_output {
         pub fn set_certificate_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>) -> Self {
             self.certificate_summary_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
         pub fn build(self) -> crate::output::ListCertificatesOutput {
             crate::output::ListCertificatesOutput {
@@ -324,6 +459,7 @@ pub mod list_certificates_output {
                 ,
                 certificate_summary_list: self.certificate_summary_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -344,6 +480,7 @@ pub struct ImportCertificateOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportCertificateOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
@@ -351,6 +488,11 @@ impl ImportCertificateOutput {
         self.certificate_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
     
@@ -359,6 +501,7 @@ pub mod import_certificate_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
@@ -370,11 +513,21 @@ pub mod import_certificate_output {
         pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateOutput {
             crate::output::ImportCertificateOutput {
                 certificate_arn: self.certificate_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -398,6 +551,7 @@ pub struct GetCertificateOutput  {
     /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCertificateOutput {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
@@ -409,6 +563,11 @@ impl GetCertificateOutput {
         self.certificate_chain.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput).
 pub mod get_certificate_output {
     
@@ -418,6 +577,7 @@ pub mod get_certificate_output {
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
@@ -438,6 +598,15 @@ pub mod get_certificate_output {
         pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate_chain = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::output::GetCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateOutput {
             crate::output::GetCertificateOutput {
@@ -445,6 +614,7 @@ pub mod get_certificate_output {
                 ,
                 certificate_chain: self.certificate_chain
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -465,6 +635,7 @@ pub struct GetAccountConfigurationOutput  {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetAccountConfigurationOutput {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
@@ -472,6 +643,11 @@ impl GetAccountConfigurationOutput {
         self.expiry_events.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAccountConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
 pub mod get_account_configuration_output {
     
@@ -480,6 +656,7 @@ pub mod get_account_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
@@ -491,11 +668,21 @@ pub mod get_account_configuration_output {
         pub fn set_expiry_events(mut self, input: std::option::Option<crate::model::ExpiryEventsConfiguration>) -> Self {
             self.expiry_events = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
         pub fn build(self) -> crate::output::GetAccountConfigurationOutput {
             crate::output::GetAccountConfigurationOutput {
                 expiry_events: self.expiry_events
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -522,6 +709,7 @@ pub struct ExportCertificateOutput  {
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
@@ -543,9 +731,15 @@ impl  std::fmt::Debug for ExportCertificateOutput  {
         formatter.field("certificate", &self.certificate);
         formatter.field("certificate_chain", &self.certificate_chain);
         formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ExportCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
 pub mod export_certificate_output {
     
@@ -556,6 +750,7 @@ pub mod export_certificate_output {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The base64 PEM-encoded certificate.</p>
@@ -585,6 +780,15 @@ pub mod export_certificate_output {
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
         pub fn build(self) -> crate::output::ExportCertificateOutput {
             crate::output::ExportCertificateOutput {
@@ -594,6 +798,7 @@ pub mod export_certificate_output {
                 ,
                 private_key: self.private_key
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -603,6 +808,7 @@ pub mod export_certificate_output {
             formatter.field("certificate", &self.certificate);
             formatter.field("certificate_chain", &self.certificate_chain);
             formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -623,6 +829,7 @@ pub struct DescribeCertificateOutput  {
     /// <p>Metadata about an ACM certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::CertificateDetail>,
+    _request_id: Option<String>,
 }
 impl DescribeCertificateOutput {
     /// <p>Metadata about an ACM certificate.</p>
@@ -630,6 +837,11 @@ impl DescribeCertificateOutput {
         self.certificate.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
 pub mod describe_certificate_output {
     
@@ -638,6 +850,7 @@ pub mod describe_certificate_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<crate::model::CertificateDetail>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata about an ACM certificate.</p>
@@ -649,11 +862,21 @@ pub mod describe_certificate_output {
         pub fn set_certificate(mut self, input: std::option::Option<crate::model::CertificateDetail>) -> Self {
             self.certificate = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
         pub fn build(self) -> crate::output::DescribeCertificateOutput {
             crate::output::DescribeCertificateOutput {
                 certificate: self.certificate
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -671,7 +894,13 @@ impl DescribeCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
     
@@ -679,11 +908,22 @@ pub mod delete_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
         pub fn build(self) -> crate::output::DeleteCertificateOutput {
             crate::output::DeleteCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -701,7 +941,13 @@ impl DeleteCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToCertificateOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddTagsToCertificateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
 pub mod add_tags_to_certificate_output {
     
@@ -709,11 +955,22 @@ pub mod add_tags_to_certificate_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
         pub fn build(self) -> crate::output::AddTagsToCertificateOutput {
             crate::output::AddTagsToCertificateOutput {
+                _request_id: self._request_id,
             }
         }
     }

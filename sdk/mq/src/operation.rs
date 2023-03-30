@@ -22,6 +22,7 @@ impl CreateBroker {
 impl aws_smithy_http::response::ParseStrictResponse for CreateBroker {
                 type Output = std::result::Result<crate::output::CreateBrokerOutput, crate::error::CreateBrokerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_broker_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguration {
                 type Output = std::result::Result<crate::output::CreateConfigurationOutput, crate::error::CreateConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_configuration_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateTags {
 impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
                 type Output = std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_create_tags_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateUser {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
                 type Output = std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteBroker {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteBroker {
                 type Output = std::result::Result<crate::output::DeleteBrokerOutput, crate::error::DeleteBrokerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_broker_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteTags {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
                 type Output = std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_tags_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteUser {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
                 type Output = std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeBroker {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBroker {
                 type Output = std::result::Result<crate::output::DescribeBrokerOutput, crate::error::DescribeBrokerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_broker_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeBrokerEngineTypes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerEngineTypes {
                 type Output = std::result::Result<crate::output::DescribeBrokerEngineTypesOutput, crate::error::DescribeBrokerEngineTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_broker_engine_types_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeBrokerInstanceOptions {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerInstanceOptions {
                 type Output = std::result::Result<crate::output::DescribeBrokerInstanceOptionsOutput, crate::error::DescribeBrokerInstanceOptionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_broker_instance_options_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfiguration {
                 type Output = std::result::Result<crate::output::DescribeConfigurationOutput, crate::error::DescribeConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeConfigurationRevision {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRevision {
                 type Output = std::result::Result<crate::output::DescribeConfigurationRevisionOutput, crate::error::DescribeConfigurationRevisionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_configuration_revision_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeUser {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUser {
                 type Output = std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListBrokers {
 impl aws_smithy_http::response::ParseStrictResponse for ListBrokers {
                 type Output = std::result::Result<crate::output::ListBrokersOutput, crate::error::ListBrokersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_brokers_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListConfigurationRevisions {
 impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationRevisions {
                 type Output = std::result::Result<crate::output::ListConfigurationRevisionsOutput, crate::error::ListConfigurationRevisionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_configuration_revisions_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListConfigurations {
                 type Output = std::result::Result<crate::output::ListConfigurationsOutput, crate::error::ListConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_configurations_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListTags {
                 type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListUsers {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
                 type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_users_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl RebootBroker {
 impl aws_smithy_http::response::ParseStrictResponse for RebootBroker {
                 type Output = std::result::Result<crate::output::RebootBrokerOutput, crate::error::RebootBrokerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reboot_broker_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl UpdateBroker {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateBroker {
                 type Output = std::result::Result<crate::output::UpdateBrokerOutput, crate::error::UpdateBrokerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_broker_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl UpdateConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguration {
                 type Output = std::result::Result<crate::output::UpdateConfigurationOutput, crate::error::UpdateConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_configuration_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl UpdateUser {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUser {
                 type Output = std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_error(response)
                      } else {

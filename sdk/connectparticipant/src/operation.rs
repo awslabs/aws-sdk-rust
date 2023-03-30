@@ -22,6 +22,7 @@ impl CompleteAttachmentUpload {
 impl aws_smithy_http::response::ParseStrictResponse for CompleteAttachmentUpload {
                 type Output = std::result::Result<crate::output::CompleteAttachmentUploadOutput, crate::error::CompleteAttachmentUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_complete_attachment_upload_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateParticipantConnection {
 impl aws_smithy_http::response::ParseStrictResponse for CreateParticipantConnection {
                 type Output = std::result::Result<crate::output::CreateParticipantConnectionOutput, crate::error::CreateParticipantConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_participant_connection_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DisconnectParticipant {
 impl aws_smithy_http::response::ParseStrictResponse for DisconnectParticipant {
                 type Output = std::result::Result<crate::output::DisconnectParticipantOutput, crate::error::DisconnectParticipantError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disconnect_participant_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetAttachment {
 impl aws_smithy_http::response::ParseStrictResponse for GetAttachment {
                 type Output = std::result::Result<crate::output::GetAttachmentOutput, crate::error::GetAttachmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_attachment_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetTranscript {
 impl aws_smithy_http::response::ParseStrictResponse for GetTranscript {
                 type Output = std::result::Result<crate::output::GetTranscriptOutput, crate::error::GetTranscriptError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_transcript_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl SendEvent {
 impl aws_smithy_http::response::ParseStrictResponse for SendEvent {
                 type Output = std::result::Result<crate::output::SendEventOutput, crate::error::SendEventError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_send_event_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl SendMessage {
 impl aws_smithy_http::response::ParseStrictResponse for SendMessage {
                 type Output = std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_send_message_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl StartAttachmentUpload {
 impl aws_smithy_http::response::ParseStrictResponse for StartAttachmentUpload {
                 type Output = std::result::Result<crate::output::StartAttachmentUploadOutput, crate::error::StartAttachmentUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_attachment_upload_error(response)
                      } else {

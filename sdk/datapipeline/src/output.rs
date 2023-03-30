@@ -13,6 +13,7 @@ pub struct ValidatePipelineDefinitionOutput  {
     /// <p>Indicates whether there were validation errors.</p>
     #[doc(hidden)]
     pub errored: bool,
+    _request_id: Option<String>,
 }
 impl ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
@@ -28,6 +29,11 @@ impl ValidatePipelineDefinitionOutput {
         self.errored
     }
 }
+impl aws_http::request_id::RequestId for ValidatePipelineDefinitionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
 pub mod validate_pipeline_definition_output {
     
@@ -38,6 +44,7 @@ pub mod validate_pipeline_definition_output {
         pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
         pub(crate) validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
         pub(crate) errored: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `validation_errors`.
@@ -79,6 +86,15 @@ pub mod validate_pipeline_definition_output {
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
             self.errored = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
         pub fn build(self) -> crate::output::ValidatePipelineDefinitionOutput {
             crate::output::ValidatePipelineDefinitionOutput {
@@ -89,6 +105,7 @@ pub mod validate_pipeline_definition_output {
                 errored: self.errored
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -106,7 +123,13 @@ impl ValidatePipelineDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTaskStatusOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SetTaskStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
 pub mod set_task_status_output {
     
@@ -114,11 +137,22 @@ pub mod set_task_status_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
         pub fn build(self) -> crate::output::SetTaskStatusOutput {
             crate::output::SetTaskStatusOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -136,7 +170,13 @@ impl SetTaskStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetStatusOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SetStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SetStatusOutput`](crate::output::SetStatusOutput).
 pub mod set_status_output {
     
@@ -144,11 +184,22 @@ pub mod set_status_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SetStatusOutput`](crate::output::SetStatusOutput).
         pub fn build(self) -> crate::output::SetStatusOutput {
             crate::output::SetStatusOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -169,6 +220,7 @@ pub struct ReportTaskRunnerHeartbeatOutput  {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     #[doc(hidden)]
     pub terminate: bool,
+    _request_id: Option<String>,
 }
 impl ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
@@ -176,6 +228,11 @@ impl ReportTaskRunnerHeartbeatOutput {
         self.terminate
     }
 }
+impl aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
 pub mod report_task_runner_heartbeat_output {
     
@@ -184,6 +241,7 @@ pub mod report_task_runner_heartbeat_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminate: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the calling task runner should terminate.</p>
@@ -195,12 +253,22 @@ pub mod report_task_runner_heartbeat_output {
         pub fn set_terminate(mut self, input: std::option::Option<bool>) -> Self {
             self.terminate = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
         pub fn build(self) -> crate::output::ReportTaskRunnerHeartbeatOutput {
             crate::output::ReportTaskRunnerHeartbeatOutput {
                 terminate: self.terminate
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -221,6 +289,7 @@ pub struct ReportTaskProgressOutput  {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     #[doc(hidden)]
     pub canceled: bool,
+    _request_id: Option<String>,
 }
 impl ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
@@ -228,6 +297,11 @@ impl ReportTaskProgressOutput {
         self.canceled
     }
 }
+impl aws_http::request_id::RequestId for ReportTaskProgressOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
 pub mod report_task_progress_output {
     
@@ -236,6 +310,7 @@ pub mod report_task_progress_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canceled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
@@ -247,12 +322,22 @@ pub mod report_task_progress_output {
         pub fn set_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.canceled = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
         pub fn build(self) -> crate::output::ReportTaskProgressOutput {
             crate::output::ReportTaskProgressOutput {
                 canceled: self.canceled
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -270,7 +355,13 @@ impl ReportTaskProgressOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
     
@@ -278,11 +369,22 @@ pub mod remove_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
             crate::output::RemoveTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -309,6 +411,7 @@ pub struct QueryObjectsOutput  {
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
+    _request_id: Option<String>,
 }
 impl QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
@@ -324,6 +427,11 @@ impl QueryObjectsOutput {
         self.has_more_results
     }
 }
+impl aws_http::request_id::RequestId for QueryObjectsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
 pub mod query_objects_output {
     
@@ -334,6 +442,7 @@ pub mod query_objects_output {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) has_more_results: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `ids`.
@@ -369,6 +478,15 @@ pub mod query_objects_output {
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
         pub fn build(self) -> crate::output::QueryObjectsOutput {
             crate::output::QueryObjectsOutput {
@@ -379,6 +497,7 @@ pub mod query_objects_output {
                 has_more_results: self.has_more_results
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -405,6 +524,7 @@ pub struct PutPipelineDefinitionOutput  {
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     #[doc(hidden)]
     pub errored: bool,
+    _request_id: Option<String>,
 }
 impl PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
@@ -420,6 +540,11 @@ impl PutPipelineDefinitionOutput {
         self.errored
     }
 }
+impl aws_http::request_id::RequestId for PutPipelineDefinitionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
 pub mod put_pipeline_definition_output {
     
@@ -430,6 +555,7 @@ pub mod put_pipeline_definition_output {
         pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
         pub(crate) validation_warnings: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
         pub(crate) errored: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `validation_errors`.
@@ -471,6 +597,15 @@ pub mod put_pipeline_definition_output {
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
             self.errored = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::PutPipelineDefinitionOutput {
             crate::output::PutPipelineDefinitionOutput {
@@ -481,6 +616,7 @@ pub mod put_pipeline_definition_output {
                 errored: self.errored
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -501,6 +637,7 @@ pub struct PollForTaskOutput  {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     #[doc(hidden)]
     pub task_object: std::option::Option<crate::model::TaskObject>,
+    _request_id: Option<String>,
 }
 impl PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
@@ -508,6 +645,11 @@ impl PollForTaskOutput {
         self.task_object.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PollForTaskOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PollForTaskOutput`](crate::output::PollForTaskOutput).
 pub mod poll_for_task_output {
     
@@ -516,6 +658,7 @@ pub mod poll_for_task_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_object: std::option::Option<crate::model::TaskObject>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
@@ -527,11 +670,21 @@ pub mod poll_for_task_output {
         pub fn set_task_object(mut self, input: std::option::Option<crate::model::TaskObject>) -> Self {
             self.task_object = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PollForTaskOutput`](crate::output::PollForTaskOutput).
         pub fn build(self) -> crate::output::PollForTaskOutput {
             crate::output::PollForTaskOutput {
                 task_object: self.task_object
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -558,6 +711,7 @@ pub struct ListPipelinesOutput  {
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
+    _request_id: Option<String>,
 }
 impl ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
@@ -573,6 +727,11 @@ impl ListPipelinesOutput {
         self.has_more_results
     }
 }
+impl aws_http::request_id::RequestId for ListPipelinesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
     
@@ -583,6 +742,7 @@ pub mod list_pipelines_output {
         pub(crate) pipeline_id_list: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) has_more_results: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pipeline_id_list`.
@@ -618,6 +778,15 @@ pub mod list_pipelines_output {
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
         pub fn build(self) -> crate::output::ListPipelinesOutput {
             crate::output::ListPipelinesOutput {
@@ -628,6 +797,7 @@ pub mod list_pipelines_output {
                 has_more_results: self.has_more_results
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -654,6 +824,7 @@ pub struct GetPipelineDefinitionOutput  {
     /// <p>The parameter values used in the pipeline definition.</p>
     #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+    _request_id: Option<String>,
 }
 impl GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
@@ -669,6 +840,11 @@ impl GetPipelineDefinitionOutput {
         self.parameter_values.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPipelineDefinitionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
 pub mod get_pipeline_definition_output {
     
@@ -679,6 +855,7 @@ pub mod get_pipeline_definition_output {
         pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
         pub(crate) parameter_objects: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
         pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pipeline_objects`.
@@ -726,6 +903,15 @@ pub mod get_pipeline_definition_output {
         pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>) -> Self {
             self.parameter_values = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::GetPipelineDefinitionOutput {
             crate::output::GetPipelineDefinitionOutput {
@@ -735,6 +921,7 @@ pub mod get_pipeline_definition_output {
                 ,
                 parameter_values: self.parameter_values
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -755,6 +942,7 @@ pub struct EvaluateExpressionOutput  {
     /// <p>The evaluated expression.</p>
     #[doc(hidden)]
     pub evaluated_expression: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
@@ -762,6 +950,11 @@ impl EvaluateExpressionOutput {
         self.evaluated_expression.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for EvaluateExpressionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
 pub mod evaluate_expression_output {
     
@@ -770,6 +963,7 @@ pub mod evaluate_expression_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluated_expression: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The evaluated expression.</p>
@@ -781,11 +975,21 @@ pub mod evaluate_expression_output {
         pub fn set_evaluated_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.evaluated_expression = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
         pub fn build(self) -> crate::output::EvaluateExpressionOutput {
             crate::output::EvaluateExpressionOutput {
                 evaluated_expression: self.evaluated_expression
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -806,6 +1010,7 @@ pub struct DescribePipelinesOutput  {
     /// <p>An array of descriptions for the specified pipelines.</p>
     #[doc(hidden)]
     pub pipeline_description_list: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
+    _request_id: Option<String>,
 }
 impl DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
@@ -813,6 +1018,11 @@ impl DescribePipelinesOutput {
         self.pipeline_description_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePipelinesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
 pub mod describe_pipelines_output {
     
@@ -821,6 +1031,7 @@ pub mod describe_pipelines_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_description_list: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pipeline_description_list`.
@@ -838,11 +1049,21 @@ pub mod describe_pipelines_output {
         pub fn set_pipeline_description_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>) -> Self {
             self.pipeline_description_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
         pub fn build(self) -> crate::output::DescribePipelinesOutput {
             crate::output::DescribePipelinesOutput {
                 pipeline_description_list: self.pipeline_description_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -869,6 +1090,7 @@ pub struct DescribeObjectsOutput  {
     /// <p>Indicates whether there are more results to return.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
+    _request_id: Option<String>,
 }
 impl DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
@@ -884,6 +1106,11 @@ impl DescribeObjectsOutput {
         self.has_more_results
     }
 }
+impl aws_http::request_id::RequestId for DescribeObjectsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
 pub mod describe_objects_output {
     
@@ -894,6 +1121,7 @@ pub mod describe_objects_output {
         pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) has_more_results: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pipeline_objects`.
@@ -929,6 +1157,15 @@ pub mod describe_objects_output {
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
         pub fn build(self) -> crate::output::DescribeObjectsOutput {
             crate::output::DescribeObjectsOutput {
@@ -939,6 +1176,7 @@ pub mod describe_objects_output {
                 has_more_results: self.has_more_results
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -956,7 +1194,13 @@ impl DescribeObjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeletePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
     
@@ -964,11 +1208,22 @@ pub mod delete_pipeline_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
         pub fn build(self) -> crate::output::DeletePipelineOutput {
             crate::output::DeletePipelineOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -986,7 +1241,13 @@ impl DeletePipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivatePipelineOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeactivatePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
 pub mod deactivate_pipeline_output {
     
@@ -994,11 +1255,22 @@ pub mod deactivate_pipeline_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
         pub fn build(self) -> crate::output::DeactivatePipelineOutput {
             crate::output::DeactivatePipelineOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1019,6 +1291,7 @@ pub struct CreatePipelineOutput  {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
@@ -1026,6 +1299,11 @@ impl CreatePipelineOutput {
         self.pipeline_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
     
@@ -1034,6 +1312,7 @@ pub mod create_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
@@ -1045,11 +1324,21 @@ pub mod create_pipeline_output {
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
         pub fn build(self) -> crate::output::CreatePipelineOutput {
             crate::output::CreatePipelineOutput {
                 pipeline_id: self.pipeline_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1067,7 +1356,13 @@ impl CreatePipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
     
@@ -1075,11 +1370,22 @@ pub mod add_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
             crate::output::AddTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1097,7 +1403,13 @@ impl AddTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivatePipelineOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for ActivatePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
 pub mod activate_pipeline_output {
     
@@ -1105,11 +1417,22 @@ pub mod activate_pipeline_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
         pub fn build(self) -> crate::output::ActivatePipelineOutput {
             crate::output::ActivatePipelineOutput {
+                _request_id: self._request_id,
             }
         }
     }

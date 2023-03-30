@@ -22,6 +22,7 @@ impl AcceptQualificationRequest {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptQualificationRequest {
                 type Output = std::result::Result<crate::output::AcceptQualificationRequestOutput, crate::error::AcceptQualificationRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_qualification_request_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl ApproveAssignment {
 impl aws_smithy_http::response::ParseStrictResponse for ApproveAssignment {
                 type Output = std::result::Result<crate::output::ApproveAssignmentOutput, crate::error::ApproveAssignmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_approve_assignment_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AssociateQualificationWithWorker {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateQualificationWithWorker {
                 type Output = std::result::Result<crate::output::AssociateQualificationWithWorkerOutput, crate::error::AssociateQualificationWithWorkerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_qualification_with_worker_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateAdditionalAssignmentsForHIT {
 impl aws_smithy_http::response::ParseStrictResponse for CreateAdditionalAssignmentsForHIT {
                 type Output = std::result::Result<crate::output::CreateAdditionalAssignmentsForHitOutput, crate::error::CreateAdditionalAssignmentsForHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_additional_assignments_for_hit_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateHIT {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHIT {
                 type Output = std::result::Result<crate::output::CreateHitOutput, crate::error::CreateHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_hit_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateHITType {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHITType {
                 type Output = std::result::Result<crate::output::CreateHitTypeOutput, crate::error::CreateHITTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_hit_type_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateHITWithHITType {
 impl aws_smithy_http::response::ParseStrictResponse for CreateHITWithHITType {
                 type Output = std::result::Result<crate::output::CreateHitWithHitTypeOutput, crate::error::CreateHITWithHITTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_hit_with_hit_type_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for CreateQualificationType {
                 type Output = std::result::Result<crate::output::CreateQualificationTypeOutput, crate::error::CreateQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_qualification_type_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateWorkerBlock {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerBlock {
                 type Output = std::result::Result<crate::output::CreateWorkerBlockOutput, crate::error::CreateWorkerBlockError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_worker_block_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteHIT {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteHIT {
                 type Output = std::result::Result<crate::output::DeleteHitOutput, crate::error::DeleteHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_hit_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteQualificationType {
                 type Output = std::result::Result<crate::output::DeleteQualificationTypeOutput, crate::error::DeleteQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_qualification_type_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteWorkerBlock {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkerBlock {
                 type Output = std::result::Result<crate::output::DeleteWorkerBlockOutput, crate::error::DeleteWorkerBlockError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_worker_block_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DisassociateQualificationFromWorker {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateQualificationFromWorker {
                 type Output = std::result::Result<crate::output::DisassociateQualificationFromWorkerOutput, crate::error::DisassociateQualificationFromWorkerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_qualification_from_worker_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetAccountBalance {
 impl aws_smithy_http::response::ParseStrictResponse for GetAccountBalance {
                 type Output = std::result::Result<crate::output::GetAccountBalanceOutput, crate::error::GetAccountBalanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_account_balance_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetAssignment {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssignment {
                 type Output = std::result::Result<crate::output::GetAssignmentOutput, crate::error::GetAssignmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_assignment_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetFileUploadURL {
 impl aws_smithy_http::response::ParseStrictResponse for GetFileUploadURL {
                 type Output = std::result::Result<crate::output::GetFileUploadUrlOutput, crate::error::GetFileUploadURLError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_file_upload_url_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetHIT {
 impl aws_smithy_http::response::ParseStrictResponse for GetHIT {
                 type Output = std::result::Result<crate::output::GetHitOutput, crate::error::GetHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_hit_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetQualificationScore {
 impl aws_smithy_http::response::ParseStrictResponse for GetQualificationScore {
                 type Output = std::result::Result<crate::output::GetQualificationScoreOutput, crate::error::GetQualificationScoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_qualification_score_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for GetQualificationType {
                 type Output = std::result::Result<crate::output::GetQualificationTypeOutput, crate::error::GetQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_qualification_type_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListAssignmentsForHIT {
 impl aws_smithy_http::response::ParseStrictResponse for ListAssignmentsForHIT {
                 type Output = std::result::Result<crate::output::ListAssignmentsForHitOutput, crate::error::ListAssignmentsForHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_assignments_for_hit_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListBonusPayments {
 impl aws_smithy_http::response::ParseStrictResponse for ListBonusPayments {
                 type Output = std::result::Result<crate::output::ListBonusPaymentsOutput, crate::error::ListBonusPaymentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_bonus_payments_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListHITs {
 impl aws_smithy_http::response::ParseStrictResponse for ListHITs {
                 type Output = std::result::Result<crate::output::ListHiTsOutput, crate::error::ListHITsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hi_ts_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListHITsForQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for ListHITsForQualificationType {
                 type Output = std::result::Result<crate::output::ListHiTsForQualificationTypeOutput, crate::error::ListHITsForQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_hi_ts_for_qualification_type_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListQualificationRequests {
 impl aws_smithy_http::response::ParseStrictResponse for ListQualificationRequests {
                 type Output = std::result::Result<crate::output::ListQualificationRequestsOutput, crate::error::ListQualificationRequestsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_qualification_requests_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListQualificationTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListQualificationTypes {
                 type Output = std::result::Result<crate::output::ListQualificationTypesOutput, crate::error::ListQualificationTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_qualification_types_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListReviewableHITs {
 impl aws_smithy_http::response::ParseStrictResponse for ListReviewableHITs {
                 type Output = std::result::Result<crate::output::ListReviewableHiTsOutput, crate::error::ListReviewableHITsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_reviewable_hi_ts_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListReviewPolicyResultsForHIT {
 impl aws_smithy_http::response::ParseStrictResponse for ListReviewPolicyResultsForHIT {
                 type Output = std::result::Result<crate::output::ListReviewPolicyResultsForHitOutput, crate::error::ListReviewPolicyResultsForHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_review_policy_results_for_hit_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListWorkerBlocks {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkerBlocks {
                 type Output = std::result::Result<crate::output::ListWorkerBlocksOutput, crate::error::ListWorkerBlocksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_worker_blocks_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListWorkersWithQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkersWithQualificationType {
                 type Output = std::result::Result<crate::output::ListWorkersWithQualificationTypeOutput, crate::error::ListWorkersWithQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_workers_with_qualification_type_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl NotifyWorkers {
 impl aws_smithy_http::response::ParseStrictResponse for NotifyWorkers {
                 type Output = std::result::Result<crate::output::NotifyWorkersOutput, crate::error::NotifyWorkersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_notify_workers_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl RejectAssignment {
 impl aws_smithy_http::response::ParseStrictResponse for RejectAssignment {
                 type Output = std::result::Result<crate::output::RejectAssignmentOutput, crate::error::RejectAssignmentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_assignment_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl RejectQualificationRequest {
 impl aws_smithy_http::response::ParseStrictResponse for RejectQualificationRequest {
                 type Output = std::result::Result<crate::output::RejectQualificationRequestOutput, crate::error::RejectQualificationRequestError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_qualification_request_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl SendBonus {
 impl aws_smithy_http::response::ParseStrictResponse for SendBonus {
                 type Output = std::result::Result<crate::output::SendBonusOutput, crate::error::SendBonusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_send_bonus_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl SendTestEventNotification {
 impl aws_smithy_http::response::ParseStrictResponse for SendTestEventNotification {
                 type Output = std::result::Result<crate::output::SendTestEventNotificationOutput, crate::error::SendTestEventNotificationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_send_test_event_notification_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UpdateExpirationForHIT {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateExpirationForHIT {
                 type Output = std::result::Result<crate::output::UpdateExpirationForHitOutput, crate::error::UpdateExpirationForHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_expiration_for_hit_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateHITReviewStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateHITReviewStatus {
                 type Output = std::result::Result<crate::output::UpdateHitReviewStatusOutput, crate::error::UpdateHITReviewStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_hit_review_status_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateHITTypeOfHIT {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateHITTypeOfHIT {
                 type Output = std::result::Result<crate::output::UpdateHitTypeOfHitOutput, crate::error::UpdateHITTypeOfHITError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_hit_type_of_hit_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateNotificationSettings {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationSettings {
                 type Output = std::result::Result<crate::output::UpdateNotificationSettingsOutput, crate::error::UpdateNotificationSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_notification_settings_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateQualificationType {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateQualificationType {
                 type Output = std::result::Result<crate::output::UpdateQualificationTypeOutput, crate::error::UpdateQualificationTypeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_qualification_type_error(response)
                      } else {

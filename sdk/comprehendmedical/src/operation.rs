@@ -22,6 +22,7 @@ impl DescribeEntitiesDetectionV2Job {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectionV2Job {
                 type Output = std::result::Result<crate::output::DescribeEntitiesDetectionV2JobOutput, crate::error::DescribeEntitiesDetectionV2JobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_entities_detection_v2_job_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeICD10CMInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeICD10CMInferenceJob {
                 type Output = std::result::Result<crate::output::DescribeIcd10CmInferenceJobOutput, crate::error::DescribeICD10CMInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_icd10_cm_inference_job_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribePHIDetectionJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePHIDetectionJob {
                 type Output = std::result::Result<crate::output::DescribePhiDetectionJobOutput, crate::error::DescribePHIDetectionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_phi_detection_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeRxNormInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRxNormInferenceJob {
                 type Output = std::result::Result<crate::output::DescribeRxNormInferenceJobOutput, crate::error::DescribeRxNormInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_rx_norm_inference_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeSNOMEDCTInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSNOMEDCTInferenceJob {
                 type Output = std::result::Result<crate::output::DescribeSnomedctInferenceJobOutput, crate::error::DescribeSNOMEDCTInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_snomedct_inference_job_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DetectEntities {
 impl aws_smithy_http::response::ParseStrictResponse for DetectEntities {
                 type Output = std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detect_entities_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DetectEntitiesV2 {
 impl aws_smithy_http::response::ParseStrictResponse for DetectEntitiesV2 {
                 type Output = std::result::Result<crate::output::DetectEntitiesV2Output, crate::error::DetectEntitiesV2Error>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detect_entities_v2_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DetectPHI {
 impl aws_smithy_http::response::ParseStrictResponse for DetectPHI {
                 type Output = std::result::Result<crate::output::DetectPhiOutput, crate::error::DetectPHIError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_detect_phi_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl InferICD10CM {
 impl aws_smithy_http::response::ParseStrictResponse for InferICD10CM {
                 type Output = std::result::Result<crate::output::InferIcd10CmOutput, crate::error::InferICD10CMError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_infer_icd10_cm_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl InferRxNorm {
 impl aws_smithy_http::response::ParseStrictResponse for InferRxNorm {
                 type Output = std::result::Result<crate::output::InferRxNormOutput, crate::error::InferRxNormError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_infer_rx_norm_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl InferSNOMEDCT {
 impl aws_smithy_http::response::ParseStrictResponse for InferSNOMEDCT {
                 type Output = std::result::Result<crate::output::InferSnomedctOutput, crate::error::InferSNOMEDCTError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_infer_snomedct_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListEntitiesDetectionV2Jobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesDetectionV2Jobs {
                 type Output = std::result::Result<crate::output::ListEntitiesDetectionV2JobsOutput, crate::error::ListEntitiesDetectionV2JobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_entities_detection_v2_jobs_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListICD10CMInferenceJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListICD10CMInferenceJobs {
                 type Output = std::result::Result<crate::output::ListIcd10CmInferenceJobsOutput, crate::error::ListICD10CMInferenceJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_icd10_cm_inference_jobs_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListPHIDetectionJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListPHIDetectionJobs {
                 type Output = std::result::Result<crate::output::ListPhiDetectionJobsOutput, crate::error::ListPHIDetectionJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_phi_detection_jobs_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListRxNormInferenceJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs {
                 type Output = std::result::Result<crate::output::ListRxNormInferenceJobsOutput, crate::error::ListRxNormInferenceJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_rx_norm_inference_jobs_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListSNOMEDCTInferenceJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListSNOMEDCTInferenceJobs {
                 type Output = std::result::Result<crate::output::ListSnomedctInferenceJobsOutput, crate::error::ListSNOMEDCTInferenceJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_snomedct_inference_jobs_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl StartEntitiesDetectionV2Job {
 impl aws_smithy_http::response::ParseStrictResponse for StartEntitiesDetectionV2Job {
                 type Output = std::result::Result<crate::output::StartEntitiesDetectionV2JobOutput, crate::error::StartEntitiesDetectionV2JobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_entities_detection_v2_job_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl StartICD10CMInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartICD10CMInferenceJob {
                 type Output = std::result::Result<crate::output::StartIcd10CmInferenceJobOutput, crate::error::StartICD10CMInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_icd10_cm_inference_job_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl StartPHIDetectionJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartPHIDetectionJob {
                 type Output = std::result::Result<crate::output::StartPhiDetectionJobOutput, crate::error::StartPHIDetectionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_phi_detection_job_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl StartRxNormInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartRxNormInferenceJob {
                 type Output = std::result::Result<crate::output::StartRxNormInferenceJobOutput, crate::error::StartRxNormInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_rx_norm_inference_job_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl StartSNOMEDCTInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartSNOMEDCTInferenceJob {
                 type Output = std::result::Result<crate::output::StartSnomedctInferenceJobOutput, crate::error::StartSNOMEDCTInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_snomedct_inference_job_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl StopEntitiesDetectionV2Job {
 impl aws_smithy_http::response::ParseStrictResponse for StopEntitiesDetectionV2Job {
                 type Output = std::result::Result<crate::output::StopEntitiesDetectionV2JobOutput, crate::error::StopEntitiesDetectionV2JobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_entities_detection_v2_job_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl StopICD10CMInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopICD10CMInferenceJob {
                 type Output = std::result::Result<crate::output::StopIcd10CmInferenceJobOutput, crate::error::StopICD10CMInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_icd10_cm_inference_job_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl StopPHIDetectionJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopPHIDetectionJob {
                 type Output = std::result::Result<crate::output::StopPhiDetectionJobOutput, crate::error::StopPHIDetectionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_phi_detection_job_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl StopRxNormInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopRxNormInferenceJob {
                 type Output = std::result::Result<crate::output::StopRxNormInferenceJobOutput, crate::error::StopRxNormInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_rx_norm_inference_job_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl StopSNOMEDCTInferenceJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopSNOMEDCTInferenceJob {
                 type Output = std::result::Result<crate::output::StopSnomedctInferenceJobOutput, crate::error::StopSNOMEDCTInferenceJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_snomedct_inference_job_error(response)
                      } else {

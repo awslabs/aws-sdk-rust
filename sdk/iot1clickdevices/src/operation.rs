@@ -22,6 +22,7 @@ impl ClaimDevicesByClaimCode {
 impl aws_smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode {
                 type Output = std::result::Result<crate::output::ClaimDevicesByClaimCodeOutput, crate::error::ClaimDevicesByClaimCodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_claim_devices_by_claim_code_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DescribeDevice {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
                 type Output = std::result::Result<crate::output::DescribeDeviceOutput, crate::error::DescribeDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_device_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl FinalizeDeviceClaim {
 impl aws_smithy_http::response::ParseStrictResponse for FinalizeDeviceClaim {
                 type Output = std::result::Result<crate::output::FinalizeDeviceClaimOutput, crate::error::FinalizeDeviceClaimError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_finalize_device_claim_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetDeviceMethods {
 impl aws_smithy_http::response::ParseStrictResponse for GetDeviceMethods {
                 type Output = std::result::Result<crate::output::GetDeviceMethodsOutput, crate::error::GetDeviceMethodsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_device_methods_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl InitiateDeviceClaim {
 impl aws_smithy_http::response::ParseStrictResponse for InitiateDeviceClaim {
                 type Output = std::result::Result<crate::output::InitiateDeviceClaimOutput, crate::error::InitiateDeviceClaimError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_initiate_device_claim_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl InvokeDeviceMethod {
 impl aws_smithy_http::response::ParseStrictResponse for InvokeDeviceMethod {
                 type Output = std::result::Result<crate::output::InvokeDeviceMethodOutput, crate::error::InvokeDeviceMethodError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_invoke_device_method_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListDeviceEvents {
 impl aws_smithy_http::response::ParseStrictResponse for ListDeviceEvents {
                 type Output = std::result::Result<crate::output::ListDeviceEventsOutput, crate::error::ListDeviceEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_device_events_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListDevices {
 impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
                 type Output = std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_devices_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UnclaimDevice {
 impl aws_smithy_http::response::ParseStrictResponse for UnclaimDevice {
                 type Output = std::result::Result<crate::output::UnclaimDeviceOutput, crate::error::UnclaimDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_unclaim_device_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UpdateDeviceState {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDeviceState {
                 type Output = std::result::Result<crate::output::UpdateDeviceStateOutput, crate::error::UpdateDeviceStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_device_state_error(response)
                      } else {

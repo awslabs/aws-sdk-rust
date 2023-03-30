@@ -19,15 +19,8 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     #[allow(missing_docs)] // documentation missing in model
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    /// 
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    /// 
-    Unhandled(crate::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -48,19 +41,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> f
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::AddTagsError> for Error {
     fn from(err: crate::error::AddTagsError) -> Self {
-        match err.kind {
-            crate::error::AddTagsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::AddTagsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AddTagsErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::AddTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddTagsErrorKind::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
-            crate::error::AddTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::AddTagsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::AddTagsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::AddTagsError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::AddTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::AddTagsError::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
+            crate::error::AddTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -68,17 +66,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBatchPredicti
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBatchPredictionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateBatchPredictionError> for Error {
     fn from(err: crate::error::CreateBatchPredictionError) -> Self {
-        match err.kind {
-            crate::error::CreateBatchPredictionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateBatchPredictionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateBatchPredictionErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateBatchPredictionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateBatchPredictionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateBatchPredictionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateBatchPredictionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateBatchPredictionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -86,17 +89,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFromRDSError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateDataSourceFromRDSError> for Error {
     fn from(err: crate::error::CreateDataSourceFromRDSError) -> Self {
-        match err.kind {
-            crate::error::CreateDataSourceFromRDSErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateDataSourceFromRDSErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateDataSourceFromRDSErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDataSourceFromRDSErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDataSourceFromRDSError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateDataSourceFromRDSError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateDataSourceFromRDSError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateDataSourceFromRDSError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -104,17 +112,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFromRedshiftError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateDataSourceFromRedshiftError> for Error {
     fn from(err: crate::error::CreateDataSourceFromRedshiftError) -> Self {
-        match err.kind {
-            crate::error::CreateDataSourceFromRedshiftErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateDataSourceFromRedshiftErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateDataSourceFromRedshiftErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDataSourceFromRedshiftErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDataSourceFromRedshiftError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateDataSourceFromRedshiftError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateDataSourceFromRedshiftError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateDataSourceFromRedshiftError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -122,17 +135,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFro
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDataSourceFromS3Error, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateDataSourceFromS3Error> for Error {
     fn from(err: crate::error::CreateDataSourceFromS3Error) -> Self {
-        match err.kind {
-            crate::error::CreateDataSourceFromS3ErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateDataSourceFromS3ErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateDataSourceFromS3ErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDataSourceFromS3ErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDataSourceFromS3Error::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateDataSourceFromS3Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateDataSourceFromS3Error::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateDataSourceFromS3Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -140,17 +158,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEvaluationErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateEvaluationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateEvaluationError> for Error {
     fn from(err: crate::error::CreateEvaluationError) -> Self {
-        match err.kind {
-            crate::error::CreateEvaluationErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateEvaluationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateEvaluationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateEvaluationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateEvaluationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateEvaluationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -158,17 +181,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMLModelError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMLModelError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateMLModelError> for Error {
     fn from(err: crate::error::CreateMLModelError) -> Self {
-        match err.kind {
-            crate::error::CreateMLModelErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateMLModelErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateMLModelErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateMLModelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateMLModelError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateMLModelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateMLModelError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateMLModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -176,17 +204,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRealtimeEndpo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRealtimeEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::CreateRealtimeEndpointError> for Error {
     fn from(err: crate::error::CreateRealtimeEndpointError) -> Self {
-        match err.kind {
-            crate::error::CreateRealtimeEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateRealtimeEndpointErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateRealtimeEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateRealtimeEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateRealtimeEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateRealtimeEndpointError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateRealtimeEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateRealtimeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -194,17 +227,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBatchPredicti
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBatchPredictionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteBatchPredictionError> for Error {
     fn from(err: crate::error::DeleteBatchPredictionError) -> Self {
-        match err.kind {
-            crate::error::DeleteBatchPredictionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteBatchPredictionErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteBatchPredictionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteBatchPredictionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteBatchPredictionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteBatchPredictionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteBatchPredictionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteBatchPredictionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -212,17 +250,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDataSourceErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDataSourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteDataSourceError> for Error {
     fn from(err: crate::error::DeleteDataSourceError) -> Self {
-        match err.kind {
-            crate::error::DeleteDataSourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteDataSourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDataSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteDataSourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -230,17 +273,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEvaluationErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEvaluationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteEvaluationError> for Error {
     fn from(err: crate::error::DeleteEvaluationError) -> Self {
-        match err.kind {
-            crate::error::DeleteEvaluationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteEvaluationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteEvaluationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteEvaluationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteEvaluationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteEvaluationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -248,17 +296,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMLModelError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMLModelError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteMLModelError> for Error {
     fn from(err: crate::error::DeleteMLModelError) -> Self {
-        match err.kind {
-            crate::error::DeleteMLModelErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteMLModelErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteMLModelErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteMLModelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteMLModelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteMLModelError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteMLModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteMLModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -266,17 +319,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeEndpo
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRealtimeEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteRealtimeEndpointError> for Error {
     fn from(err: crate::error::DeleteRealtimeEndpointError) -> Self {
-        match err.kind {
-            crate::error::DeleteRealtimeEndpointErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteRealtimeEndpointErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteRealtimeEndpointErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteRealtimeEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteRealtimeEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteRealtimeEndpointError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteRealtimeEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteRealtimeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -284,18 +342,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DeleteTagsError> for Error {
     fn from(err: crate::error::DeleteTagsError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteTagsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteTagsErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::DeleteTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteTagsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteTagsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteTagsError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::DeleteTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -303,16 +366,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBatchPredic
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBatchPredictionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeBatchPredictionsError> for Error {
     fn from(err: crate::error::DescribeBatchPredictionsError) -> Self {
-        match err.kind {
-            crate::error::DescribeBatchPredictionsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeBatchPredictionsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DescribeBatchPredictionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeBatchPredictionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeBatchPredictionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeBatchPredictionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -320,16 +388,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDataSources
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDataSourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeDataSourcesError> for Error {
     fn from(err: crate::error::DescribeDataSourcesError) -> Self {
-        match err.kind {
-            crate::error::DescribeDataSourcesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeDataSourcesErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DescribeDataSourcesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeDataSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeDataSourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -337,16 +410,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEvaluations
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEvaluationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeEvaluationsError> for Error {
     fn from(err: crate::error::DescribeEvaluationsError) -> Self {
-        match err.kind {
-            crate::error::DescribeEvaluationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeEvaluationsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DescribeEvaluationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeEvaluationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeEvaluationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -354,16 +432,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMLModelsErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMLModelsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeMLModelsError> for Error {
     fn from(err: crate::error::DescribeMLModelsError) -> Self {
-        match err.kind {
-            crate::error::DescribeMLModelsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeMLModelsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DescribeMLModelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeMLModelsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeMLModelsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeMLModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -371,17 +454,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, 
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::DescribeTagsError> for Error {
     fn from(err: crate::error::DescribeTagsError) -> Self {
-        match err.kind {
-            crate::error::DescribeTagsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeTagsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DescribeTagsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeTagsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DescribeTagsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DescribeTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DescribeTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -389,17 +477,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBatchPredictionE
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBatchPredictionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetBatchPredictionError> for Error {
     fn from(err: crate::error::GetBatchPredictionError) -> Self {
-        match err.kind {
-            crate::error::GetBatchPredictionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetBatchPredictionErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBatchPredictionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetBatchPredictionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetBatchPredictionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetBatchPredictionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::GetBatchPredictionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetBatchPredictionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -407,17 +500,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDataSourceError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDataSourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetDataSourceError> for Error {
     fn from(err: crate::error::GetDataSourceError) -> Self {
-        match err.kind {
-            crate::error::GetDataSourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetDataSourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetDataSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetDataSourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::GetDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -425,17 +523,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEvaluationError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEvaluationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetEvaluationError> for Error {
     fn from(err: crate::error::GetEvaluationError) -> Self {
-        match err.kind {
-            crate::error::GetEvaluationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetEvaluationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetEvaluationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetEvaluationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetEvaluationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::GetEvaluationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -443,17 +546,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMLModelError, R>
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMLModelError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::GetMLModelError> for Error {
     fn from(err: crate::error::GetMLModelError) -> Self {
-        match err.kind {
-            crate::error::GetMLModelErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetMLModelErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetMLModelErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetMLModelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetMLModelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::GetMLModelError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::GetMLModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::GetMLModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -461,19 +569,24 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PredictError, R>> f
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PredictError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::PredictError> for Error {
     fn from(err: crate::error::PredictError) -> Self {
-        match err.kind {
-            crate::error::PredictErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PredictErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PredictErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::PredictErrorKind::PredictorNotMountedException(inner) => Error::PredictorNotMountedException(inner),
-            crate::error::PredictErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PredictErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PredictError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::PredictError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::PredictError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::PredictError::PredictorNotMountedException(inner) => Error::PredictorNotMountedException(inner),
+            crate::error::PredictError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::PredictError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -481,17 +594,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBatchPredicti
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBatchPredictionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateBatchPredictionError> for Error {
     fn from(err: crate::error::UpdateBatchPredictionError) -> Self {
-        match err.kind {
-            crate::error::UpdateBatchPredictionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateBatchPredictionErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateBatchPredictionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateBatchPredictionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateBatchPredictionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateBatchPredictionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateBatchPredictionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateBatchPredictionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -499,17 +617,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDataSourceErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDataSourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateDataSourceError> for Error {
     fn from(err: crate::error::UpdateDataSourceError) -> Self {
-        match err.kind {
-            crate::error::UpdateDataSourceErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateDataSourceErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateDataSourceErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateDataSourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDataSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateDataSourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateDataSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -517,17 +640,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEvaluationErr
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateEvaluationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateEvaluationError> for Error {
     fn from(err: crate::error::UpdateEvaluationError) -> Self {
-        match err.kind {
-            crate::error::UpdateEvaluationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateEvaluationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateEvaluationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateEvaluationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateEvaluationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateEvaluationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateEvaluationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -535,19 +663,39 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMLModelError,
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateMLModelError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::error::UpdateMLModelError> for Error {
     fn from(err: crate::error::UpdateMLModelError) -> Self {
-        match err.kind {
-            crate::error::UpdateMLModelErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateMLModelErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateMLModelErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateMLModelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateMLModelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateMLModelError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateMLModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateMLModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::IdempotentParameterMismatchException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::InvalidTagException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::PredictorNotMountedException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::TagLimitExceededException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
 

@@ -22,6 +22,7 @@ impl AddFlowMediaStreams {
 impl aws_smithy_http::response::ParseStrictResponse for AddFlowMediaStreams {
                 type Output = std::result::Result<crate::output::AddFlowMediaStreamsOutput, crate::error::AddFlowMediaStreamsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_flow_media_streams_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddFlowOutputs {
 impl aws_smithy_http::response::ParseStrictResponse for AddFlowOutputs {
                 type Output = std::result::Result<crate::output::AddFlowOutputsOutput, crate::error::AddFlowOutputsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_flow_outputs_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AddFlowSources {
 impl aws_smithy_http::response::ParseStrictResponse for AddFlowSources {
                 type Output = std::result::Result<crate::output::AddFlowSourcesOutput, crate::error::AddFlowSourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_flow_sources_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl AddFlowVpcInterfaces {
 impl aws_smithy_http::response::ParseStrictResponse for AddFlowVpcInterfaces {
                 type Output = std::result::Result<crate::output::AddFlowVpcInterfacesOutput, crate::error::AddFlowVpcInterfacesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_add_flow_vpc_interfaces_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateFlow {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFlow {
                 type Output = std::result::Result<crate::output::CreateFlowOutput, crate::error::CreateFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_flow_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteFlow {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFlow {
                 type Output = std::result::Result<crate::output::DeleteFlowOutput, crate::error::DeleteFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_delete_flow_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeFlow {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFlow {
                 type Output = std::result::Result<crate::output::DescribeFlowOutput, crate::error::DescribeFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_flow_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeOffering {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOffering {
                 type Output = std::result::Result<crate::output::DescribeOfferingOutput, crate::error::DescribeOfferingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_offering_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DescribeReservation {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReservation {
                 type Output = std::result::Result<crate::output::DescribeReservationOutput, crate::error::DescribeReservationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_reservation_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GrantFlowEntitlements {
 impl aws_smithy_http::response::ParseStrictResponse for GrantFlowEntitlements {
                 type Output = std::result::Result<crate::output::GrantFlowEntitlementsOutput, crate::error::GrantFlowEntitlementsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_grant_flow_entitlements_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListEntitlements {
 impl aws_smithy_http::response::ParseStrictResponse for ListEntitlements {
                 type Output = std::result::Result<crate::output::ListEntitlementsOutput, crate::error::ListEntitlementsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_entitlements_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListFlows {
 impl aws_smithy_http::response::ParseStrictResponse for ListFlows {
                 type Output = std::result::Result<crate::output::ListFlowsOutput, crate::error::ListFlowsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_flows_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListOfferings {
 impl aws_smithy_http::response::ParseStrictResponse for ListOfferings {
                 type Output = std::result::Result<crate::output::ListOfferingsOutput, crate::error::ListOfferingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_offerings_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListReservations {
 impl aws_smithy_http::response::ParseStrictResponse for ListReservations {
                 type Output = std::result::Result<crate::output::ListReservationsOutput, crate::error::ListReservationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_reservations_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl PurchaseOffering {
 impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
                 type Output = std::result::Result<crate::output::PurchaseOfferingOutput, crate::error::PurchaseOfferingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_purchase_offering_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl RemoveFlowMediaStream {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowMediaStream {
                 type Output = std::result::Result<crate::output::RemoveFlowMediaStreamOutput, crate::error::RemoveFlowMediaStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_flow_media_stream_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl RemoveFlowOutput {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowOutput {
                 type Output = std::result::Result<crate::output::RemoveFlowOutputOutput, crate::error::RemoveFlowOutputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_remove_flow_output_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl RemoveFlowSource {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowSource {
                 type Output = std::result::Result<crate::output::RemoveFlowSourceOutput, crate::error::RemoveFlowSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_remove_flow_source_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl RemoveFlowVpcInterface {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowVpcInterface {
                 type Output = std::result::Result<crate::output::RemoveFlowVpcInterfaceOutput, crate::error::RemoveFlowVpcInterfaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_flow_vpc_interface_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl RevokeFlowEntitlement {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeFlowEntitlement {
                 type Output = std::result::Result<crate::output::RevokeFlowEntitlementOutput, crate::error::RevokeFlowEntitlementError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_revoke_flow_entitlement_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl StartFlow {
 impl aws_smithy_http::response::ParseStrictResponse for StartFlow {
                 type Output = std::result::Result<crate::output::StartFlowOutput, crate::error::StartFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_start_flow_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl StopFlow {
 impl aws_smithy_http::response::ParseStrictResponse for StopFlow {
                 type Output = std::result::Result<crate::output::StopFlowOutput, crate::error::StopFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_stop_flow_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateFlow {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlow {
                 type Output = std::result::Result<crate::output::UpdateFlowOutput, crate::error::UpdateFlowError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_flow_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateFlowEntitlement {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowEntitlement {
                 type Output = std::result::Result<crate::output::UpdateFlowEntitlementOutput, crate::error::UpdateFlowEntitlementError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_flow_entitlement_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UpdateFlowMediaStream {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowMediaStream {
                 type Output = std::result::Result<crate::output::UpdateFlowMediaStreamOutput, crate::error::UpdateFlowMediaStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_flow_media_stream_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateFlowOutput {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowOutput {
                 type Output = std::result::Result<crate::output::UpdateFlowOutputOutput, crate::error::UpdateFlowOutputError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_flow_output_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateFlowSource {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowSource {
                 type Output = std::result::Result<crate::output::UpdateFlowSourceOutput, crate::error::UpdateFlowSourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 202 {
                         crate::operation_deser::parse_update_flow_source_error(response)
                      } else {

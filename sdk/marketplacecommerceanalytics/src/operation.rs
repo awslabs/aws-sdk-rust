@@ -22,6 +22,7 @@ impl GenerateDataSet {
 impl aws_smithy_http::response::ParseStrictResponse for GenerateDataSet {
                 type Output = std::result::Result<crate::output::GenerateDataSetOutput, crate::error::GenerateDataSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_generate_data_set_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl StartSupportDataExport {
 impl aws_smithy_http::response::ParseStrictResponse for StartSupportDataExport {
                 type Output = std::result::Result<crate::output::StartSupportDataExportOutput, crate::error::StartSupportDataExportError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_support_data_export_error(response)
                      } else {

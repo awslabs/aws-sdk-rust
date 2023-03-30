@@ -22,6 +22,7 @@ impl AssociateServiceRoleToAccount {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceRoleToAccount {
                 type Output = std::result::Result<crate::output::AssociateServiceRoleToAccountOutput, crate::error::AssociateServiceRoleToAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_service_role_to_account_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchAssociateClientDeviceWithCoreDevice {
 impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateClientDeviceWithCoreDevice {
                 type Output = std::result::Result<crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput, crate::error::BatchAssociateClientDeviceWithCoreDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_associate_client_device_with_core_device_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchDisassociateClientDeviceFromCoreDevice {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateClientDeviceFromCoreDevice {
                 type Output = std::result::Result<crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput, crate::error::BatchDisassociateClientDeviceFromCoreDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_disassociate_client_device_from_core_device_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CancelDeployment {
 impl aws_smithy_http::response::ParseStrictResponse for CancelDeployment {
                 type Output = std::result::Result<crate::output::CancelDeploymentOutput, crate::error::CancelDeploymentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_deployment_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateComponentVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateComponentVersion {
                 type Output = std::result::Result<crate::output::CreateComponentVersionOutput, crate::error::CreateComponentVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_component_version_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateDeployment {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDeployment {
                 type Output = std::result::Result<crate::output::CreateDeploymentOutput, crate::error::CreateDeploymentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 201 {
                         crate::operation_deser::parse_create_deployment_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteComponent {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
                 type Output = std::result::Result<crate::output::DeleteComponentOutput, crate::error::DeleteComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_component_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteCoreDevice {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCoreDevice {
                 type Output = std::result::Result<crate::output::DeleteCoreDeviceOutput, crate::error::DeleteCoreDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_core_device_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteDeployment {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDeployment {
                 type Output = std::result::Result<crate::output::DeleteDeploymentOutput, crate::error::DeleteDeploymentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 204 {
                         crate::operation_deser::parse_delete_deployment_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeComponent {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeComponent {
                 type Output = std::result::Result<crate::output::DescribeComponentOutput, crate::error::DescribeComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_component_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DisassociateServiceRoleFromAccount {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceRoleFromAccount {
                 type Output = std::result::Result<crate::output::DisassociateServiceRoleFromAccountOutput, crate::error::DisassociateServiceRoleFromAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_service_role_from_account_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetComponent {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
                 type Output = std::result::Result<crate::output::GetComponentOutput, crate::error::GetComponentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_component_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetComponentVersionArtifact {
 impl aws_smithy_http::response::ParseStrictResponse for GetComponentVersionArtifact {
                 type Output = std::result::Result<crate::output::GetComponentVersionArtifactOutput, crate::error::GetComponentVersionArtifactError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_component_version_artifact_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetConnectivityInfo {
 impl aws_smithy_http::response::ParseStrictResponse for GetConnectivityInfo {
                 type Output = std::result::Result<crate::output::GetConnectivityInfoOutput, crate::error::GetConnectivityInfoError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_connectivity_info_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetCoreDevice {
 impl aws_smithy_http::response::ParseStrictResponse for GetCoreDevice {
                 type Output = std::result::Result<crate::output::GetCoreDeviceOutput, crate::error::GetCoreDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_core_device_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetDeployment {
 impl aws_smithy_http::response::ParseStrictResponse for GetDeployment {
                 type Output = std::result::Result<crate::output::GetDeploymentOutput, crate::error::GetDeploymentError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_deployment_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetServiceRoleForAccount {
 impl aws_smithy_http::response::ParseStrictResponse for GetServiceRoleForAccount {
                 type Output = std::result::Result<crate::output::GetServiceRoleForAccountOutput, crate::error::GetServiceRoleForAccountError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_service_role_for_account_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListClientDevicesAssociatedWithCoreDevice {
 impl aws_smithy_http::response::ParseStrictResponse for ListClientDevicesAssociatedWithCoreDevice {
                 type Output = std::result::Result<crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput, crate::error::ListClientDevicesAssociatedWithCoreDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_client_devices_associated_with_core_device_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListComponents {
 impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
                 type Output = std::result::Result<crate::output::ListComponentsOutput, crate::error::ListComponentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_components_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListComponentVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListComponentVersions {
                 type Output = std::result::Result<crate::output::ListComponentVersionsOutput, crate::error::ListComponentVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_component_versions_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl ListCoreDevices {
 impl aws_smithy_http::response::ParseStrictResponse for ListCoreDevices {
                 type Output = std::result::Result<crate::output::ListCoreDevicesOutput, crate::error::ListCoreDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_core_devices_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListDeployments {
 impl aws_smithy_http::response::ParseStrictResponse for ListDeployments {
                 type Output = std::result::Result<crate::output::ListDeploymentsOutput, crate::error::ListDeploymentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_deployments_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListEffectiveDeployments {
 impl aws_smithy_http::response::ParseStrictResponse for ListEffectiveDeployments {
                 type Output = std::result::Result<crate::output::ListEffectiveDeploymentsOutput, crate::error::ListEffectiveDeploymentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_effective_deployments_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListInstalledComponents {
 impl aws_smithy_http::response::ParseStrictResponse for ListInstalledComponents {
                 type Output = std::result::Result<crate::output::ListInstalledComponentsOutput, crate::error::ListInstalledComponentsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_installed_components_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ResolveComponentCandidates {
 impl aws_smithy_http::response::ParseStrictResponse for ResolveComponentCandidates {
                 type Output = std::result::Result<crate::output::ResolveComponentCandidatesOutput, crate::error::ResolveComponentCandidatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resolve_component_candidates_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateConnectivityInfo {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectivityInfo {
                 type Output = std::result::Result<crate::output::UpdateConnectivityInfoOutput, crate::error::UpdateConnectivityInfoError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_connectivity_info_error(response)
                      } else {

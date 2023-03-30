@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateUserOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
     
@@ -11,11 +17,22 @@ pub mod update_user_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
         pub fn build(self) -> crate::output::UpdateUserOutput {
             crate::output::UpdateUserOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -51,6 +68,7 @@ pub struct UpdateConfigurationOutput  {
     /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
     #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>,
+    _request_id: Option<String>,
 }
 impl UpdateConfigurationOutput {
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
@@ -78,6 +96,11 @@ impl UpdateConfigurationOutput {
         self.warnings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
 pub mod update_configuration_output {
     
@@ -91,6 +114,7 @@ pub mod update_configuration_output {
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
@@ -153,6 +177,15 @@ pub mod update_configuration_output {
         pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SanitizationWarning>>) -> Self {
             self.warnings = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationOutput {
             crate::output::UpdateConfigurationOutput {
@@ -168,6 +201,7 @@ pub mod update_configuration_output {
                 ,
                 warnings: self.warnings
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -215,6 +249,7 @@ pub struct UpdateBrokerOutput  {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateBrokerOutput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -258,6 +293,11 @@ impl UpdateBrokerOutput {
         self.security_groups.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBrokerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateBrokerOutput`](crate::output::UpdateBrokerOutput).
 pub mod update_broker_output {
     
@@ -275,6 +315,7 @@ pub mod update_broker_output {
         pub(crate) logs: std::option::Option<crate::model::Logs>,
         pub(crate) maintenance_window_start_time: std::option::Option<crate::model::WeeklyStartTime>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -373,6 +414,15 @@ pub mod update_broker_output {
         pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.security_groups = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateBrokerOutput`](crate::output::UpdateBrokerOutput).
         pub fn build(self) -> crate::output::UpdateBrokerOutput {
             crate::output::UpdateBrokerOutput {
@@ -397,6 +447,7 @@ pub mod update_broker_output {
                 ,
                 security_groups: self.security_groups
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -414,7 +465,13 @@ impl UpdateBrokerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RebootBrokerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RebootBrokerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
 pub mod reboot_broker_output {
     
@@ -422,11 +479,22 @@ pub mod reboot_broker_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
         pub fn build(self) -> crate::output::RebootBrokerOutput {
             crate::output::RebootBrokerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -456,6 +524,7 @@ pub struct ListUsersOutput  {
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
+    _request_id: Option<String>,
 }
 impl ListUsersOutput {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
@@ -475,6 +544,11 @@ impl ListUsersOutput {
         self.users.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListUsersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
     
@@ -486,6 +560,7 @@ pub mod list_users_output {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
@@ -530,6 +605,15 @@ pub mod list_users_output {
         pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserSummary>>) -> Self {
             self.users = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput).
         pub fn build(self) -> crate::output::ListUsersOutput {
             crate::output::ListUsersOutput {
@@ -542,6 +626,7 @@ pub mod list_users_output {
                 ,
                 users: self.users
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -562,6 +647,7 @@ pub struct ListTagsOutput  {
     /// <p>The key-value pair for the resource tag.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsOutput {
     /// <p>The key-value pair for the resource tag.</p>
@@ -569,6 +655,11 @@ impl ListTagsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
     
@@ -577,6 +668,7 @@ pub mod list_tags_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -594,11 +686,21 @@ pub mod list_tags_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -625,6 +727,7 @@ pub struct ListConfigurationsOutput  {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListConfigurationsOutput {
     /// <p>The list of all revisions for the specified configuration.</p>
@@ -640,6 +743,11 @@ impl ListConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListConfigurationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
 pub mod list_configurations_output {
     
@@ -650,6 +758,7 @@ pub mod list_configurations_output {
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `configurations`.
@@ -685,6 +794,15 @@ pub mod list_configurations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
         pub fn build(self) -> crate::output::ListConfigurationsOutput {
             crate::output::ListConfigurationsOutput {
@@ -695,6 +813,7 @@ pub mod list_configurations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -724,6 +843,7 @@ pub struct ListConfigurationRevisionsOutput  {
     /// <p>The list of all revisions for the specified configuration.</p>
     #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
+    _request_id: Option<String>,
 }
 impl ListConfigurationRevisionsOutput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -743,6 +863,11 @@ impl ListConfigurationRevisionsOutput {
         self.revisions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListConfigurationRevisionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
 pub mod list_configuration_revisions_output {
     
@@ -754,6 +879,7 @@ pub mod list_configuration_revisions_output {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -798,6 +924,15 @@ pub mod list_configuration_revisions_output {
         pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>) -> Self {
             self.revisions = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
         pub fn build(self) -> crate::output::ListConfigurationRevisionsOutput {
             crate::output::ListConfigurationRevisionsOutput {
@@ -810,6 +945,7 @@ pub mod list_configuration_revisions_output {
                 ,
                 revisions: self.revisions
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -833,6 +969,7 @@ pub struct ListBrokersOutput  {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBrokersOutput {
     /// <p>A list of information about all brokers.</p>
@@ -844,6 +981,11 @@ impl ListBrokersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBrokersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListBrokersOutput`](crate::output::ListBrokersOutput).
 pub mod list_brokers_output {
     
@@ -853,6 +995,7 @@ pub mod list_brokers_output {
     pub struct Builder {
         pub(crate) broker_summaries: std::option::Option<std::vec::Vec<crate::model::BrokerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `broker_summaries`.
@@ -879,6 +1022,15 @@ pub mod list_brokers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListBrokersOutput`](crate::output::ListBrokersOutput).
         pub fn build(self) -> crate::output::ListBrokersOutput {
             crate::output::ListBrokersOutput {
@@ -886,6 +1038,7 @@ pub mod list_brokers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -918,6 +1071,7 @@ pub struct DescribeUserOutput  {
     /// <p>Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeUserOutput {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
@@ -941,6 +1095,11 @@ impl DescribeUserOutput {
         self.username.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeUserOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeUserOutput`](crate::output::DescribeUserOutput).
 pub mod describe_user_output {
     
@@ -953,6 +1112,7 @@ pub mod describe_user_output {
         pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) pending: std::option::Option<crate::model::UserPendingChanges>,
         pub(crate) username: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
@@ -1006,6 +1166,15 @@ pub mod describe_user_output {
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::output::DescribeUserOutput).
         pub fn build(self) -> crate::output::DescribeUserOutput {
             crate::output::DescribeUserOutput {
@@ -1020,6 +1189,7 @@ pub mod describe_user_output {
                 ,
                 username: self.username
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1049,6 +1219,7 @@ pub struct DescribeConfigurationRevisionOutput  {
     /// <p>The description of the configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeConfigurationRevisionOutput {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1068,6 +1239,11 @@ impl DescribeConfigurationRevisionOutput {
         self.description.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeConfigurationRevisionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
 pub mod describe_configuration_revision_output {
     
@@ -1079,6 +1255,7 @@ pub mod describe_configuration_revision_output {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1117,6 +1294,15 @@ pub mod describe_configuration_revision_output {
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
         pub fn build(self) -> crate::output::DescribeConfigurationRevisionOutput {
             crate::output::DescribeConfigurationRevisionOutput {
@@ -1128,6 +1314,7 @@ pub mod describe_configuration_revision_output {
                 ,
                 description: self.description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1175,6 +1362,7 @@ pub struct DescribeConfigurationOutput  {
     /// <p>The list of all tags associated with this configuration.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeConfigurationOutput {
     /// <p>Required. The ARN of the configuration.</p>
@@ -1218,6 +1406,11 @@ impl DescribeConfigurationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
 pub mod describe_configuration_output {
     
@@ -1235,6 +1428,7 @@ pub mod describe_configuration_output {
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The ARN of the configuration.</p>
@@ -1333,6 +1527,15 @@ pub mod describe_configuration_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeConfigurationOutput {
             crate::output::DescribeConfigurationOutput {
@@ -1356,6 +1559,7 @@ pub mod describe_configuration_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1382,6 +1586,7 @@ pub struct DescribeBrokerInstanceOptionsOutput  {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBrokerInstanceOptionsOutput {
     /// <p>List of available broker instance options.</p>
@@ -1397,6 +1602,11 @@ impl DescribeBrokerInstanceOptionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBrokerInstanceOptionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeBrokerInstanceOptionsOutput`](crate::output::DescribeBrokerInstanceOptionsOutput).
 pub mod describe_broker_instance_options_output {
     
@@ -1407,6 +1617,7 @@ pub mod describe_broker_instance_options_output {
         pub(crate) broker_instance_options: std::option::Option<std::vec::Vec<crate::model::BrokerInstanceOption>>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `broker_instance_options`.
@@ -1442,6 +1653,15 @@ pub mod describe_broker_instance_options_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeBrokerInstanceOptionsOutput`](crate::output::DescribeBrokerInstanceOptionsOutput).
         pub fn build(self) -> crate::output::DescribeBrokerInstanceOptionsOutput {
             crate::output::DescribeBrokerInstanceOptionsOutput {
@@ -1452,6 +1672,7 @@ pub mod describe_broker_instance_options_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1478,6 +1699,7 @@ pub struct DescribeBrokerEngineTypesOutput  {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBrokerEngineTypesOutput {
     /// <p>List of available engine types and versions.</p>
@@ -1493,6 +1715,11 @@ impl DescribeBrokerEngineTypesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBrokerEngineTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeBrokerEngineTypesOutput`](crate::output::DescribeBrokerEngineTypesOutput).
 pub mod describe_broker_engine_types_output {
     
@@ -1503,6 +1730,7 @@ pub mod describe_broker_engine_types_output {
         pub(crate) broker_engine_types: std::option::Option<std::vec::Vec<crate::model::BrokerEngineType>>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `broker_engine_types`.
@@ -1538,6 +1766,15 @@ pub mod describe_broker_engine_types_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeBrokerEngineTypesOutput`](crate::output::DescribeBrokerEngineTypesOutput).
         pub fn build(self) -> crate::output::DescribeBrokerEngineTypesOutput {
             crate::output::DescribeBrokerEngineTypesOutput {
@@ -1548,6 +1785,7 @@ pub mod describe_broker_engine_types_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1652,6 +1890,7 @@ pub struct DescribeBrokerOutput  {
     /// <p>The list of all broker usernames for the specified broker.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
+    _request_id: Option<String>,
 }
 impl DescribeBrokerOutput {
     /// <p>A list of actions required for a broker.</p>
@@ -1771,6 +2010,11 @@ impl DescribeBrokerOutput {
         self.users.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBrokerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput).
 pub mod describe_broker_output {
     
@@ -1807,6 +2051,7 @@ pub mod describe_broker_output {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::UserSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `actions_required`.
@@ -2112,6 +2357,15 @@ pub mod describe_broker_output {
         pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::UserSummary>>) -> Self {
             self.users = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput).
         pub fn build(self) -> crate::output::DescribeBrokerOutput {
             crate::output::DescribeBrokerOutput {
@@ -2175,6 +2429,7 @@ pub mod describe_broker_output {
                 ,
                 users: self.users
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2192,7 +2447,13 @@ impl DescribeBrokerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteUserOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteUserOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
     
@@ -2200,11 +2461,22 @@ pub mod delete_user_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
         pub fn build(self) -> crate::output::DeleteUserOutput {
             crate::output::DeleteUserOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2222,7 +2494,13 @@ impl DeleteUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
     
@@ -2230,11 +2508,22 @@ pub mod delete_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
         pub fn build(self) -> crate::output::DeleteTagsOutput {
             crate::output::DeleteTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2255,6 +2544,7 @@ pub struct DeleteBrokerOutput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBrokerOutput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2262,6 +2552,11 @@ impl DeleteBrokerOutput {
         self.broker_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBrokerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteBrokerOutput`](crate::output::DeleteBrokerOutput).
 pub mod delete_broker_output {
     
@@ -2270,6 +2565,7 @@ pub mod delete_broker_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2281,11 +2577,21 @@ pub mod delete_broker_output {
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteBrokerOutput`](crate::output::DeleteBrokerOutput).
         pub fn build(self) -> crate::output::DeleteBrokerOutput {
             crate::output::DeleteBrokerOutput {
                 broker_id: self.broker_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2303,7 +2609,13 @@ impl DeleteBrokerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateUserOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateUserOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
     
@@ -2311,11 +2623,22 @@ pub mod create_user_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
         pub fn build(self) -> crate::output::CreateUserOutput {
             crate::output::CreateUserOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2333,7 +2656,13 @@ impl CreateUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTagsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateTagsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
     
@@ -2341,11 +2670,22 @@ pub mod create_tags_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTagsOutput`](crate::output::CreateTagsOutput).
         pub fn build(self) -> crate::output::CreateTagsOutput {
             crate::output::CreateTagsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2381,6 +2721,7 @@ pub struct CreateConfigurationOutput  {
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateConfigurationOutput {
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
@@ -2408,6 +2749,11 @@ impl CreateConfigurationOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateConfigurationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
 pub mod create_configuration_output {
     
@@ -2421,6 +2767,7 @@ pub mod create_configuration_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
@@ -2477,6 +2824,15 @@ pub mod create_configuration_output {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
         pub fn build(self) -> crate::output::CreateConfigurationOutput {
             crate::output::CreateConfigurationOutput {
@@ -2492,6 +2848,7 @@ pub mod create_configuration_output {
                 ,
                 name: self.name
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2515,6 +2872,7 @@ pub struct CreateBrokerOutput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBrokerOutput {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
@@ -2526,6 +2884,11 @@ impl CreateBrokerOutput {
         self.broker_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBrokerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateBrokerOutput`](crate::output::CreateBrokerOutput).
 pub mod create_broker_output {
     
@@ -2535,6 +2898,7 @@ pub mod create_broker_output {
     pub struct Builder {
         pub(crate) broker_arn: std::option::Option<std::string::String>,
         pub(crate) broker_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The broker's Amazon Resource Name (ARN).</p>
@@ -2555,6 +2919,15 @@ pub mod create_broker_output {
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateBrokerOutput`](crate::output::CreateBrokerOutput).
         pub fn build(self) -> crate::output::CreateBrokerOutput {
             crate::output::CreateBrokerOutput {
@@ -2562,6 +2935,7 @@ pub mod create_broker_output {
                 ,
                 broker_id: self.broker_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

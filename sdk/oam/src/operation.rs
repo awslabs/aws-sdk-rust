@@ -22,6 +22,7 @@ impl CreateLink {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLink {
                 type Output = std::result::Result<crate::output::CreateLinkOutput, crate::error::CreateLinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_link_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateSink {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSink {
                 type Output = std::result::Result<crate::output::CreateSinkOutput, crate::error::CreateSinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_sink_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteLink {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLink {
                 type Output = std::result::Result<crate::output::DeleteLinkOutput, crate::error::DeleteLinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_link_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteSink {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSink {
                 type Output = std::result::Result<crate::output::DeleteSinkOutput, crate::error::DeleteSinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_sink_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetLink {
 impl aws_smithy_http::response::ParseStrictResponse for GetLink {
                 type Output = std::result::Result<crate::output::GetLinkOutput, crate::error::GetLinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_link_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetSink {
 impl aws_smithy_http::response::ParseStrictResponse for GetSink {
                 type Output = std::result::Result<crate::output::GetSinkOutput, crate::error::GetSinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_sink_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetSinkPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetSinkPolicy {
                 type Output = std::result::Result<crate::output::GetSinkPolicyOutput, crate::error::GetSinkPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_sink_policy_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListAttachedLinks {
 impl aws_smithy_http::response::ParseStrictResponse for ListAttachedLinks {
                 type Output = std::result::Result<crate::output::ListAttachedLinksOutput, crate::error::ListAttachedLinksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_attached_links_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListLinks {
 impl aws_smithy_http::response::ParseStrictResponse for ListLinks {
                 type Output = std::result::Result<crate::output::ListLinksOutput, crate::error::ListLinksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_links_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListSinks {
 impl aws_smithy_http::response::ParseStrictResponse for ListSinks {
                 type Output = std::result::Result<crate::output::ListSinksOutput, crate::error::ListSinksError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_sinks_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl PutSinkPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutSinkPolicy {
                 type Output = std::result::Result<crate::output::PutSinkPolicyOutput, crate::error::PutSinkPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_sink_policy_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UpdateLink {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLink {
                 type Output = std::result::Result<crate::output::UpdateLinkOutput, crate::error::UpdateLinkError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_link_error(response)
                      } else {

@@ -21,6 +21,7 @@ pub struct StartDeviceAuthorizationOutput  {
     /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
     #[doc(hidden)]
     pub interval: i32,
+    _request_id: Option<String>,
 }
 impl StartDeviceAuthorizationOutput {
     /// <p>The short-lived code that is used by the device when polling for a session token.</p>
@@ -48,6 +49,11 @@ impl StartDeviceAuthorizationOutput {
         self.interval
     }
 }
+impl aws_http::request_id::RequestId for StartDeviceAuthorizationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
 pub mod start_device_authorization_output {
     
@@ -61,6 +67,7 @@ pub mod start_device_authorization_output {
         pub(crate) verification_uri_complete: std::option::Option<std::string::String>,
         pub(crate) expires_in: std::option::Option<i32>,
         pub(crate) interval: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The short-lived code that is used by the device when polling for a session token.</p>
@@ -117,6 +124,15 @@ pub mod start_device_authorization_output {
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
         pub fn build(self) -> crate::output::StartDeviceAuthorizationOutput {
             crate::output::StartDeviceAuthorizationOutput {
@@ -134,6 +150,7 @@ pub mod start_device_authorization_output {
                 interval: self.interval
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -169,6 +186,7 @@ pub struct RegisterClientOutput  {
     /// <p>The endpoint where the client can get an access token.</p>
     #[doc(hidden)]
     pub token_endpoint: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RegisterClientOutput {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
@@ -196,6 +214,11 @@ impl RegisterClientOutput {
         self.token_endpoint.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RegisterClientOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterClientOutput`](crate::output::RegisterClientOutput).
 pub mod register_client_output {
     
@@ -209,6 +232,7 @@ pub mod register_client_output {
         pub(crate) client_secret_expires_at: std::option::Option<i64>,
         pub(crate) authorization_endpoint: std::option::Option<std::string::String>,
         pub(crate) token_endpoint: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
@@ -265,6 +289,15 @@ pub mod register_client_output {
         pub fn set_token_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_endpoint = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterClientOutput`](crate::output::RegisterClientOutput).
         pub fn build(self) -> crate::output::RegisterClientOutput {
             crate::output::RegisterClientOutput {
@@ -282,6 +315,7 @@ pub mod register_client_output {
                 ,
                 token_endpoint: self.token_endpoint
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -316,6 +350,7 @@ pub struct CreateTokenOutput  {
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     #[doc(hidden)]
     pub id_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateTokenOutput {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
@@ -341,6 +376,11 @@ impl CreateTokenOutput {
         self.id_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTokenOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
     
@@ -353,6 +393,7 @@ pub mod create_token_output {
         pub(crate) expires_in: std::option::Option<i32>,
         pub(crate) refresh_token: std::option::Option<std::string::String>,
         pub(crate) id_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
@@ -404,6 +445,15 @@ pub mod create_token_output {
         pub fn set_id_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
@@ -418,6 +468,7 @@ pub mod create_token_output {
                 ,
                 id_token: self.id_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }

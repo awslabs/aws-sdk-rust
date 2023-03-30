@@ -6,6 +6,7 @@ pub struct UpdateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
+    _request_id: Option<String>,
 }
 impl UpdateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
@@ -13,6 +14,11 @@ impl UpdateResiliencyPolicyOutput {
         self.policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResiliencyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
 pub mod update_resiliency_policy_output {
     
@@ -21,6 +27,7 @@ pub mod update_resiliency_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResiliencyPolicy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
@@ -32,11 +39,21 @@ pub mod update_resiliency_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateResiliencyPolicyOutput`](crate::output::UpdateResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::UpdateResiliencyPolicyOutput {
             crate::output::UpdateResiliencyPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateAppOutput  {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl UpdateAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -64,6 +82,11 @@ impl UpdateAppOutput {
         self.app.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAppOutput`](crate::output::UpdateAppOutput).
 pub mod update_app_output {
     
@@ -72,6 +95,7 @@ pub mod update_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -83,11 +107,21 @@ pub mod update_app_output {
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAppOutput`](crate::output::UpdateAppOutput).
         pub fn build(self) -> crate::output::UpdateAppOutput {
             crate::output::UpdateAppOutput {
                 app: self.app
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -105,7 +139,13 @@ impl UpdateAppOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -113,11 +153,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -135,7 +186,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -143,11 +200,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +236,7 @@ pub struct StartAppAssessmentOutput  {
     /// <p>The assessment created.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
+    _request_id: Option<String>,
 }
 impl StartAppAssessmentOutput {
     /// <p>The assessment created.</p>
@@ -175,6 +244,11 @@ impl StartAppAssessmentOutput {
         self.assessment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartAppAssessmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
 pub mod start_app_assessment_output {
     
@@ -183,6 +257,7 @@ pub mod start_app_assessment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::AppAssessment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The assessment created.</p>
@@ -194,11 +269,21 @@ pub mod start_app_assessment_output {
         pub fn set_assessment(mut self, input: std::option::Option<crate::model::AppAssessment>) -> Self {
             self.assessment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartAppAssessmentOutput`](crate::output::StartAppAssessmentOutput).
         pub fn build(self) -> crate::output::StartAppAssessmentOutput {
             crate::output::StartAppAssessmentOutput {
                 assessment: self.assessment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -228,6 +313,7 @@ pub struct ResolveAppVersionResourcesOutput  {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceResolutionStatusType>,
+    _request_id: Option<String>,
 }
 impl ResolveAppVersionResourcesOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -247,6 +333,11 @@ impl ResolveAppVersionResourcesOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ResolveAppVersionResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
 pub mod resolve_app_version_resources_output {
     
@@ -258,6 +349,7 @@ pub mod resolve_app_version_resources_output {
         pub(crate) app_version: std::option::Option<std::string::String>,
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ResourceResolutionStatusType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -296,6 +388,15 @@ pub mod resolve_app_version_resources_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceResolutionStatusType>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ResolveAppVersionResourcesOutput`](crate::output::ResolveAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ResolveAppVersionResourcesOutput {
             crate::output::ResolveAppVersionResourcesOutput {
@@ -307,6 +408,7 @@ pub mod resolve_app_version_resources_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -330,6 +432,7 @@ pub struct RemoveDraftAppVersionResourceMappingsOutput  {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveDraftAppVersionResourceMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -341,6 +444,11 @@ impl RemoveDraftAppVersionResourceMappingsOutput {
         self.app_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveDraftAppVersionResourceMappingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
 pub mod remove_draft_app_version_resource_mappings_output {
     
@@ -350,6 +458,7 @@ pub mod remove_draft_app_version_resource_mappings_output {
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -370,6 +479,15 @@ pub mod remove_draft_app_version_resource_mappings_output {
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsOutput`](crate::output::RemoveDraftAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::RemoveDraftAppVersionResourceMappingsOutput {
             crate::output::RemoveDraftAppVersionResourceMappingsOutput {
@@ -377,6 +495,7 @@ pub mod remove_draft_app_version_resource_mappings_output {
                 ,
                 app_version: self.app_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -400,6 +519,7 @@ pub struct PutDraftAppVersionTemplateOutput  {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutDraftAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -411,6 +531,11 @@ impl PutDraftAppVersionTemplateOutput {
         self.app_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutDraftAppVersionTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
 pub mod put_draft_app_version_template_output {
     
@@ -420,6 +545,7 @@ pub mod put_draft_app_version_template_output {
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -440,6 +566,15 @@ pub mod put_draft_app_version_template_output {
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutDraftAppVersionTemplateOutput`](crate::output::PutDraftAppVersionTemplateOutput).
         pub fn build(self) -> crate::output::PutDraftAppVersionTemplateOutput {
             crate::output::PutDraftAppVersionTemplateOutput {
@@ -447,6 +582,7 @@ pub mod put_draft_app_version_template_output {
                 ,
                 app_version: self.app_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -470,6 +606,7 @@ pub struct PublishAppVersionOutput  {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PublishAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -481,6 +618,11 @@ impl PublishAppVersionOutput {
         self.app_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PublishAppVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
 pub mod publish_app_version_output {
     
@@ -490,6 +632,7 @@ pub mod publish_app_version_output {
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -510,6 +653,15 @@ pub mod publish_app_version_output {
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PublishAppVersionOutput`](crate::output::PublishAppVersionOutput).
         pub fn build(self) -> crate::output::PublishAppVersionOutput {
             crate::output::PublishAppVersionOutput {
@@ -517,6 +669,7 @@ pub mod publish_app_version_output {
                 ,
                 app_version: self.app_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -543,6 +696,7 @@ pub struct ListUnsupportedAppVersionResourcesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListUnsupportedAppVersionResourcesOutput {
     /// <p>The unsupported resources for the application.</p>
@@ -558,6 +712,11 @@ impl ListUnsupportedAppVersionResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListUnsupportedAppVersionResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
 pub mod list_unsupported_app_version_resources_output {
     
@@ -568,6 +727,7 @@ pub mod list_unsupported_app_version_resources_output {
         pub(crate) unsupported_resources: std::option::Option<std::vec::Vec<crate::model::UnsupportedResource>>,
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `unsupported_resources`.
@@ -603,6 +763,15 @@ pub mod list_unsupported_app_version_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesOutput`](crate::output::ListUnsupportedAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ListUnsupportedAppVersionResourcesOutput {
             crate::output::ListUnsupportedAppVersionResourcesOutput {
@@ -612,6 +781,7 @@ pub mod list_unsupported_app_version_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -635,6 +805,7 @@ pub struct ListTestRecommendationsOutput  {
     /// <p>The test recommendations for the Resilience Hub application.</p>
     #[doc(hidden)]
     pub test_recommendations: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
+    _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -646,6 +817,11 @@ impl ListTestRecommendationsOutput {
         self.test_recommendations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTestRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
 pub mod list_test_recommendations_output {
     
@@ -655,6 +831,7 @@ pub mod list_test_recommendations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) test_recommendations: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -681,6 +858,15 @@ pub mod list_test_recommendations_output {
         pub fn set_test_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::TestRecommendation>>) -> Self {
             self.test_recommendations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTestRecommendationsOutput`](crate::output::ListTestRecommendationsOutput).
         pub fn build(self) -> crate::output::ListTestRecommendationsOutput {
             crate::output::ListTestRecommendationsOutput {
@@ -688,6 +874,7 @@ pub mod list_test_recommendations_output {
                 ,
                 test_recommendations: self.test_recommendations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -708,6 +895,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
@@ -719,9 +907,15 @@ impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -730,6 +924,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -747,11 +942,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -759,6 +964,7 @@ pub mod list_tags_for_resource_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -782,6 +988,7 @@ pub struct ListSuggestedResiliencyPoliciesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSuggestedResiliencyPoliciesOutput {
     /// <p>The suggested resiliency policies for the Resilience Hub applications.</p>
@@ -793,6 +1000,11 @@ impl ListSuggestedResiliencyPoliciesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSuggestedResiliencyPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
 pub mod list_suggested_resiliency_policies_output {
     
@@ -802,6 +1014,7 @@ pub mod list_suggested_resiliency_policies_output {
     pub struct Builder {
         pub(crate) resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resiliency_policies`.
@@ -828,6 +1041,15 @@ pub mod list_suggested_resiliency_policies_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSuggestedResiliencyPoliciesOutput`](crate::output::ListSuggestedResiliencyPoliciesOutput).
         pub fn build(self) -> crate::output::ListSuggestedResiliencyPoliciesOutput {
             crate::output::ListSuggestedResiliencyPoliciesOutput {
@@ -835,6 +1057,7 @@ pub mod list_suggested_resiliency_policies_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -858,6 +1081,7 @@ pub struct ListSopRecommendationsOutput  {
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
     #[doc(hidden)]
     pub sop_recommendations: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
+    _request_id: Option<String>,
 }
 impl ListSopRecommendationsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -869,6 +1093,11 @@ impl ListSopRecommendationsOutput {
         self.sop_recommendations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSopRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
 pub mod list_sop_recommendations_output {
     
@@ -878,6 +1107,7 @@ pub mod list_sop_recommendations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) sop_recommendations: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -904,6 +1134,15 @@ pub mod list_sop_recommendations_output {
         pub fn set_sop_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SopRecommendation>>) -> Self {
             self.sop_recommendations = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSopRecommendationsOutput`](crate::output::ListSopRecommendationsOutput).
         pub fn build(self) -> crate::output::ListSopRecommendationsOutput {
             crate::output::ListSopRecommendationsOutput {
@@ -911,6 +1150,7 @@ pub mod list_sop_recommendations_output {
                 ,
                 sop_recommendations: self.sop_recommendations
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -934,6 +1174,7 @@ pub struct ListResiliencyPoliciesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResiliencyPoliciesOutput {
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
@@ -945,6 +1186,11 @@ impl ListResiliencyPoliciesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResiliencyPoliciesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
 pub mod list_resiliency_policies_output {
     
@@ -954,6 +1200,7 @@ pub mod list_resiliency_policies_output {
     pub struct Builder {
         pub(crate) resiliency_policies: std::option::Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resiliency_policies`.
@@ -980,6 +1227,15 @@ pub mod list_resiliency_policies_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListResiliencyPoliciesOutput`](crate::output::ListResiliencyPoliciesOutput).
         pub fn build(self) -> crate::output::ListResiliencyPoliciesOutput {
             crate::output::ListResiliencyPoliciesOutput {
@@ -987,6 +1243,7 @@ pub mod list_resiliency_policies_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1010,6 +1267,7 @@ pub struct ListRecommendationTemplatesOutput  {
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
     #[doc(hidden)]
     pub recommendation_templates: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
+    _request_id: Option<String>,
 }
 impl ListRecommendationTemplatesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1021,6 +1279,11 @@ impl ListRecommendationTemplatesOutput {
         self.recommendation_templates.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRecommendationTemplatesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
 pub mod list_recommendation_templates_output {
     
@@ -1030,6 +1293,7 @@ pub mod list_recommendation_templates_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recommendation_templates: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1056,6 +1320,15 @@ pub mod list_recommendation_templates_output {
         pub fn set_recommendation_templates(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationTemplate>>) -> Self {
             self.recommendation_templates = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRecommendationTemplatesOutput`](crate::output::ListRecommendationTemplatesOutput).
         pub fn build(self) -> crate::output::ListRecommendationTemplatesOutput {
             crate::output::ListRecommendationTemplatesOutput {
@@ -1063,6 +1336,7 @@ pub mod list_recommendation_templates_output {
                 ,
                 recommendation_templates: self.recommendation_templates
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1086,6 +1360,7 @@ pub struct ListAppVersionsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppVersionsOutput {
     /// <p>The version of the application.</p>
@@ -1097,6 +1372,11 @@ impl ListAppVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppVersionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
 pub mod list_app_versions_output {
     
@@ -1106,6 +1386,7 @@ pub mod list_app_versions_output {
     pub struct Builder {
         pub(crate) app_versions: std::option::Option<std::vec::Vec<crate::model::AppVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `app_versions`.
@@ -1132,6 +1413,15 @@ pub mod list_app_versions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppVersionsOutput`](crate::output::ListAppVersionsOutput).
         pub fn build(self) -> crate::output::ListAppVersionsOutput {
             crate::output::ListAppVersionsOutput {
@@ -1139,6 +1429,7 @@ pub mod list_app_versions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1165,6 +1456,7 @@ pub struct ListAppVersionResourcesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppVersionResourcesOutput {
     /// <p>The physical resources in the application version.</p>
@@ -1180,6 +1472,11 @@ impl ListAppVersionResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppVersionResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
 pub mod list_app_version_resources_output {
     
@@ -1190,6 +1487,7 @@ pub mod list_app_version_resources_output {
         pub(crate) physical_resources: std::option::Option<std::vec::Vec<crate::model::PhysicalResource>>,
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `physical_resources`.
@@ -1225,6 +1523,15 @@ pub mod list_app_version_resources_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppVersionResourcesOutput`](crate::output::ListAppVersionResourcesOutput).
         pub fn build(self) -> crate::output::ListAppVersionResourcesOutput {
             crate::output::ListAppVersionResourcesOutput {
@@ -1234,6 +1541,7 @@ pub mod list_app_version_resources_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1257,6 +1565,7 @@ pub struct ListAppVersionResourceMappingsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppVersionResourceMappingsOutput {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
@@ -1268,6 +1577,11 @@ impl ListAppVersionResourceMappingsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppVersionResourceMappingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
 pub mod list_app_version_resource_mappings_output {
     
@@ -1277,6 +1591,7 @@ pub mod list_app_version_resource_mappings_output {
     pub struct Builder {
         pub(crate) resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_mappings`.
@@ -1303,6 +1618,15 @@ pub mod list_app_version_resource_mappings_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppVersionResourceMappingsOutput`](crate::output::ListAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::ListAppVersionResourceMappingsOutput {
             crate::output::ListAppVersionResourceMappingsOutput {
@@ -1310,6 +1634,7 @@ pub mod list_app_version_resource_mappings_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1333,6 +1658,7 @@ pub struct ListAppsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppsOutput {
     /// <p>Summaries for the Resilience Hub application.</p>
@@ -1344,6 +1670,11 @@ impl ListAppsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppsOutput`](crate::output::ListAppsOutput).
 pub mod list_apps_output {
     
@@ -1353,6 +1684,7 @@ pub mod list_apps_output {
     pub struct Builder {
         pub(crate) app_summaries: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `app_summaries`.
@@ -1379,6 +1711,15 @@ pub mod list_apps_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppsOutput`](crate::output::ListAppsOutput).
         pub fn build(self) -> crate::output::ListAppsOutput {
             crate::output::ListAppsOutput {
@@ -1386,6 +1727,7 @@ pub mod list_apps_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1409,6 +1751,7 @@ pub struct ListAppComponentRecommendationsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
@@ -1420,6 +1763,11 @@ impl ListAppComponentRecommendationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppComponentRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
 pub mod list_app_component_recommendations_output {
     
@@ -1429,6 +1777,7 @@ pub mod list_app_component_recommendations_output {
     pub struct Builder {
         pub(crate) component_recommendations: std::option::Option<std::vec::Vec<crate::model::ComponentRecommendation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `component_recommendations`.
@@ -1455,6 +1804,15 @@ pub mod list_app_component_recommendations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppComponentRecommendationsOutput`](crate::output::ListAppComponentRecommendationsOutput).
         pub fn build(self) -> crate::output::ListAppComponentRecommendationsOutput {
             crate::output::ListAppComponentRecommendationsOutput {
@@ -1462,6 +1820,7 @@ pub mod list_app_component_recommendations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1485,6 +1844,7 @@ pub struct ListAppComponentCompliancesOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppComponentCompliancesOutput {
     /// <p>The compliances for an AWS Resilience Hub application component, returned as an object. This object contains component names, compliances, costs, resiliency scores, outage scores, and more.</p>
@@ -1496,6 +1856,11 @@ impl ListAppComponentCompliancesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppComponentCompliancesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
 pub mod list_app_component_compliances_output {
     
@@ -1505,6 +1870,7 @@ pub mod list_app_component_compliances_output {
     pub struct Builder {
         pub(crate) component_compliances: std::option::Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `component_compliances`.
@@ -1531,6 +1897,15 @@ pub mod list_app_component_compliances_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppComponentCompliancesOutput`](crate::output::ListAppComponentCompliancesOutput).
         pub fn build(self) -> crate::output::ListAppComponentCompliancesOutput {
             crate::output::ListAppComponentCompliancesOutput {
@@ -1538,6 +1913,7 @@ pub mod list_app_component_compliances_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1561,6 +1937,7 @@ pub struct ListAppAssessmentsOutput  {
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
     pub assessment_summaries: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
+    _request_id: Option<String>,
 }
 impl ListAppAssessmentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1572,6 +1949,11 @@ impl ListAppAssessmentsOutput {
         self.assessment_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppAssessmentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
 pub mod list_app_assessments_output {
     
@@ -1581,6 +1963,7 @@ pub mod list_app_assessments_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) assessment_summaries: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -1607,6 +1990,15 @@ pub mod list_app_assessments_output {
         pub fn set_assessment_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppAssessmentSummary>>) -> Self {
             self.assessment_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAppAssessmentsOutput`](crate::output::ListAppAssessmentsOutput).
         pub fn build(self) -> crate::output::ListAppAssessmentsOutput {
             crate::output::ListAppAssessmentsOutput {
@@ -1614,6 +2006,7 @@ pub mod list_app_assessments_output {
                 ,
                 assessment_summaries: self.assessment_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1637,6 +2030,7 @@ pub struct ListAlarmRecommendationsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an AWS Resilience Hub application, returned as an object. This object includes application component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
@@ -1648,6 +2042,11 @@ impl ListAlarmRecommendationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAlarmRecommendationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
 pub mod list_alarm_recommendations_output {
     
@@ -1657,6 +2056,7 @@ pub mod list_alarm_recommendations_output {
     pub struct Builder {
         pub(crate) alarm_recommendations: std::option::Option<std::vec::Vec<crate::model::AlarmRecommendation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `alarm_recommendations`.
@@ -1683,6 +2083,15 @@ pub mod list_alarm_recommendations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAlarmRecommendationsOutput`](crate::output::ListAlarmRecommendationsOutput).
         pub fn build(self) -> crate::output::ListAlarmRecommendationsOutput {
             crate::output::ListAlarmRecommendationsOutput {
@@ -1690,6 +2099,7 @@ pub mod list_alarm_recommendations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1722,6 +2132,7 @@ pub struct ImportResourcesToDraftAppVersionOutput  {
     /// <p> A list of terraform file s3 URLs you need to import. </p>
     #[doc(hidden)]
     pub terraform_sources: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
+    _request_id: Option<String>,
 }
 impl ImportResourcesToDraftAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1745,6 +2156,11 @@ impl ImportResourcesToDraftAppVersionOutput {
         self.terraform_sources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportResourcesToDraftAppVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
 pub mod import_resources_to_draft_app_version_output {
     
@@ -1757,6 +2173,7 @@ pub mod import_resources_to_draft_app_version_output {
         pub(crate) source_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::ResourceImportStatusType>,
         pub(crate) terraform_sources: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1816,6 +2233,15 @@ pub mod import_resources_to_draft_app_version_output {
         pub fn set_terraform_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::TerraformSource>>) -> Self {
             self.terraform_sources = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionOutput`](crate::output::ImportResourcesToDraftAppVersionOutput).
         pub fn build(self) -> crate::output::ImportResourcesToDraftAppVersionOutput {
             crate::output::ImportResourcesToDraftAppVersionOutput {
@@ -1829,6 +2255,7 @@ pub mod import_resources_to_draft_app_version_output {
                 ,
                 terraform_sources: self.terraform_sources
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1849,6 +2276,7 @@ pub struct DescribeResiliencyPolicyOutput  {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
+    _request_id: Option<String>,
 }
 impl DescribeResiliencyPolicyOutput {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
@@ -1856,6 +2284,11 @@ impl DescribeResiliencyPolicyOutput {
         self.policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeResiliencyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
 pub mod describe_resiliency_policy_output {
     
@@ -1864,6 +2297,7 @@ pub mod describe_resiliency_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResiliencyPolicy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
@@ -1875,11 +2309,21 @@ pub mod describe_resiliency_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeResiliencyPolicyOutput`](crate::output::DescribeResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::DescribeResiliencyPolicyOutput {
             crate::output::DescribeResiliencyPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1912,6 +2356,7 @@ pub struct DescribeDraftAppVersionResourcesImportStatusOutput  {
     /// <p>The returned error message for the request.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1935,6 +2380,11 @@ impl DescribeDraftAppVersionResourcesImportStatusOutput {
         self.error_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDraftAppVersionResourcesImportStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
 pub mod describe_draft_app_version_resources_import_status_output {
     
@@ -1947,6 +2397,7 @@ pub mod describe_draft_app_version_resources_import_status_output {
         pub(crate) status: std::option::Option<crate::model::ResourceImportStatusType>,
         pub(crate) status_change_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -1994,6 +2445,15 @@ pub mod describe_draft_app_version_resources_import_status_output {
         pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::output::DescribeDraftAppVersionResourcesImportStatusOutput).
         pub fn build(self) -> crate::output::DescribeDraftAppVersionResourcesImportStatusOutput {
             crate::output::DescribeDraftAppVersionResourcesImportStatusOutput {
@@ -2007,6 +2467,7 @@ pub mod describe_draft_app_version_resources_import_status_output {
                 ,
                 error_message: self.error_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2033,6 +2494,7 @@ pub struct DescribeAppVersionTemplateOutput  {
     /// <p>The body of the template.</p>
     #[doc(hidden)]
     pub app_template_body: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAppVersionTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2048,6 +2510,11 @@ impl DescribeAppVersionTemplateOutput {
         self.app_template_body.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAppVersionTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
 pub mod describe_app_version_template_output {
     
@@ -2058,6 +2525,7 @@ pub mod describe_app_version_template_output {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
         pub(crate) app_template_body: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2087,6 +2555,15 @@ pub mod describe_app_version_template_output {
         pub fn set_app_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_template_body = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAppVersionTemplateOutput`](crate::output::DescribeAppVersionTemplateOutput).
         pub fn build(self) -> crate::output::DescribeAppVersionTemplateOutput {
             crate::output::DescribeAppVersionTemplateOutput {
@@ -2096,6 +2573,7 @@ pub mod describe_app_version_template_output {
                 ,
                 app_template_body: self.app_template_body
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2128,6 +2606,7 @@ pub struct DescribeAppVersionResourcesResolutionStatusOutput  {
     /// <p>The returned error message for the request.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2151,6 +2630,11 @@ impl DescribeAppVersionResourcesResolutionStatusOutput {
         self.error_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAppVersionResourcesResolutionStatusOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
 pub mod describe_app_version_resources_resolution_status_output {
     
@@ -2163,6 +2647,7 @@ pub mod describe_app_version_resources_resolution_status_output {
         pub(crate) resolution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ResourceResolutionStatusType>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2210,6 +2695,15 @@ pub mod describe_app_version_resources_resolution_status_output {
         pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::output::DescribeAppVersionResourcesResolutionStatusOutput).
         pub fn build(self) -> crate::output::DescribeAppVersionResourcesResolutionStatusOutput {
             crate::output::DescribeAppVersionResourcesResolutionStatusOutput {
@@ -2223,6 +2717,7 @@ pub mod describe_app_version_resources_resolution_status_output {
                 ,
                 error_message: self.error_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2243,6 +2738,7 @@ pub struct DescribeAppAssessmentOutput  {
     /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::model::AppAssessment>,
+    _request_id: Option<String>,
 }
 impl DescribeAppAssessmentOutput {
     /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
@@ -2250,6 +2746,11 @@ impl DescribeAppAssessmentOutput {
         self.assessment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAppAssessmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
 pub mod describe_app_assessment_output {
     
@@ -2258,6 +2759,7 @@ pub mod describe_app_assessment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment: std::option::Option<crate::model::AppAssessment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
@@ -2269,11 +2771,21 @@ pub mod describe_app_assessment_output {
         pub fn set_assessment(mut self, input: std::option::Option<crate::model::AppAssessment>) -> Self {
             self.assessment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAppAssessmentOutput`](crate::output::DescribeAppAssessmentOutput).
         pub fn build(self) -> crate::output::DescribeAppAssessmentOutput {
             crate::output::DescribeAppAssessmentOutput {
                 assessment: self.assessment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2294,6 +2806,7 @@ pub struct DescribeAppOutput  {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl DescribeAppOutput {
     /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -2301,6 +2814,11 @@ impl DescribeAppOutput {
         self.app.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAppOutput`](crate::output::DescribeAppOutput).
 pub mod describe_app_output {
     
@@ -2309,6 +2827,7 @@ pub mod describe_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The specified application, returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -2320,11 +2839,21 @@ pub mod describe_app_output {
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::output::DescribeAppOutput).
         pub fn build(self) -> crate::output::DescribeAppOutput {
             crate::output::DescribeAppOutput {
                 app: self.app
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2345,6 +2874,7 @@ pub struct DeleteResiliencyPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteResiliencyPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2352,6 +2882,11 @@ impl DeleteResiliencyPolicyOutput {
         self.policy_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResiliencyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
 pub mod delete_resiliency_policy_output {
     
@@ -2360,6 +2895,7 @@ pub mod delete_resiliency_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2371,11 +2907,21 @@ pub mod delete_resiliency_policy_output {
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteResiliencyPolicyOutput`](crate::output::DeleteResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::DeleteResiliencyPolicyOutput {
             crate::output::DeleteResiliencyPolicyOutput {
                 policy_arn: self.policy_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2399,6 +2945,7 @@ pub struct DeleteRecommendationTemplateOutput  {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::RecommendationTemplateStatus>,
+    _request_id: Option<String>,
 }
 impl DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -2410,6 +2957,11 @@ impl DeleteRecommendationTemplateOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRecommendationTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
 pub mod delete_recommendation_template_output {
     
@@ -2419,6 +2971,7 @@ pub mod delete_recommendation_template_output {
     pub struct Builder {
         pub(crate) recommendation_template_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecommendationTemplateStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -2439,6 +2992,15 @@ pub mod delete_recommendation_template_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::RecommendationTemplateStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteRecommendationTemplateOutput`](crate::output::DeleteRecommendationTemplateOutput).
         pub fn build(self) -> crate::output::DeleteRecommendationTemplateOutput {
             crate::output::DeleteRecommendationTemplateOutput {
@@ -2446,6 +3008,7 @@ pub mod delete_recommendation_template_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2469,6 +3032,7 @@ pub struct DeleteAppAssessmentOutput  {
     /// <p>The current status of the assessment for the resiliency policy.</p>
     #[doc(hidden)]
     pub assessment_status: std::option::Option<crate::model::AssessmentStatus>,
+    _request_id: Option<String>,
 }
 impl DeleteAppAssessmentOutput {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2480,6 +3044,11 @@ impl DeleteAppAssessmentOutput {
         self.assessment_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAppAssessmentOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
 pub mod delete_app_assessment_output {
     
@@ -2489,6 +3058,7 @@ pub mod delete_app_assessment_output {
     pub struct Builder {
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
         pub(crate) assessment_status: std::option::Option<crate::model::AssessmentStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2509,6 +3079,15 @@ pub mod delete_app_assessment_output {
         pub fn set_assessment_status(mut self, input: std::option::Option<crate::model::AssessmentStatus>) -> Self {
             self.assessment_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAppAssessmentOutput`](crate::output::DeleteAppAssessmentOutput).
         pub fn build(self) -> crate::output::DeleteAppAssessmentOutput {
             crate::output::DeleteAppAssessmentOutput {
@@ -2516,6 +3095,7 @@ pub mod delete_app_assessment_output {
                 ,
                 assessment_status: self.assessment_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2536,6 +3116,7 @@ pub struct DeleteAppOutput  {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteAppOutput {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2543,6 +3124,11 @@ impl DeleteAppOutput {
         self.app_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
 pub mod delete_app_output {
     
@@ -2551,6 +3137,7 @@ pub mod delete_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2562,11 +3149,21 @@ pub mod delete_app_output {
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
             crate::output::DeleteAppOutput {
                 app_arn: self.app_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2587,6 +3184,7 @@ pub struct CreateResiliencyPolicyOutput  {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
+    _request_id: Option<String>,
 }
 impl CreateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
@@ -2594,6 +3192,11 @@ impl CreateResiliencyPolicyOutput {
         self.policy.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResiliencyPolicyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
 pub mod create_resiliency_policy_output {
     
@@ -2602,6 +3205,7 @@ pub mod create_resiliency_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::ResiliencyPolicy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The type of resiliency policy that was created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
@@ -2613,11 +3217,21 @@ pub mod create_resiliency_policy_output {
         pub fn set_policy(mut self, input: std::option::Option<crate::model::ResiliencyPolicy>) -> Self {
             self.policy = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateResiliencyPolicyOutput`](crate::output::CreateResiliencyPolicyOutput).
         pub fn build(self) -> crate::output::CreateResiliencyPolicyOutput {
             crate::output::CreateResiliencyPolicyOutput {
                 policy: self.policy
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2638,6 +3252,7 @@ pub struct CreateRecommendationTemplateOutput  {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
     #[doc(hidden)]
     pub recommendation_template: std::option::Option<crate::model::RecommendationTemplate>,
+    _request_id: Option<String>,
 }
 impl CreateRecommendationTemplateOutput {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
@@ -2645,6 +3260,11 @@ impl CreateRecommendationTemplateOutput {
         self.recommendation_template.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRecommendationTemplateOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
 pub mod create_recommendation_template_output {
     
@@ -2653,6 +3273,7 @@ pub mod create_recommendation_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_template: std::option::Option<crate::model::RecommendationTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
@@ -2664,11 +3285,21 @@ pub mod create_recommendation_template_output {
         pub fn set_recommendation_template(mut self, input: std::option::Option<crate::model::RecommendationTemplate>) -> Self {
             self.recommendation_template = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateRecommendationTemplateOutput`](crate::output::CreateRecommendationTemplateOutput).
         pub fn build(self) -> crate::output::CreateRecommendationTemplateOutput {
             crate::output::CreateRecommendationTemplateOutput {
                 recommendation_template: self.recommendation_template
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2689,6 +3320,7 @@ pub struct CreateAppOutput  {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl CreateAppOutput {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -2696,6 +3328,11 @@ impl CreateAppOutput {
         self.app.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAppOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).
 pub mod create_app_output {
     
@@ -2704,6 +3341,7 @@ pub mod create_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
@@ -2715,11 +3353,21 @@ pub mod create_app_output {
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAppOutput`](crate::output::CreateAppOutput).
         pub fn build(self) -> crate::output::CreateAppOutput {
             crate::output::CreateAppOutput {
                 app: self.app
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2746,6 +3394,7 @@ pub struct AddDraftAppVersionResourceMappingsOutput  {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     #[doc(hidden)]
     pub resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
+    _request_id: Option<String>,
 }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2761,6 +3410,11 @@ impl AddDraftAppVersionResourceMappingsOutput {
         self.resource_mappings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddDraftAppVersionResourceMappingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
 pub mod add_draft_app_version_resource_mappings_output {
     
@@ -2771,6 +3425,7 @@ pub mod add_draft_app_version_resource_mappings_output {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
         pub(crate) resource_mappings: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2806,6 +3461,15 @@ pub mod add_draft_app_version_resource_mappings_output {
         pub fn set_resource_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>) -> Self {
             self.resource_mappings = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddDraftAppVersionResourceMappingsOutput`](crate::output::AddDraftAppVersionResourceMappingsOutput).
         pub fn build(self) -> crate::output::AddDraftAppVersionResourceMappingsOutput {
             crate::output::AddDraftAppVersionResourceMappingsOutput {
@@ -2815,6 +3479,7 @@ pub mod add_draft_app_version_resource_mappings_output {
                 ,
                 resource_mappings: self.resource_mappings
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopHumanLoopOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopHumanLoopOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
 pub mod stop_human_loop_output {
     
@@ -11,11 +17,22 @@ pub mod stop_human_loop_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
         pub fn build(self) -> crate::output::StopHumanLoopOutput {
             crate::output::StopHumanLoopOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -36,6 +53,7 @@ pub struct StartHumanLoopOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     #[doc(hidden)]
     pub human_loop_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartHumanLoopOutput {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
@@ -43,6 +61,11 @@ impl StartHumanLoopOutput {
         self.human_loop_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartHumanLoopOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
 pub mod start_human_loop_output {
     
@@ -51,6 +74,7 @@ pub mod start_human_loop_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
@@ -62,11 +86,21 @@ pub mod start_human_loop_output {
         pub fn set_human_loop_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.human_loop_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
         pub fn build(self) -> crate::output::StartHumanLoopOutput {
             crate::output::StartHumanLoopOutput {
                 human_loop_arn: self.human_loop_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -90,6 +124,7 @@ pub struct ListHumanLoopsOutput  {
     /// <p>A token to display the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListHumanLoopsOutput {
     /// <p>An array of objects that contain information about the human loops.</p>
@@ -101,6 +136,11 @@ impl ListHumanLoopsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHumanLoopsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
 pub mod list_human_loops_output {
     
@@ -110,6 +150,7 @@ pub mod list_human_loops_output {
     pub struct Builder {
         pub(crate) human_loop_summaries: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `human_loop_summaries`.
@@ -136,6 +177,15 @@ pub mod list_human_loops_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
         pub fn build(self) -> crate::output::ListHumanLoopsOutput {
             crate::output::ListHumanLoopsOutput {
@@ -143,6 +193,7 @@ pub mod list_human_loops_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -185,6 +236,7 @@ pub struct DescribeHumanLoopOutput  {
     /// <p>An object that contains information about the output of the human loop.</p>
     #[doc(hidden)]
     pub human_loop_output: std::option::Option<crate::model::HumanLoopOutput>,
+    _request_id: Option<String>,
 }
 impl DescribeHumanLoopOutput {
     /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
@@ -221,6 +273,11 @@ impl DescribeHumanLoopOutput {
         self.human_loop_output.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHumanLoopOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
 pub mod describe_human_loop_output {
     
@@ -236,6 +293,7 @@ pub mod describe_human_loop_output {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
         pub(crate) human_loop_output: std::option::Option<crate::model::HumanLoopOutput>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
@@ -312,6 +370,15 @@ pub mod describe_human_loop_output {
         pub fn set_human_loop_output(mut self, input: std::option::Option<crate::model::HumanLoopOutput>) -> Self {
             self.human_loop_output = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
         pub fn build(self) -> crate::output::DescribeHumanLoopOutput {
             crate::output::DescribeHumanLoopOutput {
@@ -331,6 +398,7 @@ pub mod describe_human_loop_output {
                 ,
                 human_loop_output: self.human_loop_output
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -348,7 +416,13 @@ impl DescribeHumanLoopOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteHumanLoopOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteHumanLoopOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
 pub mod delete_human_loop_output {
     
@@ -356,11 +430,22 @@ pub mod delete_human_loop_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
         pub fn build(self) -> crate::output::DeleteHumanLoopOutput {
             crate::output::DeleteHumanLoopOutput {
+                _request_id: self._request_id,
             }
         }
     }

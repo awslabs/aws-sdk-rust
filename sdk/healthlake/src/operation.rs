@@ -22,6 +22,7 @@ impl CreateFHIRDatastore {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFHIRDatastore {
                 type Output = std::result::Result<crate::output::CreateFhirDatastoreOutput, crate::error::CreateFHIRDatastoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_fhir_datastore_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteFHIRDatastore {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFHIRDatastore {
                 type Output = std::result::Result<crate::output::DeleteFhirDatastoreOutput, crate::error::DeleteFHIRDatastoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_fhir_datastore_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeFHIRDatastore {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRDatastore {
                 type Output = std::result::Result<crate::output::DescribeFhirDatastoreOutput, crate::error::DescribeFHIRDatastoreError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_fhir_datastore_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeFHIRExportJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRExportJob {
                 type Output = std::result::Result<crate::output::DescribeFhirExportJobOutput, crate::error::DescribeFHIRExportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_fhir_export_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeFHIRImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRImportJob {
                 type Output = std::result::Result<crate::output::DescribeFhirImportJobOutput, crate::error::DescribeFHIRImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_fhir_import_job_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListFHIRDatastores {
 impl aws_smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
                 type Output = std::result::Result<crate::output::ListFhirDatastoresOutput, crate::error::ListFHIRDatastoresError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_fhir_datastores_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListFHIRExportJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
                 type Output = std::result::Result<crate::output::ListFhirExportJobsOutput, crate::error::ListFHIRExportJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_fhir_export_jobs_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListFHIRImportJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListFHIRImportJobs {
                 type Output = std::result::Result<crate::output::ListFhirImportJobsOutput, crate::error::ListFHIRImportJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_fhir_import_jobs_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl StartFHIRExportJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartFHIRExportJob {
                 type Output = std::result::Result<crate::output::StartFhirExportJobOutput, crate::error::StartFHIRExportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_fhir_export_job_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl StartFHIRImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartFHIRImportJob {
                 type Output = std::result::Result<crate::output::StartFhirImportJobOutput, crate::error::StartFHIRImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_fhir_import_job_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

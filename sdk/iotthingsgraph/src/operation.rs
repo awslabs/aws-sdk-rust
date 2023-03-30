@@ -22,6 +22,7 @@ impl AssociateEntityToThing {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateEntityToThing {
                 type Output = std::result::Result<crate::output::AssociateEntityToThingOutput, crate::error::AssociateEntityToThingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_entity_to_thing_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateFlowTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFlowTemplate {
                 type Output = std::result::Result<crate::output::CreateFlowTemplateOutput, crate::error::CreateFlowTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_flow_template_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateSystemInstance {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSystemInstance {
                 type Output = std::result::Result<crate::output::CreateSystemInstanceOutput, crate::error::CreateSystemInstanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_system_instance_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateSystemTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSystemTemplate {
                 type Output = std::result::Result<crate::output::CreateSystemTemplateOutput, crate::error::CreateSystemTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_system_template_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteFlowTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFlowTemplate {
                 type Output = std::result::Result<crate::output::DeleteFlowTemplateOutput, crate::error::DeleteFlowTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_flow_template_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteNamespace {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
                 type Output = std::result::Result<crate::output::DeleteNamespaceOutput, crate::error::DeleteNamespaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_namespace_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteSystemInstance {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemInstance {
                 type Output = std::result::Result<crate::output::DeleteSystemInstanceOutput, crate::error::DeleteSystemInstanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_system_instance_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteSystemTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemTemplate {
                 type Output = std::result::Result<crate::output::DeleteSystemTemplateOutput, crate::error::DeleteSystemTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_system_template_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeploySystemInstance {
 impl aws_smithy_http::response::ParseStrictResponse for DeploySystemInstance {
                 type Output = std::result::Result<crate::output::DeploySystemInstanceOutput, crate::error::DeploySystemInstanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deploy_system_instance_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeprecateFlowTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeprecateFlowTemplate {
                 type Output = std::result::Result<crate::output::DeprecateFlowTemplateOutput, crate::error::DeprecateFlowTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprecate_flow_template_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeprecateSystemTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeprecateSystemTemplate {
                 type Output = std::result::Result<crate::output::DeprecateSystemTemplateOutput, crate::error::DeprecateSystemTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deprecate_system_template_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeNamespace {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeNamespace {
                 type Output = std::result::Result<crate::output::DescribeNamespaceOutput, crate::error::DescribeNamespaceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_namespace_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DissociateEntityFromThing {
 impl aws_smithy_http::response::ParseStrictResponse for DissociateEntityFromThing {
                 type Output = std::result::Result<crate::output::DissociateEntityFromThingOutput, crate::error::DissociateEntityFromThingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_dissociate_entity_from_thing_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl GetEntities {
 impl aws_smithy_http::response::ParseStrictResponse for GetEntities {
                 type Output = std::result::Result<crate::output::GetEntitiesOutput, crate::error::GetEntitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_entities_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetFlowTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplate {
                 type Output = std::result::Result<crate::output::GetFlowTemplateOutput, crate::error::GetFlowTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_flow_template_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetFlowTemplateRevisions {
 impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplateRevisions {
                 type Output = std::result::Result<crate::output::GetFlowTemplateRevisionsOutput, crate::error::GetFlowTemplateRevisionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_flow_template_revisions_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetNamespaceDeletionStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetNamespaceDeletionStatus {
                 type Output = std::result::Result<crate::output::GetNamespaceDeletionStatusOutput, crate::error::GetNamespaceDeletionStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_namespace_deletion_status_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetSystemInstance {
 impl aws_smithy_http::response::ParseStrictResponse for GetSystemInstance {
                 type Output = std::result::Result<crate::output::GetSystemInstanceOutput, crate::error::GetSystemInstanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_system_instance_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetSystemTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplate {
                 type Output = std::result::Result<crate::output::GetSystemTemplateOutput, crate::error::GetSystemTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_system_template_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetSystemTemplateRevisions {
 impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplateRevisions {
                 type Output = std::result::Result<crate::output::GetSystemTemplateRevisionsOutput, crate::error::GetSystemTemplateRevisionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_system_template_revisions_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetUploadStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetUploadStatus {
                 type Output = std::result::Result<crate::output::GetUploadStatusOutput, crate::error::GetUploadStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_upload_status_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListFlowExecutionMessages {
 impl aws_smithy_http::response::ParseStrictResponse for ListFlowExecutionMessages {
                 type Output = std::result::Result<crate::output::ListFlowExecutionMessagesOutput, crate::error::ListFlowExecutionMessagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_flow_execution_messages_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl SearchEntities {
 impl aws_smithy_http::response::ParseStrictResponse for SearchEntities {
                 type Output = std::result::Result<crate::output::SearchEntitiesOutput, crate::error::SearchEntitiesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_entities_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl SearchFlowExecutions {
 impl aws_smithy_http::response::ParseStrictResponse for SearchFlowExecutions {
                 type Output = std::result::Result<crate::output::SearchFlowExecutionsOutput, crate::error::SearchFlowExecutionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_flow_executions_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl SearchFlowTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for SearchFlowTemplates {
                 type Output = std::result::Result<crate::output::SearchFlowTemplatesOutput, crate::error::SearchFlowTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_flow_templates_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl SearchSystemInstances {
 impl aws_smithy_http::response::ParseStrictResponse for SearchSystemInstances {
                 type Output = std::result::Result<crate::output::SearchSystemInstancesOutput, crate::error::SearchSystemInstancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_system_instances_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl SearchSystemTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for SearchSystemTemplates {
                 type Output = std::result::Result<crate::output::SearchSystemTemplatesOutput, crate::error::SearchSystemTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_system_templates_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl SearchThings {
 impl aws_smithy_http::response::ParseStrictResponse for SearchThings {
                 type Output = std::result::Result<crate::output::SearchThingsOutput, crate::error::SearchThingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_search_things_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UndeploySystemInstance {
 impl aws_smithy_http::response::ParseStrictResponse for UndeploySystemInstance {
                 type Output = std::result::Result<crate::output::UndeploySystemInstanceOutput, crate::error::UndeploySystemInstanceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_undeploy_system_instance_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl UpdateFlowTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowTemplate {
                 type Output = std::result::Result<crate::output::UpdateFlowTemplateOutput, crate::error::UpdateFlowTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_flow_template_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl UpdateSystemTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSystemTemplate {
                 type Output = std::result::Result<crate::output::UpdateSystemTemplateOutput, crate::error::UpdateSystemTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_system_template_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UploadEntityDefinitions {
 impl aws_smithy_http::response::ParseStrictResponse for UploadEntityDefinitions {
                 type Output = std::result::Result<crate::output::UploadEntityDefinitionsOutput, crate::error::UploadEntityDefinitionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_upload_entity_definitions_error(response)
                      } else {

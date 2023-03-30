@@ -22,6 +22,7 @@ impl DescribeReportCreation {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReportCreation {
                 type Output = std::result::Result<crate::output::DescribeReportCreationOutput, crate::error::DescribeReportCreationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_report_creation_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetComplianceSummary {
 impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummary {
                 type Output = std::result::Result<crate::output::GetComplianceSummaryOutput, crate::error::GetComplianceSummaryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compliance_summary_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetResources {
 impl aws_smithy_http::response::ParseStrictResponse for GetResources {
                 type Output = std::result::Result<crate::output::GetResourcesOutput, crate::error::GetResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resources_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetTagKeys {
 impl aws_smithy_http::response::ParseStrictResponse for GetTagKeys {
                 type Output = std::result::Result<crate::output::GetTagKeysOutput, crate::error::GetTagKeysError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_tag_keys_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetTagValues {
 impl aws_smithy_http::response::ParseStrictResponse for GetTagValues {
                 type Output = std::result::Result<crate::output::GetTagValuesOutput, crate::error::GetTagValuesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_tag_values_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl StartReportCreation {
 impl aws_smithy_http::response::ParseStrictResponse for StartReportCreation {
                 type Output = std::result::Result<crate::output::StartReportCreationOutput, crate::error::StartReportCreationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_report_creation_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl TagResources {
 impl aws_smithy_http::response::ParseStrictResponse for TagResources {
                 type Output = std::result::Result<crate::output::TagResourcesOutput, crate::error::TagResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resources_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl UntagResources {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResources {
                 type Output = std::result::Result<crate::output::UntagResourcesOutput, crate::error::UntagResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resources_error(response)
                      } else {

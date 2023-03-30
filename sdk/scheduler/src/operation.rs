@@ -22,6 +22,7 @@ impl CreateSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSchedule {
                 type Output = std::result::Result<crate::output::CreateScheduleOutput, crate::error::CreateScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_schedule_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateScheduleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateScheduleGroup {
                 type Output = std::result::Result<crate::output::CreateScheduleGroupOutput, crate::error::CreateScheduleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_schedule_group_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
                 type Output = std::result::Result<crate::output::DeleteScheduleOutput, crate::error::DeleteScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_schedule_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteScheduleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduleGroup {
                 type Output = std::result::Result<crate::output::DeleteScheduleGroupOutput, crate::error::DeleteScheduleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_schedule_group_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for GetSchedule {
                 type Output = std::result::Result<crate::output::GetScheduleOutput, crate::error::GetScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_schedule_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetScheduleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetScheduleGroup {
                 type Output = std::result::Result<crate::output::GetScheduleGroupOutput, crate::error::GetScheduleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_schedule_group_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListScheduleGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListScheduleGroups {
                 type Output = std::result::Result<crate::output::ListScheduleGroupsOutput, crate::error::ListScheduleGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_schedule_groups_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListSchedules {
 impl aws_smithy_http::response::ParseStrictResponse for ListSchedules {
                 type Output = std::result::Result<crate::output::ListSchedulesOutput, crate::error::ListSchedulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_schedules_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UpdateSchedule {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSchedule {
                 type Output = std::result::Result<crate::output::UpdateScheduleOutput, crate::error::UpdateScheduleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_schedule_error(response)
                      } else {

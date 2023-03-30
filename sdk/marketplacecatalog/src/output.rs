@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -69,6 +103,7 @@ pub struct StartChangeSetOutput  {
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
     #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartChangeSetOutput {
     /// <p>Unique identifier generated for the request.</p>
@@ -80,6 +115,11 @@ impl StartChangeSetOutput {
         self.change_set_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartChangeSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
 pub mod start_change_set_output {
     
@@ -89,6 +129,7 @@ pub mod start_change_set_output {
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Unique identifier generated for the request.</p>
@@ -109,6 +150,15 @@ pub mod start_change_set_output {
         pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_set_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
         pub fn build(self) -> crate::output::StartChangeSetOutput {
             crate::output::StartChangeSetOutput {
@@ -116,6 +166,7 @@ pub mod start_change_set_output {
                 ,
                 change_set_arn: self.change_set_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -139,6 +190,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
@@ -150,6 +202,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -159,6 +216,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
@@ -185,6 +243,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -192,6 +259,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -215,6 +283,7 @@ pub struct ListEntitiesOutput  {
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntitiesOutput {
     /// <p> Array of <code>EntitySummary</code> object.</p>
@@ -226,6 +295,11 @@ impl ListEntitiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
 pub mod list_entities_output {
     
@@ -235,6 +309,7 @@ pub mod list_entities_output {
     pub struct Builder {
         pub(crate) entity_summary_list: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entity_summary_list`.
@@ -261,6 +336,15 @@ pub mod list_entities_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
         pub fn build(self) -> crate::output::ListEntitiesOutput {
             crate::output::ListEntitiesOutput {
@@ -268,6 +352,7 @@ pub mod list_entities_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -291,6 +376,7 @@ pub struct ListChangeSetsOutput  {
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
@@ -302,6 +388,11 @@ impl ListChangeSetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListChangeSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
 pub mod list_change_sets_output {
     
@@ -311,6 +402,7 @@ pub mod list_change_sets_output {
     pub struct Builder {
         pub(crate) change_set_summary_list: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `change_set_summary_list`.
@@ -337,6 +429,15 @@ pub mod list_change_sets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
         pub fn build(self) -> crate::output::ListChangeSetsOutput {
             crate::output::ListChangeSetsOutput {
@@ -344,6 +445,7 @@ pub mod list_change_sets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -376,6 +478,7 @@ pub struct DescribeEntityOutput  {
     /// <p>This stringified JSON object includes the details of the entity.</p>
     #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
@@ -399,6 +502,11 @@ impl DescribeEntityOutput {
         self.details.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEntityOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
 pub mod describe_entity_output {
     
@@ -411,6 +519,7 @@ pub mod describe_entity_output {
         pub(crate) entity_arn: std::option::Option<std::string::String>,
         pub(crate) last_modified_date: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
@@ -458,6 +567,15 @@ pub mod describe_entity_output {
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
         pub fn build(self) -> crate::output::DescribeEntityOutput {
             crate::output::DescribeEntityOutput {
@@ -471,6 +589,7 @@ pub mod describe_entity_output {
                 ,
                 details: self.details
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -515,6 +634,7 @@ pub struct DescribeChangeSetOutput  {
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
     #[doc(hidden)]
     pub change_set: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
+    _request_id: Option<String>,
 }
 impl DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
@@ -554,6 +674,11 @@ impl DescribeChangeSetOutput {
         self.change_set.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeChangeSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
 pub mod describe_change_set_output {
     
@@ -570,6 +695,7 @@ pub mod describe_change_set_output {
         pub(crate) failure_code: std::option::Option<crate::model::FailureCode>,
         pub(crate) failure_description: std::option::Option<std::string::String>,
         pub(crate) change_set: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Required. The unique identifier for the change set referenced in this request.</p>
@@ -659,6 +785,15 @@ pub mod describe_change_set_output {
         pub fn set_change_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>) -> Self {
             self.change_set = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
         pub fn build(self) -> crate::output::DescribeChangeSetOutput {
             crate::output::DescribeChangeSetOutput {
@@ -680,6 +815,7 @@ pub mod describe_change_set_output {
                 ,
                 change_set: self.change_set
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -703,6 +839,7 @@ pub struct CancelChangeSetOutput  {
     /// <p>The ARN associated with the change set referenced in this request.</p>
     #[doc(hidden)]
     pub change_set_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelChangeSetOutput {
     /// <p>The unique identifier for the change set referenced in this request.</p>
@@ -714,6 +851,11 @@ impl CancelChangeSetOutput {
         self.change_set_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelChangeSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
 pub mod cancel_change_set_output {
     
@@ -723,6 +865,7 @@ pub mod cancel_change_set_output {
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier for the change set referenced in this request.</p>
@@ -743,6 +886,15 @@ pub mod cancel_change_set_output {
         pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_set_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
         pub fn build(self) -> crate::output::CancelChangeSetOutput {
             crate::output::CancelChangeSetOutput {
@@ -750,6 +902,7 @@ pub mod cancel_change_set_output {
                 ,
                 change_set_arn: self.change_set_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }

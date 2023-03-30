@@ -22,6 +22,7 @@ impl CreateSavingsPlan {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSavingsPlan {
                 type Output = std::result::Result<crate::output::CreateSavingsPlanOutput, crate::error::CreateSavingsPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_savings_plan_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteQueuedSavingsPlan {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedSavingsPlan {
                 type Output = std::result::Result<crate::output::DeleteQueuedSavingsPlanOutput, crate::error::DeleteQueuedSavingsPlanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_queued_savings_plan_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeSavingsPlanRates {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlanRates {
                 type Output = std::result::Result<crate::output::DescribeSavingsPlanRatesOutput, crate::error::DescribeSavingsPlanRatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_savings_plan_rates_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DescribeSavingsPlans {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlans {
                 type Output = std::result::Result<crate::output::DescribeSavingsPlansOutput, crate::error::DescribeSavingsPlansError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_savings_plans_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DescribeSavingsPlansOfferingRates {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOfferingRates {
                 type Output = std::result::Result<crate::output::DescribeSavingsPlansOfferingRatesOutput, crate::error::DescribeSavingsPlansOfferingRatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_savings_plans_offering_rates_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeSavingsPlansOfferings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOfferings {
                 type Output = std::result::Result<crate::output::DescribeSavingsPlansOfferingsOutput, crate::error::DescribeSavingsPlansOfferingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_savings_plans_offerings_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

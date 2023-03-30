@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeLensReviewOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpgradeLensReviewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
 pub mod upgrade_lens_review_output {
     
@@ -11,11 +17,22 @@ pub mod upgrade_lens_review_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
         pub fn build(self) -> crate::output::UpgradeLensReviewOutput {
             crate::output::UpgradeLensReviewOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -39,6 +56,7 @@ pub struct UpdateWorkloadShareOutput  {
     /// <p>A workload share return object.</p>
     #[doc(hidden)]
     pub workload_share: std::option::Option<crate::model::WorkloadShare>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -50,6 +68,11 @@ impl UpdateWorkloadShareOutput {
         self.workload_share.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
 pub mod update_workload_share_output {
     
@@ -59,6 +82,7 @@ pub mod update_workload_share_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) workload_share: std::option::Option<crate::model::WorkloadShare>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -79,6 +103,15 @@ pub mod update_workload_share_output {
         pub fn set_workload_share(mut self, input: std::option::Option<crate::model::WorkloadShare>) -> Self {
             self.workload_share = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
         pub fn build(self) -> crate::output::UpdateWorkloadShareOutput {
             crate::output::UpdateWorkloadShareOutput {
@@ -86,6 +119,7 @@ pub mod update_workload_share_output {
                 ,
                 workload_share: self.workload_share
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -106,6 +140,7 @@ pub struct UpdateWorkloadOutput  {
     /// <p>A workload return object.</p>
     #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkloadOutput {
     /// <p>A workload return object.</p>
@@ -113,6 +148,11 @@ impl UpdateWorkloadOutput {
         self.workload.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkloadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
 pub mod update_workload_output {
     
@@ -121,6 +161,7 @@ pub mod update_workload_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload: std::option::Option<crate::model::Workload>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A workload return object.</p>
@@ -132,11 +173,21 @@ pub mod update_workload_output {
         pub fn set_workload(mut self, input: std::option::Option<crate::model::Workload>) -> Self {
             self.workload = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
         pub fn build(self) -> crate::output::UpdateWorkloadOutput {
             crate::output::UpdateWorkloadOutput {
                 workload: self.workload
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -157,6 +208,7 @@ pub struct UpdateShareInvitationOutput  {
     /// <p>The updated workload or custom lens share invitation.</p>
     #[doc(hidden)]
     pub share_invitation: std::option::Option<crate::model::ShareInvitation>,
+    _request_id: Option<String>,
 }
 impl UpdateShareInvitationOutput {
     /// <p>The updated workload or custom lens share invitation.</p>
@@ -164,6 +216,11 @@ impl UpdateShareInvitationOutput {
         self.share_invitation.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateShareInvitationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
 pub mod update_share_invitation_output {
     
@@ -172,6 +229,7 @@ pub mod update_share_invitation_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation: std::option::Option<crate::model::ShareInvitation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated workload or custom lens share invitation.</p>
@@ -183,11 +241,21 @@ pub mod update_share_invitation_output {
         pub fn set_share_invitation(mut self, input: std::option::Option<crate::model::ShareInvitation>) -> Self {
             self.share_invitation = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
         pub fn build(self) -> crate::output::UpdateShareInvitationOutput {
             crate::output::UpdateShareInvitationOutput {
                 share_invitation: self.share_invitation
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -211,6 +279,7 @@ pub struct UpdateLensReviewOutput  {
     /// <p>A lens review of a question.</p>
     #[doc(hidden)]
     pub lens_review: std::option::Option<crate::model::LensReview>,
+    _request_id: Option<String>,
 }
 impl UpdateLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -222,6 +291,11 @@ impl UpdateLensReviewOutput {
         self.lens_review.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLensReviewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
 pub mod update_lens_review_output {
     
@@ -231,6 +305,7 @@ pub mod update_lens_review_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) lens_review: std::option::Option<crate::model::LensReview>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -251,6 +326,15 @@ pub mod update_lens_review_output {
         pub fn set_lens_review(mut self, input: std::option::Option<crate::model::LensReview>) -> Self {
             self.lens_review = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
         pub fn build(self) -> crate::output::UpdateLensReviewOutput {
             crate::output::UpdateLensReviewOutput {
@@ -258,6 +342,7 @@ pub mod update_lens_review_output {
                 ,
                 lens_review: self.lens_review
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -275,7 +360,13 @@ impl UpdateLensReviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateGlobalSettingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
 pub mod update_global_settings_output {
     
@@ -283,11 +374,22 @@ pub mod update_global_settings_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
         pub fn build(self) -> crate::output::UpdateGlobalSettingsOutput {
             crate::output::UpdateGlobalSettingsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -320,6 +422,7 @@ pub struct UpdateAnswerOutput  {
     /// <p>An answer of the question.</p>
     #[doc(hidden)]
     pub answer: std::option::Option<crate::model::Answer>,
+    _request_id: Option<String>,
 }
 impl UpdateAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -342,6 +445,11 @@ impl UpdateAnswerOutput {
         self.answer.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAnswerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
 pub mod update_answer_output {
     
@@ -353,6 +461,7 @@ pub mod update_answer_output {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<crate::model::Answer>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -397,6 +506,15 @@ pub mod update_answer_output {
         pub fn set_answer(mut self, input: std::option::Option<crate::model::Answer>) -> Self {
             self.answer = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
         pub fn build(self) -> crate::output::UpdateAnswerOutput {
             crate::output::UpdateAnswerOutput {
@@ -408,6 +526,7 @@ pub mod update_answer_output {
                 ,
                 answer: self.answer
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -425,7 +544,13 @@ impl UpdateAnswerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -433,11 +558,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -455,7 +591,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -463,11 +605,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -494,6 +647,7 @@ pub struct ListWorkloadSharesOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListWorkloadSharesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -509,6 +663,11 @@ impl ListWorkloadSharesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkloadSharesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
 pub mod list_workload_shares_output {
     
@@ -519,6 +678,7 @@ pub mod list_workload_shares_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) workload_share_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -554,6 +714,15 @@ pub mod list_workload_shares_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
         pub fn build(self) -> crate::output::ListWorkloadSharesOutput {
             crate::output::ListWorkloadSharesOutput {
@@ -563,6 +732,7 @@ pub mod list_workload_shares_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -586,6 +756,7 @@ pub struct ListWorkloadsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListWorkloadsOutput {
     /// <p>A list of workload summaries.</p>
@@ -597,6 +768,11 @@ impl ListWorkloadsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkloadsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
 pub mod list_workloads_output {
     
@@ -606,6 +782,7 @@ pub mod list_workloads_output {
     pub struct Builder {
         pub(crate) workload_summaries: std::option::Option<std::vec::Vec<crate::model::WorkloadSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `workload_summaries`.
@@ -632,6 +809,15 @@ pub mod list_workloads_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
         pub fn build(self) -> crate::output::ListWorkloadsOutput {
             crate::output::ListWorkloadsOutput {
@@ -639,6 +825,7 @@ pub mod list_workloads_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -659,6 +846,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
@@ -666,6 +854,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -674,6 +867,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -691,11 +885,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -719,6 +923,7 @@ pub struct ListShareInvitationsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
@@ -730,6 +935,11 @@ impl ListShareInvitationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListShareInvitationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
 pub mod list_share_invitations_output {
     
@@ -739,6 +949,7 @@ pub mod list_share_invitations_output {
     pub struct Builder {
         pub(crate) share_invitation_summaries: std::option::Option<std::vec::Vec<crate::model::ShareInvitationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `share_invitation_summaries`.
@@ -765,6 +976,15 @@ pub mod list_share_invitations_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
         pub fn build(self) -> crate::output::ListShareInvitationsOutput {
             crate::output::ListShareInvitationsOutput {
@@ -772,6 +992,7 @@ pub mod list_share_invitations_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -795,6 +1016,7 @@ pub struct ListNotificationsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListNotificationsOutput {
     /// <p>List of lens notification summaries in a workload.</p>
@@ -806,6 +1028,11 @@ impl ListNotificationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListNotificationsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
 pub mod list_notifications_output {
     
@@ -815,6 +1042,7 @@ pub mod list_notifications_output {
     pub struct Builder {
         pub(crate) notification_summaries: std::option::Option<std::vec::Vec<crate::model::NotificationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `notification_summaries`.
@@ -841,6 +1069,15 @@ pub mod list_notifications_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
         pub fn build(self) -> crate::output::ListNotificationsOutput {
             crate::output::ListNotificationsOutput {
@@ -848,6 +1085,7 @@ pub mod list_notifications_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -874,6 +1112,7 @@ pub struct ListMilestonesOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMilestonesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -889,6 +1128,11 @@ impl ListMilestonesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMilestonesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
 pub mod list_milestones_output {
     
@@ -899,6 +1143,7 @@ pub mod list_milestones_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_summaries: std::option::Option<std::vec::Vec<crate::model::MilestoneSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -934,6 +1179,15 @@ pub mod list_milestones_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
         pub fn build(self) -> crate::output::ListMilestonesOutput {
             crate::output::ListMilestonesOutput {
@@ -943,6 +1197,7 @@ pub mod list_milestones_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -966,6 +1221,7 @@ pub struct ListLensSharesOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLensSharesOutput {
     /// <p>A list of lens share summaries.</p>
@@ -977,6 +1233,11 @@ impl ListLensSharesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLensSharesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
 pub mod list_lens_shares_output {
     
@@ -986,6 +1247,7 @@ pub mod list_lens_shares_output {
     pub struct Builder {
         pub(crate) lens_share_summaries: std::option::Option<std::vec::Vec<crate::model::LensShareSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `lens_share_summaries`.
@@ -1012,6 +1274,15 @@ pub mod list_lens_shares_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
         pub fn build(self) -> crate::output::ListLensSharesOutput {
             crate::output::ListLensSharesOutput {
@@ -1019,6 +1290,7 @@ pub mod list_lens_shares_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1049,6 +1321,7 @@ pub struct ListLensReviewsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLensReviewsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1069,6 +1342,11 @@ impl ListLensReviewsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLensReviewsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
 pub mod list_lens_reviews_output {
     
@@ -1080,6 +1358,7 @@ pub mod list_lens_reviews_output {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_review_summaries: std::option::Option<std::vec::Vec<crate::model::LensReviewSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1126,6 +1405,15 @@ pub mod list_lens_reviews_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
         pub fn build(self) -> crate::output::ListLensReviewsOutput {
             crate::output::ListLensReviewsOutput {
@@ -1138,6 +1426,7 @@ pub mod list_lens_reviews_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1177,6 +1466,7 @@ pub struct ListLensReviewImprovementsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLensReviewImprovementsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1208,6 +1498,11 @@ impl ListLensReviewImprovementsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLensReviewImprovementsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
 pub mod list_lens_review_improvements_output {
     
@@ -1221,6 +1516,7 @@ pub mod list_lens_review_improvements_output {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) improvement_summaries: std::option::Option<std::vec::Vec<crate::model::ImprovementSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1291,6 +1587,15 @@ pub mod list_lens_review_improvements_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
         pub fn build(self) -> crate::output::ListLensReviewImprovementsOutput {
             crate::output::ListLensReviewImprovementsOutput {
@@ -1307,6 +1612,7 @@ pub mod list_lens_review_improvements_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1330,6 +1636,7 @@ pub struct ListLensesOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLensesOutput {
     /// <p>List of lens summaries of available lenses.</p>
@@ -1341,6 +1648,11 @@ impl ListLensesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLensesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLensesOutput`](crate::output::ListLensesOutput).
 pub mod list_lenses_output {
     
@@ -1350,6 +1662,7 @@ pub mod list_lenses_output {
     pub struct Builder {
         pub(crate) lens_summaries: std::option::Option<std::vec::Vec<crate::model::LensSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `lens_summaries`.
@@ -1376,6 +1689,15 @@ pub mod list_lenses_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLensesOutput`](crate::output::ListLensesOutput).
         pub fn build(self) -> crate::output::ListLensesOutput {
             crate::output::ListLensesOutput {
@@ -1383,6 +1705,7 @@ pub mod list_lenses_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1406,6 +1729,7 @@ pub struct ListCheckSummariesOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCheckSummariesOutput {
     /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
@@ -1417,6 +1741,11 @@ impl ListCheckSummariesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCheckSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
 pub mod list_check_summaries_output {
     
@@ -1426,6 +1755,7 @@ pub mod list_check_summaries_output {
     pub struct Builder {
         pub(crate) check_summaries: std::option::Option<std::vec::Vec<crate::model::CheckSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `check_summaries`.
@@ -1452,6 +1782,15 @@ pub mod list_check_summaries_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
         pub fn build(self) -> crate::output::ListCheckSummariesOutput {
             crate::output::ListCheckSummariesOutput {
@@ -1459,6 +1798,7 @@ pub mod list_check_summaries_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1482,6 +1822,7 @@ pub struct ListCheckDetailsOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
@@ -1493,6 +1834,11 @@ impl ListCheckDetailsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCheckDetailsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
 pub mod list_check_details_output {
     
@@ -1502,6 +1848,7 @@ pub mod list_check_details_output {
     pub struct Builder {
         pub(crate) check_details: std::option::Option<std::vec::Vec<crate::model::CheckDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `check_details`.
@@ -1528,6 +1875,15 @@ pub mod list_check_details_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
         pub fn build(self) -> crate::output::ListCheckDetailsOutput {
             crate::output::ListCheckDetailsOutput {
@@ -1535,6 +1891,7 @@ pub mod list_check_details_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1574,6 +1931,7 @@ pub struct ListAnswersOutput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAnswersOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1605,6 +1963,11 @@ impl ListAnswersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAnswersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAnswersOutput`](crate::output::ListAnswersOutput).
 pub mod list_answers_output {
     
@@ -1618,6 +1981,7 @@ pub mod list_answers_output {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer_summaries: std::option::Option<std::vec::Vec<crate::model::AnswerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1688,6 +2052,15 @@ pub mod list_answers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAnswersOutput`](crate::output::ListAnswersOutput).
         pub fn build(self) -> crate::output::ListAnswersOutput {
             crate::output::ListAnswersOutput {
@@ -1704,6 +2077,7 @@ pub mod list_answers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1727,6 +2101,7 @@ pub struct ImportLensOutput  {
     /// <p>The status of the imported lens.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ImportLensStatus>,
+    _request_id: Option<String>,
 }
 impl ImportLensOutput {
     /// <p>The ARN for the lens.</p>
@@ -1738,6 +2113,11 @@ impl ImportLensOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ImportLensOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ImportLensOutput`](crate::output::ImportLensOutput).
 pub mod import_lens_output {
     
@@ -1747,6 +2127,7 @@ pub mod import_lens_output {
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ImportLensStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the lens.</p>
@@ -1767,6 +2148,15 @@ pub mod import_lens_output {
         pub fn set_status(mut self, input: std::option::Option<crate::model::ImportLensStatus>) -> Self {
             self.status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ImportLensOutput`](crate::output::ImportLensOutput).
         pub fn build(self) -> crate::output::ImportLensOutput {
             crate::output::ImportLensOutput {
@@ -1774,6 +2164,7 @@ pub mod import_lens_output {
                 ,
                 status: self.status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1794,6 +2185,7 @@ pub struct GetWorkloadOutput  {
     /// <p>A workload return object.</p>
     #[doc(hidden)]
     pub workload: std::option::Option<crate::model::Workload>,
+    _request_id: Option<String>,
 }
 impl GetWorkloadOutput {
     /// <p>A workload return object.</p>
@@ -1801,6 +2193,11 @@ impl GetWorkloadOutput {
         self.workload.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetWorkloadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
 pub mod get_workload_output {
     
@@ -1809,6 +2206,7 @@ pub mod get_workload_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload: std::option::Option<crate::model::Workload>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A workload return object.</p>
@@ -1820,11 +2218,21 @@ pub mod get_workload_output {
         pub fn set_workload(mut self, input: std::option::Option<crate::model::Workload>) -> Self {
             self.workload = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
         pub fn build(self) -> crate::output::GetWorkloadOutput {
             crate::output::GetWorkloadOutput {
                 workload: self.workload
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1848,6 +2256,7 @@ pub struct GetMilestoneOutput  {
     /// <p>A milestone return object.</p>
     #[doc(hidden)]
     pub milestone: std::option::Option<crate::model::Milestone>,
+    _request_id: Option<String>,
 }
 impl GetMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1859,6 +2268,11 @@ impl GetMilestoneOutput {
         self.milestone.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMilestoneOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
 pub mod get_milestone_output {
     
@@ -1868,6 +2282,7 @@ pub mod get_milestone_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone: std::option::Option<crate::model::Milestone>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1888,6 +2303,15 @@ pub mod get_milestone_output {
         pub fn set_milestone(mut self, input: std::option::Option<crate::model::Milestone>) -> Self {
             self.milestone = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
         pub fn build(self) -> crate::output::GetMilestoneOutput {
             crate::output::GetMilestoneOutput {
@@ -1895,6 +2319,7 @@ pub mod get_milestone_output {
                 ,
                 milestone: self.milestone
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1933,6 +2358,7 @@ pub struct GetLensVersionDifferenceOutput  {
     /// <p>The differences between the base and latest versions of the lens.</p>
     #[doc(hidden)]
     pub version_differences: std::option::Option<crate::model::VersionDifferences>,
+    _request_id: Option<String>,
 }
 impl GetLensVersionDifferenceOutput {
     /// <p>The alias of the lens.</p> 
@@ -1963,6 +2389,11 @@ impl GetLensVersionDifferenceOutput {
         self.version_differences.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLensVersionDifferenceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
 pub mod get_lens_version_difference_output {
     
@@ -1976,6 +2407,7 @@ pub mod get_lens_version_difference_output {
         pub(crate) target_lens_version: std::option::Option<std::string::String>,
         pub(crate) latest_lens_version: std::option::Option<std::string::String>,
         pub(crate) version_differences: std::option::Option<crate::model::VersionDifferences>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The alias of the lens.</p> 
@@ -2038,6 +2470,15 @@ pub mod get_lens_version_difference_output {
         pub fn set_version_differences(mut self, input: std::option::Option<crate::model::VersionDifferences>) -> Self {
             self.version_differences = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
         pub fn build(self) -> crate::output::GetLensVersionDifferenceOutput {
             crate::output::GetLensVersionDifferenceOutput {
@@ -2053,6 +2494,7 @@ pub mod get_lens_version_difference_output {
                 ,
                 version_differences: self.version_differences
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2080,6 +2522,7 @@ pub struct GetLensReviewReportOutput  {
     /// <p>A report of a lens review.</p>
     #[doc(hidden)]
     pub lens_review_report: std::option::Option<crate::model::LensReviewReport>,
+    _request_id: Option<String>,
 }
 impl GetLensReviewReportOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2096,6 +2539,11 @@ impl GetLensReviewReportOutput {
         self.lens_review_report.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLensReviewReportOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
 pub mod get_lens_review_report_output {
     
@@ -2106,6 +2554,7 @@ pub mod get_lens_review_report_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_review_report: std::option::Option<crate::model::LensReviewReport>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2137,6 +2586,15 @@ pub mod get_lens_review_report_output {
         pub fn set_lens_review_report(mut self, input: std::option::Option<crate::model::LensReviewReport>) -> Self {
             self.lens_review_report = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
         pub fn build(self) -> crate::output::GetLensReviewReportOutput {
             crate::output::GetLensReviewReportOutput {
@@ -2147,6 +2605,7 @@ pub mod get_lens_review_report_output {
                 ,
                 lens_review_report: self.lens_review_report
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2174,6 +2633,7 @@ pub struct GetLensReviewOutput  {
     /// <p>A lens review of a question.</p>
     #[doc(hidden)]
     pub lens_review: std::option::Option<crate::model::LensReview>,
+    _request_id: Option<String>,
 }
 impl GetLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2190,6 +2650,11 @@ impl GetLensReviewOutput {
         self.lens_review.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLensReviewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
 pub mod get_lens_review_output {
     
@@ -2200,6 +2665,7 @@ pub mod get_lens_review_output {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) lens_review: std::option::Option<crate::model::LensReview>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2231,6 +2697,15 @@ pub mod get_lens_review_output {
         pub fn set_lens_review(mut self, input: std::option::Option<crate::model::LensReview>) -> Self {
             self.lens_review = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
         pub fn build(self) -> crate::output::GetLensReviewOutput {
             crate::output::GetLensReviewOutput {
@@ -2241,6 +2716,7 @@ pub mod get_lens_review_output {
                 ,
                 lens_review: self.lens_review
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2261,6 +2737,7 @@ pub struct GetLensOutput  {
     /// <p>A lens return object.</p>
     #[doc(hidden)]
     pub lens: std::option::Option<crate::model::Lens>,
+    _request_id: Option<String>,
 }
 impl GetLensOutput {
     /// <p>A lens return object.</p>
@@ -2268,6 +2745,11 @@ impl GetLensOutput {
         self.lens.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLensOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetLensOutput`](crate::output::GetLensOutput).
 pub mod get_lens_output {
     
@@ -2276,6 +2758,7 @@ pub mod get_lens_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens: std::option::Option<crate::model::Lens>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A lens return object.</p>
@@ -2287,11 +2770,21 @@ pub mod get_lens_output {
         pub fn set_lens(mut self, input: std::option::Option<crate::model::Lens>) -> Self {
             self.lens = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetLensOutput`](crate::output::GetLensOutput).
         pub fn build(self) -> crate::output::GetLensOutput {
             crate::output::GetLensOutput {
                 lens: self.lens
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2328,6 +2821,7 @@ pub struct GetAnswerOutput  {
     /// <p>An answer of the question.</p>
     #[doc(hidden)]
     pub answer: std::option::Option<crate::model::Answer>,
+    _request_id: Option<String>,
 }
 impl GetAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2355,6 +2849,11 @@ impl GetAnswerOutput {
         self.answer.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAnswerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAnswerOutput`](crate::output::GetAnswerOutput).
 pub mod get_answer_output {
     
@@ -2367,6 +2866,7 @@ pub mod get_answer_output {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<crate::model::Answer>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2422,6 +2922,15 @@ pub mod get_answer_output {
         pub fn set_answer(mut self, input: std::option::Option<crate::model::Answer>) -> Self {
             self.answer = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAnswerOutput`](crate::output::GetAnswerOutput).
         pub fn build(self) -> crate::output::GetAnswerOutput {
             crate::output::GetAnswerOutput {
@@ -2436,6 +2945,7 @@ pub mod get_answer_output {
                 ,
                 answer: self.answer
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2456,6 +2966,7 @@ pub struct ExportLensOutput  {
     /// <p>The JSON for the lens.</p>
     #[doc(hidden)]
     pub lens_json: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportLensOutput {
     /// <p>The JSON for the lens.</p>
@@ -2463,6 +2974,11 @@ impl ExportLensOutput {
         self.lens_json.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExportLensOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ExportLensOutput`](crate::output::ExportLensOutput).
 pub mod export_lens_output {
     
@@ -2471,6 +2987,7 @@ pub mod export_lens_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_json: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The JSON for the lens.</p>
@@ -2482,11 +2999,21 @@ pub mod export_lens_output {
         pub fn set_lens_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_json = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ExportLensOutput`](crate::output::ExportLensOutput).
         pub fn build(self) -> crate::output::ExportLensOutput {
             crate::output::ExportLensOutput {
                 lens_json: self.lens_json
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2504,7 +3031,13 @@ impl ExportLensOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLensesOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisassociateLensesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
 pub mod disassociate_lenses_output {
     
@@ -2512,11 +3045,22 @@ pub mod disassociate_lenses_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
         pub fn build(self) -> crate::output::DisassociateLensesOutput {
             crate::output::DisassociateLensesOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2534,7 +3078,13 @@ impl DisassociateLensesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkloadShareOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteWorkloadShareOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
 pub mod delete_workload_share_output {
     
@@ -2542,11 +3092,22 @@ pub mod delete_workload_share_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
         pub fn build(self) -> crate::output::DeleteWorkloadShareOutput {
             crate::output::DeleteWorkloadShareOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2564,7 +3125,13 @@ impl DeleteWorkloadShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkloadOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteWorkloadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
 pub mod delete_workload_output {
     
@@ -2572,11 +3139,22 @@ pub mod delete_workload_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
         pub fn build(self) -> crate::output::DeleteWorkloadOutput {
             crate::output::DeleteWorkloadOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2594,7 +3172,13 @@ impl DeleteWorkloadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLensShareOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLensShareOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
 pub mod delete_lens_share_output {
     
@@ -2602,11 +3186,22 @@ pub mod delete_lens_share_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
         pub fn build(self) -> crate::output::DeleteLensShareOutput {
             crate::output::DeleteLensShareOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2624,7 +3219,13 @@ impl DeleteLensShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLensOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLensOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLensOutput`](crate::output::DeleteLensOutput).
 pub mod delete_lens_output {
     
@@ -2632,11 +3233,22 @@ pub mod delete_lens_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLensOutput`](crate::output::DeleteLensOutput).
         pub fn build(self) -> crate::output::DeleteLensOutput {
             crate::output::DeleteLensOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2660,6 +3272,7 @@ pub struct CreateWorkloadShareOutput  {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2671,6 +3284,11 @@ impl CreateWorkloadShareOutput {
         self.share_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkloadShareOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
 pub mod create_workload_share_output {
     
@@ -2680,6 +3298,7 @@ pub mod create_workload_share_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) share_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2700,6 +3319,15 @@ pub mod create_workload_share_output {
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
         pub fn build(self) -> crate::output::CreateWorkloadShareOutput {
             crate::output::CreateWorkloadShareOutput {
@@ -2707,6 +3335,7 @@ pub mod create_workload_share_output {
                 ,
                 share_id: self.share_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2730,6 +3359,7 @@ pub struct CreateWorkloadOutput  {
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWorkloadOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2741,6 +3371,11 @@ impl CreateWorkloadOutput {
         self.workload_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkloadOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
 pub mod create_workload_output {
     
@@ -2750,6 +3385,7 @@ pub mod create_workload_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) workload_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2770,6 +3406,15 @@ pub mod create_workload_output {
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
         pub fn build(self) -> crate::output::CreateWorkloadOutput {
             crate::output::CreateWorkloadOutput {
@@ -2777,6 +3422,7 @@ pub mod create_workload_output {
                 ,
                 workload_arn: self.workload_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2801,6 +3447,7 @@ pub struct CreateMilestoneOutput  {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
+    _request_id: Option<String>,
 }
 impl CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2813,6 +3460,11 @@ impl CreateMilestoneOutput {
         self.milestone_number
     }
 }
+impl aws_http::request_id::RequestId for CreateMilestoneOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
 pub mod create_milestone_output {
     
@@ -2822,6 +3474,7 @@ pub mod create_milestone_output {
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
         pub(crate) milestone_number: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2844,6 +3497,15 @@ pub mod create_milestone_output {
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
         pub fn build(self) -> crate::output::CreateMilestoneOutput {
             crate::output::CreateMilestoneOutput {
@@ -2852,6 +3514,7 @@ pub mod create_milestone_output {
                 milestone_number: self.milestone_number
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2875,6 +3538,7 @@ pub struct CreateLensVersionOutput  {
     /// <p>The version of the lens.</p>
     #[doc(hidden)]
     pub lens_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
@@ -2886,6 +3550,11 @@ impl CreateLensVersionOutput {
         self.lens_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLensVersionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
 pub mod create_lens_version_output {
     
@@ -2895,6 +3564,7 @@ pub mod create_lens_version_output {
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
         pub(crate) lens_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN for the lens.</p>
@@ -2915,6 +3585,15 @@ pub mod create_lens_version_output {
         pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
         pub fn build(self) -> crate::output::CreateLensVersionOutput {
             crate::output::CreateLensVersionOutput {
@@ -2922,6 +3601,7 @@ pub mod create_lens_version_output {
                 ,
                 lens_version: self.lens_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2942,6 +3622,7 @@ pub struct CreateLensShareOutput  {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLensShareOutput {
     /// <p>The ID associated with the workload share.</p>
@@ -2949,6 +3630,11 @@ impl CreateLensShareOutput {
         self.share_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLensShareOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
 pub mod create_lens_share_output {
     
@@ -2957,6 +3643,7 @@ pub mod create_lens_share_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID associated with the workload share.</p>
@@ -2968,11 +3655,21 @@ pub mod create_lens_share_output {
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
         pub fn build(self) -> crate::output::CreateLensShareOutput {
             crate::output::CreateLensShareOutput {
                 share_id: self.share_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2990,7 +3687,13 @@ impl CreateLensShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLensesOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AssociateLensesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
 pub mod associate_lenses_output {
     
@@ -2998,11 +3701,22 @@ pub mod associate_lenses_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
         pub fn build(self) -> crate::output::AssociateLensesOutput {
             crate::output::AssociateLensesOutput {
+                _request_id: self._request_id,
             }
         }
     }

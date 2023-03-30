@@ -6,6 +6,7 @@ pub struct UpdateMetricSetOutput  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
@@ -13,6 +14,11 @@ impl UpdateMetricSetOutput {
         self.metric_set_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateMetricSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
 pub mod update_metric_set_output {
     
@@ -21,6 +27,7 @@ pub mod update_metric_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the dataset.</p>
@@ -32,11 +39,21 @@ pub mod update_metric_set_output {
         pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_set_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
         pub fn build(self) -> crate::output::UpdateMetricSetOutput {
             crate::output::UpdateMetricSetOutput {
                 metric_set_arn: self.metric_set_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateAnomalyDetectorOutput  {
     /// <p>The ARN of the updated detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAnomalyDetectorOutput {
     /// <p>The ARN of the updated detector.</p>
@@ -64,6 +82,11 @@ impl UpdateAnomalyDetectorOutput {
         self.anomaly_detector_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
 pub mod update_anomaly_detector_output {
     
@@ -72,6 +95,7 @@ pub mod update_anomaly_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the updated detector.</p>
@@ -83,11 +107,21 @@ pub mod update_anomaly_detector_output {
         pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.anomaly_detector_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::UpdateAnomalyDetectorOutput {
             crate::output::UpdateAnomalyDetectorOutput {
                 anomaly_detector_arn: self.anomaly_detector_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateAlertOutput  {
     /// <p>The ARN of the updated alert.</p>
     #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAlertOutput {
     /// <p>The ARN of the updated alert.</p>
@@ -115,6 +150,11 @@ impl UpdateAlertOutput {
         self.alert_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAlertOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
 pub mod update_alert_output {
     
@@ -123,6 +163,7 @@ pub mod update_alert_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the updated alert.</p>
@@ -134,11 +175,21 @@ pub mod update_alert_output {
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
         pub fn build(self) -> crate::output::UpdateAlertOutput {
             crate::output::UpdateAlertOutput {
                 alert_arn: self.alert_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -156,7 +207,13 @@ impl UpdateAlertOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -164,11 +221,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -186,7 +254,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -194,11 +268,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -216,7 +301,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFeedbackOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for PutFeedbackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
 pub mod put_feedback_output {
     
@@ -224,11 +315,22 @@ pub mod put_feedback_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
         pub fn build(self) -> crate::output::PutFeedbackOutput {
             crate::output::PutFeedbackOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -249,6 +351,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The resource's tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
@@ -256,6 +359,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -264,6 +372,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -281,11 +390,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -309,6 +428,7 @@ pub struct ListMetricSetsOutput  {
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
@@ -320,6 +440,11 @@ impl ListMetricSetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMetricSetsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
 pub mod list_metric_sets_output {
     
@@ -329,6 +454,7 @@ pub mod list_metric_sets_output {
     pub struct Builder {
         pub(crate) metric_set_summary_list: std::option::Option<std::vec::Vec<crate::model::MetricSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `metric_set_summary_list`.
@@ -355,6 +481,15 @@ pub mod list_metric_sets_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
         pub fn build(self) -> crate::output::ListMetricSetsOutput {
             crate::output::ListMetricSetsOutput {
@@ -362,6 +497,7 @@ pub mod list_metric_sets_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -394,6 +530,7 @@ pub struct ListAnomalyGroupTimeSeriesOutput  {
     /// <p>A list of anomalous metrics.</p>
     #[doc(hidden)]
     pub time_series_list: std::option::Option<std::vec::Vec<crate::model::TimeSeries>>,
+    _request_id: Option<String>,
 }
 impl ListAnomalyGroupTimeSeriesOutput {
     /// <p>The ID of the anomaly group.</p>
@@ -417,6 +554,11 @@ impl ListAnomalyGroupTimeSeriesOutput {
         self.time_series_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
 pub mod list_anomaly_group_time_series_output {
     
@@ -429,6 +571,7 @@ pub mod list_anomaly_group_time_series_output {
         pub(crate) timestamp_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) time_series_list: std::option::Option<std::vec::Vec<crate::model::TimeSeries>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the anomaly group.</p>
@@ -488,6 +631,15 @@ pub mod list_anomaly_group_time_series_output {
         pub fn set_time_series_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TimeSeries>>) -> Self {
             self.time_series_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupTimeSeriesOutput {
             crate::output::ListAnomalyGroupTimeSeriesOutput {
@@ -501,6 +653,7 @@ pub mod list_anomaly_group_time_series_output {
                 ,
                 time_series_list: self.time_series_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -527,6 +680,7 @@ pub struct ListAnomalyGroupSummariesOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
@@ -542,6 +696,11 @@ impl ListAnomalyGroupSummariesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAnomalyGroupSummariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
 pub mod list_anomaly_group_summaries_output {
     
@@ -552,6 +711,7 @@ pub mod list_anomaly_group_summaries_output {
         pub(crate) anomaly_group_summary_list: std::option::Option<std::vec::Vec<crate::model::AnomalyGroupSummary>>,
         pub(crate) anomaly_group_statistics: std::option::Option<crate::model::AnomalyGroupStatistics>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_group_summary_list`.
@@ -587,6 +747,15 @@ pub mod list_anomaly_group_summaries_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupSummariesOutput {
             crate::output::ListAnomalyGroupSummariesOutput {
@@ -596,6 +765,7 @@ pub mod list_anomaly_group_summaries_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -619,6 +789,7 @@ pub struct ListAnomalyGroupRelatedMetricsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
@@ -630,6 +801,11 @@ impl ListAnomalyGroupRelatedMetricsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAnomalyGroupRelatedMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
 pub mod list_anomaly_group_related_metrics_output {
     
@@ -639,6 +815,7 @@ pub mod list_anomaly_group_related_metrics_output {
     pub struct Builder {
         pub(crate) inter_metric_impact_list: std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `inter_metric_impact_list`.
@@ -665,6 +842,15 @@ pub mod list_anomaly_group_related_metrics_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupRelatedMetricsOutput {
             crate::output::ListAnomalyGroupRelatedMetricsOutput {
@@ -672,6 +858,7 @@ pub mod list_anomaly_group_related_metrics_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -695,6 +882,7 @@ pub struct ListAnomalyDetectorsOutput  {
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAnomalyDetectorsOutput {
     /// <p>A list of anomaly detectors in the account in the current region.</p>
@@ -706,6 +894,11 @@ impl ListAnomalyDetectorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAnomalyDetectorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
 pub mod list_anomaly_detectors_output {
     
@@ -715,6 +908,7 @@ pub mod list_anomaly_detectors_output {
     pub struct Builder {
         pub(crate) anomaly_detector_summary_list: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_detector_summary_list`.
@@ -741,6 +935,15 @@ pub mod list_anomaly_detectors_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
         pub fn build(self) -> crate::output::ListAnomalyDetectorsOutput {
             crate::output::ListAnomalyDetectorsOutput {
@@ -748,6 +951,7 @@ pub mod list_anomaly_detectors_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -771,6 +975,7 @@ pub struct ListAlertsOutput  {
     /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAlertsOutput {
     /// <p>Contains information about an alert.</p>
@@ -782,6 +987,11 @@ impl ListAlertsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAlertsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
 pub mod list_alerts_output {
     
@@ -791,6 +1001,7 @@ pub mod list_alerts_output {
     pub struct Builder {
         pub(crate) alert_summary_list: std::option::Option<std::vec::Vec<crate::model::AlertSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `alert_summary_list`.
@@ -817,6 +1028,15 @@ pub mod list_alerts_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput).
         pub fn build(self) -> crate::output::ListAlertsOutput {
             crate::output::ListAlertsOutput {
@@ -824,6 +1044,7 @@ pub mod list_alerts_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -847,6 +1068,7 @@ pub struct GetSampleDataOutput  {
     /// <p>A list of records.</p>
     #[doc(hidden)]
     pub sample_rows: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    _request_id: Option<String>,
 }
 impl GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
@@ -858,6 +1080,11 @@ impl GetSampleDataOutput {
         self.sample_rows.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetSampleDataOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
 pub mod get_sample_data_output {
     
@@ -867,6 +1094,7 @@ pub mod get_sample_data_output {
     pub struct Builder {
         pub(crate) header_values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sample_rows: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `header_values`.
@@ -899,6 +1127,15 @@ pub mod get_sample_data_output {
         pub fn set_sample_rows(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
             self.sample_rows = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
         pub fn build(self) -> crate::output::GetSampleDataOutput {
             crate::output::GetSampleDataOutput {
@@ -906,6 +1143,7 @@ pub mod get_sample_data_output {
                 ,
                 sample_rows: self.sample_rows
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -929,6 +1167,7 @@ pub struct GetFeedbackOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
@@ -940,6 +1179,11 @@ impl GetFeedbackOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetFeedbackOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
 pub mod get_feedback_output {
     
@@ -949,6 +1193,7 @@ pub mod get_feedback_output {
     pub struct Builder {
         pub(crate) anomaly_group_time_series_feedback: std::option::Option<std::vec::Vec<crate::model::TimeSeriesFeedback>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_group_time_series_feedback`.
@@ -975,6 +1220,15 @@ pub mod get_feedback_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
         pub fn build(self) -> crate::output::GetFeedbackOutput {
             crate::output::GetFeedbackOutput {
@@ -982,6 +1236,7 @@ pub mod get_feedback_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1002,6 +1257,7 @@ pub struct GetDataQualityMetricsOutput  {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
     #[doc(hidden)]
     pub anomaly_detector_data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+    _request_id: Option<String>,
 }
 impl GetDataQualityMetricsOutput {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
@@ -1009,6 +1265,11 @@ impl GetDataQualityMetricsOutput {
         self.anomaly_detector_data_quality_metric_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDataQualityMetricsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
 pub mod get_data_quality_metrics_output {
     
@@ -1017,6 +1278,7 @@ pub mod get_data_quality_metrics_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_data_quality_metric_list: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_detector_data_quality_metric_list`.
@@ -1034,11 +1296,21 @@ pub mod get_data_quality_metrics_output {
         pub fn set_anomaly_detector_data_quality_metric_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>) -> Self {
             self.anomaly_detector_data_quality_metric_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
         pub fn build(self) -> crate::output::GetDataQualityMetricsOutput {
             crate::output::GetDataQualityMetricsOutput {
                 anomaly_detector_data_quality_metric_list: self.anomaly_detector_data_quality_metric_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1059,6 +1331,7 @@ pub struct GetAnomalyGroupOutput  {
     /// <p>Details about the anomaly group.</p>
     #[doc(hidden)]
     pub anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
+    _request_id: Option<String>,
 }
 impl GetAnomalyGroupOutput {
     /// <p>Details about the anomaly group.</p>
@@ -1066,6 +1339,11 @@ impl GetAnomalyGroupOutput {
         self.anomaly_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAnomalyGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
 pub mod get_anomaly_group_output {
     
@@ -1074,6 +1352,7 @@ pub mod get_anomaly_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Details about the anomaly group.</p>
@@ -1085,11 +1364,21 @@ pub mod get_anomaly_group_output {
         pub fn set_anomaly_group(mut self, input: std::option::Option<crate::model::AnomalyGroup>) -> Self {
             self.anomaly_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
         pub fn build(self) -> crate::output::GetAnomalyGroupOutput {
             crate::output::GetAnomalyGroupOutput {
                 anomaly_group: self.anomaly_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1110,6 +1399,7 @@ pub struct DetectMetricSetConfigOutput  {
     /// <p>The inferred dataset configuration for the datasource.</p>
     #[doc(hidden)]
     pub detected_metric_set_config: std::option::Option<crate::model::DetectedMetricSetConfig>,
+    _request_id: Option<String>,
 }
 impl DetectMetricSetConfigOutput {
     /// <p>The inferred dataset configuration for the datasource.</p>
@@ -1117,6 +1407,11 @@ impl DetectMetricSetConfigOutput {
         self.detected_metric_set_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DetectMetricSetConfigOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
 pub mod detect_metric_set_config_output {
     
@@ -1125,6 +1420,7 @@ pub mod detect_metric_set_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detected_metric_set_config: std::option::Option<crate::model::DetectedMetricSetConfig>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The inferred dataset configuration for the datasource.</p>
@@ -1136,11 +1432,21 @@ pub mod detect_metric_set_config_output {
         pub fn set_detected_metric_set_config(mut self, input: std::option::Option<crate::model::DetectedMetricSetConfig>) -> Self {
             self.detected_metric_set_config = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
         pub fn build(self) -> crate::output::DetectMetricSetConfigOutput {
             crate::output::DetectMetricSetConfigOutput {
                 detected_metric_set_config: self.detected_metric_set_config
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1200,6 +1506,7 @@ pub struct DescribeMetricSetOutput  {
     /// <p>The dimensions and their values that were used to filter the dataset.</p>
     #[doc(hidden)]
     pub dimension_filter_list: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+    _request_id: Option<String>,
 }
 impl DescribeMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
@@ -1259,6 +1566,11 @@ impl DescribeMetricSetOutput {
         self.dimension_filter_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeMetricSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
 pub mod describe_metric_set_output {
     
@@ -1280,6 +1592,7 @@ pub mod describe_metric_set_output {
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) metric_source: std::option::Option<crate::model::MetricSource>,
         pub(crate) dimension_filter_list: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the dataset.</p>
@@ -1426,6 +1739,15 @@ pub mod describe_metric_set_output {
         pub fn set_dimension_filter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricSetDimensionFilter>>) -> Self {
             self.dimension_filter_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
         pub fn build(self) -> crate::output::DescribeMetricSetOutput {
             crate::output::DescribeMetricSetOutput {
@@ -1457,6 +1779,7 @@ pub mod describe_metric_set_output {
                 ,
                 dimension_filter_list: self.dimension_filter_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1504,6 +1827,7 @@ pub struct DescribeAnomalyDetectorOutput  {
     /// <p>The process that caused the detector to fail.</p>
     #[doc(hidden)]
     pub failure_type: std::option::Option<crate::model::AnomalyDetectorFailureType>,
+    _request_id: Option<String>,
 }
 impl DescribeAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
@@ -1547,6 +1871,11 @@ impl DescribeAnomalyDetectorOutput {
         self.failure_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
 pub mod describe_anomaly_detector_output {
     
@@ -1564,6 +1893,7 @@ pub mod describe_anomaly_detector_output {
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) failure_type: std::option::Option<crate::model::AnomalyDetectorFailureType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the detector.</p>
@@ -1656,6 +1986,15 @@ pub mod describe_anomaly_detector_output {
         pub fn set_failure_type(mut self, input: std::option::Option<crate::model::AnomalyDetectorFailureType>) -> Self {
             self.failure_type = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DescribeAnomalyDetectorOutput {
             crate::output::DescribeAnomalyDetectorOutput {
@@ -1679,6 +2018,7 @@ pub mod describe_anomaly_detector_output {
                 ,
                 failure_type: self.failure_type
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1702,6 +2042,7 @@ pub struct DescribeAnomalyDetectionExecutionsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAnomalyDetectionExecutionsOutput {
     /// <p>A list of detection jobs.</p>
@@ -1713,6 +2054,11 @@ impl DescribeAnomalyDetectionExecutionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAnomalyDetectionExecutionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
 pub mod describe_anomaly_detection_executions_output {
     
@@ -1722,6 +2068,7 @@ pub mod describe_anomaly_detection_executions_output {
     pub struct Builder {
         pub(crate) execution_list: std::option::Option<std::vec::Vec<crate::model::ExecutionStatus>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `execution_list`.
@@ -1748,6 +2095,15 @@ pub mod describe_anomaly_detection_executions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeAnomalyDetectionExecutionsOutput {
             crate::output::DescribeAnomalyDetectionExecutionsOutput {
@@ -1755,6 +2111,7 @@ pub mod describe_anomaly_detection_executions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1775,6 +2132,7 @@ pub struct DescribeAlertOutput  {
     /// <p>Contains information about an alert.</p>
     #[doc(hidden)]
     pub alert: std::option::Option<crate::model::Alert>,
+    _request_id: Option<String>,
 }
 impl DescribeAlertOutput {
     /// <p>Contains information about an alert.</p>
@@ -1782,6 +2140,11 @@ impl DescribeAlertOutput {
         self.alert.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAlertOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
 pub mod describe_alert_output {
     
@@ -1790,6 +2153,7 @@ pub mod describe_alert_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert: std::option::Option<crate::model::Alert>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains information about an alert.</p>
@@ -1801,11 +2165,21 @@ pub mod describe_alert_output {
         pub fn set_alert(mut self, input: std::option::Option<crate::model::Alert>) -> Self {
             self.alert = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
         pub fn build(self) -> crate::output::DescribeAlertOutput {
             crate::output::DescribeAlertOutput {
                 alert: self.alert
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1823,7 +2197,13 @@ impl DescribeAlertOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAnomalyDetectorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
 pub mod delete_anomaly_detector_output {
     
@@ -1831,11 +2211,22 @@ pub mod delete_anomaly_detector_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DeleteAnomalyDetectorOutput {
             crate::output::DeleteAnomalyDetectorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1853,7 +2244,13 @@ impl DeleteAnomalyDetectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlertOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAlertOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
 pub mod delete_alert_output {
     
@@ -1861,11 +2258,22 @@ pub mod delete_alert_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
         pub fn build(self) -> crate::output::DeleteAlertOutput {
             crate::output::DeleteAlertOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1883,7 +2291,13 @@ impl DeleteAlertOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeactivateAnomalyDetectorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeactivateAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
 pub mod deactivate_anomaly_detector_output {
     
@@ -1891,11 +2305,22 @@ pub mod deactivate_anomaly_detector_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DeactivateAnomalyDetectorOutput {
             crate::output::DeactivateAnomalyDetectorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1916,6 +2341,7 @@ pub struct CreateMetricSetOutput  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
@@ -1923,6 +2349,11 @@ impl CreateMetricSetOutput {
         self.metric_set_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMetricSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
 pub mod create_metric_set_output {
     
@@ -1931,6 +2362,7 @@ pub mod create_metric_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the dataset.</p>
@@ -1942,11 +2374,21 @@ pub mod create_metric_set_output {
         pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_set_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
         pub fn build(self) -> crate::output::CreateMetricSetOutput {
             crate::output::CreateMetricSetOutput {
                 metric_set_arn: self.metric_set_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1967,6 +2409,7 @@ pub struct CreateAnomalyDetectorOutput  {
     /// <p>The ARN of the detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAnomalyDetectorOutput {
     /// <p>The ARN of the detector.</p>
@@ -1974,6 +2417,11 @@ impl CreateAnomalyDetectorOutput {
         self.anomaly_detector_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
 pub mod create_anomaly_detector_output {
     
@@ -1982,6 +2430,7 @@ pub mod create_anomaly_detector_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the detector.</p>
@@ -1993,11 +2442,21 @@ pub mod create_anomaly_detector_output {
         pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.anomaly_detector_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::CreateAnomalyDetectorOutput {
             crate::output::CreateAnomalyDetectorOutput {
                 anomaly_detector_arn: self.anomaly_detector_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2018,6 +2477,7 @@ pub struct CreateAlertOutput  {
     /// <p>The ARN of the alert.</p>
     #[doc(hidden)]
     pub alert_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAlertOutput {
     /// <p>The ARN of the alert.</p>
@@ -2025,6 +2485,11 @@ impl CreateAlertOutput {
         self.alert_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAlertOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAlertOutput`](crate::output::CreateAlertOutput).
 pub mod create_alert_output {
     
@@ -2033,6 +2498,7 @@ pub mod create_alert_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the alert.</p>
@@ -2044,11 +2510,21 @@ pub mod create_alert_output {
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAlertOutput`](crate::output::CreateAlertOutput).
         pub fn build(self) -> crate::output::CreateAlertOutput {
             crate::output::CreateAlertOutput {
                 alert_arn: self.alert_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2066,7 +2542,13 @@ impl CreateAlertOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackTestAnomalyDetectorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for BackTestAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
 pub mod back_test_anomaly_detector_output {
     
@@ -2074,11 +2556,22 @@ pub mod back_test_anomaly_detector_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::BackTestAnomalyDetectorOutput {
             crate::output::BackTestAnomalyDetectorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2096,7 +2589,13 @@ impl BackTestAnomalyDetectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActivateAnomalyDetectorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for ActivateAnomalyDetectorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
 pub mod activate_anomaly_detector_output {
     
@@ -2104,11 +2603,22 @@ pub mod activate_anomaly_detector_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::ActivateAnomalyDetectorOutput {
             crate::output::ActivateAnomalyDetectorOutput {
+                _request_id: self._request_id,
             }
         }
     }

@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStreamModeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UpdateStreamModeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput).
 pub mod update_stream_mode_output {
     
@@ -11,11 +17,22 @@ pub mod update_stream_mode_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateStreamModeOutput`](crate::output::UpdateStreamModeOutput).
         pub fn build(self) -> crate::output::UpdateStreamModeOutput {
             crate::output::UpdateStreamModeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -45,6 +62,7 @@ pub struct UpdateShardCountOutput  {
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateShardCountOutput {
     /// <p>The name of the stream.</p>
@@ -64,6 +82,11 @@ impl UpdateShardCountOutput {
         self.stream_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateShardCountOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput).
 pub mod update_shard_count_output {
     
@@ -75,6 +98,7 @@ pub mod update_shard_count_output {
         pub(crate) current_shard_count: std::option::Option<i32>,
         pub(crate) target_shard_count: std::option::Option<i32>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the stream.</p>
@@ -113,6 +137,15 @@ pub mod update_shard_count_output {
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateShardCountOutput`](crate::output::UpdateShardCountOutput).
         pub fn build(self) -> crate::output::UpdateShardCountOutput {
             crate::output::UpdateShardCountOutput {
@@ -124,6 +157,7 @@ pub mod update_shard_count_output {
                 ,
                 stream_arn: self.stream_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -141,7 +175,13 @@ impl UpdateShardCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamEncryptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopStreamEncryptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopStreamEncryptionOutput`](crate::output::StopStreamEncryptionOutput).
 pub mod stop_stream_encryption_output {
     
@@ -149,11 +189,22 @@ pub mod stop_stream_encryption_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopStreamEncryptionOutput`](crate::output::StopStreamEncryptionOutput).
         pub fn build(self) -> crate::output::StopStreamEncryptionOutput {
             crate::output::StopStreamEncryptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,7 +222,13 @@ impl StopStreamEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStreamEncryptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StartStreamEncryptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartStreamEncryptionOutput`](crate::output::StartStreamEncryptionOutput).
 pub mod start_stream_encryption_output {
     
@@ -179,11 +236,22 @@ pub mod start_stream_encryption_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartStreamEncryptionOutput`](crate::output::StartStreamEncryptionOutput).
         pub fn build(self) -> crate::output::StartStreamEncryptionOutput {
             crate::output::StartStreamEncryptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -201,7 +269,13 @@ impl StartStreamEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SplitShardOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for SplitShardOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SplitShardOutput`](crate::output::SplitShardOutput).
 pub mod split_shard_output {
     
@@ -209,11 +283,22 @@ pub mod split_shard_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SplitShardOutput`](crate::output::SplitShardOutput).
         pub fn build(self) -> crate::output::SplitShardOutput {
             crate::output::SplitShardOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -231,7 +316,13 @@ impl SplitShardOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsFromStreamOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveTagsFromStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveTagsFromStreamOutput`](crate::output::RemoveTagsFromStreamOutput).
 pub mod remove_tags_from_stream_output {
     
@@ -239,11 +330,22 @@ pub mod remove_tags_from_stream_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveTagsFromStreamOutput`](crate::output::RemoveTagsFromStreamOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromStreamOutput {
             crate::output::RemoveTagsFromStreamOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -264,6 +366,7 @@ pub struct RegisterStreamConsumerOutput  {
     /// <p>An object that represents the details of the consumer you registered. When you register a consumer, it gets an ARN that is generated by Kinesis Data Streams.</p>
     #[doc(hidden)]
     pub consumer: std::option::Option<crate::model::Consumer>,
+    _request_id: Option<String>,
 }
 impl RegisterStreamConsumerOutput {
     /// <p>An object that represents the details of the consumer you registered. When you register a consumer, it gets an ARN that is generated by Kinesis Data Streams.</p>
@@ -271,6 +374,11 @@ impl RegisterStreamConsumerOutput {
         self.consumer.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RegisterStreamConsumerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RegisterStreamConsumerOutput`](crate::output::RegisterStreamConsumerOutput).
 pub mod register_stream_consumer_output {
     
@@ -279,6 +387,7 @@ pub mod register_stream_consumer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumer: std::option::Option<crate::model::Consumer>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that represents the details of the consumer you registered. When you register a consumer, it gets an ARN that is generated by Kinesis Data Streams.</p>
@@ -290,11 +399,21 @@ pub mod register_stream_consumer_output {
         pub fn set_consumer(mut self, input: std::option::Option<crate::model::Consumer>) -> Self {
             self.consumer = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RegisterStreamConsumerOutput`](crate::output::RegisterStreamConsumerOutput).
         pub fn build(self) -> crate::output::RegisterStreamConsumerOutput {
             crate::output::RegisterStreamConsumerOutput {
                 consumer: self.consumer
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -325,6 +444,7 @@ pub struct PutRecordsOutput  {
     /// </ul>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
+    _request_id: Option<String>,
 }
 impl PutRecordsOutput {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
@@ -344,6 +464,11 @@ impl PutRecordsOutput {
         self.encryption_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutRecordsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRecordsOutput`](crate::output::PutRecordsOutput).
 pub mod put_records_output {
     
@@ -354,6 +479,7 @@ pub mod put_records_output {
         pub(crate) failed_record_count: std::option::Option<i32>,
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::PutRecordsResultEntry>>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
@@ -397,6 +523,15 @@ pub mod put_records_output {
         pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
             self.encryption_type = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRecordsOutput`](crate::output::PutRecordsOutput).
         pub fn build(self) -> crate::output::PutRecordsOutput {
             crate::output::PutRecordsOutput {
@@ -406,6 +541,7 @@ pub mod put_records_output {
                 ,
                 encryption_type: self.encryption_type
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -436,6 +572,7 @@ pub struct PutRecordOutput  {
     /// </ul>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
+    _request_id: Option<String>,
 }
 impl PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
@@ -455,6 +592,11 @@ impl PutRecordOutput {
         self.encryption_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutRecordOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput).
 pub mod put_record_output {
     
@@ -465,6 +607,7 @@ pub mod put_record_output {
         pub(crate) shard_id: std::option::Option<std::string::String>,
         pub(crate) sequence_number: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The shard ID of the shard where the data record was placed.</p>
@@ -502,6 +645,15 @@ pub mod put_record_output {
         pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
             self.encryption_type = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutRecordOutput`](crate::output::PutRecordOutput).
         pub fn build(self) -> crate::output::PutRecordOutput {
             crate::output::PutRecordOutput {
@@ -511,6 +663,7 @@ pub mod put_record_output {
                 ,
                 encryption_type: self.encryption_type
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -528,7 +681,13 @@ impl PutRecordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeShardsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for MergeShardsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`MergeShardsOutput`](crate::output::MergeShardsOutput).
 pub mod merge_shards_output {
     
@@ -536,11 +695,22 @@ pub mod merge_shards_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`MergeShardsOutput`](crate::output::MergeShardsOutput).
         pub fn build(self) -> crate::output::MergeShardsOutput {
             crate::output::MergeShardsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -564,6 +734,7 @@ pub struct ListTagsForStreamOutput  {
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     #[doc(hidden)]
     pub has_more_tags: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl ListTagsForStreamOutput {
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
@@ -575,6 +746,11 @@ impl ListTagsForStreamOutput {
         self.has_more_tags
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
 pub mod list_tags_for_stream_output {
     
@@ -584,6 +760,7 @@ pub mod list_tags_for_stream_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) has_more_tags: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -610,6 +787,15 @@ pub mod list_tags_for_stream_output {
         pub fn set_has_more_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput).
         pub fn build(self) -> crate::output::ListTagsForStreamOutput {
             crate::output::ListTagsForStreamOutput {
@@ -617,6 +803,7 @@ pub mod list_tags_for_stream_output {
                 ,
                 has_more_tags: self.has_more_tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -646,6 +833,7 @@ pub struct ListStreamsOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub stream_summaries: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
+    _request_id: Option<String>,
 }
 impl ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
@@ -665,6 +853,11 @@ impl ListStreamsOutput {
         self.stream_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListStreamsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
     
@@ -676,6 +869,7 @@ pub mod list_streams_output {
         pub(crate) has_more_streams: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) stream_summaries: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `stream_names`.
@@ -726,6 +920,15 @@ pub mod list_streams_output {
         pub fn set_stream_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>) -> Self {
             self.stream_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
@@ -737,6 +940,7 @@ pub mod list_streams_output {
                 ,
                 stream_summaries: self.stream_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -762,6 +966,7 @@ pub struct ListStreamConsumersOutput  {
     /// </important>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListStreamConsumersOutput {
     /// <p>An array of JSON objects. Each object represents one registered consumer.</p>
@@ -775,6 +980,11 @@ impl ListStreamConsumersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListStreamConsumersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListStreamConsumersOutput`](crate::output::ListStreamConsumersOutput).
 pub mod list_stream_consumers_output {
     
@@ -784,6 +994,7 @@ pub mod list_stream_consumers_output {
     pub struct Builder {
         pub(crate) consumers: std::option::Option<std::vec::Vec<crate::model::Consumer>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `consumers`.
@@ -814,6 +1025,15 @@ pub mod list_stream_consumers_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListStreamConsumersOutput`](crate::output::ListStreamConsumersOutput).
         pub fn build(self) -> crate::output::ListStreamConsumersOutput {
             crate::output::ListStreamConsumersOutput {
@@ -821,6 +1041,7 @@ pub mod list_stream_consumers_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -846,6 +1067,7 @@ pub struct ListShardsOutput  {
     /// </important>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListShardsOutput {
     /// <p>An array of JSON objects. Each object represents one shard and specifies the IDs of the shard, the shard's parent, and the shard that's adjacent to the shard's parent. Each object also contains the starting and ending hash keys and the starting and ending sequence numbers for the shard.</p>
@@ -859,6 +1081,11 @@ impl ListShardsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListShardsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListShardsOutput`](crate::output::ListShardsOutput).
 pub mod list_shards_output {
     
@@ -868,6 +1095,7 @@ pub mod list_shards_output {
     pub struct Builder {
         pub(crate) shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `shards`.
@@ -898,6 +1126,15 @@ pub mod list_shards_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListShardsOutput`](crate::output::ListShardsOutput).
         pub fn build(self) -> crate::output::ListShardsOutput {
             crate::output::ListShardsOutput {
@@ -905,6 +1142,7 @@ pub mod list_shards_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -922,7 +1160,13 @@ impl ListShardsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for IncreaseStreamRetentionPeriodOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`IncreaseStreamRetentionPeriodOutput`](crate::output::IncreaseStreamRetentionPeriodOutput).
 pub mod increase_stream_retention_period_output {
     
@@ -930,11 +1174,22 @@ pub mod increase_stream_retention_period_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodOutput`](crate::output::IncreaseStreamRetentionPeriodOutput).
         pub fn build(self) -> crate::output::IncreaseStreamRetentionPeriodOutput {
             crate::output::IncreaseStreamRetentionPeriodOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -955,6 +1210,7 @@ pub struct GetShardIteratorOutput  {
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     #[doc(hidden)]
     pub shard_iterator: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
@@ -962,6 +1218,11 @@ impl GetShardIteratorOutput {
         self.shard_iterator.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetShardIteratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
 pub mod get_shard_iterator_output {
     
@@ -970,6 +1231,7 @@ pub mod get_shard_iterator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
@@ -981,11 +1243,21 @@ pub mod get_shard_iterator_output {
         pub fn set_shard_iterator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shard_iterator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
         pub fn build(self) -> crate::output::GetShardIteratorOutput {
             crate::output::GetShardIteratorOutput {
                 shard_iterator: self.shard_iterator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1015,6 +1287,7 @@ pub struct GetRecordsOutput  {
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
     #[doc(hidden)]
     pub child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
+    _request_id: Option<String>,
 }
 impl GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
@@ -1034,6 +1307,11 @@ impl GetRecordsOutput {
         self.child_shards.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecordsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
 pub mod get_records_output {
     
@@ -1045,6 +1323,7 @@ pub mod get_records_output {
         pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
         pub(crate) millis_behind_latest: std::option::Option<i64>,
         pub(crate) child_shards: std::option::Option<std::vec::Vec<crate::model::ChildShard>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -1095,6 +1374,15 @@ pub mod get_records_output {
         pub fn set_child_shards(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChildShard>>) -> Self {
             self.child_shards = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::output::GetRecordsOutput).
         pub fn build(self) -> crate::output::GetRecordsOutput {
             crate::output::GetRecordsOutput {
@@ -1106,6 +1394,7 @@ pub mod get_records_output {
                 ,
                 child_shards: self.child_shards
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1135,6 +1424,7 @@ pub struct EnableEnhancedMonitoringOutput  {
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
@@ -1154,6 +1444,11 @@ impl EnableEnhancedMonitoringOutput {
         self.stream_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for EnableEnhancedMonitoringOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput).
 pub mod enable_enhanced_monitoring_output {
     
@@ -1165,6 +1460,7 @@ pub mod enable_enhanced_monitoring_output {
         pub(crate) current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the Kinesis data stream.</p>
@@ -1215,6 +1511,15 @@ pub mod enable_enhanced_monitoring_output {
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`EnableEnhancedMonitoringOutput`](crate::output::EnableEnhancedMonitoringOutput).
         pub fn build(self) -> crate::output::EnableEnhancedMonitoringOutput {
             crate::output::EnableEnhancedMonitoringOutput {
@@ -1226,6 +1531,7 @@ pub mod enable_enhanced_monitoring_output {
                 ,
                 stream_arn: self.stream_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1255,6 +1561,7 @@ pub struct DisableEnhancedMonitoringOutput  {
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
@@ -1274,6 +1581,11 @@ impl DisableEnhancedMonitoringOutput {
         self.stream_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisableEnhancedMonitoringOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput).
 pub mod disable_enhanced_monitoring_output {
     
@@ -1285,6 +1597,7 @@ pub mod disable_enhanced_monitoring_output {
         pub(crate) current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the Kinesis data stream.</p>
@@ -1335,6 +1648,15 @@ pub mod disable_enhanced_monitoring_output {
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisableEnhancedMonitoringOutput`](crate::output::DisableEnhancedMonitoringOutput).
         pub fn build(self) -> crate::output::DisableEnhancedMonitoringOutput {
             crate::output::DisableEnhancedMonitoringOutput {
@@ -1346,6 +1668,7 @@ pub mod disable_enhanced_monitoring_output {
                 ,
                 stream_arn: self.stream_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1366,6 +1689,7 @@ pub struct DescribeStreamSummaryOutput  {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     #[doc(hidden)]
     pub stream_description_summary: std::option::Option<crate::model::StreamDescriptionSummary>,
+    _request_id: Option<String>,
 }
 impl DescribeStreamSummaryOutput {
     /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
@@ -1373,6 +1697,11 @@ impl DescribeStreamSummaryOutput {
         self.stream_description_summary.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeStreamSummaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeStreamSummaryOutput`](crate::output::DescribeStreamSummaryOutput).
 pub mod describe_stream_summary_output {
     
@@ -1381,6 +1710,7 @@ pub mod describe_stream_summary_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description_summary: std::option::Option<crate::model::StreamDescriptionSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
@@ -1392,11 +1722,21 @@ pub mod describe_stream_summary_output {
         pub fn set_stream_description_summary(mut self, input: std::option::Option<crate::model::StreamDescriptionSummary>) -> Self {
             self.stream_description_summary = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeStreamSummaryOutput`](crate::output::DescribeStreamSummaryOutput).
         pub fn build(self) -> crate::output::DescribeStreamSummaryOutput {
             crate::output::DescribeStreamSummaryOutput {
                 stream_description_summary: self.stream_description_summary
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1417,6 +1757,7 @@ pub struct DescribeStreamConsumerOutput  {
     /// <p>An object that represents the details of the consumer.</p>
     #[doc(hidden)]
     pub consumer_description: std::option::Option<crate::model::ConsumerDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeStreamConsumerOutput {
     /// <p>An object that represents the details of the consumer.</p>
@@ -1424,6 +1765,11 @@ impl DescribeStreamConsumerOutput {
         self.consumer_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeStreamConsumerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeStreamConsumerOutput`](crate::output::DescribeStreamConsumerOutput).
 pub mod describe_stream_consumer_output {
     
@@ -1432,6 +1778,7 @@ pub mod describe_stream_consumer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumer_description: std::option::Option<crate::model::ConsumerDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that represents the details of the consumer.</p>
@@ -1443,11 +1790,21 @@ pub mod describe_stream_consumer_output {
         pub fn set_consumer_description(mut self, input: std::option::Option<crate::model::ConsumerDescription>) -> Self {
             self.consumer_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeStreamConsumerOutput`](crate::output::DescribeStreamConsumerOutput).
         pub fn build(self) -> crate::output::DescribeStreamConsumerOutput {
             crate::output::DescribeStreamConsumerOutput {
                 consumer_description: self.consumer_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1468,6 +1825,7 @@ pub struct DescribeStreamOutput  {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     #[doc(hidden)]
     pub stream_description: std::option::Option<crate::model::StreamDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeStreamOutput {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
@@ -1475,6 +1833,11 @@ impl DescribeStreamOutput {
         self.stream_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
 pub mod describe_stream_output {
     
@@ -1483,6 +1846,7 @@ pub mod describe_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
@@ -1494,11 +1858,21 @@ pub mod describe_stream_output {
         pub fn set_stream_description(mut self, input: std::option::Option<crate::model::StreamDescription>) -> Self {
             self.stream_description = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
         pub fn build(self) -> crate::output::DescribeStreamOutput {
             crate::output::DescribeStreamOutput {
                 stream_description: self.stream_description
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1528,6 +1902,7 @@ pub struct DescribeLimitsOutput  {
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
     #[doc(hidden)]
     pub on_demand_stream_count_limit: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl DescribeLimitsOutput {
     /// <p>The maximum number of shards.</p>
@@ -1547,6 +1922,11 @@ impl DescribeLimitsOutput {
         self.on_demand_stream_count_limit
     }
 }
+impl aws_http::request_id::RequestId for DescribeLimitsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
 pub mod describe_limits_output {
     
@@ -1558,6 +1938,7 @@ pub mod describe_limits_output {
         pub(crate) open_shard_count: std::option::Option<i32>,
         pub(crate) on_demand_stream_count: std::option::Option<i32>,
         pub(crate) on_demand_stream_count_limit: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The maximum number of shards.</p>
@@ -1596,6 +1977,15 @@ pub mod describe_limits_output {
         pub fn set_on_demand_stream_count_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.on_demand_stream_count_limit = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
         pub fn build(self) -> crate::output::DescribeLimitsOutput {
             crate::output::DescribeLimitsOutput {
@@ -1607,6 +1997,7 @@ pub mod describe_limits_output {
                 ,
                 on_demand_stream_count_limit: self.on_demand_stream_count_limit
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1624,7 +2015,13 @@ impl DescribeLimitsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterStreamConsumerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeregisterStreamConsumerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeregisterStreamConsumerOutput`](crate::output::DeregisterStreamConsumerOutput).
 pub mod deregister_stream_consumer_output {
     
@@ -1632,11 +2029,22 @@ pub mod deregister_stream_consumer_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeregisterStreamConsumerOutput`](crate::output::DeregisterStreamConsumerOutput).
         pub fn build(self) -> crate::output::DeregisterStreamConsumerOutput {
             crate::output::DeregisterStreamConsumerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1654,7 +2062,13 @@ impl DeregisterStreamConsumerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
 pub mod delete_stream_output {
     
@@ -1662,11 +2076,22 @@ pub mod delete_stream_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteStreamOutput`](crate::output::DeleteStreamOutput).
         pub fn build(self) -> crate::output::DeleteStreamOutput {
             crate::output::DeleteStreamOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1684,7 +2109,13 @@ impl DeleteStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecreaseStreamRetentionPeriodOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DecreaseStreamRetentionPeriodOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DecreaseStreamRetentionPeriodOutput`](crate::output::DecreaseStreamRetentionPeriodOutput).
 pub mod decrease_stream_retention_period_output {
     
@@ -1692,11 +2123,22 @@ pub mod decrease_stream_retention_period_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DecreaseStreamRetentionPeriodOutput`](crate::output::DecreaseStreamRetentionPeriodOutput).
         pub fn build(self) -> crate::output::DecreaseStreamRetentionPeriodOutput {
             crate::output::DecreaseStreamRetentionPeriodOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1714,7 +2156,13 @@ impl DecreaseStreamRetentionPeriodOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CreateStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateStreamOutput`](crate::output::CreateStreamOutput).
 pub mod create_stream_output {
     
@@ -1722,11 +2170,22 @@ pub mod create_stream_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateStreamOutput`](crate::output::CreateStreamOutput).
         pub fn build(self) -> crate::output::CreateStreamOutput {
             crate::output::CreateStreamOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1744,7 +2203,13 @@ impl CreateStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsToStreamOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AddTagsToStreamOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddTagsToStreamOutput`](crate::output::AddTagsToStreamOutput).
 pub mod add_tags_to_stream_output {
     
@@ -1752,11 +2217,22 @@ pub mod add_tags_to_stream_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddTagsToStreamOutput`](crate::output::AddTagsToStreamOutput).
         pub fn build(self) -> crate::output::AddTagsToStreamOutput {
             crate::output::AddTagsToStreamOutput {
+                _request_id: self._request_id,
             }
         }
     }

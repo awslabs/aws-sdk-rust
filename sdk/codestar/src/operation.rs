@@ -22,6 +22,7 @@ impl AssociateTeamMember {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateTeamMember {
                 type Output = std::result::Result<crate::output::AssociateTeamMemberOutput, crate::error::AssociateTeamMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_team_member_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateProject {
 impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
                 type Output = std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_project_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateUserProfile {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUserProfile {
                 type Output = std::result::Result<crate::output::CreateUserProfileOutput, crate::error::CreateUserProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_profile_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteProject {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
                 type Output = std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_project_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteUserProfile {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUserProfile {
                 type Output = std::result::Result<crate::output::DeleteUserProfileOutput, crate::error::DeleteUserProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_profile_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeProject {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
                 type Output = std::result::Result<crate::output::DescribeProjectOutput, crate::error::DescribeProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_project_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeUserProfile {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUserProfile {
                 type Output = std::result::Result<crate::output::DescribeUserProfileOutput, crate::error::DescribeUserProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_profile_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DisassociateTeamMember {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateTeamMember {
                 type Output = std::result::Result<crate::output::DisassociateTeamMemberOutput, crate::error::DisassociateTeamMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_team_member_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListProjects {
 impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
                 type Output = std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_projects_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListResources {
                 type Output = std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resources_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForProject {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForProject {
                 type Output = std::result::Result<crate::output::ListTagsForProjectOutput, crate::error::ListTagsForProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_project_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListTeamMembers {
 impl aws_smithy_http::response::ParseStrictResponse for ListTeamMembers {
                 type Output = std::result::Result<crate::output::ListTeamMembersOutput, crate::error::ListTeamMembersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_team_members_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListUserProfiles {
 impl aws_smithy_http::response::ParseStrictResponse for ListUserProfiles {
                 type Output = std::result::Result<crate::output::ListUserProfilesOutput, crate::error::ListUserProfilesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_user_profiles_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl TagProject {
 impl aws_smithy_http::response::ParseStrictResponse for TagProject {
                 type Output = std::result::Result<crate::output::TagProjectOutput, crate::error::TagProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_project_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UntagProject {
 impl aws_smithy_http::response::ParseStrictResponse for UntagProject {
                 type Output = std::result::Result<crate::output::UntagProjectOutput, crate::error::UntagProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_project_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl UpdateProject {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
                 type Output = std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_project_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl UpdateTeamMember {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateTeamMember {
                 type Output = std::result::Result<crate::output::UpdateTeamMemberOutput, crate::error::UpdateTeamMemberError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_team_member_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl UpdateUserProfile {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUserProfile {
                 type Output = std::result::Result<crate::output::UpdateUserProfileOutput, crate::error::UpdateUserProfileError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_profile_error(response)
                      } else {

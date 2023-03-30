@@ -22,6 +22,7 @@ impl AcceptInboundCrossClusterSearchConnection {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptInboundCrossClusterSearchConnection {
                 type Output = std::result::Result<crate::output::AcceptInboundCrossClusterSearchConnectionOutput, crate::error::AcceptInboundCrossClusterSearchConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_inbound_cross_cluster_search_connection_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AddTags {
 impl aws_smithy_http::response::ParseStrictResponse for AddTags {
                 type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_tags_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AssociatePackage {
 impl aws_smithy_http::response::ParseStrictResponse for AssociatePackage {
                 type Output = std::result::Result<crate::output::AssociatePackageOutput, crate::error::AssociatePackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_package_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl AuthorizeVpcEndpointAccess {
 impl aws_smithy_http::response::ParseStrictResponse for AuthorizeVpcEndpointAccess {
                 type Output = std::result::Result<crate::output::AuthorizeVpcEndpointAccessOutput, crate::error::AuthorizeVpcEndpointAccessError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_authorize_vpc_endpoint_access_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CancelElasticsearchServiceSoftwareUpdate {
 impl aws_smithy_http::response::ParseStrictResponse for CancelElasticsearchServiceSoftwareUpdate {
                 type Output = std::result::Result<crate::output::CancelElasticsearchServiceSoftwareUpdateOutput, crate::error::CancelElasticsearchServiceSoftwareUpdateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_elasticsearch_service_software_update_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreateElasticsearchDomain {
 impl aws_smithy_http::response::ParseStrictResponse for CreateElasticsearchDomain {
                 type Output = std::result::Result<crate::output::CreateElasticsearchDomainOutput, crate::error::CreateElasticsearchDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_elasticsearch_domain_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateOutboundCrossClusterSearchConnection {
 impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundCrossClusterSearchConnection {
                 type Output = std::result::Result<crate::output::CreateOutboundCrossClusterSearchConnectionOutput, crate::error::CreateOutboundCrossClusterSearchConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_outbound_cross_cluster_search_connection_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreatePackage {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePackage {
                 type Output = std::result::Result<crate::output::CreatePackageOutput, crate::error::CreatePackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_package_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateVpcEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
                 type Output = std::result::Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_vpc_endpoint_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteElasticsearchDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchDomain {
                 type Output = std::result::Result<crate::output::DeleteElasticsearchDomainOutput, crate::error::DeleteElasticsearchDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_elasticsearch_domain_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteElasticsearchServiceRole {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchServiceRole {
                 type Output = std::result::Result<crate::output::DeleteElasticsearchServiceRoleOutput, crate::error::DeleteElasticsearchServiceRoleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_elasticsearch_service_role_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteInboundCrossClusterSearchConnection {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteInboundCrossClusterSearchConnection {
                 type Output = std::result::Result<crate::output::DeleteInboundCrossClusterSearchConnectionOutput, crate::error::DeleteInboundCrossClusterSearchConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_inbound_cross_cluster_search_connection_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteOutboundCrossClusterSearchConnection {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteOutboundCrossClusterSearchConnection {
                 type Output = std::result::Result<crate::output::DeleteOutboundCrossClusterSearchConnectionOutput, crate::error::DeleteOutboundCrossClusterSearchConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_outbound_cross_cluster_search_connection_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DeletePackage {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePackage {
                 type Output = std::result::Result<crate::output::DeletePackageOutput, crate::error::DeletePackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_package_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DeleteVpcEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoint {
                 type Output = std::result::Result<crate::output::DeleteVpcEndpointOutput, crate::error::DeleteVpcEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_vpc_endpoint_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribeDomainAutoTunes {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes {
                 type Output = std::result::Result<crate::output::DescribeDomainAutoTunesOutput, crate::error::DescribeDomainAutoTunesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_domain_auto_tunes_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeDomainChangeProgress {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProgress {
                 type Output = std::result::Result<crate::output::DescribeDomainChangeProgressOutput, crate::error::DescribeDomainChangeProgressError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_domain_change_progress_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeElasticsearchDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomain {
                 type Output = std::result::Result<crate::output::DescribeElasticsearchDomainOutput, crate::error::DescribeElasticsearchDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_elasticsearch_domain_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DescribeElasticsearchDomainConfig {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomainConfig {
                 type Output = std::result::Result<crate::output::DescribeElasticsearchDomainConfigOutput, crate::error::DescribeElasticsearchDomainConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_elasticsearch_domain_config_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DescribeElasticsearchDomains {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDomains {
                 type Output = std::result::Result<crate::output::DescribeElasticsearchDomainsOutput, crate::error::DescribeElasticsearchDomainsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_elasticsearch_domains_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DescribeElasticsearchInstanceTypeLimits {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchInstanceTypeLimits {
                 type Output = std::result::Result<crate::output::DescribeElasticsearchInstanceTypeLimitsOutput, crate::error::DescribeElasticsearchInstanceTypeLimitsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_elasticsearch_instance_type_limits_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DescribeInboundCrossClusterSearchConnections {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeInboundCrossClusterSearchConnections {
                 type Output = std::result::Result<crate::output::DescribeInboundCrossClusterSearchConnectionsOutput, crate::error::DescribeInboundCrossClusterSearchConnectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_inbound_cross_cluster_search_connections_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DescribeOutboundCrossClusterSearchConnections {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeOutboundCrossClusterSearchConnections {
                 type Output = std::result::Result<crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput, crate::error::DescribeOutboundCrossClusterSearchConnectionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_outbound_cross_cluster_search_connections_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DescribePackages {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePackages {
                 type Output = std::result::Result<crate::output::DescribePackagesOutput, crate::error::DescribePackagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_packages_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeReservedElasticsearchInstanceOfferings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElasticsearchInstanceOfferings {
                 type Output = std::result::Result<crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput, crate::error::DescribeReservedElasticsearchInstanceOfferingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_reserved_elasticsearch_instance_offerings_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeReservedElasticsearchInstances {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElasticsearchInstances {
                 type Output = std::result::Result<crate::output::DescribeReservedElasticsearchInstancesOutput, crate::error::DescribeReservedElasticsearchInstancesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_reserved_elasticsearch_instances_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl DescribeVpcEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
                 type Output = std::result::Result<crate::output::DescribeVpcEndpointsOutput, crate::error::DescribeVpcEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_vpc_endpoints_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl DissociatePackage {
 impl aws_smithy_http::response::ParseStrictResponse for DissociatePackage {
                 type Output = std::result::Result<crate::output::DissociatePackageOutput, crate::error::DissociatePackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_dissociate_package_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl GetCompatibleElasticsearchVersions {
 impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleElasticsearchVersions {
                 type Output = std::result::Result<crate::output::GetCompatibleElasticsearchVersionsOutput, crate::error::GetCompatibleElasticsearchVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_compatible_elasticsearch_versions_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl GetPackageVersionHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory {
                 type Output = std::result::Result<crate::output::GetPackageVersionHistoryOutput, crate::error::GetPackageVersionHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_package_version_history_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl GetUpgradeHistory {
 impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeHistory {
                 type Output = std::result::Result<crate::output::GetUpgradeHistoryOutput, crate::error::GetUpgradeHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_upgrade_history_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl GetUpgradeStatus {
 impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
                 type Output = std::result::Result<crate::output::GetUpgradeStatusOutput, crate::error::GetUpgradeStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_upgrade_status_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl ListDomainNames {
 impl aws_smithy_http::response::ParseStrictResponse for ListDomainNames {
                 type Output = std::result::Result<crate::output::ListDomainNamesOutput, crate::error::ListDomainNamesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_domain_names_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl ListDomainsForPackage {
 impl aws_smithy_http::response::ParseStrictResponse for ListDomainsForPackage {
                 type Output = std::result::Result<crate::output::ListDomainsForPackageOutput, crate::error::ListDomainsForPackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_domains_for_package_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl ListElasticsearchInstanceTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchInstanceTypes {
                 type Output = std::result::Result<crate::output::ListElasticsearchInstanceTypesOutput, crate::error::ListElasticsearchInstanceTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_elasticsearch_instance_types_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl ListElasticsearchVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchVersions {
                 type Output = std::result::Result<crate::output::ListElasticsearchVersionsOutput, crate::error::ListElasticsearchVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_elasticsearch_versions_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListPackagesForDomain {
 impl aws_smithy_http::response::ParseStrictResponse for ListPackagesForDomain {
                 type Output = std::result::Result<crate::output::ListPackagesForDomainOutput, crate::error::ListPackagesForDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_packages_for_domain_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListTags {
 impl aws_smithy_http::response::ParseStrictResponse for ListTags {
                 type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListVpcEndpointAccess {
 impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointAccess {
                 type Output = std::result::Result<crate::output::ListVpcEndpointAccessOutput, crate::error::ListVpcEndpointAccessError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vpc_endpoint_access_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListVpcEndpoints {
 impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpoints {
                 type Output = std::result::Result<crate::output::ListVpcEndpointsOutput, crate::error::ListVpcEndpointsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vpc_endpoints_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListVpcEndpointsForDomain {
 impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointsForDomain {
                 type Output = std::result::Result<crate::output::ListVpcEndpointsForDomainOutput, crate::error::ListVpcEndpointsForDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vpc_endpoints_for_domain_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl PurchaseReservedElasticsearchInstanceOffering {
 impl aws_smithy_http::response::ParseStrictResponse for PurchaseReservedElasticsearchInstanceOffering {
                 type Output = std::result::Result<crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput, crate::error::PurchaseReservedElasticsearchInstanceOfferingError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_purchase_reserved_elasticsearch_instance_offering_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl RejectInboundCrossClusterSearchConnection {
 impl aws_smithy_http::response::ParseStrictResponse for RejectInboundCrossClusterSearchConnection {
                 type Output = std::result::Result<crate::output::RejectInboundCrossClusterSearchConnectionOutput, crate::error::RejectInboundCrossClusterSearchConnectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_inbound_cross_cluster_search_connection_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl RemoveTags {
 impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
                 type Output = std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_remove_tags_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl RevokeVpcEndpointAccess {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeVpcEndpointAccess {
                 type Output = std::result::Result<crate::output::RevokeVpcEndpointAccessOutput, crate::error::RevokeVpcEndpointAccessError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_revoke_vpc_endpoint_access_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl StartElasticsearchServiceSoftwareUpdate {
 impl aws_smithy_http::response::ParseStrictResponse for StartElasticsearchServiceSoftwareUpdate {
                 type Output = std::result::Result<crate::output::StartElasticsearchServiceSoftwareUpdateOutput, crate::error::StartElasticsearchServiceSoftwareUpdateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_elasticsearch_service_software_update_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl UpdateElasticsearchDomainConfig {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateElasticsearchDomainConfig {
                 type Output = std::result::Result<crate::output::UpdateElasticsearchDomainConfigOutput, crate::error::UpdateElasticsearchDomainConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_elasticsearch_domain_config_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl UpdatePackage {
 impl aws_smithy_http::response::ParseStrictResponse for UpdatePackage {
                 type Output = std::result::Result<crate::output::UpdatePackageOutput, crate::error::UpdatePackageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_package_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl UpdateVpcEndpoint {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcEndpoint {
                 type Output = std::result::Result<crate::output::UpdateVpcEndpointOutput, crate::error::UpdateVpcEndpointError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_vpc_endpoint_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl UpgradeElasticsearchDomain {
 impl aws_smithy_http::response::ParseStrictResponse for UpgradeElasticsearchDomain {
                 type Output = std::result::Result<crate::output::UpgradeElasticsearchDomainOutput, crate::error::UpgradeElasticsearchDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_upgrade_elasticsearch_domain_error(response)
                      } else {

@@ -16,6 +16,7 @@ pub struct UploadDocumentsOutput  {
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
     #[doc(hidden)]
     pub warnings: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
+    _request_id: Option<String>,
 }
 impl UploadDocumentsOutput {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
@@ -35,6 +36,11 @@ impl UploadDocumentsOutput {
         self.warnings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UploadDocumentsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
 pub mod upload_documents_output {
     
@@ -46,6 +52,7 @@ pub mod upload_documents_output {
         pub(crate) adds: std::option::Option<i64>,
         pub(crate) deletes: std::option::Option<i64>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
@@ -90,6 +97,15 @@ pub mod upload_documents_output {
         pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>) -> Self {
             self.warnings = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
         pub fn build(self) -> crate::output::UploadDocumentsOutput {
             crate::output::UploadDocumentsOutput {
@@ -103,6 +119,7 @@ pub mod upload_documents_output {
                 ,
                 warnings: self.warnings
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -126,6 +143,7 @@ pub struct SuggestOutput  {
     /// <p>Container for the matching search suggestion information.</p>
     #[doc(hidden)]
     pub suggest: std::option::Option<crate::model::SuggestModel>,
+    _request_id: Option<String>,
 }
 impl SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
@@ -137,6 +155,11 @@ impl SuggestOutput {
         self.suggest.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SuggestOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SuggestOutput`](crate::output::SuggestOutput).
 pub mod suggest_output {
     
@@ -146,6 +169,7 @@ pub mod suggest_output {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SuggestStatus>,
         pub(crate) suggest: std::option::Option<crate::model::SuggestModel>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
@@ -166,6 +190,15 @@ pub mod suggest_output {
         pub fn set_suggest(mut self, input: std::option::Option<crate::model::SuggestModel>) -> Self {
             self.suggest = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SuggestOutput`](crate::output::SuggestOutput).
         pub fn build(self) -> crate::output::SuggestOutput {
             crate::output::SuggestOutput {
@@ -173,6 +206,7 @@ pub mod suggest_output {
                 ,
                 suggest: self.suggest
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -202,6 +236,7 @@ pub struct SearchOutput  {
     /// <p>The requested field statistics information.</p>
     #[doc(hidden)]
     pub stats: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldStats>>,
+    _request_id: Option<String>,
 }
 impl SearchOutput {
     /// <p>The status information returned for the search request.</p>
@@ -221,6 +256,11 @@ impl SearchOutput {
         self.stats.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SearchOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SearchOutput`](crate::output::SearchOutput).
 pub mod search_output {
     
@@ -232,6 +272,7 @@ pub mod search_output {
         pub(crate) hits: std::option::Option<crate::model::Hits>,
         pub(crate) facets: std::option::Option<std::collections::HashMap<std::string::String, crate::model::BucketInfo>>,
         pub(crate) stats: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldStats>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status information returned for the search request.</p>
@@ -282,6 +323,15 @@ pub mod search_output {
         pub fn set_stats(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldStats>>) -> Self {
             self.stats = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SearchOutput`](crate::output::SearchOutput).
         pub fn build(self) -> crate::output::SearchOutput {
             crate::output::SearchOutput {
@@ -293,6 +343,7 @@ pub mod search_output {
                 ,
                 stats: self.stats
                 ,
+                _request_id: self._request_id,
             }
         }
     }

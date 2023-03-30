@@ -6,6 +6,7 @@ pub struct StopSnomedctInferenceJobOutput  {
     /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
@@ -13,6 +14,11 @@ impl StopSnomedctInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopSnomedctInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
 pub mod stop_snomedct_inference_job_output {
     
@@ -21,6 +27,7 @@ pub mod stop_snomedct_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The identifier generated for the job. To get the status of job, use this identifier with the DescribeSNOMEDCTInferenceJob operation. </p>
@@ -32,11 +39,21 @@ pub mod stop_snomedct_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StopSnomedctInferenceJobOutput {
             crate::output::StopSnomedctInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct StopRxNormInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopRxNormInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
@@ -64,6 +82,11 @@ impl StopRxNormInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopRxNormInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
 pub mod stop_rx_norm_inference_job_output {
     
@@ -72,6 +95,7 @@ pub mod stop_rx_norm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeRxNormInferenceJob</code> operation.</p>
@@ -83,11 +107,21 @@ pub mod stop_rx_norm_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StopRxNormInferenceJobOutput {
             crate::output::StopRxNormInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct StopPhiDetectionJobOutput  {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
@@ -115,6 +150,11 @@ impl StopPhiDetectionJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopPhiDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
 pub mod stop_phi_detection_job_output {
     
@@ -123,6 +163,7 @@ pub mod stop_phi_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the PHI detection job that was stopped.</p>
@@ -134,11 +175,21 @@ pub mod stop_phi_detection_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StopPhiDetectionJobOutput {
             crate::output::StopPhiDetectionJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +210,7 @@ pub struct StopIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
@@ -166,6 +218,11 @@ impl StopIcd10CmInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopIcd10CmInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
 pub mod stop_icd10_cm_inference_job_output {
     
@@ -174,6 +231,7 @@ pub mod stop_icd10_cm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the <code>DescribeICD10CMInferenceJob</code> operation.</p>
@@ -185,11 +243,21 @@ pub mod stop_icd10_cm_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StopIcd10CmInferenceJobOutput {
             crate::output::StopIcd10CmInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,6 +278,7 @@ pub struct StopEntitiesDetectionV2JobOutput  {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StopEntitiesDetectionV2JobOutput {
     /// <p>The identifier of the medical entities detection job that was stopped.</p>
@@ -217,6 +286,11 @@ impl StopEntitiesDetectionV2JobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StopEntitiesDetectionV2JobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
 pub mod stop_entities_detection_v2_job_output {
     
@@ -225,6 +299,7 @@ pub mod stop_entities_detection_v2_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the medical entities detection job that was stopped.</p>
@@ -236,11 +311,21 @@ pub mod stop_entities_detection_v2_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StopEntitiesDetectionV2JobOutput {
             crate::output::StopEntitiesDetectionV2JobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -261,6 +346,7 @@ pub struct StartSnomedctInferenceJobOutput  {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
@@ -268,6 +354,11 @@ impl StartSnomedctInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartSnomedctInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
 pub mod start_snomedct_inference_job_output {
     
@@ -276,6 +367,7 @@ pub mod start_snomedct_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
@@ -287,11 +379,21 @@ pub mod start_snomedct_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StartSnomedctInferenceJobOutput {
             crate::output::StartSnomedctInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -312,6 +414,7 @@ pub struct StartRxNormInferenceJobOutput  {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartRxNormInferenceJobOutput {
     /// <p>The identifier of the job.</p>
@@ -319,6 +422,11 @@ impl StartRxNormInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartRxNormInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
 pub mod start_rx_norm_inference_job_output {
     
@@ -327,6 +435,7 @@ pub mod start_rx_norm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the job.</p>
@@ -338,11 +447,21 @@ pub mod start_rx_norm_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StartRxNormInferenceJobOutput {
             crate::output::StartRxNormInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -363,6 +482,7 @@ pub struct StartPhiDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartPhiDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
@@ -370,6 +490,11 @@ impl StartPhiDetectionJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartPhiDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
 pub mod start_phi_detection_job_output {
     
@@ -378,6 +503,7 @@ pub mod start_phi_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
@@ -389,11 +515,21 @@ pub mod start_phi_detection_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StartPhiDetectionJobOutput {
             crate::output::StartPhiDetectionJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -414,6 +550,7 @@ pub struct StartIcd10CmInferenceJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartIcd10CmInferenceJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
@@ -421,6 +558,11 @@ impl StartIcd10CmInferenceJobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartIcd10CmInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
 pub mod start_icd10_cm_inference_job_output {
     
@@ -429,6 +571,7 @@ pub mod start_icd10_cm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>StartICD10CMInferenceJob</code> operation.</p>
@@ -440,11 +583,21 @@ pub mod start_icd10_cm_inference_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StartIcd10CmInferenceJobOutput {
             crate::output::StartIcd10CmInferenceJobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -465,6 +618,7 @@ pub struct StartEntitiesDetectionV2JobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartEntitiesDetectionV2JobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
@@ -472,6 +626,11 @@ impl StartEntitiesDetectionV2JobOutput {
         self.job_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartEntitiesDetectionV2JobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
 pub mod start_entities_detection_v2_job_output {
     
@@ -480,6 +639,7 @@ pub mod start_entities_detection_v2_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
@@ -491,11 +651,21 @@ pub mod start_entities_detection_v2_job_output {
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StartEntitiesDetectionV2JobOutput {
             crate::output::StartEntitiesDetectionV2JobOutput {
                 job_id: self.job_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -519,6 +689,7 @@ pub struct ListSnomedctInferenceJobsOutput  {
     /// <p> Identifies the next page of results to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSnomedctInferenceJobsOutput {
     /// <p> A list containing the properties of each job that is returned. </p>
@@ -530,6 +701,11 @@ impl ListSnomedctInferenceJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSnomedctInferenceJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
 pub mod list_snomedct_inference_jobs_output {
     
@@ -539,6 +715,7 @@ pub mod list_snomedct_inference_jobs_output {
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comprehend_medical_async_job_properties_list`.
@@ -565,6 +742,15 @@ pub mod list_snomedct_inference_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListSnomedctInferenceJobsOutput {
             crate::output::ListSnomedctInferenceJobsOutput {
@@ -572,6 +758,7 @@ pub mod list_snomedct_inference_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -595,6 +782,7 @@ pub struct ListRxNormInferenceJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRxNormInferenceJobsOutput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -606,6 +794,11 @@ impl ListRxNormInferenceJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRxNormInferenceJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
 pub mod list_rx_norm_inference_jobs_output {
     
@@ -615,6 +808,7 @@ pub mod list_rx_norm_inference_jobs_output {
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comprehend_medical_async_job_properties_list`.
@@ -641,6 +835,15 @@ pub mod list_rx_norm_inference_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListRxNormInferenceJobsOutput {
             crate::output::ListRxNormInferenceJobsOutput {
@@ -648,6 +851,7 @@ pub mod list_rx_norm_inference_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -671,6 +875,7 @@ pub struct ListPhiDetectionJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPhiDetectionJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
@@ -682,6 +887,11 @@ impl ListPhiDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPhiDetectionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
 pub mod list_phi_detection_jobs_output {
     
@@ -691,6 +901,7 @@ pub mod list_phi_detection_jobs_output {
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comprehend_medical_async_job_properties_list`.
@@ -717,6 +928,15 @@ pub mod list_phi_detection_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListPhiDetectionJobsOutput {
             crate::output::ListPhiDetectionJobsOutput {
@@ -724,6 +944,7 @@ pub mod list_phi_detection_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -747,6 +968,7 @@ pub struct ListIcd10CmInferenceJobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIcd10CmInferenceJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -758,6 +980,11 @@ impl ListIcd10CmInferenceJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIcd10CmInferenceJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
 pub mod list_icd10_cm_inference_jobs_output {
     
@@ -767,6 +994,7 @@ pub mod list_icd10_cm_inference_jobs_output {
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comprehend_medical_async_job_properties_list`.
@@ -793,6 +1021,15 @@ pub mod list_icd10_cm_inference_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListIcd10CmInferenceJobsOutput {
             crate::output::ListIcd10CmInferenceJobsOutput {
@@ -800,6 +1037,7 @@ pub mod list_icd10_cm_inference_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -823,6 +1061,7 @@ pub struct ListEntitiesDetectionV2JobsOutput  {
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntitiesDetectionV2JobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
@@ -834,6 +1073,11 @@ impl ListEntitiesDetectionV2JobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEntitiesDetectionV2JobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
 pub mod list_entities_detection_v2_jobs_output {
     
@@ -843,6 +1087,7 @@ pub mod list_entities_detection_v2_jobs_output {
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list: std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comprehend_medical_async_job_properties_list`.
@@ -869,6 +1114,15 @@ pub mod list_entities_detection_v2_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
         pub fn build(self) -> crate::output::ListEntitiesDetectionV2JobsOutput {
             crate::output::ListEntitiesDetectionV2JobsOutput {
@@ -876,6 +1130,7 @@ pub mod list_entities_detection_v2_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -908,6 +1163,7 @@ pub struct InferSnomedctOutput  {
     /// <p> The number of characters in the input request documentation. </p>
     #[doc(hidden)]
     pub characters: std::option::Option<crate::model::Characters>,
+    _request_id: Option<String>,
 }
 impl InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
@@ -931,6 +1187,11 @@ impl InferSnomedctOutput {
         self.characters.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for InferSnomedctOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
 pub mod infer_snomedct_output {
     
@@ -943,6 +1204,7 @@ pub mod infer_snomedct_output {
         pub(crate) model_version: std::option::Option<std::string::String>,
         pub(crate) snomedct_details: std::option::Option<crate::model::SnomedctDetails>,
         pub(crate) characters: std::option::Option<crate::model::Characters>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -996,6 +1258,15 @@ pub mod infer_snomedct_output {
         pub fn set_characters(mut self, input: std::option::Option<crate::model::Characters>) -> Self {
             self.characters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
         pub fn build(self) -> crate::output::InferSnomedctOutput {
             crate::output::InferSnomedctOutput {
@@ -1009,6 +1280,7 @@ pub mod infer_snomedct_output {
                 ,
                 characters: self.characters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1035,6 +1307,7 @@ pub struct InferRxNormOutput  {
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InferRxNormOutput {
     /// <p>The medication entities detected in the text linked to RxNorm concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
@@ -1050,6 +1323,11 @@ impl InferRxNormOutput {
         self.model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InferRxNormOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InferRxNormOutput`](crate::output::InferRxNormOutput).
 pub mod infer_rx_norm_output {
     
@@ -1060,6 +1338,7 @@ pub mod infer_rx_norm_output {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -1095,6 +1374,15 @@ pub mod infer_rx_norm_output {
         pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::output::InferRxNormOutput).
         pub fn build(self) -> crate::output::InferRxNormOutput {
             crate::output::InferRxNormOutput {
@@ -1104,6 +1392,7 @@ pub mod infer_rx_norm_output {
                 ,
                 model_version: self.model_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1130,6 +1419,7 @@ pub struct InferIcd10CmOutput  {
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
@@ -1145,6 +1435,11 @@ impl InferIcd10CmOutput {
         self.model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for InferIcd10CmOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
 pub mod infer_icd10_cm_output {
     
@@ -1155,6 +1450,7 @@ pub mod infer_icd10_cm_output {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -1190,6 +1486,15 @@ pub mod infer_icd10_cm_output {
         pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
         pub fn build(self) -> crate::output::InferIcd10CmOutput {
             crate::output::InferIcd10CmOutput {
@@ -1199,6 +1504,7 @@ pub mod infer_icd10_cm_output {
                 ,
                 model_version: self.model_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1225,6 +1531,7 @@ pub struct DetectPhiOutput  {
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DetectPhiOutput {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
@@ -1240,6 +1547,11 @@ impl DetectPhiOutput {
         self.model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetectPhiOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectPhiOutput`](crate::output::DetectPhiOutput).
 pub mod detect_phi_output {
     
@@ -1250,6 +1562,7 @@ pub mod detect_phi_output {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -1285,6 +1598,15 @@ pub mod detect_phi_output {
         pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::output::DetectPhiOutput).
         pub fn build(self) -> crate::output::DetectPhiOutput {
             crate::output::DetectPhiOutput {
@@ -1294,6 +1616,7 @@ pub mod detect_phi_output {
                 ,
                 model_version: self.model_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1323,6 +1646,7 @@ pub struct DetectEntitiesV2Output  {
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DetectEntitiesV2Output {
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
@@ -1342,6 +1666,11 @@ impl DetectEntitiesV2Output {
         self.model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetectEntitiesV2Output {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
 pub mod detect_entities_v2_output {
     
@@ -1353,6 +1682,7 @@ pub mod detect_entities_v2_output {
         pub(crate) unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -1403,6 +1733,15 @@ pub mod detect_entities_v2_output {
         pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
         pub fn build(self) -> crate::output::DetectEntitiesV2Output {
             crate::output::DetectEntitiesV2Output {
@@ -1414,6 +1753,7 @@ pub mod detect_entities_v2_output {
                 ,
                 model_version: self.model_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1443,6 +1783,7 @@ pub struct DetectEntitiesOutput  {
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     #[doc(hidden)]
     pub model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DetectEntitiesOutput {
     /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the entity are also returned.</p>
@@ -1462,6 +1803,11 @@ impl DetectEntitiesOutput {
         self.model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetectEntitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
     
@@ -1473,6 +1819,7 @@ pub mod detect_entities_output {
         pub(crate) unmapped_attributes: std::option::Option<std::vec::Vec<crate::model::UnmappedAttribute>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -1523,6 +1870,15 @@ pub mod detect_entities_output {
         pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_version = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
@@ -1534,6 +1890,7 @@ pub mod detect_entities_output {
                 ,
                 model_version: self.model_version
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1554,6 +1911,7 @@ pub struct DescribeSnomedctInferenceJobOutput  {
     /// <p>Provides information about a detection job.</p>
     #[doc(hidden)]
     pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeSnomedctInferenceJobOutput {
     /// <p>Provides information about a detection job.</p>
@@ -1561,6 +1919,11 @@ impl DescribeSnomedctInferenceJobOutput {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSnomedctInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
 pub mod describe_snomedct_inference_job_output {
     
@@ -1569,6 +1932,7 @@ pub mod describe_snomedct_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a detection job.</p>
@@ -1580,11 +1944,21 @@ pub mod describe_snomedct_inference_job_output {
         pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
             self.comprehend_medical_async_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeSnomedctInferenceJobOutput {
             crate::output::DescribeSnomedctInferenceJobOutput {
                 comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1605,6 +1979,7 @@ pub struct DescribeRxNormInferenceJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
     pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1612,6 +1987,11 @@ impl DescribeRxNormInferenceJobOutput {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRxNormInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
 pub mod describe_rx_norm_inference_job_output {
     
@@ -1620,6 +2000,7 @@ pub mod describe_rx_norm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1631,11 +2012,21 @@ pub mod describe_rx_norm_inference_job_output {
         pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
             self.comprehend_medical_async_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeRxNormInferenceJobOutput {
             crate::output::DescribeRxNormInferenceJobOutput {
                 comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1656,6 +2047,7 @@ pub struct DescribePhiDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
     pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribePhiDetectionJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1663,6 +2055,11 @@ impl DescribePhiDetectionJobOutput {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePhiDetectionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
 pub mod describe_phi_detection_job_output {
     
@@ -1671,6 +2068,7 @@ pub mod describe_phi_detection_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1682,11 +2080,21 @@ pub mod describe_phi_detection_job_output {
         pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
             self.comprehend_medical_async_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribePhiDetectionJobOutput {
             crate::output::DescribePhiDetectionJobOutput {
                 comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1707,6 +2115,7 @@ pub struct DescribeIcd10CmInferenceJobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
     pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeIcd10CmInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1714,6 +2123,11 @@ impl DescribeIcd10CmInferenceJobOutput {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeIcd10CmInferenceJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
 pub mod describe_icd10_cm_inference_job_output {
     
@@ -1722,6 +2136,7 @@ pub mod describe_icd10_cm_inference_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1733,11 +2148,21 @@ pub mod describe_icd10_cm_inference_job_output {
         pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
             self.comprehend_medical_async_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeIcd10CmInferenceJobOutput {
             crate::output::DescribeIcd10CmInferenceJobOutput {
                 comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1758,6 +2183,7 @@ pub struct DescribeEntitiesDetectionV2JobOutput  {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
     pub comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeEntitiesDetectionV2JobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1765,6 +2191,11 @@ impl DescribeEntitiesDetectionV2JobOutput {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEntitiesDetectionV2JobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
 pub mod describe_entities_detection_v2_job_output {
     
@@ -1773,6 +2204,7 @@ pub mod describe_entities_detection_v2_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a detection job.</p>
@@ -1784,11 +2216,21 @@ pub mod describe_entities_detection_v2_job_output {
         pub fn set_comprehend_medical_async_job_properties(mut self, input: std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>) -> Self {
             self.comprehend_medical_async_job_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::DescribeEntitiesDetectionV2JobOutput {
             crate::output::DescribeEntitiesDetectionV2JobOutput {
                 comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }

@@ -22,6 +22,7 @@ impl AssociateFirewallPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallPolicy {
                 type Output = std::result::Result<crate::output::AssociateFirewallPolicyOutput, crate::error::AssociateFirewallPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_firewall_policy_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AssociateSubnets {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnets {
                 type Output = std::result::Result<crate::output::AssociateSubnetsOutput, crate::error::AssociateSubnetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_subnets_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateFirewall {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFirewall {
                 type Output = std::result::Result<crate::output::CreateFirewallOutput, crate::error::CreateFirewallError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_firewall_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateFirewallPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallPolicy {
                 type Output = std::result::Result<crate::output::CreateFirewallPolicyOutput, crate::error::CreateFirewallPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_firewall_policy_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateRuleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
                 type Output = std::result::Result<crate::output::CreateRuleGroupOutput, crate::error::CreateRuleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_rule_group_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteFirewall {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewall {
                 type Output = std::result::Result<crate::output::DeleteFirewallOutput, crate::error::DeleteFirewallError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_firewall_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteFirewallPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallPolicy {
                 type Output = std::result::Result<crate::output::DeleteFirewallPolicyOutput, crate::error::DeleteFirewallPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_firewall_policy_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
                 type Output = std::result::Result<crate::output::DeleteResourcePolicyOutput, crate::error::DeleteResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_policy_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteRuleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
                 type Output = std::result::Result<crate::output::DeleteRuleGroupOutput, crate::error::DeleteRuleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_rule_group_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DescribeFirewall {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewall {
                 type Output = std::result::Result<crate::output::DescribeFirewallOutput, crate::error::DescribeFirewallError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_firewall_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DescribeFirewallPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFirewallPolicy {
                 type Output = std::result::Result<crate::output::DescribeFirewallPolicyOutput, crate::error::DescribeFirewallPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_firewall_policy_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DescribeLoggingConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfiguration {
                 type Output = std::result::Result<crate::output::DescribeLoggingConfigurationOutput, crate::error::DescribeLoggingConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_logging_configuration_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
                 type Output = std::result::Result<crate::output::DescribeResourcePolicyOutput, crate::error::DescribeResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_resource_policy_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeRuleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroup {
                 type Output = std::result::Result<crate::output::DescribeRuleGroupOutput, crate::error::DescribeRuleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_rule_group_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeRuleGroupMetadata {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupMetadata {
                 type Output = std::result::Result<crate::output::DescribeRuleGroupMetadataOutput, crate::error::DescribeRuleGroupMetadataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_rule_group_metadata_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DisassociateSubnets {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateSubnets {
                 type Output = std::result::Result<crate::output::DisassociateSubnetsOutput, crate::error::DisassociateSubnetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_subnets_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListFirewallPolicies {
 impl aws_smithy_http::response::ParseStrictResponse for ListFirewallPolicies {
                 type Output = std::result::Result<crate::output::ListFirewallPoliciesOutput, crate::error::ListFirewallPoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_firewall_policies_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListFirewalls {
 impl aws_smithy_http::response::ParseStrictResponse for ListFirewalls {
                 type Output = std::result::Result<crate::output::ListFirewallsOutput, crate::error::ListFirewallsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_firewalls_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListRuleGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
                 type Output = std::result::Result<crate::output::ListRuleGroupsOutput, crate::error::ListRuleGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_rule_groups_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl PutResourcePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
                 type Output = std::result::Result<crate::output::PutResourcePolicyOutput, crate::error::PutResourcePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_resource_policy_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UpdateFirewallDeleteProtection {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDeleteProtection {
                 type Output = std::result::Result<crate::output::UpdateFirewallDeleteProtectionOutput, crate::error::UpdateFirewallDeleteProtectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_firewall_delete_protection_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UpdateFirewallDescription {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDescription {
                 type Output = std::result::Result<crate::output::UpdateFirewallDescriptionOutput, crate::error::UpdateFirewallDescriptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_firewall_description_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl UpdateFirewallEncryptionConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallEncryptionConfiguration {
                 type Output = std::result::Result<crate::output::UpdateFirewallEncryptionConfigurationOutput, crate::error::UpdateFirewallEncryptionConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_firewall_encryption_configuration_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl UpdateFirewallPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicy {
                 type Output = std::result::Result<crate::output::UpdateFirewallPolicyOutput, crate::error::UpdateFirewallPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_firewall_policy_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl UpdateFirewallPolicyChangeProtection {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallPolicyChangeProtection {
                 type Output = std::result::Result<crate::output::UpdateFirewallPolicyChangeProtectionOutput, crate::error::UpdateFirewallPolicyChangeProtectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_firewall_policy_change_protection_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl UpdateLoggingConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfiguration {
                 type Output = std::result::Result<crate::output::UpdateLoggingConfigurationOutput, crate::error::UpdateLoggingConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_logging_configuration_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl UpdateRuleGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
                 type Output = std::result::Result<crate::output::UpdateRuleGroupOutput, crate::error::UpdateRuleGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_rule_group_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl UpdateSubnetChangeProtection {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSubnetChangeProtection {
                 type Output = std::result::Result<crate::output::UpdateSubnetChangeProtectionOutput, crate::error::UpdateSubnetChangeProtectionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_subnet_change_protection_error(response)
                      } else {

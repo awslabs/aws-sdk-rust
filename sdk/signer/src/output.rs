@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -69,6 +103,7 @@ pub struct StartSigningJobOutput  {
     /// <p>The AWS account ID of the signing job owner.</p>
     #[doc(hidden)]
     pub job_owner: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartSigningJobOutput {
     /// <p>The ID of your signing job.</p>
@@ -80,6 +115,11 @@ impl StartSigningJobOutput {
         self.job_owner.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartSigningJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
 pub mod start_signing_job_output {
     
@@ -89,6 +129,7 @@ pub mod start_signing_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_owner: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of your signing job.</p>
@@ -109,6 +150,15 @@ pub mod start_signing_job_output {
         pub fn set_job_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_owner = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
         pub fn build(self) -> crate::output::StartSigningJobOutput {
             crate::output::StartSigningJobOutput {
@@ -116,6 +166,7 @@ pub mod start_signing_job_output {
                 ,
                 job_owner: self.job_owner
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -133,7 +184,13 @@ impl StartSigningJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSigningProfileOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RevokeSigningProfileOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
 pub mod revoke_signing_profile_output {
     
@@ -141,11 +198,22 @@ pub mod revoke_signing_profile_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
         pub fn build(self) -> crate::output::RevokeSigningProfileOutput {
             crate::output::RevokeSigningProfileOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -163,7 +231,13 @@ impl RevokeSigningProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevokeSignatureOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RevokeSignatureOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
 pub mod revoke_signature_output {
     
@@ -171,11 +245,22 @@ pub mod revoke_signature_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
         pub fn build(self) -> crate::output::RevokeSignatureOutput {
             crate::output::RevokeSignatureOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -196,6 +281,7 @@ pub struct RemoveProfilePermissionOutput  {
     /// <p>An identifier for the current revision of the profile permissions.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveProfilePermissionOutput {
     /// <p>An identifier for the current revision of the profile permissions.</p>
@@ -203,6 +289,11 @@ impl RemoveProfilePermissionOutput {
         self.revision_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveProfilePermissionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
 pub mod remove_profile_permission_output {
     
@@ -211,6 +302,7 @@ pub mod remove_profile_permission_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identifier for the current revision of the profile permissions.</p>
@@ -222,11 +314,21 @@ pub mod remove_profile_permission_output {
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
         pub fn build(self) -> crate::output::RemoveProfilePermissionOutput {
             crate::output::RemoveProfilePermissionOutput {
                 revision_id: self.revision_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -253,6 +355,7 @@ pub struct PutSigningProfileOutput  {
     /// <p>The signing profile ARN, including the profile version.</p>
     #[doc(hidden)]
     pub profile_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutSigningProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
@@ -268,6 +371,11 @@ impl PutSigningProfileOutput {
         self.profile_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutSigningProfileOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
 pub mod put_signing_profile_output {
     
@@ -278,6 +386,7 @@ pub mod put_signing_profile_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
         pub(crate) profile_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
@@ -307,6 +416,15 @@ pub mod put_signing_profile_output {
         pub fn set_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_version_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
         pub fn build(self) -> crate::output::PutSigningProfileOutput {
             crate::output::PutSigningProfileOutput {
@@ -316,6 +434,7 @@ pub mod put_signing_profile_output {
                 ,
                 profile_version_arn: self.profile_version_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -336,6 +455,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tags associated with the signing profile.</p>
@@ -343,6 +463,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -351,6 +476,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -368,11 +494,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -396,6 +532,7 @@ pub struct ListSigningProfilesOutput  {
     /// <p>Value for specifying the next set of paginated results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
@@ -407,6 +544,11 @@ impl ListSigningProfilesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSigningProfilesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
 pub mod list_signing_profiles_output {
     
@@ -416,6 +558,7 @@ pub mod list_signing_profiles_output {
     pub struct Builder {
         pub(crate) profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `profiles`.
@@ -442,6 +585,15 @@ pub mod list_signing_profiles_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
         pub fn build(self) -> crate::output::ListSigningProfilesOutput {
             crate::output::ListSigningProfilesOutput {
@@ -449,6 +601,7 @@ pub mod list_signing_profiles_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -472,6 +625,7 @@ pub struct ListSigningPlatformsOutput  {
     /// <p>Value for specifying the next set of paginated results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSigningPlatformsOutput {
     /// <p>A list of all platforms that match the request parameters.</p>
@@ -483,6 +637,11 @@ impl ListSigningPlatformsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSigningPlatformsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
 pub mod list_signing_platforms_output {
     
@@ -492,6 +651,7 @@ pub mod list_signing_platforms_output {
     pub struct Builder {
         pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::SigningPlatform>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `platforms`.
@@ -518,6 +678,15 @@ pub mod list_signing_platforms_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
         pub fn build(self) -> crate::output::ListSigningPlatformsOutput {
             crate::output::ListSigningPlatformsOutput {
@@ -525,6 +694,7 @@ pub mod list_signing_platforms_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -548,6 +718,7 @@ pub struct ListSigningJobsOutput  {
     /// <p>String for specifying the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSigningJobsOutput {
     /// <p>A list of your signing jobs.</p>
@@ -559,6 +730,11 @@ impl ListSigningJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSigningJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
 pub mod list_signing_jobs_output {
     
@@ -568,6 +744,7 @@ pub mod list_signing_jobs_output {
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::SigningJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `jobs`.
@@ -594,6 +771,15 @@ pub mod list_signing_jobs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
         pub fn build(self) -> crate::output::ListSigningJobsOutput {
             crate::output::ListSigningJobsOutput {
@@ -601,6 +787,7 @@ pub mod list_signing_jobs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -630,6 +817,7 @@ pub struct ListProfilePermissionsOutput  {
     /// <p>String for specifying the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListProfilePermissionsOutput {
     /// <p>The identifier for the current revision of profile permissions.</p>
@@ -649,6 +837,11 @@ impl ListProfilePermissionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListProfilePermissionsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
 pub mod list_profile_permissions_output {
     
@@ -660,6 +853,7 @@ pub mod list_profile_permissions_output {
         pub(crate) policy_size_bytes: std::option::Option<i32>,
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier for the current revision of profile permissions.</p>
@@ -704,6 +898,15 @@ pub mod list_profile_permissions_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
         pub fn build(self) -> crate::output::ListProfilePermissionsOutput {
             crate::output::ListProfilePermissionsOutput {
@@ -716,6 +919,7 @@ pub mod list_profile_permissions_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -775,6 +979,7 @@ pub struct GetSigningProfileOutput  {
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetSigningProfileOutput {
     /// <p>The name of the target signing profile.</p>
@@ -834,6 +1039,11 @@ impl GetSigningProfileOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSigningProfileOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
 pub mod get_signing_profile_output {
     
@@ -855,6 +1065,7 @@ pub mod get_signing_profile_output {
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the target signing profile.</p>
@@ -995,6 +1206,15 @@ pub mod get_signing_profile_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
         pub fn build(self) -> crate::output::GetSigningProfileOutput {
             crate::output::GetSigningProfileOutput {
@@ -1026,6 +1246,7 @@ pub mod get_signing_profile_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1070,6 +1291,7 @@ pub struct GetSigningPlatformOutput  {
     /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     #[doc(hidden)]
     pub revocation_supported: bool,
+    _request_id: Option<String>,
 }
 impl GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
@@ -1109,6 +1331,11 @@ impl GetSigningPlatformOutput {
         self.revocation_supported
     }
 }
+impl aws_http::request_id::RequestId for GetSigningPlatformOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
 pub mod get_signing_platform_output {
     
@@ -1125,6 +1352,7 @@ pub mod get_signing_platform_output {
         pub(crate) signing_image_format: std::option::Option<crate::model::SigningImageFormat>,
         pub(crate) max_size_in_mb: std::option::Option<i32>,
         pub(crate) revocation_supported: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the target signing platform.</p>
@@ -1208,6 +1436,15 @@ pub mod get_signing_platform_output {
         pub fn set_revocation_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.revocation_supported = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
         pub fn build(self) -> crate::output::GetSigningPlatformOutput {
             crate::output::GetSigningPlatformOutput {
@@ -1231,6 +1468,7 @@ pub mod get_signing_platform_output {
                 revocation_supported: self.revocation_supported
                     .unwrap_or_default()
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1305,6 +1543,7 @@ pub struct DescribeSigningJobOutput  {
     /// <p>The IAM entity that initiated the signing job.</p>
     #[doc(hidden)]
     pub job_invoker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSigningJobOutput {
     /// <p>The ID of the signing job on output.</p>
@@ -1384,6 +1623,11 @@ impl DescribeSigningJobOutput {
         self.job_invoker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSigningJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
 pub mod describe_signing_job_output {
     
@@ -1410,6 +1654,7 @@ pub mod describe_signing_job_output {
         pub(crate) signed_object: std::option::Option<crate::model::SignedObject>,
         pub(crate) job_owner: std::option::Option<std::string::String>,
         pub(crate) job_invoker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the signing job on output.</p>
@@ -1589,6 +1834,15 @@ pub mod describe_signing_job_output {
         pub fn set_job_invoker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_invoker = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
         pub fn build(self) -> crate::output::DescribeSigningJobOutput {
             crate::output::DescribeSigningJobOutput {
@@ -1630,6 +1884,7 @@ pub mod describe_signing_job_output {
                 ,
                 job_invoker: self.job_invoker
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1647,7 +1902,13 @@ impl DescribeSigningJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSigningProfileOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for CancelSigningProfileOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
 pub mod cancel_signing_profile_output {
     
@@ -1655,11 +1916,22 @@ pub mod cancel_signing_profile_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
         pub fn build(self) -> crate::output::CancelSigningProfileOutput {
             crate::output::CancelSigningProfileOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1680,6 +1952,7 @@ pub struct AddProfilePermissionOutput  {
     /// <p>A unique identifier for the current profile revision.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AddProfilePermissionOutput {
     /// <p>A unique identifier for the current profile revision.</p>
@@ -1687,6 +1960,11 @@ impl AddProfilePermissionOutput {
         self.revision_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddProfilePermissionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
 pub mod add_profile_permission_output {
     
@@ -1695,6 +1973,7 @@ pub mod add_profile_permission_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the current profile revision.</p>
@@ -1706,11 +1985,21 @@ pub mod add_profile_permission_output {
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
         pub fn build(self) -> crate::output::AddProfilePermissionOutput {
             crate::output::AddProfilePermissionOutput {
                 revision_id: self.revision_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

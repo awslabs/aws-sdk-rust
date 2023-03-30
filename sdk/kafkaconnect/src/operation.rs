@@ -22,6 +22,7 @@ impl CreateConnector {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConnector {
                 type Output = std::result::Result<crate::output::CreateConnectorOutput, crate::error::CreateConnectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_connector_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateCustomPlugin {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCustomPlugin {
                 type Output = std::result::Result<crate::output::CreateCustomPluginOutput, crate::error::CreateCustomPluginError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_custom_plugin_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateWorkerConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerConfiguration {
                 type Output = std::result::Result<crate::output::CreateWorkerConfigurationOutput, crate::error::CreateWorkerConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_worker_configuration_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteConnector {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConnector {
                 type Output = std::result::Result<crate::output::DeleteConnectorOutput, crate::error::DeleteConnectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_connector_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteCustomPlugin {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomPlugin {
                 type Output = std::result::Result<crate::output::DeleteCustomPluginOutput, crate::error::DeleteCustomPluginError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_custom_plugin_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DescribeConnector {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
                 type Output = std::result::Result<crate::output::DescribeConnectorOutput, crate::error::DescribeConnectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_connector_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DescribeCustomPlugin {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomPlugin {
                 type Output = std::result::Result<crate::output::DescribeCustomPluginOutput, crate::error::DescribeCustomPluginError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_custom_plugin_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DescribeWorkerConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkerConfiguration {
                 type Output = std::result::Result<crate::output::DescribeWorkerConfigurationOutput, crate::error::DescribeWorkerConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_worker_configuration_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListConnectors {
 impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
                 type Output = std::result::Result<crate::output::ListConnectorsOutput, crate::error::ListConnectorsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_connectors_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListCustomPlugins {
 impl aws_smithy_http::response::ParseStrictResponse for ListCustomPlugins {
                 type Output = std::result::Result<crate::output::ListCustomPluginsOutput, crate::error::ListCustomPluginsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_custom_plugins_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListWorkerConfigurations {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorkerConfigurations {
                 type Output = std::result::Result<crate::output::ListWorkerConfigurationsOutput, crate::error::ListWorkerConfigurationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_worker_configurations_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UpdateConnector {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateConnector {
                 type Output = std::result::Result<crate::output::UpdateConnectorOutput, crate::error::UpdateConnectorError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_connector_error(response)
                      } else {

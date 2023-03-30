@@ -22,6 +22,7 @@ impl CreateConfigurationSet {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
                 type Output = std::result::Result<crate::output::CreateConfigurationSetOutput, crate::error::CreateConfigurationSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_configuration_set_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateConfigurationSetEventDestination {
 impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEventDestination {
                 type Output = std::result::Result<crate::output::CreateConfigurationSetEventDestinationOutput, crate::error::CreateConfigurationSetEventDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_configuration_set_event_destination_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteConfigurationSet {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
                 type Output = std::result::Result<crate::output::DeleteConfigurationSetOutput, crate::error::DeleteConfigurationSetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_configuration_set_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteConfigurationSetEventDestination {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEventDestination {
                 type Output = std::result::Result<crate::output::DeleteConfigurationSetEventDestinationOutput, crate::error::DeleteConfigurationSetEventDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_configuration_set_event_destination_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetConfigurationSetEventDestinations {
 impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEventDestinations {
                 type Output = std::result::Result<crate::output::GetConfigurationSetEventDestinationsOutput, crate::error::GetConfigurationSetEventDestinationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_configuration_set_event_destinations_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListConfigurationSets {
 impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
                 type Output = std::result::Result<crate::output::ListConfigurationSetsOutput, crate::error::ListConfigurationSetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_configuration_sets_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl SendVoiceMessage {
 impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
                 type Output = std::result::Result<crate::output::SendVoiceMessageOutput, crate::error::SendVoiceMessageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_send_voice_message_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl UpdateConfigurationSetEventDestination {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEventDestination {
                 type Output = std::result::Result<crate::output::UpdateConfigurationSetEventDestinationOutput, crate::error::UpdateConfigurationSetEventDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_configuration_set_event_destination_error(response)
                      } else {

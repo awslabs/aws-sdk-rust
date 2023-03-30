@@ -22,6 +22,7 @@ impl BatchDeleteWorlds {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteWorlds {
                 type Output = std::result::Result<crate::output::BatchDeleteWorldsOutput, crate::error::BatchDeleteWorldsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_worlds_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDescribeSimulationJob {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeSimulationJob {
                 type Output = std::result::Result<crate::output::BatchDescribeSimulationJobOutput, crate::error::BatchDescribeSimulationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_describe_simulation_job_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CancelDeploymentJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelDeploymentJob {
                 type Output = std::result::Result<crate::output::CancelDeploymentJobOutput, crate::error::CancelDeploymentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_deployment_job_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CancelSimulationJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJob {
                 type Output = std::result::Result<crate::output::CancelSimulationJobOutput, crate::error::CancelSimulationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_simulation_job_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CancelSimulationJobBatch {
 impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJobBatch {
                 type Output = std::result::Result<crate::output::CancelSimulationJobBatchOutput, crate::error::CancelSimulationJobBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_simulation_job_batch_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CancelWorldExportJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelWorldExportJob {
                 type Output = std::result::Result<crate::output::CancelWorldExportJobOutput, crate::error::CancelWorldExportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_world_export_job_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CancelWorldGenerationJob {
 impl aws_smithy_http::response::ParseStrictResponse for CancelWorldGenerationJob {
                 type Output = std::result::Result<crate::output::CancelWorldGenerationJobOutput, crate::error::CancelWorldGenerationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_cancel_world_generation_job_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl CreateDeploymentJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDeploymentJob {
                 type Output = std::result::Result<crate::output::CreateDeploymentJobOutput, crate::error::CreateDeploymentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_deployment_job_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl CreateFleet {
 impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
                 type Output = std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_fleet_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl CreateRobot {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRobot {
                 type Output = std::result::Result<crate::output::CreateRobotOutput, crate::error::CreateRobotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_robot_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl CreateRobotApplication {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplication {
                 type Output = std::result::Result<crate::output::CreateRobotApplicationOutput, crate::error::CreateRobotApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_robot_application_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl CreateRobotApplicationVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplicationVersion {
                 type Output = std::result::Result<crate::output::CreateRobotApplicationVersionOutput, crate::error::CreateRobotApplicationVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_robot_application_version_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl CreateSimulationApplication {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplication {
                 type Output = std::result::Result<crate::output::CreateSimulationApplicationOutput, crate::error::CreateSimulationApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_simulation_application_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl CreateSimulationApplicationVersion {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplicationVersion {
                 type Output = std::result::Result<crate::output::CreateSimulationApplicationVersionOutput, crate::error::CreateSimulationApplicationVersionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_simulation_application_version_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl CreateSimulationJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationJob {
                 type Output = std::result::Result<crate::output::CreateSimulationJobOutput, crate::error::CreateSimulationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_simulation_job_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl CreateWorldExportJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorldExportJob {
                 type Output = std::result::Result<crate::output::CreateWorldExportJobOutput, crate::error::CreateWorldExportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_world_export_job_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl CreateWorldGenerationJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorldGenerationJob {
                 type Output = std::result::Result<crate::output::CreateWorldGenerationJobOutput, crate::error::CreateWorldGenerationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_world_generation_job_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl CreateWorldTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for CreateWorldTemplate {
                 type Output = std::result::Result<crate::output::CreateWorldTemplateOutput, crate::error::CreateWorldTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_world_template_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl DeleteFleet {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
                 type Output = std::result::Result<crate::output::DeleteFleetOutput, crate::error::DeleteFleetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_fleet_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl DeleteRobot {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRobot {
                 type Output = std::result::Result<crate::output::DeleteRobotOutput, crate::error::DeleteRobotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_robot_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl DeleteRobotApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRobotApplication {
                 type Output = std::result::Result<crate::output::DeleteRobotApplicationOutput, crate::error::DeleteRobotApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_robot_application_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl DeleteSimulationApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulationApplication {
                 type Output = std::result::Result<crate::output::DeleteSimulationApplicationOutput, crate::error::DeleteSimulationApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_simulation_application_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl DeleteWorldTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteWorldTemplate {
                 type Output = std::result::Result<crate::output::DeleteWorldTemplateOutput, crate::error::DeleteWorldTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_world_template_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl DeregisterRobot {
 impl aws_smithy_http::response::ParseStrictResponse for DeregisterRobot {
                 type Output = std::result::Result<crate::output::DeregisterRobotOutput, crate::error::DeregisterRobotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_deregister_robot_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl DescribeDeploymentJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDeploymentJob {
                 type Output = std::result::Result<crate::output::DescribeDeploymentJobOutput, crate::error::DescribeDeploymentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_deployment_job_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl DescribeFleet {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeFleet {
                 type Output = std::result::Result<crate::output::DescribeFleetOutput, crate::error::DescribeFleetError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_fleet_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl DescribeRobot {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRobot {
                 type Output = std::result::Result<crate::output::DescribeRobotOutput, crate::error::DescribeRobotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_robot_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl DescribeRobotApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRobotApplication {
                 type Output = std::result::Result<crate::output::DescribeRobotApplicationOutput, crate::error::DescribeRobotApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_robot_application_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl DescribeSimulationApplication {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationApplication {
                 type Output = std::result::Result<crate::output::DescribeSimulationApplicationOutput, crate::error::DescribeSimulationApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_simulation_application_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl DescribeSimulationJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJob {
                 type Output = std::result::Result<crate::output::DescribeSimulationJobOutput, crate::error::DescribeSimulationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_simulation_job_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl DescribeSimulationJobBatch {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJobBatch {
                 type Output = std::result::Result<crate::output::DescribeSimulationJobBatchOutput, crate::error::DescribeSimulationJobBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_simulation_job_batch_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl DescribeWorld {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorld {
                 type Output = std::result::Result<crate::output::DescribeWorldOutput, crate::error::DescribeWorldError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_world_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl DescribeWorldExportJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldExportJob {
                 type Output = std::result::Result<crate::output::DescribeWorldExportJobOutput, crate::error::DescribeWorldExportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_world_export_job_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl DescribeWorldGenerationJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldGenerationJob {
                 type Output = std::result::Result<crate::output::DescribeWorldGenerationJobOutput, crate::error::DescribeWorldGenerationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_world_generation_job_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl DescribeWorldTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldTemplate {
                 type Output = std::result::Result<crate::output::DescribeWorldTemplateOutput, crate::error::DescribeWorldTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_world_template_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl GetWorldTemplateBody {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
                 type Output = std::result::Result<crate::output::GetWorldTemplateBodyOutput, crate::error::GetWorldTemplateBodyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_world_template_body_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl ListDeploymentJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListDeploymentJobs {
                 type Output = std::result::Result<crate::output::ListDeploymentJobsOutput, crate::error::ListDeploymentJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_deployment_jobs_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl ListFleets {
 impl aws_smithy_http::response::ParseStrictResponse for ListFleets {
                 type Output = std::result::Result<crate::output::ListFleetsOutput, crate::error::ListFleetsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_fleets_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl ListRobotApplications {
 impl aws_smithy_http::response::ParseStrictResponse for ListRobotApplications {
                 type Output = std::result::Result<crate::output::ListRobotApplicationsOutput, crate::error::ListRobotApplicationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_robot_applications_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl ListRobots {
 impl aws_smithy_http::response::ParseStrictResponse for ListRobots {
                 type Output = std::result::Result<crate::output::ListRobotsOutput, crate::error::ListRobotsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_robots_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl ListSimulationApplications {
 impl aws_smithy_http::response::ParseStrictResponse for ListSimulationApplications {
                 type Output = std::result::Result<crate::output::ListSimulationApplicationsOutput, crate::error::ListSimulationApplicationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_simulation_applications_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl ListSimulationJobBatches {
 impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobBatches {
                 type Output = std::result::Result<crate::output::ListSimulationJobBatchesOutput, crate::error::ListSimulationJobBatchesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_simulation_job_batches_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl ListSimulationJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobs {
                 type Output = std::result::Result<crate::output::ListSimulationJobsOutput, crate::error::ListSimulationJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_simulation_jobs_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl ListWorldExportJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorldExportJobs {
                 type Output = std::result::Result<crate::output::ListWorldExportJobsOutput, crate::error::ListWorldExportJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_world_export_jobs_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl ListWorldGenerationJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorldGenerationJobs {
                 type Output = std::result::Result<crate::output::ListWorldGenerationJobsOutput, crate::error::ListWorldGenerationJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_world_generation_jobs_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl ListWorlds {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorlds {
                 type Output = std::result::Result<crate::output::ListWorldsOutput, crate::error::ListWorldsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_worlds_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl ListWorldTemplates {
 impl aws_smithy_http::response::ParseStrictResponse for ListWorldTemplates {
                 type Output = std::result::Result<crate::output::ListWorldTemplatesOutput, crate::error::ListWorldTemplatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_world_templates_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl RegisterRobot {
 impl aws_smithy_http::response::ParseStrictResponse for RegisterRobot {
                 type Output = std::result::Result<crate::output::RegisterRobotOutput, crate::error::RegisterRobotError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_register_robot_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl RestartSimulationJob {
 impl aws_smithy_http::response::ParseStrictResponse for RestartSimulationJob {
                 type Output = std::result::Result<crate::output::RestartSimulationJobOutput, crate::error::RestartSimulationJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_restart_simulation_job_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl StartSimulationJobBatch {
 impl aws_smithy_http::response::ParseStrictResponse for StartSimulationJobBatch {
                 type Output = std::result::Result<crate::output::StartSimulationJobBatchOutput, crate::error::StartSimulationJobBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_simulation_job_batch_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl SyncDeploymentJob {
 impl aws_smithy_http::response::ParseStrictResponse for SyncDeploymentJob {
                 type Output = std::result::Result<crate::output::SyncDeploymentJobOutput, crate::error::SyncDeploymentJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_sync_deployment_job_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl UpdateRobotApplication {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRobotApplication {
                 type Output = std::result::Result<crate::output::UpdateRobotApplicationOutput, crate::error::UpdateRobotApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_robot_application_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl UpdateSimulationApplication {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateSimulationApplication {
                 type Output = std::result::Result<crate::output::UpdateSimulationApplicationOutput, crate::error::UpdateSimulationApplicationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_simulation_application_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl UpdateWorldTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateWorldTemplate {
                 type Output = std::result::Result<crate::output::UpdateWorldTemplateOutput, crate::error::UpdateWorldTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_world_template_error(response)
                      } else {

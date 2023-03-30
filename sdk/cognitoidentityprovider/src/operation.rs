@@ -22,6 +22,7 @@ impl AddCustomAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for AddCustomAttributes {
                 type Output = std::result::Result<crate::output::AddCustomAttributesOutput, crate::error::AddCustomAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_add_custom_attributes_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AdminAddUserToGroup {
 impl aws_smithy_http::response::ParseStrictResponse for AdminAddUserToGroup {
                 type Output = std::result::Result<crate::output::AdminAddUserToGroupOutput, crate::error::AdminAddUserToGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_add_user_to_group_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AdminConfirmSignUp {
 impl aws_smithy_http::response::ParseStrictResponse for AdminConfirmSignUp {
                 type Output = std::result::Result<crate::output::AdminConfirmSignUpOutput, crate::error::AdminConfirmSignUpError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_confirm_sign_up_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl AdminCreateUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminCreateUser {
                 type Output = std::result::Result<crate::output::AdminCreateUserOutput, crate::error::AdminCreateUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_create_user_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl AdminDeleteUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminDeleteUser {
                 type Output = std::result::Result<crate::output::AdminDeleteUserOutput, crate::error::AdminDeleteUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_delete_user_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl AdminDeleteUserAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for AdminDeleteUserAttributes {
                 type Output = std::result::Result<crate::output::AdminDeleteUserAttributesOutput, crate::error::AdminDeleteUserAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_delete_user_attributes_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl AdminDisableProviderForUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminDisableProviderForUser {
                 type Output = std::result::Result<crate::output::AdminDisableProviderForUserOutput, crate::error::AdminDisableProviderForUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_disable_provider_for_user_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl AdminDisableUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminDisableUser {
                 type Output = std::result::Result<crate::output::AdminDisableUserOutput, crate::error::AdminDisableUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_disable_user_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl AdminEnableUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminEnableUser {
                 type Output = std::result::Result<crate::output::AdminEnableUserOutput, crate::error::AdminEnableUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_enable_user_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl AdminForgetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for AdminForgetDevice {
                 type Output = std::result::Result<crate::output::AdminForgetDeviceOutput, crate::error::AdminForgetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_forget_device_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl AdminGetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for AdminGetDevice {
                 type Output = std::result::Result<crate::output::AdminGetDeviceOutput, crate::error::AdminGetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_get_device_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl AdminGetUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminGetUser {
                 type Output = std::result::Result<crate::output::AdminGetUserOutput, crate::error::AdminGetUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_get_user_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl AdminInitiateAuth {
 impl aws_smithy_http::response::ParseStrictResponse for AdminInitiateAuth {
                 type Output = std::result::Result<crate::output::AdminInitiateAuthOutput, crate::error::AdminInitiateAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_initiate_auth_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl AdminLinkProviderForUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminLinkProviderForUser {
                 type Output = std::result::Result<crate::output::AdminLinkProviderForUserOutput, crate::error::AdminLinkProviderForUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_link_provider_for_user_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl AdminListDevices {
 impl aws_smithy_http::response::ParseStrictResponse for AdminListDevices {
                 type Output = std::result::Result<crate::output::AdminListDevicesOutput, crate::error::AdminListDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_list_devices_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl AdminListGroupsForUser {
 impl aws_smithy_http::response::ParseStrictResponse for AdminListGroupsForUser {
                 type Output = std::result::Result<crate::output::AdminListGroupsForUserOutput, crate::error::AdminListGroupsForUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_list_groups_for_user_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl AdminListUserAuthEvents {
 impl aws_smithy_http::response::ParseStrictResponse for AdminListUserAuthEvents {
                 type Output = std::result::Result<crate::output::AdminListUserAuthEventsOutput, crate::error::AdminListUserAuthEventsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_list_user_auth_events_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl AdminRemoveUserFromGroup {
 impl aws_smithy_http::response::ParseStrictResponse for AdminRemoveUserFromGroup {
                 type Output = std::result::Result<crate::output::AdminRemoveUserFromGroupOutput, crate::error::AdminRemoveUserFromGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_remove_user_from_group_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl AdminResetUserPassword {
 impl aws_smithy_http::response::ParseStrictResponse for AdminResetUserPassword {
                 type Output = std::result::Result<crate::output::AdminResetUserPasswordOutput, crate::error::AdminResetUserPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_reset_user_password_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl AdminRespondToAuthChallenge {
 impl aws_smithy_http::response::ParseStrictResponse for AdminRespondToAuthChallenge {
                 type Output = std::result::Result<crate::output::AdminRespondToAuthChallengeOutput, crate::error::AdminRespondToAuthChallengeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_respond_to_auth_challenge_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl AdminSetUserMFAPreference {
 impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserMFAPreference {
                 type Output = std::result::Result<crate::output::AdminSetUserMfaPreferenceOutput, crate::error::AdminSetUserMFAPreferenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_set_user_mfa_preference_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl AdminSetUserPassword {
 impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserPassword {
                 type Output = std::result::Result<crate::output::AdminSetUserPasswordOutput, crate::error::AdminSetUserPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_set_user_password_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl AdminSetUserSettings {
 impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserSettings {
                 type Output = std::result::Result<crate::output::AdminSetUserSettingsOutput, crate::error::AdminSetUserSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_set_user_settings_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl AdminUpdateAuthEventFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateAuthEventFeedback {
                 type Output = std::result::Result<crate::output::AdminUpdateAuthEventFeedbackOutput, crate::error::AdminUpdateAuthEventFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_update_auth_event_feedback_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl AdminUpdateDeviceStatus {
 impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateDeviceStatus {
                 type Output = std::result::Result<crate::output::AdminUpdateDeviceStatusOutput, crate::error::AdminUpdateDeviceStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_update_device_status_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl AdminUpdateUserAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateUserAttributes {
                 type Output = std::result::Result<crate::output::AdminUpdateUserAttributesOutput, crate::error::AdminUpdateUserAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_update_user_attributes_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl AdminUserGlobalSignOut {
 impl aws_smithy_http::response::ParseStrictResponse for AdminUserGlobalSignOut {
                 type Output = std::result::Result<crate::output::AdminUserGlobalSignOutOutput, crate::error::AdminUserGlobalSignOutError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_admin_user_global_sign_out_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl AssociateSoftwareToken {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateSoftwareToken {
                 type Output = std::result::Result<crate::output::AssociateSoftwareTokenOutput, crate::error::AssociateSoftwareTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_software_token_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ChangePassword {
 impl aws_smithy_http::response::ParseStrictResponse for ChangePassword {
                 type Output = std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_change_password_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ConfirmDevice {
 impl aws_smithy_http::response::ParseStrictResponse for ConfirmDevice {
                 type Output = std::result::Result<crate::output::ConfirmDeviceOutput, crate::error::ConfirmDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_confirm_device_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl ConfirmForgotPassword {
 impl aws_smithy_http::response::ParseStrictResponse for ConfirmForgotPassword {
                 type Output = std::result::Result<crate::output::ConfirmForgotPasswordOutput, crate::error::ConfirmForgotPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_confirm_forgot_password_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl ConfirmSignUp {
 impl aws_smithy_http::response::ParseStrictResponse for ConfirmSignUp {
                 type Output = std::result::Result<crate::output::ConfirmSignUpOutput, crate::error::ConfirmSignUpError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_confirm_sign_up_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl CreateGroup {
 impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
                 type Output = std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_group_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl CreateIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for CreateIdentityProvider {
                 type Output = std::result::Result<crate::output::CreateIdentityProviderOutput, crate::error::CreateIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_identity_provider_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl CreateResourceServer {
 impl aws_smithy_http::response::ParseStrictResponse for CreateResourceServer {
                 type Output = std::result::Result<crate::output::CreateResourceServerOutput, crate::error::CreateResourceServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_resource_server_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl CreateUserImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUserImportJob {
                 type Output = std::result::Result<crate::output::CreateUserImportJobOutput, crate::error::CreateUserImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_import_job_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl CreateUserPool {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUserPool {
                 type Output = std::result::Result<crate::output::CreateUserPoolOutput, crate::error::CreateUserPoolError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_pool_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl CreateUserPoolClient {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUserPoolClient {
                 type Output = std::result::Result<crate::output::CreateUserPoolClientOutput, crate::error::CreateUserPoolClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_pool_client_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl CreateUserPoolDomain {
 impl aws_smithy_http::response::ParseStrictResponse for CreateUserPoolDomain {
                 type Output = std::result::Result<crate::output::CreateUserPoolDomainOutput, crate::error::CreateUserPoolDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_user_pool_domain_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl DeleteGroup {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
                 type Output = std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_group_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl DeleteIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityProvider {
                 type Output = std::result::Result<crate::output::DeleteIdentityProviderOutput, crate::error::DeleteIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_identity_provider_error(response)
                      } else {
@@ -1293,6 +1334,7 @@ impl DeleteResourceServer {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceServer {
                 type Output = std::result::Result<crate::output::DeleteResourceServerOutput, crate::error::DeleteResourceServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_server_error(response)
                      } else {
@@ -1324,6 +1366,7 @@ impl DeleteUser {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
                 type Output = std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_error(response)
                      } else {
@@ -1355,6 +1398,7 @@ impl DeleteUserAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUserAttributes {
                 type Output = std::result::Result<crate::output::DeleteUserAttributesOutput, crate::error::DeleteUserAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_attributes_error(response)
                      } else {
@@ -1386,6 +1430,7 @@ impl DeleteUserPool {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPool {
                 type Output = std::result::Result<crate::output::DeleteUserPoolOutput, crate::error::DeleteUserPoolError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_pool_error(response)
                      } else {
@@ -1417,6 +1462,7 @@ impl DeleteUserPoolClient {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPoolClient {
                 type Output = std::result::Result<crate::output::DeleteUserPoolClientOutput, crate::error::DeleteUserPoolClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_pool_client_error(response)
                      } else {
@@ -1448,6 +1494,7 @@ impl DeleteUserPoolDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPoolDomain {
                 type Output = std::result::Result<crate::output::DeleteUserPoolDomainOutput, crate::error::DeleteUserPoolDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_user_pool_domain_error(response)
                      } else {
@@ -1479,6 +1526,7 @@ impl DescribeIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityProvider {
                 type Output = std::result::Result<crate::output::DescribeIdentityProviderOutput, crate::error::DescribeIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_identity_provider_error(response)
                      } else {
@@ -1510,6 +1558,7 @@ impl DescribeResourceServer {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeResourceServer {
                 type Output = std::result::Result<crate::output::DescribeResourceServerOutput, crate::error::DescribeResourceServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_resource_server_error(response)
                      } else {
@@ -1541,6 +1590,7 @@ impl DescribeRiskConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRiskConfiguration {
                 type Output = std::result::Result<crate::output::DescribeRiskConfigurationOutput, crate::error::DescribeRiskConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_risk_configuration_error(response)
                      } else {
@@ -1572,6 +1622,7 @@ impl DescribeUserImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUserImportJob {
                 type Output = std::result::Result<crate::output::DescribeUserImportJobOutput, crate::error::DescribeUserImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_import_job_error(response)
                      } else {
@@ -1603,6 +1654,7 @@ impl DescribeUserPool {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPool {
                 type Output = std::result::Result<crate::output::DescribeUserPoolOutput, crate::error::DescribeUserPoolError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_pool_error(response)
                      } else {
@@ -1634,6 +1686,7 @@ impl DescribeUserPoolClient {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPoolClient {
                 type Output = std::result::Result<crate::output::DescribeUserPoolClientOutput, crate::error::DescribeUserPoolClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_pool_client_error(response)
                      } else {
@@ -1665,6 +1718,7 @@ impl DescribeUserPoolDomain {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPoolDomain {
                 type Output = std::result::Result<crate::output::DescribeUserPoolDomainOutput, crate::error::DescribeUserPoolDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_user_pool_domain_error(response)
                      } else {
@@ -1696,6 +1750,7 @@ impl ForgetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for ForgetDevice {
                 type Output = std::result::Result<crate::output::ForgetDeviceOutput, crate::error::ForgetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_forget_device_error(response)
                      } else {
@@ -1727,6 +1782,7 @@ impl ForgotPassword {
 impl aws_smithy_http::response::ParseStrictResponse for ForgotPassword {
                 type Output = std::result::Result<crate::output::ForgotPasswordOutput, crate::error::ForgotPasswordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_forgot_password_error(response)
                      } else {
@@ -1758,6 +1814,7 @@ impl GetCSVHeader {
 impl aws_smithy_http::response::ParseStrictResponse for GetCSVHeader {
                 type Output = std::result::Result<crate::output::GetCsvHeaderOutput, crate::error::GetCSVHeaderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_csv_header_error(response)
                      } else {
@@ -1789,6 +1846,7 @@ impl GetDevice {
 impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
                 type Output = std::result::Result<crate::output::GetDeviceOutput, crate::error::GetDeviceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_device_error(response)
                      } else {
@@ -1820,6 +1878,7 @@ impl GetGroup {
 impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
                 type Output = std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_group_error(response)
                      } else {
@@ -1851,6 +1910,7 @@ impl GetIdentityProviderByIdentifier {
 impl aws_smithy_http::response::ParseStrictResponse for GetIdentityProviderByIdentifier {
                 type Output = std::result::Result<crate::output::GetIdentityProviderByIdentifierOutput, crate::error::GetIdentityProviderByIdentifierError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_identity_provider_by_identifier_error(response)
                      } else {
@@ -1882,6 +1942,7 @@ impl GetSigningCertificate {
 impl aws_smithy_http::response::ParseStrictResponse for GetSigningCertificate {
                 type Output = std::result::Result<crate::output::GetSigningCertificateOutput, crate::error::GetSigningCertificateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_signing_certificate_error(response)
                      } else {
@@ -1913,6 +1974,7 @@ impl GetUICustomization {
 impl aws_smithy_http::response::ParseStrictResponse for GetUICustomization {
                 type Output = std::result::Result<crate::output::GetUiCustomizationOutput, crate::error::GetUICustomizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_ui_customization_error(response)
                      } else {
@@ -1944,6 +2006,7 @@ impl GetUser {
 impl aws_smithy_http::response::ParseStrictResponse for GetUser {
                 type Output = std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_user_error(response)
                      } else {
@@ -1975,6 +2038,7 @@ impl GetUserAttributeVerificationCode {
 impl aws_smithy_http::response::ParseStrictResponse for GetUserAttributeVerificationCode {
                 type Output = std::result::Result<crate::output::GetUserAttributeVerificationCodeOutput, crate::error::GetUserAttributeVerificationCodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_user_attribute_verification_code_error(response)
                      } else {
@@ -2006,6 +2070,7 @@ impl GetUserPoolMfaConfig {
 impl aws_smithy_http::response::ParseStrictResponse for GetUserPoolMfaConfig {
                 type Output = std::result::Result<crate::output::GetUserPoolMfaConfigOutput, crate::error::GetUserPoolMfaConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_user_pool_mfa_config_error(response)
                      } else {
@@ -2037,6 +2102,7 @@ impl GlobalSignOut {
 impl aws_smithy_http::response::ParseStrictResponse for GlobalSignOut {
                 type Output = std::result::Result<crate::output::GlobalSignOutOutput, crate::error::GlobalSignOutError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_global_sign_out_error(response)
                      } else {
@@ -2068,6 +2134,7 @@ impl InitiateAuth {
 impl aws_smithy_http::response::ParseStrictResponse for InitiateAuth {
                 type Output = std::result::Result<crate::output::InitiateAuthOutput, crate::error::InitiateAuthError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_initiate_auth_error(response)
                      } else {
@@ -2099,6 +2166,7 @@ impl ListDevices {
 impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
                 type Output = std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_devices_error(response)
                      } else {
@@ -2130,6 +2198,7 @@ impl ListGroups {
 impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
                 type Output = std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_groups_error(response)
                      } else {
@@ -2161,6 +2230,7 @@ impl ListIdentityProviders {
 impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
                 type Output = std::result::Result<crate::output::ListIdentityProvidersOutput, crate::error::ListIdentityProvidersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_identity_providers_error(response)
                      } else {
@@ -2192,6 +2262,7 @@ impl ListResourceServers {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceServers {
                 type Output = std::result::Result<crate::output::ListResourceServersOutput, crate::error::ListResourceServersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_servers_error(response)
                      } else {
@@ -2223,6 +2294,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -2254,6 +2326,7 @@ impl ListUserImportJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListUserImportJobs {
                 type Output = std::result::Result<crate::output::ListUserImportJobsOutput, crate::error::ListUserImportJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_user_import_jobs_error(response)
                      } else {
@@ -2285,6 +2358,7 @@ impl ListUserPoolClients {
 impl aws_smithy_http::response::ParseStrictResponse for ListUserPoolClients {
                 type Output = std::result::Result<crate::output::ListUserPoolClientsOutput, crate::error::ListUserPoolClientsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_user_pool_clients_error(response)
                      } else {
@@ -2316,6 +2390,7 @@ impl ListUserPools {
 impl aws_smithy_http::response::ParseStrictResponse for ListUserPools {
                 type Output = std::result::Result<crate::output::ListUserPoolsOutput, crate::error::ListUserPoolsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_user_pools_error(response)
                      } else {
@@ -2347,6 +2422,7 @@ impl ListUsers {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
                 type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_users_error(response)
                      } else {
@@ -2378,6 +2454,7 @@ impl ListUsersInGroup {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsersInGroup {
                 type Output = std::result::Result<crate::output::ListUsersInGroupOutput, crate::error::ListUsersInGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_users_in_group_error(response)
                      } else {
@@ -2409,6 +2486,7 @@ impl ResendConfirmationCode {
 impl aws_smithy_http::response::ParseStrictResponse for ResendConfirmationCode {
                 type Output = std::result::Result<crate::output::ResendConfirmationCodeOutput, crate::error::ResendConfirmationCodeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_resend_confirmation_code_error(response)
                      } else {
@@ -2440,6 +2518,7 @@ impl RespondToAuthChallenge {
 impl aws_smithy_http::response::ParseStrictResponse for RespondToAuthChallenge {
                 type Output = std::result::Result<crate::output::RespondToAuthChallengeOutput, crate::error::RespondToAuthChallengeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_respond_to_auth_challenge_error(response)
                      } else {
@@ -2471,6 +2550,7 @@ impl RevokeToken {
 impl aws_smithy_http::response::ParseStrictResponse for RevokeToken {
                 type Output = std::result::Result<crate::output::RevokeTokenOutput, crate::error::RevokeTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_revoke_token_error(response)
                      } else {
@@ -2502,6 +2582,7 @@ impl SetRiskConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for SetRiskConfiguration {
                 type Output = std::result::Result<crate::output::SetRiskConfigurationOutput, crate::error::SetRiskConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_risk_configuration_error(response)
                      } else {
@@ -2533,6 +2614,7 @@ impl SetUICustomization {
 impl aws_smithy_http::response::ParseStrictResponse for SetUICustomization {
                 type Output = std::result::Result<crate::output::SetUiCustomizationOutput, crate::error::SetUICustomizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_ui_customization_error(response)
                      } else {
@@ -2564,6 +2646,7 @@ impl SetUserMFAPreference {
 impl aws_smithy_http::response::ParseStrictResponse for SetUserMFAPreference {
                 type Output = std::result::Result<crate::output::SetUserMfaPreferenceOutput, crate::error::SetUserMFAPreferenceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_user_mfa_preference_error(response)
                      } else {
@@ -2595,6 +2678,7 @@ impl SetUserPoolMfaConfig {
 impl aws_smithy_http::response::ParseStrictResponse for SetUserPoolMfaConfig {
                 type Output = std::result::Result<crate::output::SetUserPoolMfaConfigOutput, crate::error::SetUserPoolMfaConfigError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_user_pool_mfa_config_error(response)
                      } else {
@@ -2626,6 +2710,7 @@ impl SetUserSettings {
 impl aws_smithy_http::response::ParseStrictResponse for SetUserSettings {
                 type Output = std::result::Result<crate::output::SetUserSettingsOutput, crate::error::SetUserSettingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_user_settings_error(response)
                      } else {
@@ -2657,6 +2742,7 @@ impl SignUp {
 impl aws_smithy_http::response::ParseStrictResponse for SignUp {
                 type Output = std::result::Result<crate::output::SignUpOutput, crate::error::SignUpError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_sign_up_error(response)
                      } else {
@@ -2688,6 +2774,7 @@ impl StartUserImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartUserImportJob {
                 type Output = std::result::Result<crate::output::StartUserImportJobOutput, crate::error::StartUserImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_user_import_job_error(response)
                      } else {
@@ -2719,6 +2806,7 @@ impl StopUserImportJob {
 impl aws_smithy_http::response::ParseStrictResponse for StopUserImportJob {
                 type Output = std::result::Result<crate::output::StopUserImportJobOutput, crate::error::StopUserImportJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_user_import_job_error(response)
                      } else {
@@ -2750,6 +2838,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -2781,6 +2870,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -2812,6 +2902,7 @@ impl UpdateAuthEventFeedback {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateAuthEventFeedback {
                 type Output = std::result::Result<crate::output::UpdateAuthEventFeedbackOutput, crate::error::UpdateAuthEventFeedbackError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_auth_event_feedback_error(response)
                      } else {
@@ -2843,6 +2934,7 @@ impl UpdateDeviceStatus {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDeviceStatus {
                 type Output = std::result::Result<crate::output::UpdateDeviceStatusOutput, crate::error::UpdateDeviceStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_device_status_error(response)
                      } else {
@@ -2874,6 +2966,7 @@ impl UpdateGroup {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
                 type Output = std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_group_error(response)
                      } else {
@@ -2905,6 +2998,7 @@ impl UpdateIdentityProvider {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProvider {
                 type Output = std::result::Result<crate::output::UpdateIdentityProviderOutput, crate::error::UpdateIdentityProviderError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_identity_provider_error(response)
                      } else {
@@ -2936,6 +3030,7 @@ impl UpdateResourceServer {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceServer {
                 type Output = std::result::Result<crate::output::UpdateResourceServerOutput, crate::error::UpdateResourceServerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_resource_server_error(response)
                      } else {
@@ -2967,6 +3062,7 @@ impl UpdateUserAttributes {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUserAttributes {
                 type Output = std::result::Result<crate::output::UpdateUserAttributesOutput, crate::error::UpdateUserAttributesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_attributes_error(response)
                      } else {
@@ -2998,6 +3094,7 @@ impl UpdateUserPool {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPool {
                 type Output = std::result::Result<crate::output::UpdateUserPoolOutput, crate::error::UpdateUserPoolError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_pool_error(response)
                      } else {
@@ -3029,6 +3126,7 @@ impl UpdateUserPoolClient {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolClient {
                 type Output = std::result::Result<crate::output::UpdateUserPoolClientOutput, crate::error::UpdateUserPoolClientError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_pool_client_error(response)
                      } else {
@@ -3060,6 +3158,7 @@ impl UpdateUserPoolDomain {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolDomain {
                 type Output = std::result::Result<crate::output::UpdateUserPoolDomainOutput, crate::error::UpdateUserPoolDomainError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_user_pool_domain_error(response)
                      } else {
@@ -3091,6 +3190,7 @@ impl VerifySoftwareToken {
 impl aws_smithy_http::response::ParseStrictResponse for VerifySoftwareToken {
                 type Output = std::result::Result<crate::output::VerifySoftwareTokenOutput, crate::error::VerifySoftwareTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_verify_software_token_error(response)
                      } else {
@@ -3122,6 +3222,7 @@ impl VerifyUserAttribute {
 impl aws_smithy_http::response::ParseStrictResponse for VerifyUserAttribute {
                 type Output = std::result::Result<crate::output::VerifyUserAttributeOutput, crate::error::VerifyUserAttributeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_verify_user_attribute_error(response)
                      } else {

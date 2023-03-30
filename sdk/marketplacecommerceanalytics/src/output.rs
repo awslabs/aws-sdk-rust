@@ -7,6 +7,7 @@ pub struct StartSupportDataExportOutput  {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
     pub data_set_request_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
@@ -14,6 +15,11 @@ impl StartSupportDataExportOutput {
         self.data_set_request_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartSupportDataExportOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
 pub mod start_support_data_export_output {
     
@@ -22,6 +28,7 @@ pub mod start_support_data_export_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
@@ -33,11 +40,21 @@ pub mod start_support_data_export_output {
         pub fn set_data_set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_request_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
         pub fn build(self) -> crate::output::StartSupportDataExportOutput {
             crate::output::StartSupportDataExportOutput {
                 data_set_request_id: self.data_set_request_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -58,6 +75,7 @@ pub struct GenerateDataSetOutput  {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
     pub data_set_request_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateDataSetOutput {
     /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
@@ -65,6 +83,11 @@ impl GenerateDataSetOutput {
         self.data_set_request_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GenerateDataSetOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
 pub mod generate_data_set_output {
     
@@ -73,6 +96,7 @@ pub mod generate_data_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
@@ -84,11 +108,21 @@ pub mod generate_data_set_output {
         pub fn set_data_set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_request_id = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
         pub fn build(self) -> crate::output::GenerateDataSetOutput {
             crate::output::GenerateDataSetOutput {
                 data_set_request_id: self.data_set_request_id
                 ,
+                _request_id: self._request_id,
             }
         }
     }

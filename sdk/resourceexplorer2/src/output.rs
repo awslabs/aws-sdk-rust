@@ -6,6 +6,7 @@ pub struct AssociateDefaultViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateDefaultViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
@@ -13,6 +14,11 @@ impl AssociateDefaultViewOutput {
         self.view_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateDefaultViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
 pub mod associate_default_view_output {
     
@@ -21,6 +27,7 @@ pub mod associate_default_view_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
@@ -32,11 +39,21 @@ pub mod associate_default_view_output {
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.view_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AssociateDefaultViewOutput`](crate::output::AssociateDefaultViewOutput).
         pub fn build(self) -> crate::output::AssociateDefaultViewOutput {
             crate::output::AssociateDefaultViewOutput {
                 view_arn: self.view_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -60,6 +77,7 @@ pub struct ListViewsOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListViewsOutput {
     /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
@@ -71,6 +89,11 @@ impl ListViewsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListViewsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListViewsOutput`](crate::output::ListViewsOutput).
 pub mod list_views_output {
     
@@ -80,6 +103,7 @@ pub mod list_views_output {
     pub struct Builder {
         pub(crate) views: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `views`.
@@ -106,6 +130,15 @@ pub mod list_views_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListViewsOutput`](crate::output::ListViewsOutput).
         pub fn build(self) -> crate::output::ListViewsOutput {
             crate::output::ListViewsOutput {
@@ -113,6 +146,7 @@ pub mod list_views_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -133,6 +167,7 @@ pub struct CreateViewOutput  {
     /// <p>A structure that contains the details about the new view.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::model::View>,
+    _request_id: Option<String>,
 }
 impl CreateViewOutput {
     /// <p>A structure that contains the details about the new view.</p>
@@ -140,6 +175,11 @@ impl CreateViewOutput {
         self.view.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateViewOutput`](crate::output::CreateViewOutput).
 pub mod create_view_output {
     
@@ -148,6 +188,7 @@ pub mod create_view_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains the details about the new view.</p>
@@ -159,11 +200,21 @@ pub mod create_view_output {
         pub fn set_view(mut self, input: std::option::Option<crate::model::View>) -> Self {
             self.view = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateViewOutput`](crate::output::CreateViewOutput).
         pub fn build(self) -> crate::output::CreateViewOutput {
             crate::output::CreateViewOutput {
                 view: self.view
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -184,6 +235,7 @@ pub struct DeleteViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
@@ -191,6 +243,11 @@ impl DeleteViewOutput {
         self.view_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteViewOutput`](crate::output::DeleteViewOutput).
 pub mod delete_view_output {
     
@@ -199,6 +256,7 @@ pub mod delete_view_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you successfully deleted.</p>
@@ -210,11 +268,21 @@ pub mod delete_view_output {
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.view_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteViewOutput`](crate::output::DeleteViewOutput).
         pub fn build(self) -> crate::output::DeleteViewOutput {
             crate::output::DeleteViewOutput {
                 view_arn: self.view_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -235,6 +303,7 @@ pub struct UpdateViewOutput  {
     /// <p>Details about the view that you changed with this operation.</p>
     #[doc(hidden)]
     pub view: std::option::Option<crate::model::View>,
+    _request_id: Option<String>,
 }
 impl UpdateViewOutput {
     /// <p>Details about the view that you changed with this operation.</p>
@@ -242,6 +311,11 @@ impl UpdateViewOutput {
         self.view.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateViewOutput`](crate::output::UpdateViewOutput).
 pub mod update_view_output {
     
@@ -250,6 +324,7 @@ pub mod update_view_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Details about the view that you changed with this operation.</p>
@@ -261,11 +336,21 @@ pub mod update_view_output {
         pub fn set_view(mut self, input: std::option::Option<crate::model::View>) -> Self {
             self.view = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateViewOutput`](crate::output::UpdateViewOutput).
         pub fn build(self) -> crate::output::UpdateViewOutput {
             crate::output::UpdateViewOutput {
                 view: self.view
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -289,6 +374,7 @@ pub struct GetViewOutput  {
     /// <p>Tag key and value pairs that are attached to the view.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetViewOutput {
     /// <p>A structure that contains the details for the requested view.</p>
@@ -300,6 +386,11 @@ impl GetViewOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetViewOutput`](crate::output::GetViewOutput).
 pub mod get_view_output {
     
@@ -309,6 +400,7 @@ pub mod get_view_output {
     pub struct Builder {
         pub(crate) view: std::option::Option<crate::model::View>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains the details for the requested view.</p>
@@ -335,6 +427,15 @@ pub mod get_view_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetViewOutput`](crate::output::GetViewOutput).
         pub fn build(self) -> crate::output::GetViewOutput {
             crate::output::GetViewOutput {
@@ -342,6 +443,7 @@ pub mod get_view_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -365,6 +467,7 @@ pub struct ListIndexesOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIndexesOutput {
     /// <p>A structure that contains the details and status of each index.</p>
@@ -376,6 +479,11 @@ impl ListIndexesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIndexesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListIndexesOutput`](crate::output::ListIndexesOutput).
 pub mod list_indexes_output {
     
@@ -385,6 +493,7 @@ pub mod list_indexes_output {
     pub struct Builder {
         pub(crate) indexes: std::option::Option<std::vec::Vec<crate::model::Index>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `indexes`.
@@ -411,6 +520,15 @@ pub mod list_indexes_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListIndexesOutput`](crate::output::ListIndexesOutput).
         pub fn build(self) -> crate::output::ListIndexesOutput {
             crate::output::ListIndexesOutput {
@@ -418,6 +536,7 @@ pub mod list_indexes_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -446,6 +565,7 @@ pub struct CreateIndexOutput  {
     /// <p>The date and timestamp when the index was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateIndexOutput {
     /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
@@ -463,6 +583,11 @@ impl CreateIndexOutput {
         self.created_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateIndexOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateIndexOutput`](crate::output::CreateIndexOutput).
 pub mod create_index_output {
     
@@ -473,6 +598,7 @@ pub mod create_index_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::IndexState>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
@@ -506,6 +632,15 @@ pub mod create_index_output {
         pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.created_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateIndexOutput`](crate::output::CreateIndexOutput).
         pub fn build(self) -> crate::output::CreateIndexOutput {
             crate::output::CreateIndexOutput {
@@ -515,6 +650,7 @@ pub mod create_index_output {
                 ,
                 created_at: self.created_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -543,6 +679,7 @@ pub struct DeleteIndexOutput  {
     /// <p>The date and time when you last updated this index.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteIndexOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
@@ -560,6 +697,11 @@ impl DeleteIndexOutput {
         self.last_updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteIndexOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
 pub mod delete_index_output {
     
@@ -570,6 +712,7 @@ pub mod delete_index_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::IndexState>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note> 
@@ -603,6 +746,15 @@ pub mod delete_index_output {
         pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteIndexOutput`](crate::output::DeleteIndexOutput).
         pub fn build(self) -> crate::output::DeleteIndexOutput {
             crate::output::DeleteIndexOutput {
@@ -612,6 +764,7 @@ pub mod delete_index_output {
                 ,
                 last_updated_at: self.last_updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -641,6 +794,7 @@ pub struct UpdateIndexTypeOutput  {
     /// <p>The date and timestamp when the index was last updated.</p>
     #[doc(hidden)]
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateIndexTypeOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
@@ -660,6 +814,11 @@ impl UpdateIndexTypeOutput {
         self.last_updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateIndexTypeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
 pub mod update_index_type_output {
     
@@ -671,6 +830,7 @@ pub mod update_index_type_output {
         pub(crate) r#type: std::option::Option<crate::model::IndexType>,
         pub(crate) state: std::option::Option<crate::model::IndexState>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
@@ -709,6 +869,15 @@ pub mod update_index_type_output {
         pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_updated_at = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateIndexTypeOutput`](crate::output::UpdateIndexTypeOutput).
         pub fn build(self) -> crate::output::UpdateIndexTypeOutput {
             crate::output::UpdateIndexTypeOutput {
@@ -720,6 +889,7 @@ pub mod update_index_type_output {
                 ,
                 last_updated_at: self.last_updated_at
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -737,7 +907,13 @@ impl UpdateIndexTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -745,11 +921,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -767,7 +954,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -775,11 +968,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -809,6 +1013,7 @@ pub struct SearchOutput  {
     /// <p>The number of resources that match the query.</p>
     #[doc(hidden)]
     pub count: std::option::Option<crate::model::ResourceCount>,
+    _request_id: Option<String>,
 }
 impl SearchOutput {
     /// <p>The list of structures that describe the resources that match the query.</p>
@@ -828,6 +1033,11 @@ impl SearchOutput {
         self.count.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SearchOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`SearchOutput`](crate::output::SearchOutput).
 pub mod search_output {
     
@@ -839,6 +1049,7 @@ pub mod search_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) view_arn: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<crate::model::ResourceCount>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -883,6 +1094,15 @@ pub mod search_output {
         pub fn set_count(mut self, input: std::option::Option<crate::model::ResourceCount>) -> Self {
             self.count = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`SearchOutput`](crate::output::SearchOutput).
         pub fn build(self) -> crate::output::SearchOutput {
             crate::output::SearchOutput {
@@ -894,6 +1114,7 @@ pub mod search_output {
                 ,
                 count: self.count
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -914,6 +1135,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tag key and value pairs that you want to attach to the specified view or index.</p>
@@ -921,6 +1143,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -929,6 +1156,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -946,11 +1174,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -974,6 +1212,7 @@ pub struct ListSupportedResourceTypesOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSupportedResourceTypesOutput {
     /// <p>The list of resource types supported by Resource Explorer.</p>
@@ -985,6 +1224,11 @@ impl ListSupportedResourceTypesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSupportedResourceTypesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
 pub mod list_supported_resource_types_output {
     
@@ -994,6 +1238,7 @@ pub mod list_supported_resource_types_output {
     pub struct Builder {
         pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::model::SupportedResourceType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_types`.
@@ -1020,6 +1265,15 @@ pub mod list_supported_resource_types_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListSupportedResourceTypesOutput`](crate::output::ListSupportedResourceTypesOutput).
         pub fn build(self) -> crate::output::ListSupportedResourceTypesOutput {
             crate::output::ListSupportedResourceTypesOutput {
@@ -1027,6 +1281,7 @@ pub mod list_supported_resource_types_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1070,6 +1325,7 @@ pub struct GetIndexOutput  {
     /// <p>Tag key and value pairs that are attached to the index.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetIndexOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
@@ -1107,6 +1363,11 @@ impl GetIndexOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetIndexOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetIndexOutput`](crate::output::GetIndexOutput).
 pub mod get_index_output {
     
@@ -1122,6 +1383,7 @@ pub mod get_index_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
@@ -1218,6 +1480,15 @@ pub mod get_index_output {
         pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetIndexOutput`](crate::output::GetIndexOutput).
         pub fn build(self) -> crate::output::GetIndexOutput {
             crate::output::GetIndexOutput {
@@ -1237,6 +1508,7 @@ pub mod get_index_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1257,6 +1529,7 @@ pub struct GetDefaultViewOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDefaultViewOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
@@ -1264,6 +1537,11 @@ impl GetDefaultViewOutput {
         self.view_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDefaultViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
 pub mod get_default_view_output {
     
@@ -1272,6 +1550,7 @@ pub mod get_default_view_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) view_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that is the current default for the Amazon Web Services Region in which you called this operation.</p>
@@ -1283,11 +1562,21 @@ pub mod get_default_view_output {
         pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.view_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetDefaultViewOutput`](crate::output::GetDefaultViewOutput).
         pub fn build(self) -> crate::output::GetDefaultViewOutput {
             crate::output::GetDefaultViewOutput {
                 view_arn: self.view_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1305,7 +1594,13 @@ impl GetDefaultViewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateDefaultViewOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DisassociateDefaultViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
 pub mod disassociate_default_view_output {
     
@@ -1313,11 +1608,22 @@ pub mod disassociate_default_view_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DisassociateDefaultViewOutput`](crate::output::DisassociateDefaultViewOutput).
         pub fn build(self) -> crate::output::DisassociateDefaultViewOutput {
             crate::output::DisassociateDefaultViewOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1341,6 +1647,7 @@ pub struct BatchGetViewOutput  {
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetViewError>>,
+    _request_id: Option<String>,
 }
 impl BatchGetViewOutput {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
@@ -1352,6 +1659,11 @@ impl BatchGetViewOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchGetViewOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
 pub mod batch_get_view_output {
     
@@ -1361,6 +1673,7 @@ pub mod batch_get_view_output {
     pub struct Builder {
         pub(crate) views: std::option::Option<std::vec::Vec<crate::model::View>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchGetViewError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `views`.
@@ -1393,6 +1706,15 @@ pub mod batch_get_view_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetViewError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchGetViewOutput`](crate::output::BatchGetViewOutput).
         pub fn build(self) -> crate::output::BatchGetViewOutput {
             crate::output::BatchGetViewOutput {
@@ -1400,6 +1722,7 @@ pub mod batch_get_view_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }

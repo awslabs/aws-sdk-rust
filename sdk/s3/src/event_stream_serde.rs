@@ -71,8 +71,8 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                 }
             }
             "exception" =>  {
-                let generic = match crate::xml_deser::parse_event_stream_generic_error(message.payload()) {
-                                        Ok(generic) => generic,
+                let generic = match crate::xml_deser::parse_event_stream_error_metadata(message.payload()) {
+                                        Ok(builder) => builder.build(),
                                         Err(err) => return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::error::SelectObjectContentEventStreamError::unhandled(err))),
                                     };
                 Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::error::SelectObjectContentEventStreamError::generic(generic)))

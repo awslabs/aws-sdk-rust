@@ -22,6 +22,7 @@ impl CreateCallAnalyticsCategory {
 impl aws_smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCategory {
                 type Output = std::result::Result<crate::output::CreateCallAnalyticsCategoryOutput, crate::error::CreateCallAnalyticsCategoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_call_analytics_category_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateLanguageModel {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLanguageModel {
                 type Output = std::result::Result<crate::output::CreateLanguageModelOutput, crate::error::CreateLanguageModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_language_model_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl CreateMedicalVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for CreateMedicalVocabulary {
                 type Output = std::result::Result<crate::output::CreateMedicalVocabularyOutput, crate::error::CreateMedicalVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_medical_vocabulary_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
                 type Output = std::result::Result<crate::output::CreateVocabularyOutput, crate::error::CreateVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_vocabulary_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CreateVocabularyFilter {
 impl aws_smithy_http::response::ParseStrictResponse for CreateVocabularyFilter {
                 type Output = std::result::Result<crate::output::CreateVocabularyFilterOutput, crate::error::CreateVocabularyFilterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_vocabulary_filter_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DeleteCallAnalyticsCategory {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCategory {
                 type Output = std::result::Result<crate::output::DeleteCallAnalyticsCategoryOutput, crate::error::DeleteCallAnalyticsCategoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_call_analytics_category_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DeleteCallAnalyticsJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsJob {
                 type Output = std::result::Result<crate::output::DeleteCallAnalyticsJobOutput, crate::error::DeleteCallAnalyticsJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_call_analytics_job_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteLanguageModel {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLanguageModel {
                 type Output = std::result::Result<crate::output::DeleteLanguageModelOutput, crate::error::DeleteLanguageModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_language_model_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeleteMedicalTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalTranscriptionJob {
                 type Output = std::result::Result<crate::output::DeleteMedicalTranscriptionJobOutput, crate::error::DeleteMedicalTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_medical_transcription_job_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteMedicalVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteMedicalVocabulary {
                 type Output = std::result::Result<crate::output::DeleteMedicalVocabularyOutput, crate::error::DeleteMedicalVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_medical_vocabulary_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteTranscriptionJob {
                 type Output = std::result::Result<crate::output::DeleteTranscriptionJobOutput, crate::error::DeleteTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_transcription_job_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
                 type Output = std::result::Result<crate::output::DeleteVocabularyOutput, crate::error::DeleteVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_vocabulary_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DeleteVocabularyFilter {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabularyFilter {
                 type Output = std::result::Result<crate::output::DeleteVocabularyFilterOutput, crate::error::DeleteVocabularyFilterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_vocabulary_filter_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeLanguageModel {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
                 type Output = std::result::Result<crate::output::DescribeLanguageModelOutput, crate::error::DescribeLanguageModelError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_language_model_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl GetCallAnalyticsCategory {
 impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsCategory {
                 type Output = std::result::Result<crate::output::GetCallAnalyticsCategoryOutput, crate::error::GetCallAnalyticsCategoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_call_analytics_category_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl GetCallAnalyticsJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
                 type Output = std::result::Result<crate::output::GetCallAnalyticsJobOutput, crate::error::GetCallAnalyticsJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_call_analytics_job_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl GetMedicalTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJob {
                 type Output = std::result::Result<crate::output::GetMedicalTranscriptionJobOutput, crate::error::GetMedicalTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_medical_transcription_job_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl GetMedicalVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
                 type Output = std::result::Result<crate::output::GetMedicalVocabularyOutput, crate::error::GetMedicalVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_medical_vocabulary_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for GetTranscriptionJob {
                 type Output = std::result::Result<crate::output::GetTranscriptionJobOutput, crate::error::GetTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_transcription_job_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for GetVocabulary {
                 type Output = std::result::Result<crate::output::GetVocabularyOutput, crate::error::GetVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_vocabulary_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetVocabularyFilter {
 impl aws_smithy_http::response::ParseStrictResponse for GetVocabularyFilter {
                 type Output = std::result::Result<crate::output::GetVocabularyFilterOutput, crate::error::GetVocabularyFilterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_vocabulary_filter_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl ListCallAnalyticsCategories {
 impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsCategories {
                 type Output = std::result::Result<crate::output::ListCallAnalyticsCategoriesOutput, crate::error::ListCallAnalyticsCategoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_call_analytics_categories_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl ListCallAnalyticsJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListCallAnalyticsJobs {
                 type Output = std::result::Result<crate::output::ListCallAnalyticsJobsOutput, crate::error::ListCallAnalyticsJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_call_analytics_jobs_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl ListLanguageModels {
 impl aws_smithy_http::response::ParseStrictResponse for ListLanguageModels {
                 type Output = std::result::Result<crate::output::ListLanguageModelsOutput, crate::error::ListLanguageModelsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_language_models_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl ListMedicalTranscriptionJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListMedicalTranscriptionJobs {
                 type Output = std::result::Result<crate::output::ListMedicalTranscriptionJobsOutput, crate::error::ListMedicalTranscriptionJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_medical_transcription_jobs_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl ListMedicalVocabularies {
 impl aws_smithy_http::response::ParseStrictResponse for ListMedicalVocabularies {
                 type Output = std::result::Result<crate::output::ListMedicalVocabulariesOutput, crate::error::ListMedicalVocabulariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_medical_vocabularies_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListTranscriptionJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListTranscriptionJobs {
                 type Output = std::result::Result<crate::output::ListTranscriptionJobsOutput, crate::error::ListTranscriptionJobsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_transcription_jobs_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl ListVocabularies {
 impl aws_smithy_http::response::ParseStrictResponse for ListVocabularies {
                 type Output = std::result::Result<crate::output::ListVocabulariesOutput, crate::error::ListVocabulariesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vocabularies_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl ListVocabularyFilters {
 impl aws_smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
                 type Output = std::result::Result<crate::output::ListVocabularyFiltersOutput, crate::error::ListVocabularyFiltersError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_vocabulary_filters_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl StartCallAnalyticsJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartCallAnalyticsJob {
                 type Output = std::result::Result<crate::output::StartCallAnalyticsJobOutput, crate::error::StartCallAnalyticsJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_call_analytics_job_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl StartMedicalTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartMedicalTranscriptionJob {
                 type Output = std::result::Result<crate::output::StartMedicalTranscriptionJobOutput, crate::error::StartMedicalTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_medical_transcription_job_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl StartTranscriptionJob {
 impl aws_smithy_http::response::ParseStrictResponse for StartTranscriptionJob {
                 type Output = std::result::Result<crate::output::StartTranscriptionJobOutput, crate::error::StartTranscriptionJobError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_transcription_job_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl UpdateCallAnalyticsCategory {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCategory {
                 type Output = std::result::Result<crate::output::UpdateCallAnalyticsCategoryOutput, crate::error::UpdateCallAnalyticsCategoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_call_analytics_category_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl UpdateMedicalVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary {
                 type Output = std::result::Result<crate::output::UpdateMedicalVocabularyOutput, crate::error::UpdateMedicalVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_medical_vocabulary_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl UpdateVocabulary {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabulary {
                 type Output = std::result::Result<crate::output::UpdateVocabularyOutput, crate::error::UpdateVocabularyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_vocabulary_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl UpdateVocabularyFilter {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabularyFilter {
                 type Output = std::result::Result<crate::output::UpdateVocabularyFilterOutput, crate::error::UpdateVocabularyFilterError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_vocabulary_filter_error(response)
                      } else {

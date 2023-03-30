@@ -22,6 +22,7 @@ impl QueryForecast {
 impl aws_smithy_http::response::ParseStrictResponse for QueryForecast {
                 type Output = std::result::Result<crate::output::QueryForecastOutput, crate::error::QueryForecastError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_query_forecast_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl QueryWhatIfForecast {
 impl aws_smithy_http::response::ParseStrictResponse for QueryWhatIfForecast {
                 type Output = std::result::Result<crate::output::QueryWhatIfForecastOutput, crate::error::QueryWhatIfForecastError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_query_what_if_forecast_error(response)
                      } else {

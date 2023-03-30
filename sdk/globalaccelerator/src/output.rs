@@ -6,6 +6,7 @@ pub struct WithdrawByoipCidrOutput  {
     /// <p>Information about the address pool.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+    _request_id: Option<String>,
 }
 impl WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
@@ -13,6 +14,11 @@ impl WithdrawByoipCidrOutput {
         self.byoip_cidr.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for WithdrawByoipCidrOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
 pub mod withdraw_byoip_cidr_output {
     
@@ -21,6 +27,7 @@ pub mod withdraw_byoip_cidr_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the address pool.</p>
@@ -32,11 +39,21 @@ pub mod withdraw_byoip_cidr_output {
         pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
             self.byoip_cidr = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
         pub fn build(self) -> crate::output::WithdrawByoipCidrOutput {
             crate::output::WithdrawByoipCidrOutput {
                 byoip_cidr: self.byoip_cidr
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -57,6 +74,7 @@ pub struct UpdateListenerOutput  {
     /// <p>Information for the updated listener.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
+    _request_id: Option<String>,
 }
 impl UpdateListenerOutput {
     /// <p>Information for the updated listener.</p>
@@ -64,6 +82,11 @@ impl UpdateListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
 pub mod update_listener_output {
     
@@ -72,6 +95,7 @@ pub mod update_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information for the updated listener.</p>
@@ -83,11 +107,21 @@ pub mod update_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
         pub fn build(self) -> crate::output::UpdateListenerOutput {
             crate::output::UpdateListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +142,7 @@ pub struct UpdateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was updated.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+    _request_id: Option<String>,
 }
 impl UpdateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was updated.</p>
@@ -115,6 +150,11 @@ impl UpdateEndpointGroupOutput {
         self.endpoint_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
 pub mod update_endpoint_group_output {
     
@@ -123,6 +163,7 @@ pub mod update_endpoint_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The information about the endpoint group that was updated.</p>
@@ -134,11 +175,21 @@ pub mod update_endpoint_group_output {
         pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
             self.endpoint_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
         pub fn build(self) -> crate::output::UpdateEndpointGroupOutput {
             crate::output::UpdateEndpointGroupOutput {
                 endpoint_group: self.endpoint_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,6 +210,7 @@ pub struct UpdateCustomRoutingListenerOutput  {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
+    _request_id: Option<String>,
 }
 impl UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
@@ -166,6 +218,11 @@ impl UpdateCustomRoutingListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCustomRoutingListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
 pub mod update_custom_routing_listener_output {
     
@@ -174,6 +231,7 @@ pub mod update_custom_routing_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information for the updated listener for a custom routing accelerator.</p>
@@ -185,11 +243,21 @@ pub mod update_custom_routing_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingListenerOutput {
             crate::output::UpdateCustomRoutingListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,6 +278,7 @@ pub struct UpdateCustomRoutingAcceleratorAttributesOutput  {
     /// <p>Updated custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+    _request_id: Option<String>,
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
@@ -217,6 +286,11 @@ impl UpdateCustomRoutingAcceleratorAttributesOutput {
         self.accelerator_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCustomRoutingAcceleratorAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
 pub mod update_custom_routing_accelerator_attributes_output {
     
@@ -225,6 +299,7 @@ pub mod update_custom_routing_accelerator_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Updated custom routing accelerator.</p>
@@ -236,11 +311,21 @@ pub mod update_custom_routing_accelerator_attributes_output {
         pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>) -> Self {
             self.accelerator_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingAcceleratorAttributesOutput {
             crate::output::UpdateCustomRoutingAcceleratorAttributesOutput {
                 accelerator_attributes: self.accelerator_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -261,6 +346,7 @@ pub struct UpdateCustomRoutingAcceleratorOutput  {
     /// <p>Information about the updated custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+    _request_id: Option<String>,
 }
 impl UpdateCustomRoutingAcceleratorOutput {
     /// <p>Information about the updated custom routing accelerator.</p>
@@ -268,6 +354,11 @@ impl UpdateCustomRoutingAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCustomRoutingAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
 pub mod update_custom_routing_accelerator_output {
     
@@ -276,6 +367,7 @@ pub mod update_custom_routing_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated custom routing accelerator.</p>
@@ -287,11 +379,21 @@ pub mod update_custom_routing_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingAcceleratorOutput {
             crate::output::UpdateCustomRoutingAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -312,6 +414,7 @@ pub struct UpdateAcceleratorAttributesOutput  {
     /// <p>Updated attributes for the accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+    _request_id: Option<String>,
 }
 impl UpdateAcceleratorAttributesOutput {
     /// <p>Updated attributes for the accelerator.</p>
@@ -319,6 +422,11 @@ impl UpdateAcceleratorAttributesOutput {
         self.accelerator_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAcceleratorAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
 pub mod update_accelerator_attributes_output {
     
@@ -327,6 +435,7 @@ pub mod update_accelerator_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Updated attributes for the accelerator.</p>
@@ -338,11 +447,21 @@ pub mod update_accelerator_attributes_output {
         pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::AcceleratorAttributes>) -> Self {
             self.accelerator_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::UpdateAcceleratorAttributesOutput {
             crate::output::UpdateAcceleratorAttributesOutput {
                 accelerator_attributes: self.accelerator_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -363,6 +482,7 @@ pub struct UpdateAcceleratorOutput  {
     /// <p>Information about the updated accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
+    _request_id: Option<String>,
 }
 impl UpdateAcceleratorOutput {
     /// <p>Information about the updated accelerator.</p>
@@ -370,6 +490,11 @@ impl UpdateAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
 pub mod update_accelerator_output {
     
@@ -378,6 +503,7 @@ pub mod update_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated accelerator.</p>
@@ -389,11 +515,21 @@ pub mod update_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
         pub fn build(self) -> crate::output::UpdateAcceleratorOutput {
             crate::output::UpdateAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -411,7 +547,13 @@ impl UpdateAcceleratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -419,11 +561,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -441,7 +594,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -449,11 +608,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -471,7 +641,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveEndpointsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
 pub mod remove_endpoints_output {
     
@@ -479,11 +655,22 @@ pub mod remove_endpoints_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
         pub fn build(self) -> crate::output::RemoveEndpointsOutput {
             crate::output::RemoveEndpointsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -501,7 +688,13 @@ impl RemoveEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for RemoveCustomRoutingEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
 pub mod remove_custom_routing_endpoints_output {
     
@@ -509,11 +702,22 @@ pub mod remove_custom_routing_endpoints_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
         pub fn build(self) -> crate::output::RemoveCustomRoutingEndpointsOutput {
             crate::output::RemoveCustomRoutingEndpointsOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -534,6 +738,7 @@ pub struct ProvisionByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+    _request_id: Option<String>,
 }
 impl ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
@@ -541,6 +746,11 @@ impl ProvisionByoipCidrOutput {
         self.byoip_cidr.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ProvisionByoipCidrOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
 pub mod provision_byoip_cidr_output {
     
@@ -549,6 +759,7 @@ pub mod provision_byoip_cidr_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the address range.</p>
@@ -560,11 +771,21 @@ pub mod provision_byoip_cidr_output {
         pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
             self.byoip_cidr = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
         pub fn build(self) -> crate::output::ProvisionByoipCidrOutput {
             crate::output::ProvisionByoipCidrOutput {
                 byoip_cidr: self.byoip_cidr
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -585,6 +806,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Root level tag for the Tags parameters.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Root level tag for the Tags parameters.</p>
@@ -592,6 +814,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -600,6 +827,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -617,11 +845,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -645,6 +883,7 @@ pub struct ListListenersOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListListenersOutput {
     /// <p>The list of listeners for an accelerator.</p>
@@ -656,6 +895,11 @@ impl ListListenersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListListenersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListListenersOutput`](crate::output::ListListenersOutput).
 pub mod list_listeners_output {
     
@@ -665,6 +909,7 @@ pub mod list_listeners_output {
     pub struct Builder {
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `listeners`.
@@ -691,6 +936,15 @@ pub mod list_listeners_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListListenersOutput`](crate::output::ListListenersOutput).
         pub fn build(self) -> crate::output::ListListenersOutput {
             crate::output::ListListenersOutput {
@@ -698,6 +952,7 @@ pub mod list_listeners_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -721,6 +976,7 @@ pub struct ListEndpointGroupsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener.</p>
@@ -732,6 +988,11 @@ impl ListEndpointGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEndpointGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
 pub mod list_endpoint_groups_output {
     
@@ -741,6 +1002,7 @@ pub mod list_endpoint_groups_output {
     pub struct Builder {
         pub(crate) endpoint_groups: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoint_groups`.
@@ -767,6 +1029,15 @@ pub mod list_endpoint_groups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
         pub fn build(self) -> crate::output::ListEndpointGroupsOutput {
             crate::output::ListEndpointGroupsOutput {
@@ -774,6 +1045,7 @@ pub mod list_endpoint_groups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -797,6 +1069,7 @@ pub struct ListCustomRoutingPortMappingsByDestinationOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
@@ -808,6 +1081,11 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomRoutingPortMappingsByDestinationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
 pub mod list_custom_routing_port_mappings_by_destination_output {
     
@@ -817,6 +1095,7 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
     pub struct Builder {
         pub(crate) destination_port_mappings: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `destination_port_mappings`.
@@ -843,6 +1122,15 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingPortMappingsByDestinationOutput {
             crate::output::ListCustomRoutingPortMappingsByDestinationOutput {
@@ -850,6 +1138,7 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -873,6 +1162,7 @@ pub struct ListCustomRoutingPortMappingsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomRoutingPortMappingsOutput {
     /// <p>The port mappings for a custom routing accelerator.</p>
@@ -884,6 +1174,11 @@ impl ListCustomRoutingPortMappingsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomRoutingPortMappingsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
 pub mod list_custom_routing_port_mappings_output {
     
@@ -893,6 +1188,7 @@ pub mod list_custom_routing_port_mappings_output {
     pub struct Builder {
         pub(crate) port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `port_mappings`.
@@ -919,6 +1215,15 @@ pub mod list_custom_routing_port_mappings_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingPortMappingsOutput {
             crate::output::ListCustomRoutingPortMappingsOutput {
@@ -926,6 +1231,7 @@ pub mod list_custom_routing_port_mappings_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -949,6 +1255,7 @@ pub struct ListCustomRoutingListenersOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomRoutingListenersOutput {
     /// <p>The list of listeners for a custom routing accelerator.</p>
@@ -960,6 +1267,11 @@ impl ListCustomRoutingListenersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomRoutingListenersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
 pub mod list_custom_routing_listeners_output {
     
@@ -969,6 +1281,7 @@ pub mod list_custom_routing_listeners_output {
     pub struct Builder {
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `listeners`.
@@ -995,6 +1308,15 @@ pub mod list_custom_routing_listeners_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingListenersOutput {
             crate::output::ListCustomRoutingListenersOutput {
@@ -1002,6 +1324,7 @@ pub mod list_custom_routing_listeners_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1025,6 +1348,7 @@ pub struct ListCustomRoutingEndpointGroupsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
@@ -1036,6 +1360,11 @@ impl ListCustomRoutingEndpointGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomRoutingEndpointGroupsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
 pub mod list_custom_routing_endpoint_groups_output {
     
@@ -1045,6 +1374,7 @@ pub mod list_custom_routing_endpoint_groups_output {
     pub struct Builder {
         pub(crate) endpoint_groups: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoint_groups`.
@@ -1071,6 +1401,15 @@ pub mod list_custom_routing_endpoint_groups_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingEndpointGroupsOutput {
             crate::output::ListCustomRoutingEndpointGroupsOutput {
@@ -1078,6 +1417,7 @@ pub mod list_custom_routing_endpoint_groups_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1101,6 +1441,7 @@ pub struct ListCustomRoutingAcceleratorsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
@@ -1112,6 +1453,11 @@ impl ListCustomRoutingAcceleratorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomRoutingAcceleratorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
 pub mod list_custom_routing_accelerators_output {
     
@@ -1121,6 +1467,7 @@ pub mod list_custom_routing_accelerators_output {
     pub struct Builder {
         pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `accelerators`.
@@ -1147,6 +1494,15 @@ pub mod list_custom_routing_accelerators_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingAcceleratorsOutput {
             crate::output::ListCustomRoutingAcceleratorsOutput {
@@ -1154,6 +1510,7 @@ pub mod list_custom_routing_accelerators_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1177,6 +1534,7 @@ pub struct ListByoipCidrsOutput  {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
@@ -1188,6 +1546,11 @@ impl ListByoipCidrsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListByoipCidrsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
 pub mod list_byoip_cidrs_output {
     
@@ -1197,6 +1560,7 @@ pub mod list_byoip_cidrs_output {
     pub struct Builder {
         pub(crate) byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `byoip_cidrs`.
@@ -1223,6 +1587,15 @@ pub mod list_byoip_cidrs_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
         pub fn build(self) -> crate::output::ListByoipCidrsOutput {
             crate::output::ListByoipCidrsOutput {
@@ -1230,6 +1603,7 @@ pub mod list_byoip_cidrs_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1253,6 +1627,7 @@ pub struct ListAcceleratorsOutput  {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAcceleratorsOutput {
     /// <p>The list of accelerators for a customer account.</p>
@@ -1264,6 +1639,11 @@ impl ListAcceleratorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAcceleratorsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
 pub mod list_accelerators_output {
     
@@ -1273,6 +1653,7 @@ pub mod list_accelerators_output {
     pub struct Builder {
         pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::model::Accelerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `accelerators`.
@@ -1299,6 +1680,15 @@ pub mod list_accelerators_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
         pub fn build(self) -> crate::output::ListAcceleratorsOutput {
             crate::output::ListAcceleratorsOutput {
@@ -1306,6 +1696,7 @@ pub mod list_accelerators_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1326,6 +1717,7 @@ pub struct DescribeListenerOutput  {
     /// <p>The description of a listener.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
+    _request_id: Option<String>,
 }
 impl DescribeListenerOutput {
     /// <p>The description of a listener.</p>
@@ -1333,6 +1725,11 @@ impl DescribeListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
 pub mod describe_listener_output {
     
@@ -1341,6 +1738,7 @@ pub mod describe_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of a listener.</p>
@@ -1352,11 +1750,21 @@ pub mod describe_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
         pub fn build(self) -> crate::output::DescribeListenerOutput {
             crate::output::DescribeListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1377,6 +1785,7 @@ pub struct DescribeEndpointGroupOutput  {
     /// <p>The description of an endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+    _request_id: Option<String>,
 }
 impl DescribeEndpointGroupOutput {
     /// <p>The description of an endpoint group.</p>
@@ -1384,6 +1793,11 @@ impl DescribeEndpointGroupOutput {
         self.endpoint_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
 pub mod describe_endpoint_group_output {
     
@@ -1392,6 +1806,7 @@ pub mod describe_endpoint_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of an endpoint group.</p>
@@ -1403,11 +1818,21 @@ pub mod describe_endpoint_group_output {
         pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
             self.endpoint_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
         pub fn build(self) -> crate::output::DescribeEndpointGroupOutput {
             crate::output::DescribeEndpointGroupOutput {
                 endpoint_group: self.endpoint_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1428,6 +1853,7 @@ pub struct DescribeCustomRoutingListenerOutput  {
     /// <p>The description of a listener for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomRoutingListenerOutput {
     /// <p>The description of a listener for a custom routing accelerator.</p>
@@ -1435,6 +1861,11 @@ impl DescribeCustomRoutingListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomRoutingListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
 pub mod describe_custom_routing_listener_output {
     
@@ -1443,6 +1874,7 @@ pub mod describe_custom_routing_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of a listener for a custom routing accelerator.</p>
@@ -1454,11 +1886,21 @@ pub mod describe_custom_routing_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingListenerOutput {
             crate::output::DescribeCustomRoutingListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1479,6 +1921,7 @@ pub struct DescribeCustomRoutingEndpointGroupOutput  {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomRoutingEndpointGroupOutput {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
@@ -1486,6 +1929,11 @@ impl DescribeCustomRoutingEndpointGroupOutput {
         self.endpoint_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomRoutingEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
 pub mod describe_custom_routing_endpoint_group_output {
     
@@ -1494,6 +1942,7 @@ pub mod describe_custom_routing_endpoint_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of an endpoint group for a custom routing accelerator.</p>
@@ -1505,11 +1954,21 @@ pub mod describe_custom_routing_endpoint_group_output {
         pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::CustomRoutingEndpointGroup>) -> Self {
             self.endpoint_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingEndpointGroupOutput {
             crate::output::DescribeCustomRoutingEndpointGroupOutput {
                 endpoint_group: self.endpoint_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1530,6 +1989,7 @@ pub struct DescribeCustomRoutingAcceleratorAttributesOutput  {
     /// <p>The attributes of the custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomRoutingAcceleratorAttributesOutput {
     /// <p>The attributes of the custom routing accelerator.</p>
@@ -1537,6 +1997,11 @@ impl DescribeCustomRoutingAcceleratorAttributesOutput {
         self.accelerator_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomRoutingAcceleratorAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
 pub mod describe_custom_routing_accelerator_attributes_output {
     
@@ -1545,6 +2010,7 @@ pub mod describe_custom_routing_accelerator_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The attributes of the custom routing accelerator.</p>
@@ -1556,11 +2022,21 @@ pub mod describe_custom_routing_accelerator_attributes_output {
         pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>) -> Self {
             self.accelerator_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingAcceleratorAttributesOutput {
             crate::output::DescribeCustomRoutingAcceleratorAttributesOutput {
                 accelerator_attributes: self.accelerator_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1581,6 +2057,7 @@ pub struct DescribeCustomRoutingAcceleratorOutput  {
     /// <p>The description of the custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomRoutingAcceleratorOutput {
     /// <p>The description of the custom routing accelerator.</p>
@@ -1588,6 +2065,11 @@ impl DescribeCustomRoutingAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomRoutingAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
 pub mod describe_custom_routing_accelerator_output {
     
@@ -1596,6 +2078,7 @@ pub mod describe_custom_routing_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the custom routing accelerator.</p>
@@ -1607,11 +2090,21 @@ pub mod describe_custom_routing_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingAcceleratorOutput {
             crate::output::DescribeCustomRoutingAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1632,6 +2125,7 @@ pub struct DescribeAcceleratorAttributesOutput  {
     /// <p>The attributes of the accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+    _request_id: Option<String>,
 }
 impl DescribeAcceleratorAttributesOutput {
     /// <p>The attributes of the accelerator.</p>
@@ -1639,6 +2133,11 @@ impl DescribeAcceleratorAttributesOutput {
         self.accelerator_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAcceleratorAttributesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
 pub mod describe_accelerator_attributes_output {
     
@@ -1647,6 +2146,7 @@ pub mod describe_accelerator_attributes_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The attributes of the accelerator.</p>
@@ -1658,11 +2158,21 @@ pub mod describe_accelerator_attributes_output {
         pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::AcceleratorAttributes>) -> Self {
             self.accelerator_attributes = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorAttributesOutput {
             crate::output::DescribeAcceleratorAttributesOutput {
                 accelerator_attributes: self.accelerator_attributes
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1683,6 +2193,7 @@ pub struct DescribeAcceleratorOutput  {
     /// <p>The description of the accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
+    _request_id: Option<String>,
 }
 impl DescribeAcceleratorOutput {
     /// <p>The description of the accelerator.</p>
@@ -1690,6 +2201,11 @@ impl DescribeAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
 pub mod describe_accelerator_output {
     
@@ -1698,6 +2214,7 @@ pub mod describe_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the accelerator.</p>
@@ -1709,11 +2226,21 @@ pub mod describe_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorOutput {
             crate::output::DescribeAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1734,6 +2261,7 @@ pub struct DeprovisionByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+    _request_id: Option<String>,
 }
 impl DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
@@ -1741,6 +2269,11 @@ impl DeprovisionByoipCidrOutput {
         self.byoip_cidr.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeprovisionByoipCidrOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
 pub mod deprovision_byoip_cidr_output {
     
@@ -1749,6 +2282,7 @@ pub mod deprovision_byoip_cidr_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the address range.</p>
@@ -1760,11 +2294,21 @@ pub mod deprovision_byoip_cidr_output {
         pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
             self.byoip_cidr = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
         pub fn build(self) -> crate::output::DeprovisionByoipCidrOutput {
             crate::output::DeprovisionByoipCidrOutput {
                 byoip_cidr: self.byoip_cidr
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1782,7 +2326,13 @@ impl DeprovisionByoipCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DenyCustomRoutingTrafficOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
 pub mod deny_custom_routing_traffic_output {
     
@@ -1790,11 +2340,22 @@ pub mod deny_custom_routing_traffic_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
         pub fn build(self) -> crate::output::DenyCustomRoutingTrafficOutput {
             crate::output::DenyCustomRoutingTrafficOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1812,7 +2373,13 @@ impl DenyCustomRoutingTrafficOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteListenerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
 pub mod delete_listener_output {
     
@@ -1820,11 +2387,22 @@ pub mod delete_listener_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
         pub fn build(self) -> crate::output::DeleteListenerOutput {
             crate::output::DeleteListenerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1842,7 +2420,13 @@ impl DeleteListenerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEndpointGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
 pub mod delete_endpoint_group_output {
     
@@ -1850,11 +2434,22 @@ pub mod delete_endpoint_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
         pub fn build(self) -> crate::output::DeleteEndpointGroupOutput {
             crate::output::DeleteEndpointGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1872,7 +2467,13 @@ impl DeleteEndpointGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCustomRoutingListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
 pub mod delete_custom_routing_listener_output {
     
@@ -1880,11 +2481,22 @@ pub mod delete_custom_routing_listener_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingListenerOutput {
             crate::output::DeleteCustomRoutingListenerOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1902,7 +2514,13 @@ impl DeleteCustomRoutingListenerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingEndpointGroupOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCustomRoutingEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
 pub mod delete_custom_routing_endpoint_group_output {
     
@@ -1910,11 +2528,22 @@ pub mod delete_custom_routing_endpoint_group_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingEndpointGroupOutput {
             crate::output::DeleteCustomRoutingEndpointGroupOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1932,7 +2561,13 @@ impl DeleteCustomRoutingEndpointGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomRoutingAcceleratorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCustomRoutingAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
 pub mod delete_custom_routing_accelerator_output {
     
@@ -1940,11 +2575,22 @@ pub mod delete_custom_routing_accelerator_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingAcceleratorOutput {
             crate::output::DeleteCustomRoutingAcceleratorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1962,7 +2608,13 @@ impl DeleteCustomRoutingAcceleratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAcceleratorOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
 pub mod delete_accelerator_output {
     
@@ -1970,11 +2622,22 @@ pub mod delete_accelerator_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
         pub fn build(self) -> crate::output::DeleteAcceleratorOutput {
             crate::output::DeleteAcceleratorOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -1995,6 +2658,7 @@ pub struct CreateListenerOutput  {
     /// <p>The listener that you've created.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
+    _request_id: Option<String>,
 }
 impl CreateListenerOutput {
     /// <p>The listener that you've created.</p>
@@ -2002,6 +2666,11 @@ impl CreateListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateListenerOutput`](crate::output::CreateListenerOutput).
 pub mod create_listener_output {
     
@@ -2010,6 +2679,7 @@ pub mod create_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The listener that you've created.</p>
@@ -2021,11 +2691,21 @@ pub mod create_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateListenerOutput`](crate::output::CreateListenerOutput).
         pub fn build(self) -> crate::output::CreateListenerOutput {
             crate::output::CreateListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2046,6 +2726,7 @@ pub struct CreateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was created.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+    _request_id: Option<String>,
 }
 impl CreateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was created.</p>
@@ -2053,6 +2734,11 @@ impl CreateEndpointGroupOutput {
         self.endpoint_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
 pub mod create_endpoint_group_output {
     
@@ -2061,6 +2747,7 @@ pub mod create_endpoint_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::EndpointGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The information about the endpoint group that was created.</p>
@@ -2072,11 +2759,21 @@ pub mod create_endpoint_group_output {
         pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
             self.endpoint_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
         pub fn build(self) -> crate::output::CreateEndpointGroupOutput {
             crate::output::CreateEndpointGroupOutput {
                 endpoint_group: self.endpoint_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2097,6 +2794,7 @@ pub struct CreateCustomRoutingListenerOutput  {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
+    _request_id: Option<String>,
 }
 impl CreateCustomRoutingListenerOutput {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
@@ -2104,6 +2802,11 @@ impl CreateCustomRoutingListenerOutput {
         self.listener.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomRoutingListenerOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
 pub mod create_custom_routing_listener_output {
     
@@ -2112,6 +2815,7 @@ pub mod create_custom_routing_listener_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::CustomRoutingListener>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The listener that you've created for a custom routing accelerator.</p>
@@ -2123,11 +2827,21 @@ pub mod create_custom_routing_listener_output {
         pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
             self.listener = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingListenerOutput {
             crate::output::CreateCustomRoutingListenerOutput {
                 listener: self.listener
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2148,6 +2862,7 @@ pub struct CreateCustomRoutingEndpointGroupOutput  {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+    _request_id: Option<String>,
 }
 impl CreateCustomRoutingEndpointGroupOutput {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
@@ -2155,6 +2870,11 @@ impl CreateCustomRoutingEndpointGroupOutput {
         self.endpoint_group.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomRoutingEndpointGroupOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
 pub mod create_custom_routing_endpoint_group_output {
     
@@ -2163,6 +2883,7 @@ pub mod create_custom_routing_endpoint_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
@@ -2174,11 +2895,21 @@ pub mod create_custom_routing_endpoint_group_output {
         pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::CustomRoutingEndpointGroup>) -> Self {
             self.endpoint_group = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingEndpointGroupOutput {
             crate::output::CreateCustomRoutingEndpointGroupOutput {
                 endpoint_group: self.endpoint_group
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2199,6 +2930,7 @@ pub struct CreateCustomRoutingAcceleratorOutput  {
     /// <p>The accelerator that is created.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+    _request_id: Option<String>,
 }
 impl CreateCustomRoutingAcceleratorOutput {
     /// <p>The accelerator that is created.</p>
@@ -2206,6 +2938,11 @@ impl CreateCustomRoutingAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomRoutingAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
 pub mod create_custom_routing_accelerator_output {
     
@@ -2214,6 +2951,7 @@ pub mod create_custom_routing_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The accelerator that is created.</p>
@@ -2225,11 +2963,21 @@ pub mod create_custom_routing_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingAcceleratorOutput {
             crate::output::CreateCustomRoutingAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2250,6 +2998,7 @@ pub struct CreateAcceleratorOutput  {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
+    _request_id: Option<String>,
 }
 impl CreateAcceleratorOutput {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
@@ -2257,6 +3006,11 @@ impl CreateAcceleratorOutput {
         self.accelerator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAcceleratorOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
 pub mod create_accelerator_output {
     
@@ -2265,6 +3019,7 @@ pub mod create_accelerator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator: std::option::Option<crate::model::Accelerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
@@ -2276,11 +3031,21 @@ pub mod create_accelerator_output {
         pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
             self.accelerator = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
         pub fn build(self) -> crate::output::CreateAcceleratorOutput {
             crate::output::CreateAcceleratorOutput {
                 accelerator: self.accelerator
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2298,7 +3063,13 @@ impl CreateAcceleratorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for AllowCustomRoutingTrafficOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
 pub mod allow_custom_routing_traffic_output {
     
@@ -2306,11 +3077,22 @@ pub mod allow_custom_routing_traffic_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
         pub fn build(self) -> crate::output::AllowCustomRoutingTrafficOutput {
             crate::output::AllowCustomRoutingTrafficOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2331,6 +3113,7 @@ pub struct AdvertiseByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+    _request_id: Option<String>,
 }
 impl AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
@@ -2338,6 +3121,11 @@ impl AdvertiseByoipCidrOutput {
         self.byoip_cidr.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for AdvertiseByoipCidrOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
 pub mod advertise_byoip_cidr_output {
     
@@ -2346,6 +3134,7 @@ pub mod advertise_byoip_cidr_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the address range.</p>
@@ -2357,11 +3146,21 @@ pub mod advertise_byoip_cidr_output {
         pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
             self.byoip_cidr = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
         pub fn build(self) -> crate::output::AdvertiseByoipCidrOutput {
             crate::output::AdvertiseByoipCidrOutput {
                 byoip_cidr: self.byoip_cidr
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2385,6 +3184,7 @@ pub struct AddEndpointsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AddEndpointsOutput {
     /// <p>The list of endpoint objects.</p>
@@ -2396,6 +3196,11 @@ impl AddEndpointsOutput {
         self.endpoint_group_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
 pub mod add_endpoints_output {
     
@@ -2405,6 +3210,7 @@ pub mod add_endpoints_output {
     pub struct Builder {
         pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoint_descriptions`.
@@ -2431,6 +3237,15 @@ pub mod add_endpoints_output {
         pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_group_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
         pub fn build(self) -> crate::output::AddEndpointsOutput {
             crate::output::AddEndpointsOutput {
@@ -2438,6 +3253,7 @@ pub mod add_endpoints_output {
                 ,
                 endpoint_group_arn: self.endpoint_group_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2461,6 +3277,7 @@ pub struct AddCustomRoutingEndpointsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AddCustomRoutingEndpointsOutput {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
@@ -2472,6 +3289,11 @@ impl AddCustomRoutingEndpointsOutput {
         self.endpoint_group_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddCustomRoutingEndpointsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
 pub mod add_custom_routing_endpoints_output {
     
@@ -2481,6 +3303,7 @@ pub mod add_custom_routing_endpoints_output {
     pub struct Builder {
         pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `endpoint_descriptions`.
@@ -2507,6 +3330,15 @@ pub mod add_custom_routing_endpoints_output {
         pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_group_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
         pub fn build(self) -> crate::output::AddCustomRoutingEndpointsOutput {
             crate::output::AddCustomRoutingEndpointsOutput {
@@ -2514,6 +3346,7 @@ pub mod add_custom_routing_endpoints_output {
                 ,
                 endpoint_group_arn: self.endpoint_group_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }

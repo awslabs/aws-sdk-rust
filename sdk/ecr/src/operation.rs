@@ -22,6 +22,7 @@ impl BatchCheckLayerAvailability {
 impl aws_smithy_http::response::ParseStrictResponse for BatchCheckLayerAvailability {
                 type Output = std::result::Result<crate::output::BatchCheckLayerAvailabilityOutput, crate::error::BatchCheckLayerAvailabilityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_check_layer_availability_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl BatchDeleteImage {
 impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteImage {
                 type Output = std::result::Result<crate::output::BatchDeleteImageOutput, crate::error::BatchDeleteImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_delete_image_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl BatchGetImage {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetImage {
                 type Output = std::result::Result<crate::output::BatchGetImageOutput, crate::error::BatchGetImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_image_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl BatchGetRepositoryScanningConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositoryScanningConfiguration {
                 type Output = std::result::Result<crate::output::BatchGetRepositoryScanningConfigurationOutput, crate::error::BatchGetRepositoryScanningConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_batch_get_repository_scanning_configuration_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl CompleteLayerUpload {
 impl aws_smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
                 type Output = std::result::Result<crate::output::CompleteLayerUploadOutput, crate::error::CompleteLayerUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_complete_layer_upload_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl CreatePullThroughCacheRule {
 impl aws_smithy_http::response::ParseStrictResponse for CreatePullThroughCacheRule {
                 type Output = std::result::Result<crate::output::CreatePullThroughCacheRuleOutput, crate::error::CreatePullThroughCacheRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_pull_through_cache_rule_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl CreateRepository {
 impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
                 type Output = std::result::Result<crate::output::CreateRepositoryOutput, crate::error::CreateRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_repository_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl DeleteLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
                 type Output = std::result::Result<crate::output::DeleteLifecyclePolicyOutput, crate::error::DeleteLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_lifecycle_policy_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl DeletePullThroughCacheRule {
 impl aws_smithy_http::response::ParseStrictResponse for DeletePullThroughCacheRule {
                 type Output = std::result::Result<crate::output::DeletePullThroughCacheRuleOutput, crate::error::DeletePullThroughCacheRuleError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_pull_through_cache_rule_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl DeleteRegistryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRegistryPolicy {
                 type Output = std::result::Result<crate::output::DeleteRegistryPolicyOutput, crate::error::DeleteRegistryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_registry_policy_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl DeleteRepository {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
                 type Output = std::result::Result<crate::output::DeleteRepositoryOutput, crate::error::DeleteRepositoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_repository_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl DeleteRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPolicy {
                 type Output = std::result::Result<crate::output::DeleteRepositoryPolicyOutput, crate::error::DeleteRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_repository_policy_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl DescribeImageReplicationStatus {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeImageReplicationStatus {
                 type Output = std::result::Result<crate::output::DescribeImageReplicationStatusOutput, crate::error::DescribeImageReplicationStatusError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_image_replication_status_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl DescribeImages {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeImages {
                 type Output = std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_images_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl DescribeImageScanFindings {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeImageScanFindings {
                 type Output = std::result::Result<crate::output::DescribeImageScanFindingsOutput, crate::error::DescribeImageScanFindingsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_image_scan_findings_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl DescribePullThroughCacheRules {
 impl aws_smithy_http::response::ParseStrictResponse for DescribePullThroughCacheRules {
                 type Output = std::result::Result<crate::output::DescribePullThroughCacheRulesOutput, crate::error::DescribePullThroughCacheRulesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_pull_through_cache_rules_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl DescribeRegistry {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRegistry {
                 type Output = std::result::Result<crate::output::DescribeRegistryOutput, crate::error::DescribeRegistryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_registry_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl DescribeRepositories {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositories {
                 type Output = std::result::Result<crate::output::DescribeRepositoriesOutput, crate::error::DescribeRepositoriesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_repositories_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl GetAuthorizationToken {
 impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
                 type Output = std::result::Result<crate::output::GetAuthorizationTokenOutput, crate::error::GetAuthorizationTokenError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_authorization_token_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl GetDownloadUrlForLayer {
 impl aws_smithy_http::response::ParseStrictResponse for GetDownloadUrlForLayer {
                 type Output = std::result::Result<crate::output::GetDownloadUrlForLayerOutput, crate::error::GetDownloadUrlForLayerError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_download_url_for_layer_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl GetLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
                 type Output = std::result::Result<crate::output::GetLifecyclePolicyOutput, crate::error::GetLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lifecycle_policy_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl GetLifecyclePolicyPreview {
 impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicyPreview {
                 type Output = std::result::Result<crate::output::GetLifecyclePolicyPreviewOutput, crate::error::GetLifecyclePolicyPreviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_lifecycle_policy_preview_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl GetRegistryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetRegistryPolicy {
                 type Output = std::result::Result<crate::output::GetRegistryPolicyOutput, crate::error::GetRegistryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_registry_policy_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl GetRegistryScanningConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for GetRegistryScanningConfiguration {
                 type Output = std::result::Result<crate::output::GetRegistryScanningConfigurationOutput, crate::error::GetRegistryScanningConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_registry_scanning_configuration_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl GetRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPolicy {
                 type Output = std::result::Result<crate::output::GetRepositoryPolicyOutput, crate::error::GetRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_repository_policy_error(response)
                      } else {
@@ -797,6 +822,7 @@ impl InitiateLayerUpload {
 impl aws_smithy_http::response::ParseStrictResponse for InitiateLayerUpload {
                 type Output = std::result::Result<crate::output::InitiateLayerUploadOutput, crate::error::InitiateLayerUploadError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_initiate_layer_upload_error(response)
                      } else {
@@ -828,6 +854,7 @@ impl ListImages {
 impl aws_smithy_http::response::ParseStrictResponse for ListImages {
                 type Output = std::result::Result<crate::output::ListImagesOutput, crate::error::ListImagesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_images_error(response)
                      } else {
@@ -859,6 +886,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -890,6 +918,7 @@ impl PutImage {
 impl aws_smithy_http::response::ParseStrictResponse for PutImage {
                 type Output = std::result::Result<crate::output::PutImageOutput, crate::error::PutImageError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_error(response)
                      } else {
@@ -921,6 +950,7 @@ impl PutImageScanningConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutImageScanningConfiguration {
                 type Output = std::result::Result<crate::output::PutImageScanningConfigurationOutput, crate::error::PutImageScanningConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_scanning_configuration_error(response)
                      } else {
@@ -952,6 +982,7 @@ impl PutImageTagMutability {
 impl aws_smithy_http::response::ParseStrictResponse for PutImageTagMutability {
                 type Output = std::result::Result<crate::output::PutImageTagMutabilityOutput, crate::error::PutImageTagMutabilityError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_image_tag_mutability_error(response)
                      } else {
@@ -983,6 +1014,7 @@ impl PutLifecyclePolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
                 type Output = std::result::Result<crate::output::PutLifecyclePolicyOutput, crate::error::PutLifecyclePolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_lifecycle_policy_error(response)
                      } else {
@@ -1014,6 +1046,7 @@ impl PutRegistryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PutRegistryPolicy {
                 type Output = std::result::Result<crate::output::PutRegistryPolicyOutput, crate::error::PutRegistryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_registry_policy_error(response)
                      } else {
@@ -1045,6 +1078,7 @@ impl PutRegistryScanningConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutRegistryScanningConfiguration {
                 type Output = std::result::Result<crate::output::PutRegistryScanningConfigurationOutput, crate::error::PutRegistryScanningConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_registry_scanning_configuration_error(response)
                      } else {
@@ -1076,6 +1110,7 @@ impl PutReplicationConfiguration {
 impl aws_smithy_http::response::ParseStrictResponse for PutReplicationConfiguration {
                 type Output = std::result::Result<crate::output::PutReplicationConfigurationOutput, crate::error::PutReplicationConfigurationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_replication_configuration_error(response)
                      } else {
@@ -1107,6 +1142,7 @@ impl SetRepositoryPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
                 type Output = std::result::Result<crate::output::SetRepositoryPolicyOutput, crate::error::SetRepositoryPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_set_repository_policy_error(response)
                      } else {
@@ -1138,6 +1174,7 @@ impl StartImageScan {
 impl aws_smithy_http::response::ParseStrictResponse for StartImageScan {
                 type Output = std::result::Result<crate::output::StartImageScanOutput, crate::error::StartImageScanError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_image_scan_error(response)
                      } else {
@@ -1169,6 +1206,7 @@ impl StartLifecyclePolicyPreview {
 impl aws_smithy_http::response::ParseStrictResponse for StartLifecyclePolicyPreview {
                 type Output = std::result::Result<crate::output::StartLifecyclePolicyPreviewOutput, crate::error::StartLifecyclePolicyPreviewError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_lifecycle_policy_preview_error(response)
                      } else {
@@ -1200,6 +1238,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -1231,6 +1270,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -1262,6 +1302,7 @@ impl UploadLayerPart {
 impl aws_smithy_http::response::ParseStrictResponse for UploadLayerPart {
                 type Output = std::result::Result<crate::output::UploadLayerPartOutput, crate::error::UploadLayerPartError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_upload_layer_part_error(response)
                      } else {

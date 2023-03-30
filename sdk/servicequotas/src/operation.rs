@@ -22,6 +22,7 @@ impl AssociateServiceQuotaTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceQuotaTemplate {
                 type Output = std::result::Result<crate::output::AssociateServiceQuotaTemplateOutput, crate::error::AssociateServiceQuotaTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_service_quota_template_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceQuotaIncreaseRequestFromTemplate {
                 type Output = std::result::Result<crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput, crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_service_quota_increase_request_from_template_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DisassociateServiceQuotaTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceQuotaTemplate {
                 type Output = std::result::Result<crate::output::DisassociateServiceQuotaTemplateOutput, crate::error::DisassociateServiceQuotaTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_service_quota_template_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetAssociationForServiceQuotaTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForServiceQuotaTemplate {
                 type Output = std::result::Result<crate::output::GetAssociationForServiceQuotaTemplateOutput, crate::error::GetAssociationForServiceQuotaTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_association_for_service_quota_template_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetAWSDefaultServiceQuota {
 impl aws_smithy_http::response::ParseStrictResponse for GetAWSDefaultServiceQuota {
                 type Output = std::result::Result<crate::output::GetAwsDefaultServiceQuotaOutput, crate::error::GetAWSDefaultServiceQuotaError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_aws_default_service_quota_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetRequestedServiceQuotaChange {
 impl aws_smithy_http::response::ParseStrictResponse for GetRequestedServiceQuotaChange {
                 type Output = std::result::Result<crate::output::GetRequestedServiceQuotaChangeOutput, crate::error::GetRequestedServiceQuotaChangeError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_requested_service_quota_change_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl GetServiceQuota {
 impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuota {
                 type Output = std::result::Result<crate::output::GetServiceQuotaOutput, crate::error::GetServiceQuotaError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_service_quota_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuotaIncreaseRequestFromTemplate {
                 type Output = std::result::Result<crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput, crate::error::GetServiceQuotaIncreaseRequestFromTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_service_quota_increase_request_from_template_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListAWSDefaultServiceQuotas {
 impl aws_smithy_http::response::ParseStrictResponse for ListAWSDefaultServiceQuotas {
                 type Output = std::result::Result<crate::output::ListAwsDefaultServiceQuotasOutput, crate::error::ListAWSDefaultServiceQuotasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_aws_default_service_quotas_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListRequestedServiceQuotaChangeHistory {
 impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuotaChangeHistory {
                 type Output = std::result::Result<crate::output::ListRequestedServiceQuotaChangeHistoryOutput, crate::error::ListRequestedServiceQuotaChangeHistoryError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_requested_service_quota_change_history_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuota {
 impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuotaChangeHistoryByQuota {
                 type Output = std::result::Result<crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput, crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_requested_service_quota_change_history_by_quota_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotaIncreaseRequestsInTemplate {
                 type Output = std::result::Result<crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput, crate::error::ListServiceQuotaIncreaseRequestsInTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_service_quota_increase_requests_in_template_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl ListServiceQuotas {
 impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotas {
                 type Output = std::result::Result<crate::output::ListServiceQuotasOutput, crate::error::ListServiceQuotasError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_service_quotas_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListServices {
 impl aws_smithy_http::response::ParseStrictResponse for ListServices {
                 type Output = std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_services_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplate {
 impl aws_smithy_http::response::ParseStrictResponse for PutServiceQuotaIncreaseRequestIntoTemplate {
                 type Output = std::result::Result<crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput, crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_service_quota_increase_request_into_template_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl RequestServiceQuotaIncrease {
 impl aws_smithy_http::response::ParseStrictResponse for RequestServiceQuotaIncrease {
                 type Output = std::result::Result<crate::output::RequestServiceQuotaIncreaseOutput, crate::error::RequestServiceQuotaIncreaseError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_request_service_quota_increase_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {

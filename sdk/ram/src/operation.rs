@@ -22,6 +22,7 @@ impl AcceptResourceShareInvitation {
 impl aws_smithy_http::response::ParseStrictResponse for AcceptResourceShareInvitation {
                 type Output = std::result::Result<crate::output::AcceptResourceShareInvitationOutput, crate::error::AcceptResourceShareInvitationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_accept_resource_share_invitation_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl AssociateResourceShare {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateResourceShare {
                 type Output = std::result::Result<crate::output::AssociateResourceShareOutput, crate::error::AssociateResourceShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_resource_share_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl AssociateResourceSharePermission {
 impl aws_smithy_http::response::ParseStrictResponse for AssociateResourceSharePermission {
                 type Output = std::result::Result<crate::output::AssociateResourceSharePermissionOutput, crate::error::AssociateResourceSharePermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_associate_resource_share_permission_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl CreateResourceShare {
 impl aws_smithy_http::response::ParseStrictResponse for CreateResourceShare {
                 type Output = std::result::Result<crate::output::CreateResourceShareOutput, crate::error::CreateResourceShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_resource_share_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl DeleteResourceShare {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceShare {
                 type Output = std::result::Result<crate::output::DeleteResourceShareOutput, crate::error::DeleteResourceShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_resource_share_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl DisassociateResourceShare {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateResourceShare {
                 type Output = std::result::Result<crate::output::DisassociateResourceShareOutput, crate::error::DisassociateResourceShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_resource_share_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl DisassociateResourceSharePermission {
 impl aws_smithy_http::response::ParseStrictResponse for DisassociateResourceSharePermission {
                 type Output = std::result::Result<crate::output::DisassociateResourceSharePermissionOutput, crate::error::DisassociateResourceSharePermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_disassociate_resource_share_permission_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl EnableSharingWithAwsOrganization {
 impl aws_smithy_http::response::ParseStrictResponse for EnableSharingWithAwsOrganization {
                 type Output = std::result::Result<crate::output::EnableSharingWithAwsOrganizationOutput, crate::error::EnableSharingWithAwsOrganizationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_enable_sharing_with_aws_organization_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl GetPermission {
 impl aws_smithy_http::response::ParseStrictResponse for GetPermission {
                 type Output = std::result::Result<crate::output::GetPermissionOutput, crate::error::GetPermissionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_permission_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl GetResourcePolicies {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicies {
                 type Output = std::result::Result<crate::output::GetResourcePoliciesOutput, crate::error::GetResourcePoliciesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_policies_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl GetResourceShareAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceShareAssociations {
                 type Output = std::result::Result<crate::output::GetResourceShareAssociationsOutput, crate::error::GetResourceShareAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_share_associations_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl GetResourceShareInvitations {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceShareInvitations {
                 type Output = std::result::Result<crate::output::GetResourceShareInvitationsOutput, crate::error::GetResourceShareInvitationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_share_invitations_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl GetResourceShares {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceShares {
                 type Output = std::result::Result<crate::output::GetResourceSharesOutput, crate::error::GetResourceSharesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_shares_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl ListPendingInvitationResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListPendingInvitationResources {
                 type Output = std::result::Result<crate::output::ListPendingInvitationResourcesOutput, crate::error::ListPendingInvitationResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_pending_invitation_resources_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl ListPermissions {
 impl aws_smithy_http::response::ParseStrictResponse for ListPermissions {
                 type Output = std::result::Result<crate::output::ListPermissionsOutput, crate::error::ListPermissionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_permissions_error(response)
                      } else {
@@ -487,6 +502,7 @@ impl ListPermissionVersions {
 impl aws_smithy_http::response::ParseStrictResponse for ListPermissionVersions {
                 type Output = std::result::Result<crate::output::ListPermissionVersionsOutput, crate::error::ListPermissionVersionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_permission_versions_error(response)
                      } else {
@@ -518,6 +534,7 @@ impl ListPrincipals {
 impl aws_smithy_http::response::ParseStrictResponse for ListPrincipals {
                 type Output = std::result::Result<crate::output::ListPrincipalsOutput, crate::error::ListPrincipalsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_principals_error(response)
                      } else {
@@ -549,6 +566,7 @@ impl ListResources {
 impl aws_smithy_http::response::ParseStrictResponse for ListResources {
                 type Output = std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resources_error(response)
                      } else {
@@ -580,6 +598,7 @@ impl ListResourceSharePermissions {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceSharePermissions {
                 type Output = std::result::Result<crate::output::ListResourceSharePermissionsOutput, crate::error::ListResourceSharePermissionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_share_permissions_error(response)
                      } else {
@@ -611,6 +630,7 @@ impl ListResourceTypes {
 impl aws_smithy_http::response::ParseStrictResponse for ListResourceTypes {
                 type Output = std::result::Result<crate::output::ListResourceTypesOutput, crate::error::ListResourceTypesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_resource_types_error(response)
                      } else {
@@ -642,6 +662,7 @@ impl PromoteResourceShareCreatedFromPolicy {
 impl aws_smithy_http::response::ParseStrictResponse for PromoteResourceShareCreatedFromPolicy {
                 type Output = std::result::Result<crate::output::PromoteResourceShareCreatedFromPolicyOutput, crate::error::PromoteResourceShareCreatedFromPolicyError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_promote_resource_share_created_from_policy_error(response)
                      } else {
@@ -673,6 +694,7 @@ impl RejectResourceShareInvitation {
 impl aws_smithy_http::response::ParseStrictResponse for RejectResourceShareInvitation {
                 type Output = std::result::Result<crate::output::RejectResourceShareInvitationOutput, crate::error::RejectResourceShareInvitationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_reject_resource_share_invitation_error(response)
                      } else {
@@ -704,6 +726,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -735,6 +758,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -766,6 +790,7 @@ impl UpdateResourceShare {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceShare {
                 type Output = std::result::Result<crate::output::UpdateResourceShareOutput, crate::error::UpdateResourceShareError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_resource_share_error(response)
                      } else {

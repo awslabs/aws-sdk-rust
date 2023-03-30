@@ -6,6 +6,7 @@ pub struct UpdateTableOutput  {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
@@ -13,6 +14,11 @@ impl UpdateTableOutput {
         self.resource_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
     
@@ -21,6 +27,7 @@ pub mod update_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
@@ -32,11 +39,21 @@ pub mod update_table_output {
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput).
         pub fn build(self) -> crate::output::UpdateTableOutput {
             crate::output::UpdateTableOutput {
                 resource_arn: self.resource_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -54,7 +71,13 @@ impl UpdateTableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -62,11 +85,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,7 +118,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -92,11 +132,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,6 +168,7 @@ pub struct RestoreTableOutput  {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
     #[doc(hidden)]
     pub restored_table_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
@@ -124,6 +176,11 @@ impl RestoreTableOutput {
         self.restored_table_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RestoreTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`RestoreTableOutput`](crate::output::RestoreTableOutput).
 pub mod restore_table_output {
     
@@ -132,6 +189,7 @@ pub mod restore_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restored_table_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
@@ -143,11 +201,21 @@ pub mod restore_table_output {
         pub fn set_restored_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restored_table_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::output::RestoreTableOutput).
         pub fn build(self) -> crate::output::RestoreTableOutput {
             crate::output::RestoreTableOutput {
                 restored_table_arn: self.restored_table_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,6 +239,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>A list of tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -182,6 +251,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -191,6 +265,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -217,6 +292,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -224,6 +308,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -247,6 +332,7 @@ pub struct ListTablesOutput  {
     /// <p>A list of tables.</p>
     #[doc(hidden)]
     pub tables: std::option::Option<std::vec::Vec<crate::model::TableSummary>>,
+    _request_id: Option<String>,
 }
 impl ListTablesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -258,6 +344,11 @@ impl ListTablesOutput {
         self.tables.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTablesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
     
@@ -267,6 +358,7 @@ pub mod list_tables_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::TableSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -293,6 +385,15 @@ pub mod list_tables_output {
         pub fn set_tables(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableSummary>>) -> Self {
             self.tables = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
@@ -300,6 +401,7 @@ pub mod list_tables_output {
                 ,
                 tables: self.tables
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -323,6 +425,7 @@ pub struct ListKeyspacesOutput  {
     /// <p>A list of keyspaces.</p>
     #[doc(hidden)]
     pub keyspaces: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>,
+    _request_id: Option<String>,
 }
 impl ListKeyspacesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -334,6 +437,11 @@ impl ListKeyspacesOutput {
         self.keyspaces.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListKeyspacesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
 pub mod list_keyspaces_output {
     
@@ -343,6 +451,7 @@ pub mod list_keyspaces_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) keyspaces: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
@@ -369,6 +478,15 @@ pub mod list_keyspaces_output {
         pub fn set_keyspaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>) -> Self {
             self.keyspaces = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
         pub fn build(self) -> crate::output::ListKeyspacesOutput {
             crate::output::ListKeyspacesOutput {
@@ -376,6 +494,7 @@ pub mod list_keyspaces_output {
                 ,
                 keyspaces: self.keyspaces
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -431,6 +550,7 @@ pub struct GetTableOutput  {
     /// <p>The the description of the specified table.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
@@ -484,6 +604,11 @@ impl GetTableOutput {
         self.comment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTableOutput`](crate::output::GetTableOutput).
 pub mod get_table_output {
     
@@ -503,6 +628,7 @@ pub mod get_table_output {
         pub(crate) ttl: std::option::Option<crate::model::TimeToLive>,
         pub(crate) default_time_to_live: std::option::Option<i32>,
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the keyspace that the specified table is stored in.</p>
@@ -617,6 +743,15 @@ pub mod get_table_output {
         pub fn set_comment(mut self, input: std::option::Option<crate::model::Comment>) -> Self {
             self.comment = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTableOutput`](crate::output::GetTableOutput).
         pub fn build(self) -> crate::output::GetTableOutput {
             crate::output::GetTableOutput {
@@ -644,6 +779,7 @@ pub mod get_table_output {
                 ,
                 comment: self.comment
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -667,6 +803,7 @@ pub struct GetKeyspaceOutput  {
     /// <p>The ARN of the keyspace.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetKeyspaceOutput {
     /// <p>The name of the keyspace.</p>
@@ -678,6 +815,11 @@ impl GetKeyspaceOutput {
         self.resource_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetKeyspaceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
 pub mod get_keyspace_output {
     
@@ -687,6 +829,7 @@ pub mod get_keyspace_output {
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the keyspace.</p>
@@ -707,6 +850,15 @@ pub mod get_keyspace_output {
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
         pub fn build(self) -> crate::output::GetKeyspaceOutput {
             crate::output::GetKeyspaceOutput {
@@ -714,6 +866,7 @@ pub mod get_keyspace_output {
                 ,
                 resource_arn: self.resource_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -731,7 +884,13 @@ impl GetKeyspaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTableOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
     
@@ -739,11 +898,22 @@ pub mod delete_table_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput).
         pub fn build(self) -> crate::output::DeleteTableOutput {
             crate::output::DeleteTableOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -761,7 +931,13 @@ impl DeleteTableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteKeyspaceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteKeyspaceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
 pub mod delete_keyspace_output {
     
@@ -769,11 +945,22 @@ pub mod delete_keyspace_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
         pub fn build(self) -> crate::output::DeleteKeyspaceOutput {
             crate::output::DeleteKeyspaceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -794,6 +981,7 @@ pub struct CreateTableOutput  {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateTableOutput {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
@@ -801,6 +989,11 @@ impl CreateTableOutput {
         self.resource_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTableOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
     
@@ -809,6 +1002,7 @@ pub mod create_table_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
@@ -820,11 +1014,21 @@ pub mod create_table_output {
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput).
         pub fn build(self) -> crate::output::CreateTableOutput {
             crate::output::CreateTableOutput {
                 resource_arn: self.resource_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -845,6 +1049,7 @@ pub struct CreateKeyspaceOutput  {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateKeyspaceOutput {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
@@ -852,6 +1057,11 @@ impl CreateKeyspaceOutput {
         self.resource_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateKeyspaceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
 pub mod create_keyspace_output {
     
@@ -860,6 +1070,7 @@ pub mod create_keyspace_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
@@ -871,11 +1082,21 @@ pub mod create_keyspace_output {
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
         pub fn build(self) -> crate::output::CreateKeyspaceOutput {
             crate::output::CreateKeyspaceOutput {
                 resource_arn: self.resource_arn
                 ,
+                _request_id: self._request_id,
             }
         }
     }

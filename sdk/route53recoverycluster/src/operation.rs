@@ -22,6 +22,7 @@ impl GetRoutingControlState {
 impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
                 type Output = std::result::Result<crate::output::GetRoutingControlStateOutput, crate::error::GetRoutingControlStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_routing_control_state_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl ListRoutingControls {
 impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
                 type Output = std::result::Result<crate::output::ListRoutingControlsOutput, crate::error::ListRoutingControlsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_routing_controls_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl UpdateRoutingControlState {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlState {
                 type Output = std::result::Result<crate::output::UpdateRoutingControlStateOutput, crate::error::UpdateRoutingControlStateError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_routing_control_state_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl UpdateRoutingControlStates {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStates {
                 type Output = std::result::Result<crate::output::UpdateRoutingControlStatesOutput, crate::error::UpdateRoutingControlStatesError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_routing_control_states_error(response)
                      } else {

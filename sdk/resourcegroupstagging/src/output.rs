@@ -6,6 +6,7 @@ pub struct UntagResourcesOutput  {
     /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     #[doc(hidden)]
     pub failed_resources_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
+    _request_id: Option<String>,
 }
 impl UntagResourcesOutput {
     /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
@@ -13,6 +14,11 @@ impl UntagResourcesOutput {
         self.failed_resources_map.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UntagResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourcesOutput`](crate::output::UntagResourcesOutput).
 pub mod untag_resources_output {
     
@@ -21,6 +27,7 @@ pub mod untag_resources_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_resources_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `failed_resources_map`.
@@ -38,11 +45,21 @@ pub mod untag_resources_output {
         pub fn set_failed_resources_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>) -> Self {
             self.failed_resources_map = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourcesOutput`](crate::output::UntagResourcesOutput).
         pub fn build(self) -> crate::output::UntagResourcesOutput {
             crate::output::UntagResourcesOutput {
                 failed_resources_map: self.failed_resources_map
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -63,6 +80,7 @@ pub struct TagResourcesOutput  {
     /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     #[doc(hidden)]
     pub failed_resources_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
+    _request_id: Option<String>,
 }
 impl TagResourcesOutput {
     /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
@@ -70,6 +88,11 @@ impl TagResourcesOutput {
         self.failed_resources_map.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for TagResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourcesOutput`](crate::output::TagResourcesOutput).
 pub mod tag_resources_output {
     
@@ -78,6 +101,7 @@ pub mod tag_resources_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_resources_map: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `failed_resources_map`.
@@ -95,11 +119,21 @@ pub mod tag_resources_output {
         pub fn set_failed_resources_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>) -> Self {
             self.failed_resources_map = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourcesOutput`](crate::output::TagResourcesOutput).
         pub fn build(self) -> crate::output::TagResourcesOutput {
             crate::output::TagResourcesOutput {
                 failed_resources_map: self.failed_resources_map
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,7 +151,13 @@ impl TagResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartReportCreationOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StartReportCreationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartReportCreationOutput`](crate::output::StartReportCreationOutput).
 pub mod start_report_creation_output {
     
@@ -125,11 +165,22 @@ pub mod start_report_creation_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartReportCreationOutput`](crate::output::StartReportCreationOutput).
         pub fn build(self) -> crate::output::StartReportCreationOutput {
             crate::output::StartReportCreationOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,6 +204,7 @@ pub struct GetTagValuesOutput  {
     /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
     #[doc(hidden)]
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetTagValuesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -164,6 +216,11 @@ impl GetTagValuesOutput {
         self.tag_values.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetTagValuesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTagValuesOutput`](crate::output::GetTagValuesOutput).
 pub mod get_tag_values_output {
     
@@ -173,6 +230,7 @@ pub mod get_tag_values_output {
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -199,6 +257,15 @@ pub mod get_tag_values_output {
         pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.tag_values = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTagValuesOutput`](crate::output::GetTagValuesOutput).
         pub fn build(self) -> crate::output::GetTagValuesOutput {
             crate::output::GetTagValuesOutput {
@@ -206,6 +273,7 @@ pub mod get_tag_values_output {
                 ,
                 tag_values: self.tag_values
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -229,6 +297,7 @@ pub struct GetTagKeysOutput  {
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetTagKeysOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -240,6 +309,11 @@ impl GetTagKeysOutput {
         self.tag_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetTagKeysOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTagKeysOutput`](crate::output::GetTagKeysOutput).
 pub mod get_tag_keys_output {
     
@@ -249,6 +323,7 @@ pub mod get_tag_keys_output {
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -275,6 +350,15 @@ pub mod get_tag_keys_output {
         pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
             self.tag_keys = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTagKeysOutput`](crate::output::GetTagKeysOutput).
         pub fn build(self) -> crate::output::GetTagKeysOutput {
             crate::output::GetTagKeysOutput {
@@ -282,6 +366,7 @@ pub mod get_tag_keys_output {
                 ,
                 tag_keys: self.tag_keys
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -305,6 +390,7 @@ pub struct GetResourcesOutput  {
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     #[doc(hidden)]
     pub resource_tag_mapping_list: std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
+    _request_id: Option<String>,
 }
 impl GetResourcesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -316,6 +402,11 @@ impl GetResourcesOutput {
         self.resource_tag_mapping_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourcesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
 pub mod get_resources_output {
     
@@ -325,6 +416,7 @@ pub mod get_resources_output {
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) resource_tag_mapping_list: std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
@@ -351,6 +443,15 @@ pub mod get_resources_output {
         pub fn set_resource_tag_mapping_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>) -> Self {
             self.resource_tag_mapping_list = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetResourcesOutput`](crate::output::GetResourcesOutput).
         pub fn build(self) -> crate::output::GetResourcesOutput {
             crate::output::GetResourcesOutput {
@@ -358,6 +459,7 @@ pub mod get_resources_output {
                 ,
                 resource_tag_mapping_list: self.resource_tag_mapping_list
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -381,6 +483,7 @@ pub struct GetComplianceSummaryOutput  {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
@@ -392,6 +495,11 @@ impl GetComplianceSummaryOutput {
         self.pagination_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetComplianceSummaryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetComplianceSummaryOutput`](crate::output::GetComplianceSummaryOutput).
 pub mod get_compliance_summary_output {
     
@@ -401,6 +509,7 @@ pub mod get_compliance_summary_output {
     pub struct Builder {
         pub(crate) summary_list: std::option::Option<std::vec::Vec<crate::model::Summary>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `summary_list`.
@@ -427,6 +536,15 @@ pub mod get_compliance_summary_output {
         pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pagination_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetComplianceSummaryOutput`](crate::output::GetComplianceSummaryOutput).
         pub fn build(self) -> crate::output::GetComplianceSummaryOutput {
             crate::output::GetComplianceSummaryOutput {
@@ -434,6 +552,7 @@ pub mod get_compliance_summary_output {
                 ,
                 pagination_token: self.pagination_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -470,6 +589,7 @@ pub struct DescribeReportCreationOutput  {
     /// <p>Details of the common errors that all operations return.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p> 
@@ -496,6 +616,11 @@ impl DescribeReportCreationOutput {
         self.error_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeReportCreationOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeReportCreationOutput`](crate::output::DescribeReportCreationOutput).
 pub mod describe_report_creation_output {
     
@@ -507,6 +632,7 @@ pub mod describe_report_creation_output {
         pub(crate) s3_location: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Reports the status of the operation.</p> 
@@ -559,6 +685,15 @@ pub mod describe_report_creation_output {
         pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_message = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeReportCreationOutput`](crate::output::DescribeReportCreationOutput).
         pub fn build(self) -> crate::output::DescribeReportCreationOutput {
             crate::output::DescribeReportCreationOutput {
@@ -570,6 +705,7 @@ pub mod describe_report_creation_output {
                 ,
                 error_message: self.error_message
                 ,
+                _request_id: self._request_id,
             }
         }
     }

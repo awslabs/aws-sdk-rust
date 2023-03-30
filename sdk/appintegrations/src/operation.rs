@@ -22,6 +22,7 @@ impl CreateDataIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDataIntegration {
                 type Output = std::result::Result<crate::output::CreateDataIntegrationOutput, crate::error::CreateDataIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_data_integration_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl CreateEventIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for CreateEventIntegration {
                 type Output = std::result::Result<crate::output::CreateEventIntegrationOutput, crate::error::CreateEventIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_event_integration_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DeleteDataIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDataIntegration {
                 type Output = std::result::Result<crate::output::DeleteDataIntegrationOutput, crate::error::DeleteDataIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_data_integration_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl DeleteEventIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteEventIntegration {
                 type Output = std::result::Result<crate::output::DeleteEventIntegrationOutput, crate::error::DeleteEventIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_event_integration_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl GetDataIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for GetDataIntegration {
                 type Output = std::result::Result<crate::output::GetDataIntegrationOutput, crate::error::GetDataIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_data_integration_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl GetEventIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for GetEventIntegration {
                 type Output = std::result::Result<crate::output::GetEventIntegrationOutput, crate::error::GetEventIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_event_integration_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl ListDataIntegrationAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrationAssociations {
                 type Output = std::result::Result<crate::output::ListDataIntegrationAssociationsOutput, crate::error::ListDataIntegrationAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_data_integration_associations_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl ListDataIntegrations {
 impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrations {
                 type Output = std::result::Result<crate::output::ListDataIntegrationsOutput, crate::error::ListDataIntegrationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_data_integrations_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl ListEventIntegrationAssociations {
 impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrationAssociations {
                 type Output = std::result::Result<crate::output::ListEventIntegrationAssociationsOutput, crate::error::ListEventIntegrationAssociationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_event_integration_associations_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl ListEventIntegrations {
 impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrations {
                 type Output = std::result::Result<crate::output::ListEventIntegrationsOutput, crate::error::ListEventIntegrationsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_event_integrations_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl ListTagsForResource {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
                 type Output = std::result::Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_resource_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl TagResource {
 impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                 type Output = std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_resource_error(response)
                      } else {
@@ -394,6 +406,7 @@ impl UntagResource {
 impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
                 type Output = std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_resource_error(response)
                      } else {
@@ -425,6 +438,7 @@ impl UpdateDataIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDataIntegration {
                 type Output = std::result::Result<crate::output::UpdateDataIntegrationOutput, crate::error::UpdateDataIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_data_integration_error(response)
                      } else {
@@ -456,6 +470,7 @@ impl UpdateEventIntegration {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateEventIntegration {
                 type Output = std::result::Result<crate::output::UpdateEventIntegrationOutput, crate::error::UpdateEventIntegrationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_event_integration_error(response)
                      } else {

@@ -22,6 +22,7 @@ impl CreateDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for CreateDeliveryStream {
                 type Output = std::result::Result<crate::output::CreateDeliveryStreamOutput, crate::error::CreateDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_create_delivery_stream_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl DeleteDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteDeliveryStream {
                 type Output = std::result::Result<crate::output::DeleteDeliveryStreamOutput, crate::error::DeleteDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_delete_delivery_stream_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl DescribeDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryStream {
                 type Output = std::result::Result<crate::output::DescribeDeliveryStreamOutput, crate::error::DescribeDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_delivery_stream_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl ListDeliveryStreams {
 impl aws_smithy_http::response::ParseStrictResponse for ListDeliveryStreams {
                 type Output = std::result::Result<crate::output::ListDeliveryStreamsOutput, crate::error::ListDeliveryStreamsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_delivery_streams_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListTagsForDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDeliveryStream {
                 type Output = std::result::Result<crate::output::ListTagsForDeliveryStreamOutput, crate::error::ListTagsForDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_tags_for_delivery_stream_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl PutRecord {
 impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
                 type Output = std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_record_error(response)
                      } else {
@@ -208,6 +214,7 @@ impl PutRecordBatch {
 impl aws_smithy_http::response::ParseStrictResponse for PutRecordBatch {
                 type Output = std::result::Result<crate::output::PutRecordBatchOutput, crate::error::PutRecordBatchError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_put_record_batch_error(response)
                      } else {
@@ -239,6 +246,7 @@ impl StartDeliveryStreamEncryption {
 impl aws_smithy_http::response::ParseStrictResponse for StartDeliveryStreamEncryption {
                 type Output = std::result::Result<crate::output::StartDeliveryStreamEncryptionOutput, crate::error::StartDeliveryStreamEncryptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_start_delivery_stream_encryption_error(response)
                      } else {
@@ -270,6 +278,7 @@ impl StopDeliveryStreamEncryption {
 impl aws_smithy_http::response::ParseStrictResponse for StopDeliveryStreamEncryption {
                 type Output = std::result::Result<crate::output::StopDeliveryStreamEncryptionOutput, crate::error::StopDeliveryStreamEncryptionError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_stop_delivery_stream_encryption_error(response)
                      } else {
@@ -301,6 +310,7 @@ impl TagDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for TagDeliveryStream {
                 type Output = std::result::Result<crate::output::TagDeliveryStreamOutput, crate::error::TagDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_tag_delivery_stream_error(response)
                      } else {
@@ -332,6 +342,7 @@ impl UntagDeliveryStream {
 impl aws_smithy_http::response::ParseStrictResponse for UntagDeliveryStream {
                 type Output = std::result::Result<crate::output::UntagDeliveryStreamOutput, crate::error::UntagDeliveryStreamError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_untag_delivery_stream_error(response)
                      } else {
@@ -363,6 +374,7 @@ impl UpdateDestination {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
                 type Output = std::result::Result<crate::output::UpdateDestinationOutput, crate::error::UpdateDestinationError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_update_destination_error(response)
                      } else {

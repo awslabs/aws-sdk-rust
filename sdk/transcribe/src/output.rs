@@ -13,6 +13,7 @@ pub struct UpdateVocabularyFilterOutput  {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateVocabularyFilterOutput {
     /// <p>The name of the updated custom vocabulary filter.</p>
@@ -29,6 +30,11 @@ impl UpdateVocabularyFilterOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVocabularyFilterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
 pub mod update_vocabulary_filter_output {
     
@@ -39,6 +45,7 @@ pub mod update_vocabulary_filter_output {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated custom vocabulary filter.</p>
@@ -70,6 +77,15 @@ pub mod update_vocabulary_filter_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
         pub fn build(self) -> crate::output::UpdateVocabularyFilterOutput {
             crate::output::UpdateVocabularyFilterOutput {
@@ -79,6 +95,7 @@ pub mod update_vocabulary_filter_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -109,6 +126,7 @@ pub struct UpdateVocabularyOutput  {
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+    _request_id: Option<String>,
 }
 impl UpdateVocabularyOutput {
     /// <p>The name of the updated custom vocabulary.</p>
@@ -129,6 +147,11 @@ impl UpdateVocabularyOutput {
         self.vocabulary_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
 pub mod update_vocabulary_output {
     
@@ -140,6 +163,7 @@ pub mod update_vocabulary_output {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated custom vocabulary.</p>
@@ -180,6 +204,15 @@ pub mod update_vocabulary_output {
         pub fn set_vocabulary_state(mut self, input: std::option::Option<crate::model::VocabularyState>) -> Self {
             self.vocabulary_state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
         pub fn build(self) -> crate::output::UpdateVocabularyOutput {
             crate::output::UpdateVocabularyOutput {
@@ -191,6 +224,7 @@ pub mod update_vocabulary_output {
                 ,
                 vocabulary_state: self.vocabulary_state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -221,6 +255,7 @@ pub struct UpdateMedicalVocabularyOutput  {
     /// <p>The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
     #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+    _request_id: Option<String>,
 }
 impl UpdateMedicalVocabularyOutput {
     /// <p>The name of the updated custom medical vocabulary.</p>
@@ -241,6 +276,11 @@ impl UpdateMedicalVocabularyOutput {
         self.vocabulary_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateMedicalVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
 pub mod update_medical_vocabulary_output {
     
@@ -252,6 +292,7 @@ pub mod update_medical_vocabulary_output {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated custom medical vocabulary.</p>
@@ -292,6 +333,15 @@ pub mod update_medical_vocabulary_output {
         pub fn set_vocabulary_state(mut self, input: std::option::Option<crate::model::VocabularyState>) -> Self {
             self.vocabulary_state = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
         pub fn build(self) -> crate::output::UpdateMedicalVocabularyOutput {
             crate::output::UpdateMedicalVocabularyOutput {
@@ -303,6 +353,7 @@ pub mod update_medical_vocabulary_output {
                 ,
                 vocabulary_state: self.vocabulary_state
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -323,6 +374,7 @@ pub struct UpdateCallAnalyticsCategoryOutput  {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
     #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+    _request_id: Option<String>,
 }
 impl UpdateCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
@@ -330,6 +382,11 @@ impl UpdateCallAnalyticsCategoryOutput {
         self.category_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCallAnalyticsCategoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
 pub mod update_call_analytics_category_output {
     
@@ -338,6 +395,7 @@ pub mod update_call_analytics_category_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>UpdateCallAnalyticsCategory</code> request.</p>
@@ -349,11 +407,21 @@ pub mod update_call_analytics_category_output {
         pub fn set_category_properties(mut self, input: std::option::Option<crate::model::CategoryProperties>) -> Self {
             self.category_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
         pub fn build(self) -> crate::output::UpdateCallAnalyticsCategoryOutput {
             crate::output::UpdateCallAnalyticsCategoryOutput {
                 category_properties: self.category_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -371,7 +439,13 @@ impl UpdateCallAnalyticsCategoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -379,11 +453,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -401,7 +486,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -409,11 +500,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -434,6 +536,7 @@ pub struct StartTranscriptionJobOutput  {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
+    _request_id: Option<String>,
 }
 impl StartTranscriptionJobOutput {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
@@ -441,6 +544,11 @@ impl StartTranscriptionJobOutput {
         self.transcription_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
 pub mod start_transcription_job_output {
     
@@ -449,6 +557,7 @@ pub mod start_transcription_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job: std::option::Option<crate::model::TranscriptionJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
@@ -460,11 +569,21 @@ pub mod start_transcription_job_output {
         pub fn set_transcription_job(mut self, input: std::option::Option<crate::model::TranscriptionJob>) -> Self {
             self.transcription_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
         pub fn build(self) -> crate::output::StartTranscriptionJobOutput {
             crate::output::StartTranscriptionJobOutput {
                 transcription_job: self.transcription_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -485,6 +604,7 @@ pub struct StartMedicalTranscriptionJobOutput  {
     /// <p>Provides detailed information about the current medical transcription job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
+    _request_id: Option<String>,
 }
 impl StartMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the current medical transcription job, including job status and, if applicable, failure reason.</p>
@@ -492,6 +612,11 @@ impl StartMedicalTranscriptionJobOutput {
         self.medical_transcription_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartMedicalTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
 pub mod start_medical_transcription_job_output {
     
@@ -500,6 +625,7 @@ pub mod start_medical_transcription_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the current medical transcription job, including job status and, if applicable, failure reason.</p>
@@ -511,11 +637,21 @@ pub mod start_medical_transcription_job_output {
         pub fn set_medical_transcription_job(mut self, input: std::option::Option<crate::model::MedicalTranscriptionJob>) -> Self {
             self.medical_transcription_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
         pub fn build(self) -> crate::output::StartMedicalTranscriptionJobOutput {
             crate::output::StartMedicalTranscriptionJobOutput {
                 medical_transcription_job: self.medical_transcription_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -536,6 +672,7 @@ pub struct StartCallAnalyticsJobOutput  {
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+    _request_id: Option<String>,
 }
 impl StartCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
@@ -543,6 +680,11 @@ impl StartCallAnalyticsJobOutput {
         self.call_analytics_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartCallAnalyticsJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
 pub mod start_call_analytics_job_output {
     
@@ -551,6 +693,7 @@ pub mod start_call_analytics_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
@@ -562,11 +705,21 @@ pub mod start_call_analytics_job_output {
         pub fn set_call_analytics_job(mut self, input: std::option::Option<crate::model::CallAnalyticsJob>) -> Self {
             self.call_analytics_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
         pub fn build(self) -> crate::output::StartCallAnalyticsJobOutput {
             crate::output::StartCallAnalyticsJobOutput {
                 call_analytics_job: self.call_analytics_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -590,6 +743,7 @@ pub struct ListVocabularyFiltersOutput  {
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
     #[doc(hidden)]
     pub vocabulary_filters: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
+    _request_id: Option<String>,
 }
 impl ListVocabularyFiltersOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -601,6 +755,11 @@ impl ListVocabularyFiltersOutput {
         self.vocabulary_filters.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVocabularyFiltersOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
 pub mod list_vocabulary_filters_output {
     
@@ -610,6 +769,7 @@ pub mod list_vocabulary_filters_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filters: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -636,6 +796,15 @@ pub mod list_vocabulary_filters_output {
         pub fn set_vocabulary_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>) -> Self {
             self.vocabulary_filters = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
         pub fn build(self) -> crate::output::ListVocabularyFiltersOutput {
             crate::output::ListVocabularyFiltersOutput {
@@ -643,6 +812,7 @@ pub mod list_vocabulary_filters_output {
                 ,
                 vocabulary_filters: self.vocabulary_filters
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -669,6 +839,7 @@ pub struct ListVocabulariesOutput  {
     /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
     #[doc(hidden)]
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+    _request_id: Option<String>,
 }
 impl ListVocabulariesOutput {
     /// <p>Lists all custom vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
@@ -684,6 +855,11 @@ impl ListVocabulariesOutput {
         self.vocabularies.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVocabulariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
 pub mod list_vocabularies_output {
     
@@ -694,6 +870,7 @@ pub mod list_vocabularies_output {
         pub(crate) status: std::option::Option<crate::model::VocabularyState>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists all custom vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
@@ -729,6 +906,15 @@ pub mod list_vocabularies_output {
         pub fn set_vocabularies(mut self, input: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>) -> Self {
             self.vocabularies = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
         pub fn build(self) -> crate::output::ListVocabulariesOutput {
             crate::output::ListVocabulariesOutput {
@@ -738,6 +924,7 @@ pub mod list_vocabularies_output {
                 ,
                 vocabularies: self.vocabularies
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -764,6 +951,7 @@ pub struct ListTranscriptionJobsOutput  {
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
     pub transcription_job_summaries: std::option::Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>,
+    _request_id: Option<String>,
 }
 impl ListTranscriptionJobsOutput {
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -779,6 +967,11 @@ impl ListTranscriptionJobsOutput {
         self.transcription_job_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTranscriptionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
 pub mod list_transcription_jobs_output {
     
@@ -789,6 +982,7 @@ pub mod list_transcription_jobs_output {
         pub(crate) status: std::option::Option<crate::model::TranscriptionJobStatus>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) transcription_job_summaries: std::option::Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -824,6 +1018,15 @@ pub mod list_transcription_jobs_output {
         pub fn set_transcription_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TranscriptionJobSummary>>) -> Self {
             self.transcription_job_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
         pub fn build(self) -> crate::output::ListTranscriptionJobsOutput {
             crate::output::ListTranscriptionJobsOutput {
@@ -833,6 +1036,7 @@ pub mod list_transcription_jobs_output {
                 ,
                 transcription_job_summaries: self.transcription_job_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -856,6 +1060,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>Lists all tags associated with the given transcription job, vocabulary, model, or resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) specified in your request.</p>
@@ -867,6 +1072,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -876,6 +1086,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) specified in your request.</p>
@@ -902,6 +1113,15 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
@@ -909,6 +1129,7 @@ pub mod list_tags_for_resource_output {
                 ,
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -935,6 +1156,7 @@ pub struct ListMedicalVocabulariesOutput  {
     /// <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
     #[doc(hidden)]
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+    _request_id: Option<String>,
 }
 impl ListMedicalVocabulariesOutput {
     /// <p>Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are ordered by creation date, with the newest vocabulary first.</p>
@@ -950,6 +1172,11 @@ impl ListMedicalVocabulariesOutput {
         self.vocabularies.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMedicalVocabulariesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
 pub mod list_medical_vocabularies_output {
     
@@ -960,6 +1187,7 @@ pub mod list_medical_vocabularies_output {
         pub(crate) status: std::option::Option<crate::model::VocabularyState>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are ordered by creation date, with the newest vocabulary first.</p>
@@ -995,6 +1223,15 @@ pub mod list_medical_vocabularies_output {
         pub fn set_vocabularies(mut self, input: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>) -> Self {
             self.vocabularies = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
         pub fn build(self) -> crate::output::ListMedicalVocabulariesOutput {
             crate::output::ListMedicalVocabulariesOutput {
@@ -1004,6 +1241,7 @@ pub mod list_medical_vocabularies_output {
                 ,
                 vocabularies: self.vocabularies
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1030,6 +1268,7 @@ pub struct ListMedicalTranscriptionJobsOutput  {
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
     pub medical_transcription_job_summaries: std::option::Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>,
+    _request_id: Option<String>,
 }
 impl ListMedicalTranscriptionJobsOutput {
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -1045,6 +1284,11 @@ impl ListMedicalTranscriptionJobsOutput {
         self.medical_transcription_job_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
 pub mod list_medical_transcription_jobs_output {
     
@@ -1055,6 +1299,7 @@ pub mod list_medical_transcription_jobs_output {
         pub(crate) status: std::option::Option<crate::model::TranscriptionJobStatus>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) medical_transcription_job_summaries: std::option::Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -1090,6 +1335,15 @@ pub mod list_medical_transcription_jobs_output {
         pub fn set_medical_transcription_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MedicalTranscriptionJobSummary>>) -> Self {
             self.medical_transcription_job_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
         pub fn build(self) -> crate::output::ListMedicalTranscriptionJobsOutput {
             crate::output::ListMedicalTranscriptionJobsOutput {
@@ -1099,6 +1353,7 @@ pub mod list_medical_transcription_jobs_output {
                 ,
                 medical_transcription_job_summaries: self.medical_transcription_job_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1122,6 +1377,7 @@ pub struct ListLanguageModelsOutput  {
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
     #[doc(hidden)]
     pub models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
+    _request_id: Option<String>,
 }
 impl ListLanguageModelsOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -1133,6 +1389,11 @@ impl ListLanguageModelsOutput {
         self.models.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLanguageModelsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
 pub mod list_language_models_output {
     
@@ -1142,6 +1403,7 @@ pub mod list_language_models_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -1168,6 +1430,15 @@ pub mod list_language_models_output {
         pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>) -> Self {
             self.models = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
         pub fn build(self) -> crate::output::ListLanguageModelsOutput {
             crate::output::ListLanguageModelsOutput {
@@ -1175,6 +1446,7 @@ pub mod list_language_models_output {
                 ,
                 models: self.models
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1201,6 +1473,7 @@ pub struct ListCallAnalyticsJobsOutput  {
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
     pub call_analytics_job_summaries: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+    _request_id: Option<String>,
 }
 impl ListCallAnalyticsJobsOutput {
     /// <p>Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -1216,6 +1489,11 @@ impl ListCallAnalyticsJobsOutput {
         self.call_analytics_job_summaries.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCallAnalyticsJobsOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
 pub mod list_call_analytics_jobs_output {
     
@@ -1226,6 +1504,7 @@ pub mod list_call_analytics_jobs_output {
         pub(crate) status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) call_analytics_job_summaries: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists all Call Analytics jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
@@ -1261,6 +1540,15 @@ pub mod list_call_analytics_jobs_output {
         pub fn set_call_analytics_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>) -> Self {
             self.call_analytics_job_summaries = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
         pub fn build(self) -> crate::output::ListCallAnalyticsJobsOutput {
             crate::output::ListCallAnalyticsJobsOutput {
@@ -1270,6 +1558,7 @@ pub mod list_call_analytics_jobs_output {
                 ,
                 call_analytics_job_summaries: self.call_analytics_job_summaries
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1293,6 +1582,7 @@ pub struct ListCallAnalyticsCategoriesOutput  {
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
     #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
+    _request_id: Option<String>,
 }
 impl ListCallAnalyticsCategoriesOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -1304,6 +1594,11 @@ impl ListCallAnalyticsCategoriesOutput {
         self.categories.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCallAnalyticsCategoriesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
 pub mod list_call_analytics_categories_output {
     
@@ -1313,6 +1608,7 @@ pub mod list_call_analytics_categories_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
@@ -1339,6 +1635,15 @@ pub mod list_call_analytics_categories_output {
         pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>) -> Self {
             self.categories = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
         pub fn build(self) -> crate::output::ListCallAnalyticsCategoriesOutput {
             crate::output::ListCallAnalyticsCategoriesOutput {
@@ -1346,6 +1651,7 @@ pub mod list_call_analytics_categories_output {
                 ,
                 categories: self.categories
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1376,6 +1682,7 @@ pub struct GetVocabularyFilterOutput  {
     /// <p>The Amazon S3 location where the custom vocabulary filter is stored; use this URI to view or download the custom vocabulary filter.</p>
     #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetVocabularyFilterOutput {
     /// <p>The name of the custom vocabulary filter you requested information about.</p>
@@ -1396,6 +1703,11 @@ impl GetVocabularyFilterOutput {
         self.download_uri.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetVocabularyFilterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
 pub mod get_vocabulary_filter_output {
     
@@ -1407,6 +1719,7 @@ pub mod get_vocabulary_filter_output {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the custom vocabulary filter you requested information about.</p>
@@ -1447,6 +1760,15 @@ pub mod get_vocabulary_filter_output {
         pub fn set_download_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_uri = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
         pub fn build(self) -> crate::output::GetVocabularyFilterOutput {
             crate::output::GetVocabularyFilterOutput {
@@ -1458,6 +1780,7 @@ pub mod get_vocabulary_filter_output {
                 ,
                 download_uri: self.download_uri
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1494,6 +1817,7 @@ pub struct GetVocabularyOutput  {
     /// <p>The S3 location where the custom vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetVocabularyOutput {
     /// <p>The name of the custom vocabulary you requested information about.</p>
@@ -1522,6 +1846,11 @@ impl GetVocabularyOutput {
         self.download_uri.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
 pub mod get_vocabulary_output {
     
@@ -1535,6 +1864,7 @@ pub mod get_vocabulary_output {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the custom vocabulary you requested information about.</p>
@@ -1593,6 +1923,15 @@ pub mod get_vocabulary_output {
         pub fn set_download_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_uri = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
         pub fn build(self) -> crate::output::GetVocabularyOutput {
             crate::output::GetVocabularyOutput {
@@ -1608,6 +1947,7 @@ pub mod get_vocabulary_output {
                 ,
                 download_uri: self.download_uri
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1628,6 +1968,7 @@ pub struct GetTranscriptionJobOutput  {
     /// <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
+    _request_id: Option<String>,
 }
 impl GetTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
@@ -1635,6 +1976,11 @@ impl GetTranscriptionJobOutput {
         self.transcription_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
 pub mod get_transcription_job_output {
     
@@ -1643,6 +1989,7 @@ pub mod get_transcription_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job: std::option::Option<crate::model::TranscriptionJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
@@ -1654,11 +2001,21 @@ pub mod get_transcription_job_output {
         pub fn set_transcription_job(mut self, input: std::option::Option<crate::model::TranscriptionJob>) -> Self {
             self.transcription_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
         pub fn build(self) -> crate::output::GetTranscriptionJobOutput {
             crate::output::GetTranscriptionJobOutput {
                 transcription_job: self.transcription_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1695,6 +2052,7 @@ pub struct GetMedicalVocabularyOutput  {
     /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     #[doc(hidden)]
     pub download_uri: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMedicalVocabularyOutput {
     /// <p>The name of the custom medical vocabulary you requested information about.</p>
@@ -1723,6 +2081,11 @@ impl GetMedicalVocabularyOutput {
         self.download_uri.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMedicalVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
 pub mod get_medical_vocabulary_output {
     
@@ -1736,6 +2099,7 @@ pub mod get_medical_vocabulary_output {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) download_uri: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the custom medical vocabulary you requested information about.</p>
@@ -1794,6 +2158,15 @@ pub mod get_medical_vocabulary_output {
         pub fn set_download_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_uri = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
         pub fn build(self) -> crate::output::GetMedicalVocabularyOutput {
             crate::output::GetMedicalVocabularyOutput {
@@ -1809,6 +2182,7 @@ pub mod get_medical_vocabulary_output {
                 ,
                 download_uri: self.download_uri
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1829,6 +2203,7 @@ pub struct GetMedicalTranscriptionJobOutput  {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
+    _request_id: Option<String>,
 }
 impl GetMedicalTranscriptionJobOutput {
     /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
@@ -1836,6 +2211,11 @@ impl GetMedicalTranscriptionJobOutput {
         self.medical_transcription_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMedicalTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
 pub mod get_medical_transcription_job_output {
     
@@ -1844,6 +2224,7 @@ pub mod get_medical_transcription_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job: std::option::Option<crate::model::MedicalTranscriptionJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the specified medical transcription job, including job status and, if applicable, failure reason.</p>
@@ -1855,11 +2236,21 @@ pub mod get_medical_transcription_job_output {
         pub fn set_medical_transcription_job(mut self, input: std::option::Option<crate::model::MedicalTranscriptionJob>) -> Self {
             self.medical_transcription_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
         pub fn build(self) -> crate::output::GetMedicalTranscriptionJobOutput {
             crate::output::GetMedicalTranscriptionJobOutput {
                 medical_transcription_job: self.medical_transcription_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1880,6 +2271,7 @@ pub struct GetCallAnalyticsJobOutput  {
     /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+    _request_id: Option<String>,
 }
 impl GetCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
@@ -1887,6 +2279,11 @@ impl GetCallAnalyticsJobOutput {
         self.call_analytics_job.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCallAnalyticsJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
 pub mod get_call_analytics_job_output {
     
@@ -1895,6 +2292,7 @@ pub mod get_call_analytics_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
@@ -1906,11 +2304,21 @@ pub mod get_call_analytics_job_output {
         pub fn set_call_analytics_job(mut self, input: std::option::Option<crate::model::CallAnalyticsJob>) -> Self {
             self.call_analytics_job = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
         pub fn build(self) -> crate::output::GetCallAnalyticsJobOutput {
             crate::output::GetCallAnalyticsJobOutput {
                 call_analytics_job: self.call_analytics_job
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1931,6 +2339,7 @@ pub struct GetCallAnalyticsCategoryOutput  {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
     #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+    _request_id: Option<String>,
 }
 impl GetCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
@@ -1938,6 +2347,11 @@ impl GetCallAnalyticsCategoryOutput {
         self.category_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCallAnalyticsCategoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
 pub mod get_call_analytics_category_output {
     
@@ -1946,6 +2360,7 @@ pub mod get_call_analytics_category_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
@@ -1957,11 +2372,21 @@ pub mod get_call_analytics_category_output {
         pub fn set_category_properties(mut self, input: std::option::Option<crate::model::CategoryProperties>) -> Self {
             self.category_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
         pub fn build(self) -> crate::output::GetCallAnalyticsCategoryOutput {
             crate::output::GetCallAnalyticsCategoryOutput {
                 category_properties: self.category_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1984,6 +2409,7 @@ pub struct DescribeLanguageModelOutput  {
     /// <p>If you tried to create a new custom language model and the request wasn't successful, you can use this <code>DescribeLanguageModel</code> to help identify the reason for this failure.</p>
     #[doc(hidden)]
     pub language_model: std::option::Option<crate::model::LanguageModel>,
+    _request_id: Option<String>,
 }
 impl DescribeLanguageModelOutput {
     /// <p>Provides information about the specified custom language model.</p> 
@@ -1993,6 +2419,11 @@ impl DescribeLanguageModelOutput {
         self.language_model.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLanguageModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
 pub mod describe_language_model_output {
     
@@ -2001,6 +2432,7 @@ pub mod describe_language_model_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_model: std::option::Option<crate::model::LanguageModel>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about the specified custom language model.</p> 
@@ -2016,11 +2448,21 @@ pub mod describe_language_model_output {
         pub fn set_language_model(mut self, input: std::option::Option<crate::model::LanguageModel>) -> Self {
             self.language_model = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
         pub fn build(self) -> crate::output::DescribeLanguageModelOutput {
             crate::output::DescribeLanguageModelOutput {
                 language_model: self.language_model
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2038,7 +2480,13 @@ impl DescribeLanguageModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVocabularyFilterOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVocabularyFilterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
 pub mod delete_vocabulary_filter_output {
     
@@ -2046,11 +2494,22 @@ pub mod delete_vocabulary_filter_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
         pub fn build(self) -> crate::output::DeleteVocabularyFilterOutput {
             crate::output::DeleteVocabularyFilterOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2068,7 +2527,13 @@ impl DeleteVocabularyFilterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVocabularyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
 pub mod delete_vocabulary_output {
     
@@ -2076,11 +2541,22 @@ pub mod delete_vocabulary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
         pub fn build(self) -> crate::output::DeleteVocabularyOutput {
             crate::output::DeleteVocabularyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2098,7 +2574,13 @@ impl DeleteVocabularyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTranscriptionJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
 pub mod delete_transcription_job_output {
     
@@ -2106,11 +2588,22 @@ pub mod delete_transcription_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
         pub fn build(self) -> crate::output::DeleteTranscriptionJobOutput {
             crate::output::DeleteTranscriptionJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2128,7 +2621,13 @@ impl DeleteTranscriptionJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteMedicalVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
 pub mod delete_medical_vocabulary_output {
     
@@ -2136,11 +2635,22 @@ pub mod delete_medical_vocabulary_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
         pub fn build(self) -> crate::output::DeleteMedicalVocabularyOutput {
             crate::output::DeleteMedicalVocabularyOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2158,7 +2668,13 @@ impl DeleteMedicalVocabularyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMedicalTranscriptionJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteMedicalTranscriptionJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
 pub mod delete_medical_transcription_job_output {
     
@@ -2166,11 +2682,22 @@ pub mod delete_medical_transcription_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
         pub fn build(self) -> crate::output::DeleteMedicalTranscriptionJobOutput {
             crate::output::DeleteMedicalTranscriptionJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2188,7 +2715,13 @@ impl DeleteMedicalTranscriptionJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLanguageModelOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteLanguageModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
 pub mod delete_language_model_output {
     
@@ -2196,11 +2729,22 @@ pub mod delete_language_model_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
         pub fn build(self) -> crate::output::DeleteLanguageModelOutput {
             crate::output::DeleteLanguageModelOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2218,7 +2762,13 @@ impl DeleteLanguageModelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJobOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCallAnalyticsJobOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
 pub mod delete_call_analytics_job_output {
     
@@ -2226,11 +2776,22 @@ pub mod delete_call_analytics_job_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
         pub fn build(self) -> crate::output::DeleteCallAnalyticsJobOutput {
             crate::output::DeleteCallAnalyticsJobOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2248,7 +2809,13 @@ impl DeleteCallAnalyticsJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteCallAnalyticsCategoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
 pub mod delete_call_analytics_category_output {
     
@@ -2256,11 +2823,22 @@ pub mod delete_call_analytics_category_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
         pub fn build(self) -> crate::output::DeleteCallAnalyticsCategoryOutput {
             crate::output::DeleteCallAnalyticsCategoryOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -2288,6 +2866,7 @@ pub struct CreateVocabularyFilterOutput  {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateVocabularyFilterOutput {
     /// <p>The name you chose for your custom vocabulary filter.</p>
@@ -2304,6 +2883,11 @@ impl CreateVocabularyFilterOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVocabularyFilterOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
 pub mod create_vocabulary_filter_output {
     
@@ -2314,6 +2898,7 @@ pub mod create_vocabulary_filter_output {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name you chose for your custom vocabulary filter.</p>
@@ -2345,6 +2930,15 @@ pub mod create_vocabulary_filter_output {
         pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.last_modified_time = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
         pub fn build(self) -> crate::output::CreateVocabularyFilterOutput {
             crate::output::CreateVocabularyFilterOutput {
@@ -2354,6 +2948,7 @@ pub mod create_vocabulary_filter_output {
                 ,
                 last_modified_time: self.last_modified_time
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2387,6 +2982,7 @@ pub struct CreateVocabularyOutput  {
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateVocabularyOutput {
     /// <p>The name you chose for your custom vocabulary.</p>
@@ -2411,6 +3007,11 @@ impl CreateVocabularyOutput {
         self.failure_reason.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
 pub mod create_vocabulary_output {
     
@@ -2423,6 +3024,7 @@ pub mod create_vocabulary_output {
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name you chose for your custom vocabulary.</p>
@@ -2472,6 +3074,15 @@ pub mod create_vocabulary_output {
         pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure_reason = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
         pub fn build(self) -> crate::output::CreateVocabularyOutput {
             crate::output::CreateVocabularyOutput {
@@ -2485,6 +3096,7 @@ pub mod create_vocabulary_output {
                 ,
                 failure_reason: self.failure_reason
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2518,6 +3130,7 @@ pub struct CreateMedicalVocabularyOutput  {
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the medical transcription job request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateMedicalVocabularyOutput {
     /// <p>The name you chose for your custom medical vocabulary.</p>
@@ -2542,6 +3155,11 @@ impl CreateMedicalVocabularyOutput {
         self.failure_reason.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMedicalVocabularyOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
 pub mod create_medical_vocabulary_output {
     
@@ -2554,6 +3172,7 @@ pub mod create_medical_vocabulary_output {
         pub(crate) vocabulary_state: std::option::Option<crate::model::VocabularyState>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name you chose for your custom medical vocabulary.</p>
@@ -2603,6 +3222,15 @@ pub mod create_medical_vocabulary_output {
         pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure_reason = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
         pub fn build(self) -> crate::output::CreateMedicalVocabularyOutput {
             crate::output::CreateMedicalVocabularyOutput {
@@ -2616,6 +3244,7 @@ pub mod create_medical_vocabulary_output {
                 ,
                 failure_reason: self.failure_reason
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2648,6 +3277,7 @@ pub struct CreateLanguageModelOutput  {
     /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
     #[doc(hidden)]
     pub model_status: std::option::Option<crate::model::ModelStatus>,
+    _request_id: Option<String>,
 }
 impl CreateLanguageModelOutput {
     /// <p>The language code you selected for your custom language model.</p>
@@ -2671,6 +3301,11 @@ impl CreateLanguageModelOutput {
         self.model_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLanguageModelOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
 pub mod create_language_model_output {
     
@@ -2683,6 +3318,7 @@ pub mod create_language_model_output {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) model_status: std::option::Option<crate::model::ModelStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The language code you selected for your custom language model.</p>
@@ -2730,6 +3366,15 @@ pub mod create_language_model_output {
         pub fn set_model_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.model_status = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
         pub fn build(self) -> crate::output::CreateLanguageModelOutput {
             crate::output::CreateLanguageModelOutput {
@@ -2743,6 +3388,7 @@ pub mod create_language_model_output {
                 ,
                 model_status: self.model_status
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2763,6 +3409,7 @@ pub struct CreateCallAnalyticsCategoryOutput  {
     /// <p>Provides you with the properties of your new category, including its associated rules.</p>
     #[doc(hidden)]
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+    _request_id: Option<String>,
 }
 impl CreateCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of your new category, including its associated rules.</p>
@@ -2770,6 +3417,11 @@ impl CreateCallAnalyticsCategoryOutput {
         self.category_properties.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCallAnalyticsCategoryOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
 pub mod create_call_analytics_category_output {
     
@@ -2778,6 +3430,7 @@ pub mod create_call_analytics_category_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides you with the properties of your new category, including its associated rules.</p>
@@ -2789,11 +3442,21 @@ pub mod create_call_analytics_category_output {
         pub fn set_category_properties(mut self, input: std::option::Option<crate::model::CategoryProperties>) -> Self {
             self.category_properties = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
         pub fn build(self) -> crate::output::CreateCallAnalyticsCategoryOutput {
             crate::output::CreateCallAnalyticsCategoryOutput {
                 category_properties: self.category_properties
                 ,
+                _request_id: self._request_id,
             }
         }
     }

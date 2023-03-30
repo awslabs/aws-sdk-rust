@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -11,11 +17,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -33,7 +50,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -41,11 +64,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -66,6 +100,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with the specified media pipeline.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with the specified media pipeline.</p>
@@ -73,6 +108,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -81,6 +121,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -98,11 +139,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -126,6 +177,7 @@ pub struct ListMediaPipelinesOutput  {
     /// <p>The token used to retrieve the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMediaPipelinesOutput {
     /// <p>The media pipeline objects in the list.</p>
@@ -137,6 +189,11 @@ impl ListMediaPipelinesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMediaPipelinesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
 pub mod list_media_pipelines_output {
     
@@ -146,6 +203,7 @@ pub mod list_media_pipelines_output {
     pub struct Builder {
         pub(crate) media_pipelines: std::option::Option<std::vec::Vec<crate::model::MediaPipelineSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `media_pipelines`.
@@ -172,6 +230,15 @@ pub mod list_media_pipelines_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
         pub fn build(self) -> crate::output::ListMediaPipelinesOutput {
             crate::output::ListMediaPipelinesOutput {
@@ -179,6 +246,7 @@ pub mod list_media_pipelines_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -202,6 +270,7 @@ pub struct ListMediaCapturePipelinesOutput  {
     /// <p>The token used to retrieve the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMediaCapturePipelinesOutput {
     /// <p>The media pipeline objects in the list.</p>
@@ -213,6 +282,11 @@ impl ListMediaCapturePipelinesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMediaCapturePipelinesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
 pub mod list_media_capture_pipelines_output {
     
@@ -222,6 +296,7 @@ pub mod list_media_capture_pipelines_output {
     pub struct Builder {
         pub(crate) media_capture_pipelines: std::option::Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `media_capture_pipelines`.
@@ -248,6 +323,15 @@ pub mod list_media_capture_pipelines_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
         pub fn build(self) -> crate::output::ListMediaCapturePipelinesOutput {
             crate::output::ListMediaCapturePipelinesOutput {
@@ -255,6 +339,7 @@ pub mod list_media_capture_pipelines_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -275,6 +360,7 @@ pub struct GetMediaPipelineOutput  {
     /// <p>The media pipeline object.</p>
     #[doc(hidden)]
     pub media_pipeline: std::option::Option<crate::model::MediaPipeline>,
+    _request_id: Option<String>,
 }
 impl GetMediaPipelineOutput {
     /// <p>The media pipeline object.</p>
@@ -282,6 +368,11 @@ impl GetMediaPipelineOutput {
         self.media_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMediaPipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
 pub mod get_media_pipeline_output {
     
@@ -290,6 +381,7 @@ pub mod get_media_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline: std::option::Option<crate::model::MediaPipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The media pipeline object.</p>
@@ -301,11 +393,21 @@ pub mod get_media_pipeline_output {
         pub fn set_media_pipeline(mut self, input: std::option::Option<crate::model::MediaPipeline>) -> Self {
             self.media_pipeline = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
         pub fn build(self) -> crate::output::GetMediaPipelineOutput {
             crate::output::GetMediaPipelineOutput {
                 media_pipeline: self.media_pipeline
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -326,6 +428,7 @@ pub struct GetMediaCapturePipelineOutput  {
     /// <p>The media pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+    _request_id: Option<String>,
 }
 impl GetMediaCapturePipelineOutput {
     /// <p>The media pipeline object.</p>
@@ -333,6 +436,11 @@ impl GetMediaCapturePipelineOutput {
         self.media_capture_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMediaCapturePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
 pub mod get_media_capture_pipeline_output {
     
@@ -341,6 +449,7 @@ pub mod get_media_capture_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The media pipeline object.</p>
@@ -352,11 +461,21 @@ pub mod get_media_capture_pipeline_output {
         pub fn set_media_capture_pipeline(mut self, input: std::option::Option<crate::model::MediaCapturePipeline>) -> Self {
             self.media_capture_pipeline = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
         pub fn build(self) -> crate::output::GetMediaCapturePipelineOutput {
             crate::output::GetMediaCapturePipelineOutput {
                 media_capture_pipeline: self.media_capture_pipeline
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -374,7 +493,13 @@ impl GetMediaCapturePipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaPipelineOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteMediaPipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
 pub mod delete_media_pipeline_output {
     
@@ -382,11 +507,22 @@ pub mod delete_media_pipeline_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
         pub fn build(self) -> crate::output::DeleteMediaPipelineOutput {
             crate::output::DeleteMediaPipelineOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -404,7 +540,13 @@ impl DeleteMediaPipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteMediaCapturePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
 pub mod delete_media_capture_pipeline_output {
     
@@ -412,11 +554,22 @@ pub mod delete_media_capture_pipeline_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
         pub fn build(self) -> crate::output::DeleteMediaCapturePipelineOutput {
             crate::output::DeleteMediaCapturePipelineOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -437,6 +590,7 @@ pub struct CreateMediaLiveConnectorPipelineOutput  {
     /// <p>The new media pipeline.</p>
     #[doc(hidden)]
     pub media_live_connector_pipeline: std::option::Option<crate::model::MediaLiveConnectorPipeline>,
+    _request_id: Option<String>,
 }
 impl CreateMediaLiveConnectorPipelineOutput {
     /// <p>The new media pipeline.</p>
@@ -444,6 +598,11 @@ impl CreateMediaLiveConnectorPipelineOutput {
         self.media_live_connector_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMediaLiveConnectorPipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
 pub mod create_media_live_connector_pipeline_output {
     
@@ -452,6 +611,7 @@ pub mod create_media_live_connector_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_live_connector_pipeline: std::option::Option<crate::model::MediaLiveConnectorPipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The new media pipeline.</p>
@@ -463,11 +623,21 @@ pub mod create_media_live_connector_pipeline_output {
         pub fn set_media_live_connector_pipeline(mut self, input: std::option::Option<crate::model::MediaLiveConnectorPipeline>) -> Self {
             self.media_live_connector_pipeline = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
         pub fn build(self) -> crate::output::CreateMediaLiveConnectorPipelineOutput {
             crate::output::CreateMediaLiveConnectorPipelineOutput {
                 media_live_connector_pipeline: self.media_live_connector_pipeline
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -488,6 +658,7 @@ pub struct CreateMediaConcatenationPipelineOutput  {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
     #[doc(hidden)]
     pub media_concatenation_pipeline: std::option::Option<crate::model::MediaConcatenationPipeline>,
+    _request_id: Option<String>,
 }
 impl CreateMediaConcatenationPipelineOutput {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
@@ -495,6 +666,11 @@ impl CreateMediaConcatenationPipelineOutput {
         self.media_concatenation_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMediaConcatenationPipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
 pub mod create_media_concatenation_pipeline_output {
     
@@ -503,6 +679,7 @@ pub mod create_media_concatenation_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_concatenation_pipeline: std::option::Option<crate::model::MediaConcatenationPipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
@@ -514,11 +691,21 @@ pub mod create_media_concatenation_pipeline_output {
         pub fn set_media_concatenation_pipeline(mut self, input: std::option::Option<crate::model::MediaConcatenationPipeline>) -> Self {
             self.media_concatenation_pipeline = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
         pub fn build(self) -> crate::output::CreateMediaConcatenationPipelineOutput {
             crate::output::CreateMediaConcatenationPipelineOutput {
                 media_concatenation_pipeline: self.media_concatenation_pipeline
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -539,6 +726,7 @@ pub struct CreateMediaCapturePipelineOutput  {
     /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+    _request_id: Option<String>,
 }
 impl CreateMediaCapturePipelineOutput {
     /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
@@ -546,6 +734,11 @@ impl CreateMediaCapturePipelineOutput {
         self.media_capture_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMediaCapturePipelineOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
 pub mod create_media_capture_pipeline_output {
     
@@ -554,6 +747,7 @@ pub mod create_media_capture_pipeline_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
@@ -565,11 +759,21 @@ pub mod create_media_capture_pipeline_output {
         pub fn set_media_capture_pipeline(mut self, input: std::option::Option<crate::model::MediaCapturePipeline>) -> Self {
             self.media_capture_pipeline = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
         pub fn build(self) -> crate::output::CreateMediaCapturePipelineOutput {
             crate::output::CreateMediaCapturePipelineOutput {
                 media_capture_pipeline: self.media_capture_pipeline
                 ,
+                _request_id: self._request_id,
             }
         }
     }

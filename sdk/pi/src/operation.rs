@@ -22,6 +22,7 @@ impl DescribeDimensionKeys {
 impl aws_smithy_http::response::ParseStrictResponse for DescribeDimensionKeys {
                 type Output = std::result::Result<crate::output::DescribeDimensionKeysOutput, crate::error::DescribeDimensionKeysError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_describe_dimension_keys_error(response)
                      } else {
@@ -53,6 +54,7 @@ impl GetDimensionKeyDetails {
 impl aws_smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
                 type Output = std::result::Result<crate::output::GetDimensionKeyDetailsOutput, crate::error::GetDimensionKeyDetailsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_dimension_key_details_error(response)
                      } else {
@@ -84,6 +86,7 @@ impl GetResourceMetadata {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetadata {
                 type Output = std::result::Result<crate::output::GetResourceMetadataOutput, crate::error::GetResourceMetadataError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_metadata_error(response)
                      } else {
@@ -115,6 +118,7 @@ impl GetResourceMetrics {
 impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetrics {
                 type Output = std::result::Result<crate::output::GetResourceMetricsOutput, crate::error::GetResourceMetricsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_get_resource_metrics_error(response)
                      } else {
@@ -146,6 +150,7 @@ impl ListAvailableResourceDimensions {
 impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceDimensions {
                 type Output = std::result::Result<crate::output::ListAvailableResourceDimensionsOutput, crate::error::ListAvailableResourceDimensionsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_available_resource_dimensions_error(response)
                      } else {
@@ -177,6 +182,7 @@ impl ListAvailableResourceMetrics {
 impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceMetrics {
                 type Output = std::result::Result<crate::output::ListAvailableResourceMetricsOutput, crate::error::ListAvailableResourceMetricsError>;
                 fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
                      if !response.status().is_success() && response.status().as_u16() != 200 {
                         crate::operation_deser::parse_list_available_resource_metrics_error(response)
                      } else {

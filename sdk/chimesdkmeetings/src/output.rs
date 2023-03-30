@@ -6,6 +6,7 @@ pub struct UpdateAttendeeCapabilitiesOutput  {
     /// <p>The updated attendee data.</p>
     #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
+    _request_id: Option<String>,
 }
 impl UpdateAttendeeCapabilitiesOutput {
     /// <p>The updated attendee data.</p>
@@ -13,6 +14,11 @@ impl UpdateAttendeeCapabilitiesOutput {
         self.attendee.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateAttendeeCapabilitiesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
 pub mod update_attendee_capabilities_output {
     
@@ -21,6 +27,7 @@ pub mod update_attendee_capabilities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated attendee data.</p>
@@ -32,11 +39,21 @@ pub mod update_attendee_capabilities_output {
         pub fn set_attendee(mut self, input: std::option::Option<crate::model::Attendee>) -> Self {
             self.attendee = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
         pub fn build(self) -> crate::output::UpdateAttendeeCapabilitiesOutput {
             crate::output::UpdateAttendeeCapabilitiesOutput {
                 attendee: self.attendee
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -54,7 +71,13 @@ impl UpdateAttendeeCapabilitiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -62,11 +85,22 @@ pub mod untag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,7 +118,13 @@ impl UntagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for TagResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -92,11 +132,22 @@ pub mod tag_resource_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -114,7 +165,13 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMeetingTranscriptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StopMeetingTranscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
 pub mod stop_meeting_transcription_output {
     
@@ -122,11 +179,22 @@ pub mod stop_meeting_transcription_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
         pub fn build(self) -> crate::output::StopMeetingTranscriptionOutput {
             crate::output::StopMeetingTranscriptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -144,7 +212,13 @@ impl StopMeetingTranscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMeetingTranscriptionOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for StartMeetingTranscriptionOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
 pub mod start_meeting_transcription_output {
     
@@ -152,11 +226,22 @@ pub mod start_meeting_transcription_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
         pub fn build(self) -> crate::output::StartMeetingTranscriptionOutput {
             crate::output::StartMeetingTranscriptionOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -177,6 +262,7 @@ pub struct ListTagsForResourceOutput  {
     /// <p>The tags requested for the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags requested for the specified resource.</p>
@@ -184,6 +270,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -192,6 +283,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -209,11 +301,21 @@ pub mod list_tags_for_resource_output {
         pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
             self.tags = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -237,6 +339,7 @@ pub struct ListAttendeesOutput  {
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAttendeesOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
@@ -248,6 +351,11 @@ impl ListAttendeesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAttendeesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
 pub mod list_attendees_output {
     
@@ -257,6 +365,7 @@ pub mod list_attendees_output {
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `attendees`.
@@ -283,6 +392,15 @@ pub mod list_attendees_output {
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
         pub fn build(self) -> crate::output::ListAttendeesOutput {
             crate::output::ListAttendeesOutput {
@@ -290,6 +408,7 @@ pub mod list_attendees_output {
                 ,
                 next_token: self.next_token
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -310,6 +429,7 @@ pub struct GetMeetingOutput  {
     /// <p>The Amazon Chime SDK meeting information.</p>
     #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
+    _request_id: Option<String>,
 }
 impl GetMeetingOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
@@ -317,6 +437,11 @@ impl GetMeetingOutput {
         self.meeting.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetMeetingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetMeetingOutput`](crate::output::GetMeetingOutput).
 pub mod get_meeting_output {
     
@@ -325,6 +450,7 @@ pub mod get_meeting_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK meeting information.</p>
@@ -336,11 +462,21 @@ pub mod get_meeting_output {
         pub fn set_meeting(mut self, input: std::option::Option<crate::model::Meeting>) -> Self {
             self.meeting = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetMeetingOutput`](crate::output::GetMeetingOutput).
         pub fn build(self) -> crate::output::GetMeetingOutput {
             crate::output::GetMeetingOutput {
                 meeting: self.meeting
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -361,6 +497,7 @@ pub struct GetAttendeeOutput  {
     /// <p>The Amazon Chime SDK attendee information.</p>
     #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
+    _request_id: Option<String>,
 }
 impl GetAttendeeOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
@@ -368,6 +505,11 @@ impl GetAttendeeOutput {
         self.attendee.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAttendeeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
 pub mod get_attendee_output {
     
@@ -376,6 +518,7 @@ pub mod get_attendee_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK attendee information.</p>
@@ -387,11 +530,21 @@ pub mod get_attendee_output {
         pub fn set_attendee(mut self, input: std::option::Option<crate::model::Attendee>) -> Self {
             self.attendee = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
         pub fn build(self) -> crate::output::GetAttendeeOutput {
             crate::output::GetAttendeeOutput {
                 attendee: self.attendee
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,7 +562,13 @@ impl GetAttendeeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMeetingOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteMeetingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
 pub mod delete_meeting_output {
     
@@ -417,11 +576,22 @@ pub mod delete_meeting_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
         pub fn build(self) -> crate::output::DeleteMeetingOutput {
             crate::output::DeleteMeetingOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -439,7 +609,13 @@ impl DeleteMeetingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttendeeOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for DeleteAttendeeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
 pub mod delete_attendee_output {
     
@@ -447,11 +623,22 @@ pub mod delete_attendee_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
         pub fn build(self) -> crate::output::DeleteAttendeeOutput {
             crate::output::DeleteAttendeeOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -478,6 +665,7 @@ pub struct CreateMeetingWithAttendeesOutput  {
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+    _request_id: Option<String>,
 }
 impl CreateMeetingWithAttendeesOutput {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
@@ -493,6 +681,11 @@ impl CreateMeetingWithAttendeesOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMeetingWithAttendeesOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
 pub mod create_meeting_with_attendees_output {
     
@@ -503,6 +696,7 @@ pub mod create_meeting_with_attendees_output {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
@@ -544,6 +738,15 @@ pub mod create_meeting_with_attendees_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
         pub fn build(self) -> crate::output::CreateMeetingWithAttendeesOutput {
             crate::output::CreateMeetingWithAttendeesOutput {
@@ -553,6 +756,7 @@ pub mod create_meeting_with_attendees_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -573,6 +777,7 @@ pub struct CreateMeetingOutput  {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     #[doc(hidden)]
     pub meeting: std::option::Option<crate::model::Meeting>,
+    _request_id: Option<String>,
 }
 impl CreateMeetingOutput {
     /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
@@ -580,6 +785,11 @@ impl CreateMeetingOutput {
         self.meeting.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMeetingOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
 pub mod create_meeting_output {
     
@@ -588,6 +798,7 @@ pub mod create_meeting_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
@@ -599,11 +810,21 @@ pub mod create_meeting_output {
         pub fn set_meeting(mut self, input: std::option::Option<crate::model::Meeting>) -> Self {
             self.meeting = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
         pub fn build(self) -> crate::output::CreateMeetingOutput {
             crate::output::CreateMeetingOutput {
                 meeting: self.meeting
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -624,6 +845,7 @@ pub struct CreateAttendeeOutput  {
     /// <p>The attendee information, including attendee ID and join token.</p>
     #[doc(hidden)]
     pub attendee: std::option::Option<crate::model::Attendee>,
+    _request_id: Option<String>,
 }
 impl CreateAttendeeOutput {
     /// <p>The attendee information, including attendee ID and join token.</p>
@@ -631,6 +853,11 @@ impl CreateAttendeeOutput {
         self.attendee.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAttendeeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
 pub mod create_attendee_output {
     
@@ -639,6 +866,7 @@ pub mod create_attendee_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The attendee information, including attendee ID and join token.</p>
@@ -650,11 +878,21 @@ pub mod create_attendee_output {
         pub fn set_attendee(mut self, input: std::option::Option<crate::model::Attendee>) -> Self {
             self.attendee = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
         pub fn build(self) -> crate::output::CreateAttendeeOutput {
             crate::output::CreateAttendeeOutput {
                 attendee: self.attendee
                 ,
+                _request_id: self._request_id,
             }
         }
     }
@@ -672,7 +910,13 @@ impl CreateAttendeeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptOutput  {
+    _request_id: Option<String>,
 }
+impl aws_http::request_id::RequestId for BatchUpdateAttendeeCapabilitiesExceptOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
 pub mod batch_update_attendee_capabilities_except_output {
     
@@ -680,11 +924,22 @@ pub mod batch_update_attendee_capabilities_except_output {
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
+        _request_id: Option<String>,
     }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
         pub fn build(self) -> crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput {
             crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput {
+                _request_id: self._request_id,
             }
         }
     }
@@ -708,6 +963,7 @@ pub struct BatchCreateAttendeeOutput  {
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+    _request_id: Option<String>,
 }
 impl BatchCreateAttendeeOutput {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -719,6 +975,11 @@ impl BatchCreateAttendeeOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchCreateAttendeeOutput {
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 /// See [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
 pub mod batch_create_attendee_output {
     
@@ -728,6 +989,7 @@ pub mod batch_create_attendee_output {
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `attendees`.
@@ -760,6 +1022,15 @@ pub mod batch_create_attendee_output {
         pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>) -> Self {
             self.errors = input; self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+        
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
         /// Consumes the builder and constructs a [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
         pub fn build(self) -> crate::output::BatchCreateAttendeeOutput {
             crate::output::BatchCreateAttendeeOutput {
@@ -767,6 +1038,7 @@ pub mod batch_create_attendee_output {
                 ,
                 errors: self.errors
                 ,
+                _request_id: self._request_id,
             }
         }
     }
