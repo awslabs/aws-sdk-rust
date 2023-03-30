@@ -13,8 +13,8 @@ impl CreateAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -179,8 +179,8 @@ impl CreateBucketInput {
         .set_endpoint(_config.endpoint_url
         .clone())
         .set_use_arn_region(_config.use_arn_region)
-        .set_outpost_id(self.outpost_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_outpost_id(self.outpost_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -447,8 +447,8 @@ impl DeleteAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_access_point_name(self.name.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_access_point_name(self.name.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -606,8 +606,8 @@ impl DeleteAccessPointPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -765,8 +765,8 @@ impl DeleteBucketInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -925,8 +925,8 @@ impl DeleteBucketPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1005,8 +1005,8 @@ impl DeleteBucketTaggingInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1657,8 +1657,8 @@ impl GetAccessPointInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -1895,8 +1895,8 @@ impl GetAccessPointPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -2293,8 +2293,8 @@ impl GetBucketLifecycleConfigurationInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -2373,8 +2373,8 @@ impl GetBucketPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -3284,8 +3284,8 @@ impl ListAccessPointsInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -3908,8 +3908,8 @@ impl PutAccessPointPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_access_point_name(self.name.clone()).build()
+        .set_access_point_name(self.name.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -4171,8 +4171,8 @@ impl PutBucketPolicyInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_bucket(self.bucket.clone())
-        .set_account_id(self.account_id.clone()).build()
+        .set_account_id(self.account_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
@@ -4267,8 +4267,8 @@ impl PutBucketTaggingInput {
         .clone())
         .set_use_arn_region(_config.use_arn_region)
         .set_requires_account_id(Some(true))
-        .set_account_id(self.account_id.clone())
-        .set_bucket(self.bucket.clone()).build()
+        .set_bucket(self.bucket.clone())
+        .set_account_id(self.account_id.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
