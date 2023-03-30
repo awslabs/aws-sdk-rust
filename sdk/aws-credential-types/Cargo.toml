@@ -17,6 +17,7 @@ hardcoded-credentials = []
 test-util = []
 
 [dependencies]
+fastrand = "1.4.0"
 tracing = "0.1"
 zeroize = "1"
 
