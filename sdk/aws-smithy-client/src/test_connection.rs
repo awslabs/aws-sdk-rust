@@ -7,6 +7,7 @@
 // TODO(docs)
 #![allow(missing_docs)]
 
+use std::fmt::{Debug, Formatter};
 use std::future::Ready;
 use std::ops::Deref;
 use std::sync::{Arc, Mutex};
@@ -16,6 +17,7 @@ use http::header::{HeaderName, CONTENT_TYPE};
 use http::Request;
 use tokio::sync::oneshot;
 
+use crate::erase::DynConnector;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
@@ -268,6 +270,63 @@ where
             .middleware(tower::layer::util::Identity::new())
             .connector(tc)
             .build()
+    }
+}
+
+/// Create a DynConnector from `Fn(http:Request) -> http::Response`
+///
+/// # Examples
+///
+/// ```rust
+/// use aws_smithy_client::test_connection::infallible_connection_fn;
+/// let connector = infallible_connection_fn(|_req|http::Response::builder().status(200).body("OK!").unwrap());
+/// ```
+pub fn infallible_connection_fn<B>(
+    f: impl Fn(http::Request<SdkBody>) -> http::Response<B> + Send + Sync + 'static,
+) -> DynConnector
+where
+    B: Into<SdkBody>,
+{
+    ConnectionFn::infallible(f)
+}
+
+#[derive(Clone)]
+struct ConnectionFn {
+    #[allow(clippy::type_complexity)]
+    response: Arc<
+        dyn Fn(http::Request<SdkBody>) -> Result<http::Response<SdkBody>, ConnectorError>
+            + Send
+            + Sync,
+    >,
+}
+
+impl Debug for ConnectionFn {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("ConnectionFn").finish()
+    }
+}
+
+impl ConnectionFn {
+    fn infallible<B: Into<SdkBody>>(
+        f: impl Fn(http::Request<SdkBody>) -> http::Response<B> + Send + Sync + 'static,
+    ) -> DynConnector {
+        DynConnector::new(Self {
+            response: Arc::new(move |request| Ok(f(request).map(|b| b.into()))),
+        })
+    }
+}
+
+impl tower::Service<http::Request<SdkBody>> for ConnectionFn {
+    type Response = http::Response<SdkBody>;
+    type Error = ConnectorError;
+    type Future = Ready<Result<Self::Response, Self::Error>>;
+
+    fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+        Poll::Ready(Ok(()))
+    }
+
+    fn call(&mut self, req: Request<SdkBody>) -> Self::Future {
+        std::future::ready((self.response)(req))
     }
 }
 

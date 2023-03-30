@@ -1,4 +1,4 @@
-smithy_rs_revision = '0e17372123238f75948a7e02d3b091c93a536b74'
+smithy_rs_revision = 'd8a7d9998f973cc8b3607937546a890c92653fb2'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = 'f714d1f729dab3dc03bd10925dc8444176ef1bc75410d7b7e0d3b148407ab2b7'
+source_hash = '7bb644ff4663cdff6d196f57409fecd7fc31487c0385d29d4d043ee78028341f'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
@@ -1057,7 +1057,7 @@ model_hash = '9ec8a92782fbef7e2cf07fc9b5e656aa37b59668baff33acae10f270cfff4193'
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = 'ae638a02da3081b73eb1b9c5582b50417a071353fe9f0dd2192722b654d9b30a'
+source_hash = 'd12933d700dcf499a7b674485d4d8ec70d19b4e3630051c86eadfd1a8078047d'
 model_hash = '5eaef8321cea414140d87258e714988d88f3e41d9cdf4b83a1417027cb702cb9'
 
 [crates.aws-sdk-kinesisanalytics]
@@ -1663,13 +1663,13 @@ model_hash = 'eef5f303a18b42fd4f9da73f5655c53016ae5bebcea841482f0c7bf0afcdcdcb'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = 'a7734816af7d33e6b37d4709a725e40015e9ec2ebcb0608359d08e43db08e4b7'
+source_hash = 'd8be0002390ce7e9a10bc494dbc76d6fd836ea2ffadf3ecddc79f2bc480a3ccc'
 model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = 'e57015682127d0b8ead343506d3a7981858d8edf2e0b9670602855dd35997276'
+source_hash = 'b51cdbd87044817381d8d90298eee5434a283ee771a256cb58964beae22f28a6'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
@@ -2061,7 +2061,7 @@ source_hash = '6926eed94c1d5f51b42ec684abfff0006d4449407d6e9d431eccbf6aa72b73d9'
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '1973f8ee013e11c1b8c24e1b7d156eb400934a36e4c83dc17b6c005ab29dfc8e'
+source_hash = 'f3ef81d7b1f5da332c2be523223ee068f40a2026f29f27aadcefa7655208796e'
 
 [crates.aws-smithy-eventstream]
 category = 'SmithyRuntime'
