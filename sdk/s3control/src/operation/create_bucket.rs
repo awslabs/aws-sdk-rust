@@ -13,8 +13,8 @@ impl CreateBucketInput {
         .set_endpoint(_config.endpoint_url
         .clone())
         .set_use_arn_region(_config.use_arn_region)
-        .set_bucket(self.bucket.clone())
-        .set_outpost_id(self.outpost_id.clone()).build()
+        .set_outpost_id(self.outpost_id.clone())
+        .set_bucket(self.bucket.clone()).build()
                                     .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
                                 let (endpoint_result, params) = match params_result {
                                     Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),

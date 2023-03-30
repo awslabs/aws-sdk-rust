@@ -1,4 +1,4 @@
-smithy_rs_revision = 'c3c747a1ed995ca778f2d5d71db0ca9b15ade3da'
+smithy_rs_revision = 'bde362e8b9f6792585a2d04ecce2de95b8d5bd60'
 aws_doc_sdk_examples_revision = '97a177aab8c3d2fef97416cb66e4b4d0da840138'
 
 [manual_interventions]
@@ -1669,7 +1669,7 @@ model_hash = 'fb47cfd49cf2d9250063914599f703ed365b51be373988dc3f2cd64321c9583b'
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
 version = '0.25.0'
-source_hash = '7573be3c7626dbc2ef4c462f69c59e6c24f7b27e026dd76051bd0d1816427567'
+source_hash = 'a833e4419e984e5f320ce5bef2f3397548b1573a6d5c5f908cfcab5fc85e1f6f'
 model_hash = '930bd33c05c393293591ae01cbdb6637fb5062ed3a3ad5e2dadddd8108cc8478'
 
 [crates.aws-sdk-s3outposts]
@@ -2071,7 +2071,7 @@ source_hash = '9d878d4965ac985d6113bb6183b8ff6d7f082e5da112c767444379e4a495ce88'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
-source_hash = '2415a38401995d6d19b41ac04cbfb6190f0f849540a6a17b405efd2be4bd441b'
+source_hash = 'db6c023eb62f61a32fdfc1f30c3939d6a1bd141ca80f849d605ad83dfa240e33'
 
 [crates.aws-smithy-http-auth]
 category = 'SmithyRuntime'
@@ -2097,6 +2097,21 @@ source_hash = '26c89d2c83f4f37c9014fbf0eb7e8791bc2cb0e71f0b10d3d4fd1aedbf2fbbaa'
 category = 'SmithyRuntime'
 version = '0.0.0-smithy-rs-head'
 source_hash = 'e0dfc63717232e78ac61df93b1b067db8d1990c8f0a772229bdad0af9e481c8d'
+
+[crates.aws-smithy-runtime]
+category = 'SmithyRuntime'
+version = '0.0.0-smithy-rs-head'
+source_hash = '4b251ad4b4b74cd23bac19798f3bc16fdc0d2ea55fc9cafb276e7d17aa8e97fa'
+
+[crates.aws-smithy-runtime-api]
+category = 'SmithyRuntime'
+version = '0.0.0-smithy-rs-head'
+source_hash = 'd94309395346609b0f7801f11a4e60f3cb94c5caf86b4ba275aefd10eb5c747f'
+
+[crates.aws-smithy-runtime-test]
+category = 'SmithyRuntime'
+version = '0.1.0'
+source_hash = '48e779b3f8b76ad71c827c854adbdd4d7937ed07d019b0a32bff3961109640ff'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
@@ -2470,6 +2485,9 @@ aws-smithy-http-tower = '0.0.0-smithy-rs-head'
 aws-smithy-json = '0.0.0-smithy-rs-head'
 aws-smithy-protocol-test = '0.0.0-smithy-rs-head'
 aws-smithy-query = '0.0.0-smithy-rs-head'
+aws-smithy-runtime = '0.0.0-smithy-rs-head'
+aws-smithy-runtime-api = '0.0.0-smithy-rs-head'
+aws-smithy-runtime-test = '0.1.0'
 aws-smithy-types = '0.0.0-smithy-rs-head'
 aws-smithy-types-convert = '0.0.0-smithy-rs-head'
 aws-smithy-xml = '0.0.0-smithy-rs-head'

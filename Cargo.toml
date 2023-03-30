@@ -1,6 +1,7 @@
 [workspace]
 exclude = [
     "tests/no-default-features",
+    "tests/aws-smithy-runtime-test",
     "tests/using-native-tls-instead-of-rustls"
 ]
 members = [
@@ -104,6 +105,8 @@ members = [
     "sdk/aws-smithy-json",
     "sdk/aws-smithy-protocol-test",
     "sdk/aws-smithy-query",
+    "sdk/aws-smithy-runtime",
+    "sdk/aws-smithy-runtime-api",
     "sdk/aws-smithy-types",
     "sdk/aws-smithy-types-convert",
     "sdk/aws-smithy-xml",
