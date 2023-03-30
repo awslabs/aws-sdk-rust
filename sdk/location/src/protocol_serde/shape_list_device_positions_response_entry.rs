@@ -22,7 +22,7 @@ pub(crate) fn de_list_device_positions_response_entry<'a, I>(tokens: &mut std::i
                             }
                             "SampleTime" => {
                                 builder = builder.set_sample_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "Position" => {

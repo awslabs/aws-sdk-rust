@@ -13,7 +13,7 @@ pub(crate) fn de_profiling_status<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
                         match key.to_unescaped()?.as_ref() {
                             "latestAgentProfileReportedAt" => {
                                 builder = builder.set_latest_agent_profile_reported_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "latestAggregatedProfile" => {
@@ -23,7 +23,7 @@ pub(crate) fn de_profiling_status<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
                             }
                             "latestAgentOrchestratedAt" => {
                                 builder = builder.set_latest_agent_orchestrated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

@@ -22,7 +22,7 @@ pub(crate) fn de_recovery_point<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
                             }
                             "recoveryPointCreateTime" => {
                                 builder = builder.set_recovery_point_create_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "totalSizeInMegaBytes" => {

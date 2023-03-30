@@ -13,7 +13,7 @@ pub(crate) fn de_session_context_attributes<'a, I>(tokens: &mut std::iter::Peeka
                         match key.to_unescaped()?.as_ref() {
                             "creationDate" => {
                                 builder = builder.set_creation_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "mfaAuthenticated" => {

@@ -31,12 +31,12 @@ pub(crate) fn de_job_details<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
                             }
                             "startedOn" => {
                                 builder = builder.set_started_on(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "completedOn" => {
                                 builder = builder.set_completed_on(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "jobError" => {

@@ -128,7 +128,7 @@ pub(crate) fn de_get_domain(value: &[u8], mut builder: crate::operation::get_dom
                 match key.to_unescaped()?.as_ref() {
                     "createdTime" => {
                         builder = builder.set_created_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "domainArn" => {

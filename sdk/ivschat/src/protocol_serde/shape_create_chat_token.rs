@@ -115,7 +115,7 @@ pub(crate) fn de_create_chat_token(value: &[u8], mut builder: crate::operation::
                 match key.to_unescaped()?.as_ref() {
                     "sessionExpirationTime" => {
                         builder = builder.set_session_expiration_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "token" => {
@@ -129,7 +129,7 @@ pub(crate) fn de_create_chat_token(value: &[u8], mut builder: crate::operation::
                     }
                     "tokenExpirationTime" => {
                         builder = builder.set_token_expiration_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

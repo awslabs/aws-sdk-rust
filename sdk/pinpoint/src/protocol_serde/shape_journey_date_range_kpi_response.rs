@@ -34,7 +34,7 @@ pub(crate) fn de_journey_date_range_kpi_response<'a, I>(tokens: &mut std::iter::
                             }
                             "EndTime" => {
                                 builder = builder.set_end_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "JourneyId" => {
@@ -71,7 +71,7 @@ pub(crate) fn de_journey_date_range_kpi_response<'a, I>(tokens: &mut std::iter::
                             }
                             "StartTime" => {
                                 builder = builder.set_start_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

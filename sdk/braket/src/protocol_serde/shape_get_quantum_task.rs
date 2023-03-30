@@ -124,7 +124,7 @@ pub(crate) fn de_get_quantum_task(value: &[u8], mut builder: crate::operation::g
                 match key.to_unescaped()?.as_ref() {
                     "createdAt" => {
                         builder = builder.set_created_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "deviceArn" => {
@@ -147,7 +147,7 @@ pub(crate) fn de_get_quantum_task(value: &[u8], mut builder: crate::operation::g
                     }
                     "endedAt" => {
                         builder = builder.set_ended_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "failureReason" => {

@@ -13,7 +13,7 @@ pub(crate) fn de_schema_summary<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
                         match key.to_unescaped()?.as_ref() {
                             "LastModified" => {
                                 builder = builder.set_last_modified(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "SchemaArn" => {

@@ -27,7 +27,7 @@ pub(crate) fn de_lo_ra_wan_multicast_session<'a, I>(tokens: &mut std::iter::Peek
                             }
                             "SessionStartTime" => {
                                 builder = builder.set_session_start_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "SessionTimeout" => {

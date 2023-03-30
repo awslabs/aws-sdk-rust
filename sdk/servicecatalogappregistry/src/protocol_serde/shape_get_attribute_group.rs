@@ -125,7 +125,7 @@ pub(crate) fn de_get_attribute_group(value: &[u8], mut builder: crate::operation
                     }
                     "creationTime" => {
                         builder = builder.set_creation_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "description" => {
@@ -148,7 +148,7 @@ pub(crate) fn de_get_attribute_group(value: &[u8], mut builder: crate::operation
                     }
                     "lastUpdateTime" => {
                         builder = builder.set_last_update_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "name" => {

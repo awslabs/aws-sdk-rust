@@ -184,7 +184,7 @@ pub(crate) fn de_get_run(value: &[u8], mut builder: crate::operation::get_run::b
                     }
                     "creationTime" => {
                         builder = builder.set_creation_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "definition" => {
@@ -287,7 +287,7 @@ pub(crate) fn de_get_run(value: &[u8], mut builder: crate::operation::get_run::b
                     }
                     "startTime" => {
                         builder = builder.set_start_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "startedBy" => {
@@ -319,7 +319,7 @@ pub(crate) fn de_get_run(value: &[u8], mut builder: crate::operation::get_run::b
                     }
                     "stopTime" => {
                         builder = builder.set_stop_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "storageCapacity" => {

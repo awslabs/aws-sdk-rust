@@ -158,7 +158,7 @@ pub(crate) fn de_get_macie_session(value: &[u8], mut builder: crate::operation::
                 match key.to_unescaped()?.as_ref() {
                     "createdAt" => {
                         builder = builder.set_created_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "findingPublishingFrequency" => {
@@ -190,7 +190,7 @@ pub(crate) fn de_get_macie_session(value: &[u8], mut builder: crate::operation::
                     }
                     "updatedAt" => {
                         builder = builder.set_updated_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

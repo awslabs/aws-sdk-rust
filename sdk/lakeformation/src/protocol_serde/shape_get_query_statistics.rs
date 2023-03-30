@@ -159,7 +159,7 @@ pub(crate) fn de_get_query_statistics(value: &[u8], mut builder: crate::operatio
                     }
                     "QuerySubmissionTime" => {
                         builder = builder.set_query_submission_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

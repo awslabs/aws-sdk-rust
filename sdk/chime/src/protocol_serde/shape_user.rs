@@ -94,12 +94,12 @@ pub(crate) fn de_user<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opti
                             }
                             "RegisteredOn" => {
                                 builder = builder.set_registered_on(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "InvitedOn" => {
                                 builder = builder.set_invited_on(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "AlexaForBusinessMetadata" => {

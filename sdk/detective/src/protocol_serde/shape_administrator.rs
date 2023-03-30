@@ -31,7 +31,7 @@ pub(crate) fn de_administrator<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
                             }
                             "DelegationTime" => {
                                 builder = builder.set_delegation_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

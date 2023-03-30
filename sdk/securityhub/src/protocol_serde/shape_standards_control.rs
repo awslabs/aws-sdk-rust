@@ -40,7 +40,7 @@ pub(crate) fn de_standards_control<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "ControlStatusUpdatedAt" => {
                                 builder = builder.set_control_status_updated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "ControlId" => {

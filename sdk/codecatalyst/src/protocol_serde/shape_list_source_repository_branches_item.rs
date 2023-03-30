@@ -31,7 +31,7 @@ pub(crate) fn de_list_source_repository_branches_item<'a, I>(tokens: &mut std::i
                             }
                             "lastUpdatedTime" => {
                                 builder = builder.set_last_updated_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "headCommitId" => {

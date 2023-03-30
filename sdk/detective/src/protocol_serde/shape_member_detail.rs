@@ -76,12 +76,12 @@ pub(crate) fn de_member_detail<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
                             }
                             "InvitedTime" => {
                                 builder = builder.set_invited_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "UpdatedTime" => {
                                 builder = builder.set_updated_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "VolumeUsageInBytes" => {
@@ -93,7 +93,7 @@ pub(crate) fn de_member_detail<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
                             }
                             "VolumeUsageUpdatedTime" => {
                                 builder = builder.set_volume_usage_updated_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "PercentOfGraphUtilization" => {
@@ -103,7 +103,7 @@ pub(crate) fn de_member_detail<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
                             }
                             "PercentOfGraphUtilizationUpdatedTime" => {
                                 builder = builder.set_percent_of_graph_utilization_updated_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "InvitationType" => {

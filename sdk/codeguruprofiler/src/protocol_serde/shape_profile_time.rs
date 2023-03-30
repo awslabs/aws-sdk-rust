@@ -13,7 +13,7 @@ pub(crate) fn de_profile_time<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
                         match key.to_unescaped()?.as_ref() {
                             "start" => {
                                 builder = builder.set_start(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

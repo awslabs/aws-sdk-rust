@@ -9,7 +9,7 @@ pub fn de_lifecycle_expiration(decoder: &mut aws_smithy_xml::decode::ScopedDecod
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3#Date`)"))
                         ?
@@ -61,7 +61,7 @@ pub fn ser_lifecycle_expiration(input: &crate::types::LifecycleExpiration, write
     if let Some(var_4) = &input.date {
         let mut inner_writer = scope.start_el("Date").finish();
         inner_writer.data(
-            var_4.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_4.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if input.days != 0 {

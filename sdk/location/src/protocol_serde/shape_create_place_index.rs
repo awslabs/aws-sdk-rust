@@ -149,7 +149,7 @@ pub(crate) fn de_create_place_index(value: &[u8], mut builder: crate::operation:
                 match key.to_unescaped()?.as_ref() {
                     "CreateTime" => {
                         builder = builder.set_create_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "IndexArn" => {

@@ -22,7 +22,7 @@ pub(crate) fn de_batch_evaluate_geofences_error<'a, I>(tokens: &mut std::iter::P
                             }
                             "SampleTime" => {
                                 builder = builder.set_sample_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "Error" => {

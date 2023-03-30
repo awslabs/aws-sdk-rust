@@ -124,7 +124,7 @@ pub(crate) fn de_describe_tracker(value: &[u8], mut builder: crate::operation::d
                 match key.to_unescaped()?.as_ref() {
                     "CreateTime" => {
                         builder = builder.set_create_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "Description" => {
@@ -197,7 +197,7 @@ pub(crate) fn de_describe_tracker(value: &[u8], mut builder: crate::operation::d
                     }
                     "UpdateTime" => {
                         builder = builder.set_update_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

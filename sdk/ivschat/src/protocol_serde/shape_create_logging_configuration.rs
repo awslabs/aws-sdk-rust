@@ -158,7 +158,7 @@ pub(crate) fn de_create_logging_configuration(value: &[u8], mut builder: crate::
                     }
                     "createTime" => {
                         builder = builder.set_create_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "destinationConfiguration" => {
@@ -200,7 +200,7 @@ pub(crate) fn de_create_logging_configuration(value: &[u8], mut builder: crate::
                     }
                     "updateTime" => {
                         builder = builder.set_update_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

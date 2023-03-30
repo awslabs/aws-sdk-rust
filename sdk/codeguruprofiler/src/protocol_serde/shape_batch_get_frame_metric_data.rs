@@ -115,7 +115,7 @@ pub(crate) fn de_batch_get_frame_metric_data(value: &[u8], mut builder: crate::o
                 match key.to_unescaped()?.as_ref() {
                     "endTime" => {
                         builder = builder.set_end_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "endTimes" => {
@@ -139,7 +139,7 @@ pub(crate) fn de_batch_get_frame_metric_data(value: &[u8], mut builder: crate::o
                     }
                     "startTime" => {
                         builder = builder.set_start_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "unprocessedEndTimes" => {

@@ -153,7 +153,7 @@ pub(crate) fn de_object_lock_mode_header(header_map: &http::HeaderMap) -> std::r
 
 pub(crate) fn de_object_lock_retain_until_date_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<aws_smithy_types::DateTime>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-object-lock-retain-until-date").iter();
-    let var_7: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::DateTime)?;
+    let var_7: Vec<aws_smithy_types::DateTime> = aws_smithy_http::header::many_dates(headers, aws_smithy_types::date_time::Format::DateTimeWithOffset)?;
     if var_7.len() > 1 {
                                 Err(aws_smithy_http::header::ParseError::new(format!("expected one item but found {}", var_7.len())))
                             } else {

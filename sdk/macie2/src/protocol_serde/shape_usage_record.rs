@@ -22,12 +22,12 @@ pub(crate) fn de_usage_record<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
                             }
                             "automatedDiscoveryFreeTrialStartDate" => {
                                 builder = builder.set_automated_discovery_free_trial_start_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "freeTrialStartDate" => {
                                 builder = builder.set_free_trial_start_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "usage" => {

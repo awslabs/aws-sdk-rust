@@ -158,12 +158,12 @@ pub(crate) fn de_put_code_binding(value: &[u8], mut builder: crate::operation::p
                 match key.to_unescaped()?.as_ref() {
                     "CreationDate" => {
                         builder = builder.set_creation_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "LastModified" => {
                         builder = builder.set_last_modified(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "SchemaVersion" => {

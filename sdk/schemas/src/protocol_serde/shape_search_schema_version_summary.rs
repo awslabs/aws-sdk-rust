@@ -13,7 +13,7 @@ pub(crate) fn de_search_schema_version_summary<'a, I>(tokens: &mut std::iter::Pe
                         match key.to_unescaped()?.as_ref() {
                             "CreatedDate" => {
                                 builder = builder.set_created_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "SchemaVersion" => {

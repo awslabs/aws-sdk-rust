@@ -22,7 +22,7 @@ pub(crate) fn de_resource_result<'a, I>(tokens: &mut std::iter::Peekable<I>) -> 
                             }
                             "lastCheckedTimestamp" => {
                                 builder = builder.set_last_checked_timestamp(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "readiness" => {

@@ -158,7 +158,7 @@ pub(crate) fn de_get_retention_settings(value: &[u8], mut builder: crate::operat
                 match key.to_unescaped()?.as_ref() {
                     "InitiateDeletionTimestamp" => {
                         builder = builder.set_initiate_deletion_timestamp(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "RetentionSettings" => {

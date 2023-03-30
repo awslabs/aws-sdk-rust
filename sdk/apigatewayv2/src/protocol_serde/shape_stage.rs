@@ -37,7 +37,7 @@ pub(crate) fn de_stage<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opt
                             }
                             "createdDate" => {
                                 builder = builder.set_created_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "defaultRouteSettings" => {
@@ -74,7 +74,7 @@ pub(crate) fn de_stage<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opt
                             }
                             "lastUpdatedDate" => {
                                 builder = builder.set_last_updated_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "routeSettings" => {

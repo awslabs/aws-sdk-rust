@@ -22,7 +22,7 @@ pub(crate) fn de_launch_profile<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
                             }
                             "createdAt" => {
                                 builder = builder.set_created_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "createdBy" => {
@@ -115,7 +115,7 @@ pub(crate) fn de_launch_profile<'a, I>(tokens: &mut std::iter::Peekable<I>) -> R
                             }
                             "updatedAt" => {
                                 builder = builder.set_updated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "updatedBy" => {

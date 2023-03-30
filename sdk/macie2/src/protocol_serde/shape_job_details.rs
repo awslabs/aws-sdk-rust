@@ -40,7 +40,7 @@ pub(crate) fn de_job_details<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Resu
                             }
                             "lastJobRunTime" => {
                                 builder = builder.set_last_job_run_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

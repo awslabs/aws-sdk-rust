@@ -31,7 +31,7 @@ pub(crate) fn de_failures<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<
                             }
                             "timestamp" => {
                                 builder = builder.set_timestamp(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

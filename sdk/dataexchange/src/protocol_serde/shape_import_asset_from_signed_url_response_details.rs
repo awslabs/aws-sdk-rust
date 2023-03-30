@@ -58,7 +58,7 @@ pub(crate) fn de_import_asset_from_signed_url_response_details<'a, I>(tokens: &m
                             }
                             "SignedUrlExpiresAt" => {
                                 builder = builder.set_signed_url_expires_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

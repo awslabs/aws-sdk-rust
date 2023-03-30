@@ -104,7 +104,7 @@ pub(crate) fn de_stop_deployment(value: &[u8], mut builder: crate::operation::st
                     }
                     "CompletedAt" => {
                         builder = builder.set_completed_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "ConfigurationLocationUri" => {
@@ -217,7 +217,7 @@ pub(crate) fn de_stop_deployment(value: &[u8], mut builder: crate::operation::st
                     }
                     "StartedAt" => {
                         builder = builder.set_started_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "State" => {

@@ -22,7 +22,7 @@ pub(crate) fn de_custom_plugin_revision_summary<'a, I>(tokens: &mut std::iter::P
                             }
                             "creationTime" => {
                                 builder = builder.set_creation_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "description" => {

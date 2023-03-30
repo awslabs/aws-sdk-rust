@@ -5,7 +5,7 @@ pub fn ser_s3_retention(input: &crate::types::S3Retention, writer: aws_smithy_xm
     if let Some(var_1) = &input.retain_until_date {
         let mut inner_writer = scope.start_el("RetainUntilDate").finish();
         inner_writer.data(
-            var_1.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_1.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if let Some(var_2) = &input.mode {
@@ -28,7 +28,7 @@ pub fn de_s3_retention(decoder: &mut aws_smithy_xml::decode::ScopedDecoder) -> R
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#TimeStamp`)"))
                         ?

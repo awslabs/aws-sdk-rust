@@ -141,7 +141,7 @@ pub(crate) fn de_get_resource_profile(value: &[u8], mut builder: crate::operatio
                 match key.to_unescaped()?.as_ref() {
                     "profileUpdatedAt" => {
                         builder = builder.set_profile_updated_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "sensitivityScore" => {

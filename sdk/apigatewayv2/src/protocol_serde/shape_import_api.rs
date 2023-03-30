@@ -152,7 +152,7 @@ pub(crate) fn de_import_api(value: &[u8], mut builder: crate::operation::import_
                     }
                     "createdDate" => {
                         builder = builder.set_created_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "description" => {

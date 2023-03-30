@@ -11,13 +11,13 @@ pub fn ser_job_manifest_generator_filter(input: &crate::types::JobManifestGenera
     if let Some(var_2) = &input.created_after {
         let mut inner_writer = scope.start_el("CreatedAfter").finish();
         inner_writer.data(
-            var_2.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_2.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if let Some(var_3) = &input.created_before {
         let mut inner_writer = scope.start_el("CreatedBefore").finish();
         inner_writer.data(
-            var_3.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_3.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if let Some(var_4) = &input.object_replication_statuses {
@@ -60,7 +60,7 @@ pub fn de_job_manifest_generator_filter(decoder: &mut aws_smithy_xml::decode::Sc
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#ObjectCreationTime`)"))
                         ?
@@ -74,7 +74,7 @@ pub fn de_job_manifest_generator_filter(decoder: &mut aws_smithy_xml::decode::Sc
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#ObjectCreationTime`)"))
                         ?

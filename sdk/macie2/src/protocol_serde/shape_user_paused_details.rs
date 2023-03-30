@@ -13,7 +13,7 @@ pub(crate) fn de_user_paused_details<'a, I>(tokens: &mut std::iter::Peekable<I>)
                         match key.to_unescaped()?.as_ref() {
                             "jobExpiresAt" => {
                                 builder = builder.set_job_expires_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "jobImminentExpirationHealthEventArn" => {
@@ -27,7 +27,7 @@ pub(crate) fn de_user_paused_details<'a, I>(tokens: &mut std::iter::Peekable<I>)
                             }
                             "jobPausedAt" => {
                                 builder = builder.set_job_paused_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

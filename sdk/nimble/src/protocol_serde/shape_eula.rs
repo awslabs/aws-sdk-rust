@@ -22,7 +22,7 @@ pub(crate) fn de_eula<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opti
                             }
                             "createdAt" => {
                                 builder = builder.set_created_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "eulaId" => {
@@ -45,7 +45,7 @@ pub(crate) fn de_eula<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Opti
                             }
                             "updatedAt" => {
                                 builder = builder.set_updated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

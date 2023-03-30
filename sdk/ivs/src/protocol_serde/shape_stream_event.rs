@@ -31,7 +31,7 @@ pub(crate) fn de_stream_event<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Res
                             }
                             "eventTime" => {
                                 builder = builder.set_event_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

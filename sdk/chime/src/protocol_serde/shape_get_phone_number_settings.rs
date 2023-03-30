@@ -150,7 +150,7 @@ pub(crate) fn de_get_phone_number_settings(value: &[u8], mut builder: crate::ope
                     }
                     "CallingNameUpdatedTimestamp" => {
                         builder = builder.set_calling_name_updated_timestamp(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

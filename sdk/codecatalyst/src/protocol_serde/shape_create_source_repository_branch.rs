@@ -158,7 +158,7 @@ pub(crate) fn de_create_source_repository_branch(value: &[u8], mut builder: crat
                     }
                     "lastUpdatedTime" => {
                         builder = builder.set_last_updated_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "name" => {

@@ -22,7 +22,7 @@ pub(crate) fn de_configuration<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Re
                             }
                             "creationTime" => {
                                 builder = builder.set_creation_time(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "description" => {

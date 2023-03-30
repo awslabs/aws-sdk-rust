@@ -121,7 +121,7 @@ pub(crate) fn de_get_event_action(value: &[u8], mut builder: crate::operation::g
                     }
                     "CreatedAt" => {
                         builder = builder.set_created_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "Event" => {
@@ -140,7 +140,7 @@ pub(crate) fn de_get_event_action(value: &[u8], mut builder: crate::operation::g
                     }
                     "UpdatedAt" => {
                         builder = builder.set_updated_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

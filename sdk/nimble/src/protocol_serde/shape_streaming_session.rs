@@ -22,7 +22,7 @@ pub(crate) fn de_streaming_session<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "createdAt" => {
                                 builder = builder.set_created_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "createdBy" => {
@@ -113,12 +113,12 @@ pub(crate) fn de_streaming_session<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "terminateAt" => {
                                 builder = builder.set_terminate_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "updatedAt" => {
                                 builder = builder.set_updated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "updatedBy" => {
@@ -132,7 +132,7 @@ pub(crate) fn de_streaming_session<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "stoppedAt" => {
                                 builder = builder.set_stopped_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "stoppedBy" => {
@@ -146,7 +146,7 @@ pub(crate) fn de_streaming_session<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "startedAt" => {
                                 builder = builder.set_started_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "startedBy" => {
@@ -160,7 +160,7 @@ pub(crate) fn de_streaming_session<'a, I>(tokens: &mut std::iter::Peekable<I>) -
                             }
                             "stopAt" => {
                                 builder = builder.set_stop_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "startedFromBackupId" => {

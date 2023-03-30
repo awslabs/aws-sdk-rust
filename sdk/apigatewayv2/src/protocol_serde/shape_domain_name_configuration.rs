@@ -74,7 +74,7 @@ pub(crate) fn de_domain_name_configuration<'a, I>(tokens: &mut std::iter::Peekab
                             }
                             "certificateUploadDate" => {
                                 builder = builder.set_certificate_upload_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "domainNameStatus" => {

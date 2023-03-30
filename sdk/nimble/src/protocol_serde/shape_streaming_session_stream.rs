@@ -13,7 +13,7 @@ pub(crate) fn de_streaming_session_stream<'a, I>(tokens: &mut std::iter::Peekabl
                         match key.to_unescaped()?.as_ref() {
                             "createdAt" => {
                                 builder = builder.set_created_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "createdBy" => {
@@ -27,7 +27,7 @@ pub(crate) fn de_streaming_session_stream<'a, I>(tokens: &mut std::iter::Peekabl
                             }
                             "expiresAt" => {
                                 builder = builder.set_expires_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "ownedBy" => {

@@ -32,7 +32,7 @@ pub fn ser_s3_copy_object_operation(input: &crate::types::S3CopyObjectOperation,
     if let Some(var_6) = &input.modified_since_constraint {
         let mut inner_writer = scope.start_el("ModifiedSinceConstraint").finish();
         inner_writer.data(
-            var_6.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_6.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if let Some(var_7) = &input.new_object_metadata {
@@ -69,7 +69,7 @@ pub fn ser_s3_copy_object_operation(input: &crate::types::S3CopyObjectOperation,
     if let Some(var_12) = &input.un_modified_since_constraint {
         let mut inner_writer = scope.start_el("UnModifiedSinceConstraint").finish();
         inner_writer.data(
-            var_12.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_12.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if let Some(var_13) = &input.sse_aws_kms_key_id {
@@ -99,7 +99,7 @@ pub fn ser_s3_copy_object_operation(input: &crate::types::S3CopyObjectOperation,
     if let Some(var_17) = &input.object_lock_retain_until_date {
         let mut inner_writer = scope.start_el("ObjectLockRetainUntilDate").finish();
         inner_writer.data(
-            var_17.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_17.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if input.bucket_key_enabled {
@@ -179,7 +179,7 @@ pub fn de_s3_copy_object_operation(decoder: &mut aws_smithy_xml::decode::ScopedD
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#TimeStamp`)"))
                         ?
@@ -255,7 +255,7 @@ pub fn de_s3_copy_object_operation(decoder: &mut aws_smithy_xml::decode::ScopedD
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#TimeStamp`)"))
                         ?
@@ -323,7 +323,7 @@ pub fn de_s3_copy_object_operation(decoder: &mut aws_smithy_xml::decode::ScopedD
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#TimeStamp`)"))
                         ?

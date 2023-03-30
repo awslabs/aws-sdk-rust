@@ -68,7 +68,7 @@ pub(crate) fn de_member<'a, I>(tokens: &mut std::iter::Peekable<I>) -> Result<Op
                             }
                             "CreationDate" => {
                                 builder = builder.set_creation_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "Tags" => {

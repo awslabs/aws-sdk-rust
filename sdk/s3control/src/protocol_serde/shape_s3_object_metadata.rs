@@ -65,7 +65,7 @@ pub fn ser_s3_object_metadata(input: &crate::types::S3ObjectMetadata, writer: aw
     if let Some(var_11) = &input.http_expires_date {
         let mut inner_writer = scope.start_el("HttpExpiresDate").finish();
         inner_writer.data(
-            var_11.fmt(aws_smithy_types::date_time::Format::DateTime)?.as_ref()
+            var_11.fmt(aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref()
         );
     }
     if input.requester_charged {
@@ -197,7 +197,7 @@ pub fn de_s3_object_metadata(decoder: &mut aws_smithy_xml::decode::ScopedDecoder
                     Some(
                         aws_smithy_types::DateTime::from_str(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTime
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
                         .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#TimeStamp`)"))
                         ?

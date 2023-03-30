@@ -172,7 +172,7 @@ pub(crate) fn de_describe_classification_job(value: &[u8], mut builder: crate::o
                     }
                     "createdAt" => {
                         builder = builder.set_created_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "customDataIdentifierIds" => {
@@ -237,7 +237,7 @@ pub(crate) fn de_describe_classification_job(value: &[u8], mut builder: crate::o
                     }
                     "lastRunTime" => {
                         builder = builder.set_last_run_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "managedDataIdentifierIds" => {

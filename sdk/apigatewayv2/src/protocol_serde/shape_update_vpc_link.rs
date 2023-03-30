@@ -98,7 +98,7 @@ pub(crate) fn de_update_vpc_link(value: &[u8], mut builder: crate::operation::up
                 match key.to_unescaped()?.as_ref() {
                     "createdDate" => {
                         builder = builder.set_created_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "name" => {

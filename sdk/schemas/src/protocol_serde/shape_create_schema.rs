@@ -124,7 +124,7 @@ pub(crate) fn de_create_schema(value: &[u8], mut builder: crate::operation::crea
                     }
                     "LastModified" => {
                         builder = builder.set_last_modified(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "SchemaArn" => {
@@ -170,7 +170,7 @@ pub(crate) fn de_create_schema(value: &[u8], mut builder: crate::operation::crea
                     }
                     "VersionCreatedDate" => {
                         builder = builder.set_version_created_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?

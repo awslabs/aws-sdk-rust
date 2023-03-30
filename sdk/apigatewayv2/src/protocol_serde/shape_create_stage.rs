@@ -139,7 +139,7 @@ pub(crate) fn de_create_stage(value: &[u8], mut builder: crate::operation::creat
                     }
                     "createdDate" => {
                         builder = builder.set_created_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "defaultRouteSettings" => {
@@ -176,7 +176,7 @@ pub(crate) fn de_create_stage(value: &[u8], mut builder: crate::operation::creat
                     }
                     "lastUpdatedDate" => {
                         builder = builder.set_last_updated_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                         );
                     }
                     "routeSettings" => {

@@ -40,7 +40,7 @@ pub(crate) fn de_accessor_summary<'a, I>(tokens: &mut std::iter::Peekable<I>) ->
                             }
                             "CreationDate" => {
                                 builder = builder.set_creation_date(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTime)?
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "Arn" => {
