@@ -11,8 +11,6 @@ aws-config= { version = "0.55.0", path = "../../sdk/aws-config", features = ["na
 aws-sdk-s3= { version = "0.25.0", path = "../../sdk/s3", features = ["native-tls"], default-features = false }
 aws-sdk-sts= { version = "0.25.0", path = "../../sdk/sts", features = ["native-tls"], default-features = false }
 
-[workspace]
-
 [dependencies.tokio]
 version = "1.20.1"
 features = ["full"]
@@ -20,3 +18,5 @@ features = ["full"]
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
+
+[workspace]
