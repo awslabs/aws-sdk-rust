@@ -6664,23 +6664,23 @@ impl std::error::Error for BatchAssociateScramSecretError {
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 /// 
 #[derive(Debug)]
-        pub struct Unhandled {
-            source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        }
-        impl Unhandled {
-            #[allow(unused)]
-            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-                Self { source }
+            pub struct Unhandled {
+                source: Box<dyn std::error::Error + Send + Sync + 'static>,
             }
-        }
-        impl std::fmt::Display for Unhandled {
-            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-                write!(f, "unhandled error")
+            impl Unhandled {
+                #[allow(unused)]
+                pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                    Self { source }
+                }
             }
-        }
-        impl std::error::Error for Unhandled {
-            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-                Some(self.source.as_ref() as _)
+            impl std::fmt::Display for Unhandled {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                    write!(f, "unhandled error")
+                }
             }
-        }
+            impl std::error::Error for Unhandled {
+                fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                    Some(self.source.as_ref() as _)
+                }
+            }
 
