@@ -60,8 +60,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeMessageVisibility 
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod change_message_visibility_request_test {
     /// This test case validates a bug found here: https://github.com/aws/aws-sdk-go-v2/issues/1087
     /// Test ID: SqsSetVisibilityZero

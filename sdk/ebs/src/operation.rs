@@ -29,8 +29,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteSnapshot {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod complete_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
@@ -151,8 +151,8 @@ impl aws_smithy_http::response::ParseHttpResponse for GetSnapshotBlock {
                     crate::operation_deser::parse_get_snapshot_block_error(response)
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod get_snapshot_block_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
@@ -269,8 +269,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangedBlocks {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod list_changed_blocks_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
@@ -387,8 +387,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotBlocks {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod list_snapshot_blocks_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
@@ -505,8 +505,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod put_snapshot_block_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
@@ -623,8 +623,8 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod start_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage

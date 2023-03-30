@@ -153,8 +153,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod create_multipart_upload_request_test {
     /// This test validates that the URI for CreateMultipartUpload is created correctly
     /// Test ID: CreateMultipartUploadUriConstruction
@@ -998,8 +998,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLocation {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod get_bucket_location_request_test {
     /// This test case validates https://github.com/awslabs/aws-sdk-rust/issues/116
     /// Test ID: GetBucketLocation
@@ -1691,8 +1691,8 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadBucket {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod head_bucket_request_test {
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
@@ -1761,8 +1761,8 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadObject {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod head_object_request_test {
     /// https://github.com/awslabs/aws-sdk-rust/issues/331
     /// Test ID: HeadObjectUriEncoding
@@ -2042,8 +2042,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod list_objects_request_test {
     /// This test validates that parsing respects whitespace
     /// Test ID: KeysWithWhitespace
@@ -2530,8 +2530,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod put_bucket_lifecycle_configuration_request_test {
     /// This test validates that the content md5 header is set correctly
     /// Test ID: PutBucketLifecycleConfiguration
@@ -2943,8 +2943,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObject {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod put_object_request_test {
     /// This test validates that if a content-type is specified, that only one content-type header is sent
     /// Test ID: DontSendDuplicateContentType

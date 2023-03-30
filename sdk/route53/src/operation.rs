@@ -928,8 +928,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChange {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod get_change_request_test {
     /// This test validates that change id is correctly trimmed
     /// Test ID: GetChangeTrimChangeId
@@ -1326,8 +1326,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReusableDelegationSet
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod get_reusable_delegation_set_request_test {
     /// This test validates that delegation set id is correctly trimmed
     /// Test ID: GetReusableDelegationSetTrimDelegationSetId
@@ -1786,8 +1786,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
                      }
                 }
             }
-#[cfg(test)]
 #[allow(unreachable_code, unused_variables)]
+#[cfg(test)]
 mod list_resource_record_sets_request_test {
     /// This test validates that hosted zone is correctly trimmed
     /// Test ID: ListResourceRecordSetsTrimHostedZone
