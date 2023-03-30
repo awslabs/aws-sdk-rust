@@ -638,6 +638,7 @@ impl Client  {
     ///   - [`solver_version(Option<String>)`](crate::output::GetPositionOutput::solver_version): <p>The version of the positioning solver.</p>
     ///   - [`timestamp(Option<String>)`](crate::output::GetPositionOutput::timestamp): <p>The timestamp at which the device's position was determined.</p>
                         /// - On failure, responds with [`SdkError<GetPositionError>`](crate::error::GetPositionError)
+    #[deprecated(note = "This operation is no longer supported.")]
     pub fn get_position(&self) -> fluent_builders::GetPosition {
                             fluent_builders::GetPosition::new(self.handle.clone())
                         }
@@ -650,6 +651,7 @@ impl Client  {
                         ///   - [`solvers(Option<PositionSolverDetails>)`](crate::output::GetPositionConfigurationOutput::solvers): <p>The wrapper for the solver configuration details object.</p>
     ///   - [`destination(Option<String>)`](crate::output::GetPositionConfigurationOutput::destination): <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
                         /// - On failure, responds with [`SdkError<GetPositionConfigurationError>`](crate::error::GetPositionConfigurationError)
+    #[deprecated(note = "This operation is no longer supported.")]
     pub fn get_position_configuration(&self) -> fluent_builders::GetPositionConfiguration {
                             fluent_builders::GetPositionConfiguration::new(self.handle.clone())
                         }
@@ -956,6 +958,7 @@ impl Client  {
                         ///   - [`position_configuration_list(Option<Vec<PositionConfigurationItem>>)`](crate::output::ListPositionConfigurationsOutput::position_configuration_list): <p>A list of position configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListPositionConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
                         /// - On failure, responds with [`SdkError<ListPositionConfigurationsError>`](crate::error::ListPositionConfigurationsError)
+    #[deprecated(note = "This operation is no longer supported.")]
     pub fn list_position_configurations(&self) -> fluent_builders::ListPositionConfigurations {
                             fluent_builders::ListPositionConfigurations::new(self.handle.clone())
                         }
@@ -1052,6 +1055,7 @@ impl Client  {
                         /// - On success, responds with [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput)
                         
                         /// - On failure, responds with [`SdkError<PutPositionConfigurationError>`](crate::error::PutPositionConfigurationError)
+    #[deprecated(note = "This operation is no longer supported.")]
     pub fn put_position_configuration(&self) -> fluent_builders::PutPositionConfiguration {
                             fluent_builders::PutPositionConfiguration::new(self.handle.clone())
                         }
@@ -1296,6 +1300,7 @@ impl Client  {
                         /// - On success, responds with [`UpdatePositionOutput`](crate::output::UpdatePositionOutput)
                         
                         /// - On failure, responds with [`SdkError<UpdatePositionError>`](crate::error::UpdatePositionError)
+    #[deprecated(note = "This operation is no longer supported.")]
     pub fn update_position(&self) -> fluent_builders::UpdatePosition {
                             fluent_builders::UpdatePosition::new(self.handle.clone())
                         }

@@ -90,6 +90,7 @@ impl Client  {
                         /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
                         
                         /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
+    #[deprecated(note = "This API has been deprecated, use AcceptAdministratorInvitation API instead.")]
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation {
                             fluent_builders::AcceptInvitation::new(self.handle.clone())
                         }
@@ -379,6 +380,7 @@ impl Client  {
                         /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::error::DisassociateFromMasterAccountError)
+    #[deprecated(note = "This API has been deprecated, use DisassociateFromAdministratorAccount API instead.")]
     pub fn disassociate_from_master_account(&self) -> fluent_builders::DisassociateFromMasterAccount {
                             fluent_builders::DisassociateFromMasterAccount::new(self.handle.clone())
                         }
@@ -516,6 +518,7 @@ impl Client  {
                         /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
                         ///   - [`master(Option<Invitation>)`](crate::output::GetMasterAccountOutput::master): <p>A list of details about the Security Hub administrator account for the current member account. </p>
                         /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::error::GetMasterAccountError)
+    #[deprecated(note = "This API has been deprecated, use GetAdministratorAccount API instead.")]
     pub fn get_master_account(&self) -> fluent_builders::GetMasterAccount {
                             fluent_builders::GetMasterAccount::new(self.handle.clone())
                         }

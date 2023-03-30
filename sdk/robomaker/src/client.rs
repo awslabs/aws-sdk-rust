@@ -99,6 +99,7 @@ impl Client  {
                         /// - On success, responds with [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
                         
                         /// - On failure, responds with [`SdkError<CancelDeploymentJobError>`](crate::error::CancelDeploymentJobError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn cancel_deployment_job(&self) -> fluent_builders::CancelDeploymentJob {
                             fluent_builders::CancelDeploymentJob::new(self.handle.clone())
                         }
@@ -161,6 +162,7 @@ impl Client  {
     ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::output::CreateDeploymentJobOutput::deployment_config): <p>The deployment configuration.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateDeploymentJobOutput::tags): <p>The list of all tags added to the deployment job.</p>
                         /// - On failure, responds with [`SdkError<CreateDeploymentJobError>`](crate::error::CreateDeploymentJobError)
+    #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn create_deployment_job(&self) -> fluent_builders::CreateDeploymentJob {
                             fluent_builders::CreateDeploymentJob::new(self.handle.clone())
                         }
@@ -175,6 +177,7 @@ impl Client  {
     ///   - [`created_at(Option<DateTime>)`](crate::output::CreateFleetOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateFleetOutput::tags): <p>The list of all tags added to the fleet.</p>
                         /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
+    #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn create_fleet(&self) -> fluent_builders::CreateFleet {
                             fluent_builders::CreateFleet::new(self.handle.clone())
                         }
@@ -193,6 +196,7 @@ impl Client  {
     ///   - [`architecture(Option<Architecture>)`](crate::output::CreateRobotOutput::architecture): <p>The target architecture of the robot.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRobotOutput::tags): <p>The list of all tags added to the robot.</p>
                         /// - On failure, responds with [`SdkError<CreateRobotError>`](crate::error::CreateRobotError)
+    #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn create_robot(&self) -> fluent_builders::CreateRobot {
                             fluent_builders::CreateRobot::new(self.handle.clone())
                         }
@@ -392,6 +396,7 @@ impl Client  {
                         /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn delete_fleet(&self) -> fluent_builders::DeleteFleet {
                             fluent_builders::DeleteFleet::new(self.handle.clone())
                         }
@@ -402,6 +407,7 @@ impl Client  {
                         /// - On success, responds with [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteRobotError>`](crate::error::DeleteRobotError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn delete_robot(&self) -> fluent_builders::DeleteRobot {
                             fluent_builders::DeleteRobot::new(self.handle.clone())
                         }
@@ -446,6 +452,7 @@ impl Client  {
                         ///   - [`fleet(Option<String>)`](crate::output::DeregisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     ///   - [`robot(Option<String>)`](crate::output::DeregisterRobotOutput::robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
                         /// - On failure, responds with [`SdkError<DeregisterRobotError>`](crate::error::DeregisterRobotError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn deregister_robot(&self) -> fluent_builders::DeregisterRobot {
                             fluent_builders::DeregisterRobot::new(self.handle.clone())
                         }
@@ -465,6 +472,7 @@ impl Client  {
     ///   - [`robot_deployment_summary(Option<Vec<RobotDeployment>>)`](crate::output::DescribeDeploymentJobOutput::robot_deployment_summary): <p>A list of robot deployment summaries.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeDeploymentJobOutput::tags): <p>The list of all tags added to the specified deployment job.</p>
                         /// - On failure, responds with [`SdkError<DescribeDeploymentJobError>`](crate::error::DescribeDeploymentJobError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn describe_deployment_job(&self) -> fluent_builders::DescribeDeploymentJob {
                             fluent_builders::DescribeDeploymentJob::new(self.handle.clone())
                         }
@@ -482,6 +490,7 @@ impl Client  {
     ///   - [`last_deployment_time(Option<DateTime>)`](crate::output::DescribeFleetOutput::last_deployment_time): <p>The time of the last deployment.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFleetOutput::tags): <p>The list of all tags added to the specified fleet.</p>
                         /// - On failure, responds with [`SdkError<DescribeFleetError>`](crate::error::DescribeFleetError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn describe_fleet(&self) -> fluent_builders::DescribeFleet {
                             fluent_builders::DescribeFleet::new(self.handle.clone())
                         }
@@ -501,6 +510,7 @@ impl Client  {
     ///   - [`last_deployment_time(Option<DateTime>)`](crate::output::DescribeRobotOutput::last_deployment_time): <p>The time of the last deployment job.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRobotOutput::tags): <p>The list of all tags added to the specified robot.</p>
                         /// - On failure, responds with [`SdkError<DescribeRobotError>`](crate::error::DescribeRobotError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn describe_robot(&self) -> fluent_builders::DescribeRobot {
                             fluent_builders::DescribeRobot::new(self.handle.clone())
                         }
@@ -689,6 +699,7 @@ impl Client  {
                         ///   - [`deployment_jobs(Option<Vec<DeploymentJob>>)`](crate::output::ListDeploymentJobsOutput::deployment_jobs): <p>A list of deployment jobs that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
                         /// - On failure, responds with [`SdkError<ListDeploymentJobsError>`](crate::error::ListDeploymentJobsError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn list_deployment_jobs(&self) -> fluent_builders::ListDeploymentJobs {
                             fluent_builders::ListDeploymentJobs::new(self.handle.clone())
                         }
@@ -703,6 +714,7 @@ impl Client  {
                         ///   - [`fleet_details(Option<Vec<Fleet>>)`](crate::output::ListFleetsOutput::fleet_details): <p>A list of fleet details meeting the request criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
                         /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn list_fleets(&self) -> fluent_builders::ListFleets {
                             fluent_builders::ListFleets::new(self.handle.clone())
                         }
@@ -732,6 +744,7 @@ impl Client  {
                         ///   - [`robots(Option<Vec<Robot>>)`](crate::output::ListRobotsOutput::robots): <p>A list of robots that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListRobotsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
                         /// - On failure, responds with [`SdkError<ListRobotsError>`](crate::error::ListRobotsError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn list_robots(&self) -> fluent_builders::ListRobots {
                             fluent_builders::ListRobots::new(self.handle.clone())
                         }
@@ -852,6 +865,7 @@ impl Client  {
                         ///   - [`fleet(Option<String>)`](crate::output::RegisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
     ///   - [`robot(Option<String>)`](crate::output::RegisterRobotOutput::robot): <p>Information about the robot registration.</p>
                         /// - On failure, responds with [`SdkError<RegisterRobotError>`](crate::error::RegisterRobotError)
+    #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn register_robot(&self) -> fluent_builders::RegisterRobot {
                             fluent_builders::RegisterRobot::new(self.handle.clone())
                         }
@@ -903,6 +917,7 @@ impl Client  {
     ///   - [`failure_code(Option<DeploymentJobErrorCode>)`](crate::output::SyncDeploymentJobOutput::failure_code): <p>The failure code if the job fails:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   RobotApplicationCrash  </dt>   <dd>    <p>Robot application exited abnormally.</p>   </dd>   <dt>   SimulationApplicationCrash  </dt>   <dd>    <p> Simulation application exited abnormally.</p>   </dd>   <dt>   BadPermissionsRobotApplication  </dt>   <dd>    <p>Robot application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsSimulationApplication  </dt>   <dd>    <p>Simulation application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsS3Output  </dt>   <dd>    <p>Unable to publish outputs to customer-provided S3 bucket.</p>   </dd>   <dt>   BadPermissionsCloudwatchLogs  </dt>   <dd>    <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>   </dd>   <dt>   SubnetIpLimitExceeded  </dt>   <dd>    <p>Subnet IP limit exceeded.</p>   </dd>   <dt>   ENILimitExceeded  </dt>   <dd>    <p>ENI limit exceeded.</p>   </dd>   <dt>   BadPermissionsUserCredentials  </dt>   <dd>    <p>Unable to use the Role provided.</p>   </dd>   <dt>   InvalidBundleRobotApplication  </dt>   <dd>    <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   InvalidBundleSimulationApplication  </dt>   <dd>    <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   RobotApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for RobotApplication does not match value during version creation.</p>   </dd>   <dt>   SimulationApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for SimulationApplication does not match value during version creation.</p>   </dd>  </dl>
     ///   - [`created_at(Option<DateTime>)`](crate::output::SyncDeploymentJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
                         /// - On failure, responds with [`SdkError<SyncDeploymentJobError>`](crate::error::SyncDeploymentJobError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn sync_deployment_job(&self) -> fluent_builders::SyncDeploymentJob {
                             fluent_builders::SyncDeploymentJob::new(self.handle.clone())
                         }

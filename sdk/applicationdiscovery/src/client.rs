@@ -183,6 +183,7 @@ impl Client  {
                         ///   - [`exports_info(Option<Vec<ExportInfo>>)`](crate::output::DescribeExportConfigurationsOutput::exports_info): <p></p>
     ///   - [`next_token(Option<String>)`](crate::output::DescribeExportConfigurationsOutput::next_token): <p>The token from the previous call to describe-export-tasks.</p>
                         /// - On failure, responds with [`SdkError<DescribeExportConfigurationsError>`](crate::error::DescribeExportConfigurationsError)
+    #[deprecated]
     pub fn describe_export_configurations(&self) -> fluent_builders::DescribeExportConfigurations {
                             fluent_builders::DescribeExportConfigurations::new(self.handle.clone())
                         }
@@ -245,6 +246,7 @@ impl Client  {
                         /// - On success, responds with [`ExportConfigurationsOutput`](crate::output::ExportConfigurationsOutput) with field(s):
                         ///   - [`export_id(Option<String>)`](crate::output::ExportConfigurationsOutput::export_id): <p>A unique identifier that you can use to query the export status.</p>
                         /// - On failure, responds with [`SdkError<ExportConfigurationsError>`](crate::error::ExportConfigurationsError)
+    #[deprecated]
     pub fn export_configurations(&self) -> fluent_builders::ExportConfigurations {
                             fluent_builders::ExportConfigurations::new(self.handle.clone())
                         }

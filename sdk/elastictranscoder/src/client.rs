@@ -248,6 +248,7 @@ impl Client  {
                         ///   - [`success(Option<String>)`](crate::output::TestRoleOutput::success): <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     ///   - [`messages(Option<Vec<String>>)`](crate::output::TestRoleOutput::messages): <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
                         /// - On failure, responds with [`SdkError<TestRoleError>`](crate::error::TestRoleError)
+    #[deprecated]
     pub fn test_role(&self) -> fluent_builders::TestRole {
                             fluent_builders::TestRole::new(self.handle.clone())
                         }

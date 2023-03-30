@@ -126,6 +126,7 @@ impl Client  {
                         ///   - [`instances_summary(Option<Vec<InstanceSummary>>)`](crate::output::BatchGetDeploymentInstancesOutput::instances_summary): <p>Information about the instance.</p>
     ///   - [`error_message(Option<String>)`](crate::output::BatchGetDeploymentInstancesOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
                         /// - On failure, responds with [`SdkError<BatchGetDeploymentInstancesError>`](crate::error::BatchGetDeploymentInstancesError)
+    #[deprecated(note = "This operation is deprecated, use BatchGetDeploymentTargets instead.")]
     pub fn batch_get_deployment_instances(&self) -> fluent_builders::BatchGetDeploymentInstances {
                             fluent_builders::BatchGetDeploymentInstances::new(self.handle.clone())
                         }
@@ -366,6 +367,7 @@ impl Client  {
                         /// - On success, responds with [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput) with field(s):
                         ///   - [`instance_summary(Option<InstanceSummary>)`](crate::output::GetDeploymentInstanceOutput::instance_summary): <p> Information about the instance. </p>
                         /// - On failure, responds with [`SdkError<GetDeploymentInstanceError>`](crate::error::GetDeploymentInstanceError)
+    #[deprecated(note = "This operation is deprecated, use GetDeploymentTarget instead.")]
     pub fn get_deployment_instance(&self) -> fluent_builders::GetDeploymentInstance {
                             fluent_builders::GetDeploymentInstance::new(self.handle.clone())
                         }
@@ -458,6 +460,7 @@ impl Client  {
                         ///   - [`instances_list(Option<Vec<String>>)`](crate::output::ListDeploymentInstancesOutput::instances_list): <p>A list of instance IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentInstancesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
                         /// - On failure, responds with [`SdkError<ListDeploymentInstancesError>`](crate::error::ListDeploymentInstancesError)
+    #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
     pub fn list_deployment_instances(&self) -> fluent_builders::ListDeploymentInstances {
                             fluent_builders::ListDeploymentInstances::new(self.handle.clone())
                         }
@@ -581,6 +584,7 @@ impl Client  {
                         /// - On success, responds with [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput)
                         
                         /// - On failure, responds with [`SdkError<SkipWaitTimeForInstanceTerminationError>`](crate::error::SkipWaitTimeForInstanceTerminationError)
+    #[deprecated(note = "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
     pub fn skip_wait_time_for_instance_termination(&self) -> fluent_builders::SkipWaitTimeForInstanceTermination {
                             fluent_builders::SkipWaitTimeForInstanceTermination::new(self.handle.clone())
                         }

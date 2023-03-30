@@ -174,6 +174,7 @@ impl Client  {
                         /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
                         
                         /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
+    #[deprecated(note = "Use TagResource.")]
     pub fn create_tags(&self) -> fluent_builders::CreateTags {
                             fluent_builders::CreateTags::new(self.handle.clone())
                         }
@@ -235,6 +236,7 @@ impl Client  {
                         /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
                         
                         /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
+    #[deprecated(note = "Use UntagResource.")]
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags {
                             fluent_builders::DeleteTags::new(self.handle.clone())
                         }
@@ -363,6 +365,7 @@ impl Client  {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeTagsOutput::tags): <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
     ///   - [`next_marker(Option<String>)`](crate::output::DescribeTagsOutput::next_marker): <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
                         /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
+    #[deprecated(note = "Use ListTagsForResource.")]
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags {
                             fluent_builders::DescribeTags::new(self.handle.clone())
                         }

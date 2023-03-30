@@ -311,6 +311,7 @@ impl Client  {
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::output::RotateChannelCredentialsOutput::ingress_access_logs): Configure ingress access logging.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::RotateChannelCredentialsOutput::tags): A collection of tags associated with a resource
                         /// - On failure, responds with [`SdkError<RotateChannelCredentialsError>`](crate::error::RotateChannelCredentialsError)
+    #[deprecated(note = "This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     pub fn rotate_channel_credentials(&self) -> fluent_builders::RotateChannelCredentials {
                             fluent_builders::RotateChannelCredentials::new(self.handle.clone())
                         }

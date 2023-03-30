@@ -708,6 +708,7 @@ impl Client  {
                         /// - On success, responds with [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput) with field(s):
                         ///   - [`status(i32)`](crate::output::InvokeAsyncOutput::status): <p>The status code.</p>
                         /// - On failure, responds with [`SdkError<InvokeAsyncError>`](crate::error::InvokeAsyncError)
+    #[deprecated]
     pub fn invoke_async(&self) -> fluent_builders::InvokeAsync {
                             fluent_builders::InvokeAsync::new(self.handle.clone())
                         }

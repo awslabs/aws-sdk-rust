@@ -92,6 +92,7 @@ impl Client  {
                         /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
                         
                         /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
+    #[deprecated(note = "This operation is deprecated, use AcceptAdministratorInvitation instead")]
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation {
                             fluent_builders::AcceptInvitation::new(self.handle.clone())
                         }
@@ -360,6 +361,7 @@ impl Client  {
                         /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
                         
                         /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::error::DisassociateFromMasterAccountError)
+    #[deprecated(note = "This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
     pub fn disassociate_from_master_account(&self) -> fluent_builders::DisassociateFromMasterAccount {
                             fluent_builders::DisassociateFromMasterAccount::new(self.handle.clone())
                         }
@@ -493,6 +495,7 @@ impl Client  {
                         /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
                         ///   - [`master(Option<Master>)`](crate::output::GetMasterAccountOutput::master): <p>The administrator account details.</p>
                         /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::error::GetMasterAccountError)
+    #[deprecated(note = "This operation is deprecated, use GetAdministratorAccount instead")]
     pub fn get_master_account(&self) -> fluent_builders::GetMasterAccount {
                             fluent_builders::GetMasterAccount::new(self.handle.clone())
                         }
