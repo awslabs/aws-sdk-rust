@@ -4,7 +4,7 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// This exception is thrown when an internal service error occurs.
-    MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
+    MarketplaceCommerceAnalyticsException(crate::types::error::MarketplaceCommerceAnalyticsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -16,8 +16,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateDataSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateDataSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::generate_data_set::GenerateDataSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -29,16 +29,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GenerateDataSetErro
         }
     }
 }
-impl From<crate::error::GenerateDataSetError> for Error {
-    fn from(err: crate::error::GenerateDataSetError) -> Self {
+impl From<crate::operation::generate_data_set::GenerateDataSetError> for Error {
+    fn from(err: crate::operation::generate_data_set::GenerateDataSetError) -> Self {
         match err {
-            crate::error::GenerateDataSetError::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
-            crate::error::GenerateDataSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::generate_data_set::GenerateDataSetError::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
+            crate::operation::generate_data_set::GenerateDataSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSupportDataExportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSupportDataExportError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_support_data_export::StartSupportDataExportError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -50,11 +50,11 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSupportDataExp
         }
     }
 }
-impl From<crate::error::StartSupportDataExportError> for Error {
-    fn from(err: crate::error::StartSupportDataExportError) -> Self {
+impl From<crate::operation::start_support_data_export::StartSupportDataExportError> for Error {
+    fn from(err: crate::operation::start_support_data_export::StartSupportDataExportError) -> Self {
         match err {
-            crate::error::StartSupportDataExportError::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
-            crate::error::StartSupportDataExportError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_support_data_export::StartSupportDataExportError::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
+            crate::operation::start_support_data_export::StartSupportDataExportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

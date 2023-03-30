@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The container that you specified in the request already exists or is being updated.</p>
-    ContainerInUseException(crate::error::ContainerInUseException),
+    ContainerInUseException(crate::types::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
-    ContainerNotFoundException(crate::error::ContainerNotFoundException),
+    ContainerNotFoundException(crate::types::error::ContainerNotFoundException),
     /// <p>The CORS policy that you specified in the request does not exist.</p>
-    CorsPolicyNotFoundException(crate::error::CorsPolicyNotFoundException),
+    CorsPolicyNotFoundException(crate::types::error::CorsPolicyNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
-    InternalServerError(crate::error::InternalServerError),
+    InternalServerError(crate::types::error::InternalServerError),
     /// <p>A service limit has been exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The policy that you specified in the request does not exist.</p>
-    PolicyNotFoundException(crate::error::PolicyNotFoundException),
+    PolicyNotFoundException(crate::types::error::PolicyNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -31,8 +31,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContainerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_container::CreateContainerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -44,18 +44,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerErro
         }
     }
 }
-impl From<crate::error::CreateContainerError> for Error {
-    fn from(err: crate::error::CreateContainerError) -> Self {
+impl From<crate::operation::create_container::CreateContainerError> for Error {
+    fn from(err: crate::operation::create_container::CreateContainerError) -> Self {
         match err {
-            crate::error::CreateContainerError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::CreateContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::CreateContainerError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateContainerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_container::CreateContainerError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::create_container::CreateContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_container::CreateContainerError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_container::CreateContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContainerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_container::DeleteContainerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -67,18 +67,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerErro
         }
     }
 }
-impl From<crate::error::DeleteContainerError> for Error {
-    fn from(err: crate::error::DeleteContainerError) -> Self {
+impl From<crate::operation::delete_container::DeleteContainerError> for Error {
+    fn from(err: crate::operation::delete_container::DeleteContainerError) -> Self {
         match err {
-            crate::error::DeleteContainerError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::DeleteContainerError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteContainerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_container::DeleteContainerError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::delete_container::DeleteContainerError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::delete_container::DeleteContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_container::DeleteContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContainerPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_container_policy::DeleteContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_container_policy::DeleteContainerPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -90,19 +90,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerPoli
         }
     }
 }
-impl From<crate::error::DeleteContainerPolicyError> for Error {
-    fn from(err: crate::error::DeleteContainerPolicyError) -> Self {
+impl From<crate::operation::delete_container_policy::DeleteContainerPolicyError> for Error {
+    fn from(err: crate::operation::delete_container_policy::DeleteContainerPolicyError) -> Self {
         match err {
-            crate::error::DeleteContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::DeleteContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteContainerPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::DeleteContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_container_policy::DeleteContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::delete_container_policy::DeleteContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::delete_container_policy::DeleteContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_container_policy::DeleteContainerPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::delete_container_policy::DeleteContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCorsPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -114,19 +114,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCorsPolicyErr
         }
     }
 }
-impl From<crate::error::DeleteCorsPolicyError> for Error {
-    fn from(err: crate::error::DeleteCorsPolicyError) -> Self {
+impl From<crate::operation::delete_cors_policy::DeleteCorsPolicyError> for Error {
+    fn from(err: crate::operation::delete_cors_policy::DeleteCorsPolicyError) -> Self {
         match err {
-            crate::error::DeleteCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::DeleteCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteCorsPolicyError::CorsPolicyNotFoundException(inner) => Error::CorsPolicyNotFoundException(inner),
-            crate::error::DeleteCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_cors_policy::DeleteCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::delete_cors_policy::DeleteCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::delete_cors_policy::DeleteCorsPolicyError::CorsPolicyNotFoundException(inner) => Error::CorsPolicyNotFoundException(inner),
+            crate::operation::delete_cors_policy::DeleteCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_cors_policy::DeleteCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLifecyclePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -138,19 +138,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLifecyclePoli
         }
     }
 }
-impl From<crate::error::DeleteLifecyclePolicyError> for Error {
-    fn from(err: crate::error::DeleteLifecyclePolicyError) -> Self {
+impl From<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError) -> Self {
         match err {
-            crate::error::DeleteLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::DeleteLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteLifecyclePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMetricPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_metric_policy::DeleteMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_metric_policy::DeleteMetricPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -162,19 +162,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMetricPolicyE
         }
     }
 }
-impl From<crate::error::DeleteMetricPolicyError> for Error {
-    fn from(err: crate::error::DeleteMetricPolicyError) -> Self {
+impl From<crate::operation::delete_metric_policy::DeleteMetricPolicyError> for Error {
+    fn from(err: crate::operation::delete_metric_policy::DeleteMetricPolicyError) -> Self {
         match err {
-            crate::error::DeleteMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::DeleteMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DeleteMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DeleteMetricPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::DeleteMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_metric_policy::DeleteMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::delete_metric_policy::DeleteMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::delete_metric_policy::DeleteMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_metric_policy::DeleteMetricPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::delete_metric_policy::DeleteMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeContainerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -186,17 +186,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeContainerEr
         }
     }
 }
-impl From<crate::error::DescribeContainerError> for Error {
-    fn from(err: crate::error::DescribeContainerError) -> Self {
+impl From<crate::operation::describe_container::DescribeContainerError> for Error {
+    fn from(err: crate::operation::describe_container::DescribeContainerError) -> Self {
         match err {
-            crate::error::DescribeContainerError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::DescribeContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::DescribeContainerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_container::DescribeContainerError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::describe_container::DescribeContainerError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_container::DescribeContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_policy::GetContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_policy::GetContainerPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -208,19 +208,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerPolicyE
         }
     }
 }
-impl From<crate::error::GetContainerPolicyError> for Error {
-    fn from(err: crate::error::GetContainerPolicyError) -> Self {
+impl From<crate::operation::get_container_policy::GetContainerPolicyError> for Error {
+    fn from(err: crate::operation::get_container_policy::GetContainerPolicyError) -> Self {
         match err {
-            crate::error::GetContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::GetContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::GetContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetContainerPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::GetContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_policy::GetContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::get_container_policy::GetContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::get_container_policy::GetContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_container_policy::GetContainerPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::get_container_policy::GetContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCorsPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cors_policy::GetCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cors_policy::GetCorsPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -232,19 +232,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCorsPolicyError,
         }
     }
 }
-impl From<crate::error::GetCorsPolicyError> for Error {
-    fn from(err: crate::error::GetCorsPolicyError) -> Self {
+impl From<crate::operation::get_cors_policy::GetCorsPolicyError> for Error {
+    fn from(err: crate::operation::get_cors_policy::GetCorsPolicyError) -> Self {
         match err {
-            crate::error::GetCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::GetCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::GetCorsPolicyError::CorsPolicyNotFoundException(inner) => Error::CorsPolicyNotFoundException(inner),
-            crate::error::GetCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_cors_policy::GetCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::get_cors_policy::GetCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::get_cors_policy::GetCorsPolicyError::CorsPolicyNotFoundException(inner) => Error::CorsPolicyNotFoundException(inner),
+            crate::operation::get_cors_policy::GetCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_cors_policy::GetCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -256,19 +256,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyE
         }
     }
 }
-impl From<crate::error::GetLifecyclePolicyError> for Error {
-    fn from(err: crate::error::GetLifecyclePolicyError) -> Self {
+impl From<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::get_lifecycle_policy::GetLifecyclePolicyError) -> Self {
         match err {
-            crate::error::GetLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::GetLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::GetLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetLifecyclePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMetricPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_metric_policy::GetMetricPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -280,19 +280,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMetricPolicyErro
         }
     }
 }
-impl From<crate::error::GetMetricPolicyError> for Error {
-    fn from(err: crate::error::GetMetricPolicyError) -> Self {
+impl From<crate::operation::get_metric_policy::GetMetricPolicyError> for Error {
+    fn from(err: crate::operation::get_metric_policy::GetMetricPolicyError) -> Self {
         match err {
-            crate::error::GetMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::GetMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::GetMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::GetMetricPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-            crate::error::GetMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_metric_policy::GetMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::get_metric_policy::GetMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::get_metric_policy::GetMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_metric_policy::GetMetricPolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::get_metric_policy::GetMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListContainersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListContainersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_containers::ListContainersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_containers::ListContainersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -304,16 +304,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListContainersError
         }
     }
 }
-impl From<crate::error::ListContainersError> for Error {
-    fn from(err: crate::error::ListContainersError) -> Self {
+impl From<crate::operation::list_containers::ListContainersError> for Error {
+    fn from(err: crate::operation::list_containers::ListContainersError) -> Self {
         match err {
-            crate::error::ListContainersError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::ListContainersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_containers::ListContainersError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_containers::ListContainersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -325,18 +325,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::ListTagsForResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::ListTagsForResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutContainerPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_container_policy::PutContainerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_container_policy::PutContainerPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -348,18 +348,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutContainerPolicyE
         }
     }
 }
-impl From<crate::error::PutContainerPolicyError> for Error {
-    fn from(err: crate::error::PutContainerPolicyError) -> Self {
+impl From<crate::operation::put_container_policy::PutContainerPolicyError> for Error {
+    fn from(err: crate::operation::put_container_policy::PutContainerPolicyError) -> Self {
         match err {
-            crate::error::PutContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::PutContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::PutContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::PutContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_container_policy::PutContainerPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::put_container_policy::PutContainerPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::put_container_policy::PutContainerPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_container_policy::PutContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutCorsPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_cors_policy::PutCorsPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_cors_policy::PutCorsPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -371,18 +371,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutCorsPolicyError,
         }
     }
 }
-impl From<crate::error::PutCorsPolicyError> for Error {
-    fn from(err: crate::error::PutCorsPolicyError) -> Self {
+impl From<crate::operation::put_cors_policy::PutCorsPolicyError> for Error {
+    fn from(err: crate::operation::put_cors_policy::PutCorsPolicyError) -> Self {
         match err {
-            crate::error::PutCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::PutCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::PutCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::PutCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_cors_policy::PutCorsPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::put_cors_policy::PutCorsPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::put_cors_policy::PutCorsPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_cors_policy::PutCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutLifecyclePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -394,18 +394,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutLifecyclePolicyE
         }
     }
 }
-impl From<crate::error::PutLifecyclePolicyError> for Error {
-    fn from(err: crate::error::PutLifecyclePolicyError) -> Self {
+impl From<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::put_lifecycle_policy::PutLifecyclePolicyError) -> Self {
         match err {
-            crate::error::PutLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::PutLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::PutLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::PutLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutMetricPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -417,18 +417,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutMetricPolicyErro
         }
     }
 }
-impl From<crate::error::PutMetricPolicyError> for Error {
-    fn from(err: crate::error::PutMetricPolicyError) -> Self {
+impl From<crate::operation::put_metric_policy::PutMetricPolicyError> for Error {
+    fn from(err: crate::operation::put_metric_policy::PutMetricPolicyError) -> Self {
         match err {
-            crate::error::PutMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::PutMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::PutMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::PutMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_metric_policy::PutMetricPolicyError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::put_metric_policy::PutMetricPolicyError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::put_metric_policy::PutMetricPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_metric_policy::PutMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAccessLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartAccessLoggingError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_access_logging::StartAccessLoggingError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -440,18 +440,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAccessLoggingE
         }
     }
 }
-impl From<crate::error::StartAccessLoggingError> for Error {
-    fn from(err: crate::error::StartAccessLoggingError) -> Self {
+impl From<crate::operation::start_access_logging::StartAccessLoggingError> for Error {
+    fn from(err: crate::operation::start_access_logging::StartAccessLoggingError) -> Self {
         match err {
-            crate::error::StartAccessLoggingError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::StartAccessLoggingError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::StartAccessLoggingError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StartAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_access_logging::StartAccessLoggingError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::start_access_logging::StartAccessLoggingError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::start_access_logging::StartAccessLoggingError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_access_logging::StartAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopAccessLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopAccessLoggingError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_access_logging::StopAccessLoggingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_access_logging::StopAccessLoggingError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -463,18 +463,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopAccessLoggingEr
         }
     }
 }
-impl From<crate::error::StopAccessLoggingError> for Error {
-    fn from(err: crate::error::StopAccessLoggingError) -> Self {
+impl From<crate::operation::stop_access_logging::StopAccessLoggingError> for Error {
+    fn from(err: crate::operation::stop_access_logging::StopAccessLoggingError) -> Self {
         match err {
-            crate::error::StopAccessLoggingError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::StopAccessLoggingError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::StopAccessLoggingError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::StopAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_access_logging::StopAccessLoggingError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::stop_access_logging::StopAccessLoggingError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::stop_access_logging::StopAccessLoggingError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::stop_access_logging::StopAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -486,18 +486,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::TagResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::TagResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::TagResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::tag_resource::TagResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -509,13 +509,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UntagResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
-            crate::error::UntagResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
-            crate::error::UntagResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::ContainerInUseException(inner) => Error::ContainerInUseException(inner),
+            crate::operation::untag_resource::UntagResourceError::ContainerNotFoundException(inner) => Error::ContainerNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

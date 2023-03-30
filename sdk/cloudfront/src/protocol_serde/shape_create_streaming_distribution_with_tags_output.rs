@@ -9,13 +9,13 @@ pub(crate) fn de_location_header(header_map: &http::HeaderMap) -> std::result::R
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::model::StreamingDistribution>, crate::error::CreateStreamingDistributionWithTagsError> {
+pub fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::StreamingDistribution>, crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError> {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_streaming_distribution(body).map_err(crate::error::CreateStreamingDistributionWithTagsError::unhandled)
+        crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_streaming_distribution(body).map_err(crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError::unhandled)
     }).transpose()
 }
 
-pub fn de_streaming_distribution(inp: &[u8]) -> Result<crate::model::StreamingDistribution, aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_streaming_distribution(inp: &[u8]) -> Result<crate::types::StreamingDistribution, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
                         #[allow(unused_mut)]
                         let mut decoder = doc.root_element()?;

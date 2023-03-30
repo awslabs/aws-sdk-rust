@@ -6,7 +6,8 @@
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{Client, Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::Client;
 use aws_smithy_client::test_connection::capture_request;
 use std::convert::Infallible;
 use std::time::{Duration, UNIX_EPOCH};
@@ -71,7 +72,7 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 #[tokio::test]
 #[ignore]
 async fn test_query_strings_are_correctly_encoded() {
-    use aws_sdk_s3::error::ListObjectsV2Error;
+    use aws_sdk_s3::operation::list_objects_v2::ListObjectsV2Error;
     use aws_smithy_http::result::SdkError;
 
     tracing_subscriber::fmt::init();

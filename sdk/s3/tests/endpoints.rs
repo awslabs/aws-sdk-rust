@@ -6,7 +6,8 @@
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
-use aws_sdk_s3::{Client, Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::Client;
 use aws_smithy_client::test_connection::{capture_request, CaptureRequestReceiver};
 use std::convert::Infallible;
 use std::time::{Duration, UNIX_EPOCH};

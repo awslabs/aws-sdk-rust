@@ -303,11 +303,9 @@ impl Builder {
                         /// # Examples
                         /// ```no_run
                         /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
-                        /// use aws_types::region::Region;
-                        /// use aws_sdk_transcribestreaming::config::{Builder, Config};
-                        /// use aws_sdk_transcribestreaming::Endpoint;
+                        /// use aws_sdk_transcribestreaming::config::{Config, Endpoint, Region};
                         ///
-                        /// let config = aws_sdk_transcribestreaming::Config::builder()
+                        /// let config = Config::builder()
                         ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
                         ///     .build();
                         /// # Ok(())
@@ -547,6 +545,10 @@ impl Builder {
     }
 }
 
+pub use aws_credential_types::Credentials;
+
+pub use aws_types::region::Region;
+
 impl From<&aws_types::sdk_config::SdkConfig> for Builder {
                     fn from(input: &aws_types::sdk_config::SdkConfig) -> Self {
                         let mut builder = Builder::default();
@@ -575,6 +577,10 @@ builder.set_aws_endpoint_resolver(input.endpoint_resolver().clone());
                         Builder::from(sdk_config).build()
                     }
                 }
+
+pub use aws_types::app_name::AppName;
+
+pub use aws_smithy_http::endpoint::Endpoint;
 
 pub use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 

@@ -4,11 +4,11 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
-    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>One or more parameters in your request was invalid.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The calls to the GetEntitlements API are throttled.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -22,8 +22,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEntitlementsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEntitlementsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -35,13 +35,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEntitlementsErro
         }
     }
 }
-impl From<crate::error::GetEntitlementsError> for Error {
-    fn from(err: crate::error::GetEntitlementsError) -> Self {
+impl From<crate::operation::get_entitlements::GetEntitlementsError> for Error {
+    fn from(err: crate::operation::get_entitlements::GetEntitlementsError) -> Self {
         match err {
-            crate::error::GetEntitlementsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetEntitlementsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetEntitlementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_entitlements::GetEntitlementsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_entitlements::GetEntitlementsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_entitlements::GetEntitlementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_entitlements::GetEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,21 +4,21 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
-    InsufficientCapacityException(crate::error::InsufficientCapacityException),
+    InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>Returned if a parameter of the request is incorrectly specified.</p>
-    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Returned if the request results in a vault or account limit being exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
-    MissingParameterValueException(crate::error::MissingParameterValueException),
+    MissingParameterValueException(crate::types::error::MissingParameterValueException),
     /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
-    PolicyEnforcedException(crate::error::PolicyEnforcedException),
+    PolicyEnforcedException(crate::types::error::PolicyEnforcedException),
     /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
-    RequestTimeoutException(crate::error::RequestTimeoutException),
+    RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -37,8 +37,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AbortMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AbortMultipartUploadError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -50,43 +50,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AbortMultipartUploa
         }
     }
 }
-impl From<crate::error::AbortMultipartUploadError> for Error {
-    fn from(err: crate::error::AbortMultipartUploadError) -> Self {
+impl From<crate::operation::abort_multipart_upload::AbortMultipartUploadError> for Error {
+    fn from(err: crate::operation::abort_multipart_upload::AbortMultipartUploadError) -> Self {
         match err {
-            crate::error::AbortMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::AbortMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::AbortMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AbortMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AbortMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AbortVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AbortVaultLockError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::AbortVaultLockError> for Error {
-    fn from(err: crate::error::AbortVaultLockError) -> Self {
-        match err {
-            crate::error::AbortVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::AbortVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::AbortVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AbortVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AbortVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsToVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsToVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::abort_vault_lock::AbortVaultLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -98,20 +74,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsToVaultError
         }
     }
 }
-impl From<crate::error::AddTagsToVaultError> for Error {
-    fn from(err: crate::error::AddTagsToVaultError) -> Self {
+impl From<crate::operation::abort_vault_lock::AbortVaultLockError> for Error {
+    fn from(err: crate::operation::abort_vault_lock::AbortVaultLockError) -> Self {
         match err {
-            crate::error::AddTagsToVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::AddTagsToVaultError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AddTagsToVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::AddTagsToVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddTagsToVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AddTagsToVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::abort_vault_lock::AbortVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::abort_vault_lock::AbortVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::abort_vault_lock::AbortVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::abort_vault_lock::AbortVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::abort_vault_lock::AbortVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CompleteMultipartUploadError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::add_tags_to_vault::AddTagsToVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -123,19 +98,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteMultipartUp
         }
     }
 }
-impl From<crate::error::CompleteMultipartUploadError> for Error {
-    fn from(err: crate::error::CompleteMultipartUploadError) -> Self {
+impl From<crate::operation::add_tags_to_vault::AddTagsToVaultError> for Error {
+    fn from(err: crate::operation::add_tags_to_vault::AddTagsToVaultError) -> Self {
         match err {
-            crate::error::CompleteMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CompleteMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::CompleteMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CompleteMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CompleteMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CompleteVaultLockError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::complete_multipart_upload::CompleteMultipartUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -147,19 +123,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteVaultLockEr
         }
     }
 }
-impl From<crate::error::CompleteVaultLockError> for Error {
-    fn from(err: crate::error::CompleteVaultLockError) -> Self {
+impl From<crate::operation::complete_multipart_upload::CompleteMultipartUploadError> for Error {
+    fn from(err: crate::operation::complete_multipart_upload::CompleteMultipartUploadError) -> Self {
         match err {
-            crate::error::CompleteVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CompleteVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::CompleteVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CompleteVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CompleteVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::complete_vault_lock::CompleteVaultLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -171,19 +147,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVaultError, R
         }
     }
 }
-impl From<crate::error::CreateVaultError> for Error {
-    fn from(err: crate::error::CreateVaultError) -> Self {
+impl From<crate::operation::complete_vault_lock::CompleteVaultLockError> for Error {
+    fn from(err: crate::operation::complete_vault_lock::CompleteVaultLockError) -> Self {
         match err {
-            crate::error::CreateVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::CreateVaultError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::CreateVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::complete_vault_lock::CompleteVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::complete_vault_lock::CompleteVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::complete_vault_lock::CompleteVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::complete_vault_lock::CompleteVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::complete_vault_lock::CompleteVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteArchiveError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteArchiveError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_vault::CreateVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_vault::CreateVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -195,19 +171,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteArchiveError,
         }
     }
 }
-impl From<crate::error::DeleteArchiveError> for Error {
-    fn from(err: crate::error::DeleteArchiveError) -> Self {
+impl From<crate::operation::create_vault::CreateVaultError> for Error {
+    fn from(err: crate::operation::create_vault::CreateVaultError) -> Self {
         match err {
-            crate::error::DeleteArchiveError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteArchiveError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DeleteArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteArchiveError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_vault::CreateVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_vault::CreateVaultError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_vault::CreateVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::create_vault::CreateVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_vault::CreateVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -219,19 +195,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultError, R
         }
     }
 }
-impl From<crate::error::DeleteVaultError> for Error {
-    fn from(err: crate::error::DeleteVaultError) -> Self {
+impl From<crate::operation::delete_archive::DeleteArchiveError> for Error {
+    fn from(err: crate::operation::delete_archive::DeleteArchiveError) -> Self {
         match err {
-            crate::error::DeleteVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DeleteVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_archive::DeleteArchiveError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_archive::DeleteArchiveError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::delete_archive::DeleteArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_archive::DeleteArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_archive::DeleteArchiveError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVaultAccessPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_vault::DeleteVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -243,19 +219,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultAccessPo
         }
     }
 }
-impl From<crate::error::DeleteVaultAccessPolicyError> for Error {
-    fn from(err: crate::error::DeleteVaultAccessPolicyError) -> Self {
+impl From<crate::operation::delete_vault::DeleteVaultError> for Error {
+    fn from(err: crate::operation::delete_vault::DeleteVaultError) -> Self {
         match err {
-            crate::error::DeleteVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DeleteVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_vault::DeleteVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_vault::DeleteVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::delete_vault::DeleteVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_vault::DeleteVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_vault::DeleteVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVaultNotificationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -267,19 +243,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVaultNotifica
         }
     }
 }
-impl From<crate::error::DeleteVaultNotificationsError> for Error {
-    fn from(err: crate::error::DeleteVaultNotificationsError) -> Self {
+impl From<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError> for Error {
+    fn from(err: crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError) -> Self {
         match err {
-            crate::error::DeleteVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DeleteVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -291,19 +267,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R
         }
     }
 }
-impl From<crate::error::DescribeJobError> for Error {
-    fn from(err: crate::error::DescribeJobError) -> Self {
+impl From<crate::operation::delete_vault_notifications::DeleteVaultNotificationsError> for Error {
+    fn from(err: crate::operation::delete_vault_notifications::DeleteVaultNotificationsError) -> Self {
         match err {
-            crate::error::DescribeJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DescribeJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -315,19 +291,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVaultError,
         }
     }
 }
-impl From<crate::error::DescribeVaultError> for Error {
-    fn from(err: crate::error::DescribeVaultError) -> Self {
+impl From<crate::operation::describe_job::DescribeJobError> for Error {
+    fn from(err: crate::operation::describe_job::DescribeJobError) -> Self {
         match err {
-            crate::error::DescribeVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::DescribeVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_job::DescribeJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_job::DescribeJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::describe_job::DescribeJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_job::DescribeJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_job::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDataRetrievalPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDataRetrievalPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_vault::DescribeVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -339,18 +315,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDataRetrievalPol
         }
     }
 }
-impl From<crate::error::GetDataRetrievalPolicyError> for Error {
-    fn from(err: crate::error::GetDataRetrievalPolicyError) -> Self {
+impl From<crate::operation::describe_vault::DescribeVaultError> for Error {
+    fn from(err: crate::operation::describe_vault::DescribeVaultError) -> Self {
         match err {
-            crate::error::GetDataRetrievalPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetDataRetrievalPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::GetDataRetrievalPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetDataRetrievalPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_vault::DescribeVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_vault::DescribeVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::describe_vault::DescribeVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_vault::DescribeVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_vault::DescribeVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJobOutputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetJobOutputError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -362,19 +339,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJobOutputError, 
         }
     }
 }
-impl From<crate::error::GetJobOutputError> for Error {
-    fn from(err: crate::error::GetJobOutputError) -> Self {
+impl From<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError> for Error {
+    fn from(err: crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError) -> Self {
         match err {
-            crate::error::GetJobOutputError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetJobOutputError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::GetJobOutputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetJobOutputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetJobOutputError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVaultAccessPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_job_output::GetJobOutputError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -386,19 +362,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultAccessPolic
         }
     }
 }
-impl From<crate::error::GetVaultAccessPolicyError> for Error {
-    fn from(err: crate::error::GetVaultAccessPolicyError) -> Self {
+impl From<crate::operation::get_job_output::GetJobOutputError> for Error {
+    fn from(err: crate::operation::get_job_output::GetJobOutputError) -> Self {
         match err {
-            crate::error::GetVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::GetVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_job_output::GetJobOutputError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_job_output::GetJobOutputError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::get_job_output::GetJobOutputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_job_output::GetJobOutputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_job_output::GetJobOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVaultLockError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -410,19 +386,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultLockError, 
         }
     }
 }
-impl From<crate::error::GetVaultLockError> for Error {
-    fn from(err: crate::error::GetVaultLockError) -> Self {
+impl From<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError> for Error {
+    fn from(err: crate::operation::get_vault_access_policy::GetVaultAccessPolicyError) -> Self {
         match err {
-            crate::error::GetVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::GetVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVaultNotificationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_vault_lock::GetVaultLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -434,19 +410,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVaultNotificatio
         }
     }
 }
-impl From<crate::error::GetVaultNotificationsError> for Error {
-    fn from(err: crate::error::GetVaultNotificationsError) -> Self {
+impl From<crate::operation::get_vault_lock::GetVaultLockError> for Error {
+    fn from(err: crate::operation::get_vault_lock::GetVaultLockError) -> Self {
         match err {
-            crate::error::GetVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::GetVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_vault_lock::GetVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_vault_lock::GetVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::get_vault_lock::GetVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_vault_lock::GetVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_vault_lock::GetVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateJobError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_vault_notifications::GetVaultNotificationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -458,21 +434,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateJobError, R
         }
     }
 }
-impl From<crate::error::InitiateJobError> for Error {
-    fn from(err: crate::error::InitiateJobError) -> Self {
+impl From<crate::operation::get_vault_notifications::GetVaultNotificationsError> for Error {
+    fn from(err: crate::operation::get_vault_notifications::GetVaultNotificationsError) -> Self {
         match err {
-            crate::error::InitiateJobError::InsufficientCapacityException(inner) => Error::InsufficientCapacityException(inner),
-            crate::error::InitiateJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::InitiateJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::InitiateJobError::PolicyEnforcedException(inner) => Error::PolicyEnforcedException(inner),
-            crate::error::InitiateJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::InitiateJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::InitiateJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateMultipartUploadError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::initiate_job::InitiateJobError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -484,19 +458,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateMultipartUp
         }
     }
 }
-impl From<crate::error::InitiateMultipartUploadError> for Error {
-    fn from(err: crate::error::InitiateMultipartUploadError) -> Self {
+impl From<crate::operation::initiate_job::InitiateJobError> for Error {
+    fn from(err: crate::operation::initiate_job::InitiateJobError) -> Self {
         match err {
-            crate::error::InitiateMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::InitiateMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::InitiateMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::InitiateMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::InitiateMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::initiate_job::InitiateJobError::InsufficientCapacityException(inner) => Error::InsufficientCapacityException(inner),
+            crate::operation::initiate_job::InitiateJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::initiate_job::InitiateJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::initiate_job::InitiateJobError::PolicyEnforcedException(inner) => Error::PolicyEnforcedException(inner),
+            crate::operation::initiate_job::InitiateJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::initiate_job::InitiateJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::initiate_job::InitiateJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateVaultLockError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -508,19 +484,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::InitiateVaultLockEr
         }
     }
 }
-impl From<crate::error::InitiateVaultLockError> for Error {
-    fn from(err: crate::error::InitiateVaultLockError) -> Self {
+impl From<crate::operation::initiate_multipart_upload::InitiateMultipartUploadError> for Error {
+    fn from(err: crate::operation::initiate_multipart_upload::InitiateMultipartUploadError) -> Self {
         match err {
-            crate::error::InitiateVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::InitiateVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::InitiateVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::InitiateVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::InitiateVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::initiate_vault_lock::InitiateVaultLockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -532,19 +508,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>> 
         }
     }
 }
-impl From<crate::error::ListJobsError> for Error {
-    fn from(err: crate::error::ListJobsError) -> Self {
+impl From<crate::operation::initiate_vault_lock::InitiateVaultLockError> for Error {
+    fn from(err: crate::operation::initiate_vault_lock::InitiateVaultLockError) -> Self {
         match err {
-            crate::error::ListJobsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListJobsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMultipartUploadsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMultipartUploadsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -556,19 +532,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMultipartUpload
         }
     }
 }
-impl From<crate::error::ListMultipartUploadsError> for Error {
-    fn from(err: crate::error::ListMultipartUploadsError) -> Self {
+impl From<crate::operation::list_jobs::ListJobsError> for Error {
+    fn from(err: crate::operation::list_jobs::ListJobsError) -> Self {
         match err {
-            crate::error::ListMultipartUploadsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListMultipartUploadsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListMultipartUploadsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListMultipartUploadsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListMultipartUploadsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_jobs::ListJobsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_jobs::ListJobsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_jobs::ListJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_jobs::ListJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPartsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPartsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -580,19 +556,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPartsError, R>>
         }
     }
 }
-impl From<crate::error::ListPartsError> for Error {
-    fn from(err: crate::error::ListPartsError) -> Self {
+impl From<crate::operation::list_multipart_uploads::ListMultipartUploadsError> for Error {
+    fn from(err: crate::operation::list_multipart_uploads::ListMultipartUploadsError) -> Self {
         match err {
-            crate::error::ListPartsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListPartsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListPartsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListPartsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListPartsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProvisionedCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProvisionedCapacityError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_parts::ListPartsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_parts::ListPartsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -604,18 +580,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProvisionedCapa
         }
     }
 }
-impl From<crate::error::ListProvisionedCapacityError> for Error {
-    fn from(err: crate::error::ListProvisionedCapacityError) -> Self {
+impl From<crate::operation::list_parts::ListPartsError> for Error {
+    fn from(err: crate::operation::list_parts::ListPartsError) -> Self {
         match err {
-            crate::error::ListProvisionedCapacityError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListProvisionedCapacityError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListProvisionedCapacityError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListProvisionedCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_parts::ListPartsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_parts::ListPartsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_parts::ListPartsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_parts::ListPartsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_parts::ListPartsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -627,19 +604,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForVaultErr
         }
     }
 }
-impl From<crate::error::ListTagsForVaultError> for Error {
-    fn from(err: crate::error::ListTagsForVaultError) -> Self {
+impl From<crate::operation::list_provisioned_capacity::ListProvisionedCapacityError> for Error {
+    fn from(err: crate::operation::list_provisioned_capacity::ListProvisionedCapacityError) -> Self {
         match err {
-            crate::error::ListTagsForVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListTagsForVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListTagsForVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListTagsForVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVaultsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVaultsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_vault::ListTagsForVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -651,19 +627,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVaultsError, R>
         }
     }
 }
-impl From<crate::error::ListVaultsError> for Error {
-    fn from(err: crate::error::ListVaultsError) -> Self {
+impl From<crate::operation::list_tags_for_vault::ListTagsForVaultError> for Error {
+    fn from(err: crate::operation::list_tags_for_vault::ListTagsForVaultError) -> Self {
         match err {
-            crate::error::ListVaultsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListVaultsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::ListVaultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListVaultsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListVaultsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurchaseProvisionedCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PurchaseProvisionedCapacityError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_vaults::ListVaultsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -675,19 +651,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurchaseProvisioned
         }
     }
 }
-impl From<crate::error::PurchaseProvisionedCapacityError> for Error {
-    fn from(err: crate::error::PurchaseProvisionedCapacityError) -> Self {
+impl From<crate::operation::list_vaults::ListVaultsError> for Error {
+    fn from(err: crate::operation::list_vaults::ListVaultsError) -> Self {
         match err {
-            crate::error::PurchaseProvisionedCapacityError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::PurchaseProvisionedCapacityError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::PurchaseProvisionedCapacityError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::PurchaseProvisionedCapacityError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::PurchaseProvisionedCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_vaults::ListVaultsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_vaults::ListVaultsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_vaults::ListVaultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_vaults::ListVaultsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_vaults::ListVaultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromVaultError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -699,19 +675,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromVault
         }
     }
 }
-impl From<crate::error::RemoveTagsFromVaultError> for Error {
-    fn from(err: crate::error::RemoveTagsFromVaultError) -> Self {
+impl From<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError> for Error {
+    fn from(err: crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError) -> Self {
         match err {
-            crate::error::RemoveTagsFromVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::RemoveTagsFromVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::RemoveTagsFromVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::RemoveTagsFromVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::RemoveTagsFromVaultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetDataRetrievalPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetDataRetrievalPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -723,18 +699,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetDataRetrievalPol
         }
     }
 }
-impl From<crate::error::SetDataRetrievalPolicyError> for Error {
-    fn from(err: crate::error::SetDataRetrievalPolicyError) -> Self {
+impl From<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError> for Error {
+    fn from(err: crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError) -> Self {
         match err {
-            crate::error::SetDataRetrievalPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::SetDataRetrievalPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::SetDataRetrievalPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::SetDataRetrievalPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetVaultAccessPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -746,19 +723,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetVaultAccessPolic
         }
     }
 }
-impl From<crate::error::SetVaultAccessPolicyError> for Error {
-    fn from(err: crate::error::SetVaultAccessPolicyError) -> Self {
+impl From<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError> for Error {
+    fn from(err: crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError) -> Self {
         match err {
-            crate::error::SetVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::SetVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::SetVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SetVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::SetVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetVaultNotificationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -770,19 +746,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetVaultNotificatio
         }
     }
 }
-impl From<crate::error::SetVaultNotificationsError> for Error {
-    fn from(err: crate::error::SetVaultNotificationsError) -> Self {
+impl From<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError> for Error {
+    fn from(err: crate::operation::set_vault_access_policy::SetVaultAccessPolicyError) -> Self {
         match err {
-            crate::error::SetVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::SetVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::SetVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SetVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::SetVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UploadArchiveError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UploadArchiveError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -794,20 +770,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UploadArchiveError,
         }
     }
 }
-impl From<crate::error::UploadArchiveError> for Error {
-    fn from(err: crate::error::UploadArchiveError) -> Self {
+impl From<crate::operation::set_vault_notifications::SetVaultNotificationsError> for Error {
+    fn from(err: crate::operation::set_vault_notifications::SetVaultNotificationsError) -> Self {
         match err {
-            crate::error::UploadArchiveError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::UploadArchiveError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::UploadArchiveError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
-            crate::error::UploadArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UploadArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UploadArchiveError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UploadMultipartPartError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UploadMultipartPartError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::upload_archive::UploadArchiveError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -819,15 +794,40 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UploadMultipartPart
         }
     }
 }
-impl From<crate::error::UploadMultipartPartError> for Error {
-    fn from(err: crate::error::UploadMultipartPartError) -> Self {
+impl From<crate::operation::upload_archive::UploadArchiveError> for Error {
+    fn from(err: crate::operation::upload_archive::UploadArchiveError) -> Self {
         match err {
-            crate::error::UploadMultipartPartError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::UploadMultipartPartError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
-            crate::error::UploadMultipartPartError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
-            crate::error::UploadMultipartPartError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UploadMultipartPartError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::UploadMultipartPartError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::upload_archive::UploadArchiveError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::upload_archive::UploadArchiveError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::upload_archive::UploadArchiveError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::upload_archive::UploadArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::upload_archive::UploadArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::upload_archive::UploadArchiveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::upload_multipart_part::UploadMultipartPartError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::upload_multipart_part::UploadMultipartPartError> for Error {
+    fn from(err: crate::operation::upload_multipart_part::UploadMultipartPartError) -> Self {
+        match err {
+            crate::operation::upload_multipart_part::UploadMultipartPartError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::upload_multipart_part::UploadMultipartPartError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::upload_multipart_part::UploadMultipartPartError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::upload_multipart_part::UploadMultipartPartError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::upload_multipart_part::UploadMultipartPartError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::upload_multipart_part::UploadMultipartPartError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

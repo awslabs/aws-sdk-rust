@@ -4,37 +4,37 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p></p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
-    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>The value that you specified for <code>NextToken</code> in a <code>List</code> request isn't valid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters in this request are not valid.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The specified Resolver rule policy is invalid.</p>
-    InvalidPolicyDocument(crate::error::InvalidPolicyDocument),
+    InvalidPolicyDocument(crate::types::error::InvalidPolicyDocument),
     /// <p>The request is invalid.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified tag is invalid.</p>
-    InvalidTagException(crate::error::InvalidTagException),
+    InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>The request caused one or more limits to be exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource that you tried to create already exists.</p>
-    ResourceExistsException(crate::error::ResourceExistsException),
+    ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>The resource that you tried to update or delete is currently in use.</p>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource doesn't exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The specified resource isn't available.</p>
-    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The specified resource doesn't exist.</p>
-    UnknownResourceException(crate::error::UnknownResourceException),
+    UnknownResourceException(crate::types::error::UnknownResourceException),
     /// <p></p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -61,8 +61,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateFirewallRuleGroupError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -74,49 +74,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateFirewallRu
         }
     }
 }
-impl From<crate::error::AssociateFirewallRuleGroupError> for Error {
-    fn from(err: crate::error::AssociateFirewallRuleGroupError) -> Self {
+impl From<crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError> for Error {
+    fn from(err: crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError) -> Self {
         match err {
-            crate::error::AssociateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AssociateFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::AssociateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::AssociateFirewallRuleGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AssociateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AssociateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::AssociateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateResolverEndpointIpAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateResolverEndpointIpAddressError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::AssociateResolverEndpointIpAddressError> for Error {
-    fn from(err: crate::error::AssociateResolverEndpointIpAddressError) -> Self {
-        match err {
-            crate::error::AssociateResolverEndpointIpAddressError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AssociateResolverEndpointIpAddressError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateResolverQueryLogConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -128,51 +101,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateResolverQu
         }
     }
 }
-impl From<crate::error::AssociateResolverQueryLogConfigError> for Error {
-    fn from(err: crate::error::AssociateResolverQueryLogConfigError) -> Self {
+impl From<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError> for Error {
+    fn from(err: crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError) -> Self {
         match err {
-            crate::error::AssociateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AssociateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateResolverRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::AssociateResolverRuleError> for Error {
-    fn from(err: crate::error::AssociateResolverRuleError) -> Self {
-        match err {
-            crate::error::AssociateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::AssociateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::AssociateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::AssociateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateResolverRuleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::AssociateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AssociateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
-            crate::error::AssociateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AssociateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFirewallDomainListError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -184,46 +128,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFirewallDomai
         }
     }
 }
-impl From<crate::error::CreateFirewallDomainListError> for Error {
-    fn from(err: crate::error::CreateFirewallDomainListError) -> Self {
+impl From<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError> for Error {
+    fn from(err: crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError) -> Self {
         match err {
-            crate::error::CreateFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateFirewallDomainListError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateFirewallDomainListError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFirewallRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::CreateFirewallRuleError> for Error {
-    fn from(err: crate::error::CreateFirewallRuleError) -> Self {
-        match err {
-            crate::error::CreateFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateFirewallRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFirewallRuleGroupError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -235,47 +156,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFirewallRuleG
         }
     }
 }
-impl From<crate::error::CreateFirewallRuleGroupError> for Error {
-    fn from(err: crate::error::CreateFirewallRuleGroupError) -> Self {
+impl From<crate::operation::associate_resolver_rule::AssociateResolverRuleError> for Error {
+    fn from(err: crate::operation::associate_resolver_rule::AssociateResolverRuleError) -> Self {
         match err {
-            crate::error::CreateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateFirewallRuleGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResolverEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::CreateResolverEndpointError> for Error {
-    fn from(err: crate::error::CreateResolverEndpointError) -> Self {
-        match err {
-            crate::error::CreateResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreateResolverEndpointError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateResolverEndpointError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::CreateResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResolverQueryLogConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -287,23 +184,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResolverQuery
         }
     }
 }
-impl From<crate::error::CreateResolverQueryLogConfigError> for Error {
-    fn from(err: crate::error::CreateResolverQueryLogConfigError) -> Self {
+impl From<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError> for Error {
+    fn from(err: crate::operation::create_firewall_domain_list::CreateFirewallDomainListError) -> Self {
         match err {
-            crate::error::CreateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreateResolverQueryLogConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateResolverQueryLogConfigError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::CreateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResolverRuleError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule::CreateFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule::CreateFirewallRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -315,23 +209,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResolverRuleE
         }
     }
 }
-impl From<crate::error::CreateResolverRuleError> for Error {
-    fn from(err: crate::error::CreateResolverRuleError) -> Self {
+impl From<crate::operation::create_firewall_rule::CreateFirewallRuleError> for Error {
+    fn from(err: crate::operation::create_firewall_rule::CreateFirewallRuleError) -> Self {
         match err {
-            crate::error::CreateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::CreateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateResolverRuleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::CreateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
-            crate::error::CreateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_firewall_rule::CreateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFirewallDomainListError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -343,44 +235,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFirewallDomai
         }
     }
 }
-impl From<crate::error::DeleteFirewallDomainListError> for Error {
-    fn from(err: crate::error::DeleteFirewallDomainListError) -> Self {
+impl From<crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError> for Error {
+    fn from(err: crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError) -> Self {
         match err {
-            crate::error::DeleteFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteFirewallDomainListError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteFirewallDomainListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFirewallRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DeleteFirewallRuleError> for Error {
-    fn from(err: crate::error::DeleteFirewallRuleError) -> Self {
-        match err {
-            crate::error::DeleteFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFirewallRuleGroupError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_resolver_endpoint::CreateResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_resolver_endpoint::CreateResolverEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -392,46 +260,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFirewallRuleG
         }
     }
 }
-impl From<crate::error::DeleteFirewallRuleGroupError> for Error {
-    fn from(err: crate::error::DeleteFirewallRuleGroupError) -> Self {
+impl From<crate::operation::create_resolver_endpoint::CreateResolverEndpointError> for Error {
+    fn from(err: crate::operation::create_resolver_endpoint::CreateResolverEndpointError) -> Self {
         match err {
-            crate::error::DeleteFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResolverEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DeleteResolverEndpointError> for Error {
-    fn from(err: crate::error::DeleteResolverEndpointError) -> Self {
-        match err {
-            crate::error::DeleteResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeleteResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResolverQueryLogConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -443,46 +287,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResolverQuery
         }
     }
 }
-impl From<crate::error::DeleteResolverQueryLogConfigError> for Error {
-    fn from(err: crate::error::DeleteResolverQueryLogConfigError) -> Self {
+impl From<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError> for Error {
+    fn from(err: crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError) -> Self {
         match err {
-            crate::error::DeleteResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResolverRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DeleteResolverRuleError> for Error {
-    fn from(err: crate::error::DeleteResolverRuleError) -> Self {
-        match err {
-            crate::error::DeleteResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DeleteResolverRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateFirewallRuleGroupError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_resolver_rule::CreateResolverRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -494,47 +315,23 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateFirewal
         }
     }
 }
-impl From<crate::error::DisassociateFirewallRuleGroupError> for Error {
-    fn from(err: crate::error::DisassociateFirewallRuleGroupError) -> Self {
+impl From<crate::operation::create_resolver_rule::CreateResolverRuleError> for Error {
+    fn from(err: crate::operation::create_resolver_rule::CreateResolverRuleError) -> Self {
         match err {
-            crate::error::DisassociateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DisassociateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_resolver_rule::CreateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateResolverEndpointIpAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateResolverEndpointIpAddressError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DisassociateResolverEndpointIpAddressError> for Error {
-    fn from(err: crate::error::DisassociateResolverEndpointIpAddressError) -> Self {
-        match err {
-            crate::error::DisassociateResolverEndpointIpAddressError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DisassociateResolverEndpointIpAddressError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateResolverQueryLogConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -546,45 +343,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateResolve
         }
     }
 }
-impl From<crate::error::DisassociateResolverQueryLogConfigError> for Error {
-    fn from(err: crate::error::DisassociateResolverQueryLogConfigError) -> Self {
+impl From<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError> for Error {
+    fn from(err: crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError) -> Self {
         match err {
-            crate::error::DisassociateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DisassociateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateResolverRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DisassociateResolverRuleError> for Error {
-    fn from(err: crate::error::DisassociateResolverRuleError) -> Self {
-        match err {
-            crate::error::DisassociateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DisassociateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DisassociateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DisassociateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DisassociateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFirewallConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule::DeleteFirewallRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -596,44 +368,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallConfigEr
         }
     }
 }
-impl From<crate::error::GetFirewallConfigError> for Error {
-    fn from(err: crate::error::GetFirewallConfigError) -> Self {
+impl From<crate::operation::delete_firewall_rule::DeleteFirewallRuleError> for Error {
+    fn from(err: crate::operation::delete_firewall_rule::DeleteFirewallRuleError) -> Self {
         match err {
-            crate::error::GetFirewallConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetFirewallConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetFirewallConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetFirewallConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetFirewallConfigError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetFirewallConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFirewallDomainListError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetFirewallDomainListError> for Error {
-    fn from(err: crate::error::GetFirewallDomainListError) -> Self {
-        match err {
-            crate::error::GetFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetFirewallDomainListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -645,43 +392,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGrou
         }
     }
 }
-impl From<crate::error::GetFirewallRuleGroupError> for Error {
-    fn from(err: crate::error::GetFirewallRuleGroupError) -> Self {
+impl From<crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError> for Error {
+    fn from(err: crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError) -> Self {
         match err {
-            crate::error::GetFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupAssociationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetFirewallRuleGroupAssociationError> for Error {
-    fn from(err: crate::error::GetFirewallRuleGroupAssociationError) -> Self {
-        match err {
-            crate::error::GetFirewallRuleGroupAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetFirewallRuleGroupAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetFirewallRuleGroupAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetFirewallRuleGroupAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetFirewallRuleGroupAssociationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGroupPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -693,45 +418,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFirewallRuleGrou
         }
     }
 }
-impl From<crate::error::GetFirewallRuleGroupPolicyError> for Error {
-    fn from(err: crate::error::GetFirewallRuleGroupPolicyError) -> Self {
+impl From<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError> for Error {
+    fn from(err: crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError) -> Self {
         match err {
-            crate::error::GetFirewallRuleGroupPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetFirewallRuleGroupPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetFirewallRuleGroupPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetFirewallRuleGroupPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetFirewallRuleGroupPolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetFirewallRuleGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverConfigError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetResolverConfigError> for Error {
-    fn from(err: crate::error::GetResolverConfigError) -> Self {
-        match err {
-            crate::error::GetResolverConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResolverConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverDnssecConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverDnssecConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -743,45 +443,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverDnssecCo
         }
     }
 }
-impl From<crate::error::GetResolverDnssecConfigError> for Error {
-    fn from(err: crate::error::GetResolverDnssecConfigError) -> Self {
+impl From<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError> for Error {
+    fn from(err: crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError) -> Self {
         match err {
-            crate::error::GetResolverDnssecConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResolverDnssecConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverDnssecConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverDnssecConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetResolverDnssecConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverDnssecConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverDnssecConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetResolverEndpointError> for Error {
-    fn from(err: crate::error::GetResolverEndpointError) -> Self {
-        match err {
-            crate::error::GetResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_resolver_rule::DeleteResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_resolver_rule::DeleteResolverRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -793,47 +469,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLog
         }
     }
 }
-impl From<crate::error::GetResolverQueryLogConfigError> for Error {
-    fn from(err: crate::error::GetResolverQueryLogConfigError) -> Self {
+impl From<crate::operation::delete_resolver_rule::DeleteResolverRuleError> for Error {
+    fn from(err: crate::operation::delete_resolver_rule::DeleteResolverRuleError) -> Self {
         match err {
-            crate::error::GetResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigAssociationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetResolverQueryLogConfigAssociationError> for Error {
-    fn from(err: crate::error::GetResolverQueryLogConfigAssociationError) -> Self {
-        match err {
-            crate::error::GetResolverQueryLogConfigAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverQueryLogConfigAssociationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLogConfigPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -845,44 +494,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverQueryLog
         }
     }
 }
-impl From<crate::error::GetResolverQueryLogConfigPolicyError> for Error {
-    fn from(err: crate::error::GetResolverQueryLogConfigPolicyError) -> Self {
+impl From<crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError> for Error {
+    fn from(err: crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError) -> Self {
         match err {
-            crate::error::GetResolverQueryLogConfigPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResolverQueryLogConfigPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverQueryLogConfigPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverQueryLogConfigPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetResolverQueryLogConfigPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::GetResolverQueryLogConfigPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::GetResolverRuleError> for Error {
-    fn from(err: crate::error::GetResolverRuleError) -> Self {
-        match err {
-            crate::error::GetResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverRuleAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverRuleAssociationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -894,19 +520,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverRuleAsso
         }
     }
 }
-impl From<crate::error::GetResolverRuleAssociationError> for Error {
-    fn from(err: crate::error::GetResolverRuleAssociationError) -> Self {
+impl From<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError> for Error {
+    fn from(err: crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError) -> Self {
         match err {
-            crate::error::GetResolverRuleAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverRuleAssociationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverRuleAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResolverRuleAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResolverRuleAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverRulePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResolverRulePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -918,18 +546,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResolverRulePoli
         }
     }
 }
-impl From<crate::error::GetResolverRulePolicyError> for Error {
-    fn from(err: crate::error::GetResolverRulePolicyError) -> Self {
+impl From<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError> for Error {
+    fn from(err: crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError) -> Self {
         match err {
-            crate::error::GetResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::GetResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResolverRulePolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::GetResolverRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportFirewallDomainsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -941,22 +572,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportFirewallDomai
         }
     }
 }
-impl From<crate::error::ImportFirewallDomainsError> for Error {
-    fn from(err: crate::error::ImportFirewallDomainsError) -> Self {
+impl From<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError> for Error {
+    fn from(err: crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError) -> Self {
         match err {
-            crate::error::ImportFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ImportFirewallDomainsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::ImportFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ImportFirewallDomainsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::ImportFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ImportFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ImportFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ImportFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallConfigsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_firewall_config::GetFirewallConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_firewall_config::GetFirewallConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -968,19 +596,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallConfigs
         }
     }
 }
-impl From<crate::error::ListFirewallConfigsError> for Error {
-    fn from(err: crate::error::ListFirewallConfigsError) -> Self {
+impl From<crate::operation::get_firewall_config::GetFirewallConfigError> for Error {
+    fn from(err: crate::operation::get_firewall_config::GetFirewallConfigError) -> Self {
         match err {
-            crate::error::ListFirewallConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallConfigsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_firewall_config::GetFirewallConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallDomainListsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallDomainListsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_firewall_domain_list::GetFirewallDomainListError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_firewall_domain_list::GetFirewallDomainListError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -992,19 +621,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallDomainL
         }
     }
 }
-impl From<crate::error::ListFirewallDomainListsError> for Error {
-    fn from(err: crate::error::ListFirewallDomainListsError) -> Self {
+impl From<crate::operation::get_firewall_domain_list::GetFirewallDomainListError> for Error {
+    fn from(err: crate::operation::get_firewall_domain_list::GetFirewallDomainListError) -> Self {
         match err {
-            crate::error::ListFirewallDomainListsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallDomainListsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallDomainListsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallDomainListsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallDomainListsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_firewall_domain_list::GetFirewallDomainListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_firewall_domain_list::GetFirewallDomainListError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_firewall_domain_list::GetFirewallDomainListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_firewall_domain_list::GetFirewallDomainListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_firewall_domain_list::GetFirewallDomainListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallDomainsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1016,20 +645,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallDomains
         }
     }
 }
-impl From<crate::error::ListFirewallDomainsError> for Error {
-    fn from(err: crate::error::ListFirewallDomainsError) -> Self {
+impl From<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError> for Error {
+    fn from(err: crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError) -> Self {
         match err {
-            crate::error::ListFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGroupAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGroupAssociationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1041,19 +669,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGro
         }
     }
 }
-impl From<crate::error::ListFirewallRuleGroupAssociationsError> for Error {
-    fn from(err: crate::error::ListFirewallRuleGroupAssociationsError) -> Self {
+impl From<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError> for Error {
+    fn from(err: crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError) -> Self {
         match err {
-            crate::error::ListFirewallRuleGroupAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallRuleGroupAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallRuleGroupAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallRuleGroupAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallRuleGroupAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGroupsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1065,19 +693,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRuleGro
         }
     }
 }
-impl From<crate::error::ListFirewallRuleGroupsError> for Error {
-    fn from(err: crate::error::ListFirewallRuleGroupsError) -> Self {
+impl From<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError> for Error {
+    fn from(err: crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError) -> Self {
         match err {
-            crate::error::ListFirewallRuleGroupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallRuleGroupsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallRuleGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallRuleGroupsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallRuleGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFirewallRulesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_config::GetResolverConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1089,20 +718,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFirewallRulesEr
         }
     }
 }
-impl From<crate::error::ListFirewallRulesError> for Error {
-    fn from(err: crate::error::ListFirewallRulesError) -> Self {
+impl From<crate::operation::get_resolver_config::GetResolverConfigError> for Error {
+    fn from(err: crate::operation::get_resolver_config::GetResolverConfigError) -> Self {
         match err {
-            crate::error::ListFirewallRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListFirewallRulesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListFirewallRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListFirewallRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListFirewallRulesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListFirewallRulesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_config::GetResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverConfigsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1114,21 +743,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverConfigs
         }
     }
 }
-impl From<crate::error::ListResolverConfigsError> for Error {
-    fn from(err: crate::error::ListResolverConfigsError) -> Self {
+impl From<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError> for Error {
+    fn from(err: crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError) -> Self {
         match err {
-            crate::error::ListResolverConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListResolverConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverDnssecConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverDnssecConfigsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_endpoint::GetResolverEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1140,21 +769,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverDnssecC
         }
     }
 }
-impl From<crate::error::ListResolverDnssecConfigsError> for Error {
-    fn from(err: crate::error::ListResolverDnssecConfigsError) -> Self {
+impl From<crate::operation::get_resolver_endpoint::GetResolverEndpointError> for Error {
+    fn from(err: crate::operation::get_resolver_endpoint::GetResolverEndpointError) -> Self {
         match err {
-            crate::error::ListResolverDnssecConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListResolverDnssecConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverDnssecConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverDnssecConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverDnssecConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverDnssecConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverDnssecConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverEndpointIpAddressesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverEndpointIpAddressesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1166,20 +793,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverEndpoin
         }
     }
 }
-impl From<crate::error::ListResolverEndpointIpAddressesError> for Error {
-    fn from(err: crate::error::ListResolverEndpointIpAddressesError) -> Self {
+impl From<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError> for Error {
+    fn from(err: crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError) -> Self {
         match err {
-            crate::error::ListResolverEndpointIpAddressesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverEndpointIpAddressesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverEndpointIpAddressesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverEndpointIpAddressesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListResolverEndpointIpAddressesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverEndpointIpAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverEndpointsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverEndpointsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1191,20 +819,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverEndpoin
         }
     }
 }
-impl From<crate::error::ListResolverEndpointsError> for Error {
-    fn from(err: crate::error::ListResolverEndpointsError) -> Self {
+impl From<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError> for Error {
+    fn from(err: crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError) -> Self {
         match err {
-            crate::error::ListResolverEndpointsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverEndpointsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverEndpointsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverEndpointsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLogConfigAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLogConfigAssociationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1216,21 +845,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLo
         }
     }
 }
-impl From<crate::error::ListResolverQueryLogConfigAssociationsError> for Error {
-    fn from(err: crate::error::ListResolverQueryLogConfigAssociationsError) -> Self {
+impl From<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError> for Error {
+    fn from(err: crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError) -> Self {
         match err {
-            crate::error::ListResolverQueryLogConfigAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverQueryLogConfigAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLogConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLogConfigsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule::GetResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule::GetResolverRuleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1242,21 +870,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverQueryLo
         }
     }
 }
-impl From<crate::error::ListResolverQueryLogConfigsError> for Error {
-    fn from(err: crate::error::ListResolverQueryLogConfigsError) -> Self {
+impl From<crate::operation::get_resolver_rule::GetResolverRuleError> for Error {
+    fn from(err: crate::operation::get_resolver_rule::GetResolverRuleError) -> Self {
         match err {
-            crate::error::ListResolverQueryLogConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListResolverQueryLogConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverQueryLogConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverQueryLogConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverQueryLogConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverQueryLogConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverQueryLogConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_rule::GetResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_rule::GetResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_rule::GetResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_rule::GetResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_rule::GetResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverRuleAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverRuleAssociationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1268,20 +894,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverRuleAss
         }
     }
 }
-impl From<crate::error::ListResolverRuleAssociationsError> for Error {
-    fn from(err: crate::error::ListResolverRuleAssociationsError) -> Self {
+impl From<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError> for Error {
+    fn from(err: crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError) -> Self {
         match err {
-            crate::error::ListResolverRuleAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverRuleAssociationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverRuleAssociationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverRuleAssociationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverRuleAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverRuleAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResolverRulesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1293,20 +918,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResolverRulesEr
         }
     }
 }
-impl From<crate::error::ListResolverRulesError> for Error {
-    fn from(err: crate::error::ListResolverRulesError) -> Self {
+impl From<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError> for Error {
+    fn from(err: crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError) -> Self {
         match err {
-            crate::error::ListResolverRulesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListResolverRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListResolverRulesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListResolverRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResolverRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResolverRulesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::import_firewall_domains::ImportFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::import_firewall_domains::ImportFirewallDomainsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1318,21 +941,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::import_firewall_domains::ImportFirewallDomainsError> for Error {
+    fn from(err: crate::operation::import_firewall_domains::ImportFirewallDomainsError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListTagsForResourceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListTagsForResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutFirewallRuleGroupPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutFirewallRuleGroupPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_configs::ListFirewallConfigsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1344,20 +968,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutFirewallRuleGrou
         }
     }
 }
-impl From<crate::error::PutFirewallRuleGroupPolicyError> for Error {
-    fn from(err: crate::error::PutFirewallRuleGroupPolicyError) -> Self {
+impl From<crate::operation::list_firewall_configs::ListFirewallConfigsError> for Error {
+    fn from(err: crate::operation::list_firewall_configs::ListFirewallConfigsError) -> Self {
         match err {
-            crate::error::PutFirewallRuleGroupPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutFirewallRuleGroupPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::PutFirewallRuleGroupPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutFirewallRuleGroupPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutFirewallRuleGroupPolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutFirewallRuleGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_configs::ListFirewallConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_configs::ListFirewallConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_configs::ListFirewallConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_configs::ListFirewallConfigsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_configs::ListFirewallConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResolverQueryLogConfigPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutResolverQueryLogConfigPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1369,21 +992,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResolverQueryLog
         }
     }
 }
-impl From<crate::error::PutResolverQueryLogConfigPolicyError> for Error {
-    fn from(err: crate::error::PutResolverQueryLogConfigPolicyError) -> Self {
+impl From<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError> for Error {
+    fn from(err: crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError) -> Self {
         match err {
-            crate::error::PutResolverQueryLogConfigPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::PutResolverQueryLogConfigPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResolverRulePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutResolverRulePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1395,19 +1016,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResolverRulePoli
         }
     }
 }
-impl From<crate::error::PutResolverRulePolicyError> for Error {
-    fn from(err: crate::error::PutResolverRulePolicyError) -> Self {
+impl From<crate::operation::list_firewall_domains::ListFirewallDomainsError> for Error {
+    fn from(err: crate::operation::list_firewall_domains::ListFirewallDomainsError) -> Self {
         match err {
-            crate::error::PutResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::PutResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::PutResolverRulePolicyError::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
-            crate::error::PutResolverRulePolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::PutResolverRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_domains::ListFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1419,22 +1041,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError> for Error {
+    fn from(err: crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError) -> Self {
         match err {
-            crate::error::TagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::TagResourceError::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1446,20 +1065,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError> for Error {
+    fn from(err: crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError) -> Self {
         match err {
-            crate::error::UntagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFirewallConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1471,20 +1089,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallConfi
         }
     }
 }
-impl From<crate::error::UpdateFirewallConfigError> for Error {
-    fn from(err: crate::error::UpdateFirewallConfigError) -> Self {
+impl From<crate::operation::list_firewall_rules::ListFirewallRulesError> for Error {
+    fn from(err: crate::operation::list_firewall_rules::ListFirewallRulesError) -> Self {
         match err {
-            crate::error::UpdateFirewallConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateFirewallConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateFirewallConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateFirewallConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateFirewallConfigError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateFirewallConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_rules::ListFirewallRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFirewallDomainsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_configs::ListResolverConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_configs::ListResolverConfigsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1496,22 +1114,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallDomai
         }
     }
 }
-impl From<crate::error::UpdateFirewallDomainsError> for Error {
-    fn from(err: crate::error::UpdateFirewallDomainsError) -> Self {
+impl From<crate::operation::list_resolver_configs::ListResolverConfigsError> for Error {
+    fn from(err: crate::operation::list_resolver_configs::ListResolverConfigsError) -> Self {
         match err {
-            crate::error::UpdateFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateFirewallDomainsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateFirewallDomainsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::UpdateFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_configs::ListResolverConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1523,21 +1140,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleE
         }
     }
 }
-impl From<crate::error::UpdateFirewallRuleError> for Error {
-    fn from(err: crate::error::UpdateFirewallRuleError) -> Self {
+impl From<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError> for Error {
+    fn from(err: crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError) -> Self {
         match err {
-            crate::error::UpdateFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateFirewallRuleError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleGroupAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleGroupAssociationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1549,21 +1166,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFirewallRuleG
         }
     }
 }
-impl From<crate::error::UpdateFirewallRuleGroupAssociationError> for Error {
-    fn from(err: crate::error::UpdateFirewallRuleGroupAssociationError) -> Self {
+impl From<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError> for Error {
+    fn from(err: crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError) -> Self {
         match err {
-            crate::error::UpdateFirewallRuleGroupAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateFirewallRuleGroupAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResolverConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoints::ListResolverEndpointsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1575,23 +1191,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverConfi
         }
     }
 }
-impl From<crate::error::UpdateResolverConfigError> for Error {
-    fn from(err: crate::error::UpdateResolverConfigError) -> Self {
+impl From<crate::operation::list_resolver_endpoints::ListResolverEndpointsError> for Error {
+    fn from(err: crate::operation::list_resolver_endpoints::ListResolverEndpointsError) -> Self {
         match err {
-            crate::error::UpdateResolverConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateResolverConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateResolverConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UpdateResolverConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateResolverConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::UpdateResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResolverConfigError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
-            crate::error::UpdateResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverDnssecConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResolverDnssecConfigError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1603,21 +1216,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverDnsse
         }
     }
 }
-impl From<crate::error::UpdateResolverDnssecConfigError> for Error {
-    fn from(err: crate::error::UpdateResolverDnssecConfigError) -> Self {
+impl From<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError> for Error {
+    fn from(err: crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError) -> Self {
         match err {
-            crate::error::UpdateResolverDnssecConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateResolverDnssecConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateResolverDnssecConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UpdateResolverDnssecConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateResolverDnssecConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResolverDnssecConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResolverDnssecConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResolverEndpointError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1629,20 +1242,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverEndpo
         }
     }
 }
-impl From<crate::error::UpdateResolverEndpointError> for Error {
-    fn from(err: crate::error::UpdateResolverEndpointError) -> Self {
+impl From<crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError> for Error {
+    fn from(err: crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError) -> Self {
         match err {
-            crate::error::UpdateResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UpdateResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResolverRuleError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1654,17 +1268,403 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResolverRuleE
         }
     }
 }
-impl From<crate::error::UpdateResolverRuleError> for Error {
-    fn from(err: crate::error::UpdateResolverRuleError) -> Self {
+impl From<crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError> for Error {
+    fn from(err: crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError) -> Self {
         match err {
-            crate::error::UpdateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::UpdateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::UpdateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
-            crate::error::UpdateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resolver_rules::ListResolverRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resolver_rules::ListResolverRulesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_resolver_rules::ListResolverRulesError> for Error {
+    fn from(err: crate::operation::list_resolver_rules::ListResolverRulesError) -> Self {
+        match err {
+            crate::operation::list_resolver_rules::ListResolverRulesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_resolver_rules::ListResolverRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resolver_rules::ListResolverRulesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resolver_rules::ListResolverRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resolver_rules::ListResolverRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resolver_rules::ListResolverRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError> for Error {
+    fn from(err: crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError) -> Self {
+        match err {
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError> for Error {
+    fn from(err: crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError) -> Self {
+        match err {
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError> for Error {
+    fn from(err: crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError) -> Self {
+        match err {
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::InvalidPolicyDocument(inner) => Error::InvalidPolicyDocument(inner),
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_config::UpdateFirewallConfigError> for Error {
+    fn from(err: crate::operation::update_firewall_config::UpdateFirewallConfigError) -> Self {
+        match err {
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_firewall_config::UpdateFirewallConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_domains::UpdateFirewallDomainsError> for Error {
+    fn from(err: crate::operation::update_firewall_domains::UpdateFirewallDomainsError) -> Self {
+        match err {
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule::UpdateFirewallRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_rule::UpdateFirewallRuleError> for Error {
+    fn from(err: crate::operation::update_firewall_rule::UpdateFirewallRuleError) -> Self {
+        match err {
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError> for Error {
+    fn from(err: crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError) -> Self {
+        match err {
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_resolver_config::UpdateResolverConfigError> for Error {
+    fn from(err: crate::operation::update_resolver_config::UpdateResolverConfigError) -> Self {
+        match err {
+            crate::operation::update_resolver_config::UpdateResolverConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resolver_config::UpdateResolverConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError> for Error {
+    fn from(err: crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError) -> Self {
+        match err {
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError> for Error {
+    fn from(err: crate::operation::update_resolver_endpoint::UpdateResolverEndpointError) -> Self {
+        match err {
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_resolver_rule::UpdateResolverRuleError> for Error {
+    fn from(err: crate::operation::update_resolver_rule::UpdateResolverRuleError) -> Self {
+        match err {
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

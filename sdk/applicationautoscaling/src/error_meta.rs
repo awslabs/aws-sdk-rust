@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
-    ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
+    ConcurrentUpdateException(crate::types::error::ConcurrentUpdateException),
     /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
-    FailedResourceAccessException(crate::error::FailedResourceAccessException),
+    FailedResourceAccessException(crate::types::error::FailedResourceAccessException),
     /// <p>The service encountered an internal error.</p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The next token supplied was invalid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application Auto Scaling service quotas</a>.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
-    ObjectNotFoundException(crate::error::ObjectNotFoundException),
+    ObjectNotFoundException(crate::types::error::ObjectNotFoundException),
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -34,8 +34,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_scaling_policy::DeleteScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_scaling_policy::DeleteScalingPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -47,19 +47,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicy
         }
     }
 }
-impl From<crate::error::DeleteScalingPolicyError> for Error {
-    fn from(err: crate::error::DeleteScalingPolicyError) -> Self {
+impl From<crate::operation::delete_scaling_policy::DeleteScalingPolicyError> for Error {
+    fn from(err: crate::operation::delete_scaling_policy::DeleteScalingPolicyError) -> Self {
         match err {
-            crate::error::DeleteScalingPolicyError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DeleteScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DeleteScalingPolicyError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::DeleteScalingPolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -71,19 +71,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScheduledActi
         }
     }
 }
-impl From<crate::error::DeleteScheduledActionError> for Error {
-    fn from(err: crate::error::DeleteScheduledActionError) -> Self {
+impl From<crate::operation::delete_scheduled_action::DeleteScheduledActionError> for Error {
+    fn from(err: crate::operation::delete_scheduled_action::DeleteScheduledActionError) -> Self {
         match err {
-            crate::error::DeleteScheduledActionError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DeleteScheduledActionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DeleteScheduledActionError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::DeleteScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterScalableTargetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -95,19 +95,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterScalableT
         }
     }
 }
-impl From<crate::error::DeregisterScalableTargetError> for Error {
-    fn from(err: crate::error::DeregisterScalableTargetError) -> Self {
+impl From<crate::operation::deregister_scalable_target::DeregisterScalableTargetError> for Error {
+    fn from(err: crate::operation::deregister_scalable_target::DeregisterScalableTargetError) -> Self {
         match err {
-            crate::error::DeregisterScalableTargetError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DeregisterScalableTargetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DeregisterScalableTargetError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::DeregisterScalableTargetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeregisterScalableTargetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -119,19 +119,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalableTar
         }
     }
 }
-impl From<crate::error::DescribeScalableTargetsError> for Error {
-    fn from(err: crate::error::DescribeScalableTargetsError) -> Self {
+impl From<crate::operation::describe_scalable_targets::DescribeScalableTargetsError> for Error {
+    fn from(err: crate::operation::describe_scalable_targets::DescribeScalableTargetsError) -> Self {
         match err {
-            crate::error::DescribeScalableTargetsError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DescribeScalableTargetsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DescribeScalableTargetsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeScalableTargetsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeScalableTargetsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scalable_targets::DescribeScalableTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -143,19 +143,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingActi
         }
     }
 }
-impl From<crate::error::DescribeScalingActivitiesError> for Error {
-    fn from(err: crate::error::DescribeScalingActivitiesError) -> Self {
+impl From<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError> for Error {
+    fn from(err: crate::operation::describe_scaling_activities::DescribeScalingActivitiesError) -> Self {
         match err {
-            crate::error::DescribeScalingActivitiesError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DescribeScalingActivitiesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DescribeScalingActivitiesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeScalingActivitiesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeScalingActivitiesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -167,20 +167,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoli
         }
     }
 }
-impl From<crate::error::DescribeScalingPoliciesError> for Error {
-    fn from(err: crate::error::DescribeScalingPoliciesError) -> Self {
+impl From<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError> for Error {
+    fn from(err: crate::operation::describe_scaling_policies::DescribeScalingPoliciesError) -> Self {
         match err {
-            crate::error::DescribeScalingPoliciesError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DescribeScalingPoliciesError::FailedResourceAccessException(inner) => Error::FailedResourceAccessException(inner),
-            crate::error::DescribeScalingPoliciesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DescribeScalingPoliciesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeScalingPoliciesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeScalingPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::FailedResourceAccessException(inner) => Error::FailedResourceAccessException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -192,19 +192,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScheduledAc
         }
     }
 }
-impl From<crate::error::DescribeScheduledActionsError> for Error {
-    fn from(err: crate::error::DescribeScheduledActionsError) -> Self {
+impl From<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError> for Error {
+    fn from(err: crate::operation::describe_scheduled_actions::DescribeScheduledActionsError) -> Self {
         match err {
-            crate::error::DescribeScheduledActionsError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::DescribeScheduledActionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::DescribeScheduledActionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeScheduledActionsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeScheduledActionsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -216,21 +216,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyErr
         }
     }
 }
-impl From<crate::error::PutScalingPolicyError> for Error {
-    fn from(err: crate::error::PutScalingPolicyError) -> Self {
+impl From<crate::operation::put_scaling_policy::PutScalingPolicyError> for Error {
+    fn from(err: crate::operation::put_scaling_policy::PutScalingPolicyError) -> Self {
         match err {
-            crate::error::PutScalingPolicyError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::PutScalingPolicyError::FailedResourceAccessException(inner) => Error::FailedResourceAccessException(inner),
-            crate::error::PutScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::PutScalingPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::PutScalingPolicyError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::PutScalingPolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::FailedResourceAccessException(inner) => Error::FailedResourceAccessException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScheduledActionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutScheduledActionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_scheduled_action::PutScheduledActionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -242,20 +242,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScheduledActionE
         }
     }
 }
-impl From<crate::error::PutScheduledActionError> for Error {
-    fn from(err: crate::error::PutScheduledActionError) -> Self {
+impl From<crate::operation::put_scheduled_action::PutScheduledActionError> for Error {
+    fn from(err: crate::operation::put_scheduled_action::PutScheduledActionError) -> Self {
         match err {
-            crate::error::PutScheduledActionError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::PutScheduledActionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::PutScheduledActionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::PutScheduledActionError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
-            crate::error::PutScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_scheduled_action::PutScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterScalableTargetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterScalableTargetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_scalable_target::RegisterScalableTargetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -267,14 +267,14 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterScalableTar
         }
     }
 }
-impl From<crate::error::RegisterScalableTargetError> for Error {
-    fn from(err: crate::error::RegisterScalableTargetError) -> Self {
+impl From<crate::operation::register_scalable_target::RegisterScalableTargetError> for Error {
+    fn from(err: crate::operation::register_scalable_target::RegisterScalableTargetError) -> Self {
         match err {
-            crate::error::RegisterScalableTargetError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
-            crate::error::RegisterScalableTargetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::error::RegisterScalableTargetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::RegisterScalableTargetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::RegisterScalableTargetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::register_scalable_target::RegisterScalableTargetError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::register_scalable_target::RegisterScalableTargetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::register_scalable_target::RegisterScalableTargetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::register_scalable_target::RegisterScalableTargetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::register_scalable_target::RegisterScalableTargetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

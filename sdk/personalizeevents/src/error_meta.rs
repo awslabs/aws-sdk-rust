@@ -4,11 +4,11 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Provide a valid value for the field or parameter.</p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Could not find the specified resource.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -22,8 +22,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_events::PutEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -35,16 +35,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsError, R>>
         }
     }
 }
-impl From<crate::error::PutEventsError> for Error {
-    fn from(err: crate::error::PutEventsError) -> Self {
+impl From<crate::operation::put_events::PutEventsError> for Error {
+    fn from(err: crate::operation::put_events::PutEventsError) -> Self {
         match err {
-            crate::error::PutEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PutEventsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_events::PutEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_events::PutEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutItemsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_items::PutItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_items::PutItemsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -56,18 +56,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutItemsError, R>> 
         }
     }
 }
-impl From<crate::error::PutItemsError> for Error {
-    fn from(err: crate::error::PutItemsError) -> Self {
+impl From<crate::operation::put_items::PutItemsError> for Error {
+    fn from(err: crate::operation::put_items::PutItemsError) -> Self {
         match err {
-            crate::error::PutItemsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PutItemsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::PutItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutItemsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_items::PutItemsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_items::PutItemsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_items::PutItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_items::PutItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutUsersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_users::PutUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_users::PutUsersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -79,13 +79,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutUsersError, R>> 
         }
     }
 }
-impl From<crate::error::PutUsersError> for Error {
-    fn from(err: crate::error::PutUsersError) -> Self {
+impl From<crate::operation::put_users::PutUsersError> for Error {
+    fn from(err: crate::operation::put_users::PutUsersError) -> Self {
         match err {
-            crate::error::PutUsersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PutUsersError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::PutUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutUsersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_users::PutUsersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_users::PutUsersError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_users::PutUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_users::PutUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

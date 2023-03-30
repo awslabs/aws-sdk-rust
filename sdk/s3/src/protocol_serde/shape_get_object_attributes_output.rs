@@ -21,7 +21,7 @@ pub(crate) fn de_last_modified_header(header_map: &http::HeaderMap) -> std::resu
                             }
 }
 
-pub(crate) fn de_request_charged_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::model::RequestCharged>, aws_smithy_http::header::ParseError> {
+pub(crate) fn de_request_charged_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::types::RequestCharged>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-request-charged").iter();
     aws_smithy_http::header::one_or_none(headers)
 }

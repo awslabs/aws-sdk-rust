@@ -9,8 +9,8 @@
                 }
             }
 impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventStreamUnmarshaller {
-    type Output = crate::model::SelectObjectContentEventStream;
-    type Error = crate::error::SelectObjectContentEventStreamError;
+    type Output = crate::types::SelectObjectContentEventStream;
+    type Error = crate::types::error::SelectObjectContentEventStreamError;
     fn unmarshall(
                         &self,
                         message: &aws_smithy_eventstream::frame::Message
@@ -20,7 +20,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
             "event" =>  {
                 match response_headers.smithy_type.as_str() {
                     "Records" =>  {
-                        let mut builder = crate::model::records_event::Builder::default();
+                        let mut builder = crate::types::builders::RecordsEventBuilder::default();
                         let content_type = response_headers.content_type().unwrap_or_default();
                                         if content_type != "application/octet-stream" {
                                             return Err(aws_smithy_eventstream::error::Error::unmarshalling(format!(
@@ -33,10 +33,10 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                                 aws_smithy_types::Blob::new(message.payload().as_ref())
                             )
                         );
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::Records(builder.build())))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::Records(builder.build())))
                     }
                     "Stats" =>  {
-                        let mut builder = crate::model::stats_event::Builder::default();
+                        let mut builder = crate::types::builders::StatsEventBuilder::default();
                         builder = builder.set_details(
                             Some(
                                 crate::protocol_serde::shape_stats_event::de_details(&message.payload()[..])
@@ -45,10 +45,10 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                                                 })?
                             )
                         );
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::Stats(builder.build())))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::Stats(builder.build())))
                     }
                     "Progress" =>  {
-                        let mut builder = crate::model::progress_event::Builder::default();
+                        let mut builder = crate::types::builders::ProgressEventBuilder::default();
                         builder = builder.set_details(
                             Some(
                                 crate::protocol_serde::shape_progress_event::de_details(&message.payload()[..])
@@ -57,25 +57,25 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEve
                                                 })?
                             )
                         );
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::Progress(builder.build())))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::Progress(builder.build())))
                     }
                     "Cont" =>  {
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::Cont(crate::model::ContinuationEvent::builder().build())))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::Cont(crate::types::ContinuationEvent::builder().build())))
                     }
                     "End" =>  {
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::End(crate::model::EndEvent::builder().build())))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::End(crate::types::EndEvent::builder().build())))
                     }
                     _unknown_variant =>  {
-                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::model::SelectObjectContentEventStream::Unknown))
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(crate::types::SelectObjectContentEventStream::Unknown))
                     }
                 }
             }
             "exception" =>  {
                 let generic = match crate::protocol_serde::parse_event_stream_error_metadata(message.payload()) {
                                         Ok(builder) => builder.build(),
-                                        Err(err) => return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::error::SelectObjectContentEventStreamError::unhandled(err))),
+                                        Err(err) => return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::types::error::SelectObjectContentEventStreamError::unhandled(err))),
                                     };
-                Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::error::SelectObjectContentEventStreamError::generic(generic)))
+                Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(crate::types::error::SelectObjectContentEventStreamError::generic(generic)))
             }
             value =>  {
                 return Err(aws_smithy_eventstream::error::Error::unmarshalling(format!("unrecognized :message-type: {}", value)));

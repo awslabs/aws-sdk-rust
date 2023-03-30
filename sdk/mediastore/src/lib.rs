@@ -68,13 +68,25 @@
 //! 
 //! # Crate Organization
 //! 
-//! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
-//! by the service.
+//! The entry point for most customers will be [`Client`], which exposes one method for each API
+//! offered by AWS Elemental MediaStore. The return value of each of these methods is a "fluent builder",
+//! where the different inputs for that API are added by builder-style function call chaining,
+//! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
+//! either a successful output or a [`SdkError`](crate::error::SdkError).
 //! 
-//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
+//! Some of these API inputs may be structs or enums to provide more complex structured information.
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
+//! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //! 
-//! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
-//! error encompassing all possible errors that can be returned by the service.
+//! All types required to configure a client via the [`Config`](crate::Config) struct live
+//! in [`config`](crate::config).
+//! 
+//! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
+//! is the input, output, and error type for that API, as well as builders to construct each of those.
+//! 
+//! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
+//! client can return. Any other error type can be converted to this `Error` type via the
+//! [`From`](std::convert::From) trait.
 //! 
 //! The other modules within this crate are not required for normal usage.
 
@@ -85,22 +97,71 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-pub use aws_credential_types::Credentials;
-
-pub use aws_types::region::Region;
-
-pub(crate) static API_METADATA: aws_http::user_agent::ApiMetadata =
-                    aws_http::user_agent::ApiMetadata::new("mediastore", crate::PKG_VERSION);
-
-pub use aws_types::app_name::AppName;
-
-pub use aws_smithy_http::endpoint::Endpoint;
-
-
-/// Crate version number.
-                pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-
-/// Client and fluent builders for calling AWS Elemental MediaStore.
+/// Client for calling AWS Elemental MediaStore.
+/// ## Constructing a `Client`
+/// 
+/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
+/// crate should be used to automatically resolve this config using
+/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
+/// across multiple different AWS SDK clients. This config resolution process can be customized
+/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
+/// the [builder pattern] to customize the default config.
+/// 
+/// In the simplest case, creating a client looks as follows:
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let config = aws_config::load_from_env().await;
+/// let client = aws_sdk_mediastore::Client::new(&config);
+/// # }
+/// ```
+/// 
+/// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
+/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
+/// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
+/// done as follows:
+/// 
+/// ```rust,no_run
+/// # async fn wrapper() {
+/// let sdk_config = aws_config::load_from_env().await;
+/// let config = aws_sdk_mediastore::config::Builder::from(&sdk_config)
+/// # /*
+///     .some_service_specific_setting("value")
+/// # */
+///     .build();
+/// # }
+/// ```
+/// 
+/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
+/// 
+/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
+/// be done once at application start-up.
+/// 
+/// [`Config`]: crate::Config
+/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
+/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
+/// [`aws-config` docs]: https://docs.rs/aws-config/*
+/// [`aws-config`]: https://crates.io/crates/aws-config
+/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
+/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
+/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+/// 
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateContainer`](crate::operation::create_container) operation has
+/// a [`Client::create_container`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// returns a result, as illustrated below:
+/// 
+/// ```rust,ignore
+/// let result = client.create_container()
+///     .container_name("example")
+///     .call()
+///     .await;
+/// ```
+/// 
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
 /// Configuration for AWS Elemental MediaStore.
@@ -109,24 +170,21 @@ pub mod config;
 /// Endpoint resolution functionality.
 pub mod endpoint;
 
-/// All error types that operations can return. Documentation on these types is copied from the model.
+/// Common errors and error handling utilities.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations. Documentation on these types is copied from the model.
-pub mod input;
-
-/// Data structures used by operation inputs/outputs.
-pub mod model;
+/// Information about this crate.
+pub mod meta;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations. Documentation on these types is copied from the model.
-pub mod output;
+/// Primitives such as `Blob` or `DateTime` used by other types.
+pub mod primitives;
 
-/// Data primitives referenced by other data types.
+/// Data structures used by operation inputs/outputs.
 pub mod types;
 
 /// 
@@ -134,9 +192,6 @@ pub mod middleware;
 
 /// 
 mod no_credentials;
-
-/// Paginators for the service
-pub mod paginator;
 
 mod lens;
 

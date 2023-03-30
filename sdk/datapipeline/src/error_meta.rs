@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>An internal service error occurred.</p>
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified pipeline has been deleted.</p>
-    PipelineDeletedException(crate::error::PipelineDeletedException),
+    PipelineDeletedException(crate::types::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
-    PipelineNotFoundException(crate::error::PipelineNotFoundException),
+    PipelineNotFoundException(crate::types::error::PipelineNotFoundException),
     /// <p>The specified task was not found. </p>
-    TaskNotFoundException(crate::error::TaskNotFoundException),
+    TaskNotFoundException(crate::types::error::TaskNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -28,8 +28,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ActivatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ActivatePipelineError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -41,19 +41,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ActivatePipelineErr
         }
     }
 }
-impl From<crate::error::ActivatePipelineError> for Error {
-    fn from(err: crate::error::ActivatePipelineError) -> Self {
+impl From<crate::operation::activate_pipeline::ActivatePipelineError> for Error {
+    fn from(err: crate::operation::activate_pipeline::ActivatePipelineError) -> Self {
         match err {
-            crate::error::ActivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ActivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ActivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ActivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ActivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::activate_pipeline::ActivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::activate_pipeline::ActivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::activate_pipeline::ActivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::activate_pipeline::ActivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::activate_pipeline::ActivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -65,19 +65,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>> f
         }
     }
 }
-impl From<crate::error::AddTagsError> for Error {
-    fn from(err: crate::error::AddTagsError) -> Self {
+impl From<crate::operation::add_tags::AddTagsError> for Error {
+    fn from(err: crate::operation::add_tags::AddTagsError) -> Self {
         match err {
-            crate::error::AddTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::AddTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::AddTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::AddTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::AddTagsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::add_tags::AddTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::add_tags::AddTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::add_tags::AddTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::add_tags::AddTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::add_tags::AddTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePipelineError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -89,17 +89,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePipelineError
         }
     }
 }
-impl From<crate::error::CreatePipelineError> for Error {
-    fn from(err: crate::error::CreatePipelineError) -> Self {
+impl From<crate::operation::create_pipeline::CreatePipelineError> for Error {
+    fn from(err: crate::operation::create_pipeline::CreatePipelineError) -> Self {
         match err {
-            crate::error::CreatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::CreatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_pipeline::CreatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_pipeline::CreatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_pipeline::CreatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeactivatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeactivatePipelineError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::deactivate_pipeline::DeactivatePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::deactivate_pipeline::DeactivatePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -111,19 +111,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeactivatePipelineE
         }
     }
 }
-impl From<crate::error::DeactivatePipelineError> for Error {
-    fn from(err: crate::error::DeactivatePipelineError) -> Self {
+impl From<crate::operation::deactivate_pipeline::DeactivatePipelineError> for Error {
+    fn from(err: crate::operation::deactivate_pipeline::DeactivatePipelineError) -> Self {
         match err {
-            crate::error::DeactivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DeactivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeactivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DeactivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DeactivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::deactivate_pipeline::DeactivatePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::deactivate_pipeline::DeactivatePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::deactivate_pipeline::DeactivatePipelineError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::deactivate_pipeline::DeactivatePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::deactivate_pipeline::DeactivatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePipelineError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_pipeline::DeletePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_pipeline::DeletePipelineError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -135,18 +135,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePipelineError
         }
     }
 }
-impl From<crate::error::DeletePipelineError> for Error {
-    fn from(err: crate::error::DeletePipelineError) -> Self {
+impl From<crate::operation::delete_pipeline::DeletePipelineError> for Error {
+    fn from(err: crate::operation::delete_pipeline::DeletePipelineError) -> Self {
         match err {
-            crate::error::DeletePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DeletePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeletePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DeletePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_pipeline::DeletePipelineError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_pipeline::DeletePipelineError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_pipeline::DeletePipelineError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::delete_pipeline::DeletePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeObjectsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_objects::DescribeObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -158,19 +158,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeObjectsErro
         }
     }
 }
-impl From<crate::error::DescribeObjectsError> for Error {
-    fn from(err: crate::error::DescribeObjectsError) -> Self {
+impl From<crate::operation::describe_objects::DescribeObjectsError> for Error {
+    fn from(err: crate::operation::describe_objects::DescribeObjectsError) -> Self {
         match err {
-            crate::error::DescribeObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DescribeObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DescribeObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DescribeObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DescribeObjectsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_objects::DescribeObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::describe_objects::DescribeObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_objects::DescribeObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::describe_objects::DescribeObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::describe_objects::DescribeObjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePipelinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePipelinesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_pipelines::DescribePipelinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_pipelines::DescribePipelinesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -182,19 +182,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePipelinesEr
         }
     }
 }
-impl From<crate::error::DescribePipelinesError> for Error {
-    fn from(err: crate::error::DescribePipelinesError) -> Self {
+impl From<crate::operation::describe_pipelines::DescribePipelinesError> for Error {
+    fn from(err: crate::operation::describe_pipelines::DescribePipelinesError) -> Self {
         match err {
-            crate::error::DescribePipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::DescribePipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DescribePipelinesError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::DescribePipelinesError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::DescribePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_pipelines::DescribePipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::describe_pipelines::DescribePipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_pipelines::DescribePipelinesError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::describe_pipelines::DescribePipelinesError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::describe_pipelines::DescribePipelinesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EvaluateExpressionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::EvaluateExpressionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::evaluate_expression::EvaluateExpressionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -206,20 +206,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EvaluateExpressionE
         }
     }
 }
-impl From<crate::error::EvaluateExpressionError> for Error {
-    fn from(err: crate::error::EvaluateExpressionError) -> Self {
+impl From<crate::operation::evaluate_expression::EvaluateExpressionError> for Error {
+    fn from(err: crate::operation::evaluate_expression::EvaluateExpressionError) -> Self {
         match err {
-            crate::error::EvaluateExpressionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::EvaluateExpressionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::EvaluateExpressionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::EvaluateExpressionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::EvaluateExpressionError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::EvaluateExpressionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::operation::evaluate_expression::EvaluateExpressionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPipelineDefinitionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_pipeline_definition::GetPipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -231,19 +231,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPipelineDefiniti
         }
     }
 }
-impl From<crate::error::GetPipelineDefinitionError> for Error {
-    fn from(err: crate::error::GetPipelineDefinitionError) -> Self {
+impl From<crate::operation::get_pipeline_definition::GetPipelineDefinitionError> for Error {
+    fn from(err: crate::operation::get_pipeline_definition::GetPipelineDefinitionError) -> Self {
         match err {
-            crate::error::GetPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::GetPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::GetPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::GetPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPipelinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPipelinesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_pipelines::ListPipelinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_pipelines::ListPipelinesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -255,17 +255,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPipelinesError,
         }
     }
 }
-impl From<crate::error::ListPipelinesError> for Error {
-    fn from(err: crate::error::ListPipelinesError) -> Self {
+impl From<crate::operation::list_pipelines::ListPipelinesError> for Error {
+    fn from(err: crate::operation::list_pipelines::ListPipelinesError) -> Self {
         match err {
-            crate::error::ListPipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ListPipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListPipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_pipelines::ListPipelinesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_pipelines::ListPipelinesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_pipelines::ListPipelinesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PollForTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PollForTaskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::poll_for_task::PollForTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::poll_for_task::PollForTaskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -277,18 +277,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PollForTaskError, R
         }
     }
 }
-impl From<crate::error::PollForTaskError> for Error {
-    fn from(err: crate::error::PollForTaskError) -> Self {
+impl From<crate::operation::poll_for_task::PollForTaskError> for Error {
+    fn from(err: crate::operation::poll_for_task::PollForTaskError) -> Self {
         match err {
-            crate::error::PollForTaskError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::PollForTaskError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PollForTaskError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::PollForTaskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::poll_for_task::PollForTaskError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::poll_for_task::PollForTaskError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::poll_for_task::PollForTaskError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::operation::poll_for_task::PollForTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutPipelineDefinitionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -300,19 +300,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPipelineDefiniti
         }
     }
 }
-impl From<crate::error::PutPipelineDefinitionError> for Error {
-    fn from(err: crate::error::PutPipelineDefinitionError) -> Self {
+impl From<crate::operation::put_pipeline_definition::PutPipelineDefinitionError> for Error {
+    fn from(err: crate::operation::put_pipeline_definition::PutPipelineDefinitionError) -> Self {
         match err {
-            crate::error::PutPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::PutPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::PutPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::PutPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::PutPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::QueryObjectsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::query_objects::QueryObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::query_objects::QueryObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -324,19 +324,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::QueryObjectsError, 
         }
     }
 }
-impl From<crate::error::QueryObjectsError> for Error {
-    fn from(err: crate::error::QueryObjectsError) -> Self {
+impl From<crate::operation::query_objects::QueryObjectsError> for Error {
+    fn from(err: crate::operation::query_objects::QueryObjectsError) -> Self {
         match err {
-            crate::error::QueryObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::QueryObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::QueryObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::QueryObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::QueryObjectsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::query_objects::QueryObjectsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::query_objects::QueryObjectsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::query_objects::QueryObjectsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::query_objects::QueryObjectsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::query_objects::QueryObjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -348,19 +348,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>
         }
     }
 }
-impl From<crate::error::RemoveTagsError> for Error {
-    fn from(err: crate::error::RemoveTagsError) -> Self {
+impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
+    fn from(err: crate::operation::remove_tags::RemoveTagsError) -> Self {
         match err {
-            crate::error::RemoveTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::RemoveTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::RemoveTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::RemoveTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::RemoveTagsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::remove_tags::RemoveTagsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::remove_tags::RemoveTagsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::remove_tags::RemoveTagsError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::remove_tags::RemoveTagsError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::remove_tags::RemoveTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskProgressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ReportTaskProgressError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -372,20 +372,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskProgressE
         }
     }
 }
-impl From<crate::error::ReportTaskProgressError> for Error {
-    fn from(err: crate::error::ReportTaskProgressError) -> Self {
+impl From<crate::operation::report_task_progress::ReportTaskProgressError> for Error {
+    fn from(err: crate::operation::report_task_progress::ReportTaskProgressError) -> Self {
         match err {
-            crate::error::ReportTaskProgressError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ReportTaskProgressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ReportTaskProgressError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ReportTaskProgressError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ReportTaskProgressError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::ReportTaskProgressError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::operation::report_task_progress::ReportTaskProgressError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskRunnerHeartbeatError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ReportTaskRunnerHeartbeatError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -397,17 +397,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReportTaskRunnerHea
         }
     }
 }
-impl From<crate::error::ReportTaskRunnerHeartbeatError> for Error {
-    fn from(err: crate::error::ReportTaskRunnerHeartbeatError) -> Self {
+impl From<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError> for Error {
+    fn from(err: crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError) -> Self {
         match err {
-            crate::error::ReportTaskRunnerHeartbeatError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ReportTaskRunnerHeartbeatError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ReportTaskRunnerHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_status::SetStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_status::SetStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -419,19 +419,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetStatusError, R>>
         }
     }
 }
-impl From<crate::error::SetStatusError> for Error {
-    fn from(err: crate::error::SetStatusError) -> Self {
+impl From<crate::operation::set_status::SetStatusError> for Error {
+    fn from(err: crate::operation::set_status::SetStatusError) -> Self {
         match err {
-            crate::error::SetStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::SetStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::SetStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::SetStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::SetStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_status::SetStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::set_status::SetStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::set_status::SetStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::set_status::SetStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::set_status::SetStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetTaskStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetTaskStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_task_status::SetTaskStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_task_status::SetTaskStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -443,20 +443,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetTaskStatusError,
         }
     }
 }
-impl From<crate::error::SetTaskStatusError> for Error {
-    fn from(err: crate::error::SetTaskStatusError) -> Self {
+impl From<crate::operation::set_task_status::SetTaskStatusError> for Error {
+    fn from(err: crate::operation::set_task_status::SetTaskStatusError) -> Self {
         match err {
-            crate::error::SetTaskStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::SetTaskStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::SetTaskStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::SetTaskStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::SetTaskStatusError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
-            crate::error::SetTaskStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_task_status::SetTaskStatusError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::set_task_status::SetTaskStatusError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::set_task_status::SetTaskStatusError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::set_task_status::SetTaskStatusError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::set_task_status::SetTaskStatusError::TaskNotFoundException(inner) => Error::TaskNotFoundException(inner),
+            crate::operation::set_task_status::SetTaskStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidatePipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ValidatePipelineDefinitionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -468,14 +468,14 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidatePipelineDef
         }
     }
 }
-impl From<crate::error::ValidatePipelineDefinitionError> for Error {
-    fn from(err: crate::error::ValidatePipelineDefinitionError) -> Self {
+impl From<crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError> for Error {
+    fn from(err: crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError) -> Self {
         match err {
-            crate::error::ValidatePipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::error::ValidatePipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ValidatePipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
-            crate::error::ValidatePipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
-            crate::error::ValidatePipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::PipelineDeletedException(inner) => Error::PipelineDeletedException(inner),
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
-    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client connections.</p>
-    ConnectionLimitExceededException(crate::error::ConnectionLimitExceededException),
+    ConnectionLimitExceededException(crate::types::error::ConnectionLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving such an exception, the user must call <code>GetDataEndpoint</code> with <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next <code>GetMedia</code> call. </p>
-    InvalidEndpointException(crate::error::InvalidEndpointException),
+    InvalidEndpointException(crate::types::error::InvalidEndpointException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -31,8 +31,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -44,16 +44,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>> 
         }
     }
 }
-impl From<crate::error::GetMediaError> for Error {
-    fn from(err: crate::error::GetMediaError) -> Self {
+impl From<crate::operation::get_media::GetMediaError> for Error {
+    fn from(err: crate::operation::get_media::GetMediaError) -> Self {
         match err {
-            crate::error::GetMediaError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
-            crate::error::GetMediaError::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
-            crate::error::GetMediaError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::GetMediaError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
-            crate::error::GetMediaError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::error::GetMediaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetMediaError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_media::GetMediaError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_media::GetMediaError::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
+            crate::operation::get_media::GetMediaError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_media::GetMediaError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::get_media::GetMediaError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_media::GetMediaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_media::GetMediaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

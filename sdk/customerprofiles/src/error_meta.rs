@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The input you provided is invalid.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>An internal service error occurred.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource does not exist, or access was denied.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -28,8 +28,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddProfileKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddProfileKeyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -41,45 +41,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddProfileKeyError,
         }
     }
 }
-impl From<crate::error::AddProfileKeyError> for Error {
-    fn from(err: crate::error::AddProfileKeyError) -> Self {
+impl From<crate::operation::add_profile_key::AddProfileKeyError> for Error {
+    fn from(err: crate::operation::add_profile_key::AddProfileKeyError) -> Self {
         match err {
-            crate::error::AddProfileKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AddProfileKeyError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::AddProfileKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::AddProfileKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AddProfileKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AddProfileKeyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::add_profile_key::AddProfileKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDomainError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::CreateDomainError> for Error {
-    fn from(err: crate::error::CreateDomainError) -> Self {
-        match err {
-            crate::error::CreateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::CreateDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateDomainError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIntegrationWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateIntegrationWorkflowError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -91,45 +66,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateIntegrationWo
         }
     }
 }
-impl From<crate::error::CreateIntegrationWorkflowError> for Error {
-    fn from(err: crate::error::CreateIntegrationWorkflowError) -> Self {
+impl From<crate::operation::create_domain::CreateDomainError> for Error {
+    fn from(err: crate::operation::create_domain::CreateDomainError) -> Self {
         match err {
-            crate::error::CreateIntegrationWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateIntegrationWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::CreateIntegrationWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateIntegrationWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateIntegrationWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateIntegrationWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_domain::CreateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_domain::CreateDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_domain::CreateDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_domain::CreateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_domain::CreateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_domain::CreateDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProfileError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::CreateProfileError> for Error {
-    fn from(err: crate::error::CreateProfileError) -> Self {
-        match err {
-            crate::error::CreateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::CreateProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateProfileError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -141,45 +91,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, 
         }
     }
 }
-impl From<crate::error::DeleteDomainError> for Error {
-    fn from(err: crate::error::DeleteDomainError) -> Self {
+impl From<crate::operation::create_integration_workflow::CreateIntegrationWorkflowError> for Error {
+    fn from(err: crate::operation::create_integration_workflow::CreateIntegrationWorkflowError) -> Self {
         match err {
-            crate::error::DeleteDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIntegrationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DeleteIntegrationError> for Error {
-    fn from(err: crate::error::DeleteIntegrationError) -> Self {
-        match err {
-            crate::error::DeleteIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProfileError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -191,20 +116,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileError,
         }
     }
 }
-impl From<crate::error::DeleteProfileError> for Error {
-    fn from(err: crate::error::DeleteProfileError) -> Self {
+impl From<crate::operation::create_profile::CreateProfileError> for Error {
+    fn from(err: crate::operation::create_profile::CreateProfileError) -> Self {
         match err {
-            crate::error::DeleteProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteProfileError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_profile::CreateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_profile::CreateProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_profile::CreateProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_profile::CreateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_profile::CreateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_profile::CreateProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProfileKeyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_domain::DeleteDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_domain::DeleteDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -216,20 +141,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileKeyErr
         }
     }
 }
-impl From<crate::error::DeleteProfileKeyError> for Error {
-    fn from(err: crate::error::DeleteProfileKeyError) -> Self {
+impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
+    fn from(err: crate::operation::delete_domain::DeleteDomainError) -> Self {
         match err {
-            crate::error::DeleteProfileKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteProfileKeyError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteProfileKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteProfileKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteProfileKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteProfileKeyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_domain::DeleteDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_domain::DeleteDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_domain::DeleteDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_domain::DeleteDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_domain::DeleteDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_domain::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileObjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProfileObjectError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -241,20 +166,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileObject
         }
     }
 }
-impl From<crate::error::DeleteProfileObjectError> for Error {
-    fn from(err: crate::error::DeleteProfileObjectError) -> Self {
+impl From<crate::operation::delete_integration::DeleteIntegrationError> for Error {
+    fn from(err: crate::operation::delete_integration::DeleteIntegrationError) -> Self {
         match err {
-            crate::error::DeleteProfileObjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteProfileObjectError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteProfileObjectError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteProfileObjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteProfileObjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteProfileObjectError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProfileObjectTypeError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_profile::DeleteProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_profile::DeleteProfileError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -266,20 +191,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProfileObject
         }
     }
 }
-impl From<crate::error::DeleteProfileObjectTypeError> for Error {
-    fn from(err: crate::error::DeleteProfileObjectTypeError) -> Self {
+impl From<crate::operation::delete_profile::DeleteProfileError> for Error {
+    fn from(err: crate::operation::delete_profile::DeleteProfileError) -> Self {
         match err {
-            crate::error::DeleteProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_profile::DeleteProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_profile::DeleteProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_profile::DeleteProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_profile::DeleteProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile::DeleteProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_profile::DeleteProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteWorkflowError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -291,20 +216,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteWorkflowError
         }
     }
 }
-impl From<crate::error::DeleteWorkflowError> for Error {
-    fn from(err: crate::error::DeleteWorkflowError) -> Self {
+impl From<crate::operation::delete_profile_key::DeleteProfileKeyError> for Error {
+    fn from(err: crate::operation::delete_profile_key::DeleteProfileKeyError) -> Self {
         match err {
-            crate::error::DeleteWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::DeleteWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_profile_key::DeleteProfileKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAutoMergingPreviewError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAutoMergingPreviewError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_profile_object::DeleteProfileObjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_profile_object::DeleteProfileObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -316,20 +241,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAutoMergingPrevi
         }
     }
 }
-impl From<crate::error::GetAutoMergingPreviewError> for Error {
-    fn from(err: crate::error::GetAutoMergingPreviewError) -> Self {
+impl From<crate::operation::delete_profile_object::DeleteProfileObjectError> for Error {
+    fn from(err: crate::operation::delete_profile_object::DeleteProfileObjectError) -> Self {
         match err {
-            crate::error::GetAutoMergingPreviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAutoMergingPreviewError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetAutoMergingPreviewError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetAutoMergingPreviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetAutoMergingPreviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetAutoMergingPreviewError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_profile_object::DeleteProfileObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -341,20 +266,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>>
         }
     }
 }
-impl From<crate::error::GetDomainError> for Error {
-    fn from(err: crate::error::GetDomainError) -> Self {
+impl From<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError> for Error {
+    fn from(err: crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError) -> Self {
         match err {
-            crate::error::GetDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIdentityResolutionJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIdentityResolutionJobError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_workflow::DeleteWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_workflow::DeleteWorkflowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -366,20 +291,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIdentityResoluti
         }
     }
 }
-impl From<crate::error::GetIdentityResolutionJobError> for Error {
-    fn from(err: crate::error::GetIdentityResolutionJobError) -> Self {
+impl From<crate::operation::delete_workflow::DeleteWorkflowError> for Error {
+    fn from(err: crate::operation::delete_workflow::DeleteWorkflowError) -> Self {
         match err {
-            crate::error::GetIdentityResolutionJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetIdentityResolutionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetIdentityResolutionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetIdentityResolutionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetIdentityResolutionJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetIdentityResolutionJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIntegrationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -391,20 +316,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIntegrationError
         }
     }
 }
-impl From<crate::error::GetIntegrationError> for Error {
-    fn from(err: crate::error::GetIntegrationError) -> Self {
+impl From<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError> for Error {
+    fn from(err: crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError) -> Self {
         match err {
-            crate::error::GetIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMatchesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMatchesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_domain::GetDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_domain::GetDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -416,20 +341,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMatchesError, R>
         }
     }
 }
-impl From<crate::error::GetMatchesError> for Error {
-    fn from(err: crate::error::GetMatchesError) -> Self {
+impl From<crate::operation::get_domain::GetDomainError> for Error {
+    fn from(err: crate::operation::get_domain::GetDomainError) -> Self {
         match err {
-            crate::error::GetMatchesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetMatchesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetMatchesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetMatchesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetMatchesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetMatchesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_domain::GetDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_domain::GetDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_domain::GetDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_domain::GetDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_domain::GetDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_domain::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTypeError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -441,20 +366,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTyp
         }
     }
 }
-impl From<crate::error::GetProfileObjectTypeError> for Error {
-    fn from(err: crate::error::GetProfileObjectTypeError) -> Self {
+impl From<crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError> for Error {
+    fn from(err: crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError) -> Self {
         match err {
-            crate::error::GetProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTypeTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTypeTemplateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_integration::GetIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_integration::GetIntegrationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -466,20 +391,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProfileObjectTyp
         }
     }
 }
-impl From<crate::error::GetProfileObjectTypeTemplateError> for Error {
-    fn from(err: crate::error::GetProfileObjectTypeTemplateError) -> Self {
+impl From<crate::operation::get_integration::GetIntegrationError> for Error {
+    fn from(err: crate::operation::get_integration::GetIntegrationError) -> Self {
         match err {
-            crate::error::GetProfileObjectTypeTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetProfileObjectTypeTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetProfileObjectTypeTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetProfileObjectTypeTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetProfileObjectTypeTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetProfileObjectTypeTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_integration::GetIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_integration::GetIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_integration::GetIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_integration::GetIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_integration::GetIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_integration::GetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetWorkflowError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_matches::GetMatchesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_matches::GetMatchesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -491,20 +416,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWorkflowError, R
         }
     }
 }
-impl From<crate::error::GetWorkflowError> for Error {
-    fn from(err: crate::error::GetWorkflowError) -> Self {
+impl From<crate::operation::get_matches::GetMatchesError> for Error {
+    fn from(err: crate::operation::get_matches::GetMatchesError) -> Self {
         match err {
-            crate::error::GetWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_matches::GetMatchesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_matches::GetMatchesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_matches::GetMatchesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_matches::GetMatchesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_matches::GetMatchesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_matches::GetMatchesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWorkflowStepsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetWorkflowStepsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -516,20 +441,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetWorkflowStepsErr
         }
     }
 }
-impl From<crate::error::GetWorkflowStepsError> for Error {
-    fn from(err: crate::error::GetWorkflowStepsError) -> Self {
+impl From<crate::operation::get_profile_object_type::GetProfileObjectTypeError> for Error {
+    fn from(err: crate::operation::get_profile_object_type::GetProfileObjectTypeError) -> Self {
         match err {
-            crate::error::GetWorkflowStepsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetWorkflowStepsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::GetWorkflowStepsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetWorkflowStepsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetWorkflowStepsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetWorkflowStepsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_profile_object_type::GetProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountIntegrationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountIntegrationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -541,20 +466,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountIntegrat
         }
     }
 }
-impl From<crate::error::ListAccountIntegrationsError> for Error {
-    fn from(err: crate::error::ListAccountIntegrationsError) -> Self {
+impl From<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError> for Error {
+    fn from(err: crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError) -> Self {
         match err {
-            crate::error::ListAccountIntegrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAccountIntegrationsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListAccountIntegrationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAccountIntegrationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAccountIntegrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAccountIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -566,20 +491,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R
         }
     }
 }
-impl From<crate::error::ListDomainsError> for Error {
-    fn from(err: crate::error::ListDomainsError) -> Self {
+impl From<crate::operation::get_workflow::GetWorkflowError> for Error {
+    fn from(err: crate::operation::get_workflow::GetWorkflowError) -> Self {
         match err {
-            crate::error::ListDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListDomainsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListDomainsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_workflow::GetWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_workflow::GetWorkflowError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_workflow::GetWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_workflow::GetWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIdentityResolutionJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIdentityResolutionJobsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_workflow_steps::GetWorkflowStepsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_workflow_steps::GetWorkflowStepsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -591,20 +516,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIdentityResolut
         }
     }
 }
-impl From<crate::error::ListIdentityResolutionJobsError> for Error {
-    fn from(err: crate::error::ListIdentityResolutionJobsError) -> Self {
+impl From<crate::operation::get_workflow_steps::GetWorkflowStepsError> for Error {
+    fn from(err: crate::operation::get_workflow_steps::GetWorkflowStepsError) -> Self {
         match err {
-            crate::error::ListIdentityResolutionJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListIdentityResolutionJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListIdentityResolutionJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListIdentityResolutionJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListIdentityResolutionJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListIdentityResolutionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_workflow_steps::GetWorkflowStepsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIntegrationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIntegrationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_account_integrations::ListAccountIntegrationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_account_integrations::ListAccountIntegrationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -616,20 +541,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIntegrationsErr
         }
     }
 }
-impl From<crate::error::ListIntegrationsError> for Error {
-    fn from(err: crate::error::ListIntegrationsError) -> Self {
+impl From<crate::operation::list_account_integrations::ListAccountIntegrationsError> for Error {
+    fn from(err: crate::operation::list_account_integrations::ListAccountIntegrationsError) -> Self {
         match err {
-            crate::error::ListIntegrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListIntegrationsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListIntegrationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListIntegrationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListIntegrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_account_integrations::ListAccountIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProfileObjectsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_domains::ListDomainsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -641,20 +566,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectsE
         }
     }
 }
-impl From<crate::error::ListProfileObjectsError> for Error {
-    fn from(err: crate::error::ListProfileObjectsError) -> Self {
+impl From<crate::operation::list_domains::ListDomainsError> for Error {
+    fn from(err: crate::operation::list_domains::ListDomainsError) -> Self {
         match err {
-            crate::error::ListProfileObjectsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListProfileObjectsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListProfileObjectsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListProfileObjectsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListProfileObjectsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListProfileObjectsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_domains::ListDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_domains::ListDomainsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_domains::ListDomainsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_domains::ListDomainsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_domains::ListDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_domains::ListDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTypesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTypesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -666,20 +591,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTy
         }
     }
 }
-impl From<crate::error::ListProfileObjectTypesError> for Error {
-    fn from(err: crate::error::ListProfileObjectTypesError) -> Self {
+impl From<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError> for Error {
+    fn from(err: crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError) -> Self {
         match err {
-            crate::error::ListProfileObjectTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListProfileObjectTypesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListProfileObjectTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListProfileObjectTypesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListProfileObjectTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListProfileObjectTypesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTypeTemplatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTypeTemplatesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_integrations::ListIntegrationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_integrations::ListIntegrationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -691,20 +616,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProfileObjectTy
         }
     }
 }
-impl From<crate::error::ListProfileObjectTypeTemplatesError> for Error {
-    fn from(err: crate::error::ListProfileObjectTypeTemplatesError) -> Self {
+impl From<crate::operation::list_integrations::ListIntegrationsError> for Error {
+    fn from(err: crate::operation::list_integrations::ListIntegrationsError) -> Self {
         match err {
-            crate::error::ListProfileObjectTypeTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListProfileObjectTypeTemplatesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListProfileObjectTypeTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListProfileObjectTypeTemplatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListProfileObjectTypeTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListProfileObjectTypeTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_integrations::ListIntegrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -716,18 +641,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::list_profile_objects::ListProfileObjectsError> for Error {
+    fn from(err: crate::operation::list_profile_objects::ListProfileObjectsError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profile_objects::ListProfileObjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorkflowsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListWorkflowsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_profile_object_types::ListProfileObjectTypesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -739,20 +666,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListWorkflowsError,
         }
     }
 }
-impl From<crate::error::ListWorkflowsError> for Error {
-    fn from(err: crate::error::ListWorkflowsError) -> Self {
+impl From<crate::operation::list_profile_object_types::ListProfileObjectTypesError> for Error {
+    fn from(err: crate::operation::list_profile_object_types::ListProfileObjectTypesError) -> Self {
         match err {
-            crate::error::ListWorkflowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListWorkflowsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::ListWorkflowsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListWorkflowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListWorkflowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profile_object_types::ListProfileObjectTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergeProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::MergeProfilesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -764,19 +691,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergeProfilesError,
         }
     }
 }
-impl From<crate::error::MergeProfilesError> for Error {
-    fn from(err: crate::error::MergeProfilesError) -> Self {
+impl From<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError> for Error {
+    fn from(err: crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError) -> Self {
         match err {
-            crate::error::MergeProfilesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::MergeProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::MergeProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::MergeProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::MergeProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutIntegrationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -788,20 +716,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutIntegrationError
         }
     }
 }
-impl From<crate::error::PutIntegrationError> for Error {
-    fn from(err: crate::error::PutIntegrationError) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::error::PutIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::PutIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProfileObjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutProfileObjectError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -813,20 +739,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProfileObjectErr
         }
     }
 }
-impl From<crate::error::PutProfileObjectError> for Error {
-    fn from(err: crate::error::PutProfileObjectError) -> Self {
+impl From<crate::operation::list_workflows::ListWorkflowsError> for Error {
+    fn from(err: crate::operation::list_workflows::ListWorkflowsError) -> Self {
         match err {
-            crate::error::PutProfileObjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutProfileObjectError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::PutProfileObjectError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutProfileObjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutProfileObjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutProfileObjectError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_workflows::ListWorkflowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutProfileObjectTypeError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::merge_profiles::MergeProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::merge_profiles::MergeProfilesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -838,20 +764,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutProfileObjectTyp
         }
     }
 }
-impl From<crate::error::PutProfileObjectTypeError> for Error {
-    fn from(err: crate::error::PutProfileObjectTypeError) -> Self {
+impl From<crate::operation::merge_profiles::MergeProfilesError> for Error {
+    fn from(err: crate::operation::merge_profiles::MergeProfilesError) -> Self {
         match err {
-            crate::error::PutProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::PutProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::merge_profiles::MergeProfilesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::merge_profiles::MergeProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::merge_profiles::MergeProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::merge_profiles::MergeProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::merge_profiles::MergeProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchProfilesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_integration::PutIntegrationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_integration::PutIntegrationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -863,20 +788,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchProfilesError
         }
     }
 }
-impl From<crate::error::SearchProfilesError> for Error {
-    fn from(err: crate::error::SearchProfilesError) -> Self {
+impl From<crate::operation::put_integration::PutIntegrationError> for Error {
+    fn from(err: crate::operation::put_integration::PutIntegrationError) -> Self {
         match err {
-            crate::error::SearchProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SearchProfilesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::SearchProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::SearchProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::SearchProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::SearchProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_integration::PutIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_integration::PutIntegrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_integration::PutIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_integration::PutIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_integration::PutIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_integration::PutIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_profile_object::PutProfileObjectError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_profile_object::PutProfileObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -888,18 +813,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::put_profile_object::PutProfileObjectError> for Error {
+    fn from(err: crate::operation::put_profile_object::PutProfileObjectError) -> Self {
         match err {
-            crate::error::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_profile_object::PutProfileObjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_profile_object_type::PutProfileObjectTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -911,18 +838,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::put_profile_object_type::PutProfileObjectTypeError> for Error {
+    fn from(err: crate::operation::put_profile_object_type::PutProfileObjectTypeError) -> Self {
         match err {
-            crate::error::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::search_profiles::SearchProfilesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -934,20 +863,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainError, 
         }
     }
 }
-impl From<crate::error::UpdateDomainError> for Error {
-    fn from(err: crate::error::UpdateDomainError) -> Self {
+impl From<crate::operation::search_profiles::SearchProfilesError> for Error {
+    fn from(err: crate::operation::search_profiles::SearchProfilesError) -> Self {
         match err {
-            crate::error::UpdateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::UpdateDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::search_profiles::SearchProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_profiles::SearchProfilesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::search_profiles::SearchProfilesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::search_profiles::SearchProfilesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_profiles::SearchProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_profiles::SearchProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateProfileError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -959,15 +888,86 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateProfileError,
         }
     }
 }
-impl From<crate::error::UpdateProfileError> for Error {
-    fn from(err: crate::error::UpdateProfileError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::UpdateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::UpdateProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateProfileError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_domain::UpdateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_domain::UpdateDomainError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_domain::UpdateDomainError> for Error {
+    fn from(err: crate::operation::update_domain::UpdateDomainError) -> Self {
+        match err {
+            crate::operation::update_domain::UpdateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_domain::UpdateDomainError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_domain::UpdateDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_domain::UpdateDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_domain::UpdateDomainError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_domain::UpdateDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_profile::UpdateProfileError> for Error {
+    fn from(err: crate::operation::update_profile::UpdateProfileError) -> Self {
+        match err {
+            crate::operation::update_profile::UpdateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_profile::UpdateProfileError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_profile::UpdateProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_profile::UpdateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_profile::UpdateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_profile::UpdateProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

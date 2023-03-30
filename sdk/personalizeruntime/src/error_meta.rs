@@ -4,9 +4,9 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Provide a valid value for the field or parameter.</p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The specified resource does not exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -19,8 +19,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_personalized_ranking::GetPersonalizedRankingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_personalized_ranking::GetPersonalizedRankingError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -32,17 +32,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPersonalizedRank
         }
     }
 }
-impl From<crate::error::GetPersonalizedRankingError> for Error {
-    fn from(err: crate::error::GetPersonalizedRankingError) -> Self {
+impl From<crate::operation::get_personalized_ranking::GetPersonalizedRankingError> for Error {
+    fn from(err: crate::operation::get_personalized_ranking::GetPersonalizedRankingError) -> Self {
         match err {
-            crate::error::GetPersonalizedRankingError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetPersonalizedRankingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetPersonalizedRankingError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_personalized_ranking::GetPersonalizedRankingError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_personalized_ranking::GetPersonalizedRankingError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_personalized_ranking::GetPersonalizedRankingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_recommendations::GetRecommendationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -54,12 +54,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationsE
         }
     }
 }
-impl From<crate::error::GetRecommendationsError> for Error {
-    fn from(err: crate::error::GetRecommendationsError) -> Self {
+impl From<crate::operation::get_recommendations::GetRecommendationsError> for Error {
+    fn from(err: crate::operation::get_recommendations::GetRecommendationsError) -> Self {
         match err {
-            crate::error::GetRecommendationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_recommendations::GetRecommendationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_recommendations::GetRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_recommendations::GetRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

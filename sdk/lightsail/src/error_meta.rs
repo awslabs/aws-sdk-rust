@@ -4,21 +4,21 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
-    AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
+    AccountSetupInProgressException(crate::types::error::AccountSetupInProgressException),
     /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note> 
     /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p> 
     /// </note>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>Lightsail throws this exception when an operation fails to execute.</p>
-    OperationFailureException(crate::error::OperationFailureException),
+    OperationFailureException(crate::types::error::OperationFailureException),
     /// <p>A general service exception.</p>
-    ServiceException(crate::error::ServiceException),
+    ServiceException(crate::types::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
-    UnauthenticatedException(crate::error::UnauthenticatedException),
+    UnauthenticatedException(crate::types::error::UnauthenticatedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -36,8 +36,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AllocateStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AllocateStaticIpError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -49,22 +49,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AllocateStaticIpErr
         }
     }
 }
-impl From<crate::error::AllocateStaticIpError> for Error {
-    fn from(err: crate::error::AllocateStaticIpError) -> Self {
+impl From<crate::operation::allocate_static_ip::AllocateStaticIpError> for Error {
+    fn from(err: crate::operation::allocate_static_ip::AllocateStaticIpError) -> Self {
         match err {
-            crate::error::AllocateStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AllocateStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::AllocateStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AllocateStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AllocateStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AllocateStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AllocateStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AllocateStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachCertificateToDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachCertificateToDistributionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -76,21 +76,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachCertificateTo
         }
     }
 }
-impl From<crate::error::AttachCertificateToDistributionError> for Error {
-    fn from(err: crate::error::AttachCertificateToDistributionError) -> Self {
+impl From<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError> for Error {
+    fn from(err: crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError) -> Self {
         match err {
-            crate::error::AttachCertificateToDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachCertificateToDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AttachCertificateToDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AttachCertificateToDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AttachCertificateToDistributionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AttachCertificateToDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AttachCertificateToDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachDiskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_disk::AttachDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_disk::AttachDiskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -102,22 +102,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachDiskError, R>
         }
     }
 }
-impl From<crate::error::AttachDiskError> for Error {
-    fn from(err: crate::error::AttachDiskError) -> Self {
+impl From<crate::operation::attach_disk::AttachDiskError> for Error {
+    fn from(err: crate::operation::attach_disk::AttachDiskError) -> Self {
         match err {
-            crate::error::AttachDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::AttachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AttachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AttachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AttachDiskError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AttachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AttachDiskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_disk::AttachDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_disk::AttachDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::attach_disk::AttachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_disk::AttachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::attach_disk::AttachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_disk::AttachDiskError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::attach_disk::AttachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::attach_disk::AttachDiskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachInstancesToLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachInstancesToLoadBalancerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -129,22 +129,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachInstancesToLo
         }
     }
 }
-impl From<crate::error::AttachInstancesToLoadBalancerError> for Error {
-    fn from(err: crate::error::AttachInstancesToLoadBalancerError) -> Self {
+impl From<crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError> for Error {
+    fn from(err: crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError) -> Self {
         match err {
-            crate::error::AttachInstancesToLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AttachInstancesToLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachLoadBalancerTlsCertificateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -156,22 +156,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachLoadBalancerT
         }
     }
 }
-impl From<crate::error::AttachLoadBalancerTlsCertificateError> for Error {
-    fn from(err: crate::error::AttachLoadBalancerTlsCertificateError) -> Self {
+impl From<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError> for Error {
+    fn from(err: crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError) -> Self {
         match err {
-            crate::error::AttachLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AttachLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachStaticIpError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_static_ip::AttachStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_static_ip::AttachStaticIpError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -183,22 +183,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachStaticIpError
         }
     }
 }
-impl From<crate::error::AttachStaticIpError> for Error {
-    fn from(err: crate::error::AttachStaticIpError) -> Self {
+impl From<crate::operation::attach_static_ip::AttachStaticIpError> for Error {
+    fn from(err: crate::operation::attach_static_ip::AttachStaticIpError) -> Self {
         match err {
-            crate::error::AttachStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::AttachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AttachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::AttachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::AttachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::AttachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::AttachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloseInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CloseInstancePublicPortsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::close_instance_public_ports::CloseInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::close_instance_public_ports::CloseInstancePublicPortsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -210,22 +210,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CloseInstancePublic
         }
     }
 }
-impl From<crate::error::CloseInstancePublicPortsError> for Error {
-    fn from(err: crate::error::CloseInstancePublicPortsError) -> Self {
+impl From<crate::operation::close_instance_public_ports::CloseInstancePublicPortsError> for Error {
+    fn from(err: crate::operation::close_instance_public_ports::CloseInstancePublicPortsError) -> Self {
         match err {
-            crate::error::CloseInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CloseInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CloseInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CloseInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CloseInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CloseInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CloseInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CloseInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopySnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CopySnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::copy_snapshot::CopySnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::copy_snapshot::CopySnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -237,22 +237,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CopySnapshotError, 
         }
     }
 }
-impl From<crate::error::CopySnapshotError> for Error {
-    fn from(err: crate::error::CopySnapshotError) -> Self {
+impl From<crate::operation::copy_snapshot::CopySnapshotError> for Error {
+    fn from(err: crate::operation::copy_snapshot::CopySnapshotError) -> Self {
         match err {
-            crate::error::CopySnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CopySnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CopySnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CopySnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CopySnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CopySnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CopySnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CopySnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBucketError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_bucket::CreateBucketError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -264,19 +264,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBucketError, 
         }
     }
 }
-impl From<crate::error::CreateBucketError> for Error {
-    fn from(err: crate::error::CreateBucketError) -> Self {
+impl From<crate::operation::create_bucket::CreateBucketError> for Error {
+    fn from(err: crate::operation::create_bucket::CreateBucketError) -> Self {
         match err {
-            crate::error::CreateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateBucketError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateBucketError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_bucket::CreateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_bucket::CreateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_bucket::CreateBucketError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_bucket::CreateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_bucket::CreateBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBucketAccessKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBucketAccessKeyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_bucket_access_key::CreateBucketAccessKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_bucket_access_key::CreateBucketAccessKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -288,20 +288,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBucketAccessK
         }
     }
 }
-impl From<crate::error::CreateBucketAccessKeyError> for Error {
-    fn from(err: crate::error::CreateBucketAccessKeyError) -> Self {
+impl From<crate::operation::create_bucket_access_key::CreateBucketAccessKeyError> for Error {
+    fn from(err: crate::operation::create_bucket_access_key::CreateBucketAccessKeyError) -> Self {
         match err {
-            crate::error::CreateBucketAccessKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateBucketAccessKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateBucketAccessKeyError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateBucketAccessKeyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCertificateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -313,20 +313,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCertificateEr
         }
     }
 }
-impl From<crate::error::CreateCertificateError> for Error {
-    fn from(err: crate::error::CreateCertificateError) -> Self {
+impl From<crate::operation::create_certificate::CreateCertificateError> for Error {
+    fn from(err: crate::operation::create_certificate::CreateCertificateError) -> Self {
         match err {
-            crate::error::CreateCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateCertificateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_certificate::CreateCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_certificate::CreateCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_certificate::CreateCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_certificate::CreateCertificateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_certificate::CreateCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_certificate::CreateCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCloudFormationStackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCloudFormationStackError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -338,22 +338,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCloudFormatio
         }
     }
 }
-impl From<crate::error::CreateCloudFormationStackError> for Error {
-    fn from(err: crate::error::CreateCloudFormationStackError) -> Self {
+impl From<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError> for Error {
+    fn from(err: crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError) -> Self {
         match err {
-            crate::error::CreateCloudFormationStackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateCloudFormationStackError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateCloudFormationStackError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateCloudFormationStackError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateCloudFormationStackError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateCloudFormationStackError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateCloudFormationStackError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateCloudFormationStackError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContactMethodError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContactMethodError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_contact_method::CreateContactMethodError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -365,21 +365,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContactMethod
         }
     }
 }
-impl From<crate::error::CreateContactMethodError> for Error {
-    fn from(err: crate::error::CreateContactMethodError) -> Self {
+impl From<crate::operation::create_contact_method::CreateContactMethodError> for Error {
+    fn from(err: crate::operation::create_contact_method::CreateContactMethodError) -> Self {
         match err {
-            crate::error::CreateContactMethodError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateContactMethodError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateContactMethodError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateContactMethodError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateContactMethodError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateContactMethodError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_contact_method::CreateContactMethodError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_container_service::CreateContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_container_service::CreateContainerServiceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -391,20 +391,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServ
         }
     }
 }
-impl From<crate::error::CreateContainerServiceError> for Error {
-    fn from(err: crate::error::CreateContainerServiceError) -> Self {
+impl From<crate::operation::create_container_service::CreateContainerServiceError> for Error {
+    fn from(err: crate::operation::create_container_service::CreateContainerServiceError) -> Self {
         match err {
-            crate::error::CreateContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceDeploymentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceDeploymentError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -416,20 +416,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServ
         }
     }
 }
-impl From<crate::error::CreateContainerServiceDeploymentError> for Error {
-    fn from(err: crate::error::CreateContainerServiceDeploymentError) -> Self {
+impl From<crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError> for Error {
+    fn from(err: crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError) -> Self {
         match err {
-            crate::error::CreateContainerServiceDeploymentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateContainerServiceDeploymentError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateContainerServiceDeploymentError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateContainerServiceDeploymentError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateContainerServiceDeploymentError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateContainerServiceDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceRegistryLoginError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateContainerServiceRegistryLoginError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -441,20 +441,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateContainerServ
         }
     }
 }
-impl From<crate::error::CreateContainerServiceRegistryLoginError> for Error {
-    fn from(err: crate::error::CreateContainerServiceRegistryLoginError) -> Self {
+impl From<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError> for Error {
+    fn from(err: crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError) -> Self {
         match err {
-            crate::error::CreateContainerServiceRegistryLoginError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateContainerServiceRegistryLoginError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateContainerServiceRegistryLoginError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateContainerServiceRegistryLoginError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateContainerServiceRegistryLoginError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateContainerServiceRegistryLoginError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDiskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -466,22 +466,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskError, R>
         }
     }
 }
-impl From<crate::error::CreateDiskError> for Error {
-    fn from(err: crate::error::CreateDiskError) -> Self {
+impl From<crate::operation::create_disk::CreateDiskError> for Error {
+    fn from(err: crate::operation::create_disk::CreateDiskError) -> Self {
         match err {
-            crate::error::CreateDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDiskError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDiskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_disk::CreateDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_disk::CreateDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_disk::CreateDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_disk::CreateDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_disk::CreateDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_disk::CreateDiskError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_disk::CreateDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_disk::CreateDiskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDiskFromSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -493,22 +493,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskFromSnaps
         }
     }
 }
-impl From<crate::error::CreateDiskFromSnapshotError> for Error {
-    fn from(err: crate::error::CreateDiskFromSnapshotError) -> Self {
+impl From<crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError> for Error {
+    fn from(err: crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError) -> Self {
         match err {
-            crate::error::CreateDiskFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDiskFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateDiskFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDiskFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDiskFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDiskFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDiskFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDiskFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDiskSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -520,22 +520,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDiskSnapshotE
         }
     }
 }
-impl From<crate::error::CreateDiskSnapshotError> for Error {
-    fn from(err: crate::error::CreateDiskSnapshotError) -> Self {
+impl From<crate::operation::create_disk_snapshot::CreateDiskSnapshotError> for Error {
+    fn from(err: crate::operation::create_disk_snapshot::CreateDiskSnapshotError) -> Self {
         match err {
-            crate::error::CreateDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_distribution::CreateDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -547,21 +547,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDistributionE
         }
     }
 }
-impl From<crate::error::CreateDistributionError> for Error {
-    fn from(err: crate::error::CreateDistributionError) -> Self {
+impl From<crate::operation::create_distribution::CreateDistributionError> for Error {
+    fn from(err: crate::operation::create_distribution::CreateDistributionError) -> Self {
         match err {
-            crate::error::CreateDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDistributionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_distribution::CreateDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_distribution::CreateDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_distribution::CreateDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_distribution::CreateDistributionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_distribution::CreateDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_distribution::CreateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -573,22 +573,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDomainError, 
         }
     }
 }
-impl From<crate::error::CreateDomainError> for Error {
-    fn from(err: crate::error::CreateDomainError) -> Self {
+impl From<crate::operation::create_domain::CreateDomainError> for Error {
+    fn from(err: crate::operation::create_domain::CreateDomainError) -> Self {
         match err {
-            crate::error::CreateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDomainError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_domain::CreateDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_domain::CreateDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_domain::CreateDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_domain::CreateDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_domain::CreateDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_domain::CreateDomainError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_domain::CreateDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_domain::CreateDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDomainEntryError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -600,22 +600,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDomainEntryEr
         }
     }
 }
-impl From<crate::error::CreateDomainEntryError> for Error {
-    fn from(err: crate::error::CreateDomainEntryError) -> Self {
+impl From<crate::operation::create_domain_entry::CreateDomainEntryError> for Error {
+    fn from(err: crate::operation::create_domain_entry::CreateDomainEntryError) -> Self {
         match err {
-            crate::error::CreateDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_domain_entry::CreateDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateInstancesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -627,22 +627,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstancesErro
         }
     }
 }
-impl From<crate::error::CreateInstancesError> for Error {
-    fn from(err: crate::error::CreateInstancesError) -> Self {
+impl From<crate::operation::create_instances::CreateInstancesError> for Error {
+    fn from(err: crate::operation::create_instances::CreateInstancesError) -> Self {
         match err {
-            crate::error::CreateInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateInstancesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateInstancesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_instances::CreateInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_instances::CreateInstancesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_instances::CreateInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_instances::CreateInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_instances::CreateInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_instances::CreateInstancesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_instances::CreateInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_instances::CreateInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstancesFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateInstancesFromSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -654,22 +654,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstancesFrom
         }
     }
 }
-impl From<crate::error::CreateInstancesFromSnapshotError> for Error {
-    fn from(err: crate::error::CreateInstancesFromSnapshotError) -> Self {
+impl From<crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError> for Error {
+    fn from(err: crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError) -> Self {
         match err {
-            crate::error::CreateInstancesFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateInstancesFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateInstancesFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateInstancesFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateInstancesFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateInstancesFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateInstancesFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateInstancesFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateInstanceSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -681,22 +681,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstanceSnaps
         }
     }
 }
-impl From<crate::error::CreateInstanceSnapshotError> for Error {
-    fn from(err: crate::error::CreateInstanceSnapshotError) -> Self {
+impl From<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError> for Error {
+    fn from(err: crate::operation::create_instance_snapshot::CreateInstanceSnapshotError) -> Self {
         match err {
-            crate::error::CreateInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateKeyPairError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -708,22 +708,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateKeyPairError,
         }
     }
 }
-impl From<crate::error::CreateKeyPairError> for Error {
-    fn from(err: crate::error::CreateKeyPairError) -> Self {
+impl From<crate::operation::create_key_pair::CreateKeyPairError> for Error {
+    fn from(err: crate::operation::create_key_pair::CreateKeyPairError) -> Self {
         match err {
-            crate::error::CreateKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -735,22 +735,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerE
         }
     }
 }
-impl From<crate::error::CreateLoadBalancerError> for Error {
-    fn from(err: crate::error::CreateLoadBalancerError) -> Self {
+impl From<crate::operation::create_load_balancer::CreateLoadBalancerError> for Error {
+    fn from(err: crate::operation::create_load_balancer::CreateLoadBalancerError) -> Self {
         match err {
-            crate::error::CreateLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerTlsCertificateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -762,22 +762,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerT
         }
     }
 }
-impl From<crate::error::CreateLoadBalancerTlsCertificateError> for Error {
-    fn from(err: crate::error::CreateLoadBalancerTlsCertificateError) -> Self {
+impl From<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError> for Error {
+    fn from(err: crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError) -> Self {
         match err {
-            crate::error::CreateLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -789,22 +789,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDat
         }
     }
 }
-impl From<crate::error::CreateRelationalDatabaseError> for Error {
-    fn from(err: crate::error::CreateRelationalDatabaseError) -> Self {
+impl From<crate::operation::create_relational_database::CreateRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::create_relational_database::CreateRelationalDatabaseError) -> Self {
         match err {
-            crate::error::CreateRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseFromSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -816,22 +816,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDat
         }
     }
 }
-impl From<crate::error::CreateRelationalDatabaseFromSnapshotError> for Error {
-    fn from(err: crate::error::CreateRelationalDatabaseFromSnapshotError) -> Self {
+impl From<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError> for Error {
+    fn from(err: crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError) -> Self {
         match err {
-            crate::error::CreateRelationalDatabaseFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateRelationalDatabaseFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRelationalDatabaseSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -843,22 +843,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRelationalDat
         }
     }
 }
-impl From<crate::error::CreateRelationalDatabaseSnapshotError> for Error {
-    fn from(err: crate::error::CreateRelationalDatabaseSnapshotError) -> Self {
+impl From<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError> for Error {
+    fn from(err: crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError) -> Self {
         match err {
-            crate::error::CreateRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::CreateRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAlarmError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_alarm::DeleteAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_alarm::DeleteAlarmError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -870,21 +870,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAlarmError, R
         }
     }
 }
-impl From<crate::error::DeleteAlarmError> for Error {
-    fn from(err: crate::error::DeleteAlarmError) -> Self {
+impl From<crate::operation::delete_alarm::DeleteAlarmError> for Error {
+    fn from(err: crate::operation::delete_alarm::DeleteAlarmError) -> Self {
         match err {
-            crate::error::DeleteAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteAlarmError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteAlarmError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAutoSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAutoSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -896,21 +896,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAutoSnapshotE
         }
     }
 }
-impl From<crate::error::DeleteAutoSnapshotError> for Error {
-    fn from(err: crate::error::DeleteAutoSnapshotError) -> Self {
+impl From<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError> for Error {
+    fn from(err: crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError) -> Self {
         match err {
-            crate::error::DeleteAutoSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteAutoSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteAutoSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteAutoSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteAutoSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteAutoSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteAutoSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBucketError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_bucket::DeleteBucketError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -922,20 +922,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketError, 
         }
     }
 }
-impl From<crate::error::DeleteBucketError> for Error {
-    fn from(err: crate::error::DeleteBucketError) -> Self {
+impl From<crate::operation::delete_bucket::DeleteBucketError> for Error {
+    fn from(err: crate::operation::delete_bucket::DeleteBucketError) -> Self {
         match err {
-            crate::error::DeleteBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteBucketError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteBucketError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_bucket::DeleteBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketAccessKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBucketAccessKeyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -947,20 +947,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBucketAccessK
         }
     }
 }
-impl From<crate::error::DeleteBucketAccessKeyError> for Error {
-    fn from(err: crate::error::DeleteBucketAccessKeyError) -> Self {
+impl From<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError> for Error {
+    fn from(err: crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError) -> Self {
         match err {
-            crate::error::DeleteBucketAccessKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteBucketAccessKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteBucketAccessKeyError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteBucketAccessKeyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteCertificateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_certificate::DeleteCertificateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -972,20 +972,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCertificateEr
         }
     }
 }
-impl From<crate::error::DeleteCertificateError> for Error {
-    fn from(err: crate::error::DeleteCertificateError) -> Self {
+impl From<crate::operation::delete_certificate::DeleteCertificateError> for Error {
+    fn from(err: crate::operation::delete_certificate::DeleteCertificateError) -> Self {
         match err {
-            crate::error::DeleteCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteCertificateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContactMethodError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContactMethodError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_contact_method::DeleteContactMethodError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -997,21 +997,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContactMethod
         }
     }
 }
-impl From<crate::error::DeleteContactMethodError> for Error {
-    fn from(err: crate::error::DeleteContactMethodError) -> Self {
+impl From<crate::operation::delete_contact_method::DeleteContactMethodError> for Error {
+    fn from(err: crate::operation::delete_contact_method::DeleteContactMethodError) -> Self {
         match err {
-            crate::error::DeleteContactMethodError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteContactMethodError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteContactMethodError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteContactMethodError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteContactMethodError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteContactMethodError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_contact_method::DeleteContactMethodError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerImageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContainerImageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_container_image::DeleteContainerImageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_container_image::DeleteContainerImageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1023,20 +1023,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerImag
         }
     }
 }
-impl From<crate::error::DeleteContainerImageError> for Error {
-    fn from(err: crate::error::DeleteContainerImageError) -> Self {
+impl From<crate::operation::delete_container_image::DeleteContainerImageError> for Error {
+    fn from(err: crate::operation::delete_container_image::DeleteContainerImageError) -> Self {
         match err {
-            crate::error::DeleteContainerImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteContainerImageError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteContainerImageError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteContainerImageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteContainerServiceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_container_service::DeleteContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_container_service::DeleteContainerServiceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1048,20 +1048,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteContainerServ
         }
     }
 }
-impl From<crate::error::DeleteContainerServiceError> for Error {
-    fn from(err: crate::error::DeleteContainerServiceError) -> Self {
+impl From<crate::operation::delete_container_service::DeleteContainerServiceError> for Error {
+    fn from(err: crate::operation::delete_container_service::DeleteContainerServiceError) -> Self {
         match err {
-            crate::error::DeleteContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDiskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_disk::DeleteDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_disk::DeleteDiskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1073,22 +1073,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDiskError, R>
         }
     }
 }
-impl From<crate::error::DeleteDiskError> for Error {
-    fn from(err: crate::error::DeleteDiskError) -> Self {
+impl From<crate::operation::delete_disk::DeleteDiskError> for Error {
+    fn from(err: crate::operation::delete_disk::DeleteDiskError) -> Self {
         match err {
-            crate::error::DeleteDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteDiskError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteDiskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_disk::DeleteDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_disk::DeleteDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_disk::DeleteDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_disk::DeleteDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_disk::DeleteDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_disk::DeleteDiskError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_disk::DeleteDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_disk::DeleteDiskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDiskSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1100,22 +1100,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDiskSnapshotE
         }
     }
 }
-impl From<crate::error::DeleteDiskSnapshotError> for Error {
-    fn from(err: crate::error::DeleteDiskSnapshotError) -> Self {
+impl From<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError> for Error {
+    fn from(err: crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError) -> Self {
         match err {
-            crate::error::DeleteDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDistributionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_distribution::DeleteDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_distribution::DeleteDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1127,21 +1127,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDistributionE
         }
     }
 }
-impl From<crate::error::DeleteDistributionError> for Error {
-    fn from(err: crate::error::DeleteDistributionError) -> Self {
+impl From<crate::operation::delete_distribution::DeleteDistributionError> for Error {
+    fn from(err: crate::operation::delete_distribution::DeleteDistributionError) -> Self {
         match err {
-            crate::error::DeleteDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteDistributionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_distribution::DeleteDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_domain::DeleteDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_domain::DeleteDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1153,22 +1153,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, 
         }
     }
 }
-impl From<crate::error::DeleteDomainError> for Error {
-    fn from(err: crate::error::DeleteDomainError) -> Self {
+impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
+    fn from(err: crate::operation::delete_domain::DeleteDomainError) -> Self {
         match err {
-            crate::error::DeleteDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteDomainError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_domain::DeleteDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_domain::DeleteDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_domain::DeleteDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_domain::DeleteDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_domain::DeleteDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_domain::DeleteDomainError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_domain::DeleteDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_domain::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDomainEntryError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_domain_entry::DeleteDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_domain_entry::DeleteDomainEntryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1180,22 +1180,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainEntryEr
         }
     }
 }
-impl From<crate::error::DeleteDomainEntryError> for Error {
-    fn from(err: crate::error::DeleteDomainEntryError) -> Self {
+impl From<crate::operation::delete_domain_entry::DeleteDomainEntryError> for Error {
+    fn from(err: crate::operation::delete_domain_entry::DeleteDomainEntryError) -> Self {
         match err {
-            crate::error::DeleteDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteInstanceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_instance::DeleteInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_instance::DeleteInstanceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1207,22 +1207,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceError
         }
     }
 }
-impl From<crate::error::DeleteInstanceError> for Error {
-    fn from(err: crate::error::DeleteInstanceError) -> Self {
+impl From<crate::operation::delete_instance::DeleteInstanceError> for Error {
+    fn from(err: crate::operation::delete_instance::DeleteInstanceError) -> Self {
         match err {
-            crate::error::DeleteInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteInstanceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_instance::DeleteInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteInstanceSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1234,22 +1234,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceSnaps
         }
     }
 }
-impl From<crate::error::DeleteInstanceSnapshotError> for Error {
-    fn from(err: crate::error::DeleteInstanceSnapshotError) -> Self {
+impl From<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError> for Error {
+    fn from(err: crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError) -> Self {
         match err {
-            crate::error::DeleteInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteKeyPairError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_key_pair::DeleteKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_key_pair::DeleteKeyPairError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1261,22 +1261,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKeyPairError,
         }
     }
 }
-impl From<crate::error::DeleteKeyPairError> for Error {
-    fn from(err: crate::error::DeleteKeyPairError) -> Self {
+impl From<crate::operation::delete_key_pair::DeleteKeyPairError> for Error {
+    fn from(err: crate::operation::delete_key_pair::DeleteKeyPairError) -> Self {
         match err {
-            crate::error::DeleteKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKnownHostKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteKnownHostKeysError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_known_host_keys::DeleteKnownHostKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_known_host_keys::DeleteKnownHostKeysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1288,22 +1288,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteKnownHostKeys
         }
     }
 }
-impl From<crate::error::DeleteKnownHostKeysError> for Error {
-    fn from(err: crate::error::DeleteKnownHostKeysError) -> Self {
+impl From<crate::operation::delete_known_host_keys::DeleteKnownHostKeysError> for Error {
+    fn from(err: crate::operation::delete_known_host_keys::DeleteKnownHostKeysError) -> Self {
         match err {
-            crate::error::DeleteKnownHostKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteKnownHostKeysError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteKnownHostKeysError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteKnownHostKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteKnownHostKeysError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteKnownHostKeysError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteKnownHostKeysError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteKnownHostKeysError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer::DeleteLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer::DeleteLoadBalancerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1315,22 +1315,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerE
         }
     }
 }
-impl From<crate::error::DeleteLoadBalancerError> for Error {
-    fn from(err: crate::error::DeleteLoadBalancerError) -> Self {
+impl From<crate::operation::delete_load_balancer::DeleteLoadBalancerError> for Error {
+    fn from(err: crate::operation::delete_load_balancer::DeleteLoadBalancerError) -> Self {
         match err {
-            crate::error::DeleteLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerTlsCertificateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1342,22 +1342,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerT
         }
     }
 }
-impl From<crate::error::DeleteLoadBalancerTlsCertificateError> for Error {
-    fn from(err: crate::error::DeleteLoadBalancerTlsCertificateError) -> Self {
+impl From<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError> for Error {
+    fn from(err: crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError) -> Self {
         match err {
-            crate::error::DeleteLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_relational_database::DeleteRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1369,22 +1369,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDat
         }
     }
 }
-impl From<crate::error::DeleteRelationalDatabaseError> for Error {
-    fn from(err: crate::error::DeleteRelationalDatabaseError) -> Self {
+impl From<crate::operation::delete_relational_database::DeleteRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::delete_relational_database::DeleteRelationalDatabaseError) -> Self {
         match err {
-            crate::error::DeleteRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDatabaseSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1396,22 +1396,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRelationalDat
         }
     }
 }
-impl From<crate::error::DeleteRelationalDatabaseSnapshotError> for Error {
-    fn from(err: crate::error::DeleteRelationalDatabaseSnapshotError) -> Self {
+impl From<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError> for Error {
+    fn from(err: crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError) -> Self {
         match err {
-            crate::error::DeleteRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DeleteRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachCertificateFromDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachCertificateFromDistributionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1423,21 +1423,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachCertificateFr
         }
     }
 }
-impl From<crate::error::DetachCertificateFromDistributionError> for Error {
-    fn from(err: crate::error::DetachCertificateFromDistributionError) -> Self {
+impl From<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError> for Error {
+    fn from(err: crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError) -> Self {
         match err {
-            crate::error::DetachCertificateFromDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachCertificateFromDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DetachCertificateFromDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DetachCertificateFromDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DetachCertificateFromDistributionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DetachCertificateFromDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DetachCertificateFromDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachDiskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_disk::DetachDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_disk::DetachDiskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1449,22 +1449,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachDiskError, R>
         }
     }
 }
-impl From<crate::error::DetachDiskError> for Error {
-    fn from(err: crate::error::DetachDiskError) -> Self {
+impl From<crate::operation::detach_disk::DetachDiskError> for Error {
+    fn from(err: crate::operation::detach_disk::DetachDiskError) -> Self {
         match err {
-            crate::error::DetachDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DetachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DetachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DetachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DetachDiskError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DetachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DetachDiskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_disk::DetachDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_disk::DetachDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::detach_disk::DetachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::detach_disk::DetachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::detach_disk::DetachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_disk::DetachDiskError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::detach_disk::DetachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::detach_disk::DetachDiskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachInstancesFromLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachInstancesFromLoadBalancerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1476,22 +1476,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachInstancesFrom
         }
     }
 }
-impl From<crate::error::DetachInstancesFromLoadBalancerError> for Error {
-    fn from(err: crate::error::DetachInstancesFromLoadBalancerError) -> Self {
+impl From<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError> for Error {
+    fn from(err: crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError) -> Self {
         match err {
-            crate::error::DetachInstancesFromLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DetachInstancesFromLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachStaticIpError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_static_ip::DetachStaticIpError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1503,22 +1503,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachStaticIpError
         }
     }
 }
-impl From<crate::error::DetachStaticIpError> for Error {
-    fn from(err: crate::error::DetachStaticIpError) -> Self {
+impl From<crate::operation::detach_static_ip::DetachStaticIpError> for Error {
+    fn from(err: crate::operation::detach_static_ip::DetachStaticIpError) -> Self {
         match err {
-            crate::error::DetachStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DetachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DetachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DetachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DetachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DetachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DetachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableAddOnError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableAddOnError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disable_add_on::DisableAddOnError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disable_add_on::DisableAddOnError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1530,21 +1530,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableAddOnError, 
         }
     }
 }
-impl From<crate::error::DisableAddOnError> for Error {
-    fn from(err: crate::error::DisableAddOnError) -> Self {
+impl From<crate::operation::disable_add_on::DisableAddOnError> for Error {
+    fn from(err: crate::operation::disable_add_on::DisableAddOnError) -> Self {
         match err {
-            crate::error::DisableAddOnError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DisableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DisableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DisableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DisableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DisableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disable_add_on::DisableAddOnError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DownloadDefaultKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DownloadDefaultKeyPairError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1556,22 +1556,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DownloadDefaultKeyP
         }
     }
 }
-impl From<crate::error::DownloadDefaultKeyPairError> for Error {
-    fn from(err: crate::error::DownloadDefaultKeyPairError) -> Self {
+impl From<crate::operation::download_default_key_pair::DownloadDefaultKeyPairError> for Error {
+    fn from(err: crate::operation::download_default_key_pair::DownloadDefaultKeyPairError) -> Self {
         match err {
-            crate::error::DownloadDefaultKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DownloadDefaultKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::DownloadDefaultKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DownloadDefaultKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::DownloadDefaultKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::DownloadDefaultKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::DownloadDefaultKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::DownloadDefaultKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAddOnError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableAddOnError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::enable_add_on::EnableAddOnError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::enable_add_on::EnableAddOnError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1583,21 +1583,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableAddOnError, R
         }
     }
 }
-impl From<crate::error::EnableAddOnError> for Error {
-    fn from(err: crate::error::EnableAddOnError) -> Self {
+impl From<crate::operation::enable_add_on::EnableAddOnError> for Error {
+    fn from(err: crate::operation::enable_add_on::EnableAddOnError) -> Self {
         match err {
-            crate::error::EnableAddOnError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::EnableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::EnableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::EnableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::EnableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::EnableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::EnableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::enable_add_on::EnableAddOnError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ExportSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_snapshot::ExportSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_snapshot::ExportSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1609,22 +1609,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExportSnapshotError
         }
     }
 }
-impl From<crate::error::ExportSnapshotError> for Error {
-    fn from(err: crate::error::ExportSnapshotError) -> Self {
+impl From<crate::operation::export_snapshot::ExportSnapshotError> for Error {
+    fn from(err: crate::operation::export_snapshot::ExportSnapshotError) -> Self {
         match err {
-            crate::error::ExportSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ExportSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::ExportSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ExportSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ExportSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::ExportSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ExportSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::ExportSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetActiveNamesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetActiveNamesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_active_names::GetActiveNamesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_active_names::GetActiveNamesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1636,22 +1636,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetActiveNamesError
         }
     }
 }
-impl From<crate::error::GetActiveNamesError> for Error {
-    fn from(err: crate::error::GetActiveNamesError) -> Self {
+impl From<crate::operation::get_active_names::GetActiveNamesError> for Error {
+    fn from(err: crate::operation::get_active_names::GetActiveNamesError) -> Self {
         match err {
-            crate::error::GetActiveNamesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetActiveNamesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetActiveNamesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetActiveNamesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetActiveNamesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetActiveNamesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetActiveNamesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetActiveNamesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_active_names::GetActiveNamesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAlarmsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAlarmsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_alarms::GetAlarmsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_alarms::GetAlarmsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1663,21 +1663,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAlarmsError, R>>
         }
     }
 }
-impl From<crate::error::GetAlarmsError> for Error {
-    fn from(err: crate::error::GetAlarmsError) -> Self {
+impl From<crate::operation::get_alarms::GetAlarmsError> for Error {
+    fn from(err: crate::operation::get_alarms::GetAlarmsError) -> Self {
         match err {
-            crate::error::GetAlarmsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAlarmsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetAlarmsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetAlarmsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetAlarmsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetAlarmsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetAlarmsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_alarms::GetAlarmsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_alarms::GetAlarmsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_alarms::GetAlarmsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_alarms::GetAlarmsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_alarms::GetAlarmsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_alarms::GetAlarmsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_alarms::GetAlarmsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAutoSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAutoSnapshotsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_auto_snapshots::GetAutoSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_auto_snapshots::GetAutoSnapshotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1689,21 +1689,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAutoSnapshotsErr
         }
     }
 }
-impl From<crate::error::GetAutoSnapshotsError> for Error {
-    fn from(err: crate::error::GetAutoSnapshotsError) -> Self {
+impl From<crate::operation::get_auto_snapshots::GetAutoSnapshotsError> for Error {
+    fn from(err: crate::operation::get_auto_snapshots::GetAutoSnapshotsError) -> Self {
         match err {
-            crate::error::GetAutoSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAutoSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetAutoSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetAutoSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetAutoSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetAutoSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetAutoSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBlueprintsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBlueprintsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_blueprints::GetBlueprintsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1715,22 +1715,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBlueprintsError,
         }
     }
 }
-impl From<crate::error::GetBlueprintsError> for Error {
-    fn from(err: crate::error::GetBlueprintsError) -> Self {
+impl From<crate::operation::get_blueprints::GetBlueprintsError> for Error {
+    fn from(err: crate::operation::get_blueprints::GetBlueprintsError) -> Self {
         match err {
-            crate::error::GetBlueprintsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBlueprintsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetBlueprintsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBlueprintsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetBlueprintsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetBlueprintsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBlueprintsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketAccessKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketAccessKeysError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bucket_access_keys::GetBucketAccessKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_bucket_access_keys::GetBucketAccessKeysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1742,20 +1742,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketAccessKeys
         }
     }
 }
-impl From<crate::error::GetBucketAccessKeysError> for Error {
-    fn from(err: crate::error::GetBucketAccessKeysError) -> Self {
+impl From<crate::operation::get_bucket_access_keys::GetBucketAccessKeysError> for Error {
+    fn from(err: crate::operation::get_bucket_access_keys::GetBucketAccessKeysError) -> Self {
         match err {
-            crate::error::GetBucketAccessKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBucketAccessKeysError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBucketAccessKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetBucketAccessKeysError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBucketAccessKeysError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBucketAccessKeysError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketBundlesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_bucket_bundles::GetBucketBundlesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1767,19 +1767,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketBundlesErr
         }
     }
 }
-impl From<crate::error::GetBucketBundlesError> for Error {
-    fn from(err: crate::error::GetBucketBundlesError) -> Self {
+impl From<crate::operation::get_bucket_bundles::GetBucketBundlesError> for Error {
+    fn from(err: crate::operation::get_bucket_bundles::GetBucketBundlesError) -> Self {
         match err {
-            crate::error::GetBucketBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBucketBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBucketBundlesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBucketBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBucketBundlesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_bucket_metric_data::GetBucketMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1791,20 +1791,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketMetricData
         }
     }
 }
-impl From<crate::error::GetBucketMetricDataError> for Error {
-    fn from(err: crate::error::GetBucketMetricDataError) -> Self {
+impl From<crate::operation::get_bucket_metric_data::GetBucketMetricDataError> for Error {
+    fn from(err: crate::operation::get_bucket_metric_data::GetBucketMetricDataError) -> Self {
         match err {
-            crate::error::GetBucketMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBucketMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBucketMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetBucketMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBucketMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBucketMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBucketsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_buckets::GetBucketsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_buckets::GetBucketsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1816,20 +1816,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBucketsError, R>
         }
     }
 }
-impl From<crate::error::GetBucketsError> for Error {
-    fn from(err: crate::error::GetBucketsError) -> Self {
+impl From<crate::operation::get_buckets::GetBucketsError> for Error {
+    fn from(err: crate::operation::get_buckets::GetBucketsError) -> Self {
         match err {
-            crate::error::GetBucketsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBucketsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBucketsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetBucketsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBucketsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBucketsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_buckets::GetBucketsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_buckets::GetBucketsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_buckets::GetBucketsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_buckets::GetBucketsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_buckets::GetBucketsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_buckets::GetBucketsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBundlesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_bundles::GetBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_bundles::GetBundlesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1841,22 +1841,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBundlesError, R>
         }
     }
 }
-impl From<crate::error::GetBundlesError> for Error {
-    fn from(err: crate::error::GetBundlesError) -> Self {
+impl From<crate::operation::get_bundles::GetBundlesError> for Error {
+    fn from(err: crate::operation::get_bundles::GetBundlesError) -> Self {
         match err {
-            crate::error::GetBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetBundlesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetBundlesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetBundlesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_bundles::GetBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_bundles::GetBundlesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_bundles::GetBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_bundles::GetBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bundles::GetBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_bundles::GetBundlesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_bundles::GetBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_bundles::GetBundlesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCertificatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCertificatesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1868,20 +1868,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCertificatesErro
         }
     }
 }
-impl From<crate::error::GetCertificatesError> for Error {
-    fn from(err: crate::error::GetCertificatesError) -> Self {
+impl From<crate::operation::get_certificates::GetCertificatesError> for Error {
+    fn from(err: crate::operation::get_certificates::GetCertificatesError) -> Self {
         match err {
-            crate::error::GetCertificatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetCertificatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetCertificatesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetCertificatesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetCertificatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_certificates::GetCertificatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_certificates::GetCertificatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_certificates::GetCertificatesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_certificates::GetCertificatesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_certificates::GetCertificatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_certificates::GetCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCloudFormationStackRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCloudFormationStackRecordsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1893,22 +1893,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCloudFormationSt
         }
     }
 }
-impl From<crate::error::GetCloudFormationStackRecordsError> for Error {
-    fn from(err: crate::error::GetCloudFormationStackRecordsError) -> Self {
+impl From<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError> for Error {
+    fn from(err: crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError) -> Self {
         match err {
-            crate::error::GetCloudFormationStackRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetCloudFormationStackRecordsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetCloudFormationStackRecordsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetCloudFormationStackRecordsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetCloudFormationStackRecordsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetCloudFormationStackRecordsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetCloudFormationStackRecordsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetCloudFormationStackRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContactMethodsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContactMethodsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1920,21 +1920,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContactMethodsEr
         }
     }
 }
-impl From<crate::error::GetContactMethodsError> for Error {
-    fn from(err: crate::error::GetContactMethodsError) -> Self {
+impl From<crate::operation::get_contact_methods::GetContactMethodsError> for Error {
+    fn from(err: crate::operation::get_contact_methods::GetContactMethodsError) -> Self {
         match err {
-            crate::error::GetContactMethodsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContactMethodsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContactMethodsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContactMethodsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetContactMethodsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContactMethodsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContactMethodsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_contact_methods::GetContactMethodsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerAPIMetadataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerAPIMetadataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_api_metadata::GetContainerAPIMetadataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_api_metadata::GetContainerAPIMetadataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1946,18 +1946,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerAPIMeta
         }
     }
 }
-impl From<crate::error::GetContainerAPIMetadataError> for Error {
-    fn from(err: crate::error::GetContainerAPIMetadataError) -> Self {
+impl From<crate::operation::get_container_api_metadata::GetContainerAPIMetadataError> for Error {
+    fn from(err: crate::operation::get_container_api_metadata::GetContainerAPIMetadataError) -> Self {
         match err {
-            crate::error::GetContainerAPIMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerAPIMetadataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerAPIMetadataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerAPIMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerImagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerImagesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_images::GetContainerImagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_images::GetContainerImagesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1969,20 +1969,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerImagesE
         }
     }
 }
-impl From<crate::error::GetContainerImagesError> for Error {
-    fn from(err: crate::error::GetContainerImagesError) -> Self {
+impl From<crate::operation::get_container_images::GetContainerImagesError> for Error {
+    fn from(err: crate::operation::get_container_images::GetContainerImagesError) -> Self {
         match err {
-            crate::error::GetContainerImagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerImagesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerImagesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerImagesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerImagesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerImagesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_images::GetContainerImagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerLogError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerLogError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1994,20 +1994,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerLogErro
         }
     }
 }
-impl From<crate::error::GetContainerLogError> for Error {
-    fn from(err: crate::error::GetContainerLogError) -> Self {
+impl From<crate::operation::get_container_log::GetContainerLogError> for Error {
+    fn from(err: crate::operation::get_container_log::GetContainerLogError) -> Self {
         match err {
-            crate::error::GetContainerLogError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerLogError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerLogError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerLogError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerLogError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerLogError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_log::GetContainerLogError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_log::GetContainerLogError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_log::GetContainerLogError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_log::GetContainerLogError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_log::GetContainerLogError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_log::GetContainerLogError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerServiceDeploymentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerServiceDeploymentsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2019,20 +2019,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerService
         }
     }
 }
-impl From<crate::error::GetContainerServiceDeploymentsError> for Error {
-    fn from(err: crate::error::GetContainerServiceDeploymentsError) -> Self {
+impl From<crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError> for Error {
+    fn from(err: crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError) -> Self {
         match err {
-            crate::error::GetContainerServiceDeploymentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerServiceDeploymentsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerServiceDeploymentsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerServiceDeploymentsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerServiceDeploymentsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerServiceDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerServiceMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerServiceMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2044,20 +2044,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerService
         }
     }
 }
-impl From<crate::error::GetContainerServiceMetricDataError> for Error {
-    fn from(err: crate::error::GetContainerServiceMetricDataError) -> Self {
+impl From<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError> for Error {
+    fn from(err: crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError) -> Self {
         match err {
-            crate::error::GetContainerServiceMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerServiceMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerServiceMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerServiceMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerServiceMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerServiceMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerServicePowersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerServicePowersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_service_powers::GetContainerServicePowersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2069,20 +2069,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerService
         }
     }
 }
-impl From<crate::error::GetContainerServicePowersError> for Error {
-    fn from(err: crate::error::GetContainerServicePowersError) -> Self {
+impl From<crate::operation::get_container_service_powers::GetContainerServicePowersError> for Error {
+    fn from(err: crate::operation::get_container_service_powers::GetContainerServicePowersError) -> Self {
         match err {
-            crate::error::GetContainerServicePowersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerServicePowersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerServicePowersError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerServicePowersError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerServicePowersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerServicePowersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerServicesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetContainerServicesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_container_services::GetContainerServicesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2094,20 +2094,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetContainerService
         }
     }
 }
-impl From<crate::error::GetContainerServicesError> for Error {
-    fn from(err: crate::error::GetContainerServicesError) -> Self {
+impl From<crate::operation::get_container_services::GetContainerServicesError> for Error {
+    fn from(err: crate::operation::get_container_services::GetContainerServicesError) -> Self {
         match err {
-            crate::error::GetContainerServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetContainerServicesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetContainerServicesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetContainerServicesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetContainerServicesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetContainerServicesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_container_services::GetContainerServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDiskError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_disk::GetDiskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_disk::GetDiskError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2119,22 +2119,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskError, R>> f
         }
     }
 }
-impl From<crate::error::GetDiskError> for Error {
-    fn from(err: crate::error::GetDiskError) -> Self {
+impl From<crate::operation::get_disk::GetDiskError> for Error {
+    fn from(err: crate::operation::get_disk::GetDiskError) -> Self {
         match err {
-            crate::error::GetDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDiskError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDiskError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_disk::GetDiskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_disk::GetDiskError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_disk::GetDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_disk::GetDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_disk::GetDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk::GetDiskError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_disk::GetDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_disk::GetDiskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDisksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDisksError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_disks::GetDisksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_disks::GetDisksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2146,22 +2146,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDisksError, R>> 
         }
     }
 }
-impl From<crate::error::GetDisksError> for Error {
-    fn from(err: crate::error::GetDisksError) -> Self {
+impl From<crate::operation::get_disks::GetDisksError> for Error {
+    fn from(err: crate::operation::get_disks::GetDisksError) -> Self {
         match err {
-            crate::error::GetDisksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDisksError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDisksError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDisksError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDisksError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDisksError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDisksError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDisksError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_disks::GetDisksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_disks::GetDisksError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_disks::GetDisksError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_disks::GetDisksError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_disks::GetDisksError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disks::GetDisksError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_disks::GetDisksError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_disks::GetDisksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2173,22 +2173,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotErro
         }
     }
 }
-impl From<crate::error::GetDiskSnapshotError> for Error {
-    fn from(err: crate::error::GetDiskSnapshotError) -> Self {
+impl From<crate::operation::get_disk_snapshot::GetDiskSnapshotError> for Error {
+    fn from(err: crate::operation::get_disk_snapshot::GetDiskSnapshotError) -> Self {
         match err {
-            crate::error::GetDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshots::GetDiskSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshots::GetDiskSnapshotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2200,22 +2200,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiskSnapshotsErr
         }
     }
 }
-impl From<crate::error::GetDiskSnapshotsError> for Error {
-    fn from(err: crate::error::GetDiskSnapshotsError) -> Self {
+impl From<crate::operation::get_disk_snapshots::GetDiskSnapshotsError> for Error {
+    fn from(err: crate::operation::get_disk_snapshots::GetDiskSnapshotsError) -> Self {
         match err {
-            crate::error::GetDiskSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDiskSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDiskSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDiskSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDiskSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDiskSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDiskSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDiskSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionBundlesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_distribution_bundles::GetDistributionBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_distribution_bundles::GetDistributionBundlesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2227,21 +2227,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionBund
         }
     }
 }
-impl From<crate::error::GetDistributionBundlesError> for Error {
-    fn from(err: crate::error::GetDistributionBundlesError) -> Self {
+impl From<crate::operation::get_distribution_bundles::GetDistributionBundlesError> for Error {
+    fn from(err: crate::operation::get_distribution_bundles::GetDistributionBundlesError) -> Self {
         match err {
-            crate::error::GetDistributionBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDistributionBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDistributionBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDistributionBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDistributionBundlesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDistributionBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDistributionBundlesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionLatestCacheResetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionLatestCacheResetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2253,21 +2253,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionLate
         }
     }
 }
-impl From<crate::error::GetDistributionLatestCacheResetError> for Error {
-    fn from(err: crate::error::GetDistributionLatestCacheResetError) -> Self {
+impl From<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError> for Error {
+    fn from(err: crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError) -> Self {
         match err {
-            crate::error::GetDistributionLatestCacheResetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDistributionLatestCacheResetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDistributionLatestCacheResetError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDistributionLatestCacheResetError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDistributionLatestCacheResetError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDistributionLatestCacheResetError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDistributionLatestCacheResetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2279,21 +2279,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionMetr
         }
     }
 }
-impl From<crate::error::GetDistributionMetricDataError> for Error {
-    fn from(err: crate::error::GetDistributionMetricDataError) -> Self {
+impl From<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError> for Error {
+    fn from(err: crate::operation::get_distribution_metric_data::GetDistributionMetricDataError) -> Self {
         match err {
-            crate::error::GetDistributionMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDistributionMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDistributionMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDistributionMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDistributionMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDistributionMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDistributionMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2305,21 +2305,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDistributionsErr
         }
     }
 }
-impl From<crate::error::GetDistributionsError> for Error {
-    fn from(err: crate::error::GetDistributionsError) -> Self {
+impl From<crate::operation::get_distributions::GetDistributionsError> for Error {
+    fn from(err: crate::operation::get_distributions::GetDistributionsError) -> Self {
         match err {
-            crate::error::GetDistributionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDistributionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDistributionsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDistributionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDistributionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDistributionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDistributionsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_distributions::GetDistributionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_distributions::GetDistributionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_distributions::GetDistributionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_distributions::GetDistributionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_distributions::GetDistributionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_distributions::GetDistributionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_distributions::GetDistributionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_domain::GetDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_domain::GetDomainError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2331,22 +2331,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainError, R>>
         }
     }
 }
-impl From<crate::error::GetDomainError> for Error {
-    fn from(err: crate::error::GetDomainError) -> Self {
+impl From<crate::operation::get_domain::GetDomainError> for Error {
+    fn from(err: crate::operation::get_domain::GetDomainError) -> Self {
         match err {
-            crate::error::GetDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDomainError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_domain::GetDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_domain::GetDomainError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_domain::GetDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_domain::GetDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_domain::GetDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_domain::GetDomainError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_domain::GetDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_domain::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDomainsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_domains::GetDomainsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_domains::GetDomainsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2358,22 +2358,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDomainsError, R>
         }
     }
 }
-impl From<crate::error::GetDomainsError> for Error {
-    fn from(err: crate::error::GetDomainsError) -> Self {
+impl From<crate::operation::get_domains::GetDomainsError> for Error {
+    fn from(err: crate::operation::get_domains::GetDomainsError) -> Self {
         match err {
-            crate::error::GetDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetDomainsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetDomainsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetDomainsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetDomainsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetDomainsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetDomainsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_domains::GetDomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_domains::GetDomainsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_domains::GetDomainsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_domains::GetDomainsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_domains::GetDomainsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_domains::GetDomainsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_domains::GetDomainsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_domains::GetDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExportSnapshotRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetExportSnapshotRecordsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2385,22 +2385,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExportSnapshotRe
         }
     }
 }
-impl From<crate::error::GetExportSnapshotRecordsError> for Error {
-    fn from(err: crate::error::GetExportSnapshotRecordsError) -> Self {
+impl From<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError> for Error {
+    fn from(err: crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError) -> Self {
         match err {
-            crate::error::GetExportSnapshotRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetExportSnapshotRecordsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetExportSnapshotRecordsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetExportSnapshotRecordsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetExportSnapshotRecordsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetExportSnapshotRecordsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetExportSnapshotRecordsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetExportSnapshotRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance::GetInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance::GetInstanceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2412,22 +2412,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceError, R
         }
     }
 }
-impl From<crate::error::GetInstanceError> for Error {
-    fn from(err: crate::error::GetInstanceError) -> Self {
+impl From<crate::operation::get_instance::GetInstanceError> for Error {
+    fn from(err: crate::operation::get_instance::GetInstanceError) -> Self {
         match err {
-            crate::error::GetInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance::GetInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance::GetInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance::GetInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance::GetInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance::GetInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance::GetInstanceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance::GetInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance::GetInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessDetailsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_access_details::GetInstanceAccessDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_access_details::GetInstanceAccessDetailsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2439,22 +2439,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessDe
         }
     }
 }
-impl From<crate::error::GetInstanceAccessDetailsError> for Error {
-    fn from(err: crate::error::GetInstanceAccessDetailsError) -> Self {
+impl From<crate::operation::get_instance_access_details::GetInstanceAccessDetailsError> for Error {
+    fn from(err: crate::operation::get_instance_access_details::GetInstanceAccessDetailsError) -> Self {
         match err {
-            crate::error::GetInstanceAccessDetailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceAccessDetailsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceAccessDetailsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceAccessDetailsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceAccessDetailsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceAccessDetailsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceAccessDetailsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceAccessDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_metric_data::GetInstanceMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2466,22 +2466,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceMetricDa
         }
     }
 }
-impl From<crate::error::GetInstanceMetricDataError> for Error {
-    fn from(err: crate::error::GetInstanceMetricDataError) -> Self {
+impl From<crate::operation::get_instance_metric_data::GetInstanceMetricDataError> for Error {
+    fn from(err: crate::operation::get_instance_metric_data::GetInstanceMetricDataError) -> Self {
         match err {
-            crate::error::GetInstanceMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstancePortStatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstancePortStatesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_port_states::GetInstancePortStatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2493,22 +2493,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstancePortStat
         }
     }
 }
-impl From<crate::error::GetInstancePortStatesError> for Error {
-    fn from(err: crate::error::GetInstancePortStatesError) -> Self {
+impl From<crate::operation::get_instance_port_states::GetInstancePortStatesError> for Error {
+    fn from(err: crate::operation::get_instance_port_states::GetInstancePortStatesError) -> Self {
         match err {
-            crate::error::GetInstancePortStatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstancePortStatesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstancePortStatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstancePortStatesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstancePortStatesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstancePortStatesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstancePortStatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstancePortStatesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstancesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instances::GetInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instances::GetInstancesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2520,22 +2520,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstancesError, 
         }
     }
 }
-impl From<crate::error::GetInstancesError> for Error {
-    fn from(err: crate::error::GetInstancesError) -> Self {
+impl From<crate::operation::get_instances::GetInstancesError> for Error {
+    fn from(err: crate::operation::get_instances::GetInstancesError) -> Self {
         match err {
-            crate::error::GetInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstancesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstancesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instances::GetInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instances::GetInstancesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instances::GetInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instances::GetInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instances::GetInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instances::GetInstancesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instances::GetInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instances::GetInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_snapshot::GetInstanceSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_snapshot::GetInstanceSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2547,22 +2547,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshot
         }
     }
 }
-impl From<crate::error::GetInstanceSnapshotError> for Error {
-    fn from(err: crate::error::GetInstanceSnapshotError) -> Self {
+impl From<crate::operation::get_instance_snapshot::GetInstanceSnapshotError> for Error {
+    fn from(err: crate::operation::get_instance_snapshot::GetInstanceSnapshotError) -> Self {
         match err {
-            crate::error::GetInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshotsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_snapshots::GetInstanceSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_snapshots::GetInstanceSnapshotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2574,22 +2574,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceSnapshot
         }
     }
 }
-impl From<crate::error::GetInstanceSnapshotsError> for Error {
-    fn from(err: crate::error::GetInstanceSnapshotsError) -> Self {
+impl From<crate::operation::get_instance_snapshots::GetInstanceSnapshotsError> for Error {
+    fn from(err: crate::operation::get_instance_snapshots::GetInstanceSnapshotsError) -> Self {
         match err {
-            crate::error::GetInstanceSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceStateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceStateError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_instance_state::GetInstanceStateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2601,22 +2601,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceStateErr
         }
     }
 }
-impl From<crate::error::GetInstanceStateError> for Error {
-    fn from(err: crate::error::GetInstanceStateError) -> Self {
+impl From<crate::operation::get_instance_state::GetInstanceStateError> for Error {
+    fn from(err: crate::operation::get_instance_state::GetInstanceStateError) -> Self {
         match err {
-            crate::error::GetInstanceStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInstanceStateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetInstanceStateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetInstanceStateError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetInstanceStateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetInstanceStateError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetInstanceStateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetInstanceStateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyPairError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_key_pair::GetKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_key_pair::GetKeyPairError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2628,22 +2628,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyPairError, R>
         }
     }
 }
-impl From<crate::error::GetKeyPairError> for Error {
-    fn from(err: crate::error::GetKeyPairError) -> Self {
+impl From<crate::operation::get_key_pair::GetKeyPairError> for Error {
+    fn from(err: crate::operation::get_key_pair::GetKeyPairError) -> Self {
         match err {
-            crate::error::GetKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_key_pair::GetKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyPairsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyPairsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_key_pairs::GetKeyPairsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_key_pairs::GetKeyPairsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2655,22 +2655,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetKeyPairsError, R
         }
     }
 }
-impl From<crate::error::GetKeyPairsError> for Error {
-    fn from(err: crate::error::GetKeyPairsError) -> Self {
+impl From<crate::operation::get_key_pairs::GetKeyPairsError> for Error {
+    fn from(err: crate::operation::get_key_pairs::GetKeyPairsError) -> Self {
         match err {
-            crate::error::GetKeyPairsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetKeyPairsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetKeyPairsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetKeyPairsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetKeyPairsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetKeyPairsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetKeyPairsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetKeyPairsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_load_balancer::GetLoadBalancerError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2682,22 +2682,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerErro
         }
     }
 }
-impl From<crate::error::GetLoadBalancerError> for Error {
-    fn from(err: crate::error::GetLoadBalancerError) -> Self {
+impl From<crate::operation::get_load_balancer::GetLoadBalancerError> for Error {
+    fn from(err: crate::operation::get_load_balancer::GetLoadBalancerError) -> Self {
         match err {
-            crate::error::GetLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2709,22 +2709,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerMetr
         }
     }
 }
-impl From<crate::error::GetLoadBalancerMetricDataError> for Error {
-    fn from(err: crate::error::GetLoadBalancerMetricDataError) -> Self {
+impl From<crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError> for Error {
+    fn from(err: crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError) -> Self {
         match err {
-            crate::error::GetLoadBalancerMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLoadBalancerMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetLoadBalancerMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetLoadBalancerMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetLoadBalancerMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetLoadBalancerMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetLoadBalancerMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetLoadBalancerMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_load_balancers::GetLoadBalancersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_load_balancers::GetLoadBalancersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2736,22 +2736,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancersErr
         }
     }
 }
-impl From<crate::error::GetLoadBalancersError> for Error {
-    fn from(err: crate::error::GetLoadBalancersError) -> Self {
+impl From<crate::operation::get_load_balancers::GetLoadBalancersError> for Error {
+    fn from(err: crate::operation::get_load_balancers::GetLoadBalancersError) -> Self {
         match err {
-            crate::error::GetLoadBalancersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLoadBalancersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetLoadBalancersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetLoadBalancersError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetLoadBalancersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetLoadBalancersError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetLoadBalancersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetLoadBalancersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsCertificatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsCertificatesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2763,22 +2763,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsC
         }
     }
 }
-impl From<crate::error::GetLoadBalancerTlsCertificatesError> for Error {
-    fn from(err: crate::error::GetLoadBalancerTlsCertificatesError) -> Self {
+impl From<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError> for Error {
+    fn from(err: crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError) -> Self {
         match err {
-            crate::error::GetLoadBalancerTlsCertificatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetLoadBalancerTlsCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsPoliciesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2790,20 +2790,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetLoadBalancerTlsP
         }
     }
 }
-impl From<crate::error::GetLoadBalancerTlsPoliciesError> for Error {
-    fn from(err: crate::error::GetLoadBalancerTlsPoliciesError) -> Self {
+impl From<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError> for Error {
+    fn from(err: crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError) -> Self {
         match err {
-            crate::error::GetLoadBalancerTlsPoliciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetLoadBalancerTlsPoliciesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetLoadBalancerTlsPoliciesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetLoadBalancerTlsPoliciesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetLoadBalancerTlsPoliciesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetLoadBalancerTlsPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOperationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_operation::GetOperationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_operation::GetOperationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2815,22 +2815,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationError, 
         }
     }
 }
-impl From<crate::error::GetOperationError> for Error {
-    fn from(err: crate::error::GetOperationError) -> Self {
+impl From<crate::operation::get_operation::GetOperationError> for Error {
+    fn from(err: crate::operation::get_operation::GetOperationError) -> Self {
         match err {
-            crate::error::GetOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetOperationError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetOperationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetOperationError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetOperationError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetOperationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetOperationError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetOperationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_operation::GetOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_operation::GetOperationError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_operation::GetOperationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_operation::GetOperationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_operation::GetOperationError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_operation::GetOperationError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_operation::GetOperationError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_operation::GetOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOperationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_operations::GetOperationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_operations::GetOperationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2842,22 +2842,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationsError,
         }
     }
 }
-impl From<crate::error::GetOperationsError> for Error {
-    fn from(err: crate::error::GetOperationsError) -> Self {
+impl From<crate::operation::get_operations::GetOperationsError> for Error {
+    fn from(err: crate::operation::get_operations::GetOperationsError) -> Self {
         match err {
-            crate::error::GetOperationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetOperationsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetOperationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetOperationsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetOperationsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetOperationsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetOperationsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_operations::GetOperationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_operations::GetOperationsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_operations::GetOperationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_operations::GetOperationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_operations::GetOperationsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_operations::GetOperationsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_operations::GetOperationsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_operations::GetOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOperationsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_operations_for_resource::GetOperationsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_operations_for_resource::GetOperationsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2869,22 +2869,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOperationsForRes
         }
     }
 }
-impl From<crate::error::GetOperationsForResourceError> for Error {
-    fn from(err: crate::error::GetOperationsForResourceError) -> Self {
+impl From<crate::operation::get_operations_for_resource::GetOperationsForResourceError> for Error {
+    fn from(err: crate::operation::get_operations_for_resource::GetOperationsForResourceError) -> Self {
         match err {
-            crate::error::GetOperationsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetOperationsForResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetOperationsForResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetOperationsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetOperationsForResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetOperationsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetOperationsForResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetOperationsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRegionsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_regions::GetRegionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_regions::GetRegionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2896,22 +2896,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRegionsError, R>
         }
     }
 }
-impl From<crate::error::GetRegionsError> for Error {
-    fn from(err: crate::error::GetRegionsError) -> Self {
+impl From<crate::operation::get_regions::GetRegionsError> for Error {
+    fn from(err: crate::operation::get_regions::GetRegionsError) -> Self {
         match err {
-            crate::error::GetRegionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRegionsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRegionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRegionsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRegionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRegionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRegionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRegionsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_regions::GetRegionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_regions::GetRegionsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_regions::GetRegionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_regions::GetRegionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_regions::GetRegionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_regions::GetRegionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_regions::GetRegionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_regions::GetRegionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2923,22 +2923,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseError) -> Self {
+impl From<crate::operation::get_relational_database::GetRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::get_relational_database::GetRelationalDatabaseError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database::GetRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseBlueprintsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseBlueprintsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2950,22 +2950,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseBlueprintsError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseBlueprintsError) -> Self {
+impl From<crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError> for Error {
+    fn from(err: crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseBlueprintsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseBundlesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2977,22 +2977,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseBundlesError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseBundlesError) -> Self {
+impl From<crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError> for Error {
+    fn from(err: crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseBundlesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseEventsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3004,22 +3004,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseEventsError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseEventsError) -> Self {
+impl From<crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError> for Error {
+    fn from(err: crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseEventsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseEventsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseEventsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseEventsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseEventsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseLogEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseLogEventsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3031,22 +3031,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseLogEventsError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseLogEventsError) -> Self {
+impl From<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError> for Error {
+    fn from(err: crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseLogEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseLogEventsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseLogStreamsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseLogStreamsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3058,22 +3058,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseLogStreamsError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseLogStreamsError) -> Self {
+impl From<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError> for Error {
+    fn from(err: crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseLogStreamsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseLogStreamsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseMasterUserPasswordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseMasterUserPasswordError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3085,22 +3085,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseMasterUserPasswordError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseMasterUserPasswordError) -> Self {
+impl From<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError> for Error {
+    fn from(err: crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseMasterUserPasswordError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseMetricDataError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3112,22 +3112,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseMetricDataError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseMetricDataError) -> Self {
+impl From<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError> for Error {
+    fn from(err: crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseParametersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3139,22 +3139,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseParametersError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseParametersError) -> Self {
+impl From<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError> for Error {
+    fn from(err: crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseParametersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseParametersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseParametersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseParametersError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseParametersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseParametersError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseParametersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseParametersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabasesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_databases::GetRelationalDatabasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_databases::GetRelationalDatabasesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3166,22 +3166,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabasesError> for Error {
-    fn from(err: crate::error::GetRelationalDatabasesError) -> Self {
+impl From<crate::operation::get_relational_databases::GetRelationalDatabasesError> for Error {
+    fn from(err: crate::operation::get_relational_databases::GetRelationalDatabasesError) -> Self {
         match err {
-            crate::error::GetRelationalDatabasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabasesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabasesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabasesError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabasesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabasesError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabasesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseSnapshotError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3193,22 +3193,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseSnapshotError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseSnapshotError) -> Self {
+impl From<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError> for Error {
+    fn from(err: crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRelationalDatabaseSnapshotsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3220,22 +3220,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRelationalDataba
         }
     }
 }
-impl From<crate::error::GetRelationalDatabaseSnapshotsError> for Error {
-    fn from(err: crate::error::GetRelationalDatabaseSnapshotsError) -> Self {
+impl From<crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError> for Error {
+    fn from(err: crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError) -> Self {
         match err {
-            crate::error::GetRelationalDatabaseSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetRelationalDatabaseSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStaticIpError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_static_ip::GetStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_static_ip::GetStaticIpError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3247,22 +3247,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStaticIpError, R
         }
     }
 }
-impl From<crate::error::GetStaticIpError> for Error {
-    fn from(err: crate::error::GetStaticIpError) -> Self {
+impl From<crate::operation::get_static_ip::GetStaticIpError> for Error {
+    fn from(err: crate::operation::get_static_ip::GetStaticIpError) -> Self {
         match err {
-            crate::error::GetStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_static_ip::GetStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStaticIpsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStaticIpsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_static_ips::GetStaticIpsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_static_ips::GetStaticIpsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3274,22 +3274,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStaticIpsError, 
         }
     }
 }
-impl From<crate::error::GetStaticIpsError> for Error {
-    fn from(err: crate::error::GetStaticIpsError) -> Self {
+impl From<crate::operation::get_static_ips::GetStaticIpsError> for Error {
+    fn from(err: crate::operation::get_static_ips::GetStaticIpsError) -> Self {
         match err {
-            crate::error::GetStaticIpsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetStaticIpsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::GetStaticIpsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::GetStaticIpsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::GetStaticIpsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::GetStaticIpsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::GetStaticIpsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::GetStaticIpsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportKeyPairError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3301,22 +3301,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ImportKeyPairError,
         }
     }
 }
-impl From<crate::error::ImportKeyPairError> for Error {
-    fn from(err: crate::error::ImportKeyPairError) -> Self {
+impl From<crate::operation::import_key_pair::ImportKeyPairError> for Error {
+    fn from(err: crate::operation::import_key_pair::ImportKeyPairError) -> Self {
         match err {
-            crate::error::ImportKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ImportKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::ImportKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ImportKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ImportKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::ImportKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ImportKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::ImportKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::IsVpcPeeredError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::IsVpcPeeredError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::is_vpc_peered::IsVpcPeeredError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::is_vpc_peered::IsVpcPeeredError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3328,22 +3328,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::IsVpcPeeredError, R
         }
     }
 }
-impl From<crate::error::IsVpcPeeredError> for Error {
-    fn from(err: crate::error::IsVpcPeeredError) -> Self {
+impl From<crate::operation::is_vpc_peered::IsVpcPeeredError> for Error {
+    fn from(err: crate::operation::is_vpc_peered::IsVpcPeeredError) -> Self {
         match err {
-            crate::error::IsVpcPeeredError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::IsVpcPeeredError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::IsVpcPeeredError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::IsVpcPeeredError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::IsVpcPeeredError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::IsVpcPeeredError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::IsVpcPeeredError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::IsVpcPeeredError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::OpenInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::OpenInstancePublicPortsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3355,22 +3355,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::OpenInstancePublicP
         }
     }
 }
-impl From<crate::error::OpenInstancePublicPortsError> for Error {
-    fn from(err: crate::error::OpenInstancePublicPortsError) -> Self {
+impl From<crate::operation::open_instance_public_ports::OpenInstancePublicPortsError> for Error {
+    fn from(err: crate::operation::open_instance_public_ports::OpenInstancePublicPortsError) -> Self {
         match err {
-            crate::error::OpenInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::OpenInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::OpenInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::OpenInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::OpenInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::OpenInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::OpenInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::OpenInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PeerVpcError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PeerVpcError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::peer_vpc::PeerVpcError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::peer_vpc::PeerVpcError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3382,22 +3382,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PeerVpcError, R>> f
         }
     }
 }
-impl From<crate::error::PeerVpcError> for Error {
-    fn from(err: crate::error::PeerVpcError) -> Self {
+impl From<crate::operation::peer_vpc::PeerVpcError> for Error {
+    fn from(err: crate::operation::peer_vpc::PeerVpcError) -> Self {
         match err {
-            crate::error::PeerVpcError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PeerVpcError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::PeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::PeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::PeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::PeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::PeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::peer_vpc::PeerVpcError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::peer_vpc::PeerVpcError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::peer_vpc::PeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::peer_vpc::PeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::peer_vpc::PeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::peer_vpc::PeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::peer_vpc::PeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::peer_vpc::PeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutAlarmError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3409,21 +3409,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAlarmError, R>> 
         }
     }
 }
-impl From<crate::error::PutAlarmError> for Error {
-    fn from(err: crate::error::PutAlarmError) -> Self {
+impl From<crate::operation::put_alarm::PutAlarmError> for Error {
+    fn from(err: crate::operation::put_alarm::PutAlarmError) -> Self {
         match err {
-            crate::error::PutAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PutAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::PutAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::PutAlarmError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::PutAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::PutAlarmError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_alarm::PutAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_alarm::PutAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_alarm::PutAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_alarm::PutAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::put_alarm::PutAlarmError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_alarm::PutAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::put_alarm::PutAlarmError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutInstancePublicPortsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_instance_public_ports::PutInstancePublicPortsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_instance_public_ports::PutInstancePublicPortsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3435,22 +3435,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInstancePublicPo
         }
     }
 }
-impl From<crate::error::PutInstancePublicPortsError> for Error {
-    fn from(err: crate::error::PutInstancePublicPortsError) -> Self {
+impl From<crate::operation::put_instance_public_ports::PutInstancePublicPortsError> for Error {
+    fn from(err: crate::operation::put_instance_public_ports::PutInstancePublicPortsError) -> Self {
         match err {
-            crate::error::PutInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::PutInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::PutInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::PutInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::PutInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::PutInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::PutInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RebootInstanceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::reboot_instance::RebootInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::reboot_instance::RebootInstanceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3462,22 +3462,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootInstanceError
         }
     }
 }
-impl From<crate::error::RebootInstanceError> for Error {
-    fn from(err: crate::error::RebootInstanceError) -> Self {
+impl From<crate::operation::reboot_instance::RebootInstanceError> for Error {
+    fn from(err: crate::operation::reboot_instance::RebootInstanceError) -> Self {
         match err {
-            crate::error::RebootInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RebootInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::RebootInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::RebootInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::RebootInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::RebootInstanceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::RebootInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::RebootInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::reboot_instance::RebootInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RebootRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::reboot_relational_database::RebootRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3489,22 +3489,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootRelationalDat
         }
     }
 }
-impl From<crate::error::RebootRelationalDatabaseError> for Error {
-    fn from(err: crate::error::RebootRelationalDatabaseError) -> Self {
+impl From<crate::operation::reboot_relational_database::RebootRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::reboot_relational_database::RebootRelationalDatabaseError) -> Self {
         match err {
-            crate::error::RebootRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RebootRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::RebootRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::RebootRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::RebootRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::RebootRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::RebootRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::RebootRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterContainerImageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterContainerImageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_container_image::RegisterContainerImageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_container_image::RegisterContainerImageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3516,20 +3516,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterContainerIm
         }
     }
 }
-impl From<crate::error::RegisterContainerImageError> for Error {
-    fn from(err: crate::error::RegisterContainerImageError) -> Self {
+impl From<crate::operation::register_container_image::RegisterContainerImageError> for Error {
+    fn from(err: crate::operation::register_container_image::RegisterContainerImageError) -> Self {
         match err {
-            crate::error::RegisterContainerImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::RegisterContainerImageError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::RegisterContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::RegisterContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::RegisterContainerImageError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::RegisterContainerImageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReleaseStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ReleaseStaticIpError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::release_static_ip::ReleaseStaticIpError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::release_static_ip::ReleaseStaticIpError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3541,22 +3541,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReleaseStaticIpErro
         }
     }
 }
-impl From<crate::error::ReleaseStaticIpError> for Error {
-    fn from(err: crate::error::ReleaseStaticIpError) -> Self {
+impl From<crate::operation::release_static_ip::ReleaseStaticIpError> for Error {
+    fn from(err: crate::operation::release_static_ip::ReleaseStaticIpError) -> Self {
         match err {
-            crate::error::ReleaseStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ReleaseStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::ReleaseStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ReleaseStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ReleaseStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::ReleaseStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ReleaseStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::ReleaseStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetDistributionCacheError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResetDistributionCacheError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3568,21 +3568,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetDistributionCa
         }
     }
 }
-impl From<crate::error::ResetDistributionCacheError> for Error {
-    fn from(err: crate::error::ResetDistributionCacheError) -> Self {
+impl From<crate::operation::reset_distribution_cache::ResetDistributionCacheError> for Error {
+    fn from(err: crate::operation::reset_distribution_cache::ResetDistributionCacheError) -> Self {
         match err {
-            crate::error::ResetDistributionCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ResetDistributionCacheError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ResetDistributionCacheError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::ResetDistributionCacheError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::ResetDistributionCacheError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::ResetDistributionCacheError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::ResetDistributionCacheError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendContactMethodVerificationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendContactMethodVerificationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3594,21 +3594,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendContactMethodVe
         }
     }
 }
-impl From<crate::error::SendContactMethodVerificationError> for Error {
-    fn from(err: crate::error::SendContactMethodVerificationError) -> Self {
+impl From<crate::operation::send_contact_method_verification::SendContactMethodVerificationError> for Error {
+    fn from(err: crate::operation::send_contact_method_verification::SendContactMethodVerificationError) -> Self {
         match err {
-            crate::error::SendContactMethodVerificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SendContactMethodVerificationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::SendContactMethodVerificationError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::SendContactMethodVerificationError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::SendContactMethodVerificationError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::SendContactMethodVerificationError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::SendContactMethodVerificationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetIpAddressTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetIpAddressTypeError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3620,22 +3620,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetIpAddressTypeErr
         }
     }
 }
-impl From<crate::error::SetIpAddressTypeError> for Error {
-    fn from(err: crate::error::SetIpAddressTypeError) -> Self {
+impl From<crate::operation::set_ip_address_type::SetIpAddressTypeError> for Error {
+    fn from(err: crate::operation::set_ip_address_type::SetIpAddressTypeError) -> Self {
         match err {
-            crate::error::SetIpAddressTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SetIpAddressTypeError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::SetIpAddressTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::SetIpAddressTypeError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::SetIpAddressTypeError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::SetIpAddressTypeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::SetIpAddressTypeError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::SetIpAddressTypeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetResourceAccessForBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetResourceAccessForBucketError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3647,20 +3647,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetResourceAccessFo
         }
     }
 }
-impl From<crate::error::SetResourceAccessForBucketError> for Error {
-    fn from(err: crate::error::SetResourceAccessForBucketError) -> Self {
+impl From<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError> for Error {
+    fn from(err: crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError) -> Self {
         match err {
-            crate::error::SetResourceAccessForBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SetResourceAccessForBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::SetResourceAccessForBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::SetResourceAccessForBucketError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::SetResourceAccessForBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::SetResourceAccessForBucketError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartInstanceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_instance::StartInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_instance::StartInstanceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3672,22 +3672,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartInstanceError,
         }
     }
 }
-impl From<crate::error::StartInstanceError> for Error {
-    fn from(err: crate::error::StartInstanceError) -> Self {
+impl From<crate::operation::start_instance::StartInstanceError> for Error {
+    fn from(err: crate::operation::start_instance::StartInstanceError) -> Self {
         match err {
-            crate::error::StartInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::StartInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::StartInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StartInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::StartInstanceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::StartInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::StartInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_instance::StartInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_instance::StartInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::start_instance::StartInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::start_instance::StartInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_instance::StartInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::start_instance::StartInstanceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_instance::StartInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::start_instance::StartInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_relational_database::StartRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_relational_database::StartRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3699,22 +3699,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartRelationalData
         }
     }
 }
-impl From<crate::error::StartRelationalDatabaseError> for Error {
-    fn from(err: crate::error::StartRelationalDatabaseError) -> Self {
+impl From<crate::operation::start_relational_database::StartRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::start_relational_database::StartRelationalDatabaseError) -> Self {
         match err {
-            crate::error::StartRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::StartRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::StartRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StartRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::StartRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::StartRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::StartRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::start_relational_database::StartRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopInstanceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_instance::StopInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_instance::StopInstanceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3726,22 +3726,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopInstanceError, 
         }
     }
 }
-impl From<crate::error::StopInstanceError> for Error {
-    fn from(err: crate::error::StopInstanceError) -> Self {
+impl From<crate::operation::stop_instance::StopInstanceError> for Error {
+    fn from(err: crate::operation::stop_instance::StopInstanceError) -> Self {
         match err {
-            crate::error::StopInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StopInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::StopInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::StopInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StopInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::StopInstanceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::StopInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::StopInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_instance::StopInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_instance::StopInstanceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::stop_instance::StopInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::stop_instance::StopInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_instance::StopInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::stop_instance::StopInstanceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::stop_instance::StopInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::stop_instance::StopInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_relational_database::StopRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3753,22 +3753,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopRelationalDatab
         }
     }
 }
-impl From<crate::error::StopRelationalDatabaseError> for Error {
-    fn from(err: crate::error::StopRelationalDatabaseError) -> Self {
+impl From<crate::operation::stop_relational_database::StopRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::stop_relational_database::StopRelationalDatabaseError) -> Self {
         match err {
-            crate::error::StopRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StopRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::StopRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::StopRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StopRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::StopRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::StopRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::StopRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3780,22 +3780,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TagResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::TagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::TagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::TagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::tag_resource::TagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TestAlarmError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3807,21 +3807,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestAlarmError, R>>
         }
     }
 }
-impl From<crate::error::TestAlarmError> for Error {
-    fn from(err: crate::error::TestAlarmError) -> Self {
+impl From<crate::operation::test_alarm::TestAlarmError> for Error {
+    fn from(err: crate::operation::test_alarm::TestAlarmError) -> Self {
         match err {
-            crate::error::TestAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TestAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::TestAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::TestAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::TestAlarmError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::TestAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::TestAlarmError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::test_alarm::TestAlarmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::test_alarm::TestAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::test_alarm::TestAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::test_alarm::TestAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::test_alarm::TestAlarmError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::test_alarm::TestAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::test_alarm::TestAlarmError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UnpeerVpcError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UnpeerVpcError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::unpeer_vpc::UnpeerVpcError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::unpeer_vpc::UnpeerVpcError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3833,22 +3833,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UnpeerVpcError, R>>
         }
     }
 }
-impl From<crate::error::UnpeerVpcError> for Error {
-    fn from(err: crate::error::UnpeerVpcError) -> Self {
+impl From<crate::operation::unpeer_vpc::UnpeerVpcError> for Error {
+    fn from(err: crate::operation::unpeer_vpc::UnpeerVpcError) -> Self {
         match err {
-            crate::error::UnpeerVpcError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UnpeerVpcError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UnpeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UnpeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UnpeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UnpeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UnpeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UnpeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3860,22 +3860,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UntagResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UntagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UntagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UntagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBucketError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3887,20 +3887,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBucketError, 
         }
     }
 }
-impl From<crate::error::UpdateBucketError> for Error {
-    fn from(err: crate::error::UpdateBucketError) -> Self {
+impl From<crate::operation::update_bucket::UpdateBucketError> for Error {
+    fn from(err: crate::operation::update_bucket::UpdateBucketError) -> Self {
         match err {
-            crate::error::UpdateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateBucketError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateBucketError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_bucket::UpdateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_bucket::UpdateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_bucket::UpdateBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_bucket::UpdateBucketError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_bucket::UpdateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_bucket::UpdateBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBucketBundleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBucketBundleError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_bucket_bundle::UpdateBucketBundleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_bucket_bundle::UpdateBucketBundleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3912,20 +3912,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBucketBundleE
         }
     }
 }
-impl From<crate::error::UpdateBucketBundleError> for Error {
-    fn from(err: crate::error::UpdateBucketBundleError) -> Self {
+impl From<crate::operation::update_bucket_bundle::UpdateBucketBundleError> for Error {
+    fn from(err: crate::operation::update_bucket_bundle::UpdateBucketBundleError) -> Self {
         match err {
-            crate::error::UpdateBucketBundleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateBucketBundleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateBucketBundleError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateBucketBundleError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateBucketBundleError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateBucketBundleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateContainerServiceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_container_service::UpdateContainerServiceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_container_service::UpdateContainerServiceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3937,20 +3937,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateContainerServ
         }
     }
 }
-impl From<crate::error::UpdateContainerServiceError> for Error {
-    fn from(err: crate::error::UpdateContainerServiceError) -> Self {
+impl From<crate::operation::update_container_service::UpdateContainerServiceError> for Error {
+    fn from(err: crate::operation::update_container_service::UpdateContainerServiceError) -> Self {
         match err {
-            crate::error::UpdateContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3962,21 +3962,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionE
         }
     }
 }
-impl From<crate::error::UpdateDistributionError> for Error {
-    fn from(err: crate::error::UpdateDistributionError) -> Self {
+impl From<crate::operation::update_distribution::UpdateDistributionError> for Error {
+    fn from(err: crate::operation::update_distribution::UpdateDistributionError) -> Self {
         match err {
-            crate::error::UpdateDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateDistributionError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_distribution::UpdateDistributionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_distribution::UpdateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionBundleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionBundleError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -3988,21 +3988,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDistributionB
         }
     }
 }
-impl From<crate::error::UpdateDistributionBundleError> for Error {
-    fn from(err: crate::error::UpdateDistributionBundleError) -> Self {
+impl From<crate::operation::update_distribution_bundle::UpdateDistributionBundleError> for Error {
+    fn from(err: crate::operation::update_distribution_bundle::UpdateDistributionBundleError) -> Self {
         match err {
-            crate::error::UpdateDistributionBundleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDistributionBundleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateDistributionBundleError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateDistributionBundleError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateDistributionBundleError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateDistributionBundleError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateDistributionBundleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDomainEntryError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_domain_entry::UpdateDomainEntryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_domain_entry::UpdateDomainEntryError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -4014,22 +4014,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDomainEntryEr
         }
     }
 }
-impl From<crate::error::UpdateDomainEntryError> for Error {
-    fn from(err: crate::error::UpdateDomainEntryError) -> Self {
+impl From<crate::operation::update_domain_entry::UpdateDomainEntryError> for Error {
+    fn from(err: crate::operation::update_domain_entry::UpdateDomainEntryError) -> Self {
         match err {
-            crate::error::UpdateDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UpdateDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_domain_entry::UpdateDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetadataOptionsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -4041,22 +4041,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInstanceMetad
         }
     }
 }
-impl From<crate::error::UpdateInstanceMetadataOptionsError> for Error {
-    fn from(err: crate::error::UpdateInstanceMetadataOptionsError) -> Self {
+impl From<crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError> for Error {
+    fn from(err: crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError) -> Self {
         match err {
-            crate::error::UpdateInstanceMetadataOptionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateInstanceMetadataOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLoadBalancerAttributeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateLoadBalancerAttributeError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -4068,22 +4068,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLoadBalancerA
         }
     }
 }
-impl From<crate::error::UpdateLoadBalancerAttributeError> for Error {
-    fn from(err: crate::error::UpdateLoadBalancerAttributeError) -> Self {
+impl From<crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError> for Error {
+    fn from(err: crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError) -> Self {
         match err {
-            crate::error::UpdateLoadBalancerAttributeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateLoadBalancerAttributeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDatabaseError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -4095,22 +4095,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDat
         }
     }
 }
-impl From<crate::error::UpdateRelationalDatabaseError> for Error {
-    fn from(err: crate::error::UpdateRelationalDatabaseError) -> Self {
+impl From<crate::operation::update_relational_database::UpdateRelationalDatabaseError> for Error {
+    fn from(err: crate::operation::update_relational_database::UpdateRelationalDatabaseError) -> Self {
         match err {
-            crate::error::UpdateRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UpdateRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDatabaseParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDatabaseParametersError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -4122,17 +4122,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelationalDat
         }
     }
 }
-impl From<crate::error::UpdateRelationalDatabaseParametersError> for Error {
-    fn from(err: crate::error::UpdateRelationalDatabaseParametersError) -> Self {
+impl From<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError> for Error {
+    fn from(err: crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError) -> Self {
         match err {
-            crate::error::UpdateRelationalDatabaseParametersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::ServiceException(inner) => Error::ServiceException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
-            crate::error::UpdateRelationalDatabaseParametersError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::AccountSetupInProgressException(inner) => Error::AccountSetupInProgressException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

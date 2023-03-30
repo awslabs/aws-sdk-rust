@@ -4,37 +4,37 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
-    BatchEntryIdsNotDistinct(crate::error::BatchEntryIdsNotDistinct),
+    BatchEntryIdsNotDistinct(crate::types::error::BatchEntryIdsNotDistinct),
     /// <p>The length of all the messages put together is more than the limit.</p>
-    BatchRequestTooLong(crate::error::BatchRequestTooLong),
+    BatchRequestTooLong(crate::types::error::BatchRequestTooLong),
     /// <p>The batch request doesn't contain any entries.</p>
-    EmptyBatchRequest(crate::error::EmptyBatchRequest),
+    EmptyBatchRequest(crate::types::error::EmptyBatchRequest),
     /// <p>The specified attribute doesn't exist.</p>
-    InvalidAttributeName(crate::error::InvalidAttributeName),
+    InvalidAttributeName(crate::types::error::InvalidAttributeName),
     /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
-    InvalidBatchEntryId(crate::error::InvalidBatchEntryId),
+    InvalidBatchEntryId(crate::types::error::InvalidBatchEntryId),
     /// <p>The specified receipt handle isn't valid for the current version.</p>
-    InvalidIdFormat(crate::error::InvalidIdFormat),
+    InvalidIdFormat(crate::types::error::InvalidIdFormat),
     /// <p>The message contains characters outside the allowed set.</p>
-    InvalidMessageContents(crate::error::InvalidMessageContents),
+    InvalidMessageContents(crate::types::error::InvalidMessageContents),
     /// <p>The specified message isn't in flight.</p>
-    MessageNotInflight(crate::error::MessageNotInflight),
+    MessageNotInflight(crate::types::error::MessageNotInflight),
     /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
-    OverLimit(crate::error::OverLimit),
+    OverLimit(crate::types::error::OverLimit),
     /// <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
-    PurgeQueueInProgress(crate::error::PurgeQueueInProgress),
+    PurgeQueueInProgress(crate::types::error::PurgeQueueInProgress),
     /// <p>You must wait 60 seconds after deleting a queue before you can create another queue with the same name.</p>
-    QueueDeletedRecently(crate::error::QueueDeletedRecently),
+    QueueDeletedRecently(crate::types::error::QueueDeletedRecently),
     /// <p>The specified queue doesn't exist.</p>
-    QueueDoesNotExist(crate::error::QueueDoesNotExist),
+    QueueDoesNotExist(crate::types::error::QueueDoesNotExist),
     /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose values differ from those of the existing queue.</p>
-    QueueNameExists(crate::error::QueueNameExists),
+    QueueNameExists(crate::types::error::QueueNameExists),
     /// <p>The specified receipt handle isn't valid.</p>
-    ReceiptHandleIsInvalid(crate::error::ReceiptHandleIsInvalid),
+    ReceiptHandleIsInvalid(crate::types::error::ReceiptHandleIsInvalid),
     /// <p>The batch request contains more entries than permissible.</p>
-    TooManyEntriesInBatchRequest(crate::error::TooManyEntriesInBatchRequest),
+    TooManyEntriesInBatchRequest(crate::types::error::TooManyEntriesInBatchRequest),
     /// <p>Error code 400. Unsupported operation.</p>
-    UnsupportedOperation(crate::error::UnsupportedOperation),
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -61,8 +61,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddPermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AddPermissionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::add_permission::AddPermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::add_permission::AddPermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -74,16 +74,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AddPermissionError,
         }
     }
 }
-impl From<crate::error::AddPermissionError> for Error {
-    fn from(err: crate::error::AddPermissionError) -> Self {
+impl From<crate::operation::add_permission::AddPermissionError> for Error {
+    fn from(err: crate::operation::add_permission::AddPermissionError) -> Self {
         match err {
-            crate::error::AddPermissionError::OverLimit(inner) => Error::OverLimit(inner),
-            crate::error::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::add_permission::AddPermissionError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::operation::add_permission::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::change_message_visibility::ChangeMessageVisibilityError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -95,17 +95,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibi
         }
     }
 }
-impl From<crate::error::ChangeMessageVisibilityError> for Error {
-    fn from(err: crate::error::ChangeMessageVisibilityError) -> Self {
+impl From<crate::operation::change_message_visibility::ChangeMessageVisibilityError> for Error {
+    fn from(err: crate::operation::change_message_visibility::ChangeMessageVisibilityError) -> Self {
         match err {
-            crate::error::ChangeMessageVisibilityError::MessageNotInflight(inner) => Error::MessageNotInflight(inner),
-            crate::error::ChangeMessageVisibilityError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
-            crate::error::ChangeMessageVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::MessageNotInflight(inner) => Error::MessageNotInflight(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibilityBatchError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -117,19 +117,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ChangeMessageVisibi
         }
     }
 }
-impl From<crate::error::ChangeMessageVisibilityBatchError> for Error {
-    fn from(err: crate::error::ChangeMessageVisibilityBatchError) -> Self {
+impl From<crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError> for Error {
+    fn from(err: crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError) -> Self {
         match err {
-            crate::error::ChangeMessageVisibilityBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::ChangeMessageVisibilityBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::ChangeMessageVisibilityBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::ChangeMessageVisibilityBatchError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateQueueError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_queue::CreateQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_queue::CreateQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -141,17 +141,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateQueueError, R
         }
     }
 }
-impl From<crate::error::CreateQueueError> for Error {
-    fn from(err: crate::error::CreateQueueError) -> Self {
+impl From<crate::operation::create_queue::CreateQueueError> for Error {
+    fn from(err: crate::operation::create_queue::CreateQueueError) -> Self {
         match err {
-            crate::error::CreateQueueError::QueueDeletedRecently(inner) => Error::QueueDeletedRecently(inner),
-            crate::error::CreateQueueError::QueueNameExists(inner) => Error::QueueNameExists(inner),
-            crate::error::CreateQueueError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_queue::CreateQueueError::QueueDeletedRecently(inner) => Error::QueueDeletedRecently(inner),
+            crate::operation::create_queue::CreateQueueError::QueueNameExists(inner) => Error::QueueNameExists(inner),
+            crate::operation::create_queue::CreateQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMessageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_message::DeleteMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_message::DeleteMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -163,17 +163,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageError,
         }
     }
 }
-impl From<crate::error::DeleteMessageError> for Error {
-    fn from(err: crate::error::DeleteMessageError) -> Self {
+impl From<crate::operation::delete_message::DeleteMessageError> for Error {
+    fn from(err: crate::operation::delete_message::DeleteMessageError) -> Self {
         match err {
-            crate::error::DeleteMessageError::InvalidIdFormat(inner) => Error::InvalidIdFormat(inner),
-            crate::error::DeleteMessageError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
-            crate::error::DeleteMessageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_message::DeleteMessageError::InvalidIdFormat(inner) => Error::InvalidIdFormat(inner),
+            crate::operation::delete_message::DeleteMessageError::ReceiptHandleIsInvalid(inner) => Error::ReceiptHandleIsInvalid(inner),
+            crate::operation::delete_message::DeleteMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMessageBatchError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_message_batch::DeleteMessageBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -185,19 +185,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMessageBatchE
         }
     }
 }
-impl From<crate::error::DeleteMessageBatchError> for Error {
-    fn from(err: crate::error::DeleteMessageBatchError) -> Self {
+impl From<crate::operation::delete_message_batch::DeleteMessageBatchError> for Error {
+    fn from(err: crate::operation::delete_message_batch::DeleteMessageBatchError) -> Self {
         match err {
-            crate::error::DeleteMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::DeleteMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::DeleteMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::DeleteMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::DeleteMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::operation::delete_message_batch::DeleteMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_queue::DeleteQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_queue::DeleteQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -209,15 +209,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteQueueError, R
         }
     }
 }
-impl From<crate::error::DeleteQueueError> for Error {
-    fn from(err: crate::error::DeleteQueueError) -> Self {
+impl From<crate::operation::delete_queue::DeleteQueueError> for Error {
+    fn from(err: crate::operation::delete_queue::DeleteQueueError) -> Self {
         match err {
-            crate::error::DeleteQueueError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_queue::DeleteQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetQueueAttributesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_queue_attributes::GetQueueAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_queue_attributes::GetQueueAttributesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -229,16 +229,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueAttributesE
         }
     }
 }
-impl From<crate::error::GetQueueAttributesError> for Error {
-    fn from(err: crate::error::GetQueueAttributesError) -> Self {
+impl From<crate::operation::get_queue_attributes::GetQueueAttributesError> for Error {
+    fn from(err: crate::operation::get_queue_attributes::GetQueueAttributesError) -> Self {
         match err {
-            crate::error::GetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
-            crate::error::GetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::operation::get_queue_attributes::GetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueUrlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetQueueUrlError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -250,16 +250,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetQueueUrlError, R
         }
     }
 }
-impl From<crate::error::GetQueueUrlError> for Error {
-    fn from(err: crate::error::GetQueueUrlError) -> Self {
+impl From<crate::operation::get_queue_url::GetQueueUrlError> for Error {
+    fn from(err: crate::operation::get_queue_url::GetQueueUrlError) -> Self {
         match err {
-            crate::error::GetQueueUrlError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::GetQueueUrlError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_queue_url::GetQueueUrlError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::get_queue_url::GetQueueUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDeadLetterSourceQueuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDeadLetterSourceQueuesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -271,16 +271,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDeadLetterSourc
         }
     }
 }
-impl From<crate::error::ListDeadLetterSourceQueuesError> for Error {
-    fn from(err: crate::error::ListDeadLetterSourceQueuesError) -> Self {
+impl From<crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError> for Error {
+    fn from(err: crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError) -> Self {
         match err {
-            crate::error::ListDeadLetterSourceQueuesError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::ListDeadLetterSourceQueuesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -292,15 +292,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueuesError, R>
         }
     }
 }
-impl From<crate::error::ListQueuesError> for Error {
-    fn from(err: crate::error::ListQueuesError) -> Self {
+impl From<crate::operation::list_queues::ListQueuesError> for Error {
+    fn from(err: crate::operation::list_queues::ListQueuesError) -> Self {
         match err {
-            crate::error::ListQueuesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_queues::ListQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_queue_tags::ListQueueTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_queue_tags::ListQueueTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -312,15 +312,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListQueueTagsError,
         }
     }
 }
-impl From<crate::error::ListQueueTagsError> for Error {
-    fn from(err: crate::error::ListQueueTagsError) -> Self {
+impl From<crate::operation::list_queue_tags::ListQueueTagsError> for Error {
+    fn from(err: crate::operation::list_queue_tags::ListQueueTagsError) -> Self {
         match err {
-            crate::error::ListQueueTagsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_queue_tags::ListQueueTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurgeQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PurgeQueueError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::purge_queue::PurgeQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::purge_queue::PurgeQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -332,17 +332,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PurgeQueueError, R>
         }
     }
 }
-impl From<crate::error::PurgeQueueError> for Error {
-    fn from(err: crate::error::PurgeQueueError) -> Self {
+impl From<crate::operation::purge_queue::PurgeQueueError> for Error {
+    fn from(err: crate::operation::purge_queue::PurgeQueueError) -> Self {
         match err {
-            crate::error::PurgeQueueError::PurgeQueueInProgress(inner) => Error::PurgeQueueInProgress(inner),
-            crate::error::PurgeQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
-            crate::error::PurgeQueueError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::purge_queue::PurgeQueueError::PurgeQueueInProgress(inner) => Error::PurgeQueueInProgress(inner),
+            crate::operation::purge_queue::PurgeQueueError::QueueDoesNotExist(inner) => Error::QueueDoesNotExist(inner),
+            crate::operation::purge_queue::PurgeQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReceiveMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ReceiveMessageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -354,16 +354,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ReceiveMessageError
         }
     }
 }
-impl From<crate::error::ReceiveMessageError> for Error {
-    fn from(err: crate::error::ReceiveMessageError) -> Self {
+impl From<crate::operation::receive_message::ReceiveMessageError> for Error {
+    fn from(err: crate::operation::receive_message::ReceiveMessageError) -> Self {
         match err {
-            crate::error::ReceiveMessageError::OverLimit(inner) => Error::OverLimit(inner),
-            crate::error::ReceiveMessageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::receive_message::ReceiveMessageError::OverLimit(inner) => Error::OverLimit(inner),
+            crate::operation::receive_message::ReceiveMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemovePermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RemovePermissionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::remove_permission::RemovePermissionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -375,15 +375,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::RemovePermissionErr
         }
     }
 }
-impl From<crate::error::RemovePermissionError> for Error {
-    fn from(err: crate::error::RemovePermissionError) -> Self {
+impl From<crate::operation::remove_permission::RemovePermissionError> for Error {
+    fn from(err: crate::operation::remove_permission::RemovePermissionError) -> Self {
         match err {
-            crate::error::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::remove_permission::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -395,17 +395,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageError, R
         }
     }
 }
-impl From<crate::error::SendMessageError> for Error {
-    fn from(err: crate::error::SendMessageError) -> Self {
+impl From<crate::operation::send_message::SendMessageError> for Error {
+    fn from(err: crate::operation::send_message::SendMessageError) -> Self {
         match err {
-            crate::error::SendMessageError::InvalidMessageContents(inner) => Error::InvalidMessageContents(inner),
-            crate::error::SendMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-            crate::error::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_message::SendMessageError::InvalidMessageContents(inner) => Error::InvalidMessageContents(inner),
+            crate::operation::send_message::SendMessageError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessageBatchError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_message_batch::SendMessageBatchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -417,21 +417,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageBatchErr
         }
     }
 }
-impl From<crate::error::SendMessageBatchError> for Error {
-    fn from(err: crate::error::SendMessageBatchError) -> Self {
+impl From<crate::operation::send_message_batch::SendMessageBatchError> for Error {
+    fn from(err: crate::operation::send_message_batch::SendMessageBatchError) -> Self {
         match err {
-            crate::error::SendMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
-            crate::error::SendMessageBatchError::BatchRequestTooLong(inner) => Error::BatchRequestTooLong(inner),
-            crate::error::SendMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
-            crate::error::SendMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
-            crate::error::SendMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
-            crate::error::SendMessageBatchError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-            crate::error::SendMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::BatchEntryIdsNotDistinct(inner) => Error::BatchEntryIdsNotDistinct(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::BatchRequestTooLong(inner) => Error::BatchRequestTooLong(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::EmptyBatchRequest(inner) => Error::EmptyBatchRequest(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::InvalidBatchEntryId(inner) => Error::InvalidBatchEntryId(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::TooManyEntriesInBatchRequest(inner) => Error::TooManyEntriesInBatchRequest(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::send_message_batch::SendMessageBatchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetQueueAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SetQueueAttributesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::set_queue_attributes::SetQueueAttributesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -443,16 +443,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SetQueueAttributesE
         }
     }
 }
-impl From<crate::error::SetQueueAttributesError> for Error {
-    fn from(err: crate::error::SetQueueAttributesError) -> Self {
+impl From<crate::operation::set_queue_attributes::SetQueueAttributesError> for Error {
+    fn from(err: crate::operation::set_queue_attributes::SetQueueAttributesError) -> Self {
         match err {
-            crate::error::SetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
-            crate::error::SetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeName(inner) => Error::InvalidAttributeName(inner),
+            crate::operation::set_queue_attributes::SetQueueAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_queue::TagQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_queue::TagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -464,15 +464,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagQueueError, R>> 
         }
     }
 }
-impl From<crate::error::TagQueueError> for Error {
-    fn from(err: crate::error::TagQueueError) -> Self {
+impl From<crate::operation::tag_queue::TagQueueError> for Error {
+    fn from(err: crate::operation::tag_queue::TagQueueError) -> Self {
         match err {
-            crate::error::TagQueueError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_queue::TagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_queue::UntagQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_queue::UntagQueueError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -484,10 +484,10 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagQueueError, R>
         }
     }
 }
-impl From<crate::error::UntagQueueError> for Error {
-    fn from(err: crate::error::UntagQueueError) -> Self {
+impl From<crate::operation::untag_queue::UntagQueueError> for Error {
+    fn from(err: crate::operation::untag_queue::UntagQueueError) -> Self {
         match err {
-            crate::error::UntagQueueError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_queue::UntagQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,13 +4,13 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_origin_request_policy_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::model::OriginRequestPolicyConfig>, crate::error::GetOriginRequestPolicyConfigError> {
+pub fn de_origin_request_policy_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::OriginRequestPolicyConfig>, crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError> {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_origin_request_policy_config_output::de_origin_request_policy_config(body).map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)
+        crate::protocol_serde::shape_get_origin_request_policy_config_output::de_origin_request_policy_config(body).map_err(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled)
     }).transpose()
 }
 
-pub fn de_origin_request_policy_config(inp: &[u8]) -> Result<crate::model::OriginRequestPolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_origin_request_policy_config(inp: &[u8]) -> Result<crate::types::OriginRequestPolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
                         #[allow(unused_mut)]
                         let mut decoder = doc.root_element()?;

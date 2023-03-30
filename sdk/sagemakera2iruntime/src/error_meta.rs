@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your request has the same name as another active human loop but has different input data. You cannot start two human loops with the same name and different input data.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>We couldn't process your request because of an issue with the server. Try again later.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your AWS account. For a list of Amazon A2I service quotes, see <a href="https://docs.aws.amazon.com/general/latest/gr/a2i.html">Amazon Augmented AI Service Quotes</a>. Delete some resources or request an increase in your service quota. You can request a quota increase using Service Quotas or the AWS Support Center. To request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Quotas</a> in the <i>AWS General Reference</i>.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>You exceeded the maximum number of requests.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request isn't valid. Check the syntax and try again.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -31,8 +31,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteHumanLoopError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_human_loop::DeleteHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_human_loop::DeleteHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -44,19 +44,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteHumanLoopErro
         }
     }
 }
-impl From<crate::error::DeleteHumanLoopError> for Error {
-    fn from(err: crate::error::DeleteHumanLoopError) -> Self {
+impl From<crate::operation::delete_human_loop::DeleteHumanLoopError> for Error {
+    fn from(err: crate::operation::delete_human_loop::DeleteHumanLoopError) -> Self {
         match err {
-            crate::error::DeleteHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_human_loop::DeleteHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_human_loop::DeleteHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_human_loop::DeleteHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_human_loop::DeleteHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_human_loop::DeleteHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeHumanLoopError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -68,19 +68,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHumanLoopEr
         }
     }
 }
-impl From<crate::error::DescribeHumanLoopError> for Error {
-    fn from(err: crate::error::DescribeHumanLoopError) -> Self {
+impl From<crate::operation::describe_human_loop::DescribeHumanLoopError> for Error {
+    fn from(err: crate::operation::describe_human_loop::DescribeHumanLoopError) -> Self {
         match err {
-            crate::error::DescribeHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_human_loop::DescribeHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHumanLoopsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListHumanLoopsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_human_loops::ListHumanLoopsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -92,19 +92,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListHumanLoopsError
         }
     }
 }
-impl From<crate::error::ListHumanLoopsError> for Error {
-    fn from(err: crate::error::ListHumanLoopsError) -> Self {
+impl From<crate::operation::list_human_loops::ListHumanLoopsError> for Error {
+    fn from(err: crate::operation::list_human_loops::ListHumanLoopsError) -> Self {
         match err {
-            crate::error::ListHumanLoopsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListHumanLoopsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListHumanLoopsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListHumanLoopsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListHumanLoopsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_human_loops::ListHumanLoopsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartHumanLoopError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -116,20 +116,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartHumanLoopError
         }
     }
 }
-impl From<crate::error::StartHumanLoopError> for Error {
-    fn from(err: crate::error::StartHumanLoopError) -> Self {
+impl From<crate::operation::start_human_loop::StartHumanLoopError> for Error {
+    fn from(err: crate::operation::start_human_loop::StartHumanLoopError) -> Self {
         match err {
-            crate::error::StartHumanLoopError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartHumanLoopError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_human_loop::StartHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopHumanLoopError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_human_loop::StopHumanLoopError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_human_loop::StopHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -141,14 +141,14 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopHumanLoopError,
         }
     }
 }
-impl From<crate::error::StopHumanLoopError> for Error {
-    fn from(err: crate::error::StopHumanLoopError) -> Self {
+impl From<crate::operation::stop_human_loop::StopHumanLoopError> for Error {
+    fn from(err: crate::operation::stop_human_loop::StopHumanLoopError) -> Self {
         match err {
-            crate::error::StopHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StopHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StopHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_human_loop::StopHumanLoopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

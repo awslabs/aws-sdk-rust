@@ -22,7 +22,7 @@ fn operation_input_test_put_events_1() {
     ))
     .set_entries(Some(
         vec![
-            aws_sdk_eventbridge::model::PutEventsRequestEntry::builder()
+            aws_sdk_eventbridge::types::PutEventsRequestEntry::builder()
             .set_detail_type(
                 Some(
                     "detailType".to_owned()

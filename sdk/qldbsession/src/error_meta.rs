@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>Returned when the request exceeds the processing capacity of the ledger.</p>
-    CapacityExceededException(crate::error::CapacityExceededException),
+    CapacityExceededException(crate::types::error::CapacityExceededException),
     /// <p>Returned if the session doesn't exist anymore because it timed out or expired.</p>
-    InvalidSessionException(crate::error::InvalidSessionException),
+    InvalidSessionException(crate::types::error::InvalidSessionException),
     /// <p>Returned if a resource limit such as number of active sessions is exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Returned when a transaction cannot be written to the journal due to a failure in the verification phase of <i>optimistic concurrency control</i> (OCC).</p>
-    OccConflictException(crate::error::OccConflictException),
+    OccConflictException(crate::types::error::OccConflictException),
     /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
-    RateExceededException(crate::error::RateExceededException),
+    RateExceededException(crate::types::error::RateExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -31,8 +31,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendCommandError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendCommandError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -44,16 +44,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendCommandError, R
         }
     }
 }
-impl From<crate::error::SendCommandError> for Error {
-    fn from(err: crate::error::SendCommandError) -> Self {
+impl From<crate::operation::send_command::SendCommandError> for Error {
+    fn from(err: crate::operation::send_command::SendCommandError) -> Self {
         match err {
-            crate::error::SendCommandError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::SendCommandError::CapacityExceededException(inner) => Error::CapacityExceededException(inner),
-            crate::error::SendCommandError::InvalidSessionException(inner) => Error::InvalidSessionException(inner),
-            crate::error::SendCommandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::SendCommandError::OccConflictException(inner) => Error::OccConflictException(inner),
-            crate::error::SendCommandError::RateExceededException(inner) => Error::RateExceededException(inner),
-            crate::error::SendCommandError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_command::SendCommandError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::send_command::SendCommandError::CapacityExceededException(inner) => Error::CapacityExceededException(inner),
+            crate::operation::send_command::SendCommandError::InvalidSessionException(inner) => Error::InvalidSessionException(inner),
+            crate::operation::send_command::SendCommandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::send_command::SendCommandError::OccConflictException(inner) => Error::OccConflictException(inner),
+            crate::operation::send_command::SendCommandError::RateExceededException(inner) => Error::RateExceededException(inner),
+            crate::operation::send_command::SendCommandError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -15,7 +15,7 @@ pub(crate) fn de_expiration_header(header_map: &http::HeaderMap) -> std::result:
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub(crate) fn de_request_charged_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::model::RequestCharged>, aws_smithy_http::header::ParseError> {
+pub(crate) fn de_request_charged_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::types::RequestCharged>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-request-charged").iter();
     aws_smithy_http::header::one_or_none(headers)
 }
@@ -25,7 +25,7 @@ pub(crate) fn de_ssekms_key_id_header(header_map: &http::HeaderMap) -> std::resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub(crate) fn de_server_side_encryption_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::model::ServerSideEncryption>, aws_smithy_http::header::ParseError> {
+pub(crate) fn de_server_side_encryption_header(header_map: &http::HeaderMap) -> std::result::Result<std::option::Option<crate::types::ServerSideEncryption>, aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-server-side-encryption").iter();
     aws_smithy_http::header::one_or_none(headers)
 }

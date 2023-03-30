@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p></p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p></p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p></p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p></p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p></p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p></p>
-    TooManyTagsException(crate::error::TooManyTagsException),
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p></p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -34,8 +34,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_app::DeleteAppError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -47,20 +47,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>>
         }
     }
 }
-impl From<crate::error::DeleteAppError> for Error {
-    fn from(err: crate::error::DeleteAppError) -> Self {
+impl From<crate::operation::delete_app::DeleteAppError> for Error {
+    fn from(err: crate::operation::delete_app::DeleteAppError) -> Self {
         match err {
-            crate::error::DeleteAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteAppError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteAppError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteAppError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_app::DeleteAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_app::DeleteAppError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_app::DeleteAppError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_app::DeleteAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_app::DeleteAppError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_app::DeleteAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSimulationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_simulation::DeleteSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_simulation::DeleteSimulationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -72,20 +72,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSimulationErr
         }
     }
 }
-impl From<crate::error::DeleteSimulationError> for Error {
-    fn from(err: crate::error::DeleteSimulationError) -> Self {
+impl From<crate::operation::delete_simulation::DeleteSimulationError> for Error {
+    fn from(err: crate::operation::delete_simulation::DeleteSimulationError) -> Self {
         match err {
-            crate::error::DeleteSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteSimulationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteSimulationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteSimulationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_simulation::DeleteSimulationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAppError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_app::DescribeAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_app::DescribeAppError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -97,19 +97,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppError, R
         }
     }
 }
-impl From<crate::error::DescribeAppError> for Error {
-    fn from(err: crate::error::DescribeAppError) -> Self {
+impl From<crate::operation::describe_app::DescribeAppError> for Error {
+    fn from(err: crate::operation::describe_app::DescribeAppError) -> Self {
         match err {
-            crate::error::DescribeAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeAppError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeAppError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_app::DescribeAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_app::DescribeAppError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_app::DescribeAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_app::DescribeAppError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_app::DescribeAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeSimulationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_simulation::DescribeSimulationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -121,19 +121,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSimulationE
         }
     }
 }
-impl From<crate::error::DescribeSimulationError> for Error {
-    fn from(err: crate::error::DescribeSimulationError) -> Self {
+impl From<crate::operation::describe_simulation::DescribeSimulationError> for Error {
+    fn from(err: crate::operation::describe_simulation::DescribeSimulationError) -> Self {
         match err {
-            crate::error::DescribeSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeSimulationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeSimulationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_simulation::DescribeSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_simulation::DescribeSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_simulation::DescribeSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_simulation::DescribeSimulationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_simulation::DescribeSimulationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_apps::ListAppsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -145,19 +145,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>> 
         }
     }
 }
-impl From<crate::error::ListAppsError> for Error {
-    fn from(err: crate::error::ListAppsError) -> Self {
+impl From<crate::operation::list_apps::ListAppsError> for Error {
+    fn from(err: crate::operation::list_apps::ListAppsError) -> Self {
         match err {
-            crate::error::ListAppsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAppsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAppsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAppsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAppsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_apps::ListAppsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_apps::ListAppsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_apps::ListAppsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_apps::ListAppsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_apps::ListAppsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSimulationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSimulationsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_simulations::ListSimulationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_simulations::ListSimulationsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -169,18 +169,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSimulationsErro
         }
     }
 }
-impl From<crate::error::ListSimulationsError> for Error {
-    fn from(err: crate::error::ListSimulationsError) -> Self {
+impl From<crate::operation::list_simulations::ListSimulationsError> for Error {
+    fn from(err: crate::operation::list_simulations::ListSimulationsError) -> Self {
         match err {
-            crate::error::ListSimulationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListSimulationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListSimulationsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListSimulationsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_simulations::ListSimulationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_simulations::ListSimulationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_simulations::ListSimulationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_simulations::ListSimulationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -192,17 +192,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartAppError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_app::StartAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_app::StartAppError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -214,20 +214,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAppError, R>> 
         }
     }
 }
-impl From<crate::error::StartAppError> for Error {
-    fn from(err: crate::error::StartAppError) -> Self {
+impl From<crate::operation::start_app::StartAppError> for Error {
+    fn from(err: crate::operation::start_app::StartAppError) -> Self {
         match err {
-            crate::error::StartAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartAppError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartAppError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartAppError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartAppError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_app::StartAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_app::StartAppError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_app::StartAppError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_app::StartAppError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_app::StartAppError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_app::StartAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartClockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartClockError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_clock::StartClockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_clock::StartClockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -239,20 +239,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartClockError, R>
         }
     }
 }
-impl From<crate::error::StartClockError> for Error {
-    fn from(err: crate::error::StartClockError) -> Self {
+impl From<crate::operation::start_clock::StartClockError> for Error {
+    fn from(err: crate::operation::start_clock::StartClockError) -> Self {
         match err {
-            crate::error::StartClockError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartClockError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartClockError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartClockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartClockError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartClockError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_clock::StartClockError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_clock::StartClockError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_clock::StartClockError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_clock::StartClockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_clock::StartClockError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_clock::StartClockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSimulationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -264,20 +264,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSimulationErro
         }
     }
 }
-impl From<crate::error::StartSimulationError> for Error {
-    fn from(err: crate::error::StartSimulationError) -> Self {
+impl From<crate::operation::start_simulation::StartSimulationError> for Error {
+    fn from(err: crate::operation::start_simulation::StartSimulationError) -> Self {
         match err {
-            crate::error::StartSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartSimulationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartSimulationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartSimulationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartSimulationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_simulation::StartSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_simulation::StartSimulationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_simulation::StartSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_simulation::StartSimulationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_simulation::StartSimulationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_simulation::StartSimulationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopAppError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_app::StopAppError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_app::StopAppError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -289,20 +289,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopAppError, R>> f
         }
     }
 }
-impl From<crate::error::StopAppError> for Error {
-    fn from(err: crate::error::StopAppError) -> Self {
+impl From<crate::operation::stop_app::StopAppError> for Error {
+    fn from(err: crate::operation::stop_app::StopAppError) -> Self {
         match err {
-            crate::error::StopAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StopAppError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StopAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StopAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopAppError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopAppError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_app::StopAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_app::StopAppError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_app::StopAppError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_app::StopAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_app::StopAppError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_app::StopAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopClockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopClockError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_clock::StopClockError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_clock::StopClockError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -314,20 +314,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopClockError, R>>
         }
     }
 }
-impl From<crate::error::StopClockError> for Error {
-    fn from(err: crate::error::StopClockError) -> Self {
+impl From<crate::operation::stop_clock::StopClockError> for Error {
+    fn from(err: crate::operation::stop_clock::StopClockError) -> Self {
         match err {
-            crate::error::StopClockError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StopClockError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StopClockError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StopClockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopClockError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopClockError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_clock::StopClockError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_clock::StopClockError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_clock::StopClockError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_clock::StopClockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_clock::StopClockError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_clock::StopClockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopSimulationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_simulation::StopSimulationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_simulation::StopSimulationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -339,20 +339,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopSimulationError
         }
     }
 }
-impl From<crate::error::StopSimulationError> for Error {
-    fn from(err: crate::error::StopSimulationError) -> Self {
+impl From<crate::operation::stop_simulation::StopSimulationError> for Error {
+    fn from(err: crate::operation::stop_simulation::StopSimulationError) -> Self {
         match err {
-            crate::error::StopSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StopSimulationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StopSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StopSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StopSimulationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StopSimulationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::stop_simulation::StopSimulationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_simulation::StopSimulationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_simulation::StopSimulationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_simulation::StopSimulationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_simulation::StopSimulationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_simulation::StopSimulationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -364,18 +364,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -387,12 +387,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

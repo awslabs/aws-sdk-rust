@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -34,8 +34,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -47,49 +47,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachCustomerManag
         }
     }
 }
-impl From<crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError> for Error {
-    fn from(err: crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError) -> Self {
+impl From<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError> for Error {
+    fn from(err: crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError) -> Self {
         match err {
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::AttachCustomerManagedPolicyReferenceToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AttachManagedPolicyToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachManagedPolicyToPermissionSetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::AttachManagedPolicyToPermissionSetError> for Error {
-    fn from(err: crate::error::AttachManagedPolicyToPermissionSetError) -> Self {
-        match err {
-            crate::error::AttachManagedPolicyToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::AttachManagedPolicyToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountAssignmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAccountAssignmentError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -101,48 +74,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountAssign
         }
     }
 }
-impl From<crate::error::CreateAccountAssignmentError> for Error {
-    fn from(err: crate::error::CreateAccountAssignmentError) -> Self {
+impl From<crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError> for Error {
+    fn from(err: crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError) -> Self {
         match err {
-            crate::error::CreateAccountAssignmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateAccountAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateAccountAssignmentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateAccountAssignmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateAccountAssignmentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateAccountAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateAccountAssignmentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateAccountAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateInstanceAccessControlAttributeConfigurationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::CreateInstanceAccessControlAttributeConfigurationError> for Error {
-    fn from(err: crate::error::CreateInstanceAccessControlAttributeConfigurationError) -> Self {
-        match err {
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_account_assignment::CreateAccountAssignmentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -154,48 +101,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePermissionSet
         }
     }
 }
-impl From<crate::error::CreatePermissionSetError> for Error {
-    fn from(err: crate::error::CreatePermissionSetError) -> Self {
+impl From<crate::operation::create_account_assignment::CreateAccountAssignmentError> for Error {
+    fn from(err: crate::operation::create_account_assignment::CreateAccountAssignmentError) -> Self {
         match err {
-            crate::error::CreatePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreatePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreatePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreatePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreatePermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreatePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreatePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreatePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_account_assignment::CreateAccountAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccountAssignmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAccountAssignmentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::error::DeleteAccountAssignmentError> for Error {
-    fn from(err: crate::error::DeleteAccountAssignmentError) -> Self {
-        match err {
-            crate::error::DeleteAccountAssignmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteAccountAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteAccountAssignmentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteAccountAssignmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteAccountAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteAccountAssignmentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteAccountAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInlinePolicyFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteInlinePolicyFromPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -207,21 +128,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInlinePolicyF
         }
     }
 }
-impl From<crate::error::DeleteInlinePolicyFromPermissionSetError> for Error {
-    fn from(err: crate::error::DeleteInlinePolicyFromPermissionSetError) -> Self {
+impl From<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError> for Error {
+    fn from(err: crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError) -> Self {
         match err {
-            crate::error::DeleteInlinePolicyFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteInlinePolicyFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteInstanceAccessControlAttributeConfigurationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_permission_set::CreatePermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -233,21 +154,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteInstanceAcces
         }
     }
 }
-impl From<crate::error::DeleteInstanceAccessControlAttributeConfigurationError> for Error {
-    fn from(err: crate::error::DeleteInstanceAccessControlAttributeConfigurationError) -> Self {
+impl From<crate::operation::create_permission_set::CreatePermissionSetError> for Error {
+    fn from(err: crate::operation::create_permission_set::CreatePermissionSetError) -> Self {
         match err {
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_permission_set::CreatePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionsBoundaryFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePermissionsBoundaryFromPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -259,20 +181,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionsBo
         }
     }
 }
-impl From<crate::error::DeletePermissionsBoundaryFromPermissionSetError> for Error {
-    fn from(err: crate::error::DeletePermissionsBoundaryFromPermissionSetError) -> Self {
+impl From<crate::operation::delete_account_assignment::DeleteAccountAssignmentError> for Error {
+    fn from(err: crate::operation::delete_account_assignment::DeleteAccountAssignmentError) -> Self {
         match err {
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeletePermissionsBoundaryFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -284,21 +207,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionSet
         }
     }
 }
-impl From<crate::error::DeletePermissionSetError> for Error {
-    fn from(err: crate::error::DeletePermissionSetError) -> Self {
+impl From<crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError> for Error {
+    fn from(err: crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError) -> Self {
         match err {
-            crate::error::DeletePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeletePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DeletePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeletePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeletePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeletePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeletePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssignmentCreationStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssignmentCreationStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -310,20 +233,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssi
         }
     }
 }
-impl From<crate::error::DescribeAccountAssignmentCreationStatusError> for Error {
-    fn from(err: crate::error::DescribeAccountAssignmentCreationStatusError) -> Self {
+impl From<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError> for Error {
+    fn from(err: crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError) -> Self {
         match err {
-            crate::error::DescribeAccountAssignmentCreationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeAccountAssignmentCreationStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeAccountAssignmentCreationStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeAccountAssignmentCreationStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeAccountAssignmentCreationStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeAccountAssignmentCreationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssignmentDeletionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssignmentDeletionStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -335,20 +259,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAccountAssi
         }
     }
 }
-impl From<crate::error::DescribeAccountAssignmentDeletionStatusError> for Error {
-    fn from(err: crate::error::DescribeAccountAssignmentDeletionStatusError) -> Self {
+impl From<crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError> for Error {
+    fn from(err: crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError) -> Self {
         match err {
-            crate::error::DescribeAccountAssignmentDeletionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeAccountAssignmentDeletionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeAccountAssignmentDeletionStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeAccountAssignmentDeletionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeAccountAssignmentDeletionStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeAccountAssignmentDeletionStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeInstanceAccessControlAttributeConfigurationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_permission_set::DeletePermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -360,20 +284,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstanceAcc
         }
     }
 }
-impl From<crate::error::DescribeInstanceAccessControlAttributeConfigurationError> for Error {
-    fn from(err: crate::error::DescribeInstanceAccessControlAttributeConfigurationError) -> Self {
+impl From<crate::operation::delete_permission_set::DeletePermissionSetError> for Error {
+    fn from(err: crate::operation::delete_permission_set::DeletePermissionSetError) -> Self {
         match err {
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_permission_set::DeletePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -385,20 +310,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePermissionS
         }
     }
 }
-impl From<crate::error::DescribePermissionSetError> for Error {
-    fn from(err: crate::error::DescribePermissionSetError) -> Self {
+impl From<crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError> for Error {
+    fn from(err: crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError) -> Self {
         match err {
-            crate::error::DescribePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePermissionSetProvisioningStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePermissionSetProvisioningStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -410,20 +335,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePermissionS
         }
     }
 }
-impl From<crate::error::DescribePermissionSetProvisioningStatusError> for Error {
-    fn from(err: crate::error::DescribePermissionSetProvisioningStatusError) -> Self {
+impl From<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError> for Error {
+    fn from(err: crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError) -> Self {
         match err {
-            crate::error::DescribePermissionSetProvisioningStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DescribePermissionSetProvisioningStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DescribePermissionSetProvisioningStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribePermissionSetProvisioningStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DescribePermissionSetProvisioningStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribePermissionSetProvisioningStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -435,21 +360,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachCustomerManag
         }
     }
 }
-impl From<crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError> for Error {
-    fn from(err: crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError) -> Self {
+impl From<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError> for Error {
+    fn from(err: crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError) -> Self {
         match err {
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DetachCustomerManagedPolicyReferenceFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachManagedPolicyFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachManagedPolicyFromPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_permission_set::DescribePermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -461,21 +385,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DetachManagedPolicy
         }
     }
 }
-impl From<crate::error::DetachManagedPolicyFromPermissionSetError> for Error {
-    fn from(err: crate::error::DetachManagedPolicyFromPermissionSetError) -> Self {
+impl From<crate::operation::describe_permission_set::DescribePermissionSetError> for Error {
+    fn from(err: crate::operation::describe_permission_set::DescribePermissionSetError) -> Self {
         match err {
-            crate::error::DetachManagedPolicyFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DetachManagedPolicyFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_permission_set::DescribePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInlinePolicyForPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInlinePolicyForPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -487,20 +410,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInlinePolicyForP
         }
     }
 }
-impl From<crate::error::GetInlinePolicyForPermissionSetError> for Error {
-    fn from(err: crate::error::GetInlinePolicyForPermissionSetError) -> Self {
+impl From<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError> for Error {
+    fn from(err: crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError) -> Self {
         match err {
-            crate::error::GetInlinePolicyForPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetInlinePolicyForPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetInlinePolicyForPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetInlinePolicyForPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetInlinePolicyForPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetInlinePolicyForPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionsBoundaryForPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPermissionsBoundaryForPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -512,20 +435,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionsBound
         }
     }
 }
-impl From<crate::error::GetPermissionsBoundaryForPermissionSetError> for Error {
-    fn from(err: crate::error::GetPermissionsBoundaryForPermissionSetError) -> Self {
+impl From<crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError> for Error {
+    fn from(err: crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError) -> Self {
         match err {
-            crate::error::GetPermissionsBoundaryForPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetPermissionsBoundaryForPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetPermissionsBoundaryForPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetPermissionsBoundaryForPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetPermissionsBoundaryForPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetPermissionsBoundaryForPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentCreationStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentCreationStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -537,20 +461,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignme
         }
     }
 }
-impl From<crate::error::ListAccountAssignmentCreationStatusError> for Error {
-    fn from(err: crate::error::ListAccountAssignmentCreationStatusError) -> Self {
+impl From<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError> for Error {
+    fn from(err: crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError) -> Self {
         match err {
-            crate::error::ListAccountAssignmentCreationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAccountAssignmentCreationStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAccountAssignmentCreationStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAccountAssignmentCreationStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAccountAssignmentCreationStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAccountAssignmentCreationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentDeletionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentDeletionStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -562,20 +487,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignme
         }
     }
 }
-impl From<crate::error::ListAccountAssignmentDeletionStatusError> for Error {
-    fn from(err: crate::error::ListAccountAssignmentDeletionStatusError) -> Self {
+impl From<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError> for Error {
+    fn from(err: crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError) -> Self {
         match err {
-            crate::error::ListAccountAssignmentDeletionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAccountAssignmentDeletionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAccountAssignmentDeletionStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAccountAssignmentDeletionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAccountAssignmentDeletionStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAccountAssignmentDeletionStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -587,20 +512,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountAssignme
         }
     }
 }
-impl From<crate::error::ListAccountAssignmentsError> for Error {
-    fn from(err: crate::error::ListAccountAssignmentsError) -> Self {
+impl From<crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError> for Error {
+    fn from(err: crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError) -> Self {
         match err {
-            crate::error::ListAccountAssignmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAccountAssignmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAccountAssignmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAccountAssignmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAccountAssignmentsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAccountAssignmentsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsForProvisionedPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountsForProvisionedPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -612,20 +537,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsForProv
         }
     }
 }
-impl From<crate::error::ListAccountsForProvisionedPermissionSetError> for Error {
-    fn from(err: crate::error::ListAccountsForProvisionedPermissionSetError) -> Self {
+impl From<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError> for Error {
+    fn from(err: crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError) -> Self {
         match err {
-            crate::error::ListAccountsForProvisionedPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAccountsForProvisionedPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAccountsForProvisionedPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAccountsForProvisionedPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListAccountsForProvisionedPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAccountsForProvisionedPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -637,20 +562,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCustomerManaged
         }
     }
 }
-impl From<crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError> for Error {
-    fn from(err: crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError) -> Self {
+impl From<crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError> for Error {
+    fn from(err: crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError) -> Self {
         match err {
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListCustomerManagedPolicyReferencesInPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListInstancesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_account_assignments::ListAccountAssignmentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -662,19 +587,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInstancesError,
         }
     }
 }
-impl From<crate::error::ListInstancesError> for Error {
-    fn from(err: crate::error::ListInstancesError) -> Self {
+impl From<crate::operation::list_account_assignments::ListAccountAssignmentsError> for Error {
+    fn from(err: crate::operation::list_account_assignments::ListAccountAssignmentsError) -> Self {
         match err {
-            crate::error::ListInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListInstancesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_assignments::ListAccountAssignmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedPoliciesInPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListManagedPoliciesInPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -686,20 +612,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedPolicies
         }
     }
 }
-impl From<crate::error::ListManagedPoliciesInPermissionSetError> for Error {
-    fn from(err: crate::error::ListManagedPoliciesInPermissionSetError) -> Self {
+impl From<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError> for Error {
+    fn from(err: crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError) -> Self {
         match err {
-            crate::error::ListManagedPoliciesInPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListManagedPoliciesInPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListManagedPoliciesInPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListManagedPoliciesInPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListManagedPoliciesInPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListManagedPoliciesInPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetProvisioningStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionSetProvisioningStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -711,20 +637,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetPr
         }
     }
 }
-impl From<crate::error::ListPermissionSetProvisioningStatusError> for Error {
-    fn from(err: crate::error::ListPermissionSetProvisioningStatusError) -> Self {
+impl From<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError> for Error {
+    fn from(err: crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError) -> Self {
         match err {
-            crate::error::ListPermissionSetProvisioningStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListPermissionSetProvisioningStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListPermissionSetProvisioningStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListPermissionSetProvisioningStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListPermissionSetProvisioningStatusError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListPermissionSetProvisioningStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -736,20 +662,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsE
         }
     }
 }
-impl From<crate::error::ListPermissionSetsError> for Error {
-    fn from(err: crate::error::ListPermissionSetsError) -> Self {
+impl From<crate::operation::list_instances::ListInstancesError> for Error {
+    fn from(err: crate::operation::list_instances::ListInstancesError) -> Self {
         match err {
-            crate::error::ListPermissionSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListPermissionSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListPermissionSetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListPermissionSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListPermissionSetsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListPermissionSetsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_instances::ListInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_instances::ListInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_instances::ListInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_instances::ListInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_instances::ListInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsProvisionedToAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsProvisionedToAccountError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -761,20 +686,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionSetsP
         }
     }
 }
-impl From<crate::error::ListPermissionSetsProvisionedToAccountError> for Error {
-    fn from(err: crate::error::ListPermissionSetsProvisionedToAccountError) -> Self {
+impl From<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError> for Error {
+    fn from(err: crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError) -> Self {
         match err {
-            crate::error::ListPermissionSetsProvisionedToAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListPermissionSetsProvisionedToAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListPermissionSetsProvisionedToAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListPermissionSetsProvisionedToAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListPermissionSetsProvisionedToAccountError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListPermissionSetsProvisionedToAccountError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -786,20 +711,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError> for Error {
+    fn from(err: crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ProvisionPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ProvisionPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_permission_sets::ListPermissionSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_permission_sets::ListPermissionSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -811,21 +736,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ProvisionPermission
         }
     }
 }
-impl From<crate::error::ProvisionPermissionSetError> for Error {
-    fn from(err: crate::error::ProvisionPermissionSetError) -> Self {
+impl From<crate::operation::list_permission_sets::ListPermissionSetsError> for Error {
+    fn from(err: crate::operation::list_permission_sets::ListPermissionSetsError) -> Self {
         match err {
-            crate::error::ProvisionPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ProvisionPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::ProvisionPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ProvisionPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ProvisionPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ProvisionPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ProvisionPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_permission_sets::ListPermissionSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInlinePolicyToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutInlinePolicyToPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -837,22 +761,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutInlinePolicyToPe
         }
     }
 }
-impl From<crate::error::PutInlinePolicyToPermissionSetError> for Error {
-    fn from(err: crate::error::PutInlinePolicyToPermissionSetError) -> Self {
+impl From<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError> for Error {
+    fn from(err: crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError) -> Self {
         match err {
-            crate::error::PutInlinePolicyToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutInlinePolicyToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPermissionsBoundaryToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutPermissionsBoundaryToPermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -864,21 +786,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPermissionsBound
         }
     }
 }
-impl From<crate::error::PutPermissionsBoundaryToPermissionSetError> for Error {
-    fn from(err: crate::error::PutPermissionsBoundaryToPermissionSetError) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::error::PutPermissionsBoundaryToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutPermissionsBoundaryToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::provision_permission_set::ProvisionPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -890,22 +811,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::provision_permission_set::ProvisionPermissionSetError> for Error {
+    fn from(err: crate::operation::provision_permission_set::ProvisionPermissionSetError) -> Self {
         match err {
-            crate::error::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::provision_permission_set::ProvisionPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -917,21 +837,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError> for Error {
+    fn from(err: crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError) -> Self {
         match err {
-            crate::error::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateInstanceAccessControlAttributeConfigurationError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -943,21 +864,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateInstanceAcces
         }
     }
 }
-impl From<crate::error::UpdateInstanceAccessControlAttributeConfigurationError> for Error {
-    fn from(err: crate::error::UpdateInstanceAccessControlAttributeConfigurationError) -> Self {
+impl From<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError> for Error {
+    fn from(err: crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError) -> Self {
         match err {
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePermissionSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -969,16 +890,95 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePermissionSet
         }
     }
 }
-impl From<crate::error::UpdatePermissionSetError> for Error {
-    fn from(err: crate::error::UpdatePermissionSetError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::UpdatePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdatePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdatePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdatePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdatePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdatePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdatePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError> for Error {
+    fn from(err: crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError) -> Self {
+        match err {
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_permission_set::UpdatePermissionSetError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_permission_set::UpdatePermissionSetError> for Error {
+    fn from(err: crate::operation::update_permission_set::UpdatePermissionSetError) -> Self {
+        match err {
+            crate::operation::update_permission_set::UpdatePermissionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_permission_set::UpdatePermissionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

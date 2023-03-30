@@ -5,7 +5,7 @@
 
 use aws_credential_types::provider::{self, error::CredentialsError};
 use aws_credential_types::Credentials as AwsCredentials;
-use aws_sdk_sts::model::Credentials as StsCredentials;
+use aws_sdk_sts::types::Credentials as StsCredentials;
 
 use std::convert::TryFrom;
 use std::time::{SystemTime, UNIX_EPOCH};

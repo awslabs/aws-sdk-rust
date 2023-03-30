@@ -4,13 +4,13 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_response_headers_policy_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::model::ResponseHeadersPolicyConfig>, crate::error::GetResponseHeadersPolicyConfigError> {
+pub fn de_response_headers_policy_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::ResponseHeadersPolicyConfig>, crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError> {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_response_headers_policy_config_output::de_response_headers_policy_config(body).map_err(crate::error::GetResponseHeadersPolicyConfigError::unhandled)
+        crate::protocol_serde::shape_get_response_headers_policy_config_output::de_response_headers_policy_config(body).map_err(crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::unhandled)
     }).transpose()
 }
 
-pub fn de_response_headers_policy_config(inp: &[u8]) -> Result<crate::model::ResponseHeadersPolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_response_headers_policy_config(inp: &[u8]) -> Result<crate::types::ResponseHeadersPolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
                         #[allow(unused_mut)]
                         let mut decoder = doc.root_element()?;

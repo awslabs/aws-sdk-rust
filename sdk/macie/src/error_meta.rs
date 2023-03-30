@@ -4,13 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>(Discontinued) You do not have required permissions to access the requested resource.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>(Discontinued) Internal server error.</p>
-    InternalException(crate::error::InternalException),
+    InternalException(crate::types::error::InternalException),
     /// <p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -25,8 +25,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateMemberAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateMemberAccountError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_member_account::AssociateMemberAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -38,18 +38,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateMemberAcco
         }
     }
 }
-impl From<crate::error::AssociateMemberAccountError> for Error {
-    fn from(err: crate::error::AssociateMemberAccountError) -> Self {
+impl From<crate::operation::associate_member_account::AssociateMemberAccountError> for Error {
+    fn from(err: crate::operation::associate_member_account::AssociateMemberAccountError) -> Self {
         match err {
-            crate::error::AssociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::AssociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AssociateMemberAccountError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_member_account::AssociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::associate_member_account::AssociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::associate_member_account::AssociateMemberAccountError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_member_account::AssociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_s3_resources::AssociateS3ResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -61,19 +61,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateS3Resource
         }
     }
 }
-impl From<crate::error::AssociateS3ResourcesError> for Error {
-    fn from(err: crate::error::AssociateS3ResourcesError) -> Self {
+impl From<crate::operation::associate_s3_resources::AssociateS3ResourcesError> for Error {
+    fn from(err: crate::operation::associate_s3_resources::AssociateS3ResourcesError) -> Self {
         match err {
-            crate::error::AssociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AssociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::AssociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::AssociateS3ResourcesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::AssociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_member_account::DisassociateMemberAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_member_account::DisassociateMemberAccountError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -85,17 +85,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateMemberA
         }
     }
 }
-impl From<crate::error::DisassociateMemberAccountError> for Error {
-    fn from(err: crate::error::DisassociateMemberAccountError) -> Self {
+impl From<crate::operation::disassociate_member_account::DisassociateMemberAccountError> for Error {
+    fn from(err: crate::operation::disassociate_member_account::DisassociateMemberAccountError) -> Self {
         match err {
-            crate::error::DisassociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::DisassociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DisassociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -107,18 +107,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateS3Resou
         }
     }
 }
-impl From<crate::error::DisassociateS3ResourcesError> for Error {
-    fn from(err: crate::error::DisassociateS3ResourcesError) -> Self {
+impl From<crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError> for Error {
+    fn from(err: crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError) -> Self {
         match err {
-            crate::error::DisassociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisassociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::DisassociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DisassociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMemberAccountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMemberAccountsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -130,17 +130,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMemberAccountsE
         }
     }
 }
-impl From<crate::error::ListMemberAccountsError> for Error {
-    fn from(err: crate::error::ListMemberAccountsError) -> Self {
+impl From<crate::operation::list_member_accounts::ListMemberAccountsError> for Error {
+    fn from(err: crate::operation::list_member_accounts::ListMemberAccountsError) -> Self {
         match err {
-            crate::error::ListMemberAccountsError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::ListMemberAccountsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ListMemberAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListS3ResourcesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_s3_resources::ListS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_s3_resources::ListS3ResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -152,18 +152,18 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListS3ResourcesErro
         }
     }
 }
-impl From<crate::error::ListS3ResourcesError> for Error {
-    fn from(err: crate::error::ListS3ResourcesError) -> Self {
+impl From<crate::operation::list_s3_resources::ListS3ResourcesError> for Error {
+    fn from(err: crate::operation::list_s3_resources::ListS3ResourcesError) -> Self {
         match err {
-            crate::error::ListS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::ListS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::ListS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_s3_resources::ListS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_s3_resources::UpdateS3ResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -175,13 +175,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateS3ResourcesEr
         }
     }
 }
-impl From<crate::error::UpdateS3ResourcesError> for Error {
-    fn from(err: crate::error::UpdateS3ResourcesError) -> Self {
+impl From<crate::operation::update_s3_resources::UpdateS3ResourcesError> for Error {
+    fn from(err: crate::operation::update_s3_resources::UpdateS3ResourcesError) -> Self {
         match err {
-            crate::error::UpdateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
-            crate::error::UpdateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_s3_resources::UpdateS3ResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_s3_resources::UpdateS3ResourcesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_s3_resources::UpdateS3ResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_s3_resources::UpdateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_sts::{Credentials, Region};
+use aws_sdk_sts::config::{Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
 
 #[tokio::test]

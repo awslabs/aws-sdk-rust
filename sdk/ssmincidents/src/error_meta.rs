@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You don't have sufficient access to perform this operation.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource which doesn't exist. </p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Request would cause a service quota to be exceeded.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -34,8 +34,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateReplicationSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_replication_set::CreateReplicationSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -47,21 +47,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateReplicationSe
         }
     }
 }
-impl From<crate::error::CreateReplicationSetError> for Error {
-    fn from(err: crate::error::CreateReplicationSetError) -> Self {
+impl From<crate::operation::create_replication_set::CreateReplicationSetError> for Error {
+    fn from(err: crate::operation::create_replication_set::CreateReplicationSetError) -> Self {
         match err {
-            crate::error::CreateReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateReplicationSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateReplicationSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CreateReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_replication_set::CreateReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResponsePlanError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -73,21 +73,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResponsePlanE
         }
     }
 }
-impl From<crate::error::CreateResponsePlanError> for Error {
-    fn from(err: crate::error::CreateResponsePlanError) -> Self {
+impl From<crate::operation::create_response_plan::CreateResponsePlanError> for Error {
+    fn from(err: crate::operation::create_response_plan::CreateResponsePlanError) -> Self {
         match err {
-            crate::error::CreateResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateResponsePlanError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_response_plan::CreateResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTimelineEventError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_timeline_event::CreateTimelineEventError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -99,21 +99,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTimelineEvent
         }
     }
 }
-impl From<crate::error::CreateTimelineEventError> for Error {
-    fn from(err: crate::error::CreateTimelineEventError) -> Self {
+impl From<crate::operation::create_timeline_event::CreateTimelineEventError> for Error {
+    fn from(err: crate::operation::create_timeline_event::CreateTimelineEventError) -> Self {
         match err {
-            crate::error::CreateTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateTimelineEventError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_timeline_event::CreateTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIncidentRecordError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_incident_record::DeleteIncidentRecordError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -125,19 +125,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteIncidentRecor
         }
     }
 }
-impl From<crate::error::DeleteIncidentRecordError> for Error {
-    fn from(err: crate::error::DeleteIncidentRecordError) -> Self {
+impl From<crate::operation::delete_incident_record::DeleteIncidentRecordError> for Error {
+    fn from(err: crate::operation::delete_incident_record::DeleteIncidentRecordError) -> Self {
         match err {
-            crate::error::DeleteIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_incident_record::DeleteIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_incident_record::DeleteIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_incident_record::DeleteIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_incident_record::DeleteIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_incident_record::DeleteIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteReplicationSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_replication_set::DeleteReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_replication_set::DeleteReplicationSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -149,20 +149,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReplicationSe
         }
     }
 }
-impl From<crate::error::DeleteReplicationSetError> for Error {
-    fn from(err: crate::error::DeleteReplicationSetError) -> Self {
+impl From<crate::operation::delete_replication_set::DeleteReplicationSetError> for Error {
+    fn from(err: crate::operation::delete_replication_set::DeleteReplicationSetError) -> Self {
         match err {
-            crate::error::DeleteReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_replication_set::DeleteReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -174,20 +174,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolic
         }
     }
 }
-impl From<crate::error::DeleteResourcePolicyError> for Error {
-    fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
         match err {
-            crate::error::DeleteResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResponsePlanError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -199,19 +199,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResponsePlanE
         }
     }
 }
-impl From<crate::error::DeleteResponsePlanError> for Error {
-    fn from(err: crate::error::DeleteResponsePlanError) -> Self {
+impl From<crate::operation::delete_response_plan::DeleteResponsePlanError> for Error {
+    fn from(err: crate::operation::delete_response_plan::DeleteResponsePlanError) -> Self {
         match err {
-            crate::error::DeleteResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_response_plan::DeleteResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_response_plan::DeleteResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_response_plan::DeleteResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_response_plan::DeleteResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_response_plan::DeleteResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTimelineEventError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_timeline_event::DeleteTimelineEventError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -223,19 +223,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTimelineEvent
         }
     }
 }
-impl From<crate::error::DeleteTimelineEventError> for Error {
-    fn from(err: crate::error::DeleteTimelineEventError) -> Self {
+impl From<crate::operation::delete_timeline_event::DeleteTimelineEventError> for Error {
+    fn from(err: crate::operation::delete_timeline_event::DeleteTimelineEventError) -> Self {
         match err {
-            crate::error::DeleteTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_timeline_event::DeleteTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_timeline_event::DeleteTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_timeline_event::DeleteTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_timeline_event::DeleteTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_timeline_event::DeleteTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIncidentRecordError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_incident_record::GetIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_incident_record::GetIncidentRecordError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -247,20 +247,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIncidentRecordEr
         }
     }
 }
-impl From<crate::error::GetIncidentRecordError> for Error {
-    fn from(err: crate::error::GetIncidentRecordError) -> Self {
+impl From<crate::operation::get_incident_record::GetIncidentRecordError> for Error {
+    fn from(err: crate::operation::get_incident_record::GetIncidentRecordError) -> Self {
         match err {
-            crate::error::GetIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetIncidentRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_incident_record::GetIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetReplicationSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_replication_set::GetReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_replication_set::GetReplicationSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -272,20 +272,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetReplicationSetEr
         }
     }
 }
-impl From<crate::error::GetReplicationSetError> for Error {
-    fn from(err: crate::error::GetReplicationSetError) -> Self {
+impl From<crate::operation::get_replication_set::GetReplicationSetError> for Error {
+    fn from(err: crate::operation::get_replication_set::GetReplicationSetError) -> Self {
         match err {
-            crate::error::GetReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_replication_set::GetReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -297,20 +297,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcePolicies
         }
     }
 }
-impl From<crate::error::GetResourcePoliciesError> for Error {
-    fn from(err: crate::error::GetResourcePoliciesError) -> Self {
+impl From<crate::operation::get_resource_policies::GetResourcePoliciesError> for Error {
+    fn from(err: crate::operation::get_resource_policies::GetResourcePoliciesError) -> Self {
         match err {
-            crate::error::GetResourcePoliciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResourcePoliciesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetResourcePoliciesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResourcePoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResourcePoliciesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResponsePlanError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_response_plan::GetResponsePlanError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -322,20 +322,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponsePlanErro
         }
     }
 }
-impl From<crate::error::GetResponsePlanError> for Error {
-    fn from(err: crate::error::GetResponsePlanError) -> Self {
+impl From<crate::operation::get_response_plan::GetResponsePlanError> for Error {
+    fn from(err: crate::operation::get_response_plan::GetResponsePlanError) -> Self {
         match err {
-            crate::error::GetResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_response_plan::GetResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTimelineEventError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_timeline_event::GetTimelineEventError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -347,20 +347,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTimelineEventErr
         }
     }
 }
-impl From<crate::error::GetTimelineEventError> for Error {
-    fn from(err: crate::error::GetTimelineEventError) -> Self {
+impl From<crate::operation::get_timeline_event::GetTimelineEventError> for Error {
+    fn from(err: crate::operation::get_timeline_event::GetTimelineEventError) -> Self {
         match err {
-            crate::error::GetTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_timeline_event::GetTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIncidentRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIncidentRecordsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_incident_records::ListIncidentRecordsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -372,19 +372,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListIncidentRecords
         }
     }
 }
-impl From<crate::error::ListIncidentRecordsError> for Error {
-    fn from(err: crate::error::ListIncidentRecordsError) -> Self {
+impl From<crate::operation::list_incident_records::ListIncidentRecordsError> for Error {
+    fn from(err: crate::operation::list_incident_records::ListIncidentRecordsError) -> Self {
         match err {
-            crate::error::ListIncidentRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListIncidentRecordsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListIncidentRecordsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListIncidentRecordsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListIncidentRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_incident_records::ListIncidentRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_incident_records::ListIncidentRecordsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_incident_records::ListIncidentRecordsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_incident_records::ListIncidentRecordsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_incident_records::ListIncidentRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRelatedItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRelatedItemsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_related_items::ListRelatedItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_related_items::ListRelatedItemsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -396,19 +396,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRelatedItemsErr
         }
     }
 }
-impl From<crate::error::ListRelatedItemsError> for Error {
-    fn from(err: crate::error::ListRelatedItemsError) -> Self {
+impl From<crate::operation::list_related_items::ListRelatedItemsError> for Error {
+    fn from(err: crate::operation::list_related_items::ListRelatedItemsError) -> Self {
         match err {
-            crate::error::ListRelatedItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListRelatedItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListRelatedItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListRelatedItemsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListRelatedItemsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_related_items::ListRelatedItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_related_items::ListRelatedItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_related_items::ListRelatedItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_related_items::ListRelatedItemsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_related_items::ListRelatedItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListReplicationSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListReplicationSetsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_replication_sets::ListReplicationSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_replication_sets::ListReplicationSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -420,19 +420,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListReplicationSets
         }
     }
 }
-impl From<crate::error::ListReplicationSetsError> for Error {
-    fn from(err: crate::error::ListReplicationSetsError) -> Self {
+impl From<crate::operation::list_replication_sets::ListReplicationSetsError> for Error {
+    fn from(err: crate::operation::list_replication_sets::ListReplicationSetsError) -> Self {
         match err {
-            crate::error::ListReplicationSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListReplicationSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListReplicationSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListReplicationSetsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListReplicationSetsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_replication_sets::ListReplicationSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_replication_sets::ListReplicationSetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_replication_sets::ListReplicationSetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_replication_sets::ListReplicationSetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_replication_sets::ListReplicationSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResponsePlansError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResponsePlansError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_response_plans::ListResponsePlansError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_response_plans::ListResponsePlansError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -444,19 +444,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResponsePlansEr
         }
     }
 }
-impl From<crate::error::ListResponsePlansError> for Error {
-    fn from(err: crate::error::ListResponsePlansError) -> Self {
+impl From<crate::operation::list_response_plans::ListResponsePlansError> for Error {
+    fn from(err: crate::operation::list_response_plans::ListResponsePlansError) -> Self {
         match err {
-            crate::error::ListResponsePlansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListResponsePlansError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListResponsePlansError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResponsePlansError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListResponsePlansError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_response_plans::ListResponsePlansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_response_plans::ListResponsePlansError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_response_plans::ListResponsePlansError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_response_plans::ListResponsePlansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_response_plans::ListResponsePlansError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -468,20 +468,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResource
         }
     }
 }
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::error::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTimelineEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTimelineEventsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_timeline_events::ListTimelineEventsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -493,19 +493,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTimelineEventsE
         }
     }
 }
-impl From<crate::error::ListTimelineEventsError> for Error {
-    fn from(err: crate::error::ListTimelineEventsError) -> Self {
+impl From<crate::operation::list_timeline_events::ListTimelineEventsError> for Error {
+    fn from(err: crate::operation::list_timeline_events::ListTimelineEventsError) -> Self {
         match err {
-            crate::error::ListTimelineEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListTimelineEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListTimelineEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListTimelineEventsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListTimelineEventsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_timeline_events::ListTimelineEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_timeline_events::ListTimelineEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_timeline_events::ListTimelineEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_timeline_events::ListTimelineEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_timeline_events::ListTimelineEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -517,20 +517,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyEr
         }
     }
 }
-impl From<crate::error::PutResourcePolicyError> for Error {
-    fn from(err: crate::error::PutResourcePolicyError) -> Self {
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
         match err {
-            crate::error::PutResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::PutResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::PutResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::PutResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::PutResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartIncidentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartIncidentError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -542,21 +542,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartIncidentError,
         }
     }
 }
-impl From<crate::error::StartIncidentError> for Error {
-    fn from(err: crate::error::StartIncidentError) -> Self {
+impl From<crate::operation::start_incident::StartIncidentError> for Error {
+    fn from(err: crate::operation::start_incident::StartIncidentError) -> Self {
         match err {
-            crate::error::StartIncidentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartIncidentError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::StartIncidentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartIncidentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::StartIncidentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartIncidentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartIncidentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_incident::StartIncidentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_incident::StartIncidentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_incident::StartIncidentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_incident::StartIncidentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_incident::StartIncidentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_incident::StartIncidentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_incident::StartIncidentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -568,22 +568,22 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R
         }
     }
 }
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -595,21 +595,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError,
         }
     }
 }
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDeletionProtectionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -621,20 +621,20 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDeletionProte
         }
     }
 }
-impl From<crate::error::UpdateDeletionProtectionError> for Error {
-    fn from(err: crate::error::UpdateDeletionProtectionError) -> Self {
+impl From<crate::operation::update_deletion_protection::UpdateDeletionProtectionError> for Error {
+    fn from(err: crate::operation::update_deletion_protection::UpdateDeletionProtectionError) -> Self {
         match err {
-            crate::error::UpdateDeletionProtectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDeletionProtectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateDeletionProtectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateDeletionProtectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateDeletionProtectionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateDeletionProtectionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateIncidentRecordError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -646,21 +646,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateIncidentRecor
         }
     }
 }
-impl From<crate::error::UpdateIncidentRecordError> for Error {
-    fn from(err: crate::error::UpdateIncidentRecordError) -> Self {
+impl From<crate::operation::update_incident_record::UpdateIncidentRecordError> for Error {
+    fn from(err: crate::operation::update_incident_record::UpdateIncidentRecordError) -> Self {
         match err {
-            crate::error::UpdateIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateIncidentRecordError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateIncidentRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_incident_record::UpdateIncidentRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRelatedItemsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -672,21 +672,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRelatedItemsE
         }
     }
 }
-impl From<crate::error::UpdateRelatedItemsError> for Error {
-    fn from(err: crate::error::UpdateRelatedItemsError) -> Self {
+impl From<crate::operation::update_related_items::UpdateRelatedItemsError> for Error {
+    fn from(err: crate::operation::update_related_items::UpdateRelatedItemsError) -> Self {
         match err {
-            crate::error::UpdateRelatedItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateRelatedItemsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateRelatedItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateRelatedItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateRelatedItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateRelatedItemsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateRelatedItemsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_related_items::UpdateRelatedItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateReplicationSetError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_replication_set::UpdateReplicationSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -698,21 +698,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateReplicationSe
         }
     }
 }
-impl From<crate::error::UpdateReplicationSetError> for Error {
-    fn from(err: crate::error::UpdateReplicationSetError) -> Self {
+impl From<crate::operation::update_replication_set::UpdateReplicationSetError> for Error {
+    fn from(err: crate::operation::update_replication_set::UpdateReplicationSetError) -> Self {
         match err {
-            crate::error::UpdateReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateReplicationSetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_replication_set::UpdateReplicationSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResponsePlanError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -724,21 +724,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResponsePlanE
         }
     }
 }
-impl From<crate::error::UpdateResponsePlanError> for Error {
-    fn from(err: crate::error::UpdateResponsePlanError) -> Self {
+impl From<crate::operation::update_response_plan::UpdateResponsePlanError> for Error {
+    fn from(err: crate::operation::update_response_plan::UpdateResponsePlanError) -> Self {
         match err {
-            crate::error::UpdateResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateResponsePlanError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_response_plan::UpdateResponsePlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTimelineEventError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -750,16 +750,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTimelineEvent
         }
     }
 }
-impl From<crate::error::UpdateTimelineEventError> for Error {
-    fn from(err: crate::error::UpdateTimelineEventError) -> Self {
+impl From<crate::operation::update_timeline_event::UpdateTimelineEventError> for Error {
+    fn from(err: crate::operation::update_timeline_event::UpdateTimelineEventError) -> Self {
         match err {
-            crate::error::UpdateTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateTimelineEventError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_timeline_event::UpdateTimelineEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

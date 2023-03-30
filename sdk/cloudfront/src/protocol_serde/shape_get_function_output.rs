@@ -9,7 +9,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_function_code_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::error::GetFunctionError> {
+pub fn de_function_code_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::operation::get_function::GetFunctionError> {
     (!body.is_empty()).then(||{
         Ok(aws_smithy_types::Blob::new(body))
     }).transpose()

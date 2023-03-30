@@ -13,8 +13,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchPutMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchPutMetricsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_put_metrics::BatchPutMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_put_metrics::BatchPutMetricsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -26,10 +26,10 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchPutMetricsErro
         }
     }
 }
-impl From<crate::error::BatchPutMetricsError> for Error {
-    fn from(err: crate::error::BatchPutMetricsError) -> Self {
+impl From<crate::operation::batch_put_metrics::BatchPutMetricsError> for Error {
+    fn from(err: crate::operation::batch_put_metrics::BatchPutMetricsError) -> Self {
         match err {
-            crate::error::BatchPutMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_put_metrics::BatchPutMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

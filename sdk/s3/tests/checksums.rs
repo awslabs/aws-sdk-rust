@@ -6,7 +6,9 @@
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{model::ChecksumAlgorithm, output::GetObjectOutput, Client, Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::Client;
+use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
 use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
 use http::header::AUTHORIZATION;
@@ -69,7 +71,7 @@ async fn test_checksum_on_streaming_response(
         .get_object()
         .bucket("some-test-bucket")
         .key("test.txt")
-        .checksum_mode(aws_sdk_s3::model::ChecksumMode::Enabled)
+        .checksum_mode(aws_sdk_s3::types::ChecksumMode::Enabled)
         .customize()
         .await
         .unwrap()
@@ -169,7 +171,7 @@ async fn test_checksum_on_streaming_request<'a>(
     use std::io::Write;
     file.write_all(body).unwrap();
 
-    let body = aws_sdk_s3::types::ByteStream::read_from()
+    let body = aws_sdk_s3::primitives::ByteStream::read_from()
         .path(file.path())
         .buffer_size(1024)
         .build()

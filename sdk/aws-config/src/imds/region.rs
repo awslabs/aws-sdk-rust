@@ -117,7 +117,7 @@ mod test {
     use crate::imds::client::test::{imds_request, imds_response, token_request, token_response};
     use crate::imds::region::ImdsRegionProvider;
     use crate::provider_config::ProviderConfig;
-    use aws_sdk_sts::Region;
+    use aws_sdk_sts::config::Region;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::TestConnection;

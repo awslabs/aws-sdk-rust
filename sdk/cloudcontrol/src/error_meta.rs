@@ -4,48 +4,48 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The resource with the name requested already exists.</p>
-    AlreadyExistsException(crate::error::AlreadyExistsException),
+    AlreadyExistsException(crate::types::error::AlreadyExistsException),
     /// <p>The specified client token has already been used in another resource request.</p> 
     /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
-    ClientTokenConflictException(crate::error::ClientTokenConflictException),
+    ClientTokenConflictException(crate::types::error::ClientTokenConflictException),
     /// <p>The resource is currently being modified by another operation.</p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
-    ConcurrentOperationException(crate::error::ConcurrentOperationException),
+    ConcurrentOperationException(crate::types::error::ConcurrentOperationException),
     /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
-    GeneralServiceException(crate::error::GeneralServiceException),
+    GeneralServiceException(crate::types::error::GeneralServiceException),
     /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
-    HandlerFailureException(crate::error::HandlerFailureException),
+    HandlerFailureException(crate::types::error::HandlerFailureException),
     /// <p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>
-    HandlerInternalFailureException(crate::error::HandlerInternalFailureException),
+    HandlerInternalFailureException(crate::types::error::HandlerInternalFailureException),
     /// <p>The resource handler has returned that the credentials provided by the user are invalid.</p>
-    InvalidCredentialsException(crate::error::InvalidCredentialsException),
+    InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
     /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
-    NetworkFailureException(crate::error::NetworkFailureException),
+    NetworkFailureException(crate::types::error::NetworkFailureException),
     /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
-    NotStabilizedException(crate::error::NotStabilizedException),
+    NotStabilizedException(crate::types::error::NotStabilizedException),
     /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
-    NotUpdatableException(crate::error::NotUpdatableException),
+    NotUpdatableException(crate::types::error::NotUpdatableException),
     /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
-    PrivateTypeException(crate::error::PrivateTypeException),
+    PrivateTypeException(crate::types::error::PrivateTypeException),
     /// <p>A resource operation with the specified request token can't be found.</p>
-    RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
+    RequestTokenNotFoundException(crate::types::error::RequestTokenNotFoundException),
     /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
-    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>A resource with the specified identifier can't be found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
-    ServiceInternalErrorException(crate::error::ServiceInternalErrorException),
+    ServiceInternalErrorException(crate::types::error::ServiceInternalErrorException),
     /// <p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>
-    ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
+    ServiceLimitExceededException(crate::types::error::ServiceLimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
-    TypeNotFoundException(crate::error::TypeNotFoundException),
+    TypeNotFoundException(crate::types::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
-    UnsupportedActionException(crate::error::UnsupportedActionException),
+    UnsupportedActionException(crate::types::error::UnsupportedActionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -77,8 +77,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelResourceRequestError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelResourceRequestError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -90,17 +90,17 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelResourceReque
         }
     }
 }
-impl From<crate::error::CancelResourceRequestError> for Error {
-    fn from(err: crate::error::CancelResourceRequestError) -> Self {
+impl From<crate::operation::cancel_resource_request::CancelResourceRequestError> for Error {
+    fn from(err: crate::operation::cancel_resource_request::CancelResourceRequestError) -> Self {
         match err {
-            crate::error::CancelResourceRequestError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::CancelResourceRequestError::RequestTokenNotFoundException(inner) => Error::RequestTokenNotFoundException(inner),
-            crate::error::CancelResourceRequestError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::cancel_resource_request::CancelResourceRequestError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::cancel_resource_request::CancelResourceRequestError::RequestTokenNotFoundException(inner) => Error::RequestTokenNotFoundException(inner),
+            crate::operation::cancel_resource_request::CancelResourceRequestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_resource::CreateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_resource::CreateResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -112,34 +112,34 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourceError
         }
     }
 }
-impl From<crate::error::CreateResourceError> for Error {
-    fn from(err: crate::error::CreateResourceError) -> Self {
+impl From<crate::operation::create_resource::CreateResourceError> for Error {
+    fn from(err: crate::operation::create_resource::CreateResourceError) -> Self {
         match err {
-            crate::error::CreateResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::error::CreateResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
-            crate::error::CreateResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
-            crate::error::CreateResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
-            crate::error::CreateResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
-            crate::error::CreateResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
-            crate::error::CreateResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
-            crate::error::CreateResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::CreateResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
-            crate::error::CreateResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
-            crate::error::CreateResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
-            crate::error::CreateResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
-            crate::error::CreateResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
-            crate::error::CreateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
-            crate::error::CreateResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::CreateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
-            crate::error::CreateResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
-            crate::error::CreateResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_resource::CreateResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_resource::CreateResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
+            crate::operation::create_resource::CreateResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
+            crate::operation::create_resource::CreateResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
+            crate::operation::create_resource::CreateResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
+            crate::operation::create_resource::CreateResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
+            crate::operation::create_resource::CreateResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::create_resource::CreateResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_resource::CreateResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
+            crate::operation::create_resource::CreateResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
+            crate::operation::create_resource::CreateResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
+            crate::operation::create_resource::CreateResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
+            crate::operation::create_resource::CreateResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::create_resource::CreateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_resource::CreateResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
+            crate::operation::create_resource::CreateResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::create_resource::CreateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_resource::CreateResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
+            crate::operation::create_resource::CreateResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
+            crate::operation::create_resource::CreateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_resource::DeleteResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_resource::DeleteResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -151,34 +151,34 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourceError
         }
     }
 }
-impl From<crate::error::DeleteResourceError> for Error {
-    fn from(err: crate::error::DeleteResourceError) -> Self {
+impl From<crate::operation::delete_resource::DeleteResourceError> for Error {
+    fn from(err: crate::operation::delete_resource::DeleteResourceError) -> Self {
         match err {
-            crate::error::DeleteResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::error::DeleteResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
-            crate::error::DeleteResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
-            crate::error::DeleteResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
-            crate::error::DeleteResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
-            crate::error::DeleteResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
-            crate::error::DeleteResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
-            crate::error::DeleteResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::DeleteResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
-            crate::error::DeleteResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
-            crate::error::DeleteResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
-            crate::error::DeleteResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
-            crate::error::DeleteResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
-            crate::error::DeleteResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
-            crate::error::DeleteResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::DeleteResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DeleteResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
-            crate::error::DeleteResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
-            crate::error::DeleteResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_resource::DeleteResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
+            crate::operation::delete_resource::DeleteResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
+            crate::operation::delete_resource::DeleteResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
+            crate::operation::delete_resource::DeleteResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
+            crate::operation::delete_resource::DeleteResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::delete_resource::DeleteResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_resource::DeleteResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
+            crate::operation::delete_resource::DeleteResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
+            crate::operation::delete_resource::DeleteResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
+            crate::operation::delete_resource::DeleteResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::delete_resource::DeleteResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_resource::DeleteResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
+            crate::operation::delete_resource::DeleteResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
+            crate::operation::delete_resource::DeleteResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resource::GetResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resource::GetResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -190,32 +190,32 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceError, R
         }
     }
 }
-impl From<crate::error::GetResourceError> for Error {
-    fn from(err: crate::error::GetResourceError) -> Self {
+impl From<crate::operation::get_resource::GetResourceError> for Error {
+    fn from(err: crate::operation::get_resource::GetResourceError) -> Self {
         match err {
-            crate::error::GetResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::error::GetResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
-            crate::error::GetResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
-            crate::error::GetResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
-            crate::error::GetResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
-            crate::error::GetResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::GetResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
-            crate::error::GetResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
-            crate::error::GetResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
-            crate::error::GetResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
-            crate::error::GetResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
-            crate::error::GetResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
-            crate::error::GetResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::GetResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
-            crate::error::GetResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
-            crate::error::GetResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resource::GetResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::get_resource::GetResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
+            crate::operation::get_resource::GetResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
+            crate::operation::get_resource::GetResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
+            crate::operation::get_resource::GetResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::get_resource::GetResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_resource::GetResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
+            crate::operation::get_resource::GetResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
+            crate::operation::get_resource::GetResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
+            crate::operation::get_resource::GetResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
+            crate::operation::get_resource::GetResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::get_resource::GetResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resource::GetResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
+            crate::operation::get_resource::GetResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::get_resource::GetResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resource::GetResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
+            crate::operation::get_resource::GetResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
+            crate::operation::get_resource::GetResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceRequestStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetResourceRequestStatusError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_resource_request_status::GetResourceRequestStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -227,16 +227,16 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceRequestS
         }
     }
 }
-impl From<crate::error::GetResourceRequestStatusError> for Error {
-    fn from(err: crate::error::GetResourceRequestStatusError) -> Self {
+impl From<crate::operation::get_resource_request_status::GetResourceRequestStatusError> for Error {
+    fn from(err: crate::operation::get_resource_request_status::GetResourceRequestStatusError) -> Self {
         match err {
-            crate::error::GetResourceRequestStatusError::RequestTokenNotFoundException(inner) => Error::RequestTokenNotFoundException(inner),
-            crate::error::GetResourceRequestStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_resource_request_status::GetResourceRequestStatusError::RequestTokenNotFoundException(inner) => Error::RequestTokenNotFoundException(inner),
+            crate::operation::get_resource_request_status::GetResourceRequestStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -248,15 +248,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceRequest
         }
     }
 }
-impl From<crate::error::ListResourceRequestsError> for Error {
-    fn from(err: crate::error::ListResourceRequestsError) -> Self {
+impl From<crate::operation::list_resource_requests::ListResourceRequestsError> for Error {
+    fn from(err: crate::operation::list_resource_requests::ListResourceRequestsError) -> Self {
         match err {
-            crate::error::ListResourceRequestsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resource_requests::ListResourceRequestsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -268,32 +268,32 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourcesError,
         }
     }
 }
-impl From<crate::error::ListResourcesError> for Error {
-    fn from(err: crate::error::ListResourcesError) -> Self {
+impl From<crate::operation::list_resources::ListResourcesError> for Error {
+    fn from(err: crate::operation::list_resources::ListResourcesError) -> Self {
         match err {
-            crate::error::ListResourcesError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::error::ListResourcesError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
-            crate::error::ListResourcesError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
-            crate::error::ListResourcesError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
-            crate::error::ListResourcesError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
-            crate::error::ListResourcesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ListResourcesError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
-            crate::error::ListResourcesError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
-            crate::error::ListResourcesError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
-            crate::error::ListResourcesError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
-            crate::error::ListResourcesError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
-            crate::error::ListResourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListResourcesError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
-            crate::error::ListResourcesError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::ListResourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ListResourcesError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
-            crate::error::ListResourcesError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
-            crate::error::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resources::ListResourcesError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::list_resources::ListResourcesError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
+            crate::operation::list_resources::ListResourcesError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
+            crate::operation::list_resources::ListResourcesError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
+            crate::operation::list_resources::ListResourcesError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::list_resources::ListResourcesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_resources::ListResourcesError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
+            crate::operation::list_resources::ListResourcesError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
+            crate::operation::list_resources::ListResourcesError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
+            crate::operation::list_resources::ListResourcesError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
+            crate::operation::list_resources::ListResourcesError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::list_resources::ListResourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_resources::ListResourcesError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
+            crate::operation::list_resources::ListResourcesError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::list_resources::ListResourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_resources::ListResourcesError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
+            crate::operation::list_resources::ListResourcesError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
+            crate::operation::list_resources::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateResourceError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -305,29 +305,29 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResourceError
         }
     }
 }
-impl From<crate::error::UpdateResourceError> for Error {
-    fn from(err: crate::error::UpdateResourceError) -> Self {
+impl From<crate::operation::update_resource::UpdateResourceError> for Error {
+    fn from(err: crate::operation::update_resource::UpdateResourceError) -> Self {
         match err {
-            crate::error::UpdateResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
-            crate::error::UpdateResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
-            crate::error::UpdateResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
-            crate::error::UpdateResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
-            crate::error::UpdateResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
-            crate::error::UpdateResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
-            crate::error::UpdateResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
-            crate::error::UpdateResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::UpdateResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
-            crate::error::UpdateResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
-            crate::error::UpdateResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
-            crate::error::UpdateResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
-            crate::error::UpdateResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
-            crate::error::UpdateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
-            crate::error::UpdateResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::UpdateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
-            crate::error::UpdateResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
-            crate::error::UpdateResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_resource::UpdateResourceError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::update_resource::UpdateResourceError::ClientTokenConflictException(inner) => Error::ClientTokenConflictException(inner),
+            crate::operation::update_resource::UpdateResourceError::ConcurrentOperationException(inner) => Error::ConcurrentOperationException(inner),
+            crate::operation::update_resource::UpdateResourceError::GeneralServiceException(inner) => Error::GeneralServiceException(inner),
+            crate::operation::update_resource::UpdateResourceError::HandlerFailureException(inner) => Error::HandlerFailureException(inner),
+            crate::operation::update_resource::UpdateResourceError::HandlerInternalFailureException(inner) => Error::HandlerInternalFailureException(inner),
+            crate::operation::update_resource::UpdateResourceError::InvalidCredentialsException(inner) => Error::InvalidCredentialsException(inner),
+            crate::operation::update_resource::UpdateResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_resource::UpdateResourceError::NetworkFailureException(inner) => Error::NetworkFailureException(inner),
+            crate::operation::update_resource::UpdateResourceError::NotStabilizedException(inner) => Error::NotStabilizedException(inner),
+            crate::operation::update_resource::UpdateResourceError::NotUpdatableException(inner) => Error::NotUpdatableException(inner),
+            crate::operation::update_resource::UpdateResourceError::PrivateTypeException(inner) => Error::PrivateTypeException(inner),
+            crate::operation::update_resource::UpdateResourceError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::update_resource::UpdateResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_resource::UpdateResourceError::ServiceInternalErrorException(inner) => Error::ServiceInternalErrorException(inner),
+            crate::operation::update_resource::UpdateResourceError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::operation::update_resource::UpdateResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_resource::UpdateResourceError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
+            crate::operation::update_resource::UpdateResourceError::UnsupportedActionException(inner) => Error::UnsupportedActionException(inner),
+            crate::operation::update_resource::UpdateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

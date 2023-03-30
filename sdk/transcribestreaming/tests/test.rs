@@ -4,13 +4,15 @@
  */
 
 use async_stream::stream;
-use aws_sdk_transcribestreaming::error::{AudioStreamError, TranscriptResultStreamError};
-use aws_sdk_transcribestreaming::model::{
+use aws_sdk_transcribestreaming::config::{Credentials, Region};
+use aws_sdk_transcribestreaming::error::SdkError;
+use aws_sdk_transcribestreaming::operation::start_stream_transcription::StartStreamTranscriptionOutput;
+use aws_sdk_transcribestreaming::primitives::Blob;
+use aws_sdk_transcribestreaming::types::error::{AudioStreamError, TranscriptResultStreamError};
+use aws_sdk_transcribestreaming::types::{
     AudioEvent, AudioStream, LanguageCode, MediaEncoding, TranscriptResultStream,
 };
-use aws_sdk_transcribestreaming::output::StartStreamTranscriptionOutput;
-use aws_sdk_transcribestreaming::types::{Blob, SdkError};
-use aws_sdk_transcribestreaming::{Client, Config, Credentials, Region};
+use aws_sdk_transcribestreaming::{Client, Config};
 use aws_smithy_client::dvr::{Event, ReplayingConnection};
 use aws_smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
 use bytes::BufMut;

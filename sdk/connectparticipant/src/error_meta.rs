@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An attachment with that identifier is already being uploaded.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This exception occurs when there is an internal failure in the Amazon Connect service.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The number of attachments per contact exceeds the quota.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled)
 }
@@ -31,8 +31,8 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteAttachmentUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CompleteAttachmentUploadError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -44,21 +44,21 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CompleteAttachmentU
         }
     }
 }
-impl From<crate::error::CompleteAttachmentUploadError> for Error {
-    fn from(err: crate::error::CompleteAttachmentUploadError) -> Self {
+impl From<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError> for Error {
+    fn from(err: crate::operation::complete_attachment_upload::CompleteAttachmentUploadError) -> Self {
         match err {
-            crate::error::CompleteAttachmentUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CompleteAttachmentUploadError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CompleteAttachmentUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CompleteAttachmentUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::CompleteAttachmentUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CompleteAttachmentUploadError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CompleteAttachmentUploadError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateParticipantConnectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateParticipantConnectionError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_participant_connection::CreateParticipantConnectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_participant_connection::CreateParticipantConnectionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -70,19 +70,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateParticipantCo
         }
     }
 }
-impl From<crate::error::CreateParticipantConnectionError> for Error {
-    fn from(err: crate::error::CreateParticipantConnectionError) -> Self {
+impl From<crate::operation::create_participant_connection::CreateParticipantConnectionError> for Error {
+    fn from(err: crate::operation::create_participant_connection::CreateParticipantConnectionError) -> Self {
         match err {
-            crate::error::CreateParticipantConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateParticipantConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateParticipantConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateParticipantConnectionError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateParticipantConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_participant_connection::CreateParticipantConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_participant_connection::CreateParticipantConnectionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_participant_connection::CreateParticipantConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_participant_connection::CreateParticipantConnectionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_participant_connection::CreateParticipantConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisconnectParticipantError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisconnectParticipantError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disconnect_participant::DisconnectParticipantError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -94,19 +94,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisconnectParticipa
         }
     }
 }
-impl From<crate::error::DisconnectParticipantError> for Error {
-    fn from(err: crate::error::DisconnectParticipantError) -> Self {
+impl From<crate::operation::disconnect_participant::DisconnectParticipantError> for Error {
+    fn from(err: crate::operation::disconnect_participant::DisconnectParticipantError) -> Self {
         match err {
-            crate::error::DisconnectParticipantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisconnectParticipantError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DisconnectParticipantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::DisconnectParticipantError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DisconnectParticipantError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disconnect_participant::DisconnectParticipantError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disconnect_participant::DisconnectParticipantError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disconnect_participant::DisconnectParticipantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disconnect_participant::DisconnectParticipantError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disconnect_participant::DisconnectParticipantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAttachmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAttachmentError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_attachment::GetAttachmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_attachment::GetAttachmentError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -118,19 +118,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAttachmentError,
         }
     }
 }
-impl From<crate::error::GetAttachmentError> for Error {
-    fn from(err: crate::error::GetAttachmentError) -> Self {
+impl From<crate::operation::get_attachment::GetAttachmentError> for Error {
+    fn from(err: crate::operation::get_attachment::GetAttachmentError) -> Self {
         match err {
-            crate::error::GetAttachmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAttachmentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetAttachmentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_attachment::GetAttachmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_attachment::GetAttachmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_attachment::GetAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_attachment::GetAttachmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_attachment::GetAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTranscriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTranscriptError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -142,19 +142,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetTranscriptError,
         }
     }
 }
-impl From<crate::error::GetTranscriptError> for Error {
-    fn from(err: crate::error::GetTranscriptError) -> Self {
+impl From<crate::operation::get_transcript::GetTranscriptError> for Error {
+    fn from(err: crate::operation::get_transcript::GetTranscriptError) -> Self {
         match err {
-            crate::error::GetTranscriptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetTranscriptError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetTranscriptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetTranscriptError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetTranscriptError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_transcript::GetTranscriptError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_transcript::GetTranscriptError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_transcript::GetTranscriptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_transcript::GetTranscriptError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_transcript::GetTranscriptError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendEventError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -166,19 +166,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendEventError, R>>
         }
     }
 }
-impl From<crate::error::SendEventError> for Error {
-    fn from(err: crate::error::SendEventError) -> Self {
+impl From<crate::operation::send_event::SendEventError> for Error {
+    fn from(err: crate::operation::send_event::SendEventError) -> Self {
         match err {
-            crate::error::SendEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SendEventError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::SendEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::SendEventError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::SendEventError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_event::SendEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_event::SendEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::send_event::SendEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_event::SendEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_event::SendEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendMessageError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_message::SendMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -190,19 +190,19 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendMessageError, R
         }
     }
 }
-impl From<crate::error::SendMessageError> for Error {
-    fn from(err: crate::error::SendMessageError) -> Self {
+impl From<crate::operation::send_message::SendMessageError> for Error {
+    fn from(err: crate::operation::send_message::SendMessageError) -> Self {
         match err {
-            crate::error::SendMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::SendMessageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::SendMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::SendMessageError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_message::SendMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_message::SendMessageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::send_message::SendMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_message::SendMessageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAttachmentUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartAttachmentUploadError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -214,15 +214,15 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAttachmentUplo
         }
     }
 }
-impl From<crate::error::StartAttachmentUploadError> for Error {
-    fn from(err: crate::error::StartAttachmentUploadError) -> Self {
+impl From<crate::operation::start_attachment_upload::StartAttachmentUploadError> for Error {
+    fn from(err: crate::operation::start_attachment_upload::StartAttachmentUploadError) -> Self {
         match err {
-            crate::error::StartAttachmentUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::StartAttachmentUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::StartAttachmentUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::error::StartAttachmentUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::StartAttachmentUploadError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::StartAttachmentUploadError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_attachment_upload::StartAttachmentUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

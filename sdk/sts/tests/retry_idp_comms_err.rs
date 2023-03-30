@@ -6,7 +6,8 @@
 use aws_sdk_sts as sts;
 use aws_smithy_types::error::ErrorMetadata;
 use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
-use sts::error::{AssumeRoleWithWebIdentityError, IdpCommunicationErrorException};
+use sts::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError;
+use sts::types::error::IdpCommunicationErrorException;
 
 #[tokio::test]
 async fn idp_comms_err_retryable() {
